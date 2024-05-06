@@ -1,0 +1,32 @@
+project:
+  type: website
+
+website:
+  favicon: _images/logos/favicon.png
+  repo-url: "https://github.com/ESA-APEx/apex_documentation"
+  repo-branch: "main"
+  search:
+    location: sidebar
+    type: textbox
+    copy-button: true
+
+  navbar:
+    pinned: true
+  page-navigation: true
+
+  title: "APEx - Documentation Portal"
+
+  sidebar:
+    style: "floating"
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Welcome
+
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    page-layout: full
+    theme: cosmo
+bread-crumbs: true
