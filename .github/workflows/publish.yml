@@ -31,10 +31,19 @@ jobs:
         run: quarto render --output-dir _build
       - name: Setup GitHub pages
         uses: actions/configure-pages@v3
+      - name: Create build archive
+        run: |
+          tar \
+          --dereference --hard-dereference \
+          --directory "$INPUT_PATH" \
+          -cvf "$RUNNER_TEMP/build.tar" \
+          --exclude=.git \
+          --exclude=.github \
+          .
       - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "_build"
+          path: ${{ runner.temp }}/build.tar
 
   deploy-documentation:
     runs-on: ubuntu-latest
