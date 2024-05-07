@@ -31,13 +31,10 @@ jobs:
         run: quarto render --output-dir _build
       - name: Setup GitHub pages
         uses: actions/configure-pages@v3
-      - name: Create build archive
-        run: |
-            tar -cvf build.tar _build/*
-      - name: Upload build archive
+      - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "build.tar"
+          path: "_build"
 
   deploy-documentation:
     runs-on: ubuntu-latest
