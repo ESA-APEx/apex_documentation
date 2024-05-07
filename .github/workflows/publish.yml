@@ -33,11 +33,11 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Create build archive
         run: |
-            tar -cvf build.tar _build
+            tar -cvf build.tar _build/*
       - name: Upload build archive
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "./build.tar"
+          path: "build.tar"
 
   deploy-documentation:
     runs-on: ubuntu-latest
