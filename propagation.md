@@ -49,6 +49,12 @@ Once the UDP is available, it can be hosted in APEx, and associated with one or 
 As APEx evolves, tools will become available that aid this process, and that for instance allow to check if your service
 is still functional.
 
+To learn more about UDP's, here's a few more resources:
+
+- [UDP support in Python](https://open-eo.github.io/openeo-python-client/udp.html#user-defined-processes)
+- [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
+
+
 ### An OGC application package based service
 
 Another option is to package your software using Docker containers. This approach is very generic, and is mostly relevant
