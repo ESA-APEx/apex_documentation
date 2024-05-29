@@ -22,6 +22,8 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
+      - href: propagation.md
+        text: EO services
 
 format:
   html:

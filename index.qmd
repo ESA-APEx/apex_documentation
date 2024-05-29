@@ -8,7 +8,7 @@ Here, you'll discover comprehensive guidance on APEx's instantiation services.
 Explore detailed documentation on dedicated IT components, including project websites, data visualization tools, workspaces, and development environments offered as Software as a Service (SaaS) products.
 Learn how to instantiate these cloud-based environments on demand and tailor them to your project's specific needs with our step-by-step guides and tutorials.
 
-Learn the details of APEx's propagation services through our technical documentation.
+Learn the details of building efficient on-demand services via [APEx's propagation services](./propagation.md).
 Gain insights into ensuring the continuous availability, enhancement, and upscaling of EO algorithms.
 Delve into detailed instructions on leveraging interoperability standards like openEO and OGC Application Package to onboard algorithms with best-practice interoperability.
 Explore our guidance on enhancing algorithm performance, facilitating intercomparison of scientific accuracy, and implementing cloudification strategies for existing toolboxes.
