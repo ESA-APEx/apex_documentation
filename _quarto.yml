@@ -23,7 +23,25 @@ website:
       - href: index.qmd
         text: Welcome
       - href: propagation.md
-        text: EO services
+        text: EO Services
+        contents:
+          - href: propagation/hosting.md
+            text: Algorithm Hosting
+          - href: propagation/upscaling.md
+            text: Algorithm Upscaling
+          - href: propagation/enhancement.md
+            text: Algorithm Enhancement
+          - href: propagation/toolboxcloud.md
+            text: Toolbox Cloudification
+          - href: propagation/intercomparison.md
+            text: Algorithm Intercomparison
+      - href: interoperability.md
+        text: Interoperability and Compliance Guidelines
+        contents:
+          - href: interoperability/algohosting.md
+            text: Algorithm Hosting
+          - href: interoperability/algohostingenv.md
+            text: Algorithm Hosting Environments
 
 format:
   html:
