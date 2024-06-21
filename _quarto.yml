@@ -18,11 +18,11 @@ website:
 
   sidebar:
     style: "floating"
-    collapse-level: 1
+    collapse-level: 2
     contents:
       - href: index.qmd
         text: Welcome
-      - href: eo_service_usage/eo_service_usage.md
+      - href: eo_service_usage.md
         text: On-demand EO services
         contents:
           - href: eo_service_usage/openeo_usage.md

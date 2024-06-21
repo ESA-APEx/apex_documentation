@@ -1,6 +1,6 @@
 # openEO based services
 
-# Execute a service
+APEx services that follow the [openEO](https://openeEO.org) standard are implemented as openEO processes.
 
 
 Services can be executed through the tools that are provided by the different processing platforms. 
@@ -10,15 +10,38 @@ There are several ways to discover how a service can be executed. When publishin
 * An executable link which redirects the user to the user interface of the processing platform. If this is the case, an **Access app** button will appear when opening an EOplaza service.
 * Sample code in the service description on how to execute a service. 
 
+## openEO backends
+
+An APEx openEO service is always associated with one or more openEO backends that have been validated to produce the correct 
+results. So using one of these backends is the recommended approach. Thanks to openEO interoperability and standardization,
+it may certainly be possible that other backends can run the same service, but do make sure to validate the results in that case.
+
+To ensure a smooth experience, backends need to be compliant with [APEx guidelines](../interoperability/algohostingenv.md).
+The currently known list of compliant backends is:
+
+- [CDSE openEO federation](https://openeofed.dataspace.copernicus.eu) 
+- [openEO platform](https://openeo.cloud)
+
+Both are federations, which means that they in fact are backed by multiple openEO instances. This increases the convenience
+for the APEx user, avoiding to interact with a high number of backends.
+
 ## Online user interface
 
 OpenEO provides an online user interface where users can execute services directly in a web browser. 
 Through the graphical user interface, users can execute, link, and configure different services. More information on the usage of the online applications is presented in the table below.
 
-|OpenEO|
-|---|
-| [Access](https://editor.openeo.org/?server=https%3A%2F%2Fopeneo.vito.be%2Fopeneo%2F1.0) |
-| [Documentation](https://openeo.org/documentation/1.0/#introduction) |
+| OpenEO                                                                     |
+|----------------------------------------------------------------------------|
+| [Access CDSE openEO federation](https://openeofed.dataspace.copernicus.eu) |
+| [Access openEO platform](https://editor.openeo.cloud)                      |
+| [Documentation](https://openeo.org/documentation/1.0/#introduction)        |
+
+::: {.callout-tip}
+## Pro-tip: discovering API requests
+
+These interface provide a great way to find out how to interact with an openEO backend at the level of the HTTP API.
+Just use the 'developer tools' of your favourite browser and inspect HTTP requests to the backend to find out the various options.
+:::
 
 ## Client libraries
 
@@ -67,14 +90,13 @@ aoi = {
 date = '2020-06-01'
 
 # Setup connection with OpenEO
-eoconn = openeo.connect("https://openeo.vito.be").authenticate_oidc("egi")
+eoconn = openeo.connect("openeofed.dataspace.copernicus.eu").authenticate_oidc()
 
 # Create a processing graph from the BIOMASS process using an active openEO connection
-taskmap = eoconn.datacube_from_process("taskmap_generate", namespace="https://openeo.vito.be/openeo/1.0/processes/u:EOplaza_tps/taskmap_generate", aoi=aoi,
-                                       date=date)
+taskmap = eoconn.datacube_from_process("taskmap_generate", namespace="https://github.com/ESA-APEx/apex_algorithms/raw/main/openeo_udp/worldcereal_inference.json", bbox=aoi)
 
 # Execute the OpenEO request as a batch job
-taskmap_job = taskmap.save_result(format='gtiff').send_job()
+taskmap_job = taskmap.save_result(format='GTiff').send_job()
 taskmap_job.start_and_wait().get_results()
 ```
 
@@ -97,8 +119,8 @@ OpenEO provides a fully documented API for a more advanced way to integrate feat
 The following example showcases how to use the OpenEO API to execute a synchronous request for the BioPAR service:
 
 ```curl
-POST /openeo/1.0.0/result HTTP/1.1
-Host: openeo.vito.be
+POST /openeo/1.2/result HTTP/1.1
+Host: openeocloud.vito.be
 Content-Type: application/json
 Authorization: Bearer basic//basic.cHJvag==
 Content-Length: 4587
