@@ -22,8 +22,13 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
+      - href: eo_service_usage/eo_service_usage.md
+        text: On-demand EO services
+        contents:
+          - href: eo_service_usage/openeo_usage.md
+            text: Using openEO service
       - href: propagation.md
-        text: EO Services
+        text: EO Service Support
         contents:
           - href: propagation/hosting.md
             text: Algorithm Hosting
