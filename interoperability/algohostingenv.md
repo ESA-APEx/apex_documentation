@@ -3,6 +3,15 @@
 ESA APEx applications are executed on a compliant platform. The application project is free to select any platform that complies 
 with the requirements set out in this document.
 
+The aim of these requirements is:
+
+- To ensure that services developed in application projects continue to work after the project has ended. 
+- To align platforms that aim to offer ESA application services, to make them more comparable.
+The alignment targets the API level, and the (high-level) pricing model, giving platform providers full freedom to select 
+technologies and architectures that suit their needs. 
+- To allow APEx to perform automated checks on the developed services, guaranteeing that they work and produce the expected result at the expected cost.
+
+
 
 @tbl-algohostingenv provides an overview of the requirement for operators of algorithm hosting environments to ensure their compatibility with the APEx standards. 
 
@@ -37,6 +46,16 @@ The algorithm environment can support applications defined as [openEO 'user defi
 In the context of APEx, these will be executed as openEO batch jobs. The minimal requirements for an openEO backend
 to comply with in order to support this are described in the profile called [L1B-minimal-batch-jobs]( https://openeo.org/documentation/1.0/developers/profiles/api.html#l1b-minimal-batch-jobs ).
 
+#### Open Source UDP's
+
+For open source UDP's, APEx will use the 'openEO remote UDP extension', which is currently under review by the openEO community. This extension
+enables APEx to centrally store & manage the UDP definitions, using the execution platform only for the actual processing.
+This to ensure consistent management of UDP definitions, safeguarding them from loss if the execution platform is decommissioned.
+
+We assume that this is the default case, because ESA application projects have a strong preference for open source software.
+
+#### Private UDP's
+
 The specification of openEO allows platforms to expose custom processes, that behave exactly like openEO UDP's, but do not
 expose the underlying process graph. This situation may have 2 main causes:
 
@@ -44,6 +63,7 @@ expose the underlying process graph. This situation may have 2 main causes:
   this is supported by ESA, and it is considered good practice to use openEO.
 - The process graph does not exist, and in fact the process triggers an arbitrary processing system. In this case, the
   OGC Processes approach might be a better alternative.
+
 
 ### OGC API Processes specific requirements
 
