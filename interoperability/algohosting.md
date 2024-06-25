@@ -4,15 +4,15 @@
 APEx. By satisfying these requirements, APEx guarantees successful integration of project results and ensures reusability 
 within the broader EO community.
 
-We highlight that the majority of these requirements apply to projects that build an 'on-demand' service, that is to be 
+We highlight that the majority of these requirements apply to projects that build an on-demand service to be 
 exposed via an HTTP-based API. Projects that generate static maps as their main project result and do not need to publish 
 any service are not affected by these requirements.
 
-In terms of HTTP API's, projects will need to select one of two standards: openEO or OGC API Processes. To our knowledge,
-this should support almost any possible on-demand service. When unsure, you can contact the APEx team for advice.
+In terms of creating on demand services, APEx currently supports two main standards: openEO or OGC API Processes. This selection
+should support almost any possible on-demand service. When unsure, you can contact the APEx team for advice.
 
-Finally note that APEx also provides support to projects that need to fulfill these requirements. For instance, by providing
-a framework to run automated tests, but also by providing packages to help with enhancing your algorithms. These are 
+Finally, note that APEx also provides support to projects that need to fulfill these requirements. This support includes offering
+a framework to run automated tests and providing packages to help with enhancing your algorithms. These are 
 referred to as [propagation services](../propagation.md).
 
 In general, the aim is to simplify the process of building high-quality on-demand services rather than to add complexity!
@@ -59,19 +59,21 @@ In general, the aim is to simplify the process of building high-quality on-deman
 : Interoperability requirements for algorithm providers {#tbl-algohosting}{tbl-colwidths="[20,80]"}
 
 
-### Parameter naming & typing best practices
+### Best Pratices
 
-APEx proposes to also align parameter names and types. This is most easily explained by an example: a parameter named
-'bounding_box', 'bbox', 'aoi', 'spatial_extent' probably means the same thing, but without common conventions, it is very
-likely that algorithms will select one of the variants at random. This will make the eventual algorithm library harder to use.
+#### Parameter naming & typing
 
-At time of writing, the actual conventions have not yet been defined, as this only becomes relevant when the first algorithms
+APEx proposes to standardize parameter names and types. This is best illustrated by an example: parameters such as `bounding_box`, 
+`bbox`, `aoi`, and `spatial_extent` likely refer to the same concept. However, without common conventions, algorithms might randomly 
+select one of these variants, complicating the usability of the eventual algorithm library.
+
+At time of writing, the actual conventions have not yet been defined. This becomes relevant when the first algorithms
 reach a state where they can be published with a fixed interface.
 
 ### Licensing requirements
 
-For services to be hosted & curated, APEx requires the ability to regularly execute the service. For fully open source algorithms,
-for instance licensed under the Apache 2.0 license, this is not a problem. For algorithms with a more restrictive license,
-or that depend on artifacts such as trained machine learning models, the algorithm provider needs to be able to license
-APEx to execute the service without incurring extra costs beyond the normal resource usage. Without such a license, automated
-benchmarking & testing provided by APEx may need to be disabled for the service in question.
+For services to be hosted and curated, APEx requires the ability to execute the service. This is straightforward for fully 
+open-source algorithms, such as those licensed under the Apache 2.0 license. However, for algorithms with more restrictive licenses 
+or those dependent on artifacts like trained machine learning models, the algorithm provider must be able to license APEx to 
+execute the service without incurring additional costs beyond the normal resource usage. Without such a license, the automated 
+benchmarking and testing provided by APEx may need to be disabled for the service in question.
