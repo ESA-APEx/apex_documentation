@@ -54,4 +54,5 @@ format:
     toc-depth: 4
     page-layout: full
     theme: cosmo
+    css: custom.scss
 bread-crumbs: true
