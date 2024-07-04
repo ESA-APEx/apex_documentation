@@ -25,6 +25,7 @@ The first release of  the dashboard service will expect data sources to be:
     - **Spatial Temporal Asset Catalogue**: A catalogue service for metadata regarding a dataset. This would be supported for the specific  use of retrieving an item in a catalogue along with its metadata. Note: The data itself must still conform to one of the response formats outlined above.
 
 Considerations for future dashboard service releases include:
+
 - **TMS (Tile Map Service)**: A standard supported by the Open Layers framework
 - **TileJSON (Mapbox)**: A standard for describing tile services using JSON
 
@@ -36,7 +37,11 @@ The Dashboard service configuration will be based on a schema that provides dash
 - Configuration validation.
 - Definition of a "contract" for easier documentation of dashboard features and their configuration.
 
-The following is a very loose example of an initial JSON file that may be used to configure a dashboard. **The API is currently not well defined and as such this is currently subject to radical changes, the following is for illustrative purposes only**.
+The following is a very loose example of an initial JSON file that may be used to configure a dashboard. 
+
+::: {.callout-warning}
+The API is currently not well defined and as such this is currently subject to radical changes, the following is for illustrative purposes only. 
+:::
 
 ```
  {
