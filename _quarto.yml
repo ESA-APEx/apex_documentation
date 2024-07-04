@@ -47,6 +47,8 @@ website:
             text: Algorithm Hosting
           - href: interoperability/algohostingenv.md
             text: Algorithm Hosting Environments
+          - href: interoperability/dashboards.md
+            text: Dashboards
 
 format:
   html:
