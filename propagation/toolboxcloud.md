@@ -1,10 +1,25 @@
-### Toolbox Cloudification Service
+### Toolbox Cloudification Service 
 
-The Toolbox Cloudification Service focuses on porting functionality from existing (open source) toolboxes into the EO platform
-targeted by your project. This service is designed to enhance the scalability and integration of your toolbox's features
-within an APEx compatible cloud environment.
+The toolbox cloudification service makes available single data processing (not visualization) functions of existing toolboxes on APEx. These data processing operations can then be freely combined with other algorithms hosted on APEx. Instead of a file-centric and local processing scheme of a traditional toolbox, key operations can be performed in the cloud where EO data archives are directly available as data cubes, where arbitrary extends in time and space can be extracted. Furthermore, functions from various toolboxes can be combined in a single workflow through APEx. 
 
-The process begins with an assessment of your request to estimate the effort required to cloudify the toolbox. The main
-advantage of this approach is that the specific functionality will also become available as a modular building block for
-other projects. Therefore, it is crucial to provide a compelling justification for why this feature deserves to be 'cloudified'.
+Service users may select functionalities from a toolbox that they would like to use on the APEx platform. The proposed functionalities and their toolbox will then be reviewed by ESA and APEx experts. Similar to the algorithm enhancement service, an effort estimation and an offer will be made following the review. On acceptance of the offer, the requested functionalities will be provided as an Application Package according to OGC best practice, or as an openEO User Defined Function or Process (UDF/UDP). 
 
+To ensure interoperability between procedures from different toolboxes, it is necessary to share data using standard data formats, writing intermediary files to disk. Users should consider if the flexibility of this approach outweighs the performance drawbacks and request deployment as a single, integrated package instead, if performance is critical. 
+
+Functionalities made available through the toolbox cloudification service are hosted via the APEx algorithm hosting service. A similar set of features is offered by the algorithm enhancement service, which focuses on improving maturity and performance of algorithms and preparing them for hosting on APEx. The algorithm enhancement service works together with scientists and algorithm developers to make their algorithms available on APEx. 
+
+#### Features of the Toolbox Cloudification Service 
+
+The toolbox cloudification service offers an analysis of the implementation of the toolbox and the requested processing capability. On the basis of this analysis, an implementation strategy is proposed and executed to provide the functionality outside the context of the toolbox in a fully cloud-integrated format on the APEx platform. 
+
+Projects may benefit from the toolbox cloudification service by bringing key functions from traditional desktop EO toolboxes into the cloud, where they can be integrated into large-scale processing workflows. 
+
+Toolboxes evolve over time. If a toolbox migrated to APEx, it shall be kept up to date. This requires maintenance. 
+
+#### How to use the Toolbox Cloudification Service 
+
+In order to use the toolbox cloudification service, a proposal specifies a candidate toolbox and selects key functionality for cloudification. The proposal should contain a short justification explaining the need for the selected functionality. ESA reviews the proposal and submits selected proposals to the APEx team for analysis and price offer. 
+
+In a first phase, the APEx team then makes an initial analysis of the candidate toolbox and an assessment of the associated proposal. On this basis, the team provides an assessment report to ESA. The report includes a final recommendation of the key functionality to be cloudified, a description of the specific cloudification approach, and an effort estimation (price offer). ESA decides whether to accept the offer. 
+
+On acceptance, a team of suitably qualified APEx experts undertakes the cloudification process itself, recasting or reimplementing the required functionality in cloud-hosted toolbox modules. As for the algorithm enhancement service, the main implementation pathways for these modules, will be as openEO UDFs/UDPs and/or Application Packages. The more suitable variant depends largely on the original implementation of the toolbox functionality. The newly created modules will be deployed to the APEx algorithm hosting service and thus become available for direct use and integration into larger cloud-hosted processing workflows. 
