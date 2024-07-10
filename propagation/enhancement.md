@@ -6,13 +6,13 @@ The code of the enhanced version of the algorithm will be published in a dedicat
 
 The algorithm enhancement service has two phases. In the first phase, the algorithm provider submits their existing implementation, including source code, input data, and instructions to build, install and execute their code, together with details of any external dependencies to the enhancement team. The enhancement team will then analyze the algorithm and estimate the effort for the service, which results in an offer. In the second phase, on acceptance of the offer by the provider and by ESA or later NoR, the enhancement is performed. The result of the enhancement is an APEx-integrated algorithm implementation. On the APEx platform, the newly integrated algorithm will be available either as an Application Package according to OGC best practice, or as an openEO user defined function or process (UDF/UDP). 
 
-Complementary to this service, the algorithm hosting service is responsible for hosting the algorithms prepared for hosting by the algorithm enhancement service. On the other side, the toolbox cloudification service offers a similar set of features aimed at algorithms that are already available as part of standalone software packages (toolboxes) and makes them available on the platform. 
+Complementary to this service, the [algorithm hosting service](./hosting.md) is responsible for hosting the algorithms prepared for hosting by the algorithm enhancement service. On the other side, the [toolbox cloudification service](./toolboxcloud.md) offers a similar set of features aimed at algorithms that are already available as part of standalone software packages (toolboxes) and makes them available on the platform. 
 
 #### Features of the Algorithm Enhancement Service 
 
 The algorithm enhancement service offers the following features: 
 
-- Analysis of current algorithm implementation and performance 
+- Analysis of current algorithm implementation and performance.
 - Optimization of algorithm efficiency in the context of the APEx environment. This may include switching to a distributed execution model and improving code quality.  
 - Exploitation of available APEx facilities where appropriate, e.g. replacing custom functions with equivalent pre-optimized openEO functions (or combinations thereof) already provided by APEx  
 - Delivery of an enhanced implementation of the algorithm as a first-class APEx component, available for integration in an APEx workflow.  
@@ -27,6 +27,6 @@ To use the service, the first step is to deliver the current algorithm implement
 - input data 
 - expected outputs 
 
-Once this information has been provided, the enhancement team will perform a two-phase analysis. The analysis consists of a briefer, standardized analysis phase, followed by a more thorough cost and effort estimate. On acceptance, the enhancement team will begin work to enhance and integrate the algorithm on APEx. The exact process of enhancement depends on the nature of the initial algorithm and its implementation. Depending on these conditions, the enhanced algorithm is integrated into APEx either as an OpenEO UDF/UDP or as an EOEPCA Application Package. Application Packages are based upon one or more container images implementing the algorithm in a custom environment. 
+Once this information has been provided, the enhancement team will perform a two-phase analysis. The analysis consists of a briefer, standardized analysis phase, followed by a more thorough cost and effort estimate. On acceptance, the enhancement team will begin work to enhance and integrate the algorithm on APEx. The exact process of enhancement depends on the nature of the initial algorithm and its implementation. Depending on these conditions, the enhanced algorithm is integrated into APEx either as an openEO UDF/UDP or as an OGC Application Package. Application Packages are based upon one or more container images implementing the algorithm in a custom environment. 
 
-If the algorithm was originally implemented in accordance with the APEx complience guidelines, the process can be more straightforward. In this case there will be more overlap between the libraries and design patterns used in the initial implementation and those required for an optimized APEx version, and the enhancement process will be different and less changes have to be made to the code base. 
+If the algorithm was originally implemented in accordance with the APEx compliance guidelines, the process can be more straightforward. In this case there will be more overlap between the libraries and design patterns used in the initial implementation and those required for an optimized APEx version, and the enhancement process will be different and less changes have to be made to the code base. 
