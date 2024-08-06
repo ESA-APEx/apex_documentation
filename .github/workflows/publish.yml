@@ -41,7 +41,7 @@ jobs:
           name: build-folder
           path: "_build"
 
-  deploy-documentation:
+  deploy-documentation-ghpages:
     runs-on: ubuntu-latest
     needs: build-documentation
     permissions:
@@ -67,7 +67,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "Github Actions"
     - name: Create git subtree
-      run: git subtree add --prefix _build origin docportal
+      run: git subtree add --prefix _build -b docportal
       
     - name: Download build folder
       uses: actions/download-artifact@v3
@@ -76,4 +76,4 @@ jobs:
         path: _build
 
     - name: Commit
-      run: git add _build && git commit -m "build - production deploy" && git subtree push --prefix _build origin docportal
+      run: git add _build && git commit -m "build - production deploy" && git subtree push --prefix _build origin docportal --force
