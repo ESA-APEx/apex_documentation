@@ -8,6 +8,9 @@ The algorithm hosting service supports result propagation through an algorithm c
 access to available algorithms. Users and other projects can also easily onboard their own algorithms, fostering
 collaboration and innovation within the EO community.
 
+For engagement with stakeholders of the algorithm, APEx collaborates closely with the [Stakeholder Engagement Facility](https://esa-sef.eu/).
+This project will provide outreach and training towards users, to maximize the uptake.
+
 To ensure smooth integration, algorithms onboarded to the service must adhere
 to [interoperability guidelines](../interoperability/algohosting.md). These guidelines ensure algorithms are constructed
 to be published in the APEx catalogue, promoting their availability as reusable, on-demand processes aligned with FAIR
