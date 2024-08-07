@@ -80,6 +80,7 @@ jobs:
           git checkout docportal  || git checkout --orphan docportal
           git rm -rf .
           cp -r _build/* .
-          git add .
+          git rm -rf _build
+          git add . ':!_build'
           git commit -m "chore: update of documentation"
           git push --force origin docportal
