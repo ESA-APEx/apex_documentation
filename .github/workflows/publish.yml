@@ -81,6 +81,6 @@ jobs:
           git rm -rf .
           cp -r _build/* .
           git rm -rf _build
-          git add . ':!_build'
+          git add .
           git commit -m "chore: update of documentation"
           git push --force origin docportal
