@@ -1,9 +1,63 @@
-<mxfile host="app.diagrams.net" modified="2024-08-07T13:32:39.220Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.5.4" etag="GfSIOGZzGyY-ckHeHIVR" type="github">
+<mxfile host="app.diagrams.net" modified="2024-08-07T13:47:48.498Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="bvgCxV9BmF3tOsLXcTQa" version="24.5.4" type="github">
   <diagram name="Pagina-1" id="cWpOxFQT7vOOgeqUXzXq">
-    <mxGraphModel>
+    <mxGraphModel dx="1647" dy="940" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-14" value="hosted on" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cVpa62v2-vNYlevqQ_fg-6" target="cVpa62v2-vNYlevqQ_fg-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-22" value="adheres to" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cVpa62v2-vNYlevqQ_fg-6" target="cVpa62v2-vNYlevqQ_fg-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-6" value="Application Algorithm Definition" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.product;" vertex="1" parent="1">
+          <mxGeometry x="268.5" y="570" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-9" value="owns" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cVpa62v2-vNYlevqQ_fg-8" target="cVpa62v2-vNYlevqQ_fg-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-8" value="EO Application Project" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=actor;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="258.5" y="450" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-10" value="Algorithm Catalog" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="540.5" y="570" width="131.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-12" value="curates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cVpa62v2-vNYlevqQ_fg-11" target="cVpa62v2-vNYlevqQ_fg-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-11" value="APEx consortium" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=actor;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="540.5" y="450" width="132" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-13" value="openEO API OR&lt;br&gt;OGC Processes API" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=interface;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="268.5" y="700" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-20" value="adheres to" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cVpa62v2-vNYlevqQ_fg-15" target="cVpa62v2-vNYlevqQ_fg-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-15" value="Algorithm Hosting&lt;br&gt;Platform" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="458.5" y="700" width="131.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cVpa62v2-vNYlevqQ_fg-13" target="cVpa62v2-vNYlevqQ_fg-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cVpa62v2-vNYlevqQ_fg-17" target="cVpa62v2-vNYlevqQ_fg-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-17" value="Platform operator" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=actor;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="660" y="700" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-18" value="operates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cVpa62v2-vNYlevqQ_fg-17" target="cVpa62v2-vNYlevqQ_fg-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-19" value="Hosting platform&lt;br&gt;guidelines" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=contract;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="459" y="820" width="131" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-21" value="Algorithm Provider&lt;br&gt;guidelines" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=contract;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="50" y="575" width="120" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="cVpa62v2-vNYlevqQ_fg-23" value="registered in" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cVpa62v2-vNYlevqQ_fg-6" target="cVpa62v2-vNYlevqQ_fg-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
