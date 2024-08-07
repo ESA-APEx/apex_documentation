@@ -66,14 +66,17 @@ jobs:
       run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "Github Actions"
-    - name: Create git subtree
-      run: git subtree add --prefix _build -b docportal
-      
+
     - name: Download build folder
       uses: actions/download-artifact@v3
       with:
         name: build-folder
-        path: _build
+        path: ./_build
 
-    - name: Commit
-      run: git add _build && git commit -m "build - production deploy" && git subtree push --prefix _build origin docportal --force
+    - name: Commit and Push to docportal branch
+      run: |
+          git checkout docportal || git checkout --orphan docportal
+          cp -r _build/* .
+          git add .
+          git commit -m "chore: update of documentation"
+          git push --force origin docportal
