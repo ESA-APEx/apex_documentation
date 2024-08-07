@@ -79,7 +79,8 @@ jobs:
       run: |
           git checkout docportal  || git checkout --orphan docportal
           git rm -rf .
+          echo '_build/' >> .gitignore
           cp -r _build/* .
-          git add -- . ':!_build'
+          git add .
           git commit -m "chore: update of documentation"
           git push --force origin docportal
