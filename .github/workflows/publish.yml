@@ -77,7 +77,8 @@ jobs:
 
     - name: Commit and Push to docportal branch
       run: |
-          git checkout docportal || git checkout --orphan docportal
+          git checkout docportal  || git checkout --orphan docportal
+          git rm -rf .
           cp -r _build/* .
           git add .
           git commit -m "chore: update of documentation"
