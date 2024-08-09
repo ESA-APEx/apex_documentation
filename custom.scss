@@ -1,47 +1,107 @@
-
 /*-- scss:defaults --*/
 
-$body-bg:  rgba(4,51,70,1);
-$body-color: #9cb5ba;
+$body-bg: rgba(4, 51, 70, 1);
+$body-color: #ced4da;
 $headings-color: white;
 $link-color: #04ae9d;
 
-$font-family-sans-serif: 'ESANotes';
-$font-size-root: 16px;
+$font-family-sans-serif: 'Arial';
+$font-size-root: 14px;
+$h1-font-size: 45px;
 
 $grid-body-width: 1200px !default;
 $grid-column-gutter-width: 2.5rem;
 
+
+$callout-bg: rgba(255, 255, 255, 0.16);
+$border-radius: 10px;
+
+// Custom HTML styles
+
+// GENERAL
 body {
-  background: linear-gradient(0deg, rgba(4,51,64,1) 0%, rgba(1,95,101,1) 50%, rgba(4,51,70,1) 100%);
+  background: linear-gradient(0deg, rgba(4, 51, 64, 1) 0%, rgba(1, 95, 101, 1) 50%, rgba(4, 51, 70, 1) 100%);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'ESANotes', Arial, sans-serif;
+  border-bottom: none !important;
 }
 
+h2 {
+  background-color: $callout-bg;
+  padding: .5rem 1rem;
+  border-radius: $border-radius
+}
+
+// SIDEBAR
+.sidebar-item {
+  margin: .5rem 0;
+}
+
+// HEADER
 #quarto-header {
   display: none;
 }
 
-.callout{
-  background-color: white;
+// CALLOUTS
+.callout {
+  background-color: $callout-bg;
+  color: white;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-right: none !important;
+  padding: 0.75rem;
 }
 .callout-header {
-  background-color: initial;
-  color: black;
+  background-color: unset !important;
+  color :white;
+  border-bottom: 1px solid #ffffff24 !important;
+  margin-bottom: .25rem !important;
+  padding-bottom: .25rem !important;
 }
 
-
-.sourceCode, pre {
-  background-color: white !important;
-  border: 1px solid white !important;
-}
-
+// CODE
 pre {
+  background-color: $callout-bg !important;
   padding: 1rem !important;
+  border: none !important;
+  border-radius: $border-radius;
 }
 
+code {
+  white-space: pre-wrap !important;
+}
+
+div.sourceCode {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.bi::before {
+  color: white !important;
+}
+
+// IMAGES
 .quarto-figure-center > figure > div td {
   text-align: left;
 }
 
+
+// TABLES
+colgroup, thead, tbody, tr, th, td {
+  border: none !important;
+}
+table {
+  border: 1px solid $callout-bg !important;
+  border-spacing: 0 !important;
+  border-collapse: separate !important;
+  border-radius: $border-radius !important;
+  overflow: hidden;
+}
+
+th {
+   background-color: $callout-bg !important;
+}
 
 /*-- scss:rules --*/
 

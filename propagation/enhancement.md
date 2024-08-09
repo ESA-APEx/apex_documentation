@@ -1,4 +1,4 @@
-### Algorithm Enhancement Service
+# Algorithm Enhancement Service
 
 The Algorithm Enhancement Service starts with an assessment of your existing work, leveraging automated benchmarks and expert review
 to enhance efficiency while maintaining the same quality within acceptable error bounds for your application.

@@ -1,4 +1,4 @@
-## Algorithm Hosting Environments
+# Algorithm Hosting Environments
 
 ESA APEx services are executed on a compliant platform. ESA Application projects are free to select any platform that complies 
 with the requirements outlined in this document.
@@ -39,13 +39,13 @@ technologies and architectures that suit their needs.
 : Interoperability requirements for algorithm hosting environments {#tbl-algohostingenv}{tbl-colwidths="[20,80]"}
 
 
-### openEO API specific requirements
+## openEO API specific requirements
 
 The algorithm environment should support applications defined as [openEO User Defined Processes (UDP)](https://api.openeo.org/#tag/User-Defined-Processes). 
 In the context of APEx, these will be executed as openEO batch jobs. The minimal requirements for an openEO backend to support this feature are described in the 
 profile called [L1B-minimal-batch-jobs]( https://openeo.org/documentation/1.0/developers/profiles/api.html#l1b-minimal-batch-jobs ).
 
-#### Open Source UDPs
+### Open Source UDPs
 
 For open source UDPs, APEx will use the 'openEO remote UDP extension', which is currently under review by the openEO community. This extension
 enables APEx to centrally store & manage the UDP definitions, using the execution platform only for the actual processing.
@@ -53,7 +53,7 @@ This to ensure consistent management of UDP definitions, safeguarding them from 
 
 We assume that this is the default case, because ESA Application projects have a strong preference for open source software.
 
-#### Private UDPs
+### Private UDPs
 
 The specification of openEO allows platforms to expose custom processes, that function like openEO UDPs but do not
 expose the underlying process graph. This situation may arise for two main reasons:
@@ -64,7 +64,7 @@ expose the underlying process graph. This situation may arise for two main reaso
   OGC Processes approach might be a better alternative.
 
 
-### OGC API Processes specific requirements
+## OGC API Processes specific requirements
 
 The algorithm environment can support applications defined as [OGC API Processes Part 3](https://docs.ogc.org/DRAFTS/21-009.html).
 This specification is still in draft, but aims to support applications that can be expressed using [Common Workflow Language](https://www.commonwl.org/).

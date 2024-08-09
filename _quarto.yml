@@ -55,5 +55,5 @@ format:
     toc: true
     toc-depth: 4
     page-layout: full
-    theme: [custom.scss]
+    theme: [cosmo, custom.scss]
 bread-crumbs: true

@@ -1,4 +1,4 @@
-### Toolbox Cloudification Service
+# Toolbox Cloudification Service
 
 The Toolbox Cloudification Service focuses on porting functionality from existing (open source) toolboxes into the EO platform
 targeted by your project. This service is designed to enhance the scalability and integration of your toolbox's features

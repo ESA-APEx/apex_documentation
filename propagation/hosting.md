@@ -1,4 +1,4 @@
-### Algorithm Hosting Service
+# Algorithm Hosting Service
 
 APEx offers an algorithm hosting service as part of its propagation services to ensure that project results remain
 accessible to the EO community beyond the project's completion. This service aims to sustain and promote the use of
@@ -24,7 +24,7 @@ generate additional revenue streams.
 By leveraging APEx’s algorithm hosting service, you can ensure that your project’s innovations continue to benefit the
 EO community long after project completion.
 
-#### How to use the service ?
+## How to use the service ?
 
 1. **Develop Your Algorithm**: As a project developer, ensure your algorithm is built according to the APEx
    interoperability guidelines for algorithm developers. This compliance ensures that your algorithm is compatible with
@@ -38,6 +38,6 @@ Interested in generating revenue from your algorithm and making it available as 
 for further instructions.
 :::
 
-#### Onboard Your Algorithm on the APEx Algorithm Catalogue
+## Onboard Your Algorithm on the APEx Algorithm Catalogue
 
 Stay tuned for more detailed instructions on how to onboard your algorithm into our catalogue.

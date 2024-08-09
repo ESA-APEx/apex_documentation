@@ -1,4 +1,4 @@
-## Algorithm Hosting
+# Algorithm Hosting
 
 @tbl-algohosting outlines the interoperability prerequisites required for algorithm developers to host heir results within
 APEx. By satisfying these requirements, APEx guarantees successful integration of project results and ensures reusability 
@@ -59,9 +59,9 @@ In general, the aim is to simplify the process of building high-quality on-deman
 : Interoperability requirements for algorithm providers {#tbl-algohosting}{tbl-colwidths="[20,80]"}
 
 
-### Best Pratices
+## Best Pratices
 
-#### Parameter naming & typing
+### Parameter naming & typing
 
 APEx proposes to standardize parameter names and types. This is best illustrated by an example: parameters such as `bounding_box`, 
 `bbox`, `aoi`, and `spatial_extent` likely refer to the same concept. However, without common conventions, algorithms might randomly 
@@ -70,7 +70,7 @@ select one of these variants, complicating the usability of the eventual algorit
 At time of writing, the actual conventions have not yet been defined. This becomes relevant when the first algorithms
 reach a state where they can be published with a fixed interface.
 
-### Licensing requirements
+## Licensing requirements
 
 For services to be hosted and curated, APEx requires the ability to execute the service. This is straightforward for fully 
 open-source algorithms, such as those licensed under the Apache 2.0 license. However, for algorithms with more restrictive licenses 
