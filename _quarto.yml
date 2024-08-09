@@ -55,5 +55,9 @@ format:
     toc: true
     toc-depth: 4
     page-layout: full
-    theme: [cosmo, custom.scss]
+    theme: [cosmo, css/custom.scss]
+    css:
+      - css/esa-header.css
+    include-in-header:
+      - html/esa-header.html
 bread-crumbs: true
