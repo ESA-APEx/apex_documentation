@@ -1,3 +1,57 @@
-.quarto-figure-center>figure>div td {
-    text-align: left;
+
+/*-- scss:defaults --*/
+
+$body-bg:  rgba(4,51,70,1);
+$body-color: #9cb5ba;
+$headings-color: white;
+$link-color: #04ae9d;
+
+$font-family-sans-serif: 'ESANotes';
+$font-size-root: 16px;
+
+$grid-body-width: 1200px !default;
+$grid-column-gutter-width: 2.5rem;
+
+body {
+  background: linear-gradient(0deg, rgba(4,51,64,1) 0%, rgba(1,95,101,1) 50%, rgba(4,51,70,1) 100%);
 }
+
+#quarto-header {
+  display: none;
+}
+
+.callout{
+  background-color: white;
+}
+.callout-header {
+  background-color: initial;
+  color: black;
+}
+
+
+.sourceCode, pre {
+  background-color: white !important;
+  border: 1px solid white !important;
+}
+
+pre {
+  padding: 1rem !important;
+}
+
+.quarto-figure-center > figure > div td {
+  text-align: left;
+}
+
+
+/*-- scss:rules --*/
+
+/* esanotes-regular - latin-ext_latin */
+@font-face {
+  font-display: swap;
+  font-family: "ESANotes";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/NotesEsaReg.otf")
+}
+
+
