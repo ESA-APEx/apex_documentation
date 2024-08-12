@@ -100,7 +100,7 @@ pre {
   border: none !important;
   border-radius: $border-radius;
 
-  code {
+  code:not(.sourceCode) {
     color: white !important;
     background-color: transparent !important;
   }
@@ -112,7 +112,7 @@ code {
 
 code:not(.sourceCode) {
   color: $link-color;
-  background-color: $body-bg;
+  background-color: $body-bg !important;
   border-radius: 5px;
   padding: .2rem .3rem !important;
 }
