@@ -101,7 +101,8 @@ pre {
   border-radius: $border-radius;
 
   code {
-    color: inherit !important;
+    color: white !important;
+    background-color: transparent !important;
   }
 }
 
@@ -111,6 +112,9 @@ code {
 
 code:not(.sourceCode) {
   color: $link-color;
+  background-color: $body-bg;
+  border-radius: 5px;
+  padding: .2rem .3rem !important;
 }
 
 div.sourceCode {
