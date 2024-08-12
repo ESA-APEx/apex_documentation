@@ -4,27 +4,63 @@ APEx offers an algorithm hosting service as part of its propagation services to 
 accessible to the EO community beyond the project's completion. This service aims to sustain and promote the use of
 algorithms developed during ESA projects, ensuring their longevity and continued utilization.
 
-The algorithm hosting service supports result propagation through an algorithm catalogue, facilitating easy browsing and
-access to available algorithms. Users and other projects can also easily onboard their own algorithms, fostering
+For engagement with stakeholders of the algorithm, APEx collaborates closely with
+the [Stakeholder Engagement Facility](https://esa-sef.eu/). This initiative will provide outreach and training towards
+users, to maximize the uptake of the onboarded algorithms.
+
+By leveraging APEx’s algorithm hosting service, you can ensure that your project’s innovations continue to benefit the
+EO community long after project completion.
+
+## Service Overview
+
+### APEx Algorithm Catalogue
+
+The algorithm hosting service supports result <u>**propagation through an algorithm catalogue**</u>, facilitating easy
+browsing and access to available algorithms. Users and other projects can also easily onboard their own algorithms,
+fostering
 collaboration and innovation within the EO community.
 
-For engagement with stakeholders of the algorithm, APEx collaborates closely with the [Stakeholder Engagement Facility](https://esa-sef.eu/).
-This project will provide outreach and training towards users, to maximize the uptake.
+### Automated Testing and Benchmarking
+
+To maintain the integrity of the algorithms, APEx conducts automated testing and benchmarking in collaboration with the
+respective project teams. This ensures that the algorithms remain functional and accessible over time.
+
+### Support for ensuring APEx compliance
 
 To ensure smooth integration, algorithms onboarded to the service must adhere
 to [interoperability guidelines](../interoperability/algohosting.md). These guidelines ensure algorithms are constructed
 to be published in the APEx catalogue, promoting their availability as reusable, on-demand processes aligned with FAIR
 data principles. Through these guidelines APEx is able to link onboarded algorithms to their execution tools and provide
-clear integration instructions.
+clear integration instructions. Projects can request <u>**additional support from APEx to guide them**</u> through this
+process and to select the appropriate algorithm hosting platform.
 
-Additionally, the algorithm hosting service supports projects in making their algorithms APEx compatible for integration
-in ESA’s Network of Resources. This enhances visibility within the EO community and offers developers opportunities to
-generate additional revenue streams.
+### Integration into ESA's Network of Resources (NoR)
 
-By leveraging APEx’s algorithm hosting service, you can ensure that your project’s innovations continue to benefit the
-EO community long after project completion.
+The service supports projects in making their algorithms APEx compatible for <u>**integration in ESA’s Network of
+Resources**</u>. This enhances visibility within the EO community and offers
+developers opportunities to generate additional revenue streams.
 
-## How to use the service ?
+## Condiserations and Project Responsiblities
+
+### Algorithm Maintenance
+
+While APEx ensures the long-term availability of the algorithm within the catalogue, the creation, maintenance, and
+updating of the algorithm remain the responsibility of the original developer or the open-source community.
+
+### Algorithm Execution
+
+Algorithm execution is carried out one of the respective APEx-compliant hosting platform. By default, APEx does not
+provide direct access to processing resources on these platforms. However, projects can request processing resources 
+through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/). When resources are requested for a
+specific algorithm, onboarded to the NoR, APEx can facilitate access to cloud processing resources on the corresponding
+platform as a broker.
+
+### Large-scale data processing
+
+For large-scale processing tasks, projects can request additional support through
+the [APEx upscaling service](./upscaling.md).
+
+## How to use the Algorithm Hosting Service?
 
 1. **Develop Your Algorithm**: As a project developer, ensure your algorithm is built according to the APEx
    interoperability guidelines for algorithm developers. This compliance ensures that your algorithm is compatible with
@@ -41,3 +77,14 @@ for further instructions.
 ## Onboard Your Algorithm on the APEx Algorithm Catalogue
 
 Stay tuned for more detailed instructions on how to onboard your algorithm into our catalogue.
+
+## Execute a service from the APEx Algorithm Catalogue
+
+::: {.callout-note title="Disclaimer"}
+APEx relies on the APEx-compliant algorithm hosting environments for algorithm execution and the provisioning of the
+corresponding cloud resources. Users wishing to execute an algorithm will need a valid account on the relevant hosting
+platform or make a request through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/).
+:::
+
+Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Catalogue.
+
