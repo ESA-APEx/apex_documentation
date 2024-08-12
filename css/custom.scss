@@ -148,6 +148,15 @@ th {
    background-color: $callout-bg !important;
 }
 
+// NAVIGATION
+
+.nav-page-text {
+  color: white;
+  &:hover {
+    color: $link-color;
+  }
+}
+
 /*-- scss:rules --*/
 
 /* esanotes-regular - latin-ext_latin */
