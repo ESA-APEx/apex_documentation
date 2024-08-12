@@ -35,7 +35,8 @@ h2:not(#toc-title) {
 
 // SIDEBAR
 .sidebar-item {
-  margin: .5rem 0;
+  margin: .5rem 0 !important;
+  line-height: var(--bs-body-line-height) !important;
   font-family: "ESANotes", Arial, sans-serif;
   font-size: 15px !important;
 }
