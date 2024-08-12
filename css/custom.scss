@@ -36,12 +36,44 @@ h2:not(#toc-title) {
 // SIDEBAR
 .sidebar-item {
   margin: .5rem 0;
+  font-family: "ESANotes", Arial, sans-serif;
+  font-size: 15px !important;
 }
 
 // HEADER
 #quarto-header {
   display: none;
 }
+
+#quarto-search-results {
+  .aa-Panel {
+    border-radius: $border-radius;
+    border: 2px solid $callout-bg !important;
+    margin-top: 5px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    .search-result-header {
+      background-color: $callout-bg !important;
+    }
+    .search-result-doc {
+      border-top: 1px solid $callout-bg !important;
+    }
+  }
+}
+
+.aa-DetachedOverlay li.aa-Item[aria-selected=false] .search-item mark.search-match, .aa-DetachedOverlay li.aa-Item[aria-selected=false] .search-item .search-match.mark, #quarto-search-results li.aa-Item[aria-selected=false] .search-item mark.search-match, #quarto-search-results li.aa-Item[aria-selected=false] .search-item .search-match.mark {
+  text-decoration: underline;
+  color: white !important;
+  background-color: $link-color !important;
+}
+
+.aa-DetachedOverlay li.aa-Item[aria-selected=true] .search-item.search-result-more,.aa-DetachedOverlay li.aa-Item[aria-selected=true] .search-item .search-result-section,.aa-DetachedOverlay li.aa-Item[aria-selected=true] .search-item .search-result-text,.aa-DetachedOverlay li.aa-Item[aria-selected=true] .search-item .search-result-title-container,.aa-DetachedOverlay li.aa-Item[aria-selected=true] .search-item .search-result-text-container,#quarto-search-results li.aa-Item[aria-selected=true] .search-item.search-result-more,#quarto-search-results li.aa-Item[aria-selected=true] .search-item .search-result-section,#quarto-search-results li.aa-Item[aria-selected=true] .search-item .search-result-text,#quarto-search-results li.aa-Item[aria-selected=true] .search-item .search-result-title-container,#quarto-search-results li.aa-Item[aria-selected=true] .search-item .search-result-text-container {
+  background-color: $link-color !important;
+}
+
+.aa-DetachedOverlay li.aa-Item[aria-selected=true] .search-item,#quarto-search-results li.aa-Item[aria-selected=true] .search-item {
+  background-color: $link-color !important;
+}
+
 
 // CALLOUTS
 .callout {
@@ -66,10 +98,18 @@ pre {
   padding: 1rem !important;
   border: none !important;
   border-radius: $border-radius;
+
+  code {
+    color: inherit !important;
+  }
 }
 
 code {
   white-space: pre-wrap !important;
+}
+
+code:not(.sourceCode) {
+  color: $link-color;
 }
 
 div.sourceCode {
