@@ -15,10 +15,12 @@ EO community long after project completion.
 
 ### APEx Algorithm Catalogue
 
-The algorithm hosting service supports result <u>**propagation through an algorithm catalogue**</u>, facilitating easy
+The algorithm hosting service supports result propagation through an algorithm catalogue, facilitating easy
 browsing and access to available algorithms. Users and other projects can also easily onboard their own algorithms,
-fostering
-collaboration and innovation within the EO community.
+fostering collaboration and innovation within the EO community.
+
+The algorithm catalogue allows visitors to execute algorithms on the corresponding APEx-compliant hosting environment.
+For more details, please refer to [this section](#execute-a-service-from-the-apex-algorithm-catalogue).
 
 ### Automated Testing and Benchmarking
 
@@ -31,13 +33,13 @@ To ensure smooth integration, algorithms onboarded to the service must adhere
 to [interoperability guidelines](../interoperability/algohosting.md). These guidelines ensure algorithms are constructed
 to be published in the APEx catalogue, promoting their availability as reusable, on-demand processes aligned with FAIR
 data principles. Through these guidelines APEx is able to link onboarded algorithms to their execution tools and provide
-clear integration instructions. Projects can request <u>**additional support from APEx to guide them**</u> through this
+clear integration instructions. Projects can request additional support from APEx to guide them through this
 process and to select the appropriate algorithm hosting platform.
 
 ### Integration into ESA's Network of Resources (NoR)
 
-The service supports projects in making their algorithms APEx compatible for <u>**integration in ESA’s Network of
-Resources**</u>. This enhances visibility within the EO community and offers
+The service supports projects in making their algorithms APEx compatible for integration in ESA’s Network of
+Resources. This enhances visibility within the EO community and offers
 developers opportunities to generate additional revenue streams.
 
 ## Condiserations and Project Responsiblities
@@ -50,7 +52,7 @@ updating of the algorithm remain the responsibility of the original developer or
 ### Algorithm Execution
 
 Algorithm execution is carried out one of the respective APEx-compliant hosting platform. By default, APEx does not
-provide direct access to processing resources on these platforms. However, projects can request processing resources 
+provide direct access to processing resources on these platforms. However, projects can request processing resources
 through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/). When resources are requested for a
 specific algorithm, onboarded to the NoR, APEx can facilitate access to cloud processing resources on the corresponding
 platform as a broker.
