@@ -16,9 +16,11 @@ The algorithm enhancement service has two phases. In the first phase, the algori
 implementation, including source code, input data, and instructions to build, install and execute their code, together
 with details of any external dependencies to the enhancement team. The enhancement team will then analyze the algorithm
 and estimate the effort for the service, which results in an offer. In the second phase, on acceptance of the offer by
-the provider and by ESA, the enhancement is performed. The result of the enhancement is an APEx-integrated algorithm
-implementation. On APEx, the newly integrated algorithm will be available either as an Application Package according to
-OGC best practice, or as an openEO User Defined Process (UDP).
+the provider and by ESA, the enhancement is performed.
+As a result, the service user receives an optimized version of their algorithm code with high code quality.
+Optionally, the enhancement procedure includes a cloudification step, where the algorithm is implemented as an openEO
+User Defined Process (UDP) or Application Package. This makes it possible to host the algorithm on an NoR platform and
+provide it as an on-demand service.
 
 Complementary to this service, the [algorithm hosting service](./hosting.md) is responsible for hosting the algorithms
 prepared for hosting by the algorithm enhancement service. On the other side,
@@ -58,5 +60,15 @@ based upon one or more container images implementing the algorithm in a custom e
 
 If the algorithm was originally implemented in accordance with the APEx compliance guidelines, the process can be more
 straightforward. In this case there will be more overlap between the libraries and design patterns used in the initial
-implementation and those required for an optimized APEx version, and the enhancement process will be different and less
+implementation and those required for an optimized APEx version, and the enhancement process will be different and fewer
 changes have to be made to the code base. 
+
+
+#### Intellectual Property Rights
+
+The intellectual property rights to their algorithm implementation remain with the algorithm authors.
+If the algorithm is an implementation of published research, the APEx team reserves itself the non-exclusive
+right to run and further develop the enhanced implementation. The algorithm provider has the right and is encouraged
+to use the enhanced code as a basis for further algorithm development.
+For proprietary algorithms, the rights to publish the source code and run the algorithm remain with the original
+property rights holder.
