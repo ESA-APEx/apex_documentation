@@ -33,6 +33,7 @@ functionality outside the context of the toolbox as a fully cloud-integrated APE
 Projects may benefit from the toolbox cloudification service by bringing key functions from traditional desktop EO
 toolboxes into the cloud, where they can be integrated into large-scale processing workflows.
 Toolboxes evolve over time. If a toolbox migrated to APEx, it shall be kept up to date. This requires maintenance.
+The procedure to support the evolution of toolboxes is yet to be defined.
 
 #### How to use the Toolbox Cloudification Service
 
