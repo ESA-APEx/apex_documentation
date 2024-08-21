@@ -48,6 +48,7 @@ website:
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
           - href: interoperability/dashboards.md
+          - href: interoperability/businessmodel.md
 
 format:
   html:
