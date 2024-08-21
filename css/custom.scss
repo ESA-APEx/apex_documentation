@@ -131,6 +131,18 @@ div.sourceCode {
   text-align: left;
 }
 
+.panel-caption, .figure-caption, figcaption {
+  color: white !important;
+  text-align: center;
+  font-style: italic;
+}
+
+  // LIST
+#quarto-document-content {
+  li {
+    margin: 0.5rem 0;
+  }
+}
 
 // TABLES
 colgroup, thead, tbody, tr, th, td {

@@ -43,6 +43,10 @@ website:
       - href: interoperability.md
         text: Interoperability and Compliance Guidelines
         contents:
+          - href: interoperability/definitions.md
+            text: Definitions
+          - href: interoperability/references.md
+            text: References
           - href: interoperability/algohosting.md
             text: Algorithm Hosting
           - href: interoperability/algohostingenv.md
