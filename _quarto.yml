@@ -44,15 +44,10 @@ website:
         text: Interoperability and Compliance Guidelines
         contents:
           - href: interoperability/definitions.md
-            text: Definitions
           - href: interoperability/references.md
-            text: References
           - href: interoperability/algohosting.md
-            text: Algorithm Hosting
           - href: interoperability/algohostingenv.md
-            text: Algorithm Hosting Environments
           - href: interoperability/dashboards.md
-            text: Dashboards
 
 format:
   html:
