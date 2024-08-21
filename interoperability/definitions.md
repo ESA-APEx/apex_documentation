@@ -5,7 +5,7 @@ understanding of the complex ecosystem in which APEx operates. Along with the ge
 visually
 demonstrates the interconnections between these concepts.
 
-![Concepts and relationships](./images/apex_definitions_actors.png){#fig-concepts}
+![Concepts and relationships](../interoperability/images/apex_definitions_actors.png){#fig-concepts}
 
 ## Concepts
 

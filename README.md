@@ -11,3 +11,18 @@ quarto preview .
 ```
 
 This command will initiate a local preview of the documentation portal, allowing you to review your changes before committing them.
+
+
+## Deliverables
+
+As the content of this repository is also represented in a deliverable, we can use the Qaurto framework to generate the content of the deliverable.
+You can preview the deliverable by exeucting the following command:
+
+```bash
+quarto preview deliverable/<name>.md
+```
+
+If you want to generate the corresponding Word document, please execute the following command:
+```bash
+quarto render deliverable/<name>.md --to docx 
+```
