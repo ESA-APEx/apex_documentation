@@ -144,6 +144,14 @@ div.sourceCode {
   }
 }
 
+// LINKS
+#quarto-document-content {
+  a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
 // TABLES
 colgroup, thead, tbody, tr, th, td {
   border: none !important;
