@@ -40,7 +40,7 @@ website:
             text: Toolbox Cloudification
           - href: propagation/intercomparison.md
             text: Algorithm Intercomparison
-      - href: interoperability.md
+      - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:
           - href: interoperability/definitions.md

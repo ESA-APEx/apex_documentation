@@ -131,7 +131,7 @@ div.sourceCode {
   text-align: left;
 }
 
-.panel-caption, .figure-caption, figcaption {
+.panel-caption, .figure-caption, figcaption, table caption {
   color: white !important;
   text-align: center;
   font-style: italic;
@@ -153,7 +153,7 @@ div.sourceCode {
 }
 
 // TABLES
-colgroup, thead, tbody, tr, th, td {
+colgroup, thead, tbody, tr, th {
   border: none !important;
 }
 table {
@@ -162,6 +162,11 @@ table {
   border-collapse: separate !important;
   border-radius: $border-radius !important;
   overflow: hidden;
+}
+
+td {
+  border-top: 1px solid $callout-bg !important;
+  border-bottom: none !important;
 }
 
 th {
