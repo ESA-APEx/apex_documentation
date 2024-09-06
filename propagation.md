@@ -54,6 +54,7 @@ is still functional.
 
 The following resources can support you in learning more about UDPs:
 
+- [APEx UDP writer guide](udp_writer_guide.md)
 - [UDP support in Python](https://open-eo.github.io/openeo-python-client/udp.html#user-defined-processes)
 - [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
 
