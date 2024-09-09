@@ -8,7 +8,7 @@ are made to increase uniformity across the APEx algorithm catalog.
 
 ### Organizing your code
 
-A UDP is simply a parametrized version of an openEO workflow, and as such we recommend that you use the same code to develop
+A UDP is simply a parametrized version of an openEO process graph, and as such we recommend that you use the same code to develop
 and test your algorithm, as you use to generate the UDP json. This ensures that your UDP is functionally equivalent to your code.
 Your code remains your own, and you only need to export the JSON UDP definition to share it with APEx.
 
@@ -46,7 +46,8 @@ avoids faulty user input.
 ### Avoid use of `save_result`
 
 Most openEO process graphs end in a `save_result`process. However, this is not recommended for UDPs, as the user may
-want to perform additional processing steps before generating the result.
+want to perform additional processing steps before generating the result. So having a `DataCube` (raster or vector) 
+as the final output is recommended unless if your service wants to enforce specific settings on how the output is to be generated.
 
 
 ### UDP documentation
