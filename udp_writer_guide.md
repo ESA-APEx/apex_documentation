@@ -31,7 +31,7 @@ Any algorithm requires spatial filtering, so we can make the life of our users e
 In other openEO processes, the spatial filtering is called `spatial_extent`, and we recommend to stick to that name as 
 long as you don't have more specific names.
 
-If you pass on the `spatial_extent' parameter to all `load_collection` processes in your UDP, then it is also allowed to
+If you pass on the `spatial_extent` parameter to all `load_collection` processes in your UDP, then it is also allowed to
 perform filtering using vector data. This conveniently allows for advanced spatial filtering use cases!
 
 #### Temporal filtering
