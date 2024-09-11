@@ -7,42 +7,87 @@
         <mxCell id="N6GLPlmMtnImIFpNGq9d-11" value="runs on" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-1" target="N6GLPlmMtnImIFpNGq9d-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N6GLPlmMtnImIFpNGq9d-1" value="Algorithm&lt;br&gt;openEO UDP" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=passive;archiType=square;" vertex="1" parent="1">
-          <mxGeometry x="210" y="590" width="100" height="65" as="geometry" />
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-1" value="Algorithm&lt;br&gt;openEO UDP" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="210" y="590" width="100" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="N6GLPlmMtnImIFpNGq9d-3" value="export_workspace&lt;br&gt;modify_stac" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;" vertex="1" parent="1">
-          <mxGeometry x="370" y="585" width="150" height="75" as="geometry" />
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-3" value="export_workspace&lt;br&gt;modify_stac" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;" vertex="1" parent="1">
+          <mxGeometry x="370" y="590" width="150" height="70" as="geometry" />
         </mxCell>
         <mxCell id="N6GLPlmMtnImIFpNGq9d-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-1" target="N6GLPlmMtnImIFpNGq9d-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N6GLPlmMtnImIFpNGq9d-5" value="STAC Catalog" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=passive;archiType=square;" vertex="1" parent="1">
-          <mxGeometry x="600" y="530" width="150" height="75" as="geometry" />
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-5" value="STAC Catalog" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="600" y="530" width="120" height="75" as="geometry" />
         </mxCell>
         <mxCell id="N6GLPlmMtnImIFpNGq9d-6" value="metadata" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-3" target="N6GLPlmMtnImIFpNGq9d-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N6GLPlmMtnImIFpNGq9d-7" value="Object Storage" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=passive;archiType=square;" vertex="1" parent="1">
-          <mxGeometry x="600" y="680" width="150" height="75" as="geometry" />
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-7" value="Object Storage" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="600" y="680" width="120" height="75" as="geometry" />
         </mxCell>
         <mxCell id="N6GLPlmMtnImIFpNGq9d-8" value="COG&lt;br&gt;NetCDF&lt;br&gt;Parquet&lt;br&gt;Zarr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-3" target="N6GLPlmMtnImIFpNGq9d-7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N6GLPlmMtnImIFpNGq9d-10" value="openEO API" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=interface;archiType=square;" vertex="1" parent="1">
-          <mxGeometry x="215" y="490" width="90" height="50" as="geometry" />
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-10" value="openEO API" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=interface;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="210" y="490" width="100" height="50" as="geometry" />
         </mxCell>
         <mxCell id="N6GLPlmMtnImIFpNGq9d-13" value="query jobs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-12" target="N6GLPlmMtnImIFpNGq9d-5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="675" y="420" />
+              <mxPoint x="630" y="450" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="N6GLPlmMtnImIFpNGq9d-14" value="track job status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-12" target="N6GLPlmMtnImIFpNGq9d-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N6GLPlmMtnImIFpNGq9d-12" value="Upscaling tools" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=comp;archiType=square;" vertex="1" parent="1">
-          <mxGeometry x="400" y="390" width="120" height="60" as="geometry" />
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-12" value="Upscaling tools" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="400" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-15" target="N6GLPlmMtnImIFpNGq9d-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-15" value="Production&lt;br&gt;Manager" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=actor;archiType=square;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="400" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-17" target="N6GLPlmMtnImIFpNGq9d-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-17" value="Status&lt;br&gt;Dashboard" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=representation;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="600" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-19" value="inspect" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-15" target="N6GLPlmMtnImIFpNGq9d-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;dashed=1;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-21" target="N6GLPlmMtnImIFpNGq9d-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-21" value="A direct connection between processing platform &amp;amp; your data storage minimizes file copy" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="730" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-23" value="Get a general overview,&lt;br&gt;or perform QA" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="560" y="230" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;dashed=1;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-23" target="N6GLPlmMtnImIFpNGq9d-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-25" value="FAIR metadata" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="700" y="440" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.558;entryY=1.06;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-5" target="N6GLPlmMtnImIFpNGq9d-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-27" value="A small &amp;amp; simple Python tool,&lt;br&gt;customize as needed." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="300" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-27" target="N6GLPlmMtnImIFpNGq9d-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-29" value="Where the actual&lt;br&gt;work happens." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="50" y="410" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="N6GLPlmMtnImIFpNGq9d-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="N6GLPlmMtnImIFpNGq9d-29" target="N6GLPlmMtnImIFpNGq9d-10">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
