@@ -5,6 +5,12 @@ This guide gives some concrete steps and guidelines to ensure that your UDP work
 written with APEx in mind, but can also serve as a general guide for openEO UDPs. Where needed, recommendations & choices 
 are made to increase uniformity across the APEx algorithm catalog.
 
+### Example cases
+
+The best way to learn how to write a UDP is to look at existing examples:
+
+ - max_ndvi_composite [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite) and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_description.md).
+
 
 ### Organizing your code
 
@@ -61,4 +67,6 @@ We recommend including these sections:
 4. **Literature references**: If your algorithm is based on scientific literature, provide references to the relevant publications.
 5. **Known limitations**: Any known limitations of the algorithm, such as the type of data it works best with, or the size of the area it can process efficiently.
 6. **Known artifacts**: Use images and plots to clearly show any known artifacts that the algorithm may produce. This helps users to understand what to expect from the algorithm.
+
+A [template](udp_description_template.md) is available to help you structure your documentation.
 
