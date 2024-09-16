@@ -1,0 +1,52 @@
+---
+title: "APEx algorithm performance"
+author: ""
+format: dashboard
+---
+
+```{ojs}
+//| output: true
+
+parser = require('https://bundle.run/wellknown@0.5.0')
+
+db = await DuckDBClient.of();
+
+urls = "['https://s3.waw3-1.cloudferro.com/swift/v1/APEx-benchmarks/metrics/v1/metrics.parquet/2024-09/gh-10884346208-0.parquet','https://s3.waw3-1.cloudferro.com/swift/v1/APEx-benchmarks/metrics/v1/metrics.parquet/2024-09/gh-10667618453-0.parquet','https://s3.waw3-1.cloudferro.com/swift/v1/APEx-benchmarks/metrics/v1/metrics.parquet/2024-09/gh-10702158113-0.parquet']"
+
+query_ = `
+SELECT avg("usage:cpu:cpu-seconds") as "cpu_avg",stddev_samp("usage:cpu:cpu-seconds") as "cpu_stddev",stddev_pop("usage:cpu:cpu-seconds"),avg("usage:duration:seconds"),avg("costs"),"scenario_id",avg("usage:network_received:b")
+FROM parquet_scan(${(urls)})  WHERE "test:outcome" = 'passed' GROUP BY "scenario_id";
+`
+
+viewof selection = Inputs.table(await db.query(query_))
+```
+
+```{ojs}
+//| output: true
+
+db2 = await DuckDBClient.of();
+
+scenario = selection[0]["scenario_id"]
+average = selection[0]["cpu_avg"]
+query_latest = `
+SELECT "usage:cpu:cpu-seconds" as cpu,"scenario_id",strptime("test:start:datetime", '%Y-%m-%dT%H:%M:%SZ')  as start_time
+FROM parquet_scan(${(urls)})  WHERE "test:outcome" = 'passed' AND "scenario_id" = '${scenario}' ORDER BY "test:start:datetime" DESC LIMIT 5;
+`
+Plot.plot({
+title: scenario + " CPU usage",
+height: 400,
+caption: "Chart showing the CPU usage of the latest 5 runs, for the selected scenario.",
+y : {
+ domain : [0,200],
+ nice: true,
+ zero: true
+},
+marks: [
+Plot.dot(await db2.query(query_latest), {x: "start_time", y: "cpu"}),
+Plot.ruleY([average]),
+Plot.frame()
+]
+})
+
+
+```

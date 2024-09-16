@@ -27,6 +27,8 @@ website:
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
+          - href: algorithm_overview/algorithm_performance.qmd
+            text: Algorithm metrics
       - href: propagation.md
         text: EO Service Support
         contents:
