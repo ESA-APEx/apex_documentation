@@ -5,6 +5,10 @@ This guide gives some concrete steps and guidelines to ensure that your UDP work
 written with APEx in mind, but can also serve as a general guide for openEO UDPs. Where needed, recommendations & choices 
 are made to increase uniformity across the APEx algorithm catalog.
 
+For more background on UDP's, or a basic tutorial on creating them, the open source Python client provides
+[a good starting point](https://open-eo.github.io/openeo-python-client/udp.html).
+
+
 ### Example cases
 
 The best way to learn how to write a UDP is to look at existing examples:
