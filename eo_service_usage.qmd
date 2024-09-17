@@ -1,0 +1,49 @@
+---
+title: "Using EO services"
+execute:
+  echo: true
+jupyter: python3
+---
+
+
+# Under construction
+
+The APEx will provide a web based user interface to discover and search available services. This interface is still under
+construction, so until that time, example processes can be found in our [GitHub algorithm repository](https://github.com/ESA-APEx/apex_algorithms/tree/main/algorithm_catalog).
+
+# Python service discovery
+
+APEx provides a Python package to discover available services. The package can be installed using pip:
+
+```bash
+pip instal esa-apex-toolbox
+```
+
+The package allows to list available services:
+
+```{python}
+from esa_apex_toolbox.algorithms import GithubAlgorithmRepository
+
+
+catalog = GithubAlgorithmRepository(
+            owner="ESA-APEx",
+            repo="apex_algorithms",
+            folder="algorithm_catalog",
+        )
+
+catalog.list_algorithms()
+```
+
+This lists the names, but we are more interested in a more convenient overview of all properties. The library for instance
+allows to construct a pandas DataFrame with all properties:
+
+```{python}
+import pandas as pd
+algorithms = {name:catalog.get_algorithm(name) for name in catalog.list_algorithms()}
+
+pd.DataFrame.from_dict(algorithms,orient='index')
+```
+
+# openEO services
+
+Documentation on how to invoke [openEO based services](eo_service_usage/openeo_usage.md).
