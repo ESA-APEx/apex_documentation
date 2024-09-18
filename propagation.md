@@ -34,7 +34,7 @@ specific end-user application, such as the Green Transition Information Factorie
 ## How to build an on-demand service?
 
 The easiest and most cost-effective way to build these on-demand services is to use an existing platform that is onboarded 
-in the[ESA Network of Resources (NoR)](https://nor-discover.org/en/portfolio/). It is important to note that APEx itself is _not_ 
+in the [ESA Network of Resources (NoR)](https://nor-discover.org/en/portfolio/). It is important to note that APEx itself is _not_ 
 a processing platform, but rather promotes the reuse of existing platforms.This approach also allows project consortia the option to build their own platform, 
 provided they comply with the established [guidelines](interoperability/algohostingenv.md).
 
@@ -54,7 +54,8 @@ is still functional.
 
 The following resources can support you in learning more about UDPs:
 
-- [APEx UDP writer guide](udp_writer_guide.md)
+- [APEx openEO process (UDP) writer guide](udp_writer_guide.md#sec-udp-writing)
+- [APEx openEO process (UDP) integration guide](udp_writer_guide.md#sec-udp-integration)
 - [UDP support in Python](https://open-eo.github.io/openeo-python-client/udp.html#user-defined-processes)
 - [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
 
