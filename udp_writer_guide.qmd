@@ -95,7 +95,8 @@ An example json is provided below. The properties to modify are listed here:
 - *title*: a descriptive title
 - *description*: a detailed description of the process
 - *contacts*: a list of contacts, with at least one principal investigator
-- *keywords*: a list of keywords
+- *keywords*: a list of free form keywords
+- *themes*: Applicable concepts from a scheme. Concepts can be found in the [ESA Data Ontology](https://data.esa.int/esado) 
 - *license*: the license under which the process is published. You can use the [SPDX license list](https://spdx.org/licenses/) for this. Proprietary licenses are possible, within the terms of your ESA project.
 
 The *links* section is crucial, the following "rel" values are mandatory:
@@ -174,7 +175,13 @@ allowing to understand what the link is about.
         ]
       }
     ],
-    "themes": [],
+    "themes": [ {
+        "concepts": [
+          { "id": "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)" },
+          { "id": "Sentinel-2 MSI" }
+        ],
+        "scheme": "https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+      }],
     "formats": [
       "GeoTiff", "netCDF"
     ],
@@ -248,7 +255,8 @@ Example benchmark definition:
 ]
 ```
 
-Note how each benchmark scenario references
+Note how each benchmark scenario references:
+
 - the target openEO backend to use.
 - an openEO process graph to execute.
   The process graph will typically just contain a single node
