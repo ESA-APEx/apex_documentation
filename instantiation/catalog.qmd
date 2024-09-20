@@ -1,0 +1,31 @@
+
+# STAC metadata catalog user guide
+
+## Introduction
+
+Requesting a dedicated STAC catalog for your project, allows you to keep track of input data, intermediate results, and versions of final products.
+
+If you don't know what STAC is, we recommend that you familiarize yourself with the [basic concepts](https://stacspec.org/en) first.
+Especially organizations responsible for data management or data processing in a project are very likely to have a need 
+for STAC metadata. Also if FAIR data principles are important to you, you should consider using a catalog.
+
+## What does APEx offer
+
+You will get a dedicated STAC catalog, managed by the APEx team. This gives you full control over the metadata, without
+having to worry about IT aspects such as security, backup or monitoring the service.
+The catalog supports creating both private and public collections.
+
+The data storage itself is _not_ included in the catalog. We recommend requesting object storage access with one of the
+cloud providers in the NoR.
+
+The catalog offers a REST HTTP API. It can be browsed visually using [STAC browser](https://radiantearth.github.io/stac-browser/#/?.language=en).
+
+The metadata creation process is not automated. You will have to provide the metadata in a JSON format. The catalog gives
+you full freedom in terms of STAC extension that you want to use.
+
+## What software is used under the hood
+
+The catalog is currently based on [stac-fastapi-elasticsearch-opensearch](https://github.com/stac-utils/stac-fastapi-elasticsearch-opensearch).
+The database is a managed opensearch instance running on open telekom cloud.
+
+The APEx team can roll out software upgrades if needed, but cannot provide support for custom software development.
