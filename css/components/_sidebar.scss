@@ -1,0 +1,20 @@
+.sidebar-item {
+  margin: .5rem 0 !important;
+  line-height: var(--bs-body-line-height) !important;
+  font-family: "ESANotes", Arial, sans-serif;
+  font-size: 15px !important;
+  opacity: 1.0 !important;
+}
+
+#quarto-document-content {
+  li {
+    margin: 0.5rem 0;
+  }
+}
+
+#quarto-margin-sidebar {
+  li {
+    color: var(--white) !important;
+    opacity:  1.0 !important;
+  }
+}
