@@ -16,7 +16,7 @@ if needed.
 
 The best way to learn how to write a UDP is to look at existing examples:
 
- - max_ndvi_composite [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite) and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_description.md).
+ - `max_ndvi_composite`: [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite) and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_description.md).
 
 
 ### Organizing your code
@@ -105,7 +105,7 @@ The *links* section is crucial, the following "rel" values are mandatory:
 - *service*: at least one link to an openEO backend that is able to execute the process
 - *example*: at least one link to a STAC metadata file that shows the output of the process
 
-The 'type' field of these links should be set to 'application/json'. Please provide a descriptive 'title' for each link,
+The _type_ field of these links should be set to _application/json_. Please provide a descriptive _title_ for each link,
 allowing to understand what the link is about.
 
 
