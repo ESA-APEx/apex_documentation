@@ -29,3 +29,33 @@ The catalog is currently based on [stac-fastapi-elasticsearch-opensearch](https:
 The database is a managed opensearch instance running on open telekom cloud.
 
 The APEx team can roll out software upgrades if needed, but cannot provide support for custom software development.
+
+## How to integrate the catalog in your project architecture
+
+The role of the STAC catalog, is in essence to facilitate data discovery and exchange between different components in your
+project. By the use of a shared metadata language, components can be decoupled and still work together. It allows different
+project partners also to work together, even if they use different software stacks.
+
+We list some common cases below. 
+
+### Data set viewing
+
+Data viewing is one of the most basic use cases. Most viewer implementations traditionally require to ingest data in a viewer
+specific database. However, when metadata is sufficiently rich, and the viewer understands STAC, it can directly query the
+STAC catalog, as long as it's sufficiently responsive for the low latency requirements of the viewer.
+
+### Data processing
+
+In the most basic case, a processing component simply stores final products in the catalog. Sufficiently advanced processing
+systems will immediately generate STAC metadata, and may even allow writing into the catalog API directly. They also record 
+data provenance, which is a key aspect of FAIR data principles.
+
+In a more advanced case, the processing workflow requires storing intermediate products, or preprocessed ancillary data sets.
+Also then, the STAC catalog can be used to keep track of these data sets. By doing so, the processing component can simply read
+required inputs from STAC, and store (intermediate) results back into the catalog.
+
+### Machine learning datasets
+
+A more advanced but increasingly common use case is to use a catalog to track reference data sets, as well as training patches 
+in a STAC catalog. Here we again have a pattern where various components like the EO processing system, model training scripts and
+reference data management system all work together around a central metadata store.
