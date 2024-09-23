@@ -7,12 +7,13 @@ and allows project partners to focus on earth observation applications.
 The following services can currently be requested from APEx:
 
 - Project portal
-- STAC metadata catalog
+- [STAC metadata catalog](./instantiation/catalog.qmd)
 
 
 The following services are expected in the coming months:
 
 - Forum
+- [Markdown documentation portal](./instantiation/documentation.qmd)
 - Geospatial data explorer
 - JupyterLab environment
 - Hosted QGis
