@@ -5,9 +5,9 @@ The content generation is facilitated by [Quarto](https://quarto.org/), an open-
 
 ## Installing Python dependencies
 
-Some of the documentation pages can contain Python code to provide interactive visualization or dynamic page building. 
-In order to support the generation of these pages, it is important to install all the required dependencies.
-This can be achieved by executing the following command
+Some documentation pages may include Python code to enable interactive visualizations or dynamic content generation. 
+To support the creation of these pages, it's essential to install all the necessary dependencies. This can be done by 
+executing the following command:
 
 ```bash
 pip install -r requirements.txt
