@@ -1,2 +1,3 @@
+jupyter
 git+https://github.com/ESA-APEx/esa-apex-toolbox-python.git@main
 pandas
