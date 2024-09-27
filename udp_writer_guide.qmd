@@ -16,7 +16,7 @@ if needed.
 
 The best way to learn how to write a UDP is to look at existing examples:
 
- - `max_ndvi_composite`: [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite) and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_description.md).
+ - `max_ndvi_composite`: [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite) and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_files/max_ndvi_composite_description.md).
 
 
 ### Organizing your code
@@ -25,7 +25,7 @@ A UDP is simply a parametrized version of an openEO process graph, and as such w
 and test your algorithm, as you use to generate the UDP json. This ensures that your UDP is functionally equivalent to your code.
 Your code remains your own, and you only need to export the JSON UDP definition to share it with APEx.
 
-It is however advisable for your UDP to link back to the git repository if relevant, making your open source code more 
+It is however advisable for your UDP to link back to a public git repository if available, making your open source code more 
 discoverable. 
 
 ### How many UDPs should I write?
@@ -36,6 +36,11 @@ a limited set of parameters, and write a single UDP for each piece.
 
 
 ### Parameter conventions
+
+This section provides some recommendations on how to name parameters in your UDP. While these are not mandatory, we recommend
+to consider them to avoid that users of the algorithm catalog would be confused by variations in process parameter names.
+
+Please [let us know](https://github.com/ESA-APEx/apex_documentation/issues) if you encounter a parameter that could use a convention, and we will add it here.
 
 #### Spatial filtering
 
@@ -49,7 +54,8 @@ perform filtering using vector data. This conveniently allows for advanced spati
 
 #### Temporal filtering
 
-For UDP's that support arbitrary temporal ranges, the `temporal_extent` parameter from `load_collection` is the recommended option.
+For openEO processes that support arbitrary temporal ranges, we recommend using temporal_extent as the name of parameter to ensure
+consistency with other openEO processes, such as load_collection.
 
 Many cases also require a time range with a fixed length. In such a case, you can allow to specify only the start or end
 date, and use the `date_shift` process to construct the second date in the temporal interval, ensuring a fixed length. This
@@ -75,7 +81,7 @@ We recommend including these sections:
 5. **Known limitations**: Any known limitations of the algorithm, such as the type of data it works best with, or the size of the area it can process efficiently.
 6. **Known artifacts**: Use images and plots to clearly show any known artifacts that the algorithm may produce. This helps users to understand what to expect from the algorithm.
 
-A [template](udp_description_template.md) is available to help you structure your documentation.
+A [template](https://github.com/ESA-APEx/apex_documentation/blob/main/udp_description_template.md) is available to help you structure your documentation.
 
 ## Integrating your openEO process (UDP) in APEx {#sec-udp-integration}
 
@@ -220,7 +226,7 @@ It also helps to ensure that the openEO backend provider you selected is perform
 service do not break your process.
 
 APEx requires at least one check, to be able to correctly mark process that are (temporarily) unavailable. When this happens
-the 'principal investigator' is informed, allowing to take action as desired. 
+the 'principal investigator', as defined in the JSON of the previous step, is informed, allowing to take action as desired. 
 
 The benchmark scenarios are defined as JSON files
 in the [`benchmark_scenarios`](https://github.com/ESA-APEx/apex_algorithms/tree/main/benchmark_scenarios) folder.
