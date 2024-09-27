@@ -7,6 +7,7 @@ Services can be executed through the tools that are provided by the different pr
 For OpenEO based services, there is an online user interface, web editor, Client Libraries (JavaScript, Python, R) and API.
 
 There are several ways to discover how a service can be executed. When publishing a service on the APEx, a service provider can choose to provide the following information in the service details:
+
 * An executable link which redirects the user to the user interface of the processing platform. If this is the case, an **Access app** button will appear when opening an EOplaza service.
 * Sample code in the service description on how to execute a service. 
 
@@ -46,6 +47,7 @@ Just use the 'developer tools' of your favourite browser and inspect HTTP reques
 ## Client libraries
 
 OpenEO provides client libraries to support the creation and execution of JavaScript, Python and R services. The full client libraries documentation is available on the official OpenEO support pages:
+
 * [JavaScript](https://openeo.org/documentation/1.0/javascript/)
 * [Python](https://openeo.org/documentation/1.0/python/)
 * [R](https://openeo.org/documentation/1.0/r/ )

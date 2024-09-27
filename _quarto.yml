@@ -22,7 +22,7 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
-      - href: eo_service_usage.md
+      - href: eo_service_usage.qmd
         text: On-demand EO services
         contents:
           - href: eo_service_usage/openeo_usage.md
@@ -42,18 +42,24 @@ website:
             text: Algorithm Intercomparison
       - href: udp_writer_guide.qmd
         text: Creating openEO based services
-      - href: interoperability.md
+      - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:
+          - href: interoperability/definitions.md
+          - href: interoperability/references.md
           - href: interoperability/algohosting.md
-            text: Algorithm Hosting
           - href: interoperability/algohostingenv.md
-            text: Algorithm Hosting Environments
+          - href: interoperability/dashboards.md
+          - href: interoperability/businessmodel.md
 
 format:
   html:
     toc: true
     toc-depth: 4
     page-layout: full
-    theme: cosmo
+    theme: [cosmo, css/custom.scss]
+    highlight-style: solarized
+    include-in-header:
+      - html/blur.html
+      - html/esa-header.html
 bread-crumbs: true
