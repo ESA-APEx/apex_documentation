@@ -40,6 +40,8 @@ website:
             text: Toolbox Cloudification
           - href: propagation/intercomparison.md
             text: Algorithm Intercomparison
+      - href: udp_writer_guide.qmd
+        text: Creating openEO based services
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:
