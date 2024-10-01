@@ -107,8 +107,6 @@ ESA has recognized that this often involve specific IT skills that may not be pr
 would consume a large part of the project budget. Therefore, we aim to reduce these burdens as much as possible by providing 
 the following services:
 
-
-
 * **[Algorithm Hosting](propagation/hosting.md)**
     <br/>xplore how APEx can assist in hosting your algorithms within an APEx-compatible environment and sharing them across the EO community.
 * **[Algorithm Upscaling](propagation/upscaling.md)**
@@ -119,3 +117,7 @@ the following services:
   <br/>Turn the features of your favorite toolbox into cloud-based building blocks with APEx.
 * **[Algorithm Intercomparison](propagation/intercomparison.md)**
   <br/>Learn how APEx facilitates comparing algorithms and workflows to aid decision-making.
+
+Not sure which services are useful for your project? Please visit our [use cases](/propagation/usecases.md) page, where 
+you'll find various project scenarios and see how APEx supports them.
+

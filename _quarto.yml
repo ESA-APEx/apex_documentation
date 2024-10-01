@@ -27,9 +27,11 @@ website:
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
-      - href: propagation.md
+      - href: propagation/index.md
         text: EO Service Support
         contents:
+          - href: propagation/usecases.md
+            text: Use Cases
           - href: propagation/hosting.md
             text: Algorithm Hosting
           - href: propagation/upscaling.md
