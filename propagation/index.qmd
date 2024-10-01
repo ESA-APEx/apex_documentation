@@ -118,8 +118,42 @@ the following services:
 * **[Algorithm Intercomparison](intercomparison.md)**
   <br/>Learn how APEx facilitates comparing algorithms and workflows to aid decision-making.
 
+The chart below shows how a project can use the different APEx Propagation Services. 
+
+```{mermaid}
+%%{init: {"elk": {"mergeEdges": true}, "flowchart": {"diagramPadding": 20, "nodeSpacing": 75, "defaultRenderer": "elk", "padding": 50}} }%%
+flowchart TD
+    subgraph START[" "]
+    direction LR
+       ONBOARD_START[I want to onboard my algorithm onto the APEx] 
+       UPSCALE_START[I want to use my algorithm for large scale data processing]
+       ENHANCEMENT_START[I have a performance issue with my algorithm]
+       TOOLBOX_START[I have a desktop-based toolbox that I want to use in the cloud.]
+    end
+
+    ONBOARD_START --> APEX_COMPLIANT{Is my algorithm<br/>APEx-compliant?}
+    APEX_COMPLIANT --> | Yes | ALGO_HOSTING(Algorithm Hosting Service):::highlight
+    APEX_COMPLIANT --> | No | CLOUD_COMPLIANT{Can my algorithm<br/>be executed<br />on the cloud?}
+    CLOUD_COMPLIANT --> | Yes | GUIDELINES[Implement APEx Interoperability and Compliancy Guidelines]
+    GUIDELINES --> GUIDELINES_SUPPORT{Need support?}
+    GUIDELINES_SUPPORT --> | Yes | ALGO_HOSTING
+    GUIDELINES_SUPPORT --> | No | ALGO_HOSTING
+    CLOUD_COMPLIANT --> | No | TOOLBOX_CLOUDIFICATION(Toolbox Cloudficiation Service):::highlight
+    TOOLBOX_CLOUDIFICATION -.-> ALGO_HOSTING
+
+
+    UPSCALE_START --> | Prerequisite | APEX_COMPLIANT
+    UPSCALE_START --> ALGO_UPSCALING(Algorithm Upscaling Service):::highlight
+
+    ENHANCEMENT_START --> ALGO_ENHANCMENT(Algorithm Enhancement Service):::highlight
+
+    TOOLBOX_START --> TOOLBOX_CLOUDIFICATION
+       
+    classDef highlight fill:#008E7A    
+```
+
 :::{.callout-tip}
-Not sure which services are useful for your project? Please visit our [use cases](usecases.md) page, where 
-you'll find various project scenarios and see how APEx supports them.
+## Not sure which services are useful for your project? 
+Please visit our [use cases](usecases.md) page, where you'll find various project scenarios and see how APEx supports them.
 :::
 

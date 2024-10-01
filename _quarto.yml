@@ -27,7 +27,7 @@ website:
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
-      - href: propagation/index.md
+      - href: propagation/index.qmd
         text: EO Service Support
         contents:
           - href: propagation/usecases.md
