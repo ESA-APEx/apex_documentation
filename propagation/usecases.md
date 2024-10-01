@@ -15,6 +15,10 @@ Below are several use cases that demonstrate how these services can be applied t
 * A project is already utilizing APEx-compliant technology and seeks to integrate features from non-APEx-compliant, 
 desktop-based software into their workflow or algorithm.
 
+### Examples
+
+* 
+
 ### Solution
 The [APEx Toolbox Cloudfication](toolboxcloud.md) service aims to convert features from desktop based software into 
 cloud-based services that adhere to APEx standards, enabling seamless integration with cloud resources and existing 
@@ -31,6 +35,10 @@ to utilize these features as reusable, on-demand services on existing hosting pl
 ### Problem
 A project is experiencing performance issues when running its algorithm.
 
+### Examples
+
+* 
+
 ### Solution
 The [APEx Algorithm Enhancement](enhancement.md) service provides support for optimizing your algorithm. Through a structured 
 approach, the algorithm is analyzed and improved for better performance.
@@ -46,6 +54,10 @@ The algorithm's performance is significantly improved.
 A project has developed an openEO processing graph and seeks to:
 * Enable the service for reuse as an on-demand service.
 * Make it accessible through the APEx Algorithm Catalogue.
+
+### Examples
+
+* 
 
 ### Solution
 The [APEx Interoperability and Compliance Guidelines](../interoperability/algohosting.md) provide a starting point for 
@@ -66,6 +78,10 @@ the EO community as an APEx-compliant service.
 A project has developed a non-openEO based workflow and seeks to:
 * Enable the service for reuse as an on-demand service.
 * Make it accessible through the APEx Algorithm Catalogue.
+
+### Examples
+
+*
 
 ### Solution
 This process requires the workflow developer to select one of the following options:
@@ -89,6 +105,10 @@ Catalogue, enhancing its visibility and usability within the EO community as an 
 ### Problem
 A project is currently testing and validating a data processing pipeline on a limited subset of data and aims to upscale 
 this pipeline for production, large-scale data processing.
+
+### Examples
+
+*
 
 ### Solution
 The [APEx Upscaling Service](upscaling.md) provides tools and support to assist projects in automating and scaling their 
