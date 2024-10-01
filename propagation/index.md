@@ -26,7 +26,7 @@ also in ESA network of resources, but for now can be activated by contacting the
 ## What is an on-demand service?
 
 An APEx-compliant on-demand service is available eiter as an openEO User Defined Process (UDP) or as an OGC API Process and
-must meet a set of [compliance guidelines](interoperability/algohosting.md). A key requirement is that the service must 
+must meet a set of [compliance guidelines](../interoperability/algohosting.md). A key requirement is that the service must 
 remain available beyond the lifetime of the ESA application project. This ensures that projects results can be generated 
 by anyone via graphical user interfaces offered by APEx, or a user interface purpose-built for a 
 specific end-user application, such as the Green Transition Information Factories.
@@ -36,7 +36,7 @@ specific end-user application, such as the Green Transition Information Factorie
 The easiest and most cost-effective way to build these on-demand services is to use an existing platform that is onboarded 
 in the [ESA Network of Resources (NoR)](https://nor-discover.org/en/portfolio/). It is important to note that APEx itself is _not_ 
 a processing platform, but rather promotes the reuse of existing platforms.This approach also allows project consortia the option to build their own platform, 
-provided they comply with the established [guidelines](interoperability/algohostingenv.md).
+provided they comply with the established [guidelines](../interoperability/algohostingenv.md).
 
 ### Building an openEO UDP based service
 
@@ -54,8 +54,8 @@ is still functional.
 
 The following resources can support you in learning more about UDPs:
 
-- [APEx openEO process (UDP) writer guide](udp_writer_guide.md#sec-udp-writing)
-- [APEx openEO process (UDP) integration guide](udp_writer_guide.md#sec-udp-integration)
+- [APEx openEO process (UDP) writer guide](../udp_writer_guide.qmd#sec-udp-writing)
+- [APEx openEO process (UDP) integration guide](../udp_writer_guide.qmd#sec-udp-integration)
 - [UDP support in Python](https://open-eo.github.io/openeo-python-client/udp.html#user-defined-processes)
 - [Jupyter notebook example](https://github.com/Open-EO/openeo-community-examples/blob/main/python/Sentinel1_Stats/Sentinel1_Stats.ipynb)
 - [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
@@ -107,17 +107,17 @@ ESA has recognized that this often involve specific IT skills that may not be pr
 would consume a large part of the project budget. Therefore, we aim to reduce these burdens as much as possible by providing 
 the following services:
 
-* **[Algorithm Hosting](propagation/hosting.md)**
+* **[Algorithm Hosting](hosting.md)**
     <br/>xplore how APEx can assist in hosting your algorithms within an APEx-compatible environment and sharing them across the EO community.
-* **[Algorithm Upscaling](propagation/upscaling.md)**
+* **[Algorithm Upscaling](upscaling.md)**
   <br/>Learn how APEx enables the execution of algorithms at scale.
-* **[Algorithm Enhancement](propagation/enhancement.md)**
+* **[Algorithm Enhancement](enhancement.md)**
   <br/>Discover how APEx supports improving the performance of your algorithms or workflows.
-* **[Toolbox Cloudification](propagation/toolboxcloud.md)**
+* **[Toolbox Cloudification](toolboxcloud.md)**
   <br/>Turn the features of your favorite toolbox into cloud-based building blocks with APEx.
-* **[Algorithm Intercomparison](propagation/intercomparison.md)**
+* **[Algorithm Intercomparison](intercomparison.md)**
   <br/>Learn how APEx facilitates comparing algorithms and workflows to aid decision-making.
 
-Not sure which services are useful for your project? Please visit our [use cases](/propagation/usecases.md) page, where 
+Not sure which services are useful for your project? Please visit our [use cases](usecases.md) page, where 
 you'll find various project scenarios and see how APEx supports them.
 
