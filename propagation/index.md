@@ -118,6 +118,8 @@ the following services:
 * **[Algorithm Intercomparison](intercomparison.md)**
   <br/>Learn how APEx facilitates comparing algorithms and workflows to aid decision-making.
 
+:::{.callout-tip}
 Not sure which services are useful for your project? Please visit our [use cases](usecases.md) page, where 
 you'll find various project scenarios and see how APEx supports them.
+:::
 
