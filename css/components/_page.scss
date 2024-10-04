@@ -11,6 +11,10 @@ p, li {
   opacity: var(--opacity);
 }
 
+li p {
+  opacity: 1.0;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
