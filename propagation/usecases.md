@@ -8,27 +8,25 @@ Below are several use cases that demonstrate how these services can be applied t
 
 ---
 
-## Use Case 1: Transforming existing desktop software into an on-demand, reusable, APEx-compliant service
+## Use Case 1: Transforming an existing toolbox into an on-demand, reusable, APEx-compliant service
 
 ### Problem
 
-* A project has been using desktop software to perform EO data processing tasks but now wants to deploy this software as an
-[on-demand service](index.md#what-is-an-on-demand-service) in a cloud-based, APEx-compliant environment.
-
-* A project is already utilizing APEx-compliant technology and seeks to integrate features from non-APEx-compliant, 
-desktop-based software into their workflow or algorithm.
+A project has been using a toolbox to perform EO data processing tasks but now wants to integrate a specific set of features 
+from this toolbox into an openEO processing graph or include it within a CWL workflow.
 
 ### Examples
 
 * 
 
 ### Solution
-The [APEx Toolbox Cloudfication](toolboxcloud.md) service aims to convert features from desktop based software into 
-cloud-based services that adhere to APEx standards, enabling seamless integration with cloud resources and existing 
-platforms.
+The [APEx Toolbox Cloudfication](toolboxcloud.md) service aims to convert a subset of features from an existing toolbox into 
+cloud-based services that comply with APEx standards, enabling seamless integration with cloud resources and existing 
+platforms. The cloudification efforts focus on the core functions provided by the toolbox and do not include user interface 
+elements.
 
 ### Outcome
-Key features of the desktop software become accessible via openEO or as an OGC Application Package, allowing the project 
+Key features of the toolbox become accessible via an openEO process or as an OGC Application Package, allowing the project 
 to utilize these features as reusable, on-demand services on existing hosting platforms.
 
 ---
@@ -36,38 +34,43 @@ to utilize these features as reusable, on-demand services on existing hosting pl
 ## Use Case 2: Improving algorithm performance
 
 ### Problem
-A project is experiencing performance issues when running its algorithm.
+A project is facing performance issues with:
+
+1. An algorithm that is already available as an openEO processing graph or an OGC Application Package.
+2. An algorithm that has not yet been implemented as an openEO processing graph or OGC Application Package.
 
 ### Examples
 
 * 
 
 ### Solution
-The [APEx Algorithm Enhancement](enhancement.md) service provides support for optimizing your algorithm. Through a structured 
-approach, the algorithm is analyzed and improved for better performance.
+The [APEx Algorithm Enhancement](enhancement.md) service offers support to optimize your algorithm through a structured 
+analysis and improvement process. In the case of scenario 2, the APEx team will also assess whether performance can be enhanced 
+by integrating the algorithm into APEx-compliant technologies, such as openEO or OGC Application Package. If so, the 
+[APEx Toolbox Cloudification](toolboxcloud.md) service can be recommended to transform the algorithm into an openEO process or 
+OGC Application Package.
 
 ### Outcome
 The algorithm's performance is significantly improved.
 
 ---
 
-## Use Case 3: Transforming an existing openEO processing graph into an APEx-compliant service and onboarding it on the APEx Algorithm Catalogue
+## Use Case 3: Onboarding an existing openEO UDP or OGC Application Package onto the APEx catalogue
 
 ### Problem
-A project has developed an openEO processing graph and seeks to:
-* Enable the service for reuse as an on-demand service.
-* Make it accessible through the APEx Algorithm Catalogue.
+A project has packaged its algorithm into an openEO UDP or OGC Application Package and wants to onboard it to the APEx Algorithm Catalogue.
 
 ### Examples
 
 * 
 
 ### Solution
-The [APEx Interoperability and Compliance Guidelines](../interoperability/algohosting.md) provide a starting point for 
-algorithm and workflow developers to understand how to prepare their openEO processing graph for integration with the 
-APEx catalogue. After preparing the processing graph, or if further assistance is required, the 
-[APEx Algorithm Hosting](hosting.md) service can offer additional support with both the implementation of the guidelines 
-and the onboarding process into the APEx Algorithm Catalogue.
+The [APEx Interoperability and Compliance Guidelines](../interoperability/algohosting.md) serve as a starting point for 
+algorithm and workflow developers to prepare their openEO processing graph or OGC Application Package for integration into 
+the APEx catalogue. Once the processing graph is prepared, or if additional assistance is needed, the 
+[APEx Algorithm Hosting](../hosting.md) service provides support for implementing and validating these guidelines and facilitating 
+the onboarding process. The service also helps projects in identify APEx-compliant hosting platforms suitable for running 
+the algorithm.
 
 ### Outcome
 The workflow is successfully onboarded into the APEx Algorithm Catalogue, enhancing its visibility and usability within 
@@ -75,31 +78,27 @@ the EO community as an APEx-compliant service.
 
 ---
 
-## Use Case 4: Transforming a non-openEO based workflow into an APEx-compliant service and onboarding it on the APEx Algorithm Catalogue
+## Use Case 4: Transforming an existing EO data processing workflow into an openEO UDP or OGC Application Package
 
 ### Problem
-A project has developed a non-openEO based workflow and seeks to:
-* Enable the service for reuse as an on-demand service.
-* Make it accessible through the APEx Algorithm Catalogue.
+A project has developed a workflow using non-APEx-compliant technology and wants to convert it into an openEO UDP or OGC 
+Application Package.
 
 ### Examples
 
 *
 
 ### Solution
-This process requires the workflow developer to select one of the following options:
-* If the workflow is not compatible with cloud-based environments and requires a desktop environment for execution, the 
-project may consider using the [APEx Toolbox Cloudification](toolboxcloud.md) service. This will ensure that the workflow
-is transformed into an APEx-compatible service, enabling its onboarding onto the APEx Algorithm Catalogue through the 
-[APEx Algorithm Hosting](hosting.md) service.
-* If the workflow is already implemented in cloud-based environments or complies with the 
-[APEx Interoperability and Compliance Guidelines](../interoperability/algohosting.md), the project can utilize the 
-[APEx Algorithm Hosting](hosting.md) service for additional support in transforming the workflow into an APEx-compliant 
-on-demand service and onboarding it onto the APEx Algorithm Catalogue.
+Within the project, it is the responsibility of the algorithm developer to implement the existing workflow using APEx-compliant 
+technologies, following the [APEx Interoperability and Compliance Guidelines](../interoperability/algohosting.md). If needed, 
+additional support for implementing these guidelines and onboarding the workflow into the APEx Algorithm Catalogue can be requested 
+through the [APEx Algorithm Hosting](hosting.md) service. If the EO data processing workflow is part of an existing toolbox, the 
+project may also consider using the [APEx Toolbox Cloudification service](toolboxcloud.md).
+
 
 ### Outcome
-The workflow is successfully migrated to an APEx-compliant on-demand service and onboarded into the APEx Algorithm 
-Catalogue, enhancing its visibility and usability within the EO community as an APEx-compliant service.
+The workflow is successfully migrated to an APEx-compliant on-demand service and onboarded into the APEx Algorithm Catalogue, increasing 
+its visibility and usability within the EO community as an APEx-compliant service.
 
 ---
 
