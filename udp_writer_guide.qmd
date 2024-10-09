@@ -270,3 +270,65 @@ Note how each benchmark scenario references:
   at a URL, following the [remote process definition extension](https://github.com/Open-EO/openeo-api/tree/draft/extensions/remote-process-definition).
   The URL will typically be a raw GitHub URL to the JSON file in the `openeo_udp` folder, but it can also be a URL to a different location.
 - reference data to which actual results should be compared.
+
+
+#### Defining and updating benchmark reference data
+
+A benchmark scenario should define reference data, with which the actual results of benchmark runs should be compared.
+The `reference_data` field of a benchmark scenario is a JSON object that maps each of
+the openEO batch job result assets (by asset name) to a URL where the reference data can be found, e.g.
+
+```json
+{
+  "reference_data": {
+    "job-results.json": "https://s3.example/max_ndvi.json:max_ndvi:reference:job-results.json",
+    "openEO.tif": "https://s3.example/max_ndvi.json:max_ndvi:reference:openEO.tif"
+  }
+}
+```
+
+The reference data URLs should be publicly accessible.
+For example, as suggested by the example, as S3 storage URLs.
+While you are free to manage the hosting of the reference data yourself,
+it is recommended to just rely on the APEx infrastructure and workflows as follows.
+
+The APEx benchmarking system will automatically store the actual results (if any)
+of failed benchmark runs in a public S3 bucket managed by APEx,
+to allow post-mortem inspection of these results.
+The URLs of these actual result assets will be reported in the benchmark report
+and can be used directly as reference data URLs for subsequent benchmark runs.
+Of course, make sure the actual results are properly validated and acceptable under your standards
+before using them as reference data for future benchmark runs.
+
+##### Initial reference data
+
+When you are initially defining a benchmark scenario,
+you may not have the full set of expected reference data and metadata yet.
+In this case, it's fine to leave out the `reference_data` field,
+make it an empty mapping object, or use invalid placeholder URLs.
+When the benchmark scenario is executed and the underlying openEO batch job finishes successfully,
+the actual batch job results will be downloaded first.
+Next, the full actual result set will be compared to the reference data,
+which will be missing or incomplete, causing the benchmark run to fail.
+This failure will trigger the storage of the actual results in the APEx S3 bucket,
+and the corresponding URLs will be reported in the (pytest based) benchmark run output
+of the [corresponding GitHub workflow run](https://github.com/ESA-APEx/apex_algorithms/actions/workflows/benchmarks.yaml).
+It will look like this:
+
+```
+-------------------- `upload_assets` stats: {'uploaded': 2} --------------------
+- tests/test_benchmarks.py::test_run_benchmark[max_ndvi]:
+  - 'actual/openEO.tif' uploaded to 'https://s3.example/gh-1234!max_ndvi!actual/openEO.tif'
+  - 'actual/job-results.json' uploaded to 'https://s3.example/gh-1234!max_ndvi!actual/job-results.json'
+```
+
+These URLs can be used as reference data URLs for subsequent benchmark runs.
+
+
+##### Updating reference data
+
+When an algorithm is updated, or the underlying data changes for some reason,
+a benchmark scenario might start to fail on the reference data comparison.
+Updating the reference data is practically the same as defining it initially:
+look up the URLs of the actual results in the benchmark report,
+validate these new results, and update the benchmark scenario with the new reference data URLs.
