@@ -54,8 +54,8 @@ perform filtering using vector data. This conveniently allows for advanced spati
 
 #### Temporal filtering
 
-For openEO processes that support arbitrary temporal ranges, we recommend using temporal_extent as the name of parameter to ensure
-consistency with other openEO processes, such as load_collection.
+For openEO processes that support arbitrary temporal ranges, we recommend using `temporal_extent` as the name of parameter to ensure
+consistency with other openEO processes, such as `load_collection`.
 
 Many cases also require a time range with a fixed length. In such a case, you can allow to specify only the start or end
 date, and use the `date_shift` process to construct the second date in the temporal interval, ensuring a fixed length. This
@@ -85,14 +85,14 @@ A [template](https://github.com/ESA-APEx/apex_documentation/blob/main/udp_descri
 
 ## Integrating your openEO process (UDP) in APEx {#sec-udp-integration}
 
-Once you have an eligible openEO process, you are ready to integrate it in APEx. At this point, you should have an http
-link to a json document that defines the process, and is publicly accessible. The most common way to do this is to store
-it in a public git repository. Tagging a release is a good way to ensure that the link remains stable. 
+Once you have an eligible openEO process, you are ready to integrate it in APEx. At this point, you should have an HTTP
+link to a JSON document that defines the process, and is publicly accessible. The most common way to do this is to store
+it in a public git repository. Tagging a release is a good way to ensure that the link remains stable.
 
 ### Registering your process
 
 Next, you will need to upload a generic JSON to the APEx algorithm catalog to register your process. For now, this is
-done by creating a pull request in the [APEx algorithm catalog Github repository](https://github.com/ESA-APEx/apex_algorithms).
+done by creating a pull request in the [APEx algorithm catalog GitHub repository](https://github.com/ESA-APEx/apex_algorithms).
 
 An example json is provided below. The properties to modify are listed here:
 
@@ -107,11 +107,11 @@ An example json is provided below. The properties to modify are listed here:
 
 The *links* section is crucial, the following "rel" values are mandatory:
 
-- *openeo-process*: exactly one link to the json document that defines the process
+- *openeo-process*: exactly one link to the JSON document that defines the process
 - *service*: at least one link to an openEO backend that is able to execute the process
 - *example*: at least one link to a STAC metadata file that shows the output of the process
 
-The _type_ field of these links should be set to _application/json_. Please provide a descriptive _title_ for each link,
+The _type_ field of these links should be set to `application/json`. Please provide a descriptive _title_ for each link,
 allowing to understand what the link is about.
 
 
@@ -225,7 +225,7 @@ scenarios is sufficiently stable over time. This is a very important feature to 
 It also helps to ensure that the openEO backend provider you selected is performing well, and that changes to the backend
 service do not break your process.
 
-APEx requires at least one check, to be able to correctly mark process that are (temporarily) unavailable. When this happens
+APEx requires at least one benchmark scenario, to be able to correctly mark processes that are (temporarily) unavailable. When this happens,
 the 'principal investigator', as defined in the JSON of the previous step, is informed, allowing to take action as desired. 
 
 The benchmark scenarios are defined as JSON files
@@ -332,3 +332,4 @@ a benchmark scenario might start to fail on the reference data comparison.
 Updating the reference data is practically the same as defining it initially:
 look up the URLs of the actual results in the benchmark report,
 validate these new results, and update the benchmark scenario with the new reference data URLs.
+
