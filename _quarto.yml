@@ -58,6 +58,7 @@ format:
     toc-depth: 4
     page-layout: full
     theme: [cosmo, css/custom.scss]
+    scss: true
     highlight-style: solarized
     include-in-header:
       - html/blur.html

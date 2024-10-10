@@ -17,11 +17,77 @@
   align-items: center;
 }
 
+.c-header__search {
+  margin-inline: .5rem 1.5rem;
+  cursor: pointer;
+
+  @include media-breakpoint-up(sm) {
+    margin-inline: 1.25rem 1.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-inline: .5rem 1.5rem;
+  }
+
+  img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  form {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: default;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s;
+
+    &.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    input {
+      height: auto;
+      width: 90%;
+
+      @include media-breakpoint-up(sm) {
+        width: 50%;
+        min-width: 600px;
+      }
+    }
+  }
+}
+
+.c-header__search-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  background-image: url('./assets/img/icons/icon-close.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
 .c-header__esa-text {
   img {
     width: 10rem;
     height: .75rem;
     object-fit: contain;
+
+    @include media-breakpoint-up(md) {
+      width: 14rem;
+      height: .75rem;
+    }
   }
 }
 
@@ -30,6 +96,11 @@
     width: 4.25rem;
     height: 1.5rem;
     object-fit: contain;
+
+    @include media-breakpoint-up(md) {
+      width: 5.75rem;
+      height: 2rem;
+    }
   }
 }
 
@@ -40,16 +111,33 @@
   justify-content: space-between;
   border-block-end: 1px solid rgba(255, 255, 255, 0.1);
   padding-block: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    padding-block: 0;
+  }
 }
 
 .c-header__logo {
   font-size: var(--text-xl);
   color: var(--white);
   text-decoration: none;
+
+  @include media-breakpoint-up(md) {
+    font-size: var(--text-2xl);
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: var(--text-3xl);
+  }
 }
 
 .c-header__nav {
   display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+
   ul {
     display: flex;
     align-items: center;
@@ -68,6 +156,10 @@
     font-size: var(--text-base);
     font-weight: 400;
     text-decoration: none;
+  }
+
+  li {
+    opacity: 1 !important;
   }
 
   li.has-children > a {
@@ -97,4 +189,7 @@
 .c-header__contact {
   display: none;
 
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
 }

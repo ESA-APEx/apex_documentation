@@ -40,6 +40,10 @@
       border-top: 1px solid var(--darkblue) !important;
     }
   }
+
+  li {
+    opacity: 1 !important;
+  }
 }
 
 .aa-DetachedOverlay li.aa-Item[aria-selected=false] .search-item mark.search-match, .aa-DetachedOverlay li.aa-Item[aria-selected=false] .search-item .search-match.mark, #quarto-search-results li.aa-Item[aria-selected=false] .search-item mark.search-match, #quarto-search-results li.aa-Item[aria-selected=false] .search-item .search-match.mark {

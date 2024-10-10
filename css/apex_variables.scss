@@ -50,3 +50,13 @@ $headings-color: var(--white);
 $link-color: #00AE9D;
 $font-family-sans-serif: var(--font-family);
 $border-radius: var(--border-radius);
+
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+) !default;
