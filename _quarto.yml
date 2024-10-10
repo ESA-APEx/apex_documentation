@@ -34,6 +34,8 @@ website:
             text: Use Cases
           - href: propagation/onboarding.md
             text: Algorithm Onboarding
+          - href: propagation/porting.md
+            text: Algorithm Porting
           - href: propagation/upscaling.md
             text: Algorithm Upscaling
           - href: propagation/enhancement.md
