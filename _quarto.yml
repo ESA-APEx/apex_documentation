@@ -32,8 +32,8 @@ website:
         contents:
           - href: propagation/usecases.md
             text: Use Cases
-          - href: propagation/hosting.md
-            text: Algorithm Hosting
+          - href: propagation/onboarding.md
+            text: Algorithm Onboarding
           - href: propagation/upscaling.md
             text: Algorithm Upscaling
           - href: propagation/enhancement.md

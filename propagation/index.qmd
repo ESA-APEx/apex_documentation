@@ -4,7 +4,7 @@ One of the primary goals of APEx is to support ESA projects in transforming thei
 
 Today, most ESA projects generate a variety of results. These can include for instance derived products in the form of
 raster files, (open-source) software toolboxes for processing EO data, or even a 'system' or web service that generates results
-on demand. 
+on demand.
 
 What ESA envisions with APEx, is a focus on on-demand services as a key project outcome, built using standardized web service APIs.
 These web services can encapsulate software toolboxes or be used to generate maps that can be disseminated in a classic way.
@@ -26,23 +26,23 @@ also in ESA network of resources, but for now can be activated by contacting the
 ## What is an on-demand service?
 
 An APEx-compliant on-demand service is available eiter as an openEO User Defined Process (UDP) or as an OGC API Process and
-must meet a set of [compliance guidelines](../interoperability/algohosting.md). A key requirement is that the service must 
-remain available beyond the lifetime of the ESA application project. This ensures that projects results can be generated 
-by anyone via graphical user interfaces offered by APEx, or a user interface purpose-built for a 
+must meet a set of [compliance guidelines](../interoperability/algohosting.md). A key requirement is that the service must
+remain available beyond the lifetime of the ESA application project. This ensures that projects results can be generated
+by anyone via graphical user interfaces offered by APEx, or a user interface purpose-built for a
 specific end-user application, such as the Green Transition Information Factories.
 
 ## How to build an on-demand service?
 
-The easiest and most cost-effective way to build these on-demand services is to use an existing platform that is onboarded 
-in the [ESA Network of Resources (NoR)](https://nor-discover.org/en/portfolio/). It is important to note that APEx itself is _not_ 
-a processing platform, but rather promotes the reuse of existing platforms.This approach also allows project consortia the option to build their own platform, 
+The easiest and most cost-effective way to build these on-demand services is to use an existing platform that is onboarded
+in the [ESA Network of Resources (NoR)](https://nor-discover.org/en/portfolio/). It is important to note that APEx itself is _not_
+a processing platform, but rather promotes the reuse of existing platforms.This approach also allows project consortia the option to build their own platform,
 provided they comply with the established [guidelines](../interoperability/algohostingenv.md).
 
 ### Building an openEO UDP based service
 
 When choosing to work with [openEO](https://openeo.org/), you need to turn your algorithm into a User Defined Process (UDP). This process
-is straightforward if you have built your application as an openEO process graph from the start or if your workflow is simple 
-enough to be translated into openEO. If you need assistance, APEx can support you in converting your algorithm into an 
+is straightforward if you have built your application as an openEO process graph from the start or if your workflow is simple
+enough to be translated into openEO. If you need assistance, APEx can support you in converting your algorithm into an
 efficient openEO workflow!
 
 Assuming you have such a workflow, the UDP can be built by parametrizing it. [This notebook](https://documentation.dataspace.copernicus.eu/notebook-samples/openeo/UDP.html)
@@ -70,7 +70,7 @@ if you have an existing piece of complex software that you want to make availabl
 
 ### What are the platforms to choose from?
 
-Currently, APEx supports the integration of services for the following APEx-compliant platforms. 
+Currently, APEx supports the integration of services for the following APEx-compliant platforms.
 However, it is important to note that this list can be extended as APEx evolves.
 
 
@@ -88,27 +88,27 @@ Please contact APEX to be added here!
 ### How are services priced?
 
 A key feature of the resulting on demand services is that they need to be onboarded in the ESA [Network of Resources (NoR)](https://nor-discover.org/), with
-pricing expressed in euros per km². The price of the service is determined by the project consortium, supported by APEx tooling. 
+pricing expressed in euros per km². The price of the service is determined by the project consortium, supported by APEx tooling.
 In general, the price needs to cover:
 
-- The processing cost 
+- The processing cost
 - A margin for fluctuation in processing cost
 - Optionally, a margin for the ESA Application Project
 
-Currently, it is the responsibility of the processing platform to add EO services to their NoR offering. This ensures that 
+Currently, it is the responsibility of the processing platform to add EO services to their NoR offering. This ensures that
 APEx retains a neutral position, and allows a direct negotiation between platform provider and service provider. Consequently, it
 is also up to the platforms to provide an SLA (service level agreement) to the end user. The end user will thus interact with
 the platform directly in case of service malfunctioning.
 
 ## What support does APEx offer to build these services?
 
-As stated earlier, our goal is to simplify the complex task of building efficient, operational, cloud-based services. 
+As stated earlier, our goal is to simplify the complex task of building efficient, operational, cloud-based services.
 ESA has recognized that this often involve specific IT skills that may not be present in the project consortium, or that
-would consume a large part of the project budget. Therefore, we aim to reduce these burdens as much as possible by providing 
+would consume a large part of the project budget. Therefore, we aim to reduce these burdens as much as possible by providing
 the following services:
 
-* **[Algorithm Hosting](hosting.md)**
-    <br/>xplore how APEx can assist in hosting your algorithms within an APEx-compatible environment and sharing them across the EO community.
+* **[Algorithm Onboarding](onboarding.md)**
+    <br/>xplore how APEx can assist in onboarding your algorithms within an APEx-compatible hosting environment and sharing them across the EO community through the APEx Algorithm Catalogue.
 * **[Algorithm Upscaling](upscaling.md)**
   <br/>Learn how APEx enables the execution of algorithms at scale.
 * **[Algorithm Enhancement](enhancement.md)**
@@ -118,14 +118,14 @@ the following services:
 * **[Algorithm Intercomparison](intercomparison.md)**
   <br/>Learn how APEx facilitates comparing algorithms and workflows to aid decision-making.
 
-The chart below shows how a project can use the different APEx Propagation Services. 
+The chart below shows how a project can use the different APEx Propagation Services.
 
 ```{mermaid}
 %%{init: {"elk": {"mergeEdges": true}, "flowchart": {"diagramPadding": 20, "nodeSpacing": 75, "defaultRenderer": "elk", "padding": 50}} }%%
 flowchart TD
     subgraph START[" "]
     direction LR
-       ONBOARD_START[I want to onboard my algorithm onto the APEx] 
+       ONBOARD_START[I want to onboard my algorithm onto the APEx]
        UPSCALE_START[I want to use my algorithm for large scale data processing]
        ENHANCEMENT_START[I have a performance issue with my algorithm]
        TOOLBOX_START[I have a desktop-based toolbox that I want to use in the cloud.]
@@ -148,12 +148,11 @@ flowchart TD
     ENHANCEMENT_START --> ALGO_ENHANCMENT(Algorithm Enhancement Service):::highlight
 
     TOOLBOX_START --> TOOLBOX_CLOUDIFICATION
-       
-    classDef highlight fill:#008E7A    
+
+    classDef highlight fill:#008E7A
 ```
 
 :::{.callout-tip}
-## Not sure which services are useful for your project? 
+## Not sure which services are useful for your project?
 Please visit our [use cases](usecases.md) page, where you'll find various project scenarios and see how APEx supports them.
 :::
-

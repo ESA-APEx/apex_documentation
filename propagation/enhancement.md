@@ -22,9 +22,8 @@ Optionally, the enhancement procedure includes a cloudification step, where the 
 User Defined Process (UDP) or Application Package. This makes it possible to host the algorithm on an NoR platform and
 provide it as an on-demand service.
 
-Complementary to this service, the [algorithm hosting service](./hosting.md) is responsible for hosting the algorithms
-prepared for hosting by the algorithm enhancement service. On the other side,
-the [toolbox cloudification service](./toolboxcloud.md) offers a similar set of features aimed at algorithms that are
+Complementary to this service, the [Algorithm Onboarding](./onboarding.md) service can provide additional support for hosting the algorithms prepared by the algorithm enhancement service. On the other side,
+the [Toolbox Cloudification](./toolboxcloud.md) service offers a similar set of features aimed at algorithms that are
 already available as part of standalone software packages (toolboxes) and makes them available as on-demand
 APEx-compatible algorithms.
 
@@ -61,7 +60,7 @@ based upon one or more container images implementing the algorithm in a custom e
 If the algorithm was originally implemented in accordance with the APEx compliance guidelines, the process can be more
 straightforward. In this case there will be more overlap between the libraries and design patterns used in the initial
 implementation and those required for an optimized APEx version, and the enhancement process will be different and fewer
-changes have to be made to the code base. 
+changes have to be made to the code base.
 
 
 #### Intellectual Property Rights
