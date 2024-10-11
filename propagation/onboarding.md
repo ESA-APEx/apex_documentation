@@ -8,14 +8,22 @@ For engagement with stakeholders of the algorithm, APEx collaborates closely wit
 the [Stakeholder Engagement Facility](https://esa-sef.eu/). This initiative will provide outreach and training towards
 users, to maximize the uptake of the onboarded algorithms.
 
-By leveraging APEx’s algorithm hosting service, you can ensure that your project’s innovations continue to benefit the
-EO community long after project completion.
+By leveraging APEx’s Algorithm Onboarding service, you can ensure that your project’s innovations continue to benefit
+the
+EO community long after your project ends.
 
 ## Service Overview
 
 ### Hosting Platform Onboarding Support
 
-APEx supports your project in selecting the appropriate hosting environment for your algorithm based on the [APEx Interoperability and Compliance Guidelines](../interoperability/algohostingenv.md). APEx also assists in the onboarding process, ensuring that your algorithm is available for execution on the selected platform and ready for further integration into the APEx Algorithm Catalogue.
+APEx supports your project in selecting the appropriate hosting environment for your algorithm based on
+the [APEx Interoperability and Compliance Guidelines](../interoperability/algohostingenv.md). APEx also assists in the
+onboarding process, ensuring that your algorithm is available for execution on the selected platform and ready for
+further integration into the APEx Algorithm Catalogue.
+
+:::{.callout-tip}
+A full list of the APEx-compliant algorithm hosting platforms is available [here](index.qmd#what-are-the-platforms-to-choose-from).
+:::
 
 ### Automated Testing and Benchmarking
 
@@ -40,30 +48,16 @@ updating of the algorithm remain the responsibility of the original developer or
 
 ### Algorithm Execution
 
-Algorithm execution is carried out one of the respective APEx-compliant algorithm hosting platform. By default, APEx does not
-provide direct access to processing resources on these platforms. However, projects can request processing resources
-through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/). When resources are requested for a
-specific algorithm, onboarded to the NoR, APEx can facilitate access to cloud processing resources on the corresponding
-platform as a broker.
+Algorithm execution is carried out one of the respective APEx-compliant algorithm hosting platform. By default, APEx
+does not provide direct access to processing resources on these platforms. However, projects can request processing
+resources through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/). When resources are requested
+for a specific algorithm, onboarded to the NoR, APEx can facilitate access to cloud processing resources on the
+corresponding platform as a broker.
 
 ### Large-scale Data Processing
 
 For large-scale processing tasks, projects can request additional support through
 the [APEx upscaling service](./upscaling.md).
-
-## How to use the Algorithm Onboarding Service?
-
-1. **Develop Your Algorithm**: As a project developer, ensure your algorithm is built according to the APEx
-   interoperability guidelines for algorithm developers. This compliance ensures that your algorithm is compatible with
-   APEx and can be easily onboarded and propagated after your project concludes. Learn more about these guidelines and
-   how to implement your algorithm using APEx-compliant technology [here](../interoperability/algohosting.md).
-2. **Onboard Your Algorithm**: Follow the detailed instructions on our onboarding page to integrate your algorithm into
-   the APEx algorithm catalogue. This process will make your algorithm available for reuse within the EO community.
-
-::: {.callout-tip}
-Interested in generating revenue from your algorithm and making it available as a service on the NoR? Please contact us
-for further instructions.
-:::
 
 ## Onboard Your Algorithm on the APEx Algorithm Catalogue
 
