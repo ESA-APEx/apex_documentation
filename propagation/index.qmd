@@ -20,39 +20,38 @@ APEx is here to support all ESA application projects in overcoming these challen
 Therefore, when building a GTIF, be sure to check out the APEx Algorithm Catalogue.
 :::
 
-The support offered by APEx is split up over various 'propagation services' that are offered. These services will appear
-also in ESA network of resources, but for now can be activated by contacting the APEx team, who will evaluate it.
+The support offered by APEx is divided across various propagation services. These services will eventually be integrated
+into the ESA network of resources, but for now, they can be activated by contacting the APEx team, who will process your request.
 
 ## What is an on-demand service?
 
 An APEx-compliant on-demand service is available eiter as an openEO User Defined Process (UDP) or as an OGC API Process and
 must meet a set of [compliance guidelines](../interoperability/algohosting.md). A key requirement is that the service must
-remain available beyond the lifetime of the ESA application project. This ensures that projects results can be generated
-by anyone via graphical user interfaces offered by APEx, or a user interface purpose-built for a
-specific end-user application, such as the Green Transition Information Factories.
+remain available beyond the project's lifetime. This ensures that project results can be generated
+by anyone through the tools provided by APEx, or through tools and interfaces purpose-built for a
+specific end-user application, such as the Green Transition Information Factories (GTIF).
 
 ## How to build an on-demand service?
 
 The easiest and most cost-effective way to build these on-demand services is to use an existing platform that is onboarded
 in the [ESA Network of Resources (NoR)](https://nor-discover.org/en/portfolio/). It is important to note that APEx itself is _not_
-a processing platform, but rather promotes the reuse of existing platforms.This approach also allows project consortia the option to build their own platform,
+a processing platform, but rather promotes the reuse of existing platforms. This approach also gives project consortia the flexibility to choose or build their own platform,
 provided they comply with the established [guidelines](../interoperability/algohostingenv.md).
 
 ### Building an openEO UDP based service
 
-When choosing to work with [openEO](https://openeo.org/), you need to turn your algorithm into a User Defined Process (UDP). This process
-is straightforward if you have built your application as an openEO process graph from the start or if your workflow is simple
-enough to be translated into openEO. If you need assistance, APEx can support you in converting your algorithm into an
-efficient openEO workflow!
+To integrate your algorithm with [openEO](https://openeo.org/), you need to convert it into a User Defined Process (UDP).
+If your application is already built using an openEO process graph or if your workflow is simple enough, this conversion should be straightforward.
+If not, APEx can provide the support you need to efficiently translate your algorithm into an optimized openEO workflow.
 
-Assuming you have such a workflow, the UDP can be built by parametrizing it. [This notebook](https://documentation.dataspace.copernicus.eu/notebook-samples/openeo/UDP.html)
+Once your workflow is ready, you can create a UDP by parameterizing the process grap. [This notebook](https://documentation.dataspace.copernicus.eu/notebook-samples/openeo/UDP.html)
 demonstrates exactly how to do that.
 
-Once the UDP is available, it can be hosted in APEx and associated with one or more backends capable of running it.
-As APEx evolves, tools will become available that aid this process, such as including functionality to check if your service
+After your UDP is created, it can be registered in the APEx Algorithm Catalogue and associated with one or more backends capable of running it.
+As APEx continues to evolve, additional tools will become available that aid this process, including functionality to check if your service
 is still functional.
 
-The following resources can support you in learning more about UDPs:
+For further guidance on creating and using UDPs, you can explore the following resources:
 
 - [APEx openEO process (UDP) writer guide](../udp_writer_guide.qmd#sec-udp-writing)
 - [APEx openEO process (UDP) integration guide](../udp_writer_guide.qmd#sec-udp-integration)
@@ -70,9 +69,10 @@ if you have an existing piece of complex software that you want to make availabl
 
 ### What are the platforms to choose from?
 
-Currently, APEx supports the integration of services for the following APEx-compliant platforms.
-However, it is important to note that this list can be extended as APEx evolves.
-
+To offer your algorithm as an on-demand service, it must be available for execution on an APEx-compliant
+algorithm hosting platform. Currently, APEx supports the integration of services on platforms that adhere to the
+APEx [compliance guidelines](../interoperability/algohostingenv.md). It is important to note that this list of
+supported platforms is expected to grow as APEx evolves.
 
 For openEO UDPs:
 
@@ -83,34 +83,41 @@ For OGC Processes/Application Package:
 
 * [ELLIP](https://ellip.terradue.com)
 
-Please contact APEX to be added here!
+:::{.callout-tip}
+# Is Your Platform APEx-Compliant?
+If your platform meets the APEx [interoperability and compliance guidelines](../interoperability/algohostingenv.md),
+we encourage you to reach out to the APEx team to get it added to the list.
+:::
 
-### How are services priced?
+### Onboarding your service on the ESA Network of Resources
 
-A key feature of the resulting on demand services is that they need to be onboarded in the ESA [Network of Resources (NoR)](https://nor-discover.org/), with
-pricing expressed in euros per km². The price of the service is determined by the project consortium, supported by APEx tooling.
-In general, the price needs to cover:
+A key feature of the resulting on-demand services is that they can be onboarded in the ESA [Network of Resources (NoR)](https://nor-discover.org/).
+This integration enhances the service’s visibility and opens up a potential additional revenue stream for the project.
+
+An important step of the onboarding on the NoR is setting the price, expressed in euros per km². The final price of the
+service is determined by the project consortium and can be supported by APEx tooling. In general, the price needs to cover:
 
 - The processing cost
 - A margin for fluctuation in processing cost
-- Optionally, a margin for the ESA Application Project
+- Optionally, a margin for the project
 
-Currently, it is the responsibility of the processing platform to add EO services to their NoR offering. This ensures that
-APEx retains a neutral position, and allows a direct negotiation between platform provider and service provider. Consequently, it
-is also up to the platforms to provide an SLA (service level agreement) to the end user. The end user will thus interact with
-the platform directly in case of service malfunctioning.
+Currently, it is the responsibility of the algorithm hosting platform to add services to their NoR offering. This approach ensures that
+APEx retains a neutral position, allowing for direct negotiations between platform provider and service provider. Consequently, it
+is also the responsibility of the platforms to provide an SLA (Service Level Agreement) to the end user. In case of service malfunctions,
+the end user will interact directly with the platform for support.
 
-## What support does APEx offer to build these services?
+## How can APEx support your project?
 
-As stated earlier, our goal is to simplify the complex task of building efficient, operational, cloud-based services.
-ESA has recognized that this often involve specific IT skills that may not be present in the project consortium, or that
-would consume a large part of the project budget. Therefore, we aim to reduce these burdens as much as possible by providing
-the following services:
+The goal of APEx is to simplify the complex task of building efficient, operational, cloud-based on-demand services.
+ESA recognizes that achieving this often requires specific skills that may not be present in the project consortium or that could significantly
+impact the project budget. To assist your project in these activities, APEx provides the following support services:
 
+* **[Algorithm Porting](porting.md)**
+<br/>Discover how APEx can assist your project in implementing your algorithm using APEx-compliant technologies, such as openEO User Defined Processes (UDP) or OGC Application Packages.
 * **[Algorithm Onboarding](onboarding.md)**
-    <br/>xplore how APEx can assist in onboarding your algorithms within an APEx-compatible hosting environment and sharing them across the EO community through the APEx Algorithm Catalogue.
+  <br/>Explore how APEx can assist in deploying your algorithms within an APEx-compatible hosting platform and sharing them across the EO community through the APEx Algorithm Catalogue.
 * **[Algorithm Upscaling](upscaling.md)**
-  <br/>Learn how APEx enables the execution of algorithms at scale.
+  <br/>Learn how APEx facilitates the execution of algorithms at scale.
 * **[Algorithm Enhancement](enhancement.md)**
   <br/>Discover how APEx supports improving the performance of your algorithms or workflows.
 * **[Toolbox Cloudification](toolboxcloud.md)**
@@ -118,41 +125,66 @@ the following services:
 * **[Algorithm Intercomparison](intercomparison.md)**
   <br/>Learn how APEx facilitates comparing algorithms and workflows to aid decision-making.
 
-The chart below shows how a project can use the different APEx Propagation Services.
+[//]: # (The chart below shows how a project can use the different APEx Propagation Services.)
 
-```{mermaid}
-%%{init: {"elk": {"mergeEdges": true}, "flowchart": {"diagramPadding": 20, "nodeSpacing": 75, "defaultRenderer": "elk", "padding": 50}} }%%
-flowchart TD
-    subgraph START[" "]
-    direction LR
-       ONBOARD_START[I want to onboard my algorithm onto the APEx]
-       UPSCALE_START[I want to use my algorithm for large scale data processing]
-       ENHANCEMENT_START[I have a performance issue with my algorithm]
-       TOOLBOX_START[I have a desktop-based toolbox that I want to use in the cloud.]
-    end
+[//]: # ()
+[//]: # (```{mermaid})
 
-    ONBOARD_START --> APEX_COMPLIANT{Is my algorithm<br/>APEx-compliant?}
-    APEX_COMPLIANT --> | Yes | ALGO_HOSTING(Algorithm Hosting Service):::highlight
-    APEX_COMPLIANT --> | No | CLOUD_COMPLIANT{Can my algorithm<br/>be executed<br />on the cloud?}
-    CLOUD_COMPLIANT --> | Yes | GUIDELINES[Implement APEx Interoperability and Compliancy Guidelines]
-    GUIDELINES --> GUIDELINES_SUPPORT{Need support?}
-    GUIDELINES_SUPPORT --> | Yes | ALGO_HOSTING
-    GUIDELINES_SUPPORT --> | No | ALGO_HOSTING
-    CLOUD_COMPLIANT --> | No | TOOLBOX_CLOUDIFICATION(Toolbox Cloudfication Service):::highlight
-    TOOLBOX_CLOUDIFICATION -.-> ALGO_HOSTING
+[//]: # (%%{init: {"elk": {"mergeEdges": true}, "flowchart": {"diagramPadding": 20, "nodeSpacing": 75, "defaultRenderer": "elk", "padding": 50}} }%%)
 
+[//]: # (flowchart TD)
 
-    UPSCALE_START --> | Prerequisite | APEX_COMPLIANT
-    UPSCALE_START --> ALGO_UPSCALING(Algorithm Upscaling Service):::highlight
+[//]: # (    subgraph START[" "])
 
-    ENHANCEMENT_START --> ALGO_ENHANCMENT(Algorithm Enhancement Service):::highlight
+[//]: # (    direction LR)
 
-    TOOLBOX_START --> TOOLBOX_CLOUDIFICATION
+[//]: # (       ONBOARD_START[I want to onboard my algorithm onto the APEx])
 
-    classDef highlight fill:#008E7A
-```
+[//]: # (       UPSCALE_START[I want to use my algorithm for large scale data processing])
+
+[//]: # (       ENHANCEMENT_START[I have a performance issue with my algorithm])
+
+[//]: # (       TOOLBOX_START[I have a desktop-based toolbox that I want to use in the cloud.])
+
+[//]: # (    end)
+
+[//]: # ()
+[//]: # (    ONBOARD_START --> APEX_COMPLIANT{Is my algorithm<br/>APEx-compliant?})
+
+[//]: # (    APEX_COMPLIANT --> | Yes | ALGO_HOSTING&#40;Algorithm Hosting Service&#41;:::highlight)
+
+[//]: # (    APEX_COMPLIANT --> | No | CLOUD_COMPLIANT{Can my algorithm<br/>be executed<br />on the cloud?})
+
+[//]: # (    CLOUD_COMPLIANT --> | Yes | GUIDELINES[Implement APEx Interoperability and Compliancy Guidelines])
+
+[//]: # (    GUIDELINES --> GUIDELINES_SUPPORT{Need support?})
+
+[//]: # (    GUIDELINES_SUPPORT --> | Yes | ALGO_HOSTING)
+
+[//]: # (    GUIDELINES_SUPPORT --> | No | ALGO_HOSTING)
+
+[//]: # (    CLOUD_COMPLIANT --> | No | TOOLBOX_CLOUDIFICATION&#40;Toolbox Cloudfication Service&#41;:::highlight)
+
+[//]: # (    TOOLBOX_CLOUDIFICATION -.-> ALGO_HOSTING)
+
+[//]: # ()
+[//]: # ()
+[//]: # (    UPSCALE_START --> | Prerequisite | APEX_COMPLIANT)
+
+[//]: # (    UPSCALE_START --> ALGO_UPSCALING&#40;Algorithm Upscaling Service&#41;:::highlight)
+
+[//]: # ()
+[//]: # (    ENHANCEMENT_START --> ALGO_ENHANCMENT&#40;Algorithm Enhancement Service&#41;:::highlight)
+
+[//]: # ()
+[//]: # (    TOOLBOX_START --> TOOLBOX_CLOUDIFICATION)
+
+[//]: # ()
+[//]: # (    classDef highlight fill:#008E7A)
+
+[//]: # (```)
 
 :::{.callout-tip}
 ## Not sure which services are useful for your project?
-Please visit our [use cases](usecases.md) page, where you'll find various project scenarios and see how APEx supports them.
+Visit our [use cases](usecases.md) page to explore various project scenarios and see how APEx can support your specific needs.
 :::
