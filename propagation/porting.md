@@ -1,6 +1,6 @@
 # Algorithm Porting Service
 
-The **Algorithm Porting Service** within APEx supports the transformation and packaging of
+The Algorithm Porting Service within APEx supports the transformation and packaging of
 algorithms, ensuring they align with the
 APEx [Interoperability and Compliance Guidelines](../interoperability/index.md). These guidelines are designed
 to ensure that algorithms are standardized and ready for integration into APEx via
@@ -23,9 +23,8 @@ APEx compliance. This includes understanding the specific data inputs, outputs, 
 algorithm. Based on this analysis, APEx experts will recommend suitable technologies for implementing your algorithm,
 ensuring that it integrates seamlessly with APEx’s ecosystem. Possible options include:
 
-- **openEO User Defined Process (UDP):** A flexible and scalable way to define EO workflows.
-- **OGC Application Package:** A standardized format for packaging and deploying algorithms as cloud-native
-  applications.
+- openEO User Defined Process (UDP)
+- OGC Application Package
 
 This assessment phase ensures that your algorithm is mapped to the most appropriate APEx-compliant technology, setting a
 clear path for its porting.
@@ -48,7 +47,7 @@ packaging it as an **OGC Application Package**.
 ## Pathway to Onboarding
 
 Once your algorithm has been successfully ported into an APEx-compliant technology, the next step is to onboard it
-through the [Algorithm Onboarding](onboarding.md) service. This process ensures that your algorithm is not only ready for
+through the [Algorithm Onboarding](onboarding.md) service. This step ensures that your algorithm is not only ready for
 execution but also published in the **APEx Algorithm Catalogue**, making it accessible to a wider community. By being
 part of the APEx ecosystem, your algorithm can be reused and scaled by other users and projects, significantly
 increasing its visibility and impact. This approach helps to maximize the value of your work, fostering collaboration
