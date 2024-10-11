@@ -34,6 +34,13 @@ A project is experiencing performance issues with an algorithm. The following sc
 1. The algorithm is implemented in openEO or made available as an OGC Application Package.
 2. The algorithm has not yet been integrated into an openEO or OGC Application Package.
 
+### Examples
+
+* The project has created an openEO processing graph. Executing this workflow takes too long and incurs high execution
+  costs, making it unviable for running at the intended scale.
+* The project created a new machine learning model in Python that performs inference based on EO data. However, the
+  training and/or inference steps take too long, hindering scalability for processing larger areas of interest.
+
 ### Solution
 
 The [APEx Algorithm Enhancement](enhancement.md) service offers support to optimize your algorithm through a structured
@@ -53,8 +60,13 @@ The algorithm's performance is significantly improved.
 ### Scenarios
 
 * A project has developed a workflow using non-APEx-compliant technology and seeks to convert it into an openEO User
-  Defined
-  Process (UDP) or OGC Application Package.
+  Defined Process (UDP) or OGC Application Package.
+
+### Examples
+
+* The project has created an EO data processing pipeline for generating a new air quality index and wants to encapsulate
+  it in a UDP or OGC Application Package to facilitate easy execution by stakeholders and
+  integration into a dashboard.
 
 ### Solution
 
@@ -65,7 +77,9 @@ assistance be required, the [APEx Algorithm Porting](porting.md) service can pro
 analysis, APEx experts will propose an appropriate APEx-compliant technology and assist your team in its implementation.
 
 :::{.callout-tip}
+
 # Want to share your algorithm with the APEx community?
+
 Please refer to Use Case 4 to learn how APEx can support you in sharing your algorithm with the community.
 :::
 
@@ -87,6 +101,14 @@ The algorithm is successfully transformed and is now available as an openEO UDP 
 If your algorithm has not yet been implemented in an APEx-compliant technology, please refer to the previous use case to
 discover how APEx can provide support.
 :::
+
+### Examples
+
+* The project has created an openEO UDP or OGC Application Package that calculates a new air quality index and wants to
+  share this service with the EO community.
+* The project has developed a new machine learning model encapsulated in an openEO UDP or Application Package and wants
+  to ensure it runs stably and within a controlled cost range.
+* The project has developed an OGC Application Package and is seeking support to host it on an APEx-compliant platform.
 
 ### Solution
 
@@ -119,6 +141,14 @@ online [resources](index.qmd#how-to-build-an-on-demand-service) to help you get 
 additional assistance in making the data processing pipeline APEx-compliant, the [APEx Algorithm Porting](porting.md)
 service is available to provide further support.
 :::
+
+### Examples
+
+* The project has developed an openEO processing graph or CWL workflow to generate a new air quality index. So far, the
+  testing and validation of this workflow have been carried out over a limited geographical area, and the project now
+  aims to generate the index at the country level.
+* The project has discovered an algorithm in the APEx Algorithm Catalogue for generating a new air quality index and
+  aims to execute this algorithm on all historical data for the entire continent of Europe.
 
 ### Solution
 
