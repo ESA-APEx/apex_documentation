@@ -9,7 +9,7 @@ Below are several use cases that demonstrate how these services can be applied t
 ### Scenarios
 
 * A project discovered a toolbox to perform EO data processing tasks and wants to integrate a specific set of features
-  from this toolbox into an openEO processing graph or use it within a CWL workflow.
+  from this toolbox into an openEO processing graph or use it as a OGC Application Package.
 
 ### Solution
 
@@ -129,12 +129,12 @@ the EO community as an APEx-compliant service.
 
 ### Scenarios
 
-* A project is currently testing and validating an openEO or CWL data processing pipeline on a limited subset of data
-  and aims to upscale this pipeline for production and large-scale data processing.
+* A project is currently testing and validating an openEO or OGC Application Package based data processing pipeline on a
+  limited subset of data and aims to upscale this pipeline for production and large-scale data processing.
 
 :::{.callout-tip}
 
-# Is your pipeline not yet implemented in openEO or CWL?
+# Is your pipeline not yet implemented in openEO or packaged as an OGC Application Package?
 
 APEx provides a set of initial [guidelines](../interoperability/algohosting.md) and
 online [resources](index.qmd#how-to-build-an-on-demand-service) to help you get started. If your project requires
@@ -144,9 +144,9 @@ service is available to provide further support.
 
 ### Examples
 
-* The project has developed an openEO processing graph or CWL workflow to generate a new air quality index. So far, the
-  testing and validation of this workflow have been carried out over a limited geographical area, and the project now
-  aims to generate the index at the country level.
+* The project has developed an openEO processing graph or OGC Application Package-based workflow to generate a new air
+  quality index. So far, the testing and validation of this workflow have been carried out over a limited geographical
+  area, and the project now aims to generate the index at the country level.
 * The project has discovered an algorithm in the APEx Algorithm Catalogue for generating a new air quality index and
   aims to execute this algorithm on all historical data for the entire continent of Europe.
 
