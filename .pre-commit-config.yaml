@@ -18,3 +18,10 @@ repos:
         types: [file]
         files: \.(md|qmd)$
         args: [ "--fix" ]
+  - repo: https://github.com/tcort/markdown-link-check
+    rev: v3.12.2
+    hooks:
+      - id: markdown-link-check
+        types: [file]
+        files: \.(md|qmd)$
+        args: [ -v ]
