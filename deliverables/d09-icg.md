@@ -19,5 +19,5 @@ format:
 {{< include ../interoperability/references.md >}}
 {{< include ../interoperability/algohosting.md >}}
 {{< include ../interoperability/algohostingenv.md >}}
-{{< include ../interoperability/dashboards.md >}}
+{{< include ../interoperability/geospatial_explorer.md >}}
 {{< include ../interoperability/businessmodel.md >}}
