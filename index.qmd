@@ -13,7 +13,7 @@ a service to detect deforestation, floods or generate higher level information. 
 various ESA EO application projects, which guarantees that they have gone through an extensive review and validation process.
 
 These services are offered through standardized interfaces, to allow users to easily interact with them. To learn more about
-how to invoke these services, please refer to [EO service usage](./eo_service_usage.md).
+how to invoke these services, please refer to [EO service usage](./eo_service_usage.qmd).
 
 ## For ESA EO Projects
 

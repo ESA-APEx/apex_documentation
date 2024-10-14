@@ -17,4 +17,4 @@ repos:
       - id: markdown-link-check
         types: [file]
         files: \.(md|qmd)$
-        args: [ -v ]
+        args: [ "-q", "-c markdown-link-checker-config.json" ]
