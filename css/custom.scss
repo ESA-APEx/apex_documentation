@@ -9,6 +9,7 @@
 @import "./components/code";
 @import "./components/images";
 @import "./components/tables";
+@import "./components/mermaid";
 
 /*-- scss:rules --*/
 
@@ -20,5 +21,3 @@
   font-weight: 400;
   src: url("./assets/fonts/NotesEsaReg.otf")
 }
-
-

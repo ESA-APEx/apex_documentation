@@ -10,7 +10,7 @@ Application Propagation Environment (APEx) is a European Space Agency (ESA) init
 
 APEx curates a catalog of earth observation services, that generate value-added products on demand. This can be for instance
 a service to detect deforestation, floods or generate higher level information. These services are built and maintained by
-various ESA EO application projects, which guarantees that they have gone through an extensive review and validation process.
+various EO projects, which guarantees that they have gone through an extensive review and validation process.
 
 These services are offered through standardized interfaces, to allow users to easily interact with them. To learn more about
 how to invoke these services, please refer to [EO service usage](./eo_service_usage.md).

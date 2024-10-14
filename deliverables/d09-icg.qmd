@@ -15,7 +15,7 @@ format:
 ---
 
 {{< include ../interoperability/_introduction.md >}}
-{{< include ../interoperability/definitions.md >}}
+{{< include ../interoperability/definitions.qmd >}}
 {{< include ../interoperability/references.md >}}
 {{< include ../interoperability/algohosting.md >}}
 {{< include ../interoperability/algohostingenv.md >}}
