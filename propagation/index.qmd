@@ -8,7 +8,7 @@ on demand.
 
 What ESA envisions with APEx, is a focus on on-demand services as a key project outcome, built using standardized web service APIs.
 These web services can encapsulate software toolboxes or be used to generate maps that can be disseminated in a classic way.
-
+On-demand services allow end-users to generate tailor-made products, without having to perform complex software installation, input data retrieval, software maintenance, or manage compute services. As a service provider, your improvements reach your users immediately.
 However, developing on-demand services is a challenging task for many projects.
 APEx is here to support all ESA application projects in overcoming these challenges.
 
