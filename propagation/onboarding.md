@@ -22,7 +22,7 @@ onboarding process, ensuring that your algorithm is available for execution on t
 further integration into the APEx Algorithm Catalogue.
 
 :::{.callout-tip}
-A full list of the APEx-compliant algorithm hosting platforms is available [here](index.qmd#what-are-the-platforms-to-choose-from).
+A full list of the known APEx-compliant algorithm hosting platforms is available [here](index.qmd#what-are-the-platforms-to-choose-from).
 :::
 
 ### Automated Testing and Benchmarking
