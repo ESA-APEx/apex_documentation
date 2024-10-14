@@ -27,11 +27,13 @@ website:
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
-      - href: propagation.md
+      - href: propagation/index.qmd
         text: EO Service Support
         contents:
-          - href: propagation/hosting.md
-            text: Algorithm Hosting
+          - href: propagation/porting.md
+            text: Algorithm Porting
+          - href: propagation/onboarding.md
+            text: Algorithm Onboarding
           - href: propagation/upscaling.md
             text: Algorithm Upscaling
           - href: propagation/enhancement.md
@@ -40,6 +42,8 @@ website:
             text: Toolbox Cloudification
           - href: propagation/intercomparison.md
             text: Algorithm Intercomparison
+          - href: propagation/usecases.md
+            text: Use Cases
       - href: udp_writer_guide.qmd
         text: Creating openEO based services
       - href: interoperability/index.md
