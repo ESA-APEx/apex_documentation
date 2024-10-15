@@ -6,10 +6,12 @@ Today, most ESA projects generate a variety of results. These can include for in
 raster files, (open-source) software toolboxes for processing EO data, or even a 'system' or web service that generates results
 on demand.
 
-What ESA envisions with APEx, is a focus on on-demand services as a key project outcome, built using standardized web service APIs.
-These web services can encapsulate software toolboxes or be used to generate maps that can be disseminated in a classic way.
+What ESA envisions with APEx, is a focus on on-demand services as a key project outcome. To avoid a large number of 
+heterogeneous services that are costly to maintain, the earth observation platform ecosystem is targeted to provide the
+resources and web services that will perform the processing. These platforms are asked to support service invocation via
+2 well known standard API's: openEO and OGC API Processes. 
 
-However, developing on-demand services is a challenging task for many projects.
+As with any paradigm shift, there are clearly great opportunities, but also challenges.
 APEx is here to support all ESA application projects in overcoming these challenges.
 
 ::: {.callout-tip}
@@ -37,6 +39,10 @@ The easiest and most cost-effective way to build these on-demand services is to 
 in the [ESA Network of Resources (NoR)](https://nor-discover.org/en/portfolio/). It is important to note that APEx itself is _not_
 a processing platform, but rather promotes the reuse of existing platforms.This approach also allows project consortia the option to build their own platform,
 provided they comply with the established [guidelines](interoperability/algohostingenv.md).
+
+### Which option to choose?
+
+link to options
 
 ### Building an openEO UDP based service
 
