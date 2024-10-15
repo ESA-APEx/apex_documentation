@@ -40,6 +40,8 @@ website:
             text: Toolbox Cloudification
           - href: propagation/intercomparison.md
             text: Algorithm Intercomparison
+      - href: udp_writer_guide.qmd
+        text: Creating openEO based services
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:
@@ -56,8 +58,8 @@ format:
     toc-depth: 4
     page-layout: full
     theme: [cosmo, css/custom.scss]
-    css:
-      - css/esa-header.css
+    highlight-style: solarized
     include-in-header:
+      - html/blur.html
       - html/esa-header.html
 bread-crumbs: true
