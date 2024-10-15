@@ -40,10 +40,22 @@ jobs:
         with:
           name: build-folder
           path: "_build"
+  
+  documentation-quality-checks:
+    runs-on: ubuntu-latest
+    needs: build-documentation
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Check broken links 
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'yes'
+          config-file: 'markdown-link-checker-config.json'
 
   deploy-documentation-ghpages:
     runs-on: ubuntu-latest
-    needs: build-documentation
+    needs: documentation-quality-checks
     permissions:
       pages: write
       id-token: write
@@ -57,7 +69,7 @@ jobs:
 
   deploy-documentation-branch:
     runs-on: ubuntu-latest
-    needs: build-documentation
+    needs: documentation-quality-checks
     permissions:
       contents: write
     steps:
