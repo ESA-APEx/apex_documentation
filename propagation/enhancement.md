@@ -1,4 +1,6 @@
-# Algorithm Enhancement Service
+---
+title: Algorithm Enhancement Service
+---
 
 The algorithm enhancement service helps scientists and algorithm developers to transform their research code into a
 performant and stable piece of software that can be run in an operational setting.

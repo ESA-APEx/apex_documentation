@@ -1,5 +1,6 @@
-
-# Documentation portal user guide
+---
+title: Documentation portal user guide
+---
 
 ## Introduction
 
