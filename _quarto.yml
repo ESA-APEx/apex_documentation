@@ -67,4 +67,6 @@ format:
     include-in-header:
       - html/blur.html
       - html/esa-header.html
+    link-external-icon: true
+    link-external-newwindow: true
 bread-crumbs: true
