@@ -27,6 +27,8 @@ website:
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
+      - href: instantiation/index.md
+        text: Instantiation Services
       - href: propagation.md
         text: EO Service Support
         contents:
