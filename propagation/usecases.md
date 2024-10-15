@@ -157,7 +157,7 @@ data processing pipelines.
 These tool may include:
 
 * **Project-Specific Workspace**
-  <br/>A dedicated workspace for managing and monitoring your processing pipelines.
+  <br/>A Jupyterlab environment allowing to start and monitor long-running jobs.
 * **Intelligent Job Distribution Tools**
   <br/>Automated tools for distributing and tracking processing jobs efficiently
 
