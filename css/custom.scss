@@ -12,6 +12,8 @@
 @import "./components/images";
 @import "./components/tables";
 @import "./components/sub-menu";
+@import "./components/hamburger";
+@import "./components/grid";
 
 
 /*-- scss:rules --*/
@@ -24,5 +26,3 @@
   font-weight: 400;
   src: url("./assets/fonts/NotesEsaReg.otf")
 }
-
-

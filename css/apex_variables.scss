@@ -39,6 +39,7 @@
 
   --border-radius: 10px;
   --opacity: 0.6;
+
 }
 
 $body-bg: rgb(0, 50, 71);
@@ -50,6 +51,7 @@ $headings-color: var(--white);
 $link-color: #00AE9D;
 $font-family-sans-serif: var(--font-family);
 $border-radius: var(--border-radius);
+$font-size-root: 16px;
 
 
 $grid-breakpoints: (
@@ -58,5 +60,16 @@ $grid-breakpoints: (
         md: 768px,
         lg: 992px,
         xl: 1200px,
-        xxl: 1400px
+        xxl: 1500px
 ) !default;
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1440px
+) !default;
+
+$enable-rfs: false;
+$line-height-base: 1.2;

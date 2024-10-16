@@ -54,13 +54,14 @@ website:
 
 format:
   html:
-    toc: true
     toc-depth: 4
     page-layout: full
     theme: [cosmo, css/custom.scss]
     scss: true
     highlight-style: solarized
     include-in-header:
+      - html/apex-scripts.html
       - html/blur.html
       - html/esa-header.html
+      - html/apex-navigation.html
 bread-crumbs: true
