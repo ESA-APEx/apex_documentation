@@ -81,7 +81,7 @@ that do not have an existing userbase or API.
 
 For algorithms to be hosted and curated, APEx requires the ability to execute the algorithms as on-demand services on an
 APEx-compliant algorithm hosting platform. This is straightforward for fully open-source algorithms, such as those licensed
-under the Apache 2.0 license. However, for algorithms with more restrictive licenses or those dependent on artefacts like
+under the Apache 2.0 license. However, for algorithms with more restrictive licenses or those dependent on artifacts like
 trained machine learning models, the algorithm provider must be able to license APEx to execute the service without incurring
 additional costs beyond the normal resource usage. Without such a license, the automated benchmarking and testing provided
 by APEx may need to be disabled for the service in question
