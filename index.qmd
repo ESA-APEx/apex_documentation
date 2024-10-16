@@ -27,4 +27,4 @@ For EO projects, APEx provides a wide range of services that support project exe
 
 * **Guidelines for ensuring compliance with ESA projects**<br/> APEx provides clear [guidelines](interoperability/algohostingenv.md) that enable platform providers to prepare their systems for hosting and executing EO services developed by ESA projects. By adhering to these guidelines, you can ensure that your platform is aligned with ESA's standards and ready for seamless integration in upcoming projects.
 
-* **Increased acctivity and visibility**<br/> By making your platform compliant with APEx, you can attract more users as it will be promoted as an APEx-compliant platform. This compliance not only enhances your platform's visibility but also makes your offerings more appealing to other projects.
+* **Increased activity and visibility**<br/> By making your platform compliant with APEx, you can attract more users as it will be promoted as an APEx-compliant platform. This compliance not only enhances your platform's visibility but also makes your offerings more appealing to other projects.
