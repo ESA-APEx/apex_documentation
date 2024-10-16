@@ -1,4 +1,6 @@
-# Algorithm Hosting Service
+---
+title: Algorithm Hosting Service
+---
 
 APEx offers an algorithm hosting service as part of its propagation services to ensure that project results remain
 accessible to the EO community beyond the project's completion. This service aims to sustain and promote the use of

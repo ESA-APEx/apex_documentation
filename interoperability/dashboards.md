@@ -1,4 +1,6 @@
-# Dashboards
+---
+title: Dashboards
+---
 
 This document outlines the requirements for the interoperability of the APEx dashboard services. These requirements must be met in order to ensure the correct configuration and operation of a dashboard and its instantiation.
 

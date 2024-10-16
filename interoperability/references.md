@@ -1,4 +1,6 @@
-# Normative References
+---
+title: Normative References
+---
 
 The documents referenced in the following chapters are cited in such a way that some or all of their content supports the requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document, including any amendments, applies.
 

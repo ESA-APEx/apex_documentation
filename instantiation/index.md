@@ -1,4 +1,6 @@
-# Dynamic software components for your project
+---
+title: Dynamic software components for your project
+---
 
 The APEx Instantiation Services are designed to provide managed, configurable environments that support the collaboration, development, exploration, and visualisation of application project results. These services are crucial for facilitating the effective sharing, maintenance, and utilisation of project outcomes within the Earth Observation (EO) community, ensuring that they remain readily accessible and usable for extended periods.
 

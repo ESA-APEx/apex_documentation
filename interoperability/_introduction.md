@@ -1,4 +1,6 @@
-# Introduction
+---
+title: Introduction
+---
 
 The following text provides an overview of the APEx interoperability and compliance guidelines. These guidelines are
 specifically aimed at both algorithm providers and algorithm hosting platform providers.

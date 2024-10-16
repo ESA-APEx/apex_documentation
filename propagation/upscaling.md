@@ -1,4 +1,6 @@
-# Algorithm Upscaling Service
+---
+title: Algorithm Upscaling Service
+---
 
 The Algorithm Upscaling Service facilitates the execution of your openEO UDP or OGC application package based algorithm
 over larger geographic areas. The service assumes that the algorithm is already efficient enough to operate cost-effectively

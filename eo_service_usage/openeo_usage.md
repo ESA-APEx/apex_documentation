@@ -1,4 +1,6 @@
-# openEO based services
+---
+title: openEO based services
+---
 
 APEx services that follow the [openEO](https://openeo.org/) standard are implemented as openEO processes.
 

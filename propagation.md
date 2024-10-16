@@ -1,4 +1,6 @@
-# From Earth Observation Application to Service
+---
+title: From Earth Observation Application to Service
+---
 
 One of the primary goals of APEx is to support ESA projects in transforming their EO applications into re-usable, scalable, on-demand services.
 
@@ -54,7 +56,7 @@ is still functional.
 
 The following resources can support you in learning more about UDPs:
 
-- [APEx openEO process (UDP) writer guide](udp_writer_guide.qmd#sec-udp-writing)
+- [APEx openEO process (UDP) writer guide](udp_writer_guide.qmd)
 - [APEx openEO process (UDP) integration guide](udp_writer_guide.qmd#sec-udp-integration)
 - [UDP support in Python](https://open-eo.github.io/openeo-python-client/udp.html#user-defined-processes)
 - [Jupyter notebook example](https://github.com/Open-EO/openeo-community-examples/blob/main/python/Sentinel1_Stats/Sentinel1_Stats.ipynb)

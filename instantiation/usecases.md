@@ -1,4 +1,6 @@
-# Use cases for APEx Instantation Services 
+---
+title: Use cases for APEx Instantation Services 
+---
 
 The APEx Instantiation Services are designed to support a wide range of activities within the EO community, from project promotion and user support to data visualisation, data analytics, and data processing. By providing managed, configurable environments, these services facilitate the effective sharing, maintenance, and utilisation of project results, ensuring they remain readily accessible and usable for extended periods.
 
