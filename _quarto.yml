@@ -50,7 +50,7 @@ website:
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:
-          - href: interoperability/definitions.md
+          - href: interoperability/definitions.qmd
           - href: interoperability/references.md
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md

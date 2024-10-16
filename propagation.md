@@ -10,7 +10,7 @@ What ESA envisions with APEx, is a focus on on-demand services as a key project 
 These web services can encapsulate software toolboxes or be used to generate maps that can be disseminated in a classic way.
 
 However, developing on-demand services is a challenging task for many projects.
-APEx is here to support all ESA application projects in overcoming these challenges.
+APEx is here to support EO projects in overcoming these challenges.
 
 ::: {.callout-tip}
 
@@ -27,7 +27,7 @@ also in ESA network of resources, but for now can be activated by contacting the
 
 An APEx-compliant on-demand service is available eiter as an openEO User Defined Process (UDP) or as an OGC API Process and
 must meet a set of [compliance guidelines](interoperability/algohosting.md). A key requirement is that the service must
-remain available beyond the lifetime of the ESA application project. This ensures that projects results can be generated
+remain available beyond the lifetime of the EO project. This ensures that projects results can be generated
 by anyone via graphical user interfaces offered by APEx, or a user interface purpose-built for a
 specific end-user application, such as the Green Transition Information Factories.
 
@@ -93,7 +93,7 @@ In general, the price needs to cover:
 
 - The processing cost
 - A margin for fluctuation in processing cost
-- Optionally, a margin for the ESA Application Project
+- Optionally, a margin for the EO Project
 
 Currently, it is the responsibility of the processing platform to add EO services to their NoR offering. This ensures that
 APEx retains a neutral position, and allows a direct negotiation between platform provider and service provider. Consequently, it
