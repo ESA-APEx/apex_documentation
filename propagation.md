@@ -42,7 +42,8 @@ provided they comply with the established [guidelines](interoperability/algohost
 
 ### Which option to choose?
 
-link to options
+To help out projects, we created dedicated pages to explain the benefits of [Application Package via OGC API Processes](propagation/ogc_processes.md)  
+and [openEO](propagation/openeo_services.md) based services.
 
 ### Building an openEO UDP based service
 
