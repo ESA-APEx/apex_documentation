@@ -2,6 +2,8 @@ name: Publish content to GitHub pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 concurrency: publish
 
 jobs:
@@ -40,10 +42,23 @@ jobs:
         with:
           name: build-folder
           path: "_build"
+  
+  documentation-quality-checks:
+    runs-on: ubuntu-latest
+    needs: build-documentation
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Check broken links 
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'yes'
+          config-file: 'markdown-link-checker-config.json'
 
   deploy-documentation-ghpages:
     runs-on: ubuntu-latest
-    needs: build-documentation
+    needs: documentation-quality-checks
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       pages: write
       id-token: write
@@ -57,7 +72,8 @@ jobs:
 
   deploy-documentation-branch:
     runs-on: ubuntu-latest
-    needs: build-documentation
+    needs: documentation-quality-checks
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: write
     steps:

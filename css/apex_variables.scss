@@ -35,18 +35,17 @@
   --text-base: 1rem;
   --text-sm: 0.875rem;
   --text-xs: 0.75rem;
-  --font-family: 'ESANotes', Arial, sans-serif;
+  --font-family: 'NotesESA', Arial, sans-serif;
 
   --border-radius: 10px;
-  --opacity: 0.6;
-
+  --opacity: 1.0;
 }
 
 $body-bg: rgb(0, 50, 71);
 
 $grid-body-width: 1200px !default;
 $grid-column-gutter-width: 2.5rem;
-$body-color: white;
+$body-color: rgb(173, 189, 196);
 $headings-color: var(--white);
 $link-color: #00AE9D;
 $font-family-sans-serif: var(--font-family);
