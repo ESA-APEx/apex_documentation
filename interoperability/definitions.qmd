@@ -85,6 +85,10 @@ consortium can utilize various services offered by APEx. Specifically, the APEx 
 enhancement of algorithms on a technical and software level and facilitate the transition to hosted algorithms that can
 be included in the APEx algorithm catalogue.
 
+ESA EO projects that do not have an explicit compliance requirement are also eligible to receive support. The APEx
+support can boost project impact, so projects are encouraged to inquire with their ESA technical officer about the
+possibilities.
+
 It is important to note that during the execution of the project, the project retains full responsibility
 for the final quality of the algorithms and workflows.
 
