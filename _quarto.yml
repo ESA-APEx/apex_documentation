@@ -28,7 +28,7 @@ website:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
       - href: propagation/index.qmd
-        text: EO Service Support
+        text: Algorithm Propagation
         contents:
           - href: propagation/porting.md
             text: Algorithm Porting
