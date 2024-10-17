@@ -159,7 +159,7 @@ These tool may include:
 * **Project-Specific Workspace**
   <br/>A Jupyterlab environment allowing to start and monitor long-running jobs.
 * **Intelligent Job Distribution Tools**
-  <br/>Automated tools for distributing and tracking processing jobs efficiently
+  <br/>Tools for managing multiple job executions.
 
 ### Outcome
 
