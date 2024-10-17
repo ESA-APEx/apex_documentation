@@ -27,7 +27,7 @@ A full list of the known APEx-compliant algorithm hosting platforms is available
 
 ### Automated Testing and Benchmarking
 
-To maintain the integrity of the algorithms, APEx conducts automated testing and benchmarking in collaboration with the
+To maintain the integrity of the services, APEx conducts automated testing and benchmarking in collaboration with the
 respective project teams. This ensures that the algorithms remain functional and accessible over time. APEx offers this testing service for free, which reduces the maintenance burden on projects.
 
 To run the tests, APEx needs permission from the hosting platform, and an account with sufficient credits. Collaboration of the platform may be required to fulfill this requirement.
