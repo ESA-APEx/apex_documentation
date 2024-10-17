@@ -1,6 +1,6 @@
 # Algorithm Onboarding Service
 
-APEx offers an algorithm onboarding service as part of its propagation services to ensure that project results remain
+APEx offers an algorithm onboarding service as part of its propagation services to ensure that project workflows and algorithms remain
 accessible to the EO community beyond the project's completion. This service aims to sustain and promote the use of
 algorithms developed during ESA projects, ensuring their longevity and continued utilization.
 
