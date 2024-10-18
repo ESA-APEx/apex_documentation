@@ -16,7 +16,7 @@ EO community long after your project ends.
 
 ### Hosting Platform Onboarding Support
 
-APEx supports your project in selecting the appropriate hosting environment for your algorithm based on
+APEx can help to identify the different hosting environments that the project can choose from based on criteria such as the chosen standard or the availability of specific datasets and processing capabilities that are needed by the project. 
 the [APEx Interoperability and Compliance Guidelines](../interoperability/algohostingenv.md). APEx also assists in the
 onboarding process, ensuring that your algorithm is available for execution on the selected platform and ready for
 further integration into the APEx Algorithm Catalogue.
