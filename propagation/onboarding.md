@@ -61,6 +61,11 @@ resources through [ESA's Network of Resources (NoR)](https://portfolio.nor-disco
 for a specific algorithm, onboarded to the NoR, APEx can facilitate access to cloud processing resources on the
 corresponding platform as a broker.
 
+In the long term, APEx plans to offer a graphical interface that simplifies the execution of onboarded services.
+However, it's important to note that even with this user-friendly interface, users will still need to authenticate with
+the respective algorithm hosting platform and ensure they have access to the necessary processing resources on that
+platform.
+
 ### Large-scale Data Processing
 
 For large-scale processing tasks, projects can request additional support through
