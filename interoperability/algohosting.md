@@ -5,8 +5,7 @@ projects, to host their workflows and algorithms within APEx. By satisfying thes
 successful integration of workflows and algorithms and ensures reusability within the broader EO community.
 
 We highlight that the majority of these requirements apply to EO projects that build an on-demand service to be
-exposed via an HTTP-based API. Projects that generate static maps as their main project result and do not need to
-publish any service are not affected by these requirements.
+exposed via an HTTP-based API. Projects do not need to publish any service are not affected by these requirements.
 
 In terms of creating on-demand services, APEx currently supports two main standards: openEO or OGC API Processes. This
 selection should support almost any possible on-demand service. When unsure, you can contact the APEx team for advice.
