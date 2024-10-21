@@ -34,6 +34,6 @@ technical aspects, making it a valuable and efficient solution for project disse
 
 ## What software is used by APEx?
 
-For the project portal service, APEx uses the [Drupal](https://www.drupal.org/) framework. Drupal is an open-source
+For the project portal service, APEx uses the [Drupal](https://drupal.org/) framework. Drupal is an open-source
 platform for creating and managing web content. In addition to its extensive content management features, it also allows
 for detailed customization.
