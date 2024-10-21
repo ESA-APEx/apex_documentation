@@ -16,7 +16,7 @@ Below are several use cases that demonstrate how these services can be applied t
 The [APEx Toolbox Cloudfication](toolboxcloud.md) service aims to convert a subset of features from an existing toolbox
 into
 cloud-based services that comply with APEx standards, enabling seamless integration with cloud resources and existing
-platforms. It is important to note that the cloudification efforts focus on the core functions provided by the toolbox
+platforms. It is important to note that the cloudification efforts focus on the data transformation functions provided by the toolbox
 and do not include user interface elements.
 
 ### Outcome
