@@ -27,6 +27,11 @@ website:
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
+      - href: instantiation/index.md
+        text: Instantiation Services
+        contents:
+          - href: instantiation/usecases.md
+            text: Use Cases
       - href: propagation.md
         text: EO Service Support
         contents:
@@ -45,7 +50,7 @@ website:
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:
-          - href: interoperability/definitions.md
+          - href: interoperability/definitions.qmd
           - href: interoperability/references.md
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
@@ -54,12 +59,15 @@ website:
 
 format:
   html:
-    toc: true
     toc-depth: 4
     page-layout: full
     theme: [cosmo, css/custom.scss]
+    scss: true
     highlight-style: solarized
     include-in-header:
+      - html/apex-scripts.html
       - html/blur.html
       - html/esa-header.html
+      - html/apex-navigation.html
+      - html/apex-hamburger-menu.html
 bread-crumbs: true
