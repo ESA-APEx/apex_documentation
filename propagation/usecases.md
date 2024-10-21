@@ -134,7 +134,7 @@ the EO community as an APEx-compliant service.
 
 :::{.callout-tip}
 
-# Is your pipeline not yet implemented in openEO or packaged as an OGC Application Package?
+# Is your on-demand service not yet implemented in openEO or OGC API Process?
 
 APEx provides a set of initial [guidelines](../interoperability/algohosting.md) and
 online [resources](index.qmd#how-to-build-an-on-demand-service) to help you get started. If your project requires
