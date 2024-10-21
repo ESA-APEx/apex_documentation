@@ -24,6 +24,14 @@ In addition to providing your project portal, APEx ensures optimal performance a
 monitoring. Automated maintenance tasks, such as updates and backups, are conducted to minimize downtime and maintain
 data integrity. This approach establishes a robust and dependable environment for users.
 
+By April 2026, the APEx Project Portal Service will be integrated into the ESA Network of Resources (NoR). Until these
+services are onboarded, projects can reach out to the APEx team to explore how we can support their hosting needs. APEx
+also manages DNS setup, ensuring your project’s website is accessible on the internet without any additional technical
+burden.
+
+This comprehensive service allows projects to focus on content creation and management while APEx takes care of the
+technical aspects, making it a valuable and efficient solution for project dissemination needs.
+
 ## What software is used by APEx?
 
 For the project portal service, APEx uses the [Drupal](https://www.drupal.org/) framework. Drupal is an open-source
