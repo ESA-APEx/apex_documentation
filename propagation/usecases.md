@@ -125,7 +125,7 @@ the APEx Algorithm Catalogue, ensuring its availability for reuse within the EO 
 The algorithm is available in the APEx Algorithm Catalogue, enhancing its visibility and usability within
 the EO community as an APEx-compliant service.
 
-## Use Case 5: Automating EO Data Processing Pipelines for Large-Scale Data Processing
+## Use Case 5: Generating large scale maps or results based on on-demand EO services
 
 ### Scenarios
 
