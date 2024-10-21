@@ -1,35 +1,41 @@
 # Algorithm Onboarding Service
 
-APEx offers an algorithm onboarding service as part of its propagation services to ensure that project workflows and algorithms remain
-accessible to the EO community beyond the project's completion. This service aims to sustain and promote the use of
-algorithms developed during ESA projects, ensuring their longevity and continued utilization.
+APEx offers an algorithm onboarding service as part of its propagation services to ensure that project workflows and
+algorithms remain accessible to the EO community beyond the project's completion. This service not only aims to sustain
+and promote the use of algorithms developed during ESA projects, ensuring their longevity and continued utilization, but
+also ensures alignment with the FAIR and open science data principles. This is achieved through the implementation of
+[APEx interoperability and compliance guidelines](../interoperability/index.md) and by registering the services in the
+APEx Algorithm Catalogue for broader visibility and accessibility.
 
 For engagement with stakeholders of the algorithm, APEx collaborates closely with
 the [Stakeholder Engagement Facility](https://esa-sef.eu/). This initiative will provide outreach and training towards
 users, to maximize the uptake of the onboarded algorithms.
 
 By leveraging APEx’s Algorithm Onboarding service, you can ensure that your project’s innovations continue to benefit
-the
-EO community long after your project ends.
+the EO community long after your project ends.
 
 ## Service Overview
 
 ### Hosting Platform Onboarding Support
 
-APEx can help to identify the different hosting environments that the project can choose from based on criteria such as the chosen standard or the availability of specific datasets and processing capabilities that are needed by the project.
-APEx also assists in the onboarding process, ensuring that your algorithm is available for execution on the selected platform and ready for
-further integration into the APEx Algorithm Catalogue.
+APEx can help to identify the different hosting environments that the project can choose from based on criteria such as
+the chosen standard or the availability of specific datasets and processing capabilities that are needed by the project.
+APEx also assists in the onboarding process, ensuring that your algorithm is available for execution on the selected
+platform and ready for further integration into the APEx Algorithm Catalogue.
 
 :::{.callout-tip}
-A full list of the known APEx-compliant algorithm hosting platforms is available [here](index.qmd#what-are-the-platforms-to-choose-from).
+A full list of the known APEx-compliant algorithm hosting platforms is
+available [here](index.qmd#what-are-the-platforms-to-choose-from).
 :::
 
 ### Automated Testing and Benchmarking
 
 To maintain the integrity of the services, APEx conducts automated testing and benchmarking in collaboration with the
-respective project teams. This ensures that the algorithms remain functional and accessible over time. APEx offers this testing service for free, which reduces the maintenance burden on projects.
+respective project teams. This ensures that the algorithms remain functional and accessible over time. APEx offers this
+testing service for free, which reduces the maintenance burden on projects.
 
-To run the tests, APEx needs permission from the hosting platform, and an account with sufficient credits. Collaboration of the platform may be required to fulfill this requirement.
+To run the tests, APEx needs permission from the hosting platform, and an account with sufficient credits. Collaboration
+of the platform may be required to fulfill this requirement.
 
 ### APEx Algorithm Catalogue
 
