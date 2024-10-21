@@ -1,10 +1,10 @@
 import {fetchHeaderHTML, prependImageSources, prependLinks, writeToFile} from "./utils.mjs";
 
-export const generateFooter = async () => {
+export const generateHamburgerMenu = async() => {
     const url = 'https://apex-esa.drupal.int.vito.be/';
-    const filePath = '../apex-footer.html'; // Path to the file where content will be saved
+    const filePath = '../apex-hamburger-menu.html'; // Path to the file where content will be saved
 
-    const headerSelector = '.c-footer'; // Replace with your desired selector
+    const headerSelector = '.js-hamburger-menu'; // Replace with your desired selector
 
     // Fetch the header from the main website
     let headerHTML = await fetchHeaderHTML(url, headerSelector);
@@ -21,8 +21,8 @@ export const generateFooter = async () => {
 
         await writeToFile(headerHTML, filePath);
     } else {
-        console.log('No footer found at the specified URL.');
+        console.log('No hamburger menu found at the specified URL.');
     }
 }
 
-(async () => await generateFooter())();
+(async () => await generateHamburgerMenu() )();

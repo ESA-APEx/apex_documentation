@@ -69,4 +69,5 @@ format:
       - html/blur.html
       - html/esa-header.html
       - html/apex-navigation.html
+      - html/apex-hamburger-menu.html
 bread-crumbs: true
