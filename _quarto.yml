@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  favicon: _images/logos/favicon.png
+  favicon: assets/img/logos/apex_icon_blue.svg
   repo-url: "https://github.com/ESA-APEx/apex_documentation"
   repo-branch: "main"
   search:
