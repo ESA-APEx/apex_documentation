@@ -163,5 +163,5 @@ These tool may include:
 
 ### Outcome
 
-A comprehensive data processing environment is established for your project, equipped with the necessary tools and
-support for scaling your EO data processing pipeline.
+You receive support and tools that enable you to start processing,
+monitor progress, and successfully generate large area deliverables.
