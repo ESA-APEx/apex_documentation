@@ -1,7 +1,6 @@
 import {fetchHeaderHTML, prependImageSources, prependLinks, writeToFile} from "./utils.mjs";
 
-export const generateHamburgerMenu = async() => {
-    const url = 'https://apex-esa.drupal.int.vito.be/';
+export const generateHamburgerMenu = async(url) => {
     const filePath = '../apex-hamburger-menu.html'; // Path to the file where content will be saved
 
     const headerSelector = '.js-hamburger-menu'; // Replace with your desired selector

@@ -1,7 +1,6 @@
 import {fetchHeaderHTML, prependImageSources, prependLinks, transformHTML, wrapInDiv, writeToFile} from "./utils.mjs";
 
-export const generateHeader = async() => {
-    const url = 'https://apex-esa.drupal.int.vito.be/';
+export const generateHeader = async(url) => {
     const title = "APEx Documentation Portal"
     const filePath = '../apex-navigation.html'; // Path to the file where content will be saved
 

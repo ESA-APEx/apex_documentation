@@ -1,7 +1,7 @@
 import {fetchHeaderHTML, prependImageSources, prependLinks, writeToFile} from "./utils.mjs";
 
-export const generateFooter = async () => {
-    const url = 'https://apex-esa.drupal.int.vito.be/';
+export const generateFooter = async (url) => {
+
     const filePath = '../apex-footer.html'; // Path to the file where content will be saved
 
     const headerSelector = '.c-footer'; // Replace with your desired selector
