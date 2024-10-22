@@ -107,12 +107,11 @@ the end user will interact directly with the platform for support.
 
 ## How can APEx support your project?
 
-The level of support depends on if you are:
+The level of support available depends on your project's status:
 
-* An ongoing or upcoming ESA EOP project
-* A completed EOP project
-* A non ESA project
-* Any other EO application or algorithm developer
+* **Ongoing or upcoming ESA EOP projects**: We recommend discussing APEx support directly with your TO.
+* **Completed ESA EOP projects**: Please reach out to us to explore how APEx can help propagate and maintain your project's results.
+* **Non-ESA projects**: APEx propagation services will be available through the ESA Network of Resources (NoR) starting in 2026.
 
 The goal of APEx is to simplify the complex task of building efficient, operational, cloud-based on-demand services.
 ESA recognizes that achieving this often requires specific skills that may not be present in the project consortium or that could significantly
