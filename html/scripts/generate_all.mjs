@@ -3,12 +3,15 @@ import {generateFooter} from "./generate_footer.mjs";
 import {generateHamburgerMenu} from "./generate_hamburger_menu.mjs";
 
 (async () => {
+
+    const url = 'https://apex.staging.vito.be/';
+
     console.log("Generating APEx header");
-    await generateHeader();
+    await generateHeader(url);
 
     console.log("Generating APEx footer");
-    await generateFooter();
+    await generateFooter(url);
 
     console.log("Generating APEx hamburger menu");
-    await generateHamburgerMenu();
+    await generateHamburgerMenu(url);
 })();
