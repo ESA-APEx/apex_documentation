@@ -129,7 +129,7 @@ the EO community as an APEx-compliant service.
 
 ### Scenarios
 
-* A project is currently testing and validating an openEO or OGC Application Package based data processing pipeline on a
+* A project is currently testing and validating an openEO or OGC API Processes based web service on a
   limited subset of data and aims to upscale this pipeline for production and large-scale data processing.
 
 :::{.callout-tip}
