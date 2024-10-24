@@ -13,7 +13,7 @@ Maintaining workflows and algorithms in a FAIR compliant way requires adoption o
 However, developing on-demand services can be a challenging task for many projects and depends a lot on the complexity of a workflow/algorithm and its initial implementation.
 APEx intends to facility the transition to cloud based services by providing guidelines, best practices and tool that support EO R&D projects in overcoming these challenges.
 
-The support offered by APEx in terms of Algorithm propagation involves various subcomponents/services and their relevance depends on a case-by-case basis. The individual service algorithm propagation comprises: 
+The support offered by APEx in terms of algorithm propagation involves various subcomponents/services and their relevance depends on a case-by-case basis. The individual service algorithm propagation comprises:
 
 * Refactoring your source code to an openEO process graph or OGC Application Package
 * Packaging of your source code to an OGC Application Package
