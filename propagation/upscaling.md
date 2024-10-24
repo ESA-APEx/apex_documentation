@@ -26,7 +26,7 @@ ESA project. Based on your needs, APEx can provide:
 
 In order to make use of the upscaling service, please be aware that careful planning is needed:
  
- - Your service needs to be onboarded in APEx before upscaling can start. Please refer to our [Algorithm Hosting](./hosting.md) service for more information. 
+ - Your service needs to be onboarded in APEx before upscaling can start. Please refer to our [Algorithm Onboarding](./onboarding.md) service for more information. 
  - The performance of your service can drastically affect the feasibility of upscaling. Consider the use of the [Algorithm Enhancement](./enhancement.md) service to improve the performance of your algorithm.
  - Processing and approval of a support request can take up to 1 month. Basic metrics from the algorithm onboarding process are used to evaluate the overall feasibility of your request.
  - Before the actual production can start, preparation work may take a significant amount of time, depending on your own experience and complexity of the task.

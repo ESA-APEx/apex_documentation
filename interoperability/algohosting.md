@@ -12,7 +12,7 @@ selection should support almost any possible on-demand service. When unsure, you
 
 Finally, note that APEx also provides support to projects that need to fulfil these requirements. This support includes
 offering a framework to run automated tests and providing packages to help with enhancing your algorithms. These are
-referred to as [propagation services](../propagation.md).
+referred to as [propagation services](../propagation/index.qmd).
 
 In general, the aim is to simplify the process of building high-quality on-demand services rather than to add complexity.
 

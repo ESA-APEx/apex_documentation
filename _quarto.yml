@@ -32,11 +32,13 @@ website:
         contents:
           - href: instantiation/usecases.md
             text: Use Cases
-      - href: propagation.md
-        text: EO Service Support
+      - href: propagation/index.qmd
+        text: Algorithm Propagation
         contents:
-          - href: propagation/hosting.md
-            text: Algorithm Hosting
+          - href: propagation/porting.md
+            text: Algorithm Porting
+          - href: propagation/onboarding.md
+            text: Algorithm Onboarding
           - href: propagation/upscaling.md
             text: Algorithm Upscaling
           - href: propagation/enhancement.md
@@ -45,6 +47,8 @@ website:
             text: Toolbox Cloudification
           - href: propagation/intercomparison.md
             text: Algorithm Intercomparison
+          - href: propagation/usecases.md
+            text: Use Cases
       - href: udp_writer_guide.qmd
         text: Creating openEO based services
       - href: interoperability/index.md
