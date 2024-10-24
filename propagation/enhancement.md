@@ -14,7 +14,7 @@ This way, the version hosted on APEx can be kept up to date.
 
 The algorithm enhancement service has two phases. In the first phase, the algorithm provider submits their existing
 implementation, including source code, input data, and instructions to build, install and execute their code, together
-with details of any external dependencies to the enhancement team. The enhancement team will then analyze the algorithm
+with details of any external dependencies to the enhancement team. The enhancement team will then analyse the algorithm
 and estimate the effort for the service, which results in an offer. In the second phase, on acceptance of the offer by
 the provider and by ESA, the enhancement is performed.
 As a result, the service user receives an optimized version of their algorithm code with high code quality.
@@ -27,7 +27,9 @@ the [Toolbox Cloudification](./toolboxcloud.md) service offers a similar set of 
 already available as part of standalone software packages (toolboxes) and makes them available as on-demand
 APEx-compatible algorithms.
 
-#### Features of the Algorithm Enhancement Service
+## Service Overview
+
+### Features of the Algorithm Enhancement Service
 
 The algorithm enhancement service offers the following features:
 
@@ -35,11 +37,11 @@ The algorithm enhancement service offers the following features:
 - Optimization of the algorithm with respect to computational efficiency.
   This may include switching to a distributed execution model and improving code quality.
 - Optimization considering the capabilities of target processing platforms.
-- Exploitation of algorithms available on APEx where appropriate, e.g. replacing custom functions with equivalent
+- Exploitation of algorithms available on APEx where appropriate, e.g., replacing custom functions with equivalent
   pre-optimized openEO functions.
 - Delivery of an enhanced implementation of the algorithm that is ready to be listed in the APEx algorithm catalogue.
 
-#### How to use the Algorithm Enhancement Service
+### How to use the Algorithm Enhancement Service
 
 To use the service, the first step is to deliver the current algorithm implementation, together with the complementary
 information that is required to make use of it. The necessary components are:
@@ -62,8 +64,7 @@ straightforward. In this case there will be more overlap between the libraries a
 implementation and those required for an optimized APEx version, and the enhancement process will be different and fewer
 changes have to be made to the code base.
 
-
-#### Intellectual Property Rights
+### Intellectual Property Rights
 
 The intellectual property rights to their algorithm implementation remain with the algorithm authors.
 If the algorithm is an implementation of published research, the APEx team reserves itself the non-exclusive

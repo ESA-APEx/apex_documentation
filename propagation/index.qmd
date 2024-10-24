@@ -6,14 +6,14 @@ The primary target audience is first of all ESA EOP projects but on the longer t
 Currently ESA EOP R&D projects generate a variety of results including for example EO derived value added products (raster or vector files, typically level-3 and level-4), 
 workflows and algorithms, or conventional (open-source) desktop software solutions. Maintaining these results beyond the lifetime of a specific project is a challenge and this is a key objective for APEx. 
 
-The vision for the ESA APEx initiative is adopt FAIR data principles and ensure tht project results remain Findable and Accessible and that they become Interoperable and Reusable. For value added products, this mainly involves ingestion in an ESA controlled persistent storage solution and exposing these products accordingly (using STAC and other technologies). 
+The vision for the ESA APEx initiative is adopt FAIR data principles and ensure that project results remain Findable and Accessible and that they become Interoperable and Reusable. For value added products, this mainly involves ingestion in an ESA controlled persistent storage solution and exposing these products accordingly (using STAC and other technologies).
 
-Maintaining workflows and algorithms in a FAIR compliant way requires adoption of cloud service concepts and implementations. Therefore, the APEx envisioned solution for workflows and algorithms is to make them available in a public cloud (platform) in co-location with the key EO data archives as on-demand services using standardized web service APIs. These web services can then be triggered by users with their user specific parametrisation to produce results for an area and time frame of interest
+Maintaining workflows and algorithms in a FAIR compliant way requires adoption of cloud service concepts and implementations. Therefore, the APEx envisioned solution for workflows and algorithms is to make them available in a public cloud (platform) in co-location with the key EO data archives as on-demand services using standardized web service APIs. These web services can then be triggered by users with their user specific parametrisation to produce results for an area and time frame of interest.
 
-However, developing on-demand services can be a challenging task for many projects and depends a lot on the complexity of an workflow/algorithm and its initial implementation.
+However, developing on-demand services can be a challenging task for many projects and depends a lot on the complexity of a workflow/algorithm and its initial implementation.
 APEx intends to facility the transition to cloud based services by providing guidelines, best practices and tool that support EO R&D projects in overcoming these challenges.
 
-The support offered by APEx in terms of Algorithm propagation involves various subcomponents/services and their relevance depends on a case-by-case basis. The individual service algorithm propagation comprises: 
+The support offered by APEx in terms of algorithm propagation involves various subcomponents/services and their relevance depends on a case-by-case basis. The individual service algorithm propagation comprises:
 
 * Refactoring your source code to an openEO process graph or OGC Application Package
 * Packaging of your source code to an OGC Application Package

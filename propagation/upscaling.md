@@ -5,7 +5,7 @@ over larger geographic areas. The service assumes that the algorithm is already 
 at scale.
 
 The service primarily provides self-service tools that project teams or end-users can utilize to run an algorithm at scale, using
-the processing capabilities of the platforms that are compatible with the service.These tools currently include:
+the processing capabilities of the platforms that are compatible with the service. These tools currently include:
 
 * An **openEO batch job manager**, which supports large-scale processing tasks by dividing them into separate batch jobs that are automatically monitored.
 

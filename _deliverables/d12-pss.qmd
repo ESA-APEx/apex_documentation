@@ -1,0 +1,24 @@
+---
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    title: "D12 - Propagation Services and Specifications"
+  docx:
+    toc: true
+    toc-depth: 2
+    toc-title: "Propagation Services and Specifications"
+    reference-doc: templates/apex_template.docx
+    output-file: "APEx_D12_PSS_Propagation Services and Specifications.docx"
+    output-dir: "../deliverables"
+---
+
+{{< include ../propagation/index.qmd >}}
+{{< include ../propagation/usecases.md >}}
+{{< include ../propagation/porting.md >}}
+{{< include ../propagation/onboarding.md >}}
+{{< include ../propagation/upscaling.md >}}
+{{< include ../propagation/enhancement.md >}}
+{{< include ../propagation/toolboxcloud.md >}}
+{{< include ../propagation/intercomparison.md >}}
