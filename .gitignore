@@ -2,3 +2,6 @@
 /.idea/
 /_site/
 _build
+.venv*
+venv*
+.envrc

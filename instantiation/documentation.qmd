@@ -1,0 +1,37 @@
+
+# Documentation portal user guide
+
+## Introduction
+
+Most EO projects have various deliverables related to documentation. This can be user guides, design documents or algorithm theoretical basis documents.
+
+The most commonly used approach to this in ESA EO projects, is to use well-known office tools and export the documents to PDF for upload to 
+a website. While this approach is not necessarily wrong, and uploading documents to the APEx project portal is certainly
+possible, we also want to offer an alternative for projects that are looking for a more modern approach.
+
+The solution we offer is also well-known, and based on the use once you know how to do a particular thing, you of the simple 'Markdown' language to write documentation 
+without worrying about templates and layout. The Markdown variant used is [Quarto](https://quarto.org/), and supports
+advanced use cases for scientific and technical writing. It produces various outputs, allowing you to publish user documentation
+to a website for your users, while also being able to export to PDF or Word for generating deliverables.
+
+The content of your documentation is tracked on Github, allowing you to collaborate with your consortium partners using
+pull requests. Full version control is available, avoiding the loss of content or typical issues caused by multiple authors
+working in the same document.
+
+You can use the online Github edit mode for quick changes, but can also do fully local editing,
+including a preview mode to show the rendered document.
+
+
+## What does APEx offer
+
+APEx provides a simple template to start your documentation. As you make changes, automation tools publish the documentation
+to a location that seamlessly integrates it in your project portal.
+This works best in combination with the 'project portal' service, ensuring maximal integration.
+
+## What software is used under the hood
+
+The open source [Quarto](https://quarto.org/) software is used, and you will need to learn the basics of that system.
+In our own experience, people familiar with Markdown will have no issues with making basic edits. More advanced features
+are well-documented, and often turn out to be easier to use than the equivalent in office tools. Many features are simply not
+at all supported by such tools.
+

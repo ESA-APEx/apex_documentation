@@ -1,26 +1,26 @@
 # openEO based services
 
-APEx services that follow the [openEO](https://openeEO.org) standard are implemented as openEO processes.
+APEx services that follow the [openEO](https://openeo.org/) standard are implemented as openEO processes.
 
 
-Services can be executed through the tools that are provided by the different processing platforms. 
+Services can be executed through the tools that are provided by the different processing platforms.
 For OpenEO based services, there is an online user interface, web editor, Client Libraries (JavaScript, Python, R) and API.
 
 There are several ways to discover how a service can be executed. When publishing a service on the APEx, a service provider can choose to provide the following information in the service details:
 
 * An executable link which redirects the user to the user interface of the processing platform. If this is the case, an **Access app** button will appear when opening an EOplaza service.
-* Sample code in the service description on how to execute a service. 
+* Sample code in the service description on how to execute a service.
 
 ## openEO backends
 
-An APEx openEO service is always associated with one or more openEO backends that have been validated to produce the correct 
+An APEx openEO service is always associated with one or more openEO backends that have been validated to produce the correct
 results. So using one of these backends is the recommended approach. Thanks to openEO interoperability and standardization,
 it may certainly be possible that other backends can run the same service, but do make sure to validate the results in that case.
 
 To ensure a smooth experience, backends need to be compliant with [APEx guidelines](../interoperability/algohostingenv.md).
 The currently known list of compliant backends is:
 
-- [CDSE openEO federation](https://openeofed.dataspace.copernicus.eu) 
+- [CDSE openEO federation](https://openeofed.dataspace.copernicus.eu)
 - [openEO platform](https://openeo.cloud)
 
 Both are federations, which means that they in fact are backed by multiple openEO instances. This increases the convenience
@@ -28,7 +28,7 @@ for the APEx user, avoiding to interact with a high number of backends.
 
 ## Online user interface
 
-OpenEO provides an online user interface where users can execute services directly in a web browser. 
+OpenEO provides an online user interface where users can execute services directly in a web browser.
 Through the graphical user interface, users can execute, link, and configure different services. More information on the usage of the online applications is presented in the table below.
 
 | OpenEO                                                                     |
@@ -102,12 +102,12 @@ taskmap_job = taskmap.save_result(format='GTiff').send_job()
 taskmap_job.start_and_wait().get_results()
 ```
 
-To execute a service from the APEx through one of the OpenEO client libraries, it is important to use the *datacube_from_process* function. 
-This accepts the ID and namespace of the service. 
-Both are made available in the service description on the EOplaza. 
+To execute a service from the APEx through one of the OpenEO client libraries, it is important to use the *datacube_from_process* function.
+This accepts the ID and namespace of the service.
+Both are made available in the service description on the EOplaza.
 The full documentation on using the function is available on the official [OpenEO documentation](https://open-eo.github.io/openeo-python-client/datacube_construction.html#datacube-from-process).
 
-It is possible to combine the Python and R OpenEO libraries with the notebooks provided by PROBA-V MEP. 
+It is possible to combine the Python and R OpenEO libraries with the notebooks provided by PROBA-V MEP.
 Examples are available in the [OpenEO GitHub repository](https://github.com/Open-EO/openeo-python-client/tree/master/examples).
 
 ## API

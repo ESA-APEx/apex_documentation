@@ -1,18 +1,17 @@
 # Algorithm Provider Guidelines
 
-@tbl-algohosting outlines the interoperability prerequisites required for algorithm providers, such as EO application 
-projects, to host their workflows and algorithms within APEx. By satisfying these requirements, APEx guarantees the 
+@tbl-algohosting outlines the interoperability prerequisites required for algorithm providers, such as EO application
+projects, to host their workflows and algorithms within APEx. By satisfying these requirements, APEx guarantees the
 successful integration of workflows and algorithms and ensures reusability within the broader EO community.
 
-We highlight that the majority of these requirements apply to application projects that build an on-demand service to be
-exposed via an HTTP-based API. Projects that generate static maps as their main project result and do not need to 
-publish any service are not affected by these requirements.
+We highlight that the majority of these requirements apply to EO projects that build an on-demand service to be
+exposed via an HTTP-based API. Projects do not need to publish any service are not affected by these requirements.
 
-In terms of creating on-demand services, APEx currently supports two main standards: openEO or OGC API Processes. This 
+In terms of creating on-demand services, APEx currently supports two main standards: openEO or OGC API Processes. This
 selection should support almost any possible on-demand service. When unsure, you can contact the APEx team for advice.
 
-Finally, note that APEx also provides support to projects that need to fulfil these requirements. This support includes 
-offering a framework to run automated tests and providing packages to help with enhancing your algorithms. These are 
+Finally, note that APEx also provides support to projects that need to fulfil these requirements. This support includes
+offering a framework to run automated tests and providing packages to help with enhancing your algorithms. These are
 referred to as [propagation services](../propagation.md).
 
 In general, the aim is to simplify the process of building high-quality on-demand services rather than to add complexity.
@@ -20,13 +19,13 @@ In general, the aim is to simplify the process of building high-quality on-deman
 +-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ID          | Requirement                                                                                                                                                                                               | Description                                                                                                                                                                                                                                                                                                  |
 +=============+===========================================================================================================================================================================================================+==============================================================================================================================================================================================================================================================================================================+
-| PROV-REQ-01 | EO application project results with respect to raster data, shall be delivered as cloud-native datasets.                                                                                                  | Where possible, cloud optimized GeoTIFF is preferred. For more complex datasets, CF-Compliant netCDF is a good alternative. Use of the still evolving GeoZarr format requires confirmation by APEx and may result in future incompatibility if the selected flavour is not standardized eventually.          |
+| PROV-REQ-01 | EO project results with respect to raster data, shall be delivered as cloud-native datasets.                                                                                                              | Where possible, cloud optimized GeoTIFF is preferred. For more complex datasets, CF-Compliant netCDF is a good alternative. Use of the still evolving GeoZarr format requires confirmation by APEx and may result in future incompatibility if the selected flavour is not standardized eventually.          |
 +-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| PROV-REQ-02 | EO application project results with respect to vector data, shall be delivered as cloud-native datasets.                                                                                                  | Small datasets can use GeoJSON, GeoParquet is recommended for larger datasets.                                                                                                                                                                                                                               |
+| PROV-REQ-02 | EO project results with respect to vector data, shall be delivered as cloud-native datasets.                                                                                                              | Small datasets can use GeoJSON, GeoParquet is recommended for larger datasets.                                                                                                                                                                                                                               |
 +-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| PROV-REQ-03 | EO application project results with respect to data should be accompanied with metadata in a STAC format, including applicable STAC extensions.                                                           | The specific STAC profiles to be applied will be defined throughout the project.                                                                                                                                                                                                                             |
+| PROV-REQ-03 | EO project results with respect to data should be accompanied with metadata in a STAC format, including applicable STAC extensions.                                                                       | The specific STAC profiles to be applied will be defined throughout the project.                                                                                                                                                                                                                             |
 +-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| PROV-REQ-04 | EO application project results shall include documentation that addresses the scientific and technical limitations of the algorithm.                                                                      | For instance, the ability of the algorithm to generalize across space and time, input data requirements, error margins on predicted physical quantities.                                                                                                                                                     |
+| PROV-REQ-04 | EO project results shall include documentation that addresses the scientific and technical limitations of the algorithm.                                                                                  | For instance, the ability of the algorithm to generalize across space and time, input data requirements, error margins on predicted physical quantities.                                                                                                                                                     |
 +-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | PROV-REQ-05 | The algorithms shall be provided according to one of these options:                                                                                                                                       | This ensures that the algorithm can be hosted on one of the APEx-compliant algorithm hosting platforms. The APEx documentation will provide clear guidance and samples demonstrating these two options.                                                                                                      |
 |             |                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                              |
@@ -62,26 +61,26 @@ In general, the aim is to simplify the process of building high-quality on-deman
 
 ## Best Pratices
 
-The following sections provide best practice guidelines for developing APEx-compliant algorithms. While these guidelines are 
+The following sections provide best practice guidelines for developing APEx-compliant algorithms. While these guidelines are
 not mandatory, adhering to them will enhance the integration process and improve the overall experience of using the algorithm.
 
 ### Parameter naming & typing
 
-APEx proposes to standardize openEO UDP and CWL parameter names and types that are exposed to the user. This is best 
-illustrated by an example: parameters such as `bounding_box`, `bbox`, `aoi`, and `spatial_extent` likely refer to the 
-same concept. However, without common conventions, algorithms might randomly select one of these variants, complicating 
+APEx proposes to standardize openEO UDP and CWL parameter names and types that are exposed to the user. This is best
+illustrated by an example: parameters such as `bounding_box`, `bbox`, `aoi`, and `spatial_extent` likely refer to the
+same concept. However, without common conventions, algorithms might randomly select one of these variants, complicating
 the usability of the eventual algorithm library.
 
-At the time of writing, the actual conventions have not yet been defined. This becomes relevant when the first algorithms 
-reach a state where they can be published with a fixed interface. This best practice mostly targets new developments, 
+At the time of writing, the actual conventions have not yet been defined. This becomes relevant when the first algorithms
+reach a state where they can be published with a fixed interface. This best practice mostly targets new developments,
 that do not have an existing userbase or API.
 
 
 ## Licensing requirements
 
-For algorithms to be hosted and curated, APEx requires the ability to execute the algorithms as on-demand services on an 
-APEx-compliant algorithm hosting platform. This is straightforward for fully open-source algorithms, such as those licensed 
-under the Apache 2.0 license. However, for algorithms with more restrictive licenses or those dependent on artefacts like 
-trained machine learning models, the algorithm provider must be able to license APEx to execute the service without incurring 
-additional costs beyond the normal resource usage. Without such a license, the automated benchmarking and testing provided 
+For algorithms to be hosted and curated, APEx requires the ability to execute the algorithms as on-demand services on an
+APEx-compliant algorithm hosting platform. This is straightforward for fully open-source algorithms, such as those licensed
+under the Apache 2.0 license. However, for algorithms with more restrictive licenses or those dependent on artifacts like
+trained machine learning models, the algorithm provider must be able to license APEx to execute the service without incurring
+additional costs beyond the normal resource usage. Without such a license, the automated benchmarking and testing provided
 by APEx may need to be disabled for the service in question
