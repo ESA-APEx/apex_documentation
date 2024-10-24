@@ -13,7 +13,7 @@ Below are several use cases that demonstrate how these services can be applied t
 
 ### Solution
 
-The [APEx Toolbox Cloudfication](toolboxcloud.md) service aims to convert a subset of features from an existing toolbox
+The [APEx Toolbox Cloudification](toolboxcloud.md) service aims to convert a subset of features from an existing toolbox
 into
 cloud-based services that comply with APEx standards, enabling seamless integration with cloud resources and existing
 platforms. It is important to note that the cloudification efforts focus on the data transformation functions provided by the toolbox
@@ -154,10 +154,10 @@ service is available to provide further support.
 
 The [APEx Upscaling Service](upscaling.md) offers tools and support to assist projects in automating and scaling their
 data processing pipelines.
-These tool may include:
+These tools may include:
 
 * **Project-Specific Workspace**
-  <br/>A Jupyterlab environment allowing to start and monitor long-running jobs.
+  <br/>A JupyterLab environment allowing to start and monitor long-running jobs.
 * **Intelligent Job Distribution Tools**
   <br/>Tools for managing multiple job executions.
 
