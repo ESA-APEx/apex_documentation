@@ -1,6 +1,6 @@
 # Algorithm Provider Guidelines
 
-@tbl-algohosting outlines the interoperability prerequisites required for algorithm providers, such as EO application
+@tbl-algohosting outlines the interoperability prerequisites required for algorithm providers, such as EO
 projects, to host their workflows and algorithms within APEx. By satisfying these requirements, APEx guarantees the
 successful integration of workflows and algorithms and ensures reusability within the broader EO community.
 
