@@ -1,18 +1,6 @@
 import {fetchHeaderHTML, prependImageSources, prependLinks, transformHTML, wrapInDiv, writeToFile} from "./utils.mjs";
 
-
-// Example usage: Fetch the HTML of the header from a URL
-fetchHeaderHTML('https://apex-esa.drupal.int.vito.be/', '.c-header__bottom')
-    .then(headerHTML => {
-        if (headerHTML) {
-            console.log('Fetched Header HTML:', headerHTML);
-        } else {
-            console.log('No header found at the specified URL.');
-        }
-    });
-
-(async () => {
-    const url = 'https://apex-esa.drupal.int.vito.be/';
+export const generateHeader = async(url) => {
     const title = "APEx Documentation Portal"
     const filePath = '../apex-navigation.html'; // Path to the file where content will be saved
 
@@ -41,4 +29,7 @@ fetchHeaderHTML('https://apex-esa.drupal.int.vito.be/', '.c-header__bottom')
     } else {
         console.log('No header found at the specified URL.');
     }
-})();
+}
+
+// Example usage: Fetch the HTML of the header from a URL
+(async () => await generateHeader())();
