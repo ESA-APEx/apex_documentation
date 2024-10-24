@@ -30,12 +30,20 @@ available [here](index.qmd#what-are-the-platforms-to-choose-from).
 
 ### Automated Testing and Benchmarking
 
-To maintain the integrity of the services, APEx conducts automated testing and benchmarking in collaboration with the
-respective project teams. This ensures that the algorithms remain functional and accessible over time. APEx offers this
-testing service for free, which reduces the maintenance burden on projects.
+To ensure service integrity, APEx conducts automated testing and benchmarking in close collaboration with the respective project teams. This ensures that the algorithms remain functional and accessible over time. 
+This ensures that algorithms in the APEx Algorithm Catalogue remain functional and accessible over time. APEx offers this testing service free of charge, reducing the maintenance burden on project teams.
 
-To run the tests, APEx needs permission from the hosting platform, and an account with sufficient credits. Collaboration
-of the platform may be required to fulfill this requirement.
+Since the proper functioning of services depends on various external factors, APEx asks project teams to define at least one test scenario to verify that the service remains operational. This approach provides several benefits for all parties involved:
+
+* Algorithm maintainers receive notifications about issue without needing to build their own testing and monitoring systems.
+* Algorithm hosting platforms are similarly notified of any problems, helping them address issues early.
+* APEx is able to maintain a catalog of working services, which strengthens user trust and increases the uptake of reliable services.
+* Service providers on platforms with SLAs, such as those available on the NoR, can identify and resolve potential issues before users report SLA breaches. Algorithm hosting platforms may also use the automated test scenarios as part of their own reporting process for on-demand service performance.
+  
+APEx does not have a reporting procedure towards the NoR, or a requirement to report on the state of a service or a potential SLA breach, as APEx is also not involved in the SLA definition.
+Service providers are not forced to take action in case of a negative test. APEx may simply use a visual clue to indicate a (temporary) issue, or may hide/remove services as part of regular catalog housekeeping when the service provider indicates that the problem will not be resolved or is simply no longer reachable.
+
+To run the defined tests, APEx also needs permission from the hosting platform, and an account with sufficient credits. Collaboration of the platform may be required to fulfill this requirement.
 
 ### APEx Algorithm Catalogue
 
