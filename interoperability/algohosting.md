@@ -8,7 +8,7 @@ We highlight that the majority of these requirements apply to application projec
 exposed via an HTTP-based API. Projects that generate static maps as their main project result and do not need to 
 publish any service are not affected by these requirements.
 
-In terms of creating on-demand services, APEx currently supports two main standards: openEO or OGC API Processes. This 
+In terms of creating on-demand services, APEx currently supports two main interface standards: openEO or OGC API Processes. This 
 selection should support almost any possible on-demand service. When unsure, you can contact the APEx team for advice.
 
 Finally, note that APEx also provides support to projects that need to fulfil these requirements. This support includes 

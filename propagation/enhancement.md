@@ -18,13 +18,12 @@ with details of any external dependencies to the enhancement team. The enhanceme
 and estimate the effort for the service, which results in an offer. In the second phase, on acceptance of the offer by
 the provider and by ESA, the enhancement is performed.
 As a result, the service user receives an optimized version of their algorithm code with high code quality.
-Optionally, the enhancement procedure includes a cloudification step, where the algorithm is implemented as an openEO
+Optionally, the enhancement procedure includes an onboarding step, where the algorithm is implemented as an openEO
 User Defined Process (UDP) or Application Package. This makes it possible to host the algorithm on an NoR platform and
 provide it as an on-demand service.
 
-Complementary to this service, the [Algorithm Onboarding](./onboarding.md) service can provide additional support for hosting the algorithms prepared by the algorithm enhancement service. On the other side,
-the [Toolbox Cloudification](./toolboxcloud.md) service offers a similar set of features aimed at algorithms that are
-already available as part of standalone software packages (toolboxes) and makes them available as on-demand
+The [Algorithm Onboarding](./onboarding.md) service can provide additional support for hosting the algorithms prepared by the algorithm enhancement service. The [Toolbox Cloudification](./toolboxcloud.md) service complements the other services but aiming at algorithms that are
+already available as part of standalone software packages (toolboxes), with the ultimate goal of making them available as on-demand
 APEx-compatible algorithms.
 
 #### Features of the Algorithm Enhancement Service
@@ -36,8 +35,8 @@ The algorithm enhancement service offers the following features:
   This may include switching to a distributed execution model and improving code quality.
 - Optimization considering the capabilities of target processing platforms.
 - Exploitation of algorithms available on APEx where appropriate, e.g. replacing custom functions with equivalent
-  pre-optimized openEO functions.
-- Delivery of an enhanced implementation of the algorithm that is ready to be listed in the APEx algorithm catalogue.
+  pre-optimized functions.
+- Delivery of an enhanced implementation of the algorithm that is ready to be onboarded in APEx.
 
 #### How to use the Algorithm Enhancement Service
 
@@ -52,14 +51,12 @@ information that is required to make use of it. The necessary components are:
 
 Once this information has been provided, the enhancement team will perform a two-phase analysis. The analysis consists
 of a briefer, standardized analysis phase, followed by a more thorough cost and effort estimate. On acceptance, the
-enhancement team will begin work to enhance and integrate the algorithm on APEx. The exact process of enhancement
-depends on the nature of the initial algorithm and its implementation. Depending on these conditions, the enhanced
-algorithm is integrated into APEx either as an openEO UDP or as an OGC Application Package. Application Packages are
-based upon one or more container images implementing the algorithm in a custom environment.
+enhancement team will begin work to enhance the algorithm. The exact process of enhancement
+depends on the nature of the initial algorithm and its implementation.
 
 If the algorithm was originally implemented in accordance with the APEx compliance guidelines, the process can be more
-straightforward. In this case there will be more overlap between the libraries and design patterns used in the initial
-implementation and those required for an optimized APEx version, and the enhancement process will be different and fewer
+straightforward, as in this case there will be more overlap between libraries and design patterns used in the initial
+implementation and those required for an optimized APEx version. The enhancement process will be different and fewer
 changes have to be made to the code base.
 
 

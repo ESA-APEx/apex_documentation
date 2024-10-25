@@ -29,9 +29,9 @@ to utilize these features as reusable, on-demand services on existing hosting pl
 
 ### Scenarios
 
-A project is experiencing performance issues with an algorithm. The following scenarios are supported:
+A project is experiencing performance issues with an algorithm. Both of the following scenarios are supported:
 
-1. The algorithm is implemented in openEO or made available as an OGC Application Package.
+1. The algorithm is already implemented in openEO or made available as an OGC Application Package.
 2. The algorithm has not yet been integrated into an openEO or OGC Application Package.
 
 ### Examples
@@ -65,7 +65,7 @@ The algorithm's performance is significantly improved.
 ### Examples
 
 * The project has created an EO data processing pipeline for generating a new air quality index and wants to encapsulate
-  it in a UDP or OGC Application Package to facilitate easy execution by stakeholders and
+  it in an openEO UDP or OGC Application Package to facilitate easy execution by stakeholders and
   integration into a dashboard.
 
 ### Solution
@@ -92,7 +92,7 @@ The algorithm is successfully transformed and is now available as an openEO UDP 
 ### Scenarios
 
 * A project has implemented its algorithm as an openEO User Defined Process (UDP) or packaged it as an OGC Application
-  Package and wants to make it available to the APEx community.
+  Package (or had it ported to one of these two options) and wants to make it available to the APEx community.
 
 ::: {.callout-tip}
 
@@ -129,7 +129,7 @@ the EO community as an APEx-compliant service.
 
 ### Scenarios
 
-* A project is currently testing and validating an openEO or OGC Application Package based data processing pipeline on a
+* A project is currently testing and validating a data processing pipeline based on openEO or OGC Application Package on a
   limited subset of data and aims to upscale this pipeline for production and large-scale data processing.
 
 :::{.callout-tip}
@@ -144,9 +144,9 @@ service is available to provide further support.
 
 ### Examples
 
-* The project has developed an openEO processing graph or OGC Application Package-based workflow to generate a new air
+* The project has developed a workflow as an openEO processing graph or OGC Application Package to generate a new air
   quality index. So far, the testing and validation of this workflow have been carried out over a limited geographical
-  area, and the project now aims to generate the index at the country level.
+  area, and the project now aims to generate the index at country level.
 * The project has discovered an algorithm in the APEx Algorithm Catalogue for generating a new air quality index and
   aims to execute this algorithm on all historical data for the entire continent of Europe.
 
@@ -154,7 +154,7 @@ service is available to provide further support.
 
 The [APEx Upscaling Service](upscaling.md) offers tools and support to assist projects in automating and scaling their
 data processing pipelines.
-These tool may include:
+These tools may include:
 
 * **Project-Specific Workspace**
   <br/>A dedicated workspace for managing and monitoring your processing pipelines.

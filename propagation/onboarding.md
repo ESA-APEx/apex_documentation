@@ -4,8 +4,8 @@ APEx offers an algorithm onboarding service as part of its propagation services 
 accessible to the EO community beyond the project's completion. This service aims to sustain and promote the use of
 algorithms developed during ESA projects, ensuring their longevity and continued utilization.
 
-For engagement with stakeholders of the algorithm, APEx collaborates closely with
-the [Stakeholder Engagement Facility](https://esa-sef.eu/). This initiative will provide outreach and training towards
+For engagement with stakeholders of the algorithm, APEx collaborates closely with initiatives such as
+the [Stakeholder Engagement Facility](https://esa-sef.eu/). Such initiatives provide outreach and training towards
 users, to maximize the uptake of the onboarded algorithms.
 
 By leveraging APEx’s Algorithm Onboarding service, you can ensure that your project’s innovations continue to benefit
@@ -18,7 +18,7 @@ EO community long after your project ends.
 
 APEx supports your project in selecting the appropriate hosting environment for your algorithm based on
 the [APEx Interoperability and Compliance Guidelines](../interoperability/algohostingenv.md). APEx also assists in the
-onboarding process, ensuring that your algorithm is available for execution on the selected platform and ready for
+hosting environment onboarding process, ensuring that your algorithm is available for execution on the selected platform and ready for
 further integration into the APEx Algorithm Catalogue.
 
 :::{.callout-tip}
@@ -27,19 +27,26 @@ A full list of the APEx-compliant algorithm hosting platforms is available [here
 
 ### Automated Testing and Benchmarking
 
-To maintain the integrity of the algorithms, APEx conducts automated testing and benchmarking in collaboration with the
+To maintain the integrity of the algorithms, APEx conducts periodic, automated testing and benchmarking in collaboration with the
 respective project teams. This ensures that the algorithms remain functional and accessible over time.
 
 ### APEx Algorithm Catalogue
 
 The Algorithm Onboarding service supports result propagation through an algorithm catalogue, facilitating easy
-browsing and access to available algorithms. Users and other projects can also easily onboard their own algorithms,
+browsing and access to available algorithms. Users and projects can also onboard their own algorithms,
 fostering collaboration and innovation within the EO community.
 
-The algorithm catalogue allows visitors to execute algorithms on the corresponding APEx-compliant hosting environment.
-For more details, please refer to [this section](#execute-a-service-from-the-apex-algorithm-catalogue).
+The algorithm catalogue allows visitors to discover and select algorithms for subsequent execution on the corresponding APEx-compliant hosting environment.
 
-## Condiserations and Project Responsiblities
+::: {.callout-note title="Disclaimer"}
+APEx relies on the APEx-compliant algorithm hosting environments for algorithm execution and the provisioning of the
+corresponding cloud resources. Users wishing to execute an algorithm will need a valid account on the relevant hosting
+platform or make a request through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/).
+:::
+
+Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Catalogue.
+
+## Considerations and Project Responsiblities
 
 ### Algorithm Maintenance
 
@@ -48,7 +55,7 @@ updating of the algorithm remain the responsibility of the original developer or
 
 ### Algorithm Execution
 
-Algorithm execution is carried out one of the respective APEx-compliant algorithm hosting platform. By default, APEx
+Algorithm execution is carried out one of the respective APEx-compliant algorithm hosting platforms. By default, APEx
 does not provide direct access to processing resources on these platforms. However, projects can request processing
 resources through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/). When resources are requested
 for a specific algorithm, onboarded to the NoR, APEx can facilitate access to cloud processing resources on the
@@ -62,13 +69,3 @@ the [APEx upscaling service](./upscaling.md).
 ## Onboard Your Algorithm on the APEx Algorithm Catalogue
 
 Stay tuned for more detailed instructions on how to onboard your algorithm into our catalogue.
-
-## Execute a service from the APEx Algorithm Catalogue
-
-::: {.callout-note title="Disclaimer"}
-APEx relies on the APEx-compliant algorithm hosting environments for algorithm execution and the provisioning of the
-corresponding cloud resources. Users wishing to execute an algorithm will need a valid account on the relevant hosting
-platform or make a request through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/).
-:::
-
-Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Catalogue.
