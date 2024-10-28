@@ -14,5 +14,5 @@ You can find more detailed guidelines on the following pages:
   <br/>Discover how to make your algorithm APEx compliant and enable its use within APEx services and the larger EO community.
 * [Algorithm Hosting Environments](./algohostingenv.md)
   <br/>Explore the guidelines for integrating your algorithm hosting environment into APEx services.
-* [Geospatial Explorer](./dashboards.md)
+* [Geospatial Explorer](./geospatial_explorer.md)
   <br/>Learn how to integrate data sources and configure your dashboards.
