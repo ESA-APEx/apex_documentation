@@ -4,8 +4,8 @@ The Algorithm Intercomparison Service benchmarks various algorithms against each
 EO services that implement the same capability. This aids end users in making informed decisions about which algorithm
 to choose.
 
-Additionally, it assists in identifying the most suitable algorithms for [cloudification](./toolboxcloud.md) or [enhancement](./enhancement.md), ensuring that
-only the most effective and efficient options are pursued.
+Additionally, this service assists in identifying the algorithms that would most benefit from 'cloudification' or enhancement, ensuring that
+only the most effective and efficient tasks are pursued.
 
 ## Examples
 

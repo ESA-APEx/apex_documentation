@@ -34,7 +34,7 @@ Another important outcome is an initial assessment of potential risks that may a
 
 For projects that already have established EO data processing workflows, APEx offers dedicated support to help transform
 these workflows into **openEO User Defined Processes (UDP)**. This step ensures that the algorithm meets the
-requirements set out in the APEx [Interoperability and Compliance Guidelines]().
+requirements set out in the APEx [Interoperability and Compliance Guidelines](../interoperability/index.md).
 
 Through time-limited expert consultations, APEx's openEO specialists will work closely with your team, offering hands-on
 guidance and resolving any technical challenges. This support covers the entire process, from adapting your existing
