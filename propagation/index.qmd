@@ -1,10 +1,10 @@
 # From Earth Observation Applications to Services
 
 One of the primary goals of APEx is to facilitate the transition of Earth Observation R&D results into re-usable, scalable, cloud-based on-demand services.
-The primary target audience is first of all ESA EOP projects but on the longer term the larger EO science and applications community. 
+The primary target audience is first of all ESA EOP projects but on the longer term the larger EO science and applications community.
 
-Currently ESA EOP R&D projects generate a variety of results including for example EO derived value added products (raster or vector files, typically level-3 and level-4), 
-workflows and algorithms, or conventional (open-source) desktop software solutions. Maintaining these results beyond the lifetime of a specific project is a challenge and this is a key objective for APEx. 
+Currently ESA EOP R&D projects generate a variety of results including for example EO derived value added products (raster or vector files, typically level-3 and level-4),
+workflows and algorithms, or conventional (open-source) desktop software solutions. Maintaining these results beyond the lifetime of a specific project is a challenge and this is a key objective for APEx.
 
 The vision for the ESA APEx initiative is adopt FAIR data principles and ensure that project results remain Findable and Accessible and that they become Interoperable and Reusable. For value added products, this mainly involves ingestion in an ESA controlled persistent storage solution and exposing these products accordingly (using STAC and other technologies).
 
@@ -25,7 +25,7 @@ The support offered by APEx in terms of algorithm propagation involves various s
 
 ## What is an on-demand service?
 
-Resulting on-demand services should be compliant to FAIR data principles. 
+Resulting on-demand services should be compliant to FAIR data principles.
 
 Therefore, currently APEx-compliant on-demand services should either adopt  an openEO User Defined Process (UDP) or an OGC API Process implementation. There are additional [APEx compliance and interoperability guidelines](../interoperability/algohosting.md) which help ensuring FAIR compliance.
 
@@ -33,6 +33,11 @@ Therefore, currently APEx-compliant on-demand services should either adopt  an o
 
 The easiest and most cost-effective way to build these on-demand services is to use an existing platform that is already part of the [ESA Network of Resources (NoR)](https://nor-discover.org/en/portfolio/).
 It is important to note that APEx itself is _not_ a processing platform, but rather an initiative to streamline and aggregate EO based services building on top of existing EO platforms. Consequently, APEx treats compliant EO platforms or hosting environments neutrally and algorithm PIs can decide where to deploy the resulting service.
+
+### Which option to choose?
+
+To help out projects, we created dedicated pages to explain the benefits of [Application Package via OGC API Processes](./ogc_processes.md)
+and [openEO](./openeo_services.md) based services.
 
 ### Building an openEO UDP based service
 
@@ -84,7 +89,7 @@ For OGC Processes/Application Package:
 
 :::{.callout-tip}
 # Is Your Platform APEx-Compliant?
-If your platform meets the APEx [interoperability and compliance guidelines](../interoperability/algohostingenv.md), and you have onboarded your platfrom to the ESA Network of Resources (or plan to do that), 
+If your platform meets the APEx [interoperability and compliance guidelines](../interoperability/algohostingenv.md), and you have onboarded your platfrom to the ESA Network of Resources (or plan to do that),
 we encourage you to reach out to the APEx team to get it added to the list.
 :::
 
