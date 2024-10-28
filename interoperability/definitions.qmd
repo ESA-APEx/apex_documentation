@@ -1,11 +1,30 @@
 # Definitions & Actors
 
 This section introduces key terms and their meaning in the APEx context, which are crucial for building a common
-understanding of the complex ecosystem in which APEx operates. Along with the general definitions, @fig-concepts
-visually
-demonstrates the interconnections between these concepts.
+understanding of the complex ecosystem in which APEx operates. Along with the general definitions, the flow chart below
+visually demonstrates the interconnections between these concepts.
 
-![Concepts and relationships](../interoperability/images/apex_definitions_actors.png){#fig-concepts}
+```{mermaid}
+flowchart TD
+    EO_PROJECT("EO Project")
+    ALGORITHM("Application Algorithm Definition")
+    ALGORITHM_GUIDELINES("Algorithm Provider Guidelines")
+    OPENEO_OGC("openEO API or OGC Processes API")
+    HOSTING_PLATFORM("Algorithm Hosting Platform")
+    OPERATOR("Platform Operator")
+    PLATFORM_GUIDELINES("Algorihm Hosting Platform Guidelines")
+    CATALOGUE("APEx Algorithm Catalogue")
+    APEX("APEx Consortium")
+
+    EO_PROJECT --> | owns | ALGORITHM
+    ALGORITHM --> | adheres to | ALGORITHM_GUIDELINES
+    ALGORITHM --> | hosted on | OPENEO_OGC
+    OPENEO_OGC --> | deployed on | HOSTING_PLATFORM
+    OPERATOR --> | operated by | HOSTING_PLATFORM
+    HOSTING_PLATFORM --> | adheres to | PLATFORM_GUIDELINES
+    ALGORITHM --> | registered in | CATALOGUE
+    APEX ---> | curates | CATALOGUE
+```
 
 ## Concepts
 
@@ -26,7 +45,7 @@ Application Package, using the Common Workflow Language (CWL).
 The APEx algorithm catalogue is a central register of application algorithm definitions that can be executed on
 APEx-compliant algorithm hosting platforms. Curated by APEx, the catalogue relies on automated checks to ensure that
 advertised algorithms are available and functional. Whenever a malfunction is detected, this is reported to ESA and the
-EO application project consortium, allowing them to determine a proper course of action.
+EO project consortium, allowing them to determine a proper course of action.
 
 ### Hosted Algorithm
 To increase uptake and interoperability, APEx aims to enable the execution of application algorithms via standardized
@@ -48,31 +67,29 @@ Copernicus Data Space Ecosystem for openEO or Ellip for OGC Processes.
 
 It is important to note that APEx itself is not an algorithm hosting platform; rather, it promotes the reuse of existing
 platforms. A key property of algorithm hosting platforms is their long-term sustainability, beyond the lifetime of a
-typical EO application project. This ensures that algorithms can still be executed after the project ends.
+typical EO project. This ensures that algorithms can still be executed after the project ends.
 
 The algorithm hosting platform has an important responsibility to ensure the continued availability of hosted
 algorithms. This responsibility is detailed in the requirements below, highlighting that the selection of the platform
 affects properties such as cost, performance, stability, and the amount of computing resources available to run the
 algorithm. Compliance with these requirements does not necessarily imply a high overall quality level across all
-aspects, ensuring that EO application projects retain a sufficient degree of freedom in selecting their preferred
+aspects, ensuring that EO projects retain a sufficient degree of freedom in selecting their preferred
 platform.
 
 ## Actors
 
-### EO Application Project
-A project that is executed within the ESA Earth Observation (EO) 'Future-EO1 Segment-2' programme, specifically the
-Applications Element of the ‘Earth Science for Society’ block. The Applications Element aims to pioneer innovative and
-reliable EO applications and solutions in support of international environment and development policies (e.g. UN 2030
-agenda on Sustainable Development). Generally, the more applied science projects, commonly those not directly addressing
-Earth system science objectives, are considered application projects.
-
-The ESA EO application project refers to the consortium that is responsible for building the application algorithm. ESA
-will indicate if a specific application project must comply with APEx guidelines. When compliance is required, the
+### EO Project
+The EO project refers to the consortium that is responsible for building the application algorithm. ESA
+will indicate if a specific project must comply with APEx guidelines. When compliance is required, the
 consortium can utilize various services offered by APEx. Specifically, the APEx propagation services aim to support the
 enhancement of algorithms on a technical and software level and facilitate the transition to hosted algorithms that can
 be included in the APEx algorithm catalogue.
 
-It is important to note that during the execution of the project, the application project retains full responsibility
+ESA EO projects that do not have an explicit compliance requirement are also eligible to receive support. The APEx
+support can boost project impact, so projects are encouraged to inquire with their ESA technical officer about the
+possibilities.
+
+It is important to note that during the execution of the project, the project retains full responsibility
 for the final quality of the algorithms and workflows.
 
 ### APEx Consortium

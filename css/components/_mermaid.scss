@@ -1,0 +1,14 @@
+$mermaid-font-family: var(--font-family);
+
+$mermaid-label-fg-color: var(--darkblue);
+$mermaid-node-bg-color: var(--white);
+$mermaid-edge-color: var(--lightgreen);
+$mermaid-label-bg-color: var(--white);
+
+
+.edgeLabel {
+  background-color: rgb(255 255 255 / 90%) !important;
+  padding: 0.1rem 0.25rem;
+  border-radius: 5px;
+  font-size: small;
+}

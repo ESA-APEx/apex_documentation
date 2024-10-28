@@ -28,6 +28,7 @@ ensuring that it integrates seamlessly with APEx’s ecosystem. Possible options
 
 This assessment phase ensures that your algorithm is mapped to the most appropriate APEx-compliant technology, setting a
 clear path for its porting.
+Another important outcome is an initial assessment of potential risks that may affect the outcome of the porting process. This allows the project technical officer and APEx ESA responsible to decide if porting can continue. 
 
 ### Support for Transforming Algorithms into openEO UDPs
 

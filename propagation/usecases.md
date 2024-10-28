@@ -13,10 +13,10 @@ Below are several use cases that demonstrate how these services can be applied t
 
 ### Solution
 
-The [APEx Toolbox Cloudfication](toolboxcloud.md) service aims to convert a subset of features from an existing toolbox
+The [APEx Toolbox Cloudification](toolboxcloud.md) service aims to convert a subset of features from an existing toolbox
 into
 cloud-based services that comply with APEx standards, enabling seamless integration with cloud resources and existing
-platforms. It is important to note that the cloudification efforts focus on the core functions provided by the toolbox
+platforms. It is important to note that the cloudification efforts focus on the data transformation functions provided by the toolbox
 and do not include user interface elements.
 
 ### Outcome
@@ -125,7 +125,7 @@ the APEx Algorithm Catalogue, ensuring its availability for reuse within the EO 
 The algorithm is available in the APEx Algorithm Catalogue, enhancing its visibility and usability within
 the EO community as an APEx-compliant service.
 
-## Use Case 5: Automating EO Data Processing Pipelines for Large-Scale Data Processing
+## Use Case 5: Generating large scale maps or results based on on-demand EO services
 
 ### Scenarios
 
@@ -157,11 +157,11 @@ data processing pipelines.
 These tools may include:
 
 * **Project-Specific Workspace**
-  <br/>A dedicated workspace for managing and monitoring your processing pipelines.
+  <br/>A JupyterLab environment allowing to start and monitor long-running jobs.
 * **Intelligent Job Distribution Tools**
-  <br/>Automated tools for distributing and tracking processing jobs efficiently
+  <br/>Tools for managing multiple job executions.
 
 ### Outcome
 
-A comprehensive data processing environment is established for your project, equipped with the necessary tools and
-support for scaling your EO data processing pipeline.
+You receive support and tools that enable you to start processing,
+monitor progress, and successfully generate large area deliverables.

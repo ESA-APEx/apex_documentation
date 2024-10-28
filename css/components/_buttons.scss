@@ -1,16 +1,16 @@
 .btn-primary {
-  padding: 1rem 1.85rem;
-  border: none;
-  border-radius: 100rem;
+  padding: 1rem 1.85rem !important;
+  border: none !important;
+  border-radius: 100rem !important;
 
-  background-color: var(--lightgreen);
-  color: var(--white);
+  background-color: var(--lightgreen) !important;
+  color: var(--white) !important;
 
-  font-size: var(--text-base);
-  line-height: 1.2;
+  font-size: var(--text-base) !important;
+  line-height: 1.2 !important;
 
   &:hover {
-    background-color: var(--green);
+    background-color: var(--green) !important;
   }
 }
 
