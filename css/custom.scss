@@ -1,6 +1,8 @@
-@import "variables";
+@import "apex_variables";
+@import "mixins";
 @import "./components/page";
 @import "./components/header";
+@import "./components/footer";
 @import "./components/buttons";
 @import "./components/navigation";
 @import "./components/sidebar";
@@ -9,6 +11,10 @@
 @import "./components/code";
 @import "./components/images";
 @import "./components/tables";
+@import "./components/mermaid";
+@import "./components/sub-menu";
+@import "./components/hamburger";
+@import "./components/grid";
 
 /*-- scss:rules --*/
 
@@ -18,7 +24,7 @@
   font-style: normal;
   font-weight: 400;
   src: local(""), url("./assets/fonts/NotesEsa.woff2") format("woff2"), url("./assets/fonts/NotesEsa.woff") format("woff");
-  font-display: swap; 
+  font-display: swap;
 }
 
 @font-face {
@@ -26,7 +32,7 @@
   font-style: italic;
   font-weight: 400;
   src: local(""), url("./assets/fonts/NotesEsa-Italic.woff2") format("woff2"), url("./assets/fonts/NotesEsa-Italic.woff") format("woff");
-  font-display: swap; 
+  font-display: swap;
 }
 
 @font-face {
