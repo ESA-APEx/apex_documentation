@@ -16,6 +16,7 @@ The schema will be versioned as it will change over the course of the APEx proje
 | EXPLORER-REQ-01 | Configuration of the Geospatial Explorer shall adhere to the provided JSON schema                                                                                                                                                                                                  | The application is configured through a hosted JSON object which is fetched when the client-side application loads. For the application to correctly render, a valid configuration JSON that follows the outlined schema must be provided pre-instantiation. During early development the schema will be subject to change and provided with limited validation.|
 +-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | EXPLORER-REQ-02 | Raster sources defined within the config shall be provided as either:                                                                                                                                                                                                              |                                                                                                                                                                                                                                                                                                                                                                 |
+|                 |                                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                 |
 |                 | - A well formed URL to a hosted Cloud Optimised GeoTiff (COG)                                                                                                                                                                                                                      |                                                                                                                                                                                                                                                                                                                                                                 |
 |                 | - A WMS or WMTS endpoint following the relevant OGC specifications.                                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                                 |
 |                 | - A template URL following the XYZ format serving PNG or JPEG tiles                                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                                 |
@@ -32,7 +33,7 @@ The schema will be versioned as it will change over the course of the APEx proje
 +-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 : Interoperability requirements for the Geospatial Explorer application {#tbl-geoexplorer}{tbl-colwidths="[30,70]"}
 
-## Configuration Schema 
+## Configuration Schema
 
 The service configuration will be based on a schema that provides administrators with the expected structure and contents of the configuration. Taking this approach enables:
 
@@ -40,9 +41,9 @@ The service configuration will be based on a schema that provides administrators
 - Configuration validation.
 - Definition of a "contract" for easier documentation of features and their configuration.
 
-The sections below briefly outline the strcuture of the configuration schema and provides a prelimeinary description of each field/property within. The shcema currently consists of four top-level fields, all properties are written in camel case:
+The sections below briefly outline the structure of the configuration schema and provides a preliminary description of each field/property within. The schema currently consists of four top-level fields, all properties are written in camel case:
 
-## Layout - `layout`
+### Layout - `layout`
 
 An object with properties that modify the elements that the application will render. These properties and elements relate specifically to non-geospatial layout components, like navigation and footer.
 
@@ -50,20 +51,20 @@ Currently supported properties:
 
 #### Navigation - `navigation`
 
-An object wich supports two properties:
+An object which supports two properties:
 
 - `logo`: A URL string that points to a logo image asset.
 - `title`: A string to be used as a title for the application.
 
-## Interface Groups - `interfaceGroups`
+### Interface Groups - `interfaceGroups`
 
 An optional array of strings to be used as names/keys. This is currently used to configure the grouping of layer UI elements such as the layer cards. Will be expanded in later versions
 
-## Exclusivity Sets - `exclusivitySets`
+### Exclusivity Sets - `exclusivitySets`
 
 An optional array of strings to be used as names/keys. This is currently not in use but is a placeholder for future work.
 
-## Sources - `sources`
+### Sources - `sources`
 
 An array of objects. Each object outlines a particular data source to be configured for display within the application, with properties detailing both the geospatial and user interface configuration.
 
@@ -99,7 +100,7 @@ An optional string used to identify which interface group this layer belongs to.
 An object that provides configuration of the data to be displayed in the layer. This currently supports the following properties:
 
 - `url`: A required URL string that points to the datasets publically available resource.
-- `type`: A required string that identifies what kind of dataset is requested. Can be one of the following: 'wms', 'wmts', 'cog', 'xyz', 'wfs', 'geojson'. 
+- `type`: A required string that identifies what kind of dataset is requested. Can be one of the following: 'wms', 'wmts', 'cog', 'xyz', 'wfs', 'geojson'.
 - `layers`: Only required for sources of type: 'wms' and 'wmts'. A string the describes the layer to be requested from the external service.
 - `typeName`: Only required for sources of type: 'wfs'. A string the describes the type to be requested from the external service.
 - `zIndex`: Optional interger that determines rendering order within the map. Can be used to override the default rendering of Open Layers.
@@ -110,12 +111,12 @@ An object that provides configuration of the data to be displayed in the layer. 
 - `images`: Only required for sources of type: 'cog'. An array of objects that contain a url property pointing to a COG resource. Replaces the 'url' property for this source type. Allows loading multiple GeoTiffs into one layer.
 
 
-## Example Shcema
+## Example Schema
 
-The following is an example of an working JSON file that may be used to configure the application. 
+The following is an example of an working JSON file that may be used to configure the application.
 
 ::: {.callout-warning}
-The API is an early draft that will be subject to significant on-going changes. The following is for illustrative purposes only. 
+The API is an early draft that will be subject to significant on-going changes. The following is for illustrative purposes only.
 :::
 
 ```
@@ -231,50 +232,7 @@ The API is an early draft that will be subject to significant on-going changes. 
                         "type": "swatch",
                         "visible": true,
                         "data": [
-                            {
-                                "color": "rgb(0, 100, 0)",
-                                "label": "Tree cover"
-                            },
-                            {
-                                "color": "rgb(255, 187, 34)",
-                                "label": "Shrubland"
-                            },
-                            {
-                                "color": "rgb(255, 255, 76)",
-                                "label": "Grassland"
-                            },
-                            {
-                                "color": "rgb(240, 150, 255)",
-                                "label": "Cropland"
-                            },
-                            {
-                                "color": "rgb(255, 0, 0)",
-                                "label": "Built up"
-                            },
-                            {
-                                "color": "rgb(180, 180, 180)",
-                                "label": "Bare"
-                            },
-                            {
-                                "color": "rgb(240, 240, 240)",
-                                "label": "Snow and ice"
-                            },
-                            {
-                                "color": "rgb(0, 100, 200)",
-                                "label": "Permanent water bodies"
-                            },
-                            {
-                                "color": "rgb(0, 150, 160)",
-                                "label": "Herbaceous wetland"
-                            },
-                            {
-                                "color": "rgb(0, 207, 117)",
-                                "label": "Mangroves"
-                            },
-                            {
-                                "color": "rgb(250, 230, 160)",
-                                "label": "Moss and lichen"
-                            }
+                               ....
                         ]
                     }
                 },
