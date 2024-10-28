@@ -1,0 +1,13 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://portfolio.nor-discover.org"
+    },
+    {
+      "pattern": "^https://nor-discover.org"
+    },
+    {
+      "pattern": "^https://www.drupal.org/"
+    }
+  ]
+}

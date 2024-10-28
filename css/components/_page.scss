@@ -4,8 +4,8 @@ body {
 
 body, h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family);
-  border-bottom: none !important;
 }
+
 
 p, li {
   opacity: var(--opacity);
@@ -21,13 +21,20 @@ li p {
   max-width: 100%;
 }
 
+.blur-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
+}
+
 .blur {
   position: absolute;
   width: 100vw;
-  height: 2200px;
-  top: 100%;
+  height: 2800px;
   right: 0;
-  transform: translateY(-50%);
+  transform: translateY(-20%);
   z-index: -1;
   overflow: hidden;
 
