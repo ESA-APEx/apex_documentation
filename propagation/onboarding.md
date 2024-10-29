@@ -4,10 +4,10 @@ APEx offers an algorithm onboarding service as part of its propagation services 
 algorithms remain accessible to the EO community beyond the project's completion. This service not only aims to sustain
 and promote the use of algorithms developed during ESA projects, ensuring their longevity and continued utilisation, but
 also ensures alignment with the FAIR and open science data principles. This is achieved through the implementation of
-[APEx interoperability and compliance guidelines](../interoperability/index.md) and by registering the services in the
+[APEx Interoperability and Compliance Guidelines](../interoperability/index.md) and by registering the services in the
 APEx Algorithm Catalogue for broader visibility and accessibility.
 
-For engagement with stakeholders of the algorithm, APEx collaborates closely with initiatives such as
+For the engagement with stakeholders of the algorithm, APEx collaborates closely with initiatives such as
 the [Stakeholder Engagement Facility](https://esa-sef.eu/). Such initiatives provide outreach and training towards
 users to maximise the uptake of the onboarded algorithms.
 

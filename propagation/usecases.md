@@ -6,10 +6,9 @@ Below are several use cases that demonstrate how these services can be applied t
 
 ## Use Case 1: Transforming features of an existing toolbox into an on-demand, APEx-compliant service
 
-### Scenarios
+### Scenario
 
-* A project discovered a toolbox to perform EO data processing tasks and wants to integrate a specific set of features
-  from this toolbox into an openEO processing graph or use it as an OGC Application Package.
+A project discovered a toolbox to perform EO data processing tasks and wants to integrate a specific set of features from this toolbox into an openEO processing graph or use it as an OGC Application Package.
 
 ### Solution
 
@@ -21,16 +20,16 @@ and do not include user interface elements.
 ### Outcome
 
 Key features of the toolbox become accessible via an openEO process or as an OGC Application Package, allowing the
-project to utilise these features as reusable, on-demand services on existing hosting platforms.
+project and/or EO community to utilise these features as reusable, on-demand services on existing hosting platforms.
 
 ## Use Case 2: Improving algorithm performance
 
-### Scenarios
+### Scenario
 
 A project is experiencing performance issues with an algorithm. Both of the following scenarios are supported:
 
 1. The algorithm is already implemented in openEO or made available as an OGC Application Package.
-2. The algorithm has not yet been integrated into an openEO or OGC Application Package.
+2. The algorithm has not yet been implemented into openEO or made available as an OGC Application Package.
 
 ### Examples
 
@@ -53,10 +52,9 @@ The algorithm's performance is significantly improved.
 
 ## Use Case 3: Transforming an existing EO data processing workflow into an openEO UDP or OGC Application Package
 
-### Scenarios
+### Scenario
 
-* A project has developed a workflow using non-APEx-compliant technology and seeks to convert it into an openEO User
-  Defined Process (UDP) or OGC Application Package.
+A project has developed a workflow using non-APEx-compliant technology and seeks to convert it into an openEO User Defined Process (UDP) or OGC Application Package.
 
 ### Examples
 
@@ -85,10 +83,9 @@ The algorithm is successfully transformed and is now available as an openEO UDP 
 
 ## Use Case 4: Make your algorithm available in the APEx Algorithm Catalogue
 
-### Scenarios
+### Scenario
 
-* A project has implemented its algorithm as an openEO User Defined Process (UDP) or packaged it as an OGC Application
-  Package (or had it ported to one of these two options) and wants to make it available to the APEx community.
+A project has implemented its algorithm as an openEO User Defined Process (UDP) or packaged it as an OGC Application Package (or had it ported to one of these two options) and wants to make it available to the APEx community.
 
 ::: {.callout-tip}
 
@@ -109,9 +106,9 @@ discover how APEx can provide support.
 ### Solution
 
 The [APEx Algorithm Onboarding](onboarding.md) service offers comprehensive support for integrating your algorithm into
-the APEx Algorithm Catalogue, ensuring its availability for reuse within the EO community. The service includes:
+the APEx Algorithm Catalogue, ensuring its availability for reuse within the EO community. The service also includes:
 
-* Assistance in selecting an APEx-compliant algorithm hosting platform to guarantee that your algorithm is available for
+* Assistance in selecting and onboarding an APEx-compliant algorithm hosting platform to guarantee that your algorithm is available for
   execution.
 * Provision of tools for automated testing and benchmarking of your algorithm.
 * Support and resources for registering your algorithm in the APEx Algorithm Catalogue.
@@ -123,10 +120,9 @@ the EO community as an APEx-compliant service.
 
 ## Use Case 5: Generating large-scale maps or results based on on-demand EO services
 
-### Scenarios
+### Scenario
 
-* A project is currently testing and validating a data processing pipeline based on openEO or OGC Application Package on a
-  limited subset of data and aims to upscale this pipeline for large-scale data processing.
+A project is currently testing and validating a data processing pipeline based on openEO or OGC Application Package on a limited subset of data and aims to upscale this pipeline for large-scale data processing.
 
 :::{.callout-tip}
 

@@ -3,26 +3,26 @@
 The algorithm enhancement service helps scientists and algorithm developers transform their research code into a
 performant and stable piece of software that can be run in an operational setting.
 These enhancement activities ensure code quality, maintainability and performance of your algorithm.
-To ensure performant execution on a NoR processing platform which offers openEO or Application Package algorithms,
+To ensure performant execution on a NoR processing platform, offering openEO or OGC API Processes,
 additional optimisation dedicated to the platform capabilities may be needed.
 The exact requirements, steps, and effort involved in this process can vary heavily from case to case due to the
 variations in initial implementations and operational requirements.
 
 The code of the enhanced version of the algorithm will be published in a dedicated APEx GitHub repository, and algorithm
 providers are encouraged to use it as a basis for further development of the algorithm.
-This way, the version hosted on APEx can be kept up to date.
+This approach ensures that the version, hosted on APEx, can be kept up to date.
 
 The algorithm enhancement service has two phases. In the first phase, the algorithm provider submits their existing
 implementation, including source code, input data, and instructions to build, install and execute their code, together
-with details of any external dependencies to the enhancement team. The enhancement team will then analyse the algorithm
+with details of any external dependencies to the APEx enhancement team. The enhancement team will then analyse the algorithm
 and estimate the effort for the service, which results in an offer. In the second phase, on acceptance of the offer by
 the provider and by ESA, the enhancement is performed.
 As a result, the service user receives an optimised version of their algorithm code with high code quality.
-Optionally, the enhancement procedure includes an onboarding step, where the algorithm is implemented as an openEO
+Optionally, the enhancement procedure can include an onboarding step, supported by the [APEx Algorithm Onboarding](./onboarding.md) service, where the algorithm is implemented as an openEO
 User Defined Process (UDP) or Application Package. This makes it possible to host the algorithm on a NoR platform and
 provide it as an on-demand service.
 
-The [Algorithm Onboarding](./onboarding.md) service can provide additional support for hosting the algorithms prepared by the algorithm enhancement service. The [Toolbox Cloudification](./toolboxcloud.md) service complements the other services but aims at algorithms that are
+The [Toolbox Cloudification](./toolboxcloud.md) service complements this service but aims at algorithms that are
 already available as part of standalone software packages (toolboxes), with the ultimate goal of making them available as on-demand
 APEx-compatible algorithms.
 
@@ -51,15 +51,15 @@ information that is required to make use of it. The necessary components are:
 - input data
 - expected outputs
 
-Once this information has been provided, the enhancement team will perform a two-phase analysis. The analysis consists
+Once this information has been provided, the APEx enhancement team will perform a two-phase analysis. The analysis consists
 of a briefer, standardised analysis phase, followed by a more thorough cost and effort estimate. On acceptance, the
 enhancement team will begin work to enhance the algorithm. The exact process of enhancement
 depends on the nature of the initial algorithm and its implementation.
 
-If the algorithm was originally implemented in accordance with the APEx compliance guidelines, the process can be more
+If the algorithm was originally implemented in accordance with the [APEx Interoperability and Compliance guidelines](../interoperability/algohosting.md), the process can be more
 straightforward, as in this case, there will be more overlap between libraries and design patterns used in the initial
 implementation and those required for an optimised APEx version. The enhancement process will be different, and fewer
-changes have to be made to the code base.
+changes will have to be made to the code base.
 
 ### Intellectual Property Rights
 

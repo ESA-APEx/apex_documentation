@@ -15,7 +15,7 @@ the processing capabilities of the platforms that are compatible with the servic
 A prototype of this specific APEx service is expected to be available from November 2024 onwards.
 :::
 
-## Upscaling support
+## Service Overview
 
 As upscaling to large areas can be challenging, APEx offers the possibility to request time-limited support for your
 ESA project. Based on your needs, APEx can provide:
