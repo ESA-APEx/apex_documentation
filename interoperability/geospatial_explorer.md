@@ -2,11 +2,11 @@
 
 This document outlines the requirements for the interoperability of the APEx Geospatial Explorer services. These requirements must be met in order to ensure the correct configuration and operation of the application and its instantiation.
 
-A technical challenge of the Geospatial Explorer service being provided by APEx is that it is to be instantiated on demand with functional requirements potentially varying amongst each service. This challenge is addressed by the use of a well-defined configuration schema, provided in the form of JSON, that outlines the interactive features and data sources to be used.
+A technical challenge of the Geospatial Explorer service being provided by APEx is that it is to be instantiated on demand with, functional requirements potentially varying amongst each service. This challenge is addressed by the use of a well-defined configuration schema, provided in the form of JSON, that outlines the interactive features and data sources to be used.
 
-This approach will allow APEx to define and update the schema required in the interoperability guidelines which will then enable requesters of the service to configure the application on an individual project level with minimal external intervention.
+This approach will allow APEx to define and update the schema required in the interoperability guidelines, which will then enable requesters of the service to configure the application on an individual project level with minimal external intervention.
 
-The schema will be versioned as it will change over the course of the APEx project as the functional capabilities of the Geospatial Explorer mature. This does however allow for improvements and extra features to be easily added to the application and best practices shall be followed to avoid any breaking changes between versions.
+The schema will be versioned as it will change throughout the APEx project as the functional capabilities of the Geospatial Explorer mature. This does allow for improvements and extra features to be easily added to the application, and best practices shall be followed to avoid any breaking changes between versions.
 
 @tbl-geoexplorer outlines the requirements for configuring an instance of the Geospatial Explorer application.
 
@@ -48,7 +48,7 @@ The service configuration will be based on a schema that provides administrators
 - Configuration validation.
 - Definition of a "contract" for easier documentation of features and their configuration.
 
-The sections below briefly outline the structure of the configuration schema and provides a preliminary description of each field/property within. The schema currently consists of four top-level fields, all properties are written in camel case.
+The sections below briefly outline the structure of the configuration schema and provide a preliminary description of each field/property within. The schema currently consists of four top-level fields and all properties are written in camel case.
 
 ### Layout - `layout`
 
@@ -65,7 +65,7 @@ An object which supports two properties:
 
 ### Interface Groups - `interfaceGroups`
 
-An optional array of strings to be used as names/keys. This is currently used to configure the grouping of layer UI elements such as the layer cards. Will be expanded in later versions.
+An optional array of strings to be used as names/keys. This is currently used to configure the grouping of layer UI elements, such as the layer cards. This will be expanded in later versions.
 
 ### Exclusivity Sets - `exclusivitySets`
 
@@ -91,7 +91,7 @@ An object to determine which interface elements are rendered for the layer. Supp
 
 ##### Layer Card - `layerCard`
 
-An object that will determine if a layer card should be rendered for this layer and what other interface elements should be rendered within the card. This is currently the main way to interact with a layer within the application. The layercard can show: a toggle for the layer, a selection of buttons or controls for the layer, legends and attribution text. This currently supports the following properties:
+An object that will determine if a layer card should be rendered for this layer and what other interface elements should be rendered within the card. This is currently the main way to interact with a layer within the application. The layer card can show a toggle for the layer, a selection of buttons or controls for the layer, legends and attribution text. This currently supports the following properties:
 
 - `toggleable`: A boolean that determines if a toggle switch to enable/disable the layer should be rendered.
 - `controls`: An optional array of strings that configure which buttons to render in the layer card for interaction with the layer.
@@ -100,19 +100,19 @@ An object that will determine if a layer card should be rendered for this layer 
 
 ##### Interface Group - `interfaceGroup`
 
-An optional string, used to identify which interface group this layer belongs to.
+An optional string that is used to identify which interface group this layer belongs to.
 
 #### Data - `data`
 
-An object that provides configuration of the data to be displayed in the layer. This currently supports the following properties:
+An object that configures the data to be displayed in the layer. This currently supports the following properties:
 
-- `url`: A required URL string that points to the datasets publicly available resource.
-- `type`: A required string that identifies what kind of dataset is requested. Can be one of the following: 'wms', 'wmts', 'cog', 'xyz', 'wfs', 'geojson'.
-- `layers`: Only required for sources of type: 'wms' and 'wmts'. A string the describes the layer to be requested from the external service.
-- `typeName`: Only required for sources of type: 'wfs'. A string the describes the type to be requested from the external service.
-- `zIndex`: Optional integer that determines rendering order within the map. Can be used to override the default rendering of Open Layers.
-- `exlusivitySet`: Optional string used to identify a group of other layers that should be disabled when this layer is enabled. They must share the same string.
-- `projection`: Optional EPSG code string that describes the projection of the dataset to Open Layers. If the projection is supported (and doesn't match the maps configured projection) it will attempt to reproject the data.
+- `url`: A required URL string that points to the dataset's publicly available resource.
+- `type`: A required string that identifies what kind of dataset is requested. This can be one of the following: 'wms', 'wmts', 'cog', 'xyz', 'wfs' or 'geojson'.
+- `layers`: Only required for sources of type: 'wms' and 'wmts'. A string that describes the layer to be requested from the external service.
+- `typeName`: Only required for sources of type: 'wfs'. A string that describes the type to be requested from the external service.
+- `zIndex`: Optional integer that determines rendering order within the map. It can be used to override the default rendering of Open Layers.
+- `exclusivitySet`: Optional string used to identify a group of other layers that should be disabled when this layer is enabled. They must share the same string.
+- `projection`: Optional EPSG code string that describes the projection of the dataset to Open Layers. If the projection is supported (and doesn't match the map's configured projection), it will attempt to reproject the data.
 - `style`: Open Layers style object that is passed through to the library to modify the rendering of the layer within the map.
 - `normalise`: Only required for sources of type: 'cog'. Boolean that configures the map to normalise the raster pixel values to between 0 and 1. False by default.
 - `images`: Only required for sources of type: 'cog'. An array of objects that contain a URL property pointing to a COG resource. Replaces the 'url' property for this source type. Allows loading multiple GeoTiffs into one layer.
