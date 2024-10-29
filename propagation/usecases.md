@@ -9,21 +9,19 @@ Below are several use cases that demonstrate how these services can be applied t
 ### Scenarios
 
 * A project discovered a toolbox to perform EO data processing tasks and wants to integrate a specific set of features
-  from this toolbox into an openEO processing graph or use it as a OGC Application Package.
+  from this toolbox into an openEO processing graph or use it as an OGC Application Package.
 
 ### Solution
 
 The [APEx Toolbox Cloudification](toolboxcloud.md) service aims to convert a subset of features from an existing toolbox
-into
-cloud-based services that comply with APEx standards, enabling seamless integration with cloud resources and existing
+into cloud-based services that comply with APEx standards, enabling seamless integration with cloud resources and existing
 platforms. It is important to note that the cloudification efforts focus on the data transformation functions provided by the toolbox
 and do not include user interface elements.
 
 ### Outcome
 
 Key features of the toolbox become accessible via an openEO process or as an OGC Application Package, allowing the
-project
-to utilize these features as reusable, on-demand services on existing hosting platforms.
+project to utilise these features as reusable, on-demand services on existing hosting platforms.
 
 ## Use Case 2: Improving algorithm performance
 
@@ -37,19 +35,17 @@ A project is experiencing performance issues with an algorithm. Both of the foll
 ### Examples
 
 * The project has created an openEO processing graph. Executing this workflow takes too long and incurs high execution
-  costs, making it unviable for running at the intended scale.
+  costs, not making it viable for running at the intended scale.
 * The project created a new machine learning model in Python that performs inference based on EO data. However, the
   training and/or inference steps take too long, hindering scalability for processing larger areas of interest.
 
 ### Solution
 
-The [APEx Algorithm Enhancement](enhancement.md) service offers support to optimize your algorithm through a structured
+The [APEx Algorithm Enhancement](enhancement.md) service offers support to optimise your algorithm through a structured
 analysis and improvement process. In the case of scenario 2, the APEx team will also assess whether performance can be
-enhanced
-by integrating the algorithm into APEx-compliant technologies, such as openEO or OGC Application Package. If so, the
+enhanced by integrating the algorithm into APEx-compliant technologies, such as openEO or OGC Application Package. If so, the
 [APEx Algorithm Porting](porting.md) service can be recommended to support the transformation of your algorithm into an
-openEO UDP or package it as an
-OGC Application Package.
+openEO UDP or package it as an OGC Application Package.
 
 ### Outcome
 
@@ -125,12 +121,12 @@ the APEx Algorithm Catalogue, ensuring its availability for reuse within the EO 
 The algorithm is available in the APEx Algorithm Catalogue, enhancing its visibility and usability within
 the EO community as an APEx-compliant service.
 
-## Use Case 5: Generating large scale maps or results based on on-demand EO services
+## Use Case 5: Generating large-scale maps or results based on on-demand EO services
 
 ### Scenarios
 
 * A project is currently testing and validating a data processing pipeline based on openEO or OGC Application Package on a
-  limited subset of data and aims to upscale this pipeline for production and large-scale data processing.
+  limited subset of data and aims to upscale this pipeline for large-scale data processing.
 
 :::{.callout-tip}
 
@@ -146,7 +142,7 @@ service is available to provide further support.
 
 * The project has developed a workflow as an openEO processing graph or OGC Application Package to generate a new air
   quality index. So far, the testing and validation of this workflow have been carried out over a limited geographical
-  area, and the project now aims to generate the index at country level.
+  area, and the project now aims to generate the index at the country level.
 * The project has discovered an algorithm in the APEx Algorithm Catalogue for generating a new air quality index and
   aims to execute this algorithm on all historical data for the entire continent of Europe.
 
@@ -163,5 +159,4 @@ These tools may include:
 
 ### Outcome
 
-You receive support and tools that enable you to start processing,
-monitor progress, and successfully generate large area deliverables.
+You receive support and tools that enable you to start processing, monitor progress, and successfully generate large-area deliverables.

@@ -1,23 +1,23 @@
 # From Earth Observation Applications to Services
 
-One of the primary goals of APEx is to facilitate the transition of Earth Observation R&D results into re-usable, scalable, cloud-based on-demand services.
+One of the primary goals of APEx is to facilitate the transition of Earth Observation R&D results into reusable, scalable, cloud-based on-demand services.
 The primary target audience is first of all ESA EOP projects but on the longer term the larger EO science and applications community.
 
-Currently ESA EOP R&D projects generate a variety of results including for example EO derived value added products (raster or vector files, typically level-3 and level-4),
-workflows and algorithms, or conventional (open-source) desktop software solutions. Maintaining these results beyond the lifetime of a specific project is a challenge and this is a key objective for APEx.
+Currently, ESA EOP R&D projects generate a variety of results including, for example, EO-derived value-added products (raster or vector files, typically level-3 and level-4),
+workflows and algorithms, or conventional (open-source) desktop software solutions. Maintaining these results beyond the lifetime of a specific project is a challenge and is a key objective for APEx.
 
-The vision for the ESA APEx initiative is adopt FAIR data principles and ensure that project results remain Findable and Accessible and that they become Interoperable and Reusable. For value added products, this mainly involves ingestion in an ESA controlled persistent storage solution and exposing these products accordingly (using STAC and other technologies).
+The vision for the ESA APEx initiative is to adopt FAIR data principles and ensure that project results remain Findable and Accessible and that they become Interoperable and Reusable. For value-added products, this mainly involves ingestion in an ESA-controlled persistent storage solution and exposing these products accordingly (using STAC and other technologies).
 
-Maintaining workflows and algorithms in a FAIR compliant way requires adoption of cloud service concepts and implementations. Therefore, the APEx envisioned solution for workflows and algorithms is to make them available in a public cloud (platform) in co-location with the key EO data archives as on-demand services using standardised web service APIs. These web services can then be triggered by users with their user specific parametrisation to produce results for an area and time frame of interest.
+Maintaining workflows and algorithms in a FAIR-compliant way requires the adoption of cloud service concepts and implementations. Therefore, APEx envisioned a solution for workflows and algorithms to make them available in a public cloud (platform) in co-location with the key EO data archives as on-demand services using standardised web service APIs. These web services can then be triggered by users with their user-specific parametrisation to produce results for an area and time frame of interest.
 
 However, developing on-demand services can be a challenging task for many projects and depends a lot on the complexity of a workflow/algorithm and its initial implementation.
-APEx intends to facility the transition to cloud based services by providing guidelines, best practices and tool that support EO R&D projects in overcoming these challenges.
+APEx intends to facilitate the transition to cloud-based services by providing guidelines, best practices and tools that support EO R&D projects in overcoming these challenges.
 
-The support offered by APEx in terms of algorithm propagation involves various subcomponents/services and their relevance depends on a case-by-case basis. The individual service algorithm propagation comprises:
+The support offered by APEx in terms of algorithm propagation involves various subcomponents/services, and their relevance depends on a case-by-case basis. The individual service algorithm propagation comprises:
 
 * Refactoring your source code to an openEO process graph or OGC Application Package
 * Packaging of your source code to an OGC Application Package
-* Onboarding and integration of your service into APEx catalogue
+* Onboarding and integration of your service into the APEx Algorithm Catalogue
 * Cloudification of desktop toolboxes through a tailored approach
 * Optimisation, both on the source code or service level
 * Deployment and hosting of your service
@@ -84,7 +84,7 @@ For OGC Processes/Application Package:
 
 :::{.callout-tip}
 # Is Your Platform APEx-Compliant?
-If your platform meets the APEx [interoperability and compliance guidelines](../interoperability/algohostingenv.md), and you have onboarded your platfrom to the ESA Network of Resources (or plan to do that),
+If your platform meets the APEx [interoperability and compliance guidelines](../interoperability/algohostingenv.md), and you have onboarded your platform to the ESA Network of Resources (or plan to do that),
 we encourage you to reach out to the APEx team to get it added to the list.
 :::
 

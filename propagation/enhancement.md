@@ -1,14 +1,14 @@
 # Algorithm Enhancement Service
 
-The algorithm enhancement service helps scientists and algorithm developers to transform their research code into a
+The algorithm enhancement service helps scientists and algorithm developers transform their research code into a
 performant and stable piece of software that can be run in an operational setting.
 These enhancement activities ensure code quality, maintainability and performance of your algorithm.
 To ensure performant execution on a NoR processing platform which offers openEO or Application Package algorithms,
-additional optimization dedicated for the platform capabilities may be needed.
-The exact requirements, steps, and effort involved in this process can vary heavily from case to case, due to the
+additional optimisation dedicated to the platform capabilities may be needed.
+The exact requirements, steps, and effort involved in this process can vary heavily from case to case due to the
 variations in initial implementations and operational requirements.
 
-The code of the enhanced version of the algorithm will be published in a dedicated APEx GitHub repository and algorithm
+The code of the enhanced version of the algorithm will be published in a dedicated APEx GitHub repository, and algorithm
 providers are encouraged to use it as a basis for further development of the algorithm.
 This way, the version hosted on APEx can be kept up to date.
 
@@ -17,12 +17,12 @@ implementation, including source code, input data, and instructions to build, in
 with details of any external dependencies to the enhancement team. The enhancement team will then analyse the algorithm
 and estimate the effort for the service, which results in an offer. In the second phase, on acceptance of the offer by
 the provider and by ESA, the enhancement is performed.
-As a result, the service user receives an optimized version of their algorithm code with high code quality.
+As a result, the service user receives an optimised version of their algorithm code with high code quality.
 Optionally, the enhancement procedure includes an onboarding step, where the algorithm is implemented as an openEO
-User Defined Process (UDP) or Application Package. This makes it possible to host the algorithm on an NoR platform and
+User Defined Process (UDP) or Application Package. This makes it possible to host the algorithm on a NoR platform and
 provide it as an on-demand service.
 
-The [Algorithm Onboarding](./onboarding.md) service can provide additional support for hosting the algorithms prepared by the algorithm enhancement service. The [Toolbox Cloudification](./toolboxcloud.md) service complements the other services but aiming at algorithms that are
+The [Algorithm Onboarding](./onboarding.md) service can provide additional support for hosting the algorithms prepared by the algorithm enhancement service. The [Toolbox Cloudification](./toolboxcloud.md) service complements the other services but aims at algorithms that are
 already available as part of standalone software packages (toolboxes), with the ultimate goal of making them available as on-demand
 APEx-compatible algorithms.
 
@@ -33,9 +33,9 @@ APEx-compatible algorithms.
 The algorithm enhancement service offers the following features:
 
 - Analysis of current algorithm implementation and performance.
-- Optimization of the algorithm with respect to computational efficiency.
+- Optimisation of the algorithm with respect to computational efficiency.
   This may include switching to a distributed execution model and improving code quality.
-- Optimization considering the capabilities of target processing platforms.
+- Optimisation considering the capabilities of target processing platforms.
 - Exploitation of algorithms available on APEx where appropriate, e.g., replacing custom functions with equivalent
   pre-optimized functions.
 - Delivery of an enhanced implementation of the algorithm that is ready to be onboarded in APEx.
@@ -52,13 +52,13 @@ information that is required to make use of it. The necessary components are:
 - expected outputs
 
 Once this information has been provided, the enhancement team will perform a two-phase analysis. The analysis consists
-of a briefer, standardized analysis phase, followed by a more thorough cost and effort estimate. On acceptance, the
+of a briefer, standardised analysis phase, followed by a more thorough cost and effort estimate. On acceptance, the
 enhancement team will begin work to enhance the algorithm. The exact process of enhancement
 depends on the nature of the initial algorithm and its implementation.
 
 If the algorithm was originally implemented in accordance with the APEx compliance guidelines, the process can be more
-straightforward, as in this case there will be more overlap between libraries and design patterns used in the initial
-implementation and those required for an optimized APEx version. The enhancement process will be different and fewer
+straightforward, as in this case, there will be more overlap between libraries and design patterns used in the initial
+implementation and those required for an optimised APEx version. The enhancement process will be different, and fewer
 changes have to be made to the code base.
 
 ### Intellectual Property Rights
