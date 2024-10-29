@@ -42,7 +42,7 @@ within the algorithm. Examples of algorithm definitions include openEO’s User 
 Application Package, using the Common Workflow Language (CWL).
 
 ### Algorithm Catalogue
-The APEx algorithm catalogue is a central register of application algorithm definitions that can be executed on
+The [APEx Algorithm Catalogue](https://algorithms-catalogue.apex.esa.int/) is a central register of application algorithm definitions that can be executed on
 APEx-compliant algorithm hosting platforms. Curated by APEx, the catalogue relies on automated checks to ensure that
 advertised algorithms are available and functional. Whenever a malfunction is detected, this is reported to ESA and the
 EO project consortium, allowing them to determine a proper course of action.
@@ -83,7 +83,7 @@ The EO project refers to the consortium that is responsible for building the app
 will indicate if a specific project must comply with APEx guidelines. When compliance is required, the
 consortium can utilise various services offered by APEx. Specifically, the APEx propagation services aim to support the
 enhancement of algorithms on a technical and software level and facilitate the transition to hosted algorithms that can
-be included in the APEx algorithm catalogue.
+be included in the [APEx Algorithm Catalogue](https://algorithms-catalogue.apex.esa.int/).
 
 ESA EO projects that do not have an explicit compliance requirement are also eligible to receive support. The APEx
 support can boost project impact, so projects are encouraged to inquire with their ESA technical officer about the
