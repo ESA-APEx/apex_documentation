@@ -3,7 +3,7 @@
 The Algorithm Porting Service within APEx supports the transformation and packaging of
 algorithms, ensuring they align with the
 APEx [Interoperability and Compliance Guidelines](../interoperability/index.md). These guidelines are designed
-to ensure that algorithms are standardized and ready for integration into APEx via
+to ensure that algorithms are standardised and ready for integration into APEx via
 the [Algorithm Onboarding](onboarding.md) service.
 
 The goal of the Algorithm Porting Service is to provide additional technical support to guide your project in applying
@@ -28,7 +28,7 @@ ensuring that it integrates seamlessly with APEx’s ecosystem. Possible options
 
 This assessment phase ensures that your algorithm is mapped to the most appropriate APEx-compliant technology, setting a
 clear path for its porting.
-Another important outcome is an initial assessment of potential risks that may affect the outcome of the porting process. This allows the project technical officer and APEx ESA responsible to decide if porting can continue. 
+Another important outcome is an initial assessment of potential risks that may affect the outcome of the porting process. This allows the project technical officer and APEx ESA responsible to decide if porting can continue.
 
 ### Support for Transforming Algorithms into openEO UDPs
 
