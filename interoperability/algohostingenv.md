@@ -7,7 +7,7 @@ algorithm hosting platform, the platform must meet the requirements outlined in 
 The aim of these requirements is:
 
 - To ensure that services developed in EO projects continue to work after the project has ended.
-- To align algorithm hosting platforms that aim to offer EO project services to make them more comparable. The alignment targets the API level, and the (high-level) pricing model, giving platform providers full freedom to select technologies and architectures that suit their needs.
+- To align algorithm hosting platforms that aim to offer EO project services to make them more comparable. The alignment targets the API level and the (high-level) pricing model, giving platform providers full freedom to select technologies and architectures that suit their needs.
 - To allow APEx to perform automated checks on the developed services, guaranteeing that they work and produce the expected result at the expected cost.
 
 @tbl-algohostingenv provides an overview of the requirements for operators of algorithm hosting platforms to ensure their compatibility with the APEx standards.
@@ -58,7 +58,7 @@ We assume that this is the default case because EO projects have a strong prefer
 
 ### Private UDPs
 
-The specification of openEO allows platforms to expose custom processes, that function like openEO UDPs but do not expose
+The specification of openEO allows platforms to expose custom processes that function like openEO UDPs but do not expose
 the underlying process graph. This situation may arise for two main reasons:
 
 - The process graph exists, but the project is not required to share it publicly. In this case, we assume that this is
@@ -71,7 +71,7 @@ the underlying process graph. This situation may arise for two main reasons:
 ## OGC API Processes specific requirements
 
 The algorithm hosting platform can support applications defined by the
-[OGC Best Practice for Earth Observation Application Package](https://docs.ogc.org/bp/20-089r1.html) supporting
+[OGC Best Practice for Earth Observation Application Package](https://docs.ogc.org/bp/20-089r1.html), supporting
 applications that can be expressed using [Common Workflow Language](https://www.commonwl.org/) and allowing their
 deployment in several execution scenarios such as local computers, cloud resources, high-performance computing (HPC)
 environments, Kubernetes clusters, and as a service deployed through an OGC API Processes interface.

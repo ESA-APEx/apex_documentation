@@ -56,7 +56,7 @@ In general, the aim is to simplify the process of building high-quality on-deman
 +-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | PROV-REQ-17 | Executables shall offer at least one choice of a non-interactive command line interface, or an API for integration into a larger codebase.                                                                |                                                                                                                                                                                                                                                                                                              |
 +-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| PROV-REQ-18 | Algorithms shall be associated with and tested on at least one APEx compliant hosting platform.                                                                |                                                                                                                                                                                                                                                                                                              |
+| PROV-REQ-18 | Algorithms shall be associated with and tested on at least one APEx compliant hosting platform.                                                                                                           |                                                                                                                                                                                                                                                                                                              |
 +-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 : Interoperability requirements for algorithm providers {#tbl-algohosting}{tbl-colwidths="[20,80]"}
 
@@ -68,14 +68,14 @@ not mandatory, adhering to them will enhance the integration process and improve
 
 ### Parameter naming & typing
 
-APEx proposes to standardize openEO UDP and CWL parameter names and types that are exposed to the user. This is best
+APEx proposes to standardise openEO UDP and CWL parameter names and types that are exposed to the user. This is best
 illustrated by an example: parameters such as `bounding_box`, `bbox`, `aoi`, and `spatial_extent` likely refer to the
 same concept. However, without common conventions, algorithms might randomly select one of these variants, complicating
 the usability of the eventual algorithm library.
 
 At the time of writing, the actual conventions have not yet been defined. This becomes relevant when the first algorithms
-reach a state where they can be published with a fixed interface. This best practice mostly targets new developments,
-that do not have an existing userbase or API.
+reach a state where they can be published with a fixed interface. This best practice mostly targets new developments
+that do not have an existing user base or API.
 
 
 ## Licensing requirements
