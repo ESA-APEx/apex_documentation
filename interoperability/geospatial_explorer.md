@@ -239,7 +239,50 @@ The API is an early draft that will be subject to significant ongoing changes. T
                         "type": "swatch",
                         "visible": true,
                         "data": [
-                               ....
+                            {
+                                "color": "rgb(0, 100, 0)",
+                                "label": "Tree cover"
+                            },
+                            {
+                                "color": "rgb(255, 187, 34)",
+                                "label": "Shrubland"
+                            },
+                            {
+                                "color": "rgb(255, 255, 76)",
+                                "label": "Grassland"
+                            },
+                            {
+                                "color": "rgb(240, 150, 255)",
+                                "label": "Cropland"
+                            },
+                            {
+                                "color": "rgb(255, 0, 0)",
+                                "label": "Built up"
+                            },
+                            {
+                                "color": "rgb(180, 180, 180)",
+                                "label": "Bare"
+                            },
+                            {
+                                "color": "rgb(240, 240, 240)",
+                                "label": "Snow and ice"
+                            },
+                            {
+                                "color": "rgb(0, 100, 200)",
+                                "label": "Permanent water bodies"
+                            },
+                            {
+                                "color": "rgb(0, 150, 160)",
+                                "label": "Herbaceous wetland"
+                            },
+                            {
+                                "color": "rgb(0, 207, 117)",
+                                "label": "Mangroves"
+                            },
+                            {
+                                "color": "rgb(250, 230, 160)",
+                                "label": "Moss and lichen"
+                            }
                         ]
                     }
                 },
