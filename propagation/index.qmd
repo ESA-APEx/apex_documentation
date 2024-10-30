@@ -1,4 +1,6 @@
-# From Earth Observation Applications to Services
+---
+title: From Earth Observation Applications to Services
+---
 
 One of the primary goals of APEx is to facilitate the transition of Earth Observation R&D results into reusable, scalable, cloud-based on-demand services.
 The primary target audience is first of all ESA EOP projects but on the longer term the larger EO science and applications community.

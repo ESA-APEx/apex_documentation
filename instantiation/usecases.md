@@ -1,4 +1,6 @@
-# Use cases for APEx Instantation Services 
+---
+title: Use cases for APEx Instantiation Services
+---
 
 The APEx Instantiation Services are designed to support a wide range of activities within the EO community, from project promotion and user support to data visualisation, data analytics, and data processing. By providing managed, configurable environments, these services facilitate the effective sharing, maintenance, and utilisation of project results, ensuring they remain readily accessible and usable for extended periods.
 
@@ -19,13 +21,13 @@ Promote EO projects by providing a centralised, customizable portal that showcas
 * **Dashboards**: Create an online dashboard to present key metrics and visualisations.
 * **Documentation Portal**: Customizable portals using the Quarto framework for detailed project documentation and interactive visualisations.
 * **User Forum**: Supports community engagement and discussions around the project outcomes.
-  
+
 ### Expected Benefits
 
 * Increased visibility and impact of EO projects.
 * Enhanced stakeholder engagement through accessible and interactive content.
 * Long-term maintenance and accessibility of project results.
-  
+
 ## Use Case 2- User Support
 
 ### Description
@@ -43,7 +45,7 @@ Provide comprehensive support to users, enabling them to interact with EO data, 
 * Improved user satisfaction and productivity through robust support mechanisms.
 * Enhanced community engagement and knowledge sharing.
 * Efficient troubleshooting and problem-solving through community forums.
-  
+
 ## Use Case 3 - Data Visualization
 
 ### Use Case Description
@@ -54,13 +56,13 @@ Enable users to visualise EO data in meaningful and interactive ways. This use c
 * **Geospatial Explorer**: Functional enhancements to provide interactive and real-time data visualisations, supporting both raster and tabular data visualisation.
 * **Project Portal**: Integration of visualisations into project portals to showcase data insights.
 * **Documentation Portal**: Interactive visualisations within documentation to explain data findings and methodologies.
-  
+
 ### Expected Benefits
 
 * Enhanced understanding and interpretation of EO data.
 * Improved data communication and storytelling capabilities.
 * Increased engagement through interactive and visually appealing content.
-  
+
 ## Use Case 4 - Data Analytics
 
 ### Description
@@ -78,7 +80,7 @@ Support advanced data analytics workflows, enabling users to analyse EO data eff
 * Enhanced analytical capabilities and data-driven insights.
 * Efficient processing and analysis of large EO datasets.
 * Streamlined workflows from data ingestion to analysis and visualisation.
-  
+
 ## Use Case 5 - Data Processing
 
 ### Description
@@ -89,7 +91,7 @@ Facilitate the processing of EO data through scalable and customizable environme
 * **Interactive Development Environment (IDE)**: Supporting data processing scripts and workflows, including pre-configured tools for EO tasks.
 * **Product Catalogue**: Streamlined data ingestion and access to a wide range of EO datasets.
 * **Geospatial Explorer and Web Apps**: Visualize results in an interactive manner.
-  
+
 ### Expected Benefits
 
 * Improved efficiency in data processing workflows.

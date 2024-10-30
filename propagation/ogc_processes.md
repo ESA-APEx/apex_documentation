@@ -1,4 +1,6 @@
-# OGC Application Package - file-based processing for existing software
+---
+title: OGC API Processes - file-based processing for existing software
+---
 
 Another option to create an APEx-compliant service is to package your software using Docker containers. This approach is very generic and is particularly relevant if you have an existing piece of complex software that you want to make available as a service.
 This process adheres to the Best Practices for Earth Observation Application Packaging as defined by the Open Geospatial Consortium (OGC) and the EO Exploitation Platform Common Architecture (EOEPCA) spearheaded by the European Space Agency (ESA). These guidelines ensure that EO applications are reproducible and portable across different execution scenarios.

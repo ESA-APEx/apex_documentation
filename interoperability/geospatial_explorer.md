@@ -1,4 +1,6 @@
-# Geospatial Explorer
+---
+title: Geospatial Explorer
+---
 
 This document outlines the requirements for the interoperability of the APEx Geospatial Explorer services. These requirements must be met in order to ensure the correct configuration and operation of the application and its instantiation.
 

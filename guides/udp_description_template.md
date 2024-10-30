@@ -28,5 +28,5 @@ List:
 
 # Known artifacts
 
-Using text and figures, illustrate known artifacts. This helps to manage expectations for your users, and allows them to 
+Using text and figures, illustrate known artifacts. This helps to manage expectations for your users, and allows them to
 implement additional processing steps to mitigate or avoid these artifacts.

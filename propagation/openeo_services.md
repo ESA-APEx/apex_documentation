@@ -1,4 +1,6 @@
-# openEO - datacube based processing
+---
+title: openEO - datacube based processing
+---
 
 When an EO application can be expressed in terms of the standardized openEO processes, it can also be parametrized so that
 it effectively becomes a service that can be executed by an openEO backend. This is what we call a User Defined Process (UDP).
@@ -81,8 +83,8 @@ is still functional.
 
 For further guidance on creating and using UDPs, you can explore the following resources:
 
-- [APEx openEO process (UDP) writer guide](../udp_writer_guide.qmd#sec-udp-writing)
-- [APEx openEO process (UDP) integration guide](../udp_writer_guide.qmd#sec-udp-integration)
+- [APEx openEO process (UDP) writer guide](../guides/udp_writer_guide.qmd#sec-udp-writing)
+- [APEx openEO process (UDP) integration guide](../guides/udp_writer_guide.qmd#sec-udp-integration)
 - [UDP support in Python](https://open-eo.github.io/openeo-python-client/udp.html#user-defined-processes)
 - [Jupyter notebook example](https://github.com/Open-EO/openeo-community-examples/blob/main/python/Sentinel1_Stats/Sentinel1_Stats.ipynb)
 - [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
