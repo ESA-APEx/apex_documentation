@@ -48,9 +48,9 @@ The WorldCereal workflow for croptype map production contains these steps:
 1. Generation on monthly Sentinel-2 median composites for 1 year of input data.
 2. Generation of monthly Sentinel-1 backscatter composites from raw GRD input, for 1 year of input data filtered by orbit direction.
 3. Loading DEM, slope, and AGERA5 datasets.
-3. Computation of features based on all the above inputs, using a foundation model.
-4. Inference using a (user-defined) catboost model.
-5. Output to FAIR geotiffs with STAC metadata.
+4. Computation of features based on all the above inputs, using a foundation model.
+5. Inference using a (user-defined) catboost model.
+6. Output to FAIR geotiffs with STAC metadata.
 
 ### ESA ANIN
 
@@ -66,3 +66,25 @@ allowed them to run their water detection algorithm anywhere in the world, using
 
 Luisa used openEO to compute biophysical parameters such as LAI and fAPAR from Sentinel-2 data over various test areas
 in Africa.
+
+
+## Building an openEO UDP based service
+
+To integrate your algorithm with [openEO](https://openeo.org/), you need to convert it into a User Defined Process (UDP).
+If your application is already built using an openEO process graph or if your workflow is simple enough, the conversion to a UDP should be straightforward.
+If not, APEx can provide the guidance and support you need to efficiently translate your algorithm into an openEO implementation and UDP service.
+
+Once your workflow is ready as an openEO process graph, you can create a UDP by parameterizing the process graph. [This notebook](https://documentation.dataspace.copernicus.eu/notebook-samples/openeo/UDP.html)
+demonstrates exactly how to do that.
+
+After your UDP is created, it can be registered in the [APEx Algorithm Catalogue](https://algorithms-catalogue.apex.esa.int/) and associated with one or more backends or platforms capable of running it.
+As APEx continues to evolve, additional tools will become available that aid this process, including functionality to check if your service
+is still functional.
+
+For further guidance on creating and using UDPs, you can explore the following resources:
+
+- [APEx openEO process (UDP) writer guide](../guides/udp_writer_guide.qmd#sec-udp-writing)
+- [APEx openEO process (UDP) integration guide](../guides/udp_writer_guide.qmd#sec-udp-integration)
+- [UDP support in Python](https://open-eo.github.io/openeo-python-client/udp.html#user-defined-processes)
+- [Jupyter notebook example](https://github.com/Open-EO/openeo-community-examples/blob/main/python/Sentinel1_Stats/Sentinel1_Stats.ipynb)
+- [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
