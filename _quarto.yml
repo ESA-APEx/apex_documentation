@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  favicon: _images/logos/favicon.png
+  favicon: assets/img/logos/apex_icon_blue.svg
   repo-url: "https://github.com/ESA-APEx/apex_documentation"
   repo-branch: "main"
   search:
@@ -32,11 +32,13 @@ website:
         contents:
           - href: instantiation/usecases.md
             text: Use Cases
-      - href: propagation.md
-        text: EO Service Support
+      - href: propagation/index.qmd
+        text: Algorithm Propagation
         contents:
-          - href: propagation/hosting.md
-            text: Algorithm Hosting
+          - href: propagation/porting.md
+            text: Algorithm Porting
+          - href: propagation/onboarding.md
+            text: Algorithm Onboarding
           - href: propagation/upscaling.md
             text: Algorithm Upscaling
           - href: propagation/enhancement.md
@@ -45,28 +47,33 @@ website:
             text: Toolbox Cloudification
           - href: propagation/intercomparison.md
             text: Algorithm Intercomparison
+          - href: propagation/usecases.md
+            text: Use Cases
       - href: udp_writer_guide.qmd
         text: Creating openEO based services
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:
-          - href: interoperability/definitions.md
+          - href: interoperability/definitions.qmd
           - href: interoperability/references.md
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
-          - href: interoperability/dashboards.md
+          - href: interoperability/geospatial_explorer.md
           - href: interoperability/businessmodel.md
 
 format:
   html:
-    toc: true
     toc-depth: 4
     page-layout: full
     theme: [cosmo, css/custom.scss]
+    scss: true
     highlight-style: solarized
     include-in-header:
+      - html/apex-scripts.html
       - html/blur.html
       - html/esa-header.html
+      - html/apex-navigation.html
+      - html/apex-hamburger-menu.html
     link-external-icon: true
     link-external-newwindow: true
 bread-crumbs: true
