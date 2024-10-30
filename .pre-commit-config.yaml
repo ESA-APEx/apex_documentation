@@ -18,3 +18,11 @@ repos:
         types: [file]
         files: \.(md|qmd)$
         args: [ "-q", "-c markdown-link-checker-config.json" ]
+  - repo: local
+    hooks:
+      - id: check-front-matter
+        name: Check Front Matter for Attributes
+        entry: python checks/check_frontmatter.py
+        language: python
+        files: \.md$
+        additional_dependencies: [python-frontmatter]

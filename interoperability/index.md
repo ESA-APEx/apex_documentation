@@ -1,4 +1,6 @@
-# Interoperability and Compliance Guidelines
+---
+title: Interoperability and Compliance Guidelines
+---
 
 Welcome to the comprehensive guide on APEx interoperability and compliance guidelines. This guide has been compiled to
 offer a detailed understanding of how algorithms and hosting environments can be integrated into APEx. These guidelines

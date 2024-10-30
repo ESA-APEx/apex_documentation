@@ -1,4 +1,6 @@
-# openEO: datacube based processing  
+---
+title: openEO - datacube based processing
+---
 
 When an EO application can be expressed in terms of the standardized openEO processes, it can also be parametrized so that
 it effectively becomes a service that can be executed by an openEO backend. This is what we call a User Defined Process (UDP).
@@ -10,14 +12,14 @@ the concepts of data cube based processing, and the openEO processes, it does pr
 
 The standardized, datacube based processing approach is designed to significantly reduce the reponsibilities of the EO
 data scientist writing the algorithm. The openEO backend takes care of data access, solving performance and stability issues,
-while also dealing with the multiple heterogenous formats that are used in earth observation. Backends will automatically 
+while also dealing with the multiple heterogenous formats that are used in earth observation. Backends will automatically
 parallellize the processing work, using state of the art technologies, as provided by Apache Spark or Pangeo.
 
 Many common maintenance operations are performed by the openEO backend rather than by the EO service provider. This includes
 integrating performance improvements, new versions of software libraries with bugfixes, or adjusting to changes in the EO
-datasets. 
+datasets.
 
-Various complex preprocessing steps may be offered by the backend. Examples include backscatter computation for Sentinel-1, 
+Various complex preprocessing steps may be offered by the backend. Examples include backscatter computation for Sentinel-1,
 or cloud masking and compositing of optical data. Use cases like machine learning training data extraction are also supported.
 
 When EO algorithms are expressed as process graphs, they also become easier to share and analyze by your peers, if you
@@ -27,7 +29,7 @@ suggestions for improvements.
 
 ## Example use cases
 
-A set of platform-agnostic example cases that showcase how openEO supports various cases can be found in the 
+A set of platform-agnostic example cases that showcase how openEO supports various cases can be found in the
 [openEO community examples repository](https://github.com/Open-EO/openeo-community-examples).
 We recommend browsing the notebooks available there to get a sense what openEO can do, or to even find a starting point for your own
 algorithm.
@@ -36,10 +38,10 @@ In addition to that, we list testimonials of ESA projects that successfully used
 
 ### ESA WorldCereal
 
-The ESA WorldCereal project effectively built a system on top of openEO, that enables the training of custom machine 
-learning models for croptype detection, anywhere in the world. The created models can then be used within openEO, to 
+The ESA WorldCereal project effectively built a system on top of openEO, that enables the training of custom machine
+learning models for croptype detection, anywhere in the world. The created models can then be used within openEO, to
 generate maps at large scale. The system is very easy to use, because all the complex computation and data access is performed
-in the cloud. 
+in the cloud.
 
 The WorldCereal workflow for croptype map production contains these steps:
 
@@ -64,5 +66,3 @@ allowed them to run their water detection algorithm anywhere in the world, using
 
 Luisa used openEO to compute biophysical parameters such as LAI and fAPAR from Sentinel-2 data over various test areas
 in Africa.
-
-

@@ -1,4 +1,6 @@
-# Toolbox Cloudification Service
+---
+title: Toolbox Cloudification Service
+---
 
 The toolbox cloudification service makes individual data processing procedures from existing toolboxes available as
 cloud-based algorithms, compliant with APEx. This makes it possible to freely combine functionalities from multiple toolboxes as well as other APEx-compliant algorithms. The service focuses solely on the data-processing capabilities of toolboxes and does not include visualisation features.

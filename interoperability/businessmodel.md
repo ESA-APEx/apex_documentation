@@ -1,4 +1,6 @@
-# Federated Business Model
+---
+title: Federated Business Model
+---
 
 This section outlines the commercial aspects of algorithm hosting within APEx and will be further analysed and documented 
 by the APEx project.

@@ -1,4 +1,6 @@
-# Definitions & Actors
+---
+title: Definitions & Actors
+---
 
 This section introduces key terms and their meaning in the APEx context, which are crucial for building a common
 understanding of the complex ecosystem in which APEx operates. Along with the general definitions, the flow chart below
