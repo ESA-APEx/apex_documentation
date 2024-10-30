@@ -13,7 +13,7 @@ The applications can be written in a variety of coding languages (e.g. Python, C
 
 Complex workflows can be built on top of the applications following fan-in and fan-out design patterns that can be combined in the nodes of a Directed Acyclic Graph (DAG).  The Application Package document ensures the EO application reproducibility and portability of the application across various execution scenarios.
 
-## Building an OGC pplication package based service
+## Building an OGC application package based service
 
 By packaging your software using Docker containers and using the CWL (Common Workflow Language) tooling and wrappers, you can start forming an OGC Application Package.
 Application packaging is therefore a systematic software engineering process that encapsulates all components necessary for these EO data processing workflows. This includes the application code, dependencies, configuration files, metadata, and runtime environments. The primary objective is to create standardised, portable packages that can be deployed consistently across diverse environments, from local development setups to cloud-based infrastructures and to be deployed as a web service.
