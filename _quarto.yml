@@ -49,12 +49,18 @@ website:
             text: Algorithm Intercomparison
           - href: propagation/usecases.md
             text: Use Cases
-      - href: udp_writer_guide.qmd
-        text: Creating openEO based services
+      - text: Guides
+        contents:
+        - href: guides/udp_writer_guide.qmd
+          text: Creating openEO based services
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:
           - href: interoperability/definitions.qmd
+          - href: propagation/ogc_processes.md
+            text: OGC API Processes
+          - href: propagation/openeo_services.md
+            text: openEO Services
           - href: interoperability/references.md
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
@@ -74,6 +80,5 @@ format:
       - html/esa-header.html
       - html/apex-navigation.html
       - html/apex-hamburger-menu.html
-    link-external-icon: true
     link-external-newwindow: true
 bread-crumbs: true

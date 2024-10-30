@@ -1,5 +1,5 @@
 ---
-title: Algorithm Hosting Platforms
+title: Algorithm Hosting Platforms Guidelines
 ---
 
 APEx-compliant application algorithms are executed as services on a compatible algorithm hosting platform. Currently, APEx

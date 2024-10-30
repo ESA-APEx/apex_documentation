@@ -66,3 +66,6 @@ li p {
     opacity: 1.0 !important;
   }
 }
+.quarto-title-breadcrumbs .breadcrumb li:last-of-type a {
+  color: var(--white) !important;
+}

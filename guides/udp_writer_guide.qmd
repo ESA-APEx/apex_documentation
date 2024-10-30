@@ -2,6 +2,8 @@
 title: Guide for writing openEO User Defined Processes
 ---
 
+## Creating an openEO User Defined Process {#sec-udp-writing}
+
 User defined processes (UDPs) are one out of two standardised options that APEx offers to publish algorithms as a service.
 This guide gives some concrete steps and guidelines to ensure that your UDP works well for your users. These guidelines are
 written with APEx in mind, but can also serve as a general guide for openEO UDPs. Where needed, recommendations & choices
@@ -10,18 +12,18 @@ are made to increase uniformity across the [APEx Algorithm Catalogue](https://al
 For more background on UDP's, or a basic tutorial on creating them, the open source Python client provides
 [a good starting point](https://open-eo.github.io/openeo-python-client/udp.html).
 
-Keep in mind that APEx offers an [algorithm enhancement](propagation/enhancement.md) service to help you with these steps
+Keep in mind that APEx offers an [Algorithm Porting](../propagation/porting.md) service to help you with these steps
 if needed.
 
 
-## Example cases
+### Example cases
 
 The best way to learn how to write a UDP is to look at existing examples:
 
  - `max_ndvi_composite`: [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite) and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_files/max_ndvi_composite_description.md).
 
 
-## Organizing your code
+### Organizing your code
 
 A UDP is simply a parametrized version of an openEO process graph, and as such we recommend that you use the same code to develop
 and test your algorithm, as you use to generate the UDP json. This ensures that your UDP is functionally equivalent to your code.
@@ -30,21 +32,21 @@ Your code remains your own, and you only need to export the JSON UDP definition 
 It is however advisable for your UDP to link back to a public git repository if available, making your open source code more
 discoverable.
 
-## How many UDPs should I write?
+### How many UDPs should I write?
 
 Deciding on the granularity of your UDP is an important aspect of making your algorithm usable. There is no need to try
 and fit all possible use cases into a single UDP. Instead, consider to define pieces of functionality that can work with
 a limited set of parameters, and write a single UDP for each piece.
 
 
-## Parameter conventions
+### Parameter conventions
 
 This section provides some recommendations on how to name parameters in your UDP. While these are not mandatory, we recommend
 to consider them to avoid that users of the algorithm catalogue would be confused by variations in process parameter names.
 
 Please [let us know](https://github.com/ESA-APEx/apex_documentation/issues) if you encounter a parameter that could use a convention, and we will add it here.
 
-### Spatial filtering
+#### Spatial filtering
 
 Any algorithm requires spatial filtering, so we can make the life of our users easier if we all use the same naming.
 
@@ -54,7 +56,7 @@ long as you don't have more specific names.
 If you pass on the `spatial_extent` parameter to all `load_collection` processes in your UDP, then it is also allowed to
 perform filtering using vector data. This conveniently allows for advanced spatial filtering use cases!
 
-### Temporal filtering
+#### Temporal filtering
 
 For openEO processes that support arbitrary temporal ranges, we recommend using `temporal_extent` as the name of parameter to ensure
 consistency with other openEO processes, such as `load_collection`.
@@ -64,14 +66,14 @@ date, and use the `date_shift` process to construct the second date in the tempo
 avoids faulty user input.
 
 
-## Avoid use of `save_result`
+### Avoid use of `save_result`
 
 Most openEO process graphs end in a `save_result`process. However, this is not recommended for UDPs, as the user may
 want to perform additional processing steps before generating the result. So having a `DataCube` (raster or vector)
 as the final output is recommended unless if your service wants to enforce specific settings on how the output is to be generated.
 
 
-## UDP documentation
+### UDP documentation
 
 The description of your UDP should be quite extensive if you want users to be able to easily assess if it's suitable for them.
 We recommend including these sections:
@@ -85,13 +87,13 @@ We recommend including these sections:
 
 A [template](https://github.com/ESA-APEx/apex_documentation/blob/main/udp_description_template.md) is available to help you structure your documentation.
 
-# Integrating your openEO process (UDP) in APEx {#sec-udp-integration}
+## Integrating your openEO process (UDP) in APEx {#sec-udp-integration}
 
 Once you have an eligible openEO process, you are ready to integrate it in APEx. At this point, you should have an HTTP
 link to a JSON document that defines the process, and is publicly accessible. The most common way to do this is to store
 it in a public git repository. Tagging a release is a good way to ensure that the link remains stable.
 
-## Registering your process
+### Registering your process
 
 Next, you will need to upload a generic JSON to the [APEx Algorithm Catalogue](https://algorithms-catalogue.apex.esa.int/) to register your process. For now, this is
 done by creating a pull request in the [APEx Algorithm Catalogue GitHub repository](https://github.com/ESA-APEx/apex_algorithms).
@@ -220,7 +222,7 @@ allowing to understand what the link is about.
 
 ```
 
-## Defining a validation & benchmark scenario
+### Defining a validation & benchmark scenario
 
 APEx has the capability to automatically check if your openEO process is working as expected, and if the cost for specific
 scenarios is sufficiently stable over time. This is a very important feature to avoid that your users have a bad experience.
@@ -274,7 +276,7 @@ Note how each benchmark scenario references:
 - reference data to which actual results should be compared.
 
 
-### Defining and updating benchmark reference data
+#### Defining and updating benchmark reference data
 
 A benchmark scenario should define reference data, with which the actual results of benchmark runs should be compared.
 The `reference_data` field of a benchmark scenario is a JSON object that maps each of
@@ -302,7 +304,7 @@ and can be used directly as reference data URLs for subsequent benchmark runs.
 Of course, make sure the actual results are properly validated and acceptable under your standards
 before using them as reference data for future benchmark runs.
 
-#### Initial reference data
+##### Initial reference data
 
 When you are initially defining a benchmark scenario,
 you may not have the full set of expected reference data and metadata yet.
@@ -327,7 +329,7 @@ It will look like this:
 These URLs can be used as reference data URLs for subsequent benchmark runs.
 
 
-#### Updating reference data
+##### Updating reference data
 
 When an algorithm is updated, or the underlying data changes for some reason,
 a benchmark scenario might start to fail on the reference data comparison.

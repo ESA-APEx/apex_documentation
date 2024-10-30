@@ -1,4 +1,6 @@
-# From Earth Observation Applications to Services
+---
+title: From Earth Observation Applications to Services
+---
 
 One of the primary goals of APEx is to facilitate the transition of Earth Observation R&D results into reusable, scalable, cloud-based on-demand services.
 The primary target audience is first of all ESA EOP projects but on the longer term the larger EO science and applications community.
@@ -54,8 +56,8 @@ is still functional.
 
 For further guidance on creating and using UDPs, you can explore the following resources:
 
-- [APEx openEO process (UDP) writer guide](../udp_writer_guide.qmd#sec-udp-writing)
-- [APEx openEO process (UDP) integration guide](../udp_writer_guide.qmd#sec-udp-integration)
+- [APEx openEO process (UDP) writer guide](../guides/udp_writer_guide.qmd#sec-udp-writing)
+- [APEx openEO process (UDP) integration guide](../guides/udp_writer_guide.qmd#sec-udp-integration)
 - [UDP support in Python](https://open-eo.github.io/openeo-python-client/udp.html#user-defined-processes)
 - [Jupyter notebook example](https://github.com/Open-EO/openeo-community-examples/blob/main/python/Sentinel1_Stats/Sentinel1_Stats.ipynb)
 - [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
