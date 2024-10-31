@@ -7,7 +7,7 @@ title: Guide for writing openEO User Defined Processes
 User defined processes (UDPs) are one out of two standardised options that APEx offers to publish algorithms as a service.
 This guide gives some concrete steps and guidelines to ensure that your UDP works well for your users. These guidelines are
 written with APEx in mind, but can also serve as a general guide for openEO UDPs. Where needed, recommendations & choices
-are made to increase uniformity across the [APEx Algorithm Catalogue](https://algorithms-catalogue.apex.esa.int/).
+are made to increase uniformity across the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/).
 
 For more background on UDP's, or a basic tutorial on creating them, the open source Python client provides
 [a good starting point](https://open-eo.github.io/openeo-python-client/udp.html).
@@ -85,7 +85,7 @@ We recommend including these sections:
 5. **Known limitations**: Any known limitations of the algorithm, such as the type of data it works best with, or the size of the area it can process efficiently.
 6. **Known artifacts**: Use images and plots to clearly show any known artifacts that the algorithm may produce. This helps users to understand what to expect from the algorithm.
 
-A [template](https://github.com/ESA-APEx/apex_documentation/blob/main/udp_description_template.md) is available to help you structure your documentation.
+A [template](https://github.com/ESA-APEx/apex_documentation/blob/main/guides/udp_description_template.md) is available to help you structure your documentation.
 
 ## Integrating your openEO process (UDP) in APEx {#sec-udp-integration}
 
@@ -95,7 +95,7 @@ it in a public git repository. Tagging a release is a good way to ensure that th
 
 ### Registering your process
 
-Next, you will need to upload a generic JSON to the [APEx Algorithm Catalogue](https://algorithms-catalogue.apex.esa.int/) to register your process. For now, this is
+Next, you will need to upload a generic JSON to the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) to register your process. For now, this is
 done by creating a pull request in the [APEx Algorithm Catalogue GitHub repository](https://github.com/ESA-APEx/apex_algorithms).
 
 An example json is provided below. The properties to modify are listed here:
