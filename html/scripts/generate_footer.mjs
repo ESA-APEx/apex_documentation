@@ -1,4 +1,4 @@
-import {fetchHeaderHTML, prependImageSources, prependLinks, writeToFile} from "./utils.mjs";
+import {fetchHTML, prependImageSources, prependLinks, writeToFile} from "./utils.mjs";
 
 export const generateFooter = async (url) => {
 
@@ -7,7 +7,7 @@ export const generateFooter = async (url) => {
     const headerSelector = '.c-footer'; // Replace with your desired selector
 
     // Fetch the header from the main website
-    let headerHTML = await fetchHeaderHTML(url, headerSelector);
+    let headerHTML = await fetchHTML(url, headerSelector);
 
     if (headerHTML) {
         // Prepend base URL to image sources
@@ -24,5 +24,3 @@ export const generateFooter = async (url) => {
         console.log('No footer found at the specified URL.');
     }
 }
-
-(async () => await generateFooter())();

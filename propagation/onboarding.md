@@ -49,11 +49,11 @@ To run the defined tests, APEx also needs permission from the hosting platform a
 
 ### APEx Algorithm Catalogue
 
-The Algorithm Onboarding service supports result propagation through an [algorithm catalogue](https://algorithms-catalogue.apex.esa.int/), facilitating easy
+The Algorithm Onboarding service supports result propagation through an [algorithm catalogue](https://algorithm-catalogue.apex.esa.int/), facilitating easy
 browsing and access to available algorithms. Users and projects can also onboard their own algorithms,
 fostering collaboration and innovation within the EO community.
 
-The [algorithm catalogue](https://algorithms-catalogue.apex.esa.int/) allows visitors to discover and select algorithms for subsequent execution on the corresponding APEx-compliant hosting environment.
+The [algorithm catalogue](https://algorithm-catalogue.apex.esa.int/) allows visitors to discover and select algorithms for subsequent execution on the corresponding APEx-compliant hosting environment.
 
 ::: {.callout-note title="Disclaimer"}
 APEx relies on the APEx-compliant algorithm hosting environments for algorithm execution and the provisioning of the
@@ -88,6 +88,6 @@ platform.
 For large-scale processing tasks, projects can request additional support through
 the [APEx upscaling service](./upscaling.md).
 
-## Onboard Your Algorithm on the [APEx Algorithm Catalogue](https://algorithms-catalogue.apex.esa.int/)
+## Onboard Your Algorithm on the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/)
 
 Stay tuned for more detailed instructions on how to onboard your algorithm into our catalogue.

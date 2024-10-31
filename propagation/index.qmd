@@ -50,7 +50,7 @@ If not, APEx can provide the guidance and support you need to efficiently transl
 Once your workflow is ready as an openEO process graph, you can create a UDP by parameterizing the process graph. [This notebook](https://documentation.dataspace.copernicus.eu/notebook-samples/openeo/UDP.html)
 demonstrates exactly how to do that.
 
-After your UDP is created, it can be registered in the [APEx Algorithm Catalogue](https://algorithms-catalogue.apex.esa.int/) and associated with one or more backends or platforms capable of running it.
+After your UDP is created, it can be registered in the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) and associated with one or more backends or platforms capable of running it.
 As APEx continues to evolve, additional tools will become available that aid this process, including functionality to check if your service
 is still functional.
 
