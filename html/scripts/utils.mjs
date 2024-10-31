@@ -8,7 +8,7 @@ import {promises as fs} from 'fs';
  * @param {string} headerSelector - The CSS selector for the header element (e.g., 'header', '#main-header').
  * @returns {Promise<string|null>} - A promise that resolves to the HTML of the header, or null if not found.
  */
-export const fetchHeaderHTML = async (url, headerSelector) => {
+export const fetchHTML = async (url, headerSelector) => {
     try {
         // Fetch the HTML content of the specified URL
         const response = await fetch(url);
