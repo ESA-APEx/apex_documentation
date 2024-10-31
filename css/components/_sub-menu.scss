@@ -98,6 +98,10 @@ li.has-children:hover > .c-sub-menu.c-sub-menu--basic {
   h4 {
     margin-block-end: 2rem;
   }
+
+  h2, h3, h4, h5, h6 {
+    color: var(--bs-heading-color) !important;
+  }
 }
 
 .c-sub-menu__all a {
@@ -143,6 +147,7 @@ li.has-children:hover > .c-sub-menu.c-sub-menu--basic {
   h4 {
     grid-column: span 12;
     margin-block-end: 2rem;
+    color: var(--bs-heading-color) !important;
   }
 
   &[aria-hidden='true'] {
