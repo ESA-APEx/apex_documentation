@@ -80,5 +80,5 @@ format:
       - html/esa-header.html
       - html/apex-navigation.html
       - html/apex-hamburger-menu.html
-    link-external-newwindow: true
+    link-external-newwindow: false
 bread-crumbs: true
