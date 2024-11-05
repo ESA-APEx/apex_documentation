@@ -53,6 +53,8 @@ website:
         contents:
         - href: guides/udp_writer_guide.qmd
           text: Creating openEO based services
+        - href: guides/upscaling_openeo.ipynb
+          text: Upscaling openEO based services
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:

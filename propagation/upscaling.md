@@ -14,7 +14,14 @@ the processing capabilities of the platforms that are compatible with the servic
 :::{.callout-warning}
 # Work in progress
 
-A prototype of this specific APEx service is expected to be available from November 2024 onwards.
+A preview version showcasing the currently available toolset is available [here](../guides/upscaling_openeo.ipynb).
+
+Current roadmap items:
+
+1. Upscaling of processes exposed via OGC API Processes.
+2. Automated splitting of larger areas according to predefined grids.
+3. Exposing upscaling capabilities via web based UI's.
+
 :::
 
 ## Service Overview
