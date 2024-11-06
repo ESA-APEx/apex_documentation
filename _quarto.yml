@@ -55,6 +55,8 @@ website:
           text: Creating openEO based services
         - href: guides/upscaling_openeo.ipynb
           text: Upscaling openEO based services
+        - href: guides/stac_catalog_ingest.ipynb
+          text: Ingest STAC metadata
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:

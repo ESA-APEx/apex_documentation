@@ -60,3 +60,8 @@ required inputs from STAC, and store (intermediate) results back into the catalo
 A more advanced but increasingly common use case is to use a catalog to track reference data sets, as well as training patches 
 in a STAC catalog. Here we again have a pattern where various components like the EO processing system, model training scripts and
 reference data management system all work together around a central metadata store.
+
+
+## Examples
+
+The 'Guides' section has a number of concrete Jupyter notebooks showing how you can interact with the catalog API.
