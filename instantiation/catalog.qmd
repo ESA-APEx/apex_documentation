@@ -1,5 +1,6 @@
-
-# STAC metadata catalog user guide
+---
+title: STAC metadata catalog user guide
+---
 
 ## Introduction
 

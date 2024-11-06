@@ -1,0 +1,338 @@
+---
+title: Guide for writing openEO User Defined Processes
+---
+
+## Creating an openEO User Defined Process {#sec-udp-writing}
+
+User defined processes (UDPs) are one out of two standardised options that APEx offers to publish algorithms as a service.
+This guide gives some concrete steps and guidelines to ensure that your UDP works well for your users. These guidelines are
+written with APEx in mind, but can also serve as a general guide for openEO UDPs. Where needed, recommendations & choices
+are made to increase uniformity across the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/).
+
+For more background on UDP's, or a basic tutorial on creating them, the open source Python client provides
+[a good starting point](https://open-eo.github.io/openeo-python-client/udp.html).
+
+Keep in mind that APEx offers an [Algorithm Porting](../propagation/porting.md) service to help you with these steps
+if needed.
+
+
+### Example cases
+
+The best way to learn how to write a UDP is to look at existing examples:
+
+ - `max_ndvi_composite`: [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite) and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_files/max_ndvi_composite_description.md).
+
+
+### Organizing your code
+
+A UDP is simply a parametrized version of an openEO process graph, and as such we recommend that you use the same code to develop
+and test your algorithm, as you use to generate the UDP json. This ensures that your UDP is functionally equivalent to your code.
+Your code remains your own, and you only need to export the JSON UDP definition to share it with APEx.
+
+It is however advisable for your UDP to link back to a public git repository if available, making your open source code more
+discoverable.
+
+### How many UDPs should I write?
+
+Deciding on the granularity of your UDP is an important aspect of making your algorithm usable. There is no need to try
+and fit all possible use cases into a single UDP. Instead, consider to define pieces of functionality that can work with
+a limited set of parameters, and write a single UDP for each piece.
+
+
+### Parameter conventions
+
+This section provides some recommendations on how to name parameters in your UDP. While these are not mandatory, we recommend
+to consider them to avoid that users of the algorithm catalogue would be confused by variations in process parameter names.
+
+Please [let us know](https://github.com/ESA-APEx/apex_documentation/issues) if you encounter a parameter that could use a convention, and we will add it here.
+
+#### Spatial filtering
+
+Any algorithm requires spatial filtering, so we can make the life of our users easier if we all use the same naming.
+
+In other openEO processes, the spatial filtering is called `spatial_extent`, and we recommend to stick to that name as
+long as you don't have more specific names.
+
+If you pass on the `spatial_extent` parameter to all `load_collection` processes in your UDP, then it is also allowed to
+perform filtering using vector data. This conveniently allows for advanced spatial filtering use cases!
+
+#### Temporal filtering
+
+For openEO processes that support arbitrary temporal ranges, we recommend using `temporal_extent` as the name of parameter to ensure
+consistency with other openEO processes, such as `load_collection`.
+
+Many cases also require a time range with a fixed length. In such a case, you can allow to specify only the start or end
+date, and use the `date_shift` process to construct the second date in the temporal interval, ensuring a fixed length. This
+avoids faulty user input.
+
+
+### Avoid use of `save_result`
+
+Most openEO process graphs end in a `save_result`process. However, this is not recommended for UDPs, as the user may
+want to perform additional processing steps before generating the result. So having a `DataCube` (raster or vector)
+as the final output is recommended unless if your service wants to enforce specific settings on how the output is to be generated.
+
+
+### UDP documentation
+
+The description of your UDP should be quite extensive if you want users to be able to easily assess if it's suitable for them.
+We recommend including these sections:
+
+1. **Description**: A short description of what the algorithm does.
+2. **Performance characteristics**: Information on the computational efficiency of the algorithm. Include a relative cost if available.
+3. **Examples**: One or more examples of the algorithm in action, using images or plots to show a typical result. Point to a STAC metadata file with an actual output asset to give users full insight into what is generated.
+4. **Literature references**: If your algorithm is based on scientific literature, provide references to the relevant publications.
+5. **Known limitations**: Any known limitations of the algorithm, such as the type of data it works best with, or the size of the area it can process efficiently.
+6. **Known artifacts**: Use images and plots to clearly show any known artifacts that the algorithm may produce. This helps users to understand what to expect from the algorithm.
+
+A [template](https://github.com/ESA-APEx/apex_documentation/blob/main/guides/udp_description_template.md) is available to help you structure your documentation.
+
+## Integrating your openEO process (UDP) in APEx {#sec-udp-integration}
+
+Once you have an eligible openEO process, you are ready to integrate it in APEx. At this point, you should have an HTTP
+link to a JSON document that defines the process, and is publicly accessible. The most common way to do this is to store
+it in a public git repository. Tagging a release is a good way to ensure that the link remains stable.
+
+### Registering your process
+
+Next, you will need to upload a generic JSON to the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) to register your process. For now, this is
+done by creating a pull request in the [APEx Algorithm Catalogue GitHub repository](https://github.com/ESA-APEx/apex_algorithms).
+
+An example json is provided below. The properties to modify are listed here:
+
+- *id*: a unique identifier for your process
+- *created* and *updated* timestamps
+- *title*: a descriptive title
+- *description*: a detailed description of the process
+- *contacts*: a list of contacts, with at least one principal investigator
+- *keywords*: a list of free form keywords
+- *themes*: Applicable concepts from a scheme. Concepts can be found in the [ESA Data Ontology](https://data.esa.int/esado)
+- *license*: the license under which the process is published. You can use the [SPDX license list](https://spdx.org/licenses/) for this. Proprietary licenses are possible, within the terms of your ESA project.
+
+The *links* section is crucial, the following "rel" values are mandatory:
+
+- *openeo-process*: exactly one link to the JSON document that defines the process
+- *service*: at least one link to an openEO backend that is able to execute the process
+- *example*: at least one link to a STAC metadata file that shows the output of the process
+
+The _type_ field of these links should be set to `application/json`. Please provide a descriptive _title_ for each link,
+allowing to understand what the link is about.
+
+
+```{json}
+
+{
+  "id": "max_ndvi_composite",
+  "type": "Feature",
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
+  ],
+  "properties": {
+    "created": "2024-09-06T00:00:00Z",
+    "updated": "2024-09-06T00:00:00Z",
+    "type": "apex_algorithm",
+    "title": "Max NDVI Composite based on Sentinel-2 data",
+    "description": "A compositing algorithm for Sentinel-2 L2A data, ranking observations by their maximum NDVI.",
+    "cost_estimate": 1,
+    "cost_unit": "platform credits per km\u00b2",
+    "keywords": [
+      "vegetation"
+    ],
+    "language": {
+      "code": "en-US",
+      "name": "English (United States)"
+    },
+    "languages": [
+      {
+        "code": "en-US",
+        "name": "English (United States)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Jeroen Dries",
+        "position": "Researcher",
+        "organization": "VITO",
+        "links": [
+          {
+            "href": "https://www.vito.be/",
+            "rel": "about",
+            "type": "text/html"
+          },
+          {
+            "href": "https://github.com/jdries",
+            "rel": "about",
+            "type": "text/html"
+          }
+        ],
+        "contactInstructions": "Contact via VITO",
+        "roles": [
+          "principal investigator"
+        ]
+      },
+      {
+        "name": "VITO",
+        "links": [
+          {
+            "href": "https://www.vito.be/",
+            "rel": "about",
+            "type": "text/html"
+          }
+        ],
+        "contactInstructions": "SEE WEBSITE",
+        "roles": [
+          "processor"
+        ]
+      }
+    ],
+    "themes": [ {
+        "concepts": [
+          { "id": "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)" },
+          { "id": "Sentinel-2 MSI" }
+        ],
+        "scheme": "https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+      }],
+    "formats": [
+      "GeoTiff", "netCDF"
+    ],
+    "license": "CC-BY-4.0"
+  },
+  "linkTemplates": [],
+  "links": [
+    {
+      "rel": "openeo-process",
+      "type": "application/json",
+      "title": "openEO Process Definition",
+      "href": "https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/max_ndvi_composite/openeo_udp/examples/max_ndvi_composite/max_ndvi_composite.json"
+    },
+    {
+      "rel": "service",
+      "type": "application/json",
+      "title": "CDSE openEO federation",
+      "href": "https://openeofed.dataspace.copernicus.eu"
+    },
+    {
+      "rel": "example",
+      "type": "application/json",
+      "title": "Example output",
+      "href": "https://radiantearth.github.io/stac-browser/#/external/s3.waw3-1.cloudferro.com/swift/v1/APEx-examples/max_ndvi_denmark/collection.json"
+    }
+  ]
+}
+
+```
+
+### Defining a validation & benchmark scenario
+
+APEx has the capability to automatically check if your openEO process is working as expected, and if the cost for specific
+scenarios is sufficiently stable over time. This is a very important feature to avoid that your users have a bad experience.
+It also helps to ensure that the openEO backend provider you selected is performing well, and that changes to the backend
+service do not break your process.
+
+APEx requires at least one benchmark scenario, to be able to correctly mark processes that are (temporarily) unavailable. When this happens,
+the 'principal investigator', as defined in the JSON of the previous step, is informed, allowing to take action as desired.
+
+The benchmark scenarios are defined as JSON files
+in the [`benchmark_scenarios`](https://github.com/ESA-APEx/apex_algorithms/tree/main/benchmark_scenarios) folder.
+The schema of these files is defined (as JSON Schema)
+in the [`schema/benchmark_scenario.json`](https://github.com/ESA-APEx/apex_algorithms/blob/main/schema/benchmark_scenario.json) file.
+
+Example benchmark definition:
+
+```{json}
+[
+  {
+    "id": "max_ndvi",
+    "type": "openeo",
+    "backend": "openeofed.dataspace.copernicus.eu",
+    "process_graph": {
+      "maxndvi1": {
+        "process_id": "max_ndvi",
+        "namespace": "https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/f99f351d74d291d628e3aaa07fd078527a0cb631/openeo_udp/examples/max_ndvi/max_ndvi.json",
+        "arguments": {
+          "temporal_extent": ["2023-08-01", "2023-09-30"],
+          ...
+        },
+        "result": true
+      }
+    },
+    "reference_data": {
+      "job-results.json": "https://s3.example/max_ndvi.json:max_ndvi:reference:job-results.json",
+      "openEO.tif": "https://s3.example/max_ndvi.json:max_ndvi:reference:openEO.tif"
+    }
+  },
+  ...
+]
+```
+
+Note how each benchmark scenario references:
+
+- the target openEO backend to use.
+- an openEO process graph to execute.
+  The process graph will typically just contain a single node
+  pointing with the `namespace` field to the desired process definition
+  at a URL, following the [remote process definition extension](https://github.com/Open-EO/openeo-api/tree/draft/extensions/remote-process-definition).
+  The URL will typically be a raw GitHub URL to the JSON file in the `openeo_udp` folder, but it can also be a URL to a different location.
+- reference data to which actual results should be compared.
+
+
+#### Defining and updating benchmark reference data
+
+A benchmark scenario should define reference data, with which the actual results of benchmark runs should be compared.
+The `reference_data` field of a benchmark scenario is a JSON object that maps each of
+the openEO batch job result assets (by asset name) to a URL where the reference data can be found, e.g.
+
+```json
+{
+  "reference_data": {
+    "job-results.json": "https://s3.example/max_ndvi.json:max_ndvi:reference:job-results.json",
+    "openEO.tif": "https://s3.example/max_ndvi.json:max_ndvi:reference:openEO.tif"
+  }
+}
+```
+
+The reference data URLs should be publicly accessible.
+For example, as suggested by the example, as S3 storage URLs.
+While you are free to manage the hosting of the reference data yourself,
+it is recommended to just rely on the APEx infrastructure and workflows as follows.
+
+The APEx benchmarking system will automatically store the actual results (if any)
+of failed benchmark runs in a public S3 bucket managed by APEx,
+to allow post-mortem inspection of these results.
+The URLs of these actual result assets will be reported in the benchmark report
+and can be used directly as reference data URLs for subsequent benchmark runs.
+Of course, make sure the actual results are properly validated and acceptable under your standards
+before using them as reference data for future benchmark runs.
+
+##### Initial reference data
+
+When you are initially defining a benchmark scenario,
+you may not have the full set of expected reference data and metadata yet.
+In this case, it's fine to leave out the `reference_data` field,
+make it an empty mapping object, or use invalid placeholder URLs.
+When the benchmark scenario is executed and the underlying openEO batch job finishes successfully,
+the actual batch job results will be downloaded first.
+Next, the full actual result set will be compared to the reference data,
+which will be missing or incomplete, causing the benchmark run to fail.
+This failure will trigger the storage of the actual results in the APEx S3 bucket,
+and the corresponding URLs will be reported in the (pytest based) benchmark run output
+of the [corresponding GitHub workflow run](https://github.com/ESA-APEx/apex_algorithms/actions/workflows/benchmarks.yaml).
+It will look like this:
+
+```
+-------------------- `upload_assets` stats: {'uploaded': 2} --------------------
+- tests/test_benchmarks.py::test_run_benchmark[max_ndvi]:
+  - 'actual/openEO.tif' uploaded to 'https://s3.example/gh-1234!max_ndvi!actual/openEO.tif'
+  - 'actual/job-results.json' uploaded to 'https://s3.example/gh-1234!max_ndvi!actual/job-results.json'
+```
+
+These URLs can be used as reference data URLs for subsequent benchmark runs.
+
+
+##### Updating reference data
+
+When an algorithm is updated, or the underlying data changes for some reason,
+a benchmark scenario might start to fail on the reference data comparison.
+Updating the reference data is practically the same as defining it initially:
+look up the URLs of the actual results in the benchmark report,
+validate these new results, and update the benchmark scenario with the new reference data URLs.

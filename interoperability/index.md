@@ -1,4 +1,6 @@
-# Interoperability and Compliance Guidelines
+---
+title: Interoperability and Compliance Guidelines
+---
 
 Welcome to the comprehensive guide on APEx interoperability and compliance guidelines. This guide has been compiled to
 offer a detailed understanding of how algorithms and hosting environments can be integrated into APEx. These guidelines
@@ -14,5 +16,5 @@ You can find more detailed guidelines on the following pages:
   <br/>Discover how to make your algorithm APEx compliant and enable its use within APEx services and the larger EO community.
 * [Algorithm Hosting Environments](./algohostingenv.md)
   <br/>Explore the guidelines for integrating your algorithm hosting environment into APEx services.
-* [Dashboards](./dashboards.md)
+* [Geospatial Explorer](./geospatial_explorer.md)
   <br/>Learn how to integrate data sources and configure your dashboards.

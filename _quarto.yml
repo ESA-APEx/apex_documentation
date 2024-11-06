@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  favicon: _images/logos/favicon.png
+  favicon: assets/img/logos/apex_icon_blue.svg
   repo-url: "https://github.com/ESA-APEx/apex_documentation"
   repo-branch: "main"
   search:
@@ -27,11 +27,18 @@ website:
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
-      - href: propagation.md
-        text: EO Service Support
+      - href: instantiation/index.md
+        text: Instantiation Services
         contents:
-          - href: propagation/hosting.md
-            text: Algorithm Hosting
+          - href: instantiation/usecases.md
+            text: Use Cases
+      - href: propagation/index.qmd
+        text: Algorithm Propagation
+        contents:
+          - href: propagation/porting.md
+            text: Algorithm Porting
+          - href: propagation/onboarding.md
+            text: Algorithm Onboarding
           - href: propagation/upscaling.md
             text: Algorithm Upscaling
           - href: propagation/enhancement.md
@@ -40,26 +47,40 @@ website:
             text: Toolbox Cloudification
           - href: propagation/intercomparison.md
             text: Algorithm Intercomparison
-      - href: udp_writer_guide.qmd
-        text: Creating openEO based services
+          - href: propagation/usecases.md
+            text: Use Cases
+      - text: Guides
+        contents:
+        - href: guides/udp_writer_guide.qmd
+          text: Creating openEO based services
+        - href: guides/upscaling_openeo.ipynb
+          text: Upscaling openEO based services
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
         contents:
-          - href: interoperability/definitions.md
+          - href: interoperability/definitions.qmd
+          - href: propagation/ogc_processes.md
+            text: OGC API Processes
+          - href: propagation/openeo_services.md
+            text: openEO Services
           - href: interoperability/references.md
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
-          - href: interoperability/dashboards.md
+          - href: interoperability/geospatial_explorer.md
           - href: interoperability/businessmodel.md
 
 format:
   html:
-    toc: true
     toc-depth: 4
     page-layout: full
     theme: [cosmo, css/custom.scss]
+    scss: true
     highlight-style: solarized
     include-in-header:
+      - html/apex-scripts.html
       - html/blur.html
       - html/esa-header.html
+      - html/apex-navigation.html
+      - html/apex-hamburger-menu.html
+    link-external-newwindow: false
 bread-crumbs: true
