@@ -30,3 +30,17 @@ div.sourceCode {
   color: white !important;
 }
 
+
+.cell-output {
+  background-color: rgb(243 247 248 / 80%);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  color: var(--darkblue);
+
+  pre, code {
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0px !important;
+  }
+}
