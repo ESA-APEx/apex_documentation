@@ -1,4 +1,4 @@
-# Welcome to the APEx documentation portal
+# Welcome to the APEx documentation portal!
 
 This GitHub repository serves as the central hub for managing the APEx documentation portal.
 The content generation is facilitated by [Quarto](https://quarto.org/), an open-source scientific and technical publishing system.
