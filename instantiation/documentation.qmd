@@ -2,7 +2,7 @@
 title: Documentation portal user guide
 ---
 
-## Introduction
+## Introduction to APEx instantiation services
 
 Most EO projects have various deliverables related to documentation. This can be user guides, design documents or algorithm theoretical basis documents.
 
