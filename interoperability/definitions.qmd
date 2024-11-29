@@ -127,3 +127,9 @@ web service API's based on open standards. These results can then be further pro
 Note that these applications are not necessarily EO-centric or even geospatial, but could be using an EO algorithm as a small part
 or in the background.
 
+The APEx algorithm catalog acts as a discovery tool for last mile application builders. It shows various technical parameters, 
+the cost and potential limitations for specific use cases. This speeds up the discovery and selection process. Application builders
+do need an account on the hosting platforms if they want to test or use the API. APEx is also not involved in further interactions 
+between the last mile application and the platform.
+
+
