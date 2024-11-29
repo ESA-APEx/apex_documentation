@@ -12,11 +12,13 @@ flowchart TD
     ALGORITHM("Application Algorithm Definition")
     ALGORITHM_GUIDELINES("Algorithm Provider Guidelines")
     OPENEO_OGC("openEO API or OGC Processes API")
+    LAST_MILE("'Last Mile' Application")
     HOSTING_PLATFORM("Algorithm Hosting Platform")
     OPERATOR("Platform Operator")
     PLATFORM_GUIDELINES("Algorihm Hosting Platform Guidelines")
     CATALOGUE("APEx Algorithm Catalogue")
     APEX("APEx Consortium")
+    
 
     EO_PROJECT --> | owns | ALGORITHM
     ALGORITHM --> | adheres to | ALGORITHM_GUIDELINES
@@ -26,6 +28,8 @@ flowchart TD
     HOSTING_PLATFORM --> | adheres to | PLATFORM_GUIDELINES
     ALGORITHM --> | registered in | CATALOGUE
     APEX ---> | curates | CATALOGUE
+    OPENEO_OGC --> | used by | LAST_MILE
+    LAST_MILE --> | via | HOSTING_PLATFORM
 ```
 
 ## Concepts
@@ -111,3 +115,15 @@ navigating and utilising the platform effectively. They are also accountable for
 platform, ensuring that performance and reliability standards are consistently met. While the operator may be a partner
 outside of the APEx consortium, their role is integral to the success of APEx, focusing on both operational management
 and user satisfaction.
+
+### Last Mile Applications
+A 'last mile' application, as seen from the EO perspective, bridges the final gap between the user at the end of the 
+value chain, and the web service API's that offer EO derived information. So this could for instance be the integration
+of EO derived parcel statistics into the field management software of a farmer. In the ESA context, 'Green Transition Information
+Factories' are also examples of last mile applications.
+
+Typically, each user group and domain will have its own set of purpose-built tools. The IT integrator or vendor building these tools will retrieve EO algorithm results via 
+web service API's based on open standards. These results can then be further processed as needed, depending no the application.
+Note that these applications are not necessarily EO-centric or even geospatial, but could be using an EO algorithm as a small part
+or in the background.
+
