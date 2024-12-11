@@ -50,7 +50,11 @@ Please [let us know](https://github.com/ESA-APEx/apex_documentation/issues) if y
 
 Any algorithm requires spatial filtering, so we can make the life of our users easier if we all use the same naming.
 
-In the `load_collection` and `load_stac` processes, the spatial filtering is called `spatial_extent`, and we recommend to perform
+In the standard openEO processes `load_collection` and `load_stac`, spatial filtering done through the argument called `spatial_extent`, which support multiple types: a bounding box object, an inline GeoJSON object, a vector cube, or it can even be left empty (`null`). 
+For maximum flexibility, compatibility and the best user experience, we recommend to perform spatial filtering in your algorithm:
+
+- directly in `load_collection`/`load_stac` (instead of separate `filter_bbox`/`filter_spatial` processes)
+- using a parameter named `spatial_extent` (unless there are good reasons otherwise)
 spatial filtering in these processes, and also use `spatial_extent` as the parameter name unless there are good reasons otherwise.
 
 If you pass on the `spatial_extent` parameter to all `load_collection` processes in your UDP, then it is also allowed to
