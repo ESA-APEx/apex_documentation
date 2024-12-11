@@ -60,7 +60,7 @@ spatial filtering in these processes, and also use `spatial_extent` as the param
 If you pass on the `spatial_extent` parameter to all `load_collection` processes in your UDP, then it is also allowed to
 perform filtering using vector data. This conveniently allows for advanced spatial filtering use cases!
 
-The Python client has a convenience function called [`spatial_extent`](https://open-eo.github.io/openeo-python-client/api.html#openeo.api.process.Parameter.spatial_extent) to create this parameter when building your UDP via Python.
+The Python client has a convenience function called [`Parameter.spatial_extent()`](https://open-eo.github.io/openeo-python-client/api.html#openeo.api.process.Parameter.spatial_extent) to create this parameter when building your UDP via Python.
 
 #### Temporal filtering
 
