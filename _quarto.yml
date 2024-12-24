@@ -43,22 +43,17 @@ website:
           - href: instantiation/documentation.qmd
           - href: instantiation/forum.md
       - href: propagation/index.qmd
-        text: Algorithm Propagation
+        text: Algorithm Services
         contents:
-          - href: propagation/porting.md
-            text: Algorithm Porting
-          - href: propagation/onboarding.md
-            text: Algorithm Onboarding
-          - href: propagation/upscaling.md
-            text: Algorithm Upscaling
-          - href: propagation/enhancement.md
-            text: Algorithm Enhancement
-          - href: propagation/toolboxcloud.md
-            text: Toolbox Cloudification
-          - href: propagation/intercomparison.md
-            text: Algorithm Intercomparison
+          - href: propagation/ondemandservices.qmd
           - href: propagation/usecases.md
             text: Use Cases
+          - href: propagation/porting.md
+          - href: propagation/onboarding.md
+          - href: propagation/upscaling.md
+          - href: propagation/enhancement.md
+          - href: propagation/toolboxcloud.md
+          - href: propagation/intercomparison.md
       - text: Guides
         contents:
         - href: guides/udp_writer_guide.qmd

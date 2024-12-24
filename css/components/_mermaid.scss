@@ -12,3 +12,17 @@ $mermaid-label-bg-color: var(--white);
   border-radius: 5px;
   font-size: small;
 }
+
+
+.apexService {
+
+  rect {
+    fill: var(--darkblue) !important;
+    stroke: var(--white) !important;
+    stroke-width: 1px !important;
+  }
+
+  .nodeLabel {
+    color: var(--white) !important;
+  }
+}

@@ -2,6 +2,7 @@ default: true
 line-length:
   line_length: 120
   code_blocks: false
+  headings: false
   tables: false
 
 MD024:
