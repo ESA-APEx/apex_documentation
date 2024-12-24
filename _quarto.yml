@@ -71,7 +71,7 @@ website:
             text: OGC API Processes
           - href: propagation/openeo_services.md
             text: openEO Services
-          - href: interoperability/references.md
+          - href: interoperability/references/index.qmd
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
           - href: interoperability/geospatial_explorer.md
