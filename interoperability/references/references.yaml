@@ -39,8 +39,14 @@ references:
   title: "OpenEO API Profiles"
   url: https://openeo.org/documentation/1.0/developers/profiles/api.html
 - id: openeo_processes_profiles
-  title: "OpenEO processes profiles"
+  title: "OpenEO Processes Profiles"
   url: https://openeo.org/documentation/1.0/developers/profiles/processes.html
+- id: openeo_batch_profiles
+  title: "OpenEO L1B Minimal Batch Jobs"
+  url: https://openeo.org/documentation/1.0/developers/profiles/api.html#l1b-minimal-batch-jobs
+- id: openeo_remote_udp
+  title: OpenEO Remote UDP extension
+  url: https://github.com/Open-EO/openeo-api/tree/draft/extensions/remote-process-definition
 - id: wms
   title: "WMS 1.3.0"
   url: https://portal.ogc.org/files/?artifact_id=14416
