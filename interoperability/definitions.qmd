@@ -3,10 +3,12 @@ title: Definitions & Actors
 ---
 
 This section introduces key terms and their meaning in the APEx context, which are crucial for building a common
-understanding of the complex ecosystem in which APEx operates. Along with the general definitions, the flow chart below
+understanding of the complex ecosystem in which APEx operates. Along with the general definitions, @fig-definitions
 visually demonstrates the interconnections between these concepts.
 
 ```{mermaid}
+%%| label: fig-definitions
+%%| fig-cap: "Concepts and relationships."
 flowchart TD
     EO_PROJECT("EO Project")
     ALGORITHM("Application Algorithm Definition")
@@ -30,42 +32,55 @@ flowchart TD
 
 ## Concepts
 
-### Application Algorithms
-(Application) algorithms refer to a heterogeneous group of software that operates on Earth Observation (EO) data to
-produce a result. More specifically, APEx was initiated to support the algorithms developed within ESA’s EO application
-projects. This, for instance, includes projects in the ‘PEOPLE’ and ‘World’ series. Projects in the ‘Earth Science’
-track are supported by the ESA EarthCODE framework.
+### EO Algorithms, Workflows and Applications
 
-### Application Algorithm Definition
-The application algorithm definition refers to a representation of the algorithm that can be interpreted by an API
-and/or processing platform. Typically, it includes a general description of the algorithm along with detailed
+In the context of APEx, the term algorithm refers to a specific piece of EO software that performs specific processing
+or data analytics tasks. EO Algorithms can vary substantially in size and complexity, for example, some only perform one
+specific task (e.g. cloud masking in optical imagery), while others generate value-added products based on complex
+workflows that integrate several individual algorithms. A related term is EO Application, which commonly refers to a
+comprehensive workflow implementation that commonly also utilises non-EO (geospatial) data sets and a variety of data
+analytics procedures to perform an application-specific processing task.
+
+For the sake of simplicity in the context of APEx, we refer to these simply as (EO) “algorithms”.
+
+### Algorithm Service Implementation
+
+The algorithm definition refers to a representation of the algorithm modules and interfaces that can be exposed by an
+API and/or processing platform. Typically, it includes a general description of the algorithm along with detailed
 information on its parameters, expected output, scientific method, and an overview of the different steps executed
-within the algorithm. Examples of algorithm definitions include openEO’s User Defined Processes (UDP) and OGC
-Application Package, using the Common Workflow Language (CWL).
+within the algorithm. Examples of algorithm definitions include openEO’s User Defined Processes (UDP) [@udp] and OGC
+Application Package [@ap], using the Common Workflow Language (CWL) [@cwl].
 
 ### Algorithm Catalogue
-The [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) is a central register of application algorithm definitions that can be executed on
-APEx-compliant algorithm hosting platforms. Curated by APEx, the catalogue relies on automated checks to ensure that
-advertised algorithms are available and functional. Whenever a malfunction is detected, this is reported to ESA and the
-EO project consortium, allowing them to determine a proper course of action.
+
+The [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) is a central register of algorithm definitions
+and the corresponding algorithm service instances that can be executed on APEx-compliant algorithm hosting platforms.
+Curated by APEx, the catalogue relies on automated checks to ensure that advertised algorithms service instances are
+available and functional. Whenever a malfunction is detected, this is reported to ESA and the EO project consortium,
+allowing them to determine a proper course of action.
 
 ### Hosted Algorithm
-To increase uptake and interoperability, APEx aims to enable the execution of application algorithms via standardised
-web service APIs. This transitions algorithms from being rather arbitrary pieces of software with potentially complex
-requirements, in terms of execution environment, usage, inputs, …, into on-demand services that can readily be invoked
-by stakeholders. This transformation primarily involves converting the algorithm into an application algorithm
-definition and making it available on an algorithm hosting platform. The transition process into a hosted on-demand
-algorithm service is supported by APEx propagation services.
+
+To increase uptake and interoperability, APEx aims to enable the execution of algorithms via standardised web service
+APIs. This transitions algorithms from being rather arbitrary pieces of software with potentially complex requirements,
+in terms of execution environment, usage, inputs, …, into on-demand services that can readily be invoked by
+stakeholders. This transformation primarily involves converting a given algorithm into an APEx-compliant algorithm
+definition and making it available as a service on an algorithm hosting platform. The transition process into a hosted
+on-demand algorithm service is supported by the [APEx Algorithm Services](../propagation/index.qmd).
 
 An important boundary condition for hosted algorithms is that they can be executed at a predictable cost for a given set
-of inputs.
+of inputs. This predictability allows a service user to accurately estimate and determine the cost associated with the
+execution of the final deployed service instance.
 
 ### Algorithm Hosting Platform
-An EO algorithm hosting platform enables the execution of standardised application algorithms represented by an
-application algorithm definition. In APEx, an algorithm hosting platform specifically refers to platforms that support
-the openEO and/or OGC Application Package Algorithm standards. For APEx, these platforms are considered existing
-providers available through ESA’s Network of Resources (NoR). Examples of such algorithm hosting platforms are the
-Copernicus Data Space Ecosystem for openEO or Ellip for OGC Processes.
+
+An EO algorithm hosting platform enables the execution of a standardised algorithm, represented by an algorithm
+definition. In APEx, an algorithm hosting platform specifically refers to platforms that support the openEO UDP and/or
+OGC Application Package Algorithm description standards. These platforms also enable algorithms to be executed by the
+openEO API or through OGC API Processes. For APEx, these platforms are considered existing providers available through
+[ESA’s Network of Resources (NoR)](https://nor-discover.org/). Examples of such algorithm hosting platforms are the
+[Copernicus Data Space Ecosystem](https://dataspace.copernicus.eu/analyse/openeo) for openEO
+or [Ellip](https://ellip.terradue.com/) for OGC Application Packages.
 
 It is important to note that APEx itself is not an algorithm hosting platform; rather, it promotes the reuse of existing
 platforms. A key property of algorithm hosting platforms is their long-term sustainability beyond the lifetime of a
@@ -75,34 +90,39 @@ The algorithm hosting platform has an important responsibility to ensure the con
 algorithms. This responsibility is detailed in the requirements below, highlighting that the selection of the platform
 affects properties such as cost, performance, stability, and the amount of computing resources available to run the
 algorithm. Compliance with these requirements does not necessarily imply a high overall quality level across all
-aspects, ensuring that EO projects retain a sufficient degree of freedom in selecting their preferred
-platform.
+aspects, ensuring that EO projects retain a sufficient degree of freedom in selecting their preferred platform.
 
 ## Actors
 
-### EO Project
-The EO project refers to the consortium that is responsible for building the application algorithm. ESA
-will indicate if a specific project must comply with APEx guidelines. When compliance is required, the
-consortium can utilise various services offered by APEx. Specifically, the APEx propagation services aim to support the
-enhancement of algorithms on a technical and software level and facilitate the transition to hosted algorithms that can
-be included in the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/).
+### EO Project & Algorithm PI
+
+An EO project refers to the consortium that is responsible for building the EO algorithm and is also referred to as
+Algorithm PI (principal investigator). In certain ESA EOP procurement and ITTs, there is now a requirement included to
+comply with APEx interoperability and compliance guidelines. When compliance is required, the consortium can utilise
+various services offered by APEx. Specifically, the APEx Algorithm Services aim to support the enhancement of algorithms
+on a technical and software level and facilitate the transition to hosted algorithms that can be included in the
+[APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/).
 
 ESA EO projects that do not have an explicit compliance requirement are also eligible to receive support. The APEx
 support can boost project impact, so projects are encouraged to inquire with their ESA technical officer about the
 possibilities.
 
-It is important to note that during the execution of the project, the project retains full responsibility
-for the final quality of the algorithms and workflows.
+It is important to note that during the execution of the project, the project retains full responsibility for the final
+quality of the algorithms and workflows.
 
 ### APEx Consortium
+
 The APEx team, comprised of industry experts, operates the various services provided by APEx. To maximise the reuse of
-existing resources, the team leverages service offerings within ESA’s Network of Resources (NoR), drawing on the
-extensive ecosystem provided by the EO industry.
+existing resources, the team leverages service offerings within [ESA’s Network of Resources (NoR)]
+(<https://nor-discover.org/>), drawing on the extensive ecosystem provided by the EO industry.
 
 Although members of the APEx consortium are involved in various EO services registered in NoR, APEx itself is not a new
-EO platform.
+EO platform. Instead, it focuses on enabling interoperability among existing platforms. As a result, APEx remains open
+to integrating additional platforms, provided they meet the compliance requirements of the Algorithm Hosting
+Environment, as specified below.
 
 ### Platform Operator
+
 The platform operator plays a crucial role in managing and running the algorithm hosting platform. Their primary
 responsibility is to oversee the infrastructure that supports the execution of various algorithms. This includes
 providing the necessary computational resources to ensure the smooth and efficient operation of the platform. In

@@ -71,7 +71,6 @@ website:
             text: OGC API Processes
           - href: propagation/openeo_services.md
             text: openEO Services
-          - href: interoperability/references/index.qmd
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
           - href: interoperability/geospatial_explorer.md
@@ -91,4 +90,6 @@ format:
       - html/apex-navigation.html
       - html/apex-hamburger-menu.html
     link-external-newwindow: false
+    bibliography: interoperability/references/references.yaml
+    csl: interoperability/references/diabetologia.csl
 bread-crumbs: true

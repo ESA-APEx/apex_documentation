@@ -1,7 +1,5 @@
 ---
 title: Normative References
-bibliography: references.yaml
-csl: diabetologia.csl
 nocite: |
   @*
 ---
