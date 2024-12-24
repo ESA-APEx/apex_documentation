@@ -31,10 +31,17 @@ website:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
       - href: instantiation/index.md
-        text: Instantiation Services
+        text: Project Tools
         contents:
           - href: instantiation/usecases.md
             text: Use Cases
+          - href: instantiation/geospatial_explorer.md
+          - href: instantiation/project_portal.md
+          - href: instantiation/user_workspace.md
+          - href: instantiation/ide.md
+          - href: instantiation/catalog.qmd
+          - href: instantiation/documentation.qmd
+          - href: instantiation/forum.md
       - href: propagation/index.qmd
         text: Algorithm Propagation
         contents:
