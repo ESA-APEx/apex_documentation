@@ -2,6 +2,8 @@
 title: Algorithm Hosting Platforms Guidelines
 ---
 
+## Requirements
+
 APEx-compliant application algorithms are executed as services on a compatible algorithm hosting platform. Currently,
 APEx supports platforms based on either openEO [5] or OGC Application Package [2] technologies. To be considered an
 APEx-compliant algorithm hosting platform, the platform must meet the requirements outlined in this document section.
