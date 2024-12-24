@@ -67,10 +67,7 @@ website:
         text: Interoperability and Compliance Guidelines
         contents:
           - href: interoperability/definitions.qmd
-          - href: propagation/ogc_processes.md
-            text: OGC API Processes
-          - href: propagation/openeo_services.md
-            text: openEO Services
+          - href: propagation/service_development.qmd
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
           - href: interoperability/geospatial_explorer.md

@@ -17,6 +17,7 @@ format:
 {{< include ../interoperability/references/index.qmd >}}
 {{< include ../interoperability/_introduction.md >}}
 {{< include ../interoperability/definitions.qmd >}}
+{{< include ../propagation/service_development.qmd >}}
 {{< include ../interoperability/algohosting.md >}}
 {{< include ../interoperability/algohostingenv.md >}}
 {{< include ../interoperability/geospatial_explorer.md >}}
