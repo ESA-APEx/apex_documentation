@@ -94,6 +94,12 @@ Guidelines and recommendations to set up a cloud environment that is compliant w
 directly from the [EOEPCA project](https://eoepca.org). The project includes documentation, software and deployment
 configurations (e.g. helm charts) to cover the needed platform requirements.
 
+## Upscaling Recommendations
+
+APEx provides specific recommendations for leveraging the algorithm hosting platform to support large-scale data
+processing activities. For a detailed overview of best practices, please visit the
+APEx [Upscaling](../propagation/upscaling.md#requirements-for-the-selection-of-platforms) support page.
+
 ## Service Level Commitments
 
 The service level commits for algorithm providers and algorithm hosting operators will be further documented by the work
