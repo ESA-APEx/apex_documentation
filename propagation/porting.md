@@ -11,7 +11,7 @@ The goal of the algorithm porting activities is to provide additional technical 
 these guidelines, helping them navigate the transformation of their EO data processing workflows into APEx-compliant
 solutions.
 
-## Service Overview
+## Support Overview
 
 Algorithm porting is designed to assist projects at various stages of algorithm development, providing expert guidance
 on making EO algorithms more FAIR-compliant and APEx-compatible. The service includes several key features, as described
@@ -33,7 +33,7 @@ clear path for its porting. Another important outcome is an initial assessment o
 outcome of the porting process. This allows the project’s ESA technical officer and APEx ESA responsible to decide if
 porting can continue. This initial assessment also includes an effort estimate.
 
-### Support for Transforming Algorithms into openEO UDPs
+### Support for Porting Algorithms into openEO UDPs
 
 For projects that already have established EO data processing or analytics workflows, APEx offers dedicated support to
 help transform these workflows into openEO User Defined Processes (UDP). This step optimises the algorithm for
