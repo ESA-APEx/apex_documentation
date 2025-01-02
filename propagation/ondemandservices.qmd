@@ -37,9 +37,9 @@ graph. [This notebook](https://documentation.dataspace.copernicus.eu/notebook-sa
 exactly how to do that.
 
 After your UDP is created, it can be registered in
-the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) and associated with one or more backends or
-platforms capable of running it. As APEx continues to evolve, additional tools will become available that aid this
-process, including functionality to check if your service is still functional.
+the [APEx Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-services-catalogue) and associated
+with one or more backends or platforms capable of running it. As APEx continues to evolve, additional tools will become
+available that aid this process, including functionality to check if your service is still functional.
 
 For further guidance on creating and using UDPs, you can explore the following resources:
 
@@ -128,7 +128,7 @@ following Algorithm Services:
   as openEO User Defined Processes (UDP) or OGC Application Packages.
 * **[Algorithm Onboarding](onboarding.md)**\
   Explore how APEx can assist in deploying your algorithms within an APEx-compatible hosting platform and sharing
-  them across the EO community through the APEx Algorithm Catalogue.
+  them across the EO community through the APEx Algorithm Services Catalogue.
 * **[Algorithm Upscaling](upscaling.md)**\
   Learn how APEx facilitates and simplifies the execution of algorithms at scale.
 * **[Algorithm Enhancement](enhancement.md)**\

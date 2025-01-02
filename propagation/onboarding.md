@@ -70,7 +70,7 @@ corresponding cloud resources. Users wishing to execute an algorithm will need a
 platform or make a request through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/).
 :::
 
-Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Catalogue.
+Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Services Catalogue.
 
 ## Considerations and Project Responsibilities
 
@@ -102,6 +102,6 @@ Once the algorithm has been integrated into the APEx [Algorithm Services Catalog
 users can leverage it for large-scale data processing. For such activities, APEx offers additional support
 for [algorithm upscaling](upscaling.md).
 
-## Onboard Your Algorithm on the [APEx Algorithm Catalogue](#apex-algorithm-services-catalogue)
+## Onboard Your Algorithm on the [APEx Algorithm Services Catalogue](#apex-algorithm-services-catalogue)
 
 Stay tuned for more detailed instructions on how to onboard your algorithm into our catalogue.
