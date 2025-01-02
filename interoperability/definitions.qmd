@@ -98,10 +98,10 @@ aspects, ensuring that EO projects retain a sufficient degree of freedom in sele
 
 An EO project refers to the consortium that is responsible for building the EO algorithm and is also referred to as
 Algorithm PI (principal investigator). In certain ESA EOP procurement and ITTs, there is now a requirement included to
-comply with APEx interoperability and compliance guidelines. When compliance is required, the consortium can utilise
-various services offered by APEx. Specifically, the APEx Algorithm Services aim to support the enhancement of algorithms
-on a technical and software level and facilitate the transition to hosted algorithms that can be included in the
-[APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/).
+comply with APEx [Interoperability and Compliance Guidelines](../interoperability/index.md). When compliance is
+required, the consortium can utilise various services offered by APEx. Specifically, the APEx Algorithm Services aim to
+support the enhancement of algorithms on a technical and software level and facilitate the transition to hosted
+algorithms that can be included in the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/).
 
 ESA EO projects that do not have an explicit compliance requirement are also eligible to receive support. The APEx
 support can boost project impact, so projects are encouraged to inquire with their ESA technical officer about the

@@ -22,10 +22,10 @@ with details of any external dependencies to the APEx enhancement team. The enha
 algorithm and estimate the effort for the envisioned activities, which results in an offer. In the second phase, on
 acceptance of the offer by the provider and by ESA, the enhancement is performed. As a result, the algorithm provider
 receives an optimised version of their algorithm code with high code quality. Optionally, the enhancement procedure can
-include a porting or packaging step, supported by the APEx [algorithm porting](porting.md)
-and [onboarding](onboarding.md) activities, where the algorithm is implemented as an openEO User Defined Process (UDP)
-or Application Package and hosted on an existing platform. This approach ensures that the enhanced algorithm remains
-available as an on-demand service.
+include a porting or packaging step, supported by the APEx [Algorithm Porting](porting.md)
+and [Algorithm Onboarding](onboarding.md) activities, where the algorithm is implemented as an openEO User Defined
+Process (UDP) or Application Package and hosted on an existing platform. This approach ensures that the enhanced
+algorithm remains available as an on-demand service.
 
 ## Support Overview
 
@@ -59,7 +59,7 @@ the enhancement team will begin work to enhance the algorithm. The exact process
 the initial algorithm and its implementation.
 
 If the algorithm was originally implemented in accordance with the
-APEx [Interoperability and Compliance guidelines](../interoperability/algohosting.md), the process can be more
+APEx [Interoperability and Compliance Guidelines](../interoperability/algohosting.md), the process can be more
 straightforward, as, in this case, there will be more overlap between libraries and design patterns used in the initial
 implementation and those required for an optimised APEx version. The enhancement process will be different, and fewer
 changes will have to be made to the code base.

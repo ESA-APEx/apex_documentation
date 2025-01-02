@@ -3,9 +3,9 @@ title: Algorithm Porting
 ---
 
 APEx supports the porting or packaging of algorithms, ensuring they align with the
-APEx [Interoperability and Compliance Guidelines](../interoperability/index.md). These guidelines are designed to ensure
-that algorithms are standardised and ready for integration into APEx via the [Algorithm Onboarding](onboarding.md)
-support.
+APEx [Interoperability and Compliance Guidelines](../interoperability/algohosting.md). These guidelines are designed to
+ensure that algorithms are standardised and ready for integration into APEx via
+the [Algorithm Onboarding](onboarding.md) support.
 
 The goal of the algorithm porting activities is to provide additional technical support to guide projects in applying
 these guidelines, helping them navigate the transformation of their EO data processing workflows into APEx-compliant
@@ -38,7 +38,7 @@ porting can continue. This initial assessment also includes an effort estimate.
 For projects that already have established EO data processing or analytics workflows, APEx offers dedicated support to
 help transform these workflows into openEO User Defined Processes (UDP). This step optimises the algorithm for
 FAIR-compliant reuse and ensures that the algorithm meets the requirements set out in the
-APEx [Interoperability and Compliance Guidelines](../interoperability/index.md).
+APEx [Interoperability and Compliance Guidelines](../interoperability/algohosting.md).
 
 Through time-limited expert consultations, APEx’s openEO specialists will work closely with project teams, offering
 hands-on guidance and resolving any technical challenges. This support covers the entire process, from adapting your
