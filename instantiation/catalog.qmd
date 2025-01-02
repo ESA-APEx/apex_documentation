@@ -1,67 +1,107 @@
 ---
-title: STAC metadata catalog user guide
+title: Product Catalogue
 ---
 
-## Introduction
+## Overview
 
-Requesting a dedicated STAC catalog for your project, allows you to keep track of input data, intermediate results, and versions of final products.
+The Product Catalogue enables projects to create their own SpatioTemporal Asset Catalogue (STAC), which serves as a
+comprehensive metadata collection for efficient organisation and discovery of geospatial data assets. This information
+is presented in a user-friendly JSON format.
 
-If you don't know what STAC is, we recommend that you familiarize yourself with the [basic concepts](https://stacspec.org/en) first.
-Especially organizations responsible for data management or data processing in a project are very likely to have a need 
-for STAC metadata. Also if FAIR data principles are important to you, you should consider using a catalog.
+Instantiating a project-specific catalogue gives projects the freedom to use it for a range of purposes, from
+experimental to operational use cases. Assets that are considered project deliverables will normally be added to the
+centralised project results repository.
+
+STAC structures data around assets, collections, and catalogues, simplifying search and access based on attributes such
+as time, location, and other metadata. The concept of a STAC catalogue emphasises simplicity, operating as a REST-based
+web service with a single HTTP endpoint for communication. This API-centric design ensures easy integration into
+existing applications and tools, including other APEx services.
+
+## Showcase Scenarios
+
+The product catalogue serves several beneficial scenarios for projects:
+
+* **Data Accessibility**\
+  The service offers easy access to a wide range of geospatial data sources, enabling project teams to quickly locate
+  and utilise relevant data without the need to manage large datasets locally.
+
+* **Tool Integration**\
+  By adhering to the STAC standard, the service enhances interoperability among different data sources, software tools
+  and processing platforms such as openEO and OGC Application Packages. This ensures seamless integration of datasets
+  from various providers, supporting comprehensive analysis and decision-making. This interoperability extends to other
+  APEx tools such as the [Geospatial Explorer](geospatial_explorer.md),
+  [Interactive Development Environments](ide.md), [User Workspaces](user_workspace.md)….
+
+* **Efficient Search and Discovery**\
+  Users can efficiently search and discover datasets based on specific criteria such as time, location, and data type.
+  This capability streamlines research, planning, and operational tasks by providing quick access to relevant
+  information.
+
+* **Enhanced Collaboration**\
+  The service promotes collaboration by providing a centralised platform where project stakeholders can access and share
+  geospatial data and analyses. This collaborative environment fosters innovation and knowledge sharing across
+  disciplines and organisations.
 
 ## What does APEx offer
 
 You will get a dedicated STAC catalog, managed by the APEx team. This gives you full control over the metadata, without
-having to worry about IT aspects such as security, backup or monitoring the service.
-The catalog supports creating both private and public collections.
+having to worry about IT aspects such as security, backup or monitoring the service. The catalog supports creating both
+private and public collections.
 
 The data storage itself is _not_ included in the catalog. We recommend requesting object storage access with one of the
 cloud providers in the NoR.
 
-The catalog offers a REST HTTP API. It can be browsed visually using [STAC browser](https://radiantearth.github.io/stac-browser/#/?.language=en).
+The catalog offers a REST HTTP API. It can be browsed visually
+using [STAC browser](https://radiantearth.github.io/stac-browser/#/?.language=en).
 
-The metadata creation process is not automated. You will have to provide the metadata in a JSON format. The catalog gives
-you full freedom in terms of STAC extension that you want to use.
+The metadata creation process is not automated. You will have to provide the metadata in a JSON format. The catalog
+gives you full freedom in terms of STAC extension that you want to use.
 
 ## What software is used under the hood
 
-The catalog is currently based on [stac-fastapi-elasticsearch-opensearch](https://github.com/stac-utils/stac-fastapi-elasticsearch-opensearch).
-The database is a managed opensearch instance running on open telekom cloud.
+The catalog is currently based
+on [stac-fastapi-elasticsearch-opensearch](https://github.com/stac-utils/stac-fastapi-elasticsearch-opensearch). The
+database is a managed opensearch instance running on open telekom cloud.
 
 The APEx team can roll out software upgrades if needed, but cannot provide support for custom software development.
 
 ## How to integrate the catalog in your project architecture
 
-The role of the STAC catalog, is in essence to facilitate data discovery and exchange between different components in your
-project. By the use of a shared metadata language, components can be decoupled and still work together. It allows different
-project partners also to work together, even if they use different software stacks.
+The role of the STAC catalog, is in essence to facilitate data discovery and exchange between different components in
+your project. By the use of a shared metadata language, components can be decoupled and still work together. It allows
+different project partners also to work together, even if they use different software stacks.
 
-We list some common cases below. 
+We list some common cases below.
 
 ### Data set viewing
 
-Data viewing is one of the most basic use cases. Most viewer implementations traditionally require to ingest data in a viewer
-specific database. However, when metadata is sufficiently rich, and the viewer understands STAC, it can directly query the
-STAC catalog, as long as it's sufficiently responsive for the low latency requirements of the viewer.
+Data viewing is one of the most basic use cases. Most viewer implementations traditionally require to ingest data in a
+viewer specific database. However, when metadata is sufficiently rich, and the viewer understands STAC, it can directly
+query the STAC catalog, as long as it's sufficiently responsive for the low latency requirements of the viewer.
 
 ### Data processing
 
-In the most basic case, a processing component simply stores final products in the catalog. Sufficiently advanced processing
-systems will immediately generate STAC metadata, and may even allow writing into the catalog API directly. They also record 
-data provenance, which is a key aspect of FAIR data principles.
+In the most basic case, a processing component simply stores final products in the catalog. Sufficiently advanced
+processing systems will immediately generate STAC metadata, and may even allow writing into the catalog API directly.
+They also record data provenance, which is a key aspect of FAIR data principles.
 
-In a more advanced case, the processing workflow requires storing intermediate products, or preprocessed ancillary data sets.
-Also then, the STAC catalog can be used to keep track of these data sets. By doing so, the processing component can simply read
-required inputs from STAC, and store (intermediate) results back into the catalog.
+In a more advanced case, the processing workflow requires storing intermediate products, or preprocessed ancillary data
+sets. Also then, the STAC catalog can be used to keep track of these data sets. By doing so, the processing component
+can simply read required inputs from STAC, and store (intermediate) results back into the catalog.
 
 ### Machine learning datasets
 
-A more advanced but increasingly common use case is to use a catalog to track reference data sets, as well as training patches 
-in a STAC catalog. Here we again have a pattern where various components like the EO processing system, model training scripts and
-reference data management system all work together around a central metadata store.
-
+A more advanced but increasingly common use case is to use a catalog to track reference data sets, as well as training
+patches in a STAC catalog. Here we again have a pattern where various components like the EO processing system, model
+training scripts and reference data management system all work together around a central metadata store.
 
 ## Examples
 
 The 'Guides' section has a number of concrete Jupyter notebooks showing how you can interact with the catalog API.
+
+:::{.callout-tip}
+
+## Stay Tuned
+
+Additional information will be shared on this page as the project progresses.
+:::
