@@ -25,8 +25,8 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
-      - href: eo_service_usage.qmd
-        text: On-demand EO services
+#      - href: eo_service_usage.qmd
+      - text: On-demand EO services
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service

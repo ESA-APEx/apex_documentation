@@ -28,7 +28,7 @@ and capabilities that APEx provides to different stakeholders.
   be seamlessly reused on existing platforms and integrated into APEx-compliant technologies, such as openEO or OGC
   Application Packages.
 
-For more information on how to invoke these services, please refer to [EO service usage](./eo_service_usage.qmd).
+[//]: # (For more information on how to invoke these services, please refer to [EO service usage]&#40;./eo_service_usage.qmd&#41;.)
 
 ## For EO Projects
 
