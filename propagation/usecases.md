@@ -61,7 +61,7 @@ A project is experiencing performance issues with an algorithm. Both of the foll
 APEx offers [support to optimise algorithms](enhancement.md) through a structured analysis and improvement process. This
 may include steps such as refactoring or algorithm porting. In the case of scenario 2, the APEx team will also assess
 whether performance can be enhanced by integrating the algorithm into APEx-compliant technologies, such as openEO or OGC
-Application Package. If so, the APEx [Algorithm Porting](porting.md) service can be recommended to support the
+Application Package. If so, the APEx [Algorithm Porting](porting.md) support can be recommended to enable the
 transformation of an algorithm into an openEO UDP or package it as an OGC Application Package. The algorithm
 optimisation can happen at native source code (e.g. Python, Fortran) or service implementation level (i.e., openEO,
 Application Package).
@@ -87,8 +87,8 @@ it into an openEO User Defined Process (UDP) or package it as an OGC Application
 APEx offers a set of initial [guidelines](../interoperability/algohosting.md) and
 online [resources](ondemandservices.qmd) to help projects integrate their algorithm, processing workflow or application
 into an APEx-compliant technology. Should additional assistance be required, the APEx can provide
-further [support](porting.md). After an initial analysis, APEx experts will propose an appropriate APEx-compliant
-technology and assist the project in its implementation.
+further [Algorithm Porting](porting.md) support. After an initial analysis, APEx experts will propose an appropriate
+APEx-compliant technology and assist the project in its implementation.
 
 :::{.callout-tip}
 
@@ -156,8 +156,8 @@ a limited geographical area and aims to upscale this pipeline for large-scale da
 
 APEx provides a set of initial [guidelines](../interoperability/algohosting.md) and
 online [resources](index.qmd#how-to-build-an-on-demand-service) to help you get started. If your project requires
-additional assistance in making the data processing pipeline APEx-compliant, the [APEx Algorithm Porting](porting.md)
-service is available to provide further support.
+additional assistance in making the data processing pipeline APEx-compliant,
+additional [APEx Algorithm Porting](porting.md) support is available.
 :::
 
 ### Examples
