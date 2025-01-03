@@ -51,6 +51,16 @@ For further guidance on creating and using UDPs, you can explore the following r
 * [Jupyter notebook example](https://github.com/Open-EO/openeo-community-examples/blob/main/python/Sentinel1_Stats/Sentinel1_Stats.ipynb)
 * [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
 
+#### Development and Testing Environments
+
+While an openEO UDP can be developed on any supported environment using the
+existing [openEO tools](https://openeo.org/documentation/1.0/), we recommend testing the UDP on an APEx-compliant
+hosting platform. This ensures platform compatibility and facilitates the deployment of your UDP as an on-demand
+service.
+
+For a comprehensive overview of currently APEx-compliant hosting platforms, please refer
+to [this section](#openeo-udp).
+
 ### Building an EOAP Process based service
 
 Another option is to package your software using Docker containers. This approach, based on the OGC Best Practice for Earth Observation Application Packaging (EOAP), is very generic and is particularly relevant if you have an existing piece of complex software that you want to make available as a service.
@@ -64,6 +74,15 @@ available that aid this process, including functionality to check if your servic
 
 [This tutorial](https://terradue.github.io/ogc-eo-application-package-hands-on/) explains more about this option.
 
+#### Development and Testing Environments
+
+To develop and test an OGC Application Package, you can use one of the following environments, which include the
+necessary tools and basic infrastructure to support the development process:
+
+* [ELLIP](https://ellip.terradue.com)
+* APEx Instantiation Services
+  * [Workspace](../instantiation/user_workspace.md) and [IDE](../instantiation/ide.md)
+
 ### What are the platforms to choose from?
 
 To offer your algorithm as an on-demand service, it must be available for execution on an APEx-compliant algorithm
@@ -71,7 +90,7 @@ hosting platform. Currently, APEx supports the integration of services on platfo
 APEx [compliance guidelines](../interoperability/algohostingenv.md). It is important to note that this list of supported
 platforms is expected to grow as APEx evolves.
 
-For openEO UDPs:
+#### openEO UDP
 
 * [openEO platform](https://openeo.cloud)
 * [CDSE openEO federation](https://dataspace.copernicus.eu)
