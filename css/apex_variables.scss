@@ -19,6 +19,7 @@
   --underline: #CCD6DA;
 
   --bs-heading-color: #003247 !important;
+  --bs-body-line-height: 1.25 !important;
 
   // Colors in rgb
   --darkblue-rgb: rgb(0, 50, 71);
@@ -34,14 +35,14 @@
   --text-2xl: 1.75rem;
   --text-xl: 1.5rem;
   --text-lg: 1.25rem;
-  --text-base: 1rem;
+  --text-base: 1.1rem;
   --text-sm: 0.875rem;
   --text-xs: 0.75rem;
   --font-family: 'NotesESA', Arial, sans-serif;
 
   --border-radius: 10px;
   --opacity: 1.0;
-  --lineheight: 1.5rem;
+  --lineheight: 1.25;
 
 }
 
