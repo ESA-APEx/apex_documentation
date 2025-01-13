@@ -8,6 +8,12 @@
     },
     {
       "pattern": "^https://www.drupal.org/"
+    },
+    {
+      "pattern": "^https://eoepca.org"
+    },
+    {
+      "pattern": "^@"
     }
   ]
 }

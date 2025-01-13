@@ -21,6 +21,6 @@ effectively to APEx more efficiently and successfully.
 The guidelines in this document also define combined service level commitments (SLA and OLA), including accompanying key
 performance indicators (KPIs) and metrics. These will serve to validate and ensure the compliance of these commitments.
 
-Lastly, this guide explains in detail the federated business model utilized within APEx. Through providing comprehensive
+Lastly, this guide explains in detail the federated business model utilised within APEx. Through providing comprehensive
 documentation of this model, APEx aims to foster a precise understanding among all stakeholders and create a cooperative
 environment.

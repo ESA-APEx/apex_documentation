@@ -21,7 +21,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
-          version: '1.4.554'
+          version: '1.6.31'
       - name: Install Python
         uses: actions/setup-python@v4
         with:
@@ -38,18 +38,18 @@ jobs:
         with:
           path: "_build"
       - name: Upload build folder
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-folder
           path: "_build"
-  
+
   documentation-quality-checks:
     runs-on: ubuntu-latest
     needs: build-documentation
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Check broken links 
+      - name: Check broken links
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
           use-quiet-mode: 'yes'
@@ -86,7 +86,7 @@ jobs:
           git config --local user.name "Github Actions"
 
     - name: Download build folder
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: build-folder
         path: ./_build

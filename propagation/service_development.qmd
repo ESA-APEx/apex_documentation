@@ -1,0 +1,123 @@
+---
+title: Algorithm Service Development Options
+---
+
+APEx currently offers two main options for projects to develop their on-demand services:
+
+* OpenEO-based services [@openeo], implemented in line
+  with [openEO’s User Defined Processes](#openeo-user-defined-processes) (UDP) [@udp]
+* OGC API - Processes-based services [@apiprocess], implemented in line with the
+  [OGC Application Package Best Practice][#ogc-application-package-and-ogc-api-processes](@ap)
+
+These APEx-compliant technologies allow algorithms to be hosted on an APEx-compliant algorithm hosting platform and make
+them available for execution through web services. These technologies promote seamless reuse and integration of existing
+EO algorithms. Additionally, by leveraging web services and cloud-based approaches, these technologies simplify the
+execution of EO algorithms, shielding users from underlying complexities, such as data access, data processing
+optimisation, and other technical challenges.
+
+APEx remains committed to future innovation and is open to integrating additional specifications, provided they align
+with FAIR principles and facilitate algorithm execution through web services.
+
+The sections below provide a brief overview of each technology and outline various scenarios for their potential
+application.
+
+## openEO User Defined Processes
+
+When an EO application can be expressed in terms of the standardised openEO processes (combined in a process graph), it
+can also be parametrised so that it effectively becomes a service that can be executed by an openEO backend. This is
+what we call a User Defined Process (UDP) [@udp].
+
+### When to use openEO User Defined Processes?
+
+This option is a good choice when writing EO algorithms from scratch or when using Python libraries that support _numpy_
+or _XArray_ data structures, which includes many machine learning frameworks. Therefore, it is also fairly common for
+projects to port their existing pure-Python algorithm into an openEO process graph. While this porting involves learning
+to understand the concepts of datacube-based processing and the openEO processes, it does provide some benefits.
+
+The standardised, datacube-based processing approach is designed to significantly reduce the responsibilities of the EO
+data scientist writing the algorithm. The openEO backend takes care of data access, solving performance and stability
+issues while also dealing with the multiple heterogeneous formats that are used in earth observation. Backends will
+automatically parallelise the processing work using state-of-the-art technologies, as provided by Apache Spark or
+Pangeo.
+
+Many common maintenance operations are performed by the openEO backend rather than by the EO service provider. This
+includes integrating performance improvements, new versions of software libraries with bug fixes, or adjusting to
+changes in the EO datasets.
+
+Various complex preprocessing steps may be offered by the backend. Examples include backscatter computation for
+Sentinel-1 or cloud masking and compositing of optical data. Use cases like machine learning training data extraction
+are also supported.
+
+When EO algorithms are expressed as process graphs, they also become easier to share and analyse by peers if the project
+chooses to make them public. Transparent algorithms can greatly help to increase confidence in the results or even to
+receive suggestions for improvements.
+
+### Example use cases
+
+A set of platform-agnostic example cases that showcase how openEO supports various cases can be found in the
+[openEO community examples repository](https://github.com/Open-EO/openeo-community-examples). APEx recommends browsing
+the notebooks available there to get a sense of what openEO can do or even to find a starting point for the project’s
+own algorithm.
+
+In addition to that, we list testimonials of ESA projects that successfully used openEO in the past.
+
+#### ESA WorldCereal
+
+The ESA WorldCereal project effectively built a system on top of openEO that enables the training of custom machine
+learning models for crop type detection anywhere in the world. The created models can then be used within openEO to
+generate maps at a large scale. The system is very easy to use because all the complex computation and data access is
+performed in the cloud.
+
+The WorldCereal workflow for crop type map production contains these steps:
+
+1. Generation on monthly Sentinel-2 median composites for 1 year of input data.
+2. Generation of monthly Sentinel-1 backscatter composites from raw GRD input for 1 year of input data filtered by orbit
+   direction.
+3. Loading DEM, slope, and AGERA5 datasets.
+4. Computation of features based on all the above inputs using a foundation model.
+5. Inference using a (user-defined) CatBoost model.
+6. Output to FAIR GeoTIFFs with STAC metadata.
+
+#### ESA ANIN
+
+The ESA ANIN project computed a combined drought index for South Africa using openEO. It successfully combined data from
+a variety of sources and applied rule-based techniques to compute the result.
+
+#### ESA WorldWater
+
+The ESA WorldWater project converted their decision algorithm based on Sentinel-1 and Sentinel-2 into openEO. This
+allowed them to run their water detection algorithm anywhere in the world using a cloud-based system.
+
+#### ESA Luisa
+
+Luisa used openEO to compute biophysical parameters such as LAI and fAPAR from Sentinel-2 data over various test areas
+in Africa.
+
+## OGC Application Package and OGC API Processes
+
+The OGC API Processes specification [@apiprocess] allows you to expose any type of (processing) web service. As a
+service
+designer, you get full freedom and responsibility in the definition of your service. This large degree of freedom also
+implies that the definition of your service will affect its interoperability with other services and tools.
+
+APEx recommends that these services are built based on the OGC Application Package best practice [@ap]. This allows
+service providers to easily host their applications on a compatible hosting platform, taking away key IT challenges.
+
+### When to use OGC Application Packages?
+
+An OGC Application Package is a good choice when you have an existing piece of software that you want to make
+available as a service and do not aim to make substantial changes. In effect, it is a packaged version of your software,
+using (Docker) containers, which is a well-known technology for most IT professionals. A large amount of existing EO
+applications are known to already use containers. The container is invoked by a workflow written in the ‘common workflow
+language’ (CWL) [@cwl], which is a thin wrapper around your software.
+
+If concepts like containers are already familiar to the project, and they prefer to have full control and responsibility
+over their software, including all details concerning how they read raw EO products, then this might be the right
+choice. Of course, the APEx Algorithm Services exist to help you with the integration of your service into the APEx
+ecosystem.
+
+To offer your application as an on-demand service, the project will need to define clear constraints on possible input
+parameters and make sure that their software is well-tested to be able to handle variations in input parameters. When
+changes occur, for instance, to raw EO data sources, the project will need to update its software accordingly, or it
+might no longer be compatible with the provided inputs. Likewise, if improvements are made to dependencies of the
+project’s software, they will have the choice of updating its software or sticking to the old versions.

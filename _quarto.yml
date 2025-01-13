@@ -25,33 +25,35 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
-      - href: eo_service_usage.qmd
-        text: On-demand EO services
+#      - href: eo_service_usage.qmd
+      - text: On-demand EO services
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
       - href: instantiation/index.md
-        text: Instantiation Services
+        text: Project Tools
         contents:
           - href: instantiation/usecases.md
             text: Use Cases
+          - href: instantiation/geospatial_explorer.md
+          - href: instantiation/project_portal.md
+          - href: instantiation/user_workspace.md
+          - href: instantiation/ide.md
+          - href: instantiation/catalog.qmd
+          - href: instantiation/documentation.qmd
+          - href: instantiation/forum.md
       - href: propagation/index.qmd
-        text: Algorithm Propagation
+        text: Algorithm Services
         contents:
-          - href: propagation/porting.md
-            text: Algorithm Porting
-          - href: propagation/onboarding.md
-            text: Algorithm Onboarding
-          - href: propagation/upscaling.md
-            text: Algorithm Upscaling
-          - href: propagation/enhancement.md
-            text: Algorithm Enhancement
-          - href: propagation/toolboxcloud.md
-            text: Toolbox Cloudification
-          - href: propagation/intercomparison.md
-            text: Algorithm Intercomparison
+          - href: propagation/ondemandservices.qmd
           - href: propagation/usecases.md
             text: Use Cases
+          - href: propagation/porting.md
+          - href: propagation/onboarding.md
+          - href: propagation/upscaling.md
+          - href: propagation/enhancement.md
+          - href: propagation/toolboxcloud.md
+          - href: propagation/intercomparison.md
       - text: Guides
         contents:
         - href: guides/udp_writer_guide.qmd
@@ -67,11 +69,7 @@ website:
         text: Interoperability and Compliance Guidelines
         contents:
           - href: interoperability/definitions.qmd
-          - href: propagation/ogc_processes.md
-            text: OGC API Processes
-          - href: propagation/openeo_services.md
-            text: openEO Services
-          - href: interoperability/references.md
+          - href: propagation/service_development.qmd
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
           - href: interoperability/geospatial_explorer.md
@@ -91,4 +89,6 @@ format:
       - html/apex-navigation.html
       - html/apex-hamburger-menu.html
     link-external-newwindow: false
+    bibliography: interoperability/references/references.yaml
+    csl: interoperability/references/diabetologia.csl
 bread-crumbs: true
