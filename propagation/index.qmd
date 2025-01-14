@@ -25,29 +25,29 @@ However, developing on-demand services can be challenging for many projects and 
 workflow/algorithm and its initial implementation. APEx intends to facilitate the transition to cloud-based services by
 providing guidelines, best practices, and tools that support EO R&D projects in overcoming these challenges.
 
-The algorithm propagation support provided by APEx involves various subcomponents, and their relevance depends on a
+The algorithm services support provided by APEx involves various subcomponents, and their relevance depends on a
 case-by-case basis. The APEx Algorithm Services comprise:
 
-* Refactoring source code to an openEO process graph
-* Packaging of source code to an OGC Application Package
-* Onboarding and integration of a service into the APEx Algorithm Services Catalogue
-* Cloudification of desktop toolboxes through a tailored approach
-* Technical performance optimisation, both on the source code or service level
-* Deployment and hosting of a service in an existing EO platform
+* [Refactoring](./porting.md) source code to an openEO process graph
+* [Packaging](./porting.md) of source code to an OGC Application Package
+* [Integration](./onboarding.md) of a service into the APEx Algorithm Services Catalogue
+* [Cloudification](./toolboxcloud.md) of desktop toolboxes through a tailored approach
+* Technical performance [optimisation](./enhancement.md), both on the source code or service level
+* [Deployment and hosting](./onboarding.md) of a service in an existing EO platform
 * Onboarding of a service commercial offering onto the [ESA Network of Resources](https://portfolio.nor-discover.org/)
 * Preserving and ensuring long-term accessibility via the ESA Project Results Repository (PRR)
 
-This support can also be visualised in a chart, illustrated in @fig-pathway. APEx Propagation Pathways. This chart
+This support can also be visualised in a chart, illustrated in @fig-pathway. This chart
 outlines the different pathways for projects to transform and optimise their algorithms into on-demand services using
-the APEx propagation services.
+the APEx Algorithm Services.
 
-The main goal of the propagation services is to guide projects in defining their pathway and providing support
+The main goal of the Algorithm Services is to guide projects in defining their pathway and providing support
 throughout the various steps. This is accomplished through an initial analysis of the project's needs, resulting in a
 tailored pathway that assists in the transformation from source code to on-demand EO services.
 
 ```{mermaid}
 %%| label: fig-pathway
-%%| fig-cap: "APEx Propagation Pathways"
+%%| fig-cap: "APEx Algorithm Support Pathways"
 flowchart TD ""
     subgraph Legend
       APEX_SERVICE[Activity supported through APEx]
