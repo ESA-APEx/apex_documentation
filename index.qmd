@@ -8,8 +8,8 @@ Application Propagation Environment (APEx) is a European Space Agency (ESA) init
 uptake of Earth Observation (EO) data and services.
 
 It brings significant benefits to various stakeholders involved in the EO ecosystem. By facilitating a structured
-approach to dynamic instantation of working environments, algorithm onboarding, enhancement, and sharing, APEx serves to
-boost the reusability and impact of EO-based research outcomes. The following sections outlines the different features
+approach to dynamic instantiation of working environments, algorithm onboarding, enhancement, and sharing, APEx serves to
+boost the reusability and impact of EO-based research outcomes. The following sections outline the different features
 and capabilities that APEx provides to different stakeholders.
 
 ## For users
