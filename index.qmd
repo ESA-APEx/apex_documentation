@@ -4,27 +4,59 @@ toc: false
 
 # Welcome to the APEx Documentation Portal
 
-Application Propagation Environment (APEx) is a European Space Agency (ESA) initiative that aims to facilitate the uptake of Earth Observation (EO) data and services.
-It brings significant benefits to various stakeholders involved in the EO ecosystem. By facilitating a structured approach to dynamic instantation of working environments, algorithm onboarding, enhancement, and sharing, APEx serves to boost the reusability and impact of EO-based research outcomes. The following sections outlines the different features and capabilities that APEx provides to different stakeholders.
+Application Propagation Environment (APEx) is a European Space Agency (ESA) initiative that aims to facilitate the
+uptake of Earth Observation (EO) data and services.
+
+It brings significant benefits to various stakeholders involved in the EO ecosystem. By facilitating a structured
+approach to dynamic instantiation of working environments, algorithm onboarding, enhancement, and sharing, APEx serves to
+boost the reusability and impact of EO-based research outcomes. The following sections outline the different features
+and capabilities that APEx provides to different stakeholders.
 
 ## For users
 
-* **Curated list of EO services** <br/>APEx curates a catalog of earth observation services in its [APEx Algorithm Catalogue](propagation/onboarding.md#apex-algorithm-catalogue), that generate value-added products on demand. These services can include capabilities such as deforestation, floods or generate higher level information. These services are built and maintained by various EO projects, which guarantees that they have gone through an extensive review and validation process. Additionally, advanced APEx tooling continuously monitors these services to ensure that they remain available, even after the initial project has ended.
+* **Curated list of EO services**\
+  APEx curates a catalog of earth observation services in
+  its [APEx Algorithm Services Catalogue](propagation/onboarding.md#apex-algorithm-catalogue), that generate value-added
+  products on demand. These services can include capabilities such as deforestation, floods or generate higher level
+  information. These services are built and maintained by various EO projects, which guarantees that they have gone
+  through an extensive review and validation process. Additionally, advanced APEx tooling continuously monitors these
+  services to ensure that they remain available, even after the initial project has ended.
 
-* **Service compatibility with existing cloud platforms**<br/>Each onboarded service in the catalogue complies with a set of [interoperability and compliance guidelines](interoperability/algohosting.md). This ensures that these services can be seamlessly reused on existing platforms and integrated into APEx-compliant technologies, such as openEO or OGC Application Packages.
+* **Service compatibility with existing cloud platforms**\
+  Each onboarded service in the catalogue complies with a set
+  of [Interoperability and Compliance Guidelines](interoperability/algohosting.md). This ensures that these services can
+  be seamlessly reused on existing platforms and integrated into APEx-compliant technologies, such as openEO or OGC
+  Application Packages.
 
-For more information on how to invoke these services, please refer to [EO service usage](./eo_service_usage.qmd).
+[//]: # (For more information on how to invoke these services, please refer to [EO service usage]&#40;./eo_service_usage.qmd&#41;.)
 
 ## For EO Projects
 
-For EO projects, APEx provides a wide range of services that support project execution and ensure that results remain accessible even after project completion.
+For EO projects, APEx provides a wide range of services that support project execution and ensure that results remain
+accessible even after project completion.
 
-* **Dynamic Instantiation of Software and Tools** <br/>APEx can support your project by offering access to essential IT components. These include project websites, data visualization tools, workspaces, and development environments — all dynamically instantiated for your project to use. Learn more about APEx Instantiation Services and how to customize them to fit your project’s specific requirements.
+* **Dynamic Instantiation of Software and Tools**\
+  APEx can support your project by offering access to essential IT components. These include project websites, data
+  visualization tools, workspaces, and development environments — all dynamically instantiated for your project to use.
+  Learn more about APEx Instantiation Services and how to customize them to fit your project’s specific requirements.
 
-* **Support for Service Development** <br/>During your project, APEx assists in developing efficient on-demand services through its [propagation services](./propagation/index.qmd). These services can support your project with maintaining continuous availability, enhancing, and upscaling EO algorithms. Explore detailed instructions on leveraging interoperability standards like openEO and OGC Application Package to develop and onboard algorithms with best-practice interoperability. Additionally, explore how APEx can provide access guidance on improving algorithm performance, facilitating intercomparison exercises for scientific accuracy, and implementing cloudification strategies for existing toolboxes.
+* **Support for Service Development**\
+  During your project, APEx assists in developing efficient on-demand services through
+  its [propagation services](./propagation/index.qmd). These services can support your project with maintaining
+  continuous availability, enhancing, and upscaling EO algorithms. Explore detailed instructions on leveraging
+  interoperability standards like openEO and OGC Application Package to develop and onboard algorithms with
+  best-practice interoperability. Additionally, explore how APEx can provide access guidance on improving algorithm
+  performance, facilitating intercomparison exercises for scientific accuracy, and implementing cloudification
+  strategies for existing toolboxes.
 
 ## For EO platforms providers
 
-* **Guidelines for ensuring compliance with ESA projects**<br/> APEx provides clear [guidelines](interoperability/algohostingenv.md) that enable platform providers to prepare their systems for hosting and executing EO services developed by ESA projects. By adhering to these guidelines, you can ensure that your platform is aligned with ESA's standards and ready for seamless integration in upcoming projects.
+* **Guidelines for ensuring compliance with ESA projects**\
+  APEx provides clear [guidelines](interoperability/algohostingenv.md) that enable platform providers to prepare their
+  systems for hosting and executing EO services developed by ESA projects. By adhering to these guidelines, you can
+  ensure that your platform is aligned with ESA's standards and ready for seamless integration in upcoming projects.
 
-* **Increased activity and visibility**<br/> By making your platform compliant with APEx, you can attract more users as it will be promoted as an APEx-compliant platform. This compliance not only enhances your platform's visibility but also makes your offerings more appealing to other projects.
+* **Increased activity and visibility**\
+  By making your platform compliant with APEx, you can attract more users as it will be promoted as an APEx-compliant
+  platform. This compliance not only enhances your platform's visibility but also makes your offerings more appealing to
+  other projects.

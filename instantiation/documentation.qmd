@@ -1,38 +1,70 @@
 ---
-title: Documentation portal user guide
+title: Documentation Portal
 ---
 
-## Introduction
+## Overview
 
-Most EO projects have various deliverables related to documentation. This can be user guides, design documents or algorithm theoretical basis documents.
+The APEx Documentation Portal enables projects to effortlessly create and host a documentation portal
+utilising the open source [Quarto](https://quarto.org/) framework. Quarto is a comprehensive open-source system designed
+for scientific and technical documentation, using Markdown as the primary editing language and supporting the
+visualisation of both Jupyter and R notebooks. The proposed approach is complementary to hosting documents in PDF or
+Word format on the web portal. It offers significant advantages over these traditional formats, especially for technical
+writing with scientific plotting and code snippets. It also allows for introducing interactive elements in
+documentation. Projects that do not feel comfortable with an approach based on Markdown for editing and Git for
+versioning are still free to use those traditional formats.
 
-The most commonly used approach to this in ESA EO projects, is to use well-known office tools and export the documents to PDF for upload to 
-a website. While this approach is not necessarily wrong, and uploading documents to the APEx project portal is certainly
-possible, we also want to offer an alternative for projects that are looking for a more modern approach.
+Quarto generates fully customisable online documentation portals tailored for scientific publications, featuring
+interactive visualisations. It supports various scientific elements, including formulas, diagrams, and code.
+Additionally, Quarto can produce PDF or Word documents, making it ideal for scenarios where user documentation needs to
+be transformed into a project deliverable.
 
-The solution we offer is also well-known, and based on the use once you know how to do a particular thing, you of the simple 'Markdown' language to write documentation 
-without worrying about templates and layout. The Markdown variant used is [Quarto](https://quarto.org/), and supports
-advanced use cases for scientific and technical writing. It produces various outputs, allowing you to publish user documentation
-to a website for your users, while also being able to export to PDF or Word for generating deliverables.
+The content of the documentation portal is managed through either a new or existing GitHub repository. This allows
+portal managers and editors to edit the content in a well-known and familiar environment. Although some technical
+documents may be stored externally, Quarto enables referencing of these documents within the documentation portal.
+Additionally, thanks to the capabilities of GitHub, projects have the option to employ their own QA processes by
+leveraging branching, issues, and pull requests. Using GitHub Actions, the latest changes to the content will be
+automatically synchronised to the documentation portal.
 
-The content of your documentation is tracked on Github, allowing you to collaborate with your consortium partners using
-pull requests. Full version control is available, avoiding the loss of content or typical issues caused by multiple authors
-working in the same document.
+## Showcase Scenarios
 
-You can use the online Github edit mode for quick changes, but can also do fully local editing,
-including a preview mode to show the rendered document.
+A documentation portal can support several project scenarios, including:
 
+* **User Manuals and Guides**\
+  Develop and store user manuals and guides for any tools or software created during the project. This ensures that
+  users can effectively utilise the provided tools.
+
+* **Training and Onboarding**\
+  Create and store training materials, tutorials, and onboarding guides for new team members or external visitors. This
+  helps them quickly understand the project scope, tools, and processes.
+
+* **Technical Project Documentation**\
+  Maintain detailed technical documentation, including software code samples, algorithm descriptions, system
+  architectures, and hardware specifications. This is essential for sharing technical information within the project.
+
+* **Research and Analysis Documentation**\
+  Document methodologies, analytical processes, and research findings. This helps ensure the reproducibility of results
+  and provides a reference for future research.
+
+* **Project Planning and Management**\
+  Store project plans, timelines, milestones, and deliverables in the documentation portal. This keeps everyone informed
+  about project progress and deadlines.
 
 ## What does APEx offer
 
-APEx provides a simple template to start your documentation. As you make changes, automation tools publish the documentation
-to a location that seamlessly integrates it in your project portal.
-This works best in combination with the 'project portal' service, ensuring maximal integration.
+APEx provides a simple template to start your documentation. As you make changes, automation tools publish the
+documentation to a location that seamlessly integrates it in your project portal. This works best in combination with
+the 'project portal' service, ensuring maximal integration.
 
 ## What software is used under the hood
 
-The open source [Quarto](https://quarto.org/) software is used, and you will need to learn the basics of that system.
-In our own experience, people familiar with Markdown will have no issues with making basic edits. More advanced features
-are well-documented, and often turn out to be easier to use than the equivalent in office tools. Many features are simply not
-at all supported by such tools.
+The open source [Quarto](https://quarto.org/) software is used, and you will need to learn the basics of that system. In
+our own experience, people familiar with Markdown will have no issues with making basic edits. More advanced features
+are well-documented, and often turn out to be easier to use than the equivalent in office tools. Many features are
+simply not at all supported by such tools.
 
+:::{.callout-tip}
+
+## Stay Tuned
+
+Additional information will be shared on this page as the project progresses.
+:::

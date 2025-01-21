@@ -1,0 +1,147 @@
+---
+title: On-Demand EO Services
+---
+
+## What is an on-demand service?
+
+Resulting on-demand services should be compliant to FAIR data principles.
+
+Therefore, currently APEx-compliant on-demand services should either adopt an openEO User Defined Process (UDP) or an
+OGC API Process implementation. There are additional
+[APEx compliance and interoperability guidelines](../interoperability/algohosting.md) which help ensuring FAIR
+compliance.
+
+## How to build an on-demand service?
+
+The easiest and most cost-effective way to build these on-demand services is to use an existing platform that is already
+part of the [ESA Network of Resources (NoR)](https://nor-discover.org/en/portfolio/). It is important to note that APEx
+itself is _not_ a processing platform, but rather an initiative to streamline and aggregate EO based services building
+on top of existing EO platforms. Consequently, APEx treats compliant EO platforms or hosting environments neutrally and
+algorithm PIs can decide where to deploy the resulting service.
+
+### Which option to choose?
+
+To help out projects, we created dedicated pages to explain the benefits
+of [Application Package via OGC API Processes](service_development.qmd#ogc-application-package-and-ogc-api-processes)
+and [openEO](service_development.qmd#openeo-user-defined-processes) based services.
+
+### Building an openEO UDP based service
+
+To integrate your algorithm with openEO [@openeo], you need to convert it into a User Defined Process (
+UDP)[@udp]. If your application is already built using an openEO process graph or if your workflow is simple enough, the
+conversion to a UDP should be straightforward. If not, APEx can provide the guidance and support you need to efficiently
+translate your algorithm into an openEO implementation and UDP service.
+
+Once your workflow is ready as an openEO process graph, you can create a UDP by parameterizing the process
+graph. [This notebook](https://documentation.dataspace.copernicus.eu/notebook-samples/openeo/UDP.html) demonstrates
+exactly how to do that.
+
+After your UDP is created, it can be registered in
+the [APEx Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-services-catalogue) and associated
+with one or more backends or platforms capable of running it. As APEx continues to evolve, additional tools will become
+available that aid this process, including functionality to check if your service is still functional.
+
+For further guidance on creating and using UDPs, you can explore the following resources:
+
+* [APEx openEO process (UDP) writer guide](../guides/udp_writer_guide.qmd#sec-udp-writing)
+* [APEx openEO process (UDP) integration guide](../guides/udp_writer_guide.qmd#sec-udp-integration)
+* [UDP support in Python](https://open-eo.github.io/openeo-python-client/udp.html#user-defined-processes)
+* [Jupyter notebook example](https://github.com/Open-EO/openeo-community-examples/blob/main/python/Sentinel1_Stats/Sentinel1_Stats.ipynb)
+* [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
+
+### Building an OGC Application Package based service
+
+Another option is to package your software using Docker containers. This approach is very generic and is particularly
+relevant if you have an existing piece of complex software that you want to make available as a service.
+
+Another APEx compliant cloud service implementation option is to package your software using Docker containers and CWL (
+Common Workflow Language)[@cwl] wrappers, together forming an OGC Application Package [@ap]. This approach is very
+generic and is particularly relevant if you have an existing piece of complex software that you want to make available
+as a service.
+
+[This tutorial](https://terradue.github.io/ogc-eo-application-package-hands-on/) explains more about this option.
+
+### What are the platforms to choose from?
+
+To offer your algorithm as an on-demand service, it must be available for execution on an APEx-compliant algorithm
+hosting platform. Currently, APEx supports the integration of services on platforms that adhere to the
+APEx [compliance guidelines](../interoperability/algohostingenv.md). It is important to note that this list of supported
+platforms is expected to grow as APEx evolves.
+
+For openEO UDPs:
+
+* [openEO platform](https://openeo.cloud)
+* [CDSE openEO federation](https://dataspace.copernicus.eu)
+
+For OGC Processes/Application Package:
+
+* [ELLIP](https://ellip.terradue.com)
+
+:::{.callout-tip}
+
+## Is Your Platform APEx-Compliant?
+
+If your platform meets the APEx [Interoperability and Compliance Guidelines](../interoperability/algohostingenv.md), and
+you have onboarded your platform to the ESA Network of Resources (or plan to do that), we encourage you to reach out to
+the APEx team to get it added to the list.
+:::
+
+### Onboarding your service on the ESA Network of Resources
+
+To further enhance the reach of your developed EO service and to offer it in the ESA NoR portfolio as a commercial
+service and take advantage of the ESA NOR sponsorship, akey feature of the resulting on-demand services is that they can
+be onboarded in the ESA [Network of Resources (NoR)](https://nor-discover.org/).
+This integration enhances the service’s visibility and opens up a potential additional revenue stream for the project.
+
+An important step of the onboarding on the NoR is setting the price, expressed in euros per km². The final price of the
+service is determined by the project consortium and can be supported by APEx tooling. In general, the price needs to
+cover:
+
+* The processing cost
+* A margin for fluctuation in processing cost
+* Optionally, a revenue margin for the project
+
+Currently, it is the responsibility of the algorithm hosting platform to add services to their NoR offering. This
+approach ensures that APEx retains a neutral position, allowing for direct negotiations between platform provider and
+service provider. Consequently, it is also the responsibility of the platforms to provide an SLA (Service Level
+Agreement) to the end user. In case of service malfunctions, the end user will interact directly with the platform for
+support.
+
+## How can APEx support your project?
+
+The level of support available depends on your project's status:
+
+* **Ongoing or upcoming ESA EOP projects**\
+  We recommend discussing APEx support directly with your TO.
+* **Completed ESA EOP projects**\
+  Please reach out to us to explore how APEx can help propagate and maintain your project's results.
+* **Non-ESA projects**\
+  APEx Algorithm Services will be available through the ESA Network of Resources (NoR) starting in 2026.
+
+The goal of APEx is to simplify the complex task of building efficient, operational, cloud-based on-demand services.
+ESA recognizes that achieving this often requires specific skills that may not be present in the project consortium or
+that could significantly impact the project budget. To assist your project in these activities, APEx can provide the
+following Algorithm Services:
+
+* **[Algorithm Porting](porting.md)**\
+  Discover how APEx can assist your project in implementing your algorithm using APEx-compliant technologies, such
+  as openEO User Defined Processes (UDP) or OGC Application Packages.
+* **[Algorithm Onboarding](onboarding.md)**\
+  Explore how APEx can assist in deploying your algorithms within an APEx-compatible hosting platform and sharing
+  them across the EO community through the APEx Algorithm Services Catalogue.
+* **[Algorithm Upscaling](upscaling.md)**\
+  Learn how APEx facilitates and simplifies the execution of algorithms at scale.
+* **[Algorithm Enhancement](enhancement.md)**\
+  Discover how APEx supports improving the computational performance of your algorithms or workflows.
+* **[Toolbox Cloudification](toolboxcloud.md)**\
+  Transform the key functionalities of your favorite EO toolbox into cloud-based services with APEx.
+* **[Algorithm Intercomparison](intercomparison.md)**\
+  Learn how APEx facilitates comparing algorithms and workflows.
+
+:::{.callout-tip}
+
+## Not sure which services are useful for your project?
+
+Visit our [use cases](usecases.md) page to explore various project scenarios and see how APEx can support your specific
+needs.
+:::
