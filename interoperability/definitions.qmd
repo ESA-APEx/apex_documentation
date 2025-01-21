@@ -123,7 +123,7 @@ of EO derived parcel statistics into the field management software of a farmer. 
 Factories' are also examples of last mile applications.
 
 Typically, each user group and domain will have its own set of purpose-built tools. The IT integrator or vendor building these tools will retrieve EO algorithm results via 
-web service API's based on open standards. These results can then be further processed as needed, depending no the application.
+web service API's based on open standards. These results can then be further processed as needed, depending on the application.
 Note that these applications are not necessarily EO-centric or even geospatial, but could be using an EO algorithm as a small part
 or in the background.
 
