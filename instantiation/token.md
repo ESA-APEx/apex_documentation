@@ -31,7 +31,7 @@ eval `oidc-agent-service start`
 
 Now add a configuration for your project. This requires that you request a 'client ID' from the APEx support.
 
-You will need to provide th following project specific information:
+You will need to provide the following project specific information:
 
 * *apex_project_a* is simply the name of the configuration in OIDC agent, which you'll use whenever you need a token.
 * the client id, which in this example is: *project-a-catalogue-dev-api*
