@@ -1,6 +1,6 @@
 # APEx instantiation API's login
 
-APEx provides secure single-sign-on for all it's instantiation services. This aids projects in implementing security
+APEx provides secure single-sign-on for all its instantiation services. This aids projects in implementing security
 best practices.
 
 For services with a user interface, the login should be self-explanatory. For interacting with API's directly however, an
