@@ -66,7 +66,7 @@ complexity.
 +-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 : Interoperability requirements for algorithm providers {#tbl-algohosting}{tbl-colwidths="[20,80]"}
 
-## Best Pratices
+## Best Practices
 
 The following sections provide best practice guidelines for developing APEx-compliant algorithms. While these guidelines
 are not mandatory, adhering to them will enhance the integration process and improve the overall experience of using the

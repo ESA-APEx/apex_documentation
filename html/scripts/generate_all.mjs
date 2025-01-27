@@ -4,7 +4,7 @@ import {generateHamburgerMenu} from "./generate_hamburger_menu.mjs";
 
 (async () => {
 
-    const url = 'https://apex.staging.vito.be/';
+    const url = 'https://apex.esa.int/';
 
     console.log("Generating APEx header");
     await generateHeader(url);

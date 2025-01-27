@@ -17,7 +17,7 @@ flowchart TD
     LAST_MILE("Last Mile Application")
     HOSTING_PLATFORM("Algorithm Hosting Platform")
     OPERATOR("Platform Operator")
-    PLATFORM_GUIDELINES("Algorihm Hosting Platform Guidelines")
+    PLATFORM_GUIDELINES("Algorithm Hosting Platform Guidelines")
     CATALOGUE("APEx Algorithm Services Catalogue")
     APEX("APEx Consortium")
     
@@ -116,7 +116,7 @@ quality of the algorithms and workflows.
 
 ### APEx Consortium
 
-The APEx team, comprised of industry experts, operates the various services provided by APEx. To maximise the reuse of
+The APEx team, composed of industry experts, operates the various services provided by APEx. To maximise the reuse of
 existing resources, the team leverages service offerings within [ESA’s Network of Resources (NoR)]
 (<https://nor-discover.org/>), drawing on the extensive ecosystem provided by the EO industry.
 
