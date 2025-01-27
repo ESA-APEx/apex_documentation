@@ -52,9 +52,17 @@ creation of OGC API Processes.
 
 #### ZOO Implementation of OGC API Processes
 
-This example is designed for developers, scientists, and Earth observation enthusiasts who want to get acquainted with
-the ZOO-Project implementation of the OGC API - Processes, so they can deploy and run by themselves their Application
-Package as a web service:
+One tutorial focuses on creating OGC API Processes using the ZOO-Project. This is particularly relevant in the APEx
+context, where EOAPs are made accessible through OGC API Processes.
+
+This example is designed for developers, scientists, and Earth observation enthusiasts who aim to:
+
+* Familiarize themselves with the ZOO-Project implementation of OGC API - Processes.
+* Independently deploy and run their Application Package as a web service.
+
+Additionally, APEx can provide expert [support](../propagation/onboarding.md) to assist with these steps.
+
+Resources:
 
 * [OGC API - Processes with ZOO Project | Documentation](https://eoap.github.io/ogc-api-processes-with-zoo/).
 * [OGC API - Processes with ZOO Project | Repository](https://github.com/eoap/ogc-api-processes-with-zoo/).
