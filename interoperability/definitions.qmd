@@ -14,11 +14,13 @@ flowchart TD
     ALGORITHM("Application Algorithm Definition")
     ALGORITHM_GUIDELINES("Algorithm Provider Guidelines")
     OPENEO_OGC("openEO API or OGC Processes API")
+    LAST_MILE("Last Mile Application")
     HOSTING_PLATFORM("Algorithm Hosting Platform")
     OPERATOR("Platform Operator")
     PLATFORM_GUIDELINES("Algorithm Hosting Platform Guidelines")
     CATALOGUE("APEx Algorithm Services Catalogue")
     APEX("APEx Consortium")
+    
 
     EO_PROJECT --> | owns | ALGORITHM
     ALGORITHM --> | adheres to | ALGORITHM_GUIDELINES
@@ -28,6 +30,8 @@ flowchart TD
     HOSTING_PLATFORM --> | adheres to | PLATFORM_GUIDELINES
     ALGORITHM --> | registered in | CATALOGUE
     APEX ---> | curates | CATALOGUE
+    OPENEO_OGC --> | integrated in | LAST_MILE
+    LAST_MILE --> | has access to | HOSTING_PLATFORM
 ```
 
 ## Concepts
@@ -131,3 +135,19 @@ navigating and utilising the platform effectively. They are also accountable for
 platform, ensuring that performance and reliability standards are consistently met. While the operator may be a partner
 outside of the APEx consortium, their role is integral to the success of APEx, focusing on both operational management
 and user satisfaction.
+
+### Last Mile Applications
+A 'last mile' application, as seen from the EO perspective, bridges the final gap between the user at the end of the 
+value chain, and the web service APIs that offer EO-derived information. This could, for instance, be the integration
+of parcel statistics into the field management software of a farmer. In the ESA context, Green Transition Information
+Factories can be considered examples of last mile applications.
+
+Typically, each user group and domain will have its own set of purpose-built tools. The IT integrator or vendor building
+these tools will retrieve EO algorithm results via  web service APIs based on open standards. These results can then be
+further processed as needed, depending on the application. Note that these applications are not necessarily EO-centric
+or even geospatial, but could be using an EO algorithm as a small part or in the background.
+
+The [APEx Algorithm Services Catalog](https://algorithm-catalogue.apex.esa.int/) acts as a discovery tool for last mile
+application builders. It shows various technical parameters, the cost and potential limitations for specific use cases.
+This speeds up the discovery and selection process. Application builders will be required to create an account on the
+hosting platforms and ensure the necessary funds are available, if they want to test or use the API.
