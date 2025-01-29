@@ -373,7 +373,7 @@ purposes only.
                 "layerCard": {
                     "toggleable": true,
                     "attribution": {
-                        "text": "Forest Carbon Monitroing",
+                        "text": "Forest Carbon Monitoring",
                         "url": "https://www.forestcarbonplatform.org/"
                     },
                     "legend": {
