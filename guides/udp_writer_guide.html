@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Guide for writing openEO User Defined Processes – APEx - Documentation Portal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../guides/eoap_writer_guide.html" rel="next">
+<link href="../propagation/intercomparison.html" rel="prev">
+<link href="../assets/img/logos/apex_icon_blue.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5b02d0b16d1dd912e5f5c4857db19321.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-af25fd7430162ef8942043ee689cd5d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        'use strict';
+
+        // MegaMenu Class
+        class MegaMenu {
+            constructor() {
+                const megaMenu = document.querySelector('.js-mega-menu');
+                if (!megaMenu) return;
+
+                const megaMenuTopics = document.querySelectorAll('.js-mega-menu-topic');
+                const megaMenuContents = document.querySelectorAll('.js-mega-menu-content');
+
+                megaMenuTopics.forEach(topic => {
+                    topic.addEventListener('click', this.handleClickTopic.bind(this));
+                    topic.addEventListener('mouseover', this.handleHoverTopic.bind(this));
+                    topic.addEventListener('mouseout', this.handleMouseOutTopic.bind(this));
+                });
+
+                this.megaMenuContents = megaMenuContents;
+            }
+
+            handleClickTopic(e) {
+                e.preventDefault();
+                this.switchContent(e.currentTarget);
+            }
+
+            handleHoverTopic(e) {
+                this.switchContent(e.currentTarget);
+            }
+
+            handleMouseOutTopic(e) {
+                // Optional: Add logic for mouse out events if needed
+            }
+
+            switchContent(topic) {
+                const topicIndex = topic.getAttribute('data-index');
+                this.megaMenuContents.forEach(content => {
+                    content.setAttribute('aria-hidden', content.getAttribute('data-index') !== topicIndex);
+                });
+            }
+        }
+
+        // Hamburger Menu Class
+        class HamburgerMenu {
+            constructor() {
+                const hamburgers = document.querySelectorAll('.js-hamburger');
+                const menu = document.querySelector('.js-hamburger-menu');
+                const body = document.body;
+
+                if (menu) {
+                    hamburgers.forEach(hamburger => {
+                        hamburger.addEventListener('click', (e) => this.handleClickHamburger(e, menu, body));
+                    });
+                } else {
+
+                }
+            }
+
+            handleClickHamburger(e, menu, body) {
+                e.preventDefault();
+                menu.classList.toggle('open');
+                body.classList.toggle('has-hamburger-open');
+            }
+        }
+
+        new MegaMenu();
+        new HamburgerMenu();
+    });
+
+
+</script>
+</head><body class="nav-sidebar floating nav-fixed"><div class="blur-container">
+<div class="blur"></div>
+</div>
+<div class="container">
+    <div class="c-header__top">
+        <div class="c-header__navigate">
+            <div class="c-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <a class="c-header__esa-text" href="#">
+                <img src="../assets/img/logos/text-esa.svg" alt="The European Space Agency">
+            </a>
+        </div>
+
+        <div>
+            <div class="c-header__esa">
+                <div class="region region-nav-branding">
+                    <div id="block-vitotheme-branding" class="block block-system block-system-branding-block">
+                        <div class="navbar-brand d-flex align-items-center">
+
+                            <a href="../" title="Home" rel="home" class="site-logo d-block">
+                                <img src="../assets/img/logos/logo-esa.svg" alt="Home" fetchpriority="high">
+                            </a>
+
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container"><div class="c-header__bottom">
+      <a href="https://apex.esa.int/" class="c-header__logo">
+        APEx
+        <span>Application Propagation Environments</span>
+      </a>
+
+      <div class="c-header__nav">
+          <div class="region region-nav-main">
+    <nav role="navigation" aria-labelledby="block-vitotheme-main-navigation-menu" id="block-vitotheme-main-navigation" class="block block-menu navigation menu--main">
+
+  <h5 class="visually-hidden" id="block-vitotheme-main-navigation-menu">Main navigation</h5>
+
+
+
+<!-- Desktop Menu -->
+<div class="navbar-nav navbar-nav-hover align-items-lg-center nav navbar-main d-none d-lg-block">
+  <span class="mobile-menu-trigger" data-bs-toggle="modal" data-bs-target="#mobileMenuModal">
+    <span class="icon-menu"></span>
+  </span>
+  <span class="overlay-gradient-white"></span>
+                      <ul data-block="nav_main" class="menu menu-bar d-flex nav-level-0">
+
+
+    <li>
+              <a href="https://apex.esa.int/algorithm-services" class="menu-link menu-bar-link" data-drupal-link-system-path="node/32">Algorithm Services</a>
+
+
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="https://apex.esa.int/project-environments" class="menu-link menu-bar-link" data-drupal-link-system-path="node/4">Project Environments</a>
+
+                <div class="c-sub-menu js-mega-menu">
+  <div class="c-sub-menu__right">
+          <div class="c-sub-menu__content js-mega-menu-content" aria-hidden="false" data-index="1">
+                              <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-internet-7110830-FBAB18.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/web-portal" class="stretched-link">
+                  Web Portal
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-11/noun-planet-5054191-00AE9D_WEB.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/geospatial-explorer" class="stretched-link">
+                  Geospatial Explorer
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-manual-book-4118546-00619E.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/documentation-hub" class="stretched-link">
+                  Documentation Hub
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-internet-forum-6263703-FBAB18.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/user-forum" class="stretched-link">
+                  User Forum
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/Catalogue%20_%20noun-course-catalogue-5992577-008E7A.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/product-catalogue" class="stretched-link">
+                  Product Catalogue
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-coding-7221629-F47920.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/collaborative-workspaces" class="stretched-link">
+                  Collaborative Workspaces
+                </a>
+              </h6>
+            </div>
+                        </div>
+      </div>
+</div>
+
+
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="" class="menu-link menu-bar-link">Resources</a>
+
+
+                        <div class="c-sub-menu c-sub-menu--basic">
+            <ul>
+                              <li><a href="https://algorithm-catalogue.apex.esa.int/" target="_self" class="sub-menu-link">Algorithm Services Catalogue</a></li>
+                              <li><a href="https://browser.apex.esa.int/?_language=en" target="_self" class="sub-menu-link">Data Catalogue</a></li>
+                          </ul>
+          </div>
+
+    </li>
+
+
+
+    <li>
+              <a href="https://esa-apex.github.io/apex_documentation/" class="menu-link menu-bar-link">Documentation</a>
+
+
+
+    </li>
+
+
+
+    <li>
+              <a href="https://apex.esa.int/frequently-asked-questions" class="menu-link menu-bar-link" data-drupal-link-system-path="node/9">FAQ</a>
+
+
+
+    </li>
+
+
+
+    <li>
+              <a href="https://apex.esa.int/about-apex" class="menu-link menu-bar-link" data-drupal-link-system-path="node/5">About APEx</a>
+
+
+
+    </li>
+
+
+
+    <li>
+              <a href="https://apex.esa.int/news" class="menu-link menu-bar-link" data-drupal-link-system-path="node/33">News</a>
+
+
+
+    </li>
+
+              </ul>
+
+
+
+  </div>
+
+
+  </nav>
+
+  </div>
+
+      </div>
+
+      <div class="c-header__contact">
+        <a href="https://apex.esa.int/contact" class="btn btn-primary btn--arrow">Contact us</a>
+      </div>
+
+      <div class="c-hamburger__wrapper">
+                <div class="c-hamburger js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+    </div></div>
+<aside class="c-sidebar js-hamburger-menu">
+    <div class="container">
+        <div class="c-sidebar__inner">
+             <div class="region region-search">
+    <nav role="navigation" aria-labelledby="block-vitotheme-mainnavigation-2-menu" id="block-vitotheme-mainnavigation-2" class="block block-menu navigation menu--main">
+
+  <h5 class="visually-hidden" id="block-vitotheme-mainnavigation-2-menu">Main navigation</h5>
+
+
+
+              <ul data-block="search" class="c-sidebar__menu">
+                    <li>
+        <a href="https://apex.esa.int/algorithm-services" data-drupal-link-system-path="node/32">Algorithm Services</a>
+              </li>
+                <li>
+        <a href="https://apex.esa.int/project-environments" data-drupal-link-system-path="node/4">Project Environments</a>
+              </li>
+                <li>
+        <a href="">Resources</a>
+              </li>
+                <li>
+        <a href="https://esa-apex.github.io/apex_documentation/">Documentation</a>
+              </li>
+                <li>
+        <a href="https://apex.esa.int/frequently-asked-questions" data-drupal-link-system-path="node/9">FAQ</a>
+              </li>
+                <li>
+        <a href="https://apex.esa.int/about-apex" data-drupal-link-system-path="node/5">About APEx</a>
+              </li>
+                <li>
+        <a href="https://apex.esa.int/news" data-drupal-link-system-path="node/33">News</a>
+              </li>
+        </ul>
+
+
+
+  </nav>
+
+  </div>
+
+        </div>
+    </div>
+</aside>
+
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">APEx - Documentation Portal</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guides/udp_writer_guide.html">Guides</a></li><li class="breadcrumb-item"><a href="../guides/udp_writer_guide.html">Creating openEO based services</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true">
+ <span class="menu-text">On-demand EO services</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../eo_service_usage/openeo_usage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using openEO service</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../instantiation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/usecases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Cases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/geospatial_explorer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geospatial Explorer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/project_portal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/user_workspace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">User Workspace</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/ide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interactive Development Environment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/catalog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Product Catalogue</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Documentation Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/forum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">User Forum</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../propagation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Services</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/ondemandservices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">On-Demand EO Services</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/usecases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Cases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/porting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Porting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/onboarding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Onboarding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/upscaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Upscaling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/enhancement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Enhancement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/toolboxcloud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Toolbox Cloudification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/intercomparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Intercomparison</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true">
+ <span class="menu-text">Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/udp_writer_guide.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Creating openEO based services</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/eoap_writer_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating EOAP based services</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/upscaling_openeo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Upscaling openEO based services</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/stac_catalog_ingest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ingest STAC metadata</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/catalog_openeo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linking APEx STAC catalog with an openEO service</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../interoperability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interoperability and Compliance Guidelines</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definitions &amp; Actors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/service_development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Service Development Options</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/algohosting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Developer and Provider Guidelines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/algohostingenv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Hosting Platforms Guidelines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/geospatial_explorer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geospatial Explorer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/businessmodel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Federated Business Model</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guides/udp_writer_guide.html">Guides</a></li><li class="breadcrumb-item"><a href="../guides/udp_writer_guide.html">Creating openEO based services</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Guide for writing openEO User Defined Processes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-udp-writing" class="level2">
+<h2 class="anchored" data-anchor-id="sec-udp-writing">Creating an openEO User Defined Process</h2>
+<p>User defined processes (UDPs) are one out of two standardised options that APEx offers to publish algorithms as a service. This guide gives some concrete steps and guidelines to ensure that your UDP works well for your users. These guidelines are written with APEx in mind, but can also serve as a general guide for openEO UDPs. Where needed, recommendations and choices are made to increase uniformity across the<a href="../propagation/onboarding.html#apex-algorithm-services-catalogue">APEx Algorithm Services Catalogue</a>.</p>
+<p>For more background on UDP’s, or a basic tutorial on creating them, the open source Python client provides <a href="https://open-eo.github.io/openeo-python-client/udp.html">a good starting point</a>.</p>
+<p>Keep in mind that APEx offers <a href="../propagation/porting.html">Algorithm Porting</a> and <a href="../propagation/onboarding.html">Algorithm Onboarding</a> support to help you with transforming your algorithm into an openEO UDP and onboarding it onto an APEx-compliant hosting platform.</p>
+<section id="example-cases" class="level3">
+<h3 class="anchored" data-anchor-id="example-cases">Example cases</h3>
+<p>The best way to learn how to write a UDP is to look at existing examples:</p>
+<ul>
+<li><code>max_ndvi_composite</code>: <a href="https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite">UDP code</a> and <a href="https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_files/max_ndvi_composite_description.md">description</a>.</li>
+</ul>
+</section>
+<section id="organizing-your-code" class="level3">
+<h3 class="anchored" data-anchor-id="organizing-your-code">Organizing your code</h3>
+<p>A UDP is simply a parametrized version of an openEO process graph, and as such we recommend that you use the same code to develop and test your algorithm, as you use to generate the UDP json. This ensures that your UDP is functionally equivalent to your code. Your code remains your own, and you only need to export the JSON UDP definition to share it with APEx.</p>
+<p>It is however advisable for your UDP to link back to a public git repository if available, making your open source code more discoverable.</p>
+</section>
+<section id="how-many-udps-should-i-write" class="level3">
+<h3 class="anchored" data-anchor-id="how-many-udps-should-i-write">How many UDPs should I write?</h3>
+<p>Deciding on the granularity of your UDP is an important aspect of making your algorithm usable. There is no need to try and fit all possible use cases into a single UDP. Instead, consider to define pieces of functionality that can work with a limited set of parameters, and write a single UDP for each piece.</p>
+</section>
+<section id="parameter-conventions" class="level3">
+<h3 class="anchored" data-anchor-id="parameter-conventions">Parameter conventions</h3>
+<p>This section provides some recommendations on how to name parameters in your UDP. While these are not mandatory, we recommend to consider them to avoid that users of the APEx <a href="https://algorithm-catalogue.apex.esa.int/">Algorithm Services Catalogue</a> would be confused by variations in process parameter names.</p>
+<p>Please <a href="https://github.com/ESA-APEx/apex_documentation/issues">let us know</a> if you encounter a parameter that could use a convention, and we will add it here.</p>
+<section id="spatial-filtering" class="level4">
+<h4 class="anchored" data-anchor-id="spatial-filtering">Spatial filtering</h4>
+<p>Any algorithm requires spatial filtering, so we can make the life of our users easier if we all use the same naming.</p>
+<p>In the standard openEO processes <code>load_collection</code> and <code>load_stac</code>, spatial filtering done through the argument called <code>spatial_extent</code>, which support multiple types: a bounding box object, an inline GeoJSON object, a vector cube, or it can even be left empty (<code>null</code>). For maximum flexibility, compatibility and the best user experience, we recommend to perform spatial filtering in your algorithm:</p>
+<ul>
+<li>directly in <code>load_collection</code>/<code>load_stac</code> (instead of separate <code>filter_bbox</code>/<code>filter_spatial</code> processes)</li>
+<li>using a parameter named <code>spatial_extent</code> (unless there are good reasons otherwise) spatial filtering in these processes, and also use <code>spatial_extent</code> as the parameter name unless there are good reasons otherwise.</li>
+</ul>
+<p>If you pass on the <code>spatial_extent</code> parameter to all <code>load_collection</code> processes in your UDP, then it is also allowed to perform filtering using vector data. This conveniently allows for advanced spatial filtering use cases!</p>
+<p>The Python client has a convenience function called <a href="https://open-eo.github.io/openeo-python-client/api.html#openeo.api.process.Parameter.spatial_extent"><code>Parameter.spatial_extent()</code></a> to create this parameter when building your UDP via Python.</p>
+</section>
+<section id="temporal-filtering" class="level4">
+<h4 class="anchored" data-anchor-id="temporal-filtering">Temporal filtering</h4>
+<p>For openEO processes that support arbitrary temporal ranges, we recommend using <code>temporal_extent</code> as the name of parameter to ensure consistency with other openEO processes, such as <code>load_collection</code>.</p>
+<p>Many cases also require a time range with a fixed length. In such a case, you can allow to specify only the start or end date, and use the <code>date_shift</code> process to construct the second date in the temporal interval, ensuring a fixed length. This avoids faulty user input.</p>
+</section>
+</section>
+<section id="avoid-use-of-save_result" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-use-of-save_result">Avoid use of <code>save_result</code></h3>
+<p>Most openEO process graphs end in a <code>save_result</code>process. However, this is not recommended for UDPs, as the user may want to perform additional processing steps before generating the result. So having a <code>DataCube</code> (raster or vector) as the final output is recommended unless if your service wants to enforce specific settings on how the output is to be generated.</p>
+</section>
+<section id="udp-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="udp-documentation">UDP documentation</h3>
+<p>The description of your UDP should be quite extensive if you want users to be able to easily assess if it’s suitable for them.</p>
+<p>We recommend including these sections:</p>
+<ol type="1">
+<li><strong>Description</strong>: A short description of what the algorithm does.</li>
+<li><strong>Performance characteristics</strong>: Information on the computational efficiency of the algorithm. Include a relative cost if available.</li>
+<li><strong>Examples</strong>: One or more examples of the algorithm in action, using images or plots to show a typical result. Point to a STAC metadata file with an actual output asset to give users full insight into what is generated.</li>
+<li><strong>Literature references</strong>: If your algorithm is based on scientific literature, provide references to the relevant publications.</li>
+<li><strong>Known limitations</strong>: Any known limitations of the algorithm, such as the type of data it works best with, or the size of the area it can process efficiently.</li>
+<li><strong>Known artifacts</strong>: Use images and plots to clearly show any known artifacts that the algorithm may produce. This helps users to understand what to expect from the algorithm.</li>
+</ol>
+<p>A <a href="https://github.com/ESA-APEx/apex_documentation/blob/main/guides/udp_description_template.md">template</a> is available to help you structure your documentation.</p>
+</section>
+</section>
+<section id="sec-udp-integration" class="level2">
+<h2 class="anchored" data-anchor-id="sec-udp-integration">Integrating your openEO process (UDP) in APEx</h2>
+<p>Once you have an eligible openEO process, you are ready to integrate it in APEx. At this point, you should have an HTTP link to a JSON document that defines the process, and is publicly accessible. The most common way to do this is to store it in a public git repository. Tagging a release is a good way to ensure that the link remains stable.</p>
+<section id="registering-your-process" class="level3">
+<h3 class="anchored" data-anchor-id="registering-your-process">Registering your process</h3>
+<p>Next, you will need to upload a generic JSON to the <a href="https://algorithm-catalogue.apex.esa.int/">APEx Algorithm Catalogue</a> to register your process. For now, this is done by creating a pull request in the <a href="https://github.com/ESA-APEx/apex_algorithms">APEx Algorithm Catalogue GitHub repository</a>.</p>
+<p>An example json is provided below. The properties to modify are listed here:</p>
+<ul>
+<li><em>id</em>: a unique identifier for your process</li>
+<li><em>created</em> and <em>updated</em> timestamps</li>
+<li><em>title</em>: a descriptive title</li>
+<li><em>description</em>: a detailed description of the process</li>
+<li><em>contacts</em>: a list of contacts, with at least one principal investigator</li>
+<li><em>keywords</em>: a list of free form keywords</li>
+<li><em>themes</em>: Applicable concepts from a scheme. Concepts can be found in the <a href="https://data.esa.int/esado">ESA Data Ontology</a></li>
+<li><em>license</em>: the license under which the process is published. You can use the <a href="https://spdx.org/licenses/">SPDX license list</a> for this. Proprietary licenses are possible, within the terms of your ESA project.</li>
+</ul>
+<p>The <em>links</em> section is crucial, the following “rel” values are mandatory:</p>
+<ul>
+<li><em>openeo-process</em>: exactly one link to the JSON document that defines the process</li>
+<li><em>service</em>: at least one link to an openEO backend that is able to execute the process</li>
+<li><em>example</em>: at least one link to a STAC metadata file that shows the output of the process</li>
+</ul>
+<p>The <em>type</em> field of these links should be set to <code>application/json</code>. Please provide a descriptive <em>title</em> for each link, allowing to understand what the link is about.</p>
+<pre class="{json}"><code>
+{
+  "id": "max_ndvi_composite",
+  "type": "Feature",
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
+  ],
+  "properties": {
+    "created": "2024-09-06T00:00:00Z",
+    "updated": "2024-09-06T00:00:00Z",
+    "type": "apex_algorithm",
+    "title": "Max NDVI Composite based on Sentinel-2 data",
+    "description": "A compositing algorithm for Sentinel-2 L2A data, ranking observations by their maximum NDVI.",
+    "cost_estimate": 1,
+    "cost_unit": "platform credits per km\u00b2",
+    "keywords": [
+      "vegetation"
+    ],
+    "language": {
+      "code": "en-US",
+      "name": "English (United States)"
+    },
+    "languages": [
+      {
+        "code": "en-US",
+        "name": "English (United States)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Jeroen Dries",
+        "position": "Researcher",
+        "organization": "VITO",
+        "links": [
+          {
+            "href": "https://www.vito.be/",
+            "rel": "about",
+            "type": "text/html"
+          },
+          {
+            "href": "https://github.com/jdries",
+            "rel": "about",
+            "type": "text/html"
+          }
+        ],
+        "contactInstructions": "Contact via VITO",
+        "roles": [
+          "principal investigator"
+        ]
+      },
+      {
+        "name": "VITO",
+        "links": [
+          {
+            "href": "https://www.vito.be/",
+            "rel": "about",
+            "type": "text/html"
+          }
+        ],
+        "contactInstructions": "SEE WEBSITE",
+        "roles": [
+          "processor"
+        ]
+      }
+    ],
+    "themes": [ {
+        "concepts": [
+          { "id": "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)" },
+          { "id": "Sentinel-2 MSI" }
+        ],
+        "scheme": "https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+      }],
+    "formats": [
+      "GeoTiff", "netCDF"
+    ],
+    "license": "CC-BY-4.0"
+  },
+  "linkTemplates": [],
+  "links": [
+    {
+      "rel": "openeo-process",
+      "type": "application/json",
+      "title": "openEO Process Definition",
+      "href": "https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/max_ndvi_composite/openeo_udp/examples/max_ndvi_composite/max_ndvi_composite.json"
+    },
+    {
+      "rel": "service",
+      "type": "application/json",
+      "title": "CDSE openEO federation",
+      "href": "https://openeofed.dataspace.copernicus.eu"
+    },
+    {
+      "rel": "example",
+      "type": "application/json",
+      "title": "Example output",
+      "href": "https://radiantearth.github.io/stac-browser/#/external/s3.waw3-1.cloudferro.com/swift/v1/APEx-examples/max_ndvi_denmark/collection.json"
+    }
+  ]
+}
+</code></pre>
+</section>
+<section id="defining-a-validation-benchmark-scenario" class="level3">
+<h3 class="anchored" data-anchor-id="defining-a-validation-benchmark-scenario">Defining a validation &amp; benchmark scenario</h3>
+<p>APEx has the capability to automatically check if your openEO process is working as expected, and if the cost for specific scenarios is sufficiently stable over time. This is a very important feature to avoid that your users have a bad experience. It also helps to ensure that the openEO backend provider you selected is performing well, and that changes to the backend service do not break your process.</p>
+<p>APEx requires at least one benchmark scenario, to be able to correctly mark processes that are (temporarily)unavailable. When this happens, the ‘principal investigator’, as defined in the JSON of the previous step, is informed, allowing to take action as desired.</p>
+<p>The benchmark scenarios are defined as JSON files in the <a href="https://github.com/ESA-APEx/apex_algorithms/tree/main/benchmark_scenarios"><code>benchmark_scenarios</code></a> folder. The schema of these files is defined (as JSON Schema)in the <a href="https://github.com/ESA-APEx/apex_algorithms/blob/main/schema/benchmark_scenario.json"><code>schema/benchmark_scenario.json</code></a> file.</p>
+<p>Example benchmark definition:</p>
+<pre class="{json}"><code>[
+  {
+    "id": "max_ndvi",
+    "type": "openeo",
+    "backend": "openeofed.dataspace.copernicus.eu",
+    "process_graph": {
+      "maxndvi1": {
+        "process_id": "max_ndvi",
+        "namespace": "https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/f99f351d74d291d628e3aaa07fd078527a0cb631/openeo_udp/examples/max_ndvi/max_ndvi.json",
+        "arguments": {
+          "temporal_extent": ["2023-08-01", "2023-09-30"],
+          ...
+        },
+        "result": true
+      }
+    },
+    "reference_data": {
+      "job-results.json": "https://s3.example/max_ndvi.json:max_ndvi:reference:job-results.json",
+      "openEO.tif": "https://s3.example/max_ndvi.json:max_ndvi:reference:openEO.tif"
+    }
+  },
+  ...
+]</code></pre>
+<p>Note how each benchmark scenario references:</p>
+<ul>
+<li>the target openEO backend to use.</li>
+<li>an openEO process graph to execute. The process graph will typically just contain a single node pointing with the <code>namespace</code> field to the desired process definition at a URL, following the <a href="https://github.com/Open-EO/openeo-api/tree/draft/extensions/remote-process-definition">remote process definition extension</a>. The URL will typically be a raw GitHub URL to the JSON file in the <code>openeo_udp</code> folder, but it can also be a URL to a different location.</li>
+<li>reference data to which actual results should be compared.</li>
+</ul>
+<section id="defining-and-updating-benchmark-reference-data" class="level4">
+<h4 class="anchored" data-anchor-id="defining-and-updating-benchmark-reference-data">Defining and updating benchmark reference data</h4>
+<p>A benchmark scenario should define reference data, with which the actual results of benchmark runs should be compared. The <code>reference_data</code> field of a benchmark scenario is a JSON object that maps each of the openEO batch job result assets (by asset name) to a URL where the reference data can be found, e.g.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"reference_data"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"job-results.json"</span><span class="fu">:</span> <span class="st">"https://s3.example/max_ndvi.json:max_ndvi:reference:job-results.json"</span><span class="fu">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"openEO.tif"</span><span class="fu">:</span> <span class="st">"https://s3.example/max_ndvi.json:max_ndvi:reference:openEO.tif"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The reference data URLs should be publicly accessible. For example, as suggested by the example, as S3 storage URLs. While you are free to manage the hosting of the reference data yourself, it is recommended to just rely on the APEx infrastructure and workflows as follows.</p>
+<p>The APEx benchmarking system will automatically store the actual results (if any)of failed benchmark runs in a public S3 bucket managed by APEx, to allow post-mortem inspection of these results. The URLs of these actual result assets will be reported in the benchmark report and can be used directly as reference data URLs for subsequent benchmark runs. Of course, make sure the actual results are properly validated and acceptable under your standards before using them as reference data for future benchmark runs.</p>
+<section id="initial-reference-data" class="level5">
+<h5 class="anchored" data-anchor-id="initial-reference-data">Initial reference data</h5>
+<p>When you are initially defining a benchmark scenario, you may not have the full set of expected reference data and metadata yet. In this case, it’s fine to leave out the <code>reference_data</code> field, make it an empty mapping object, or use invalid placeholder URLs. When the benchmark scenario is executed and the underlying openEO batch job finishes successfully, the actual batch job results will be downloaded first. Next, the full actual result set will be compared to the reference data, which will be missing or incomplete, causing the benchmark run to fail. This failure will trigger the storage of the actual results in the APEx S3 bucket, and the corresponding URLs will be reported in the (pytest based) benchmark run output of the <a href="https://github.com/ESA-APEx/apex_algorithms/actions/workflows/benchmarks.yaml">corresponding GitHub workflow run</a>. It will look like this:</p>
+<pre class="text"><code>-------------------- `upload_assets` stats: {'uploaded': 2} --------------------
+- tests/test_benchmarks.py::test_run_benchmark[max_ndvi]:
+  - 'actual/openEO.tif' uploaded to 'https://s3.example/gh-1234!max_ndvi!actual/openEO.tif'
+  - 'actual/job-results.json' uploaded to 'https://s3.example/gh-1234!max_ndvi!actual/job-results.json'</code></pre>
+<p>These URLs can be used as reference data URLs for subsequent benchmark runs.</p>
+</section>
+<section id="updating-reference-data" class="level5">
+<h5 class="anchored" data-anchor-id="updating-reference-data">Updating reference data</h5>
+<p>When an algorithm is updated, or the underlying data changes for some reason, a benchmark scenario might start to fail on the reference data comparison. Updating the reference data is practically the same as defining it initially:look up the URLs of the actual results in the benchmark report, validate these new results, and update the benchmark scenario with the new reference data URLs.</p>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="../propagation/intercomparison.html" class="pagination-link" aria-label="Algorithm Intercomparison">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Algorithm Intercomparison</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../guides/eoap_writer_guide.html" class="pagination-link" aria-label="Creating EOAP based services">
+        <span class="nav-page-text">Creating EOAP based services</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
