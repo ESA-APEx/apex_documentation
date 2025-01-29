@@ -58,6 +58,8 @@ website:
         contents:
         - href: guides/udp_writer_guide.qmd
           text: Creating openEO based services
+        - href: guides/eoap_writer_guide.md
+          text: Creating EOAP based services
         - href: guides/upscaling_openeo.ipynb
           text: Upscaling openEO based services
         - href: guides/stac_catalog_ingest.ipynb
