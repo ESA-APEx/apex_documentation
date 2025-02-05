@@ -35,6 +35,8 @@ website:
         contents:
           - href: instantiation/usecases.md
             text: Use Cases
+          - href: instantiation/token.md
+            text: API single sign-on token
           - href: instantiation/geospatial_explorer.md
           - href: instantiation/project_portal.md
           - href: instantiation/user_workspace.md

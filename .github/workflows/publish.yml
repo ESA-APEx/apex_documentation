@@ -14,7 +14,7 @@ jobs:
       contents: write
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
       - name: Set up Quarto
@@ -32,9 +32,9 @@ jobs:
       - name: Render documentation pages
         run: quarto render --output-dir _build
       - name: Setup GitHub pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Upload build artifacts
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "_build"
       - name: Upload build folder
@@ -68,35 +68,4 @@ jobs:
     steps:
       - name: Deploy to GitHub pages
         id: deployment
-        uses: actions/deploy-pages@v2
-
-  deploy-documentation-branch:
-    runs-on: ubuntu-latest
-    needs: documentation-quality-checks
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    permissions:
-      contents: write
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set Git config
-      run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "Github Actions"
-
-    - name: Download build folder
-      uses: actions/download-artifact@v4
-      with:
-        name: build-folder
-        path: ./_build
-
-    - name: Commit and Push to docportal branch
-      run: |
-          git checkout docportal  || git checkout --orphan docportal
-          git rm -rf .
-          echo '_build/' >> .gitignore
-          cp -r _build/* .
-          git add .
-          git commit -m "chore: update of documentation"
-          git push --force origin docportal
+        uses: actions/deploy-pages@v4
