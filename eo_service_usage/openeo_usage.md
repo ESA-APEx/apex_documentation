@@ -42,7 +42,7 @@ Through the graphical user interface, users can execute, link, and configure dif
 ::: {.callout-tip}
 ## Pro-tip: discovering API requests
 
-These interface provide a great way to find out how to interact with an openEO backend at the level of the HTTP API.
+This interface provides a great way to find out how to interact with an openEO backend at the level of the HTTP API.
 Just use the 'developer tools' of your favourite browser and inspect HTTP requests to the backend to find out the various options.
 :::
 
