@@ -35,8 +35,6 @@ website:
         contents:
           - href: instantiation/usecases.md
             text: Use Cases
-          - href: instantiation/token.md
-            text: API single sign-on token
           - href: instantiation/geospatial_explorer.md
           - href: instantiation/project_portal.md
           - href: instantiation/user_workspace.md
@@ -58,6 +56,8 @@ website:
           - href: propagation/intercomparison.md
       - text: Guides
         contents:
+        - href: guides/token.md
+          text: Creating APEx single sign-on token
         - href: guides/udp_writer_guide.qmd
           text: Creating openEO based services
         - href: guides/eoap_writer_guide.md
@@ -67,7 +67,7 @@ website:
         - href: guides/stac_catalog_ingest.ipynb
           text: Ingest STAC metadata
         - href: guides/catalog_openeo.ipynb
-          text: Linking APEx STAC catalog with an openEO service
+          text: Linking APEx STAC catalogue with an openEO service
 
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
