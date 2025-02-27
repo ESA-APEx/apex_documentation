@@ -22,7 +22,7 @@ provides [installation instructions](https://github.com/indigo-dc/oidc-agent?tab
 for various operating systems.
 
 The following instructions show how to generate a token on a Linux operating system, which is provided by the [APEx User
-Workspace](./user_workspace.md).
+Workspace](../instantiation/user_workspace.md).
 
 ### 1. Start `oidc-agent-service`
 
