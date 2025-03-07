@@ -65,7 +65,7 @@ website:
         - href: guides/upscaling_openeo.ipynb
           text: Upscaling openEO based services
         - href: guides/stac_catalog_ingest.ipynb
-          text: Ingest STAC metadata
+          text: Ingesting STAC metadata in APEx Product Catalogue
         - href: guides/catalog_openeo.ipynb
           text: Linking APEx STAC catalogue with an openEO service
 
