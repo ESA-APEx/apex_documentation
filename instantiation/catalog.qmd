@@ -42,30 +42,49 @@ The product catalogue serves several beneficial scenarios for projects:
   geospatial data and analyses. This collaborative environment fosters innovation and knowledge sharing across
   disciplines and organisations.
 
-## What does APEx offer
+## What does APEx offer?
 
-You will get a dedicated STAC catalog, managed by the APEx team. This gives you full control over the metadata, without
-having to worry about IT aspects such as security, backup or monitoring the service. The catalog supports creating both
-private and public collections.
+### STAC Catalogue API
 
-The data storage itself is _not_ included in the catalog. We recommend requesting object storage access with one of the
-cloud providers in the NoR.
+You will get a dedicated STAC catalog, hosted and managed by APEx. This gives you full control over the metadata,
+without having to worry about IT aspects such as security, backup or monitoring the service. The catalogue supports
+creating both private and public collections.
 
-The catalog offers a REST HTTP API. It can be browsed visually
-using [STAC browser](https://radiantearth.github.io/stac-browser/#/?.language=en).
+#### Key Considerations
 
-The metadata creation process is not automated. You will have to provide the metadata in a JSON format. The catalog
-gives you full freedom in terms of STAC extension that you want to use.
+* **Data storage**: The STAC catalogue does _not_ include data storage. It is recommended to request object storage access
+  from one of the cloud providers in the Network of Resources (NoR).
+* M**etadata Creation**: The process of creating metadata is not automated. You will need to provide the metadata in
+  JSON
+  format, giving you complete flexibility in choosing the STAC extensions that best suit your requirements.
 
-## What software is used under the hood
+#### Underlying Technology
 
-The catalog is currently based
-on [stac-fastapi-elasticsearch-opensearch](https://github.com/stac-utils/stac-fastapi-elasticsearch-opensearch). The
-database is a managed opensearch instance running on open telekom cloud.
+* **Software**: The catalogue is powered
+  by [stac-fastapi-elasticsearch-opensearch](https://github.com/stac-utils/stac-fastapi-elasticsearch-opensearch).
+* **Database**: It uses a managed OpenSearch instance hosted on Open Telekom Cloud.
 
-The APEx team can roll out software upgrades if needed, but cannot provide support for custom software development.
+While the APEx team handles software upgrades when necessary, please note that support for custom software development
+is not provided.
 
-## How to integrate the catalog in your project architecture
+### STAC Browser
+
+In addition to the STAC Catalogue API, APEx provides a dedicated STAC Browser to support the visual exploration of your
+catalog's content. This browser is seamlessly integrated with the instantiated API and is automatically configured upon
+initialization to display the results published in your STAC API.
+
+![STAC Browser - Collections](images/stac_browser_1.jpg)
+
+![STAC Browser - Collection Details](images/stac_browser_2.jpg)
+
+#### Underlying Technology
+
+The STAC browser is built on the
+well-known [Radiant Earth's STAC browser](https://github.com/radiantearth/stac-browser), an open-source project
+designed to enable interactive exploration of STAC catalogs. This web application can be customized to
+meet specific user needs, offering flexibility for a wide range of applications.
+
+## How to integrate the catalogue in your project architecture
 
 The role of the STAC catalog, is in essence to facilitate data discovery and exchange between different components in
 your project. By the use of a shared metadata language, components can be decoupled and still work together. It allows
@@ -82,22 +101,26 @@ query the STAC catalog, as long as it's sufficiently responsive for the low late
 ### Data processing
 
 In the most basic case, a processing component simply stores final products in the catalog. Sufficiently advanced
-processing systems will immediately generate STAC metadata, and may even allow writing into the catalog API directly.
+processing systems will immediately generate STAC metadata, and may even allow writing into the catalogue API directly.
 They also record data provenance, which is a key aspect of FAIR data principles.
 
 In a more advanced case, the processing workflow requires storing intermediate products, or preprocessed ancillary data
-sets. Also then, the STAC catalog can be used to keep track of these data sets. By doing so, the processing component
+sets. Also then, the STAC catalogue can be used to keep track of these data sets. By doing so, the processing component
 can simply read required inputs from STAC, and store (intermediate) results back into the catalog.
 
 ### Machine learning datasets
 
-A more advanced but increasingly common use case is to use a catalog to track reference data sets, as well as training
+A more advanced but increasingly common use case is to use a catalogue to track reference data sets, as well as training
 patches in a STAC catalog. Here we again have a pattern where various components like the EO processing system, model
 training scripts and reference data management system all work together around a central metadata store.
 
 ## Examples
 
-The 'Guides' section has a number of concrete Jupyter notebooks showing how you can interact with the catalog API.
+The following guides showcase how you can interact with the catalogue API:
+
+* [Creating APEx single sign-on token](../guides/token.md)
+* [Ingesting STAC metadata](../guides/stac_catalog_ingest.ipynb)
+* [Linking an APEx STAC Catalogue with an openEO service](../guides/catalog_openeo.ipynb)
 
 :::{.callout-tip}
 

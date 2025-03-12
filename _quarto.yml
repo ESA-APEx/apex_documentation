@@ -56,14 +56,18 @@ website:
           - href: propagation/intercomparison.md
       - text: Guides
         contents:
+        - href: guides/token.md
+          text: Creating APEx single sign-on token
         - href: guides/udp_writer_guide.qmd
           text: Creating openEO based services
+        - href: guides/eoap_writer_guide.md
+          text: Creating EOAP based services
         - href: guides/upscaling_openeo.ipynb
           text: Upscaling openEO based services
         - href: guides/stac_catalog_ingest.ipynb
           text: Ingest STAC metadata
         - href: guides/catalog_openeo.ipynb
-          text: Linking APEx STAC catalog with an openEO service
+          text: Linking APEx STAC catalogue with an openEO service
 
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
