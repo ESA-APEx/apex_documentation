@@ -14,15 +14,14 @@ For more background on UDP's, or a basic tutorial on creating them, the open sou
 [a good starting point](https://open-eo.github.io/openeo-python-client/udp.html).
 
 Keep in mind that APEx offers [Algorithm Porting](../propagation/porting.md)
-and [Algorithm Onboarding](../propagation/onboarding.md) support to help you with these steps if needed.
+and [Algorithm Onboarding](../propagation/onboarding.md) support to help you with transforming your algorithm into an
+openEO UDP and onboarding it onto an APEx-compliant hosting platform.
 
 ### Example cases
 
 The best way to learn how to write a UDP is to look at existing examples:
 
--
-
-`max_ndvi_composite`: [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite)
+- `max_ndvi_composite`: [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite)
 and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_files/max_ndvi_composite_description.md).
 
 ### Organizing your code
@@ -55,11 +54,23 @@ a convention, and we will add it here.
 
 Any algorithm requires spatial filtering, so we can make the life of our users easier if we all use the same naming.
 
-In other openEO processes, the spatial filtering is called `spatial_extent`, and we recommend to stick to that name as
-long as you don't have more specific names.
+In the standard openEO processes `load_collection` and `load_stac`, spatial filtering done through the argument called
+`spatial_extent`, which support multiple types: a bounding box object, an inline GeoJSON object, a vector cube, or it
+can even be left empty (`null`).
+For maximum flexibility, compatibility and the best user experience, we recommend to perform spatial filtering in your
+algorithm:
+
+- directly in `load_collection`/`load_stac` (instead of separate `filter_bbox`/`filter_spatial` processes)
+- using a parameter named `spatial_extent` (unless there are good reasons otherwise)
+  spatial filtering in these processes, and also use `spatial_extent` as the parameter name unless there are good
+  reasons otherwise.
 
 If you pass on the `spatial_extent` parameter to all `load_collection` processes in your UDP, then it is also allowed to
 perform filtering using vector data. This conveniently allows for advanced spatial filtering use cases!
+
+The Python client has a convenience function called
+[`Parameter.spatial_extent()`](https://open-eo.github.io/openeo-python-client/api.html#openeo.api.process.Parameter.spatial_extent)
+to create this parameter when building your UDP via Python.
 
 #### Temporal filtering
 
