@@ -30,6 +30,7 @@ website:
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
+          - href: propagation/platforms.md
       - href: instantiation/index.md
         text: Project Tools
         contents:

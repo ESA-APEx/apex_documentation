@@ -15,7 +15,7 @@ For more background on UDP's, or a basic tutorial on creating them, the open sou
 
 Keep in mind that APEx offers [Algorithm Porting](../propagation/porting.md)
 and [Algorithm Onboarding](../propagation/onboarding.md) support to help you with transforming your algorithm into an
-openEO UDP and onboarding it onto an APEx-compliant hosting platform.
+openEO UDP and onboarding it onto an [APEx-compliant hosting platform](../propagation/platforms.md).
 
 ### Example cases
 
