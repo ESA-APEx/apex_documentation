@@ -21,8 +21,8 @@ openEO UDP and onboarding it onto an APEx-compliant hosting platform.
 
 The best way to learn how to write a UDP is to look at existing examples:
 
-- `max_ndvi_composite`: [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/openeo_udp/examples/max_ndvi_composite)
-and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/max_ndvi_composite_files/max_ndvi_composite_description.md).
+- `max_ndvi_composite`: [UDP code](https://github.com/ESA-APEx/apex_algorithms/tree/main/algorithm_catalog/vito/max_ndvi_composite)
+and [description](https://github.com/ESA-APEx/apex_algorithms/blob/main/algorithm_catalog/vito/max_ndvi_composite/openeo_udp/max_ndvi_composite_description.md).
 
 ### Organizing your code
 
@@ -261,9 +261,9 @@ When this happens, the 'principal investigator', as defined in the JSON of the p
 take action as desired.
 
 The benchmark scenarios are defined as JSON files in the
-[`benchmark_scenarios`](https://github.com/ESA-APEx/apex_algorithms/tree/main/benchmark_scenarios) folder. The schema of
+`benchmark_scenarios` folder of your service. The schema of
 these files is defined (as JSON Schema)in the
-[`schema/benchmark_scenario.json`](https://github.com/ESA-APEx/apex_algorithms/blob/main/schema/benchmark_scenario.json)
+[`schema/benchmark_scenario.json`](https://github.com/ESA-APEx/apex_algorithms/blob/main/schemas/benchmark_scenario.json)
 file.
 
 Example benchmark definition:
