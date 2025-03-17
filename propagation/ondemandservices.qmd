@@ -55,7 +55,7 @@ For further guidance on creating and using UDPs, you can explore the following r
 
 Another option is to package your software using Docker containers. This approach, based on the OGC Best Practice for Earth Observation Application Packaging (EOAP), is very generic and is particularly relevant if you have an existing piece of complex software that you want to make available as a service.
 
-This APEx compliant, cloud service implementation option, consists in containerizing your software (using Docker technologies) along with CWL wrappers (Common Workflow Language)[@cwl], together forming a reusable, scalable Earth Observation Application Package (EOAP) [@ap]. APEx can provide the guidance and support you need to efficiently translate your algorithm into an EOAP implementation.
+This APEx-compliant, cloud service implementation option, consists in containerizing your software (using Docker technologies) along with CWL wrappers (Common Workflow Language)[@cwl], together forming a reusable, scalable Earth Observation Application Package (EOAP) [@ap]. APEx can provide the guidance and support you need to efficiently translate your algorithm into an EOAP implementation.
 
 After your EOAP is created, it can be registered in
 the [APEx Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-services-catalogue) and associated
