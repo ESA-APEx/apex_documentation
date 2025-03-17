@@ -44,6 +44,14 @@ their compatibility with the APEx standards.
 +-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 : Interoperability requirements for algorithm hosting environments {#tbl-algohostingenv}{tbl-colwidths="[20,80]"}
 
+
+:::{.callout-tip}
+
+## APEx-Compliant Platforms
+APEx has identified a list of platforms that meet these requirements. You can find the full list [here](../propagation/platforms.md).
+:::
+
+
 ## openEO API specific requirements
 
 The algorithm hosting platform implementing openEO API [@openeo] shall support applications defined as openEO User
