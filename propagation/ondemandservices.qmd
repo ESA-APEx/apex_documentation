@@ -52,7 +52,6 @@ For further guidance on creating and using UDPs, you can explore the following r
 * [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
 
 #### Development and Testing Environments
-
 While an openEO UDP can be developed on any supported environment using the
 existing [openEO tools](https://openeo.org/documentation/1.0/), we recommend testing the UDP on an APEx-compliant
 hosting platform. This ensures platform compatibility and facilitates the deployment of your UDP as an on-demand
@@ -82,7 +81,7 @@ necessary tools and basic infrastructure to support the development process:
 * [ELLIP](https://ellip.terradue.com)
 * APEx Instantiation Services
   * [Workspace](../instantiation/user_workspace.md) and [IDE](../instantiation/ide.md)
-
+  
 For a comprehensive overview of currently APEx-compliant hosting platforms, please refer
 to [this page](./platforms.md).
 
