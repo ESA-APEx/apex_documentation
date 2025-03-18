@@ -7,9 +7,9 @@ title: On-Demand EO Services
 On-demand services are scalable, cloud-based algorithms delivered as-a-Service, that users can trigger with their user-specific parametrisation.
 
 Therefore, currently APEx-compliant on-demand services should either adopt an openEO User Defined Process (UDP) or an
-EOAP Process implementation. There are additional
-[APEx compliance and interoperability guidelines](../interoperability/algohosting.md) which help ensuring FAIR
-compliance.
+EOAP Process implementation. This ensures that the algorithm can be hosted on one of the APEx-compliant algorithm hosting platforms and executed 
+as an OGC API Process or through the openEO API.  There are additional 
+[APEx compliance and interoperability guidelines](../interoperability/algohosting.md) which help ensuring FAIR compliance.
 
 Also, the resulting on-demand services should be compliant to the FAIR data principles (Findable, Accessible, Interoperable and Reusable).
 
