@@ -40,6 +40,17 @@ including stakeholders, policymakers, and the general public.
 * [**User Forum**](forum.md)\
   Supports community engagement and discussions around the project outcomes.
 
+```{mermaid}
+%%| label: fig-tools-usecase2
+%%| fig-cap: "APEx Project Tools - User Support"
+flowchart TD ""
+    subgraph Public Environment
+      A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
+      A -->|Links to| C(Documentation<br/> Portal)
+      A -->|Links to| D(User<br/> Forum)
+    end
+```
+
 ### Expected Benefits
 
 * Increased visibility and impact of EO projects.
@@ -56,15 +67,31 @@ help, share knowledge, and collaborate on EO applications.
 
 ### Key Components
 
-* [**User Workspace**](user_workspace.md)\
-  Secure and personalised environments allow users to store, share, and manage their data and work.
-* [**Interactive Development Environment (IDE)**](ide.md)\
-  Leveraging VS Code Server, these environments are tailored for EO tasks and provide development tools.
+* [**Project Portal**](project_portal.md)\
+  Provides dynamic instantiation using Drupal, allowing project managers to create and maintain a visually appealing and
+  informative site.
 * [**User Forum**](forum.md)\
   An on-demand service based on Discourse, facilitating user discussions, support queries, and community-driven
   solutions.
 * [**Documentation Portal**](documentation.qmd)\
   Comprehensive documentation and tutorial materials to assist users in navigating and utilising the services.
+* [**User Workspace**](user_workspace.md)\
+  Secure and personalised environments allow users to store, share, and manage their data and work.
+* [**Interactive Development Environment (IDE)**](ide.md)\
+  Leveraging VS Code Server, these environments are tailored for EO tasks and provide development tools.
+
+```{mermaid}
+%%| label: fig-tools-usecase2
+%%| fig-cap: "APEx Project Tools - User Support"
+flowchart TD ""
+    subgraph Project Environment
+      UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
+    end
+    subgraph Public Environment
+      A(Project Portal) -->|Links to| C(Documentation<br/> Portal)
+      A -->|Links to| D(User<br/> Forum)
+    end
+```
 
 ### Expected Benefits
 
@@ -87,7 +114,7 @@ project-specific visualisations, helping users to interpret and communicate data
 * [**Project Portal**](project_portal.md)\
   Integration of visualisations into project portals to showcase data insights.
 * [**Documentation Portal**](documentation.qmd)\
-  Interactive visualisations within documentation to explain data findings and methodologies.
+  Interactive visualisatioHns within documentation to explain data findings and methodologies.
 
 ### Expected Benefits
 

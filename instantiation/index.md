@@ -54,3 +54,5 @@ The specific components of the APEx Project Tools include:
 The APEx Project Tools will be essential for ensuring that the results of EO projects are effectively shared and
 utilised, fostering greater collaboration and innovation within the EO community. By providing robust, scalable, and
 user-friendly environments, the APEx Project Tools help maximise the impact of EO research and applications.
+
+Learn how the APEx Project Tools facilitate collaborative working environments for various [use cases](./usecases.qmd).
