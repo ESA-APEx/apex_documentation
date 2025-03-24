@@ -48,18 +48,19 @@ tailored pathway that assists in the transformation from source code to on-deman
 ```{mermaid}
 %%| label: fig-pathway
 %%| fig-cap: "APEx Algorithm Support Pathways"
-flowchart TD ""
+flowchart TD
     subgraph Legend
       APEX_SERVICE[Activity supported through APEx]
     end
+
     A((Project Source Code)) --> B{Experiencing Performance Issues?}
     B -->|Yes| C[Algorithm Enhancement Support]
-    B -->|No| D{Need help with implementation of APEx Guidelines?}
-    D -->|Yes| E[Support for Porting or Packaging Your Algorithm]
-    D -->|No| F{Expose your Algorithm as an On-Demand Service?}
-    F -->|Yes| G[Support with Deploying your Algorithm on a Hosting Platform]
+    B -->|No| D{Need help with implementation<br/> of APEx Guidelines?}
+    D -->|Yes| E[Support for Porting or Packaging<br/> Your Algorithm]
+    D -->|No| F{Expose your Algorithm as<br/> an On-Demand Service?}
+    F -->|Yes| G[Support with Deploying <br/>your Algorithm on a Hosting Platform]
     G --> H(((On-Demand EO Service)))
-    H --> I{Use EO Services for Large-Scale Processing?}
+    H --> I{Use EO Services for Large-Scale<br/> Processing?}
     I -->|Yes| J[Tools and Environment for Upscaling]
 
     class APEX_SERVICE,C,E,G,J apexService
