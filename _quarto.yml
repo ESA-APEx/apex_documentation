@@ -34,7 +34,7 @@ website:
       - href: instantiation/index.md
         text: Project Tools
         contents:
-          - href: instantiation/usecases.md
+          - href: instantiation/usecases.qmd
             text: Use Cases
           - href: instantiation/geospatial_explorer.md
           - href: instantiation/project_portal.md
