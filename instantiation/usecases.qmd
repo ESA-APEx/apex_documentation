@@ -17,8 +17,16 @@ visualisation tools enable users to interpret and communicate insights effective
 environments provide the computational power and tools necessary for complex analyses. Data processing workflows are
 streamlined through secure, scalable environments, ensuring that users can handle large volumes of EO data efficiently.
 
-The following use cases provide detailed scenarios of how the APEx Project Tools can be leveraged to meet the diverse
-needs of the EO community, maximising the impact of EO research and applications.
+It is important to highlight that the APEx Project Tools can be combined in different ways to create a flexible
+collaborative project environments. This gives projects the flexibility to adapt the tools based on their needs. For
+example, they can choose to make the project portal as their main entry point for both project members and their
+community, linking to the different APEx tools from within the main website. Alternatevely, projects can decide to only
+keep the project portal for public communication and dissimenation, while having the user workspaces only visible for
+the project members. In essence, the APEx Project Tools provide an a la carte approach for setting up and configuring
+your project environment based on your needs.
+
+To explore the possiblities, the following use cases provide detailed scenarios of how the APEx Project Tools can be
+leveraged to meet the diverse needs of the EO community, maximising the impact of EO research and applications.
 
 ## Use Case 1 - Project Promotion
 
@@ -40,6 +48,23 @@ including stakeholders, policymakers, and the general public.
 * [**User Forum**](forum.md)\
   Supports community engagement and discussions around the project outcomes.
 
+```{mermaid}
+%%| label: fig-tools-usecase2
+%%| fig-cap: "APEx Project Tools - User Support"
+flowchart TD ""
+    subgraph Public Environment
+      A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
+      A -->|Links to| C(Documentation<br/> Portal)
+      A -->|Links to| D(User<br/> Forum)
+    end
+
+    class A,B,C,D apexService
+    click A href "./project_portal.html" _blank
+    click B href "./geospatial_explorer.html" _blank
+    click C href "./documentation.html" _blank
+    click D href "./forum.html" _blank
+```
+
 ### Expected Benefits
 
 * Increased visibility and impact of EO projects.
@@ -56,15 +81,38 @@ help, share knowledge, and collaborate on EO applications.
 
 ### Key Components
 
-* [**User Workspace**](user_workspace.md)\
-  Secure and personalised environments allow users to store, share, and manage their data and work.
-* [**Interactive Development Environment (IDE)**](ide.md)\
-  Leveraging VS Code Server, these environments are tailored for EO tasks and provide development tools.
+* [**Project Portal**](project_portal.md)\
+  Provides dynamic instantiation using Drupal, allowing project managers to create and maintain a visually appealing and
+  informative site.
 * [**User Forum**](forum.md)\
   An on-demand service based on Discourse, facilitating user discussions, support queries, and community-driven
   solutions.
 * [**Documentation Portal**](documentation.qmd)\
   Comprehensive documentation and tutorial materials to assist users in navigating and utilising the services.
+* [**User Workspace**](user_workspace.md)\
+  Secure and personalised environments allow users to store, share, and manage their data and work.
+* [**Interactive Development Environment (IDE)**](ide.md)\
+  Leveraging VS Code Server, these environments are tailored for EO tasks and provide development tools.
+
+```{mermaid}
+%%| label: fig-tools-usecase2
+%%| fig-cap: "APEx Project Tools - User Support"
+flowchart TD ""
+    subgraph Project Environment
+      UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
+    end
+    subgraph Public Environment
+      A(Project Portal) -->|Links to| C(Documentation<br/> Portal)
+      A -->|Links to| D(User<br/> Forum)
+    end
+
+    class UW,IDE,A,C,D apexService
+    click A href "./project_portal.html" _blank
+    click C href "./documentation.html" _blank
+    click D href "./forum.html" _blank
+    click UW href "./user_workspace.html" _blank
+    click IDE href "./ide.html" _blank
+```
 
 ### Expected Benefits
 
@@ -88,6 +136,21 @@ project-specific visualisations, helping users to interpret and communicate data
   Integration of visualisations into project portals to showcase data insights.
 * [**Documentation Portal**](documentation.qmd)\
   Interactive visualisations within documentation to explain data findings and methodologies.
+
+```{mermaid}
+%%| label: fig-tools-usecase3
+%%| fig-cap: "APEx Project Tools - Data Visualization"
+flowchart TD ""
+    subgraph Public Environment
+      A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
+      A -->|Links to| C(Documentation<br/> Portal)
+    end
+
+    class A,B,C apexService
+    click A href "./project_portal.html" _blank
+    click B href "./geospatial_explorer.html" _blank
+    click C href "./documentation.html" _blank
+```
 
 ### Expected Benefits
 
@@ -114,6 +177,29 @@ providing powerful tools and environments for data processing and statistical an
 * [**Geospatial Explorer**](geospatial_explorer.md)\
   Integration with analytics tools to provide real-time visualisations of analytical results.
 
+```{mermaid}
+%%| label: fig-tools-usecase4
+%%| fig-cap: "APEx Project Tools - Data Analytics"
+flowchart TD ""
+    subgraph Project Environment
+      UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
+    end
+    subgraph Public Environment
+      A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
+      B -->|Visualizes| C(Product<br/>Catalogue)
+      A -->|Links to| C
+    end
+
+    IDE -->|Publish| C
+
+    class UW,IDE,A,B,C apexService
+    click A href "./project_portal.html" _blank
+    click B href "./geospatial_explorer.html" _blank
+    click C href "./catalog.html" _blank
+    click UW href "./user_workspace.html" _blank
+    click IDE href "./ide.html" _blank
+```
+
 ### Expected Benefits
 
 * Enhanced analytical capabilities and data-driven insights.
@@ -138,6 +224,29 @@ Supporting data processing scripts and workflows, including pre-configured tools
 Streamlined data ingestion and access to a wide range of EO datasets.
 * **[Geospatial Explorer](geospatial_explorer.md) and Web Apps**\
 Interactively visualise results.
+
+```{mermaid}
+%%| label: fig-tools-usecase5
+%%| fig-cap: "APEx Project Tools - Data Processing"
+flowchart TD ""
+    subgraph Project Environment
+      UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
+    end
+    subgraph Public Environment
+      A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
+      B -->|Visualizes| C(Product<br/>Catalogue)
+      A -->|Links to| C
+    end
+
+    IDE -->|Publish| C
+
+    class UW,IDE,A,B,C apexService
+    click A href "./project_portal.html" _blank
+    click B href "./geospatial_explorer.html" _blank
+    click C href "./catalog.html" _blank
+    click UW href "./user_workspace.html" _blank
+    click IDE href "./ide.html" _blank
+```
 
 ### Expected Benefits
 
