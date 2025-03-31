@@ -47,6 +47,9 @@ references:
 - id: openeo_remote_udp
   title: OpenEO Remote UDP extension
   url: https://github.com/Open-EO/openeo-api/tree/draft/extensions/remote-process-definition
+- id: openeo_processing_parameters
+  title: OpenEO Processing Parameters extension
+  url: https://github.com/Open-EO/openeo-api/tree/draft/extensions/processing-parameters
 - id: wms
   title: "WMS 1.3.0"
   url: https://portal.ogc.org/files/?artifact_id=14416

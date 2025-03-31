@@ -79,6 +79,12 @@ the underlying process graph. This situation may arise for two main reasons:
 * The process graph does not exist, and the process triggers an arbitrary processing system. In this case, the OGC
   Application Package approach might be a better alternative.
 
+### Custom processing parameters
+
+An openEO backend may require additional parameters to be passed to the processing system. To make the on-demand services
+run without requiring knowledge of these parameters the [@openeo_processing_parameters] extension is recommended. This is 
+not required if the backend or hosted services do not require such parameters. 
+
 ## OGC Application Package Specific Requirements
 
 EO Application Packages, defined according to the OGC Best Practice [@ap], use the Common Workflow Language (CWL) [@cwl]
