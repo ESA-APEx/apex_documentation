@@ -5,3 +5,9 @@ _build
 .venv*
 venv*
 .envrc
+**/libs/*
+**__pycache__
+**/.DS_Store
+**/.ipynb_checkpoints
+**/figure-docx
+**.docx
