@@ -85,14 +85,14 @@ The Python script below demonstrates how to obtain a token using the client cred
 simply http request that can also be performed easily via curl or other tools.
 
 ```python
-import requests
+import requests, os
 scopes = ["openid", "roles" ]
 token_response = requests.post(
     "https://auth.apex.esa.int/realms/apex/protocol/openid-connect/token",
     data={
         "grant_type": "client_credentials",
-        "client_id": "weed_catalogue_api",
-        "client_secret": "XXX",
+        "client_id": os.environ["APEX_CLIENT_ID"],
+        "client_secret": os.environ["APEX_CLIENT_SECRET"],
         "scope": " ".join(scopes),
     }
 ).json()
