@@ -34,6 +34,25 @@ with APEx.
 It is however advisable for your UDP to link back to a public git repository if available, making your open source code
 more discoverable.
 
+#### UDP versioning
+
+APEx requires you to use versioning, to ensure that changes in your algorithm are clearly communicated and visible to users.
+A good way to do this is to use [semantic versioning](https://semver.org/), which is a widely used versioning scheme.
+
+In combination with git tags, this allows you to easily track different versions of your UDP JSON, and share immutable links to
+specific versions. In addition, you can also create tags that always point to the latest development or stable version.
+
+One use case is an algorithm change that requires you to change parameters. We refer to such a change as 'backward incompatible',
+because users of the existing algorithm will not be able to switch to the new version without an update on their side.
+In such a case, you can create a new UDP version, and keep the old one available for users that are not ready to switch yet.
+Also in the UDP catalog, we recommend to keep both versions side-by-side for a certain time frame before removing the old one.
+
+A changelog is also required, to document the changes between versions. Guidance on how to keep changelogs can be found 
+[online](https://keepachangelog.com/en/1.1.0/).
+
+It is not mandatory to store your UDP JSON in the APEx git repository, especially if the project already maintains an open
+source (git) repository. The APEx repository is only a suggestion, which can be convenient if you do not have an alternative.
+
 ### How many UDPs should I write?
 
 Deciding on the granularity of your UDP is an important aspect of making your algorithm usable. There is no need to try
