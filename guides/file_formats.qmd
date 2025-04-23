@@ -2,21 +2,21 @@
 title: File format recommendations
 ---
 
-APEx interoperability guideline [PROV-REQ-01](../interoperability/requirements.md#prov-req-01) specifies the file formats
-that projects should use when publishing static data projects. 
-These guidelines complement that requirement with more detailed recommendations on the use of these file formats. Projects
-are encouraged to consult with the APEx team if they have a use case that does not fit within these guidelines.
+Within the APEx interoperability and compliance guidelines, [PROV-REQ-01](../interoperability/algohosting.md) specifies
+the file formats that projects should use when publishing static data.
+The information on this page complement that requirement with more detailed recommendations on the use of these formats.
+Projects are encouraged to consult with the APEx team if they have a use case that does not fit within these guidelines.
 
-## Cloud Optimized Geotiff
+## Cloud Optimized GeoTIFF
 
-Cloud optimized geotiff (COG) is the most widely supported format for geospatial raster data, and also one of the most
+Cloud Optimized GeoTIFF (COG) is the most widely supported format for geospatial raster data, and also one of the most
 efficient in terms of access costs. It is recommended as the default option to consider when publishing static data products.
-Especially in combination with STAC metadata, it is possible to publish self-describing FAIR compliant datasets that can
-be easily consumed by many other services.
+When combined with STAC metadata, COG can produce self-describing, FAIR-compliant datasets that are easily consumable by
+various services.
 
-### Generating cloud optimized geotiff
+### Generating Cloud Optimized GeoTIFF
 
-If you are not familiar with COG or Geotiff generation, it is recommended to format your tiff files using a recent version
+If you are not familiar with COG or GeoTIFF generation, it is recommended to format your GeoTIFF files using a recent version
 of GDAL to ensure that they are compliant:
 
 ```bash
@@ -25,34 +25,36 @@ gdal_translate world.tif world_webmerc_cog.tif -of COG
 
 ### Organizing spatiotemporal multi-band datasets
 
-Many datasets have multiple bands (or 'variables'), or have a date associated with them. 
-The general recommendation is to store a single band per tiff file, and to create STAC items with one asset per band. This
-is simply the most common layout used by many other datasets, and avoids complexities of multi-band tiffs, which are sometimes
-slightly harder to use. 
+Many datasets have multiple bands (or 'variables'), or have a date associated with them.
+The general recommendation is to store a single band per GeoTIFF file, and to create STAC items with one asset per band.
+This layout is commonly used by many other datasets, and avoids complexities of multi-band GeoTIFF files, which can be
+challenging to use.
 
-One exception in this case are 'RGB' style products, where three bands are used to represent a single image. In this case,
-it is certainly an option to create a cloud optimized geotiff with 3 bands.
+An exepction to this are the 'RGB' style products, where three bands are used to represent a single image. In this case,
+creating a Cloud Optimized GeoTIFF with three bands is an option.
 
-For associating time information, create one tiff per time stamp, and one STAC item per time stamp. The tiff format has
+For associating time information, create one GeoTIFF per timestamp, and one STAC item per timestamp. The GeoTIFF format has
 not built-in support for conveying time information, but STAC metadata is supporting this very well.
 
-## (Geo-)ZARR
+## (Geo-)Zarr
 
-Zarr is a format that is gaining traction in the geospatial community, but is not yet is widely supported as cloud optimized
-geotiff. It's main advantage is that it can store complex multi-dimensional datasets that go beyond a simple 4D (x,y,time, bands) 
-structure. Just like COG, it is also allowing efficient access in the cloud.
+Zarr is a format that is gaining traction in the geospatial community, although it is not yet as widely supported as
+Cloud Optimized GeoTIFF.
+It's main advantage lies in its ability to store complex multi-dimensional datasets that go beyond a simple 4D
+(x, y, time, bands) structure. Just like COG, Zarr allows for efficient cloud access.
 
 At time of writing, there are however these important caveats:
 
-- GeoZarr is supposed to define how to store geospatial data in Zarr format, but this is not yet ready, so also not widely supported by tooling.
-- Overview pyramids, for fast online rendering are not yet supported.
-- By design, Zarr allows for many degrees of freedom, which requires the data producer to have a good understanding of the tradeoffs.
-- By design, Zarr stores data as separate files in a directory structure, which makes it optimized for cloud access but less convenient for direct download.
+- GeoZarr aims to define how to store geospatial data in Zarr format, but this standard is not fully developed and lacks
+  widespread tooling support.
+- Overview pyramids for fast online rendering are not yet supported.
+- By design, Zarr allows for many degrees of freedom, which requires the data producer to have a good understanding of
+  the associated trade-offs.
+- By design, Zarr stores data as separate files in a directory structure, optimising cloud access but making direct
+  downloads less convenient.
 
 ## NetCDF
 
-NetCDF is a self-describing format with some properties similar to Zarr, but less optimized for cloud access. It can be convenient
-for exchanging data cubes as single files via traditional methods, but is less recommended for convenient sharing of large
-datasets, in which either COG or Zarr provide better options.
-
-
+NetCDF is a self-describing format with some properties similar to Zarr, but less optimised for cloud access. It can be useful
+for exchanging data cubes as single files through traditional methods. However it is less recommended for convenient
+sharing of large datasets, for which either COG or Zarr provide better options.
