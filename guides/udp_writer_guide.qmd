@@ -53,6 +53,11 @@ A changelog is also required, to document the changes between versions. Guidance
 It is not mandatory to store your UDP JSON in the APEx git repository, especially if the project already maintains an open
 source (git) repository. The APEx repository is only a suggestion, which can be convenient if you do not have an alternative.
 
+As an example, the image below shows how one project effectively used git tags to version multiple UDP's
+that are hosted on GitHub. In this case, these tags exist alongside regular software version tags!
+
+![git tags example](./images/versioning_tags.png){width=75%}
+
 ### How many UDPs should I write?
 
 Deciding on the granularity of your UDP is an important aspect of making your algorithm usable. There is no need to try
