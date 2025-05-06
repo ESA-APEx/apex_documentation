@@ -18,10 +18,10 @@ environments provide the computational power and tools necessary for complex ana
 streamlined through secure, scalable environments, ensuring that users can handle large volumes of EO data efficiently.
 
 It is important to highlight that the APEx Project Tools can be combined in different ways to create a flexible
-collaborative project environments. This gives projects the flexibility to adapt the tools based on their needs. For
+collaborative project environment. This gives projects the flexibility to adapt the tools based on their needs. For
 example, they can choose to make the project portal as their main entry point for both project members and their
-community, linking to the different APEx tools from within the main website. Alternatevely, projects can decide to only
-keep the project portal for public communication and dissimenation, while having the user workspaces only visible for
+community, linking to the different APEx tools from within the main website. Alternatively, projects can decide to only
+keep the project portal for public communication and dissemination, while having the user workspaces only visible for
 the project members. In essence, the APEx Project Tools provide an a la carte approach for setting up and configuring
 your project environment based on your needs.
 
