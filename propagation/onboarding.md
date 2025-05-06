@@ -25,7 +25,7 @@ further integration into the APEx [Algorithm Services Catalogue](#apex-algorithm
 
 :::{.callout-tip}
 A full list of the known APEx-compliant algorithm hosting platforms is
-available [here](index.qmd#what-are-the-platforms-to-choose-from).
+available [here](ondemandservices.qmd#which-option-to-choose).
 :::
 
 ### Automated Testing and Benchmarking
