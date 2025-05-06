@@ -12,7 +12,7 @@ platforms is expected to grow as APEx evolves.
 ### openEO UDP
 
 * [openEO platform](https://openeo.cloud)
-* [CDSE openEO federation](https://dataspace.copernicus.eu)
+* [CDSE openEO federation](https://documentation.dataspace.copernicus.eu/APIs/openEO/federation/openeo_federation.html)
 
 ### OGC Processes/Application Package
 
