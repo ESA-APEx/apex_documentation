@@ -18,10 +18,10 @@ environments provide the computational power and tools necessary for complex ana
 streamlined through secure, scalable environments, ensuring that users can handle large volumes of EO data efficiently.
 
 It is important to highlight that the APEx Project Tools can be combined in different ways to create a flexible
-collaborative project environments. This gives projects the flexibility to adapt the tools based on their needs. For
+collaborative project environment. This gives projects the flexibility to adapt the tools based on their needs. For
 example, they can choose to make the project portal as their main entry point for both project members and their
-community, linking to the different APEx tools from within the main website. Alternatevely, projects can decide to only
-keep the project portal for public communication and dissimenation, while having the user workspaces only visible for
+community, linking to the different APEx tools from within the main website. Alternatively, projects can decide to only
+keep the project portal for public communication and dissemination, while having the user workspaces only visible for
 the project members. In essence, the APEx Project Tools provide an a la carte approach for setting up and configuring
 your project environment based on your needs.
 
@@ -50,7 +50,7 @@ including stakeholders, policymakers, and the general public.
 
 ```{mermaid}
 %%| label: fig-tools-usecase2
-%%| fig-cap: "APEx Project Tools - User Support"
+%%| fig-cap: "APEx Project Tools - Project Promotion"
 flowchart TD ""
     subgraph Public Environment
       A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
@@ -131,7 +131,7 @@ project-specific visualisations, helping users to interpret and communicate data
 
 * [**Geospatial Explorer**](geospatial_explorer.md)\
   Functional enhancements to provide interactive and real-time data visualisations, supporting both raster and tabular
-  data visualisation.
+  data visualisations.
 * [**Project Portal**](project_portal.md)\
   Integration of visualisations into project portals to showcase data insights.
 * [**Documentation Portal**](documentation.qmd)\
