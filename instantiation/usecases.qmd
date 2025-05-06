@@ -50,7 +50,7 @@ including stakeholders, policymakers, and the general public.
 
 ```{mermaid}
 %%| label: fig-tools-usecase2
-%%| fig-cap: "APEx Project Tools - User Support"
+%%| fig-cap: "APEx Project Tools - Project Promotion"
 flowchart TD ""
     subgraph Public Environment
       A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
@@ -131,7 +131,7 @@ project-specific visualisations, helping users to interpret and communicate data
 
 * [**Geospatial Explorer**](geospatial_explorer.md)\
   Functional enhancements to provide interactive and real-time data visualisations, supporting both raster and tabular
-  data visualisation.
+  data visualisations.
 * [**Project Portal**](project_portal.md)\
   Integration of visualisations into project portals to showcase data insights.
 * [**Documentation Portal**](documentation.qmd)\
