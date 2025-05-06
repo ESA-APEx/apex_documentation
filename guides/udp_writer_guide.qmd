@@ -88,6 +88,12 @@ want to perform additional processing steps before generating the result. So hav
 as the final output is recommended unless if your service wants to enforce specific settings on how the output is to be
 generated.
 
+### Include default parameters within the UDP
+
+Via the [@openeo_processing_parameters] extension, platform specific parameters (also known as `job options`) can be 
+included directly in the process definition. While the primary recommendation is to avoid using platform specific parameters,
+it is nevertheless a very good idea to include them when they are necessary.
+
 ### UDP documentation
 
 The description of your UDP should be quite extensive if you want users to be able to easily assess if it's suitable for
@@ -152,18 +158,20 @@ allowing to understand what the link is about.
   "id": "max_ndvi_composite",
   "type": "Feature",
   "conformsTo": [
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core",
+    "https://apex.esa.int/core/openeo-udp"
   ],
   "properties": {
     "created": "2024-09-06T00:00:00Z",
     "updated": "2024-09-06T00:00:00Z",
-    "type": "apex_algorithm",
+    "type": "service",
     "title": "Max NDVI Composite based on Sentinel-2 data",
     "description": "A compositing algorithm for Sentinel-2 L2A data, ranking observations by their maximum NDVI.",
     "cost_estimate": 1,
     "cost_unit": "platform credits per km\u00b2",
     "keywords": [
-      "vegetation"
+      "vegetation",
+      "ndvi
     ],
     "language": {
       "code": "en-US",
@@ -214,8 +222,8 @@ allowing to understand what the link is about.
     ],
     "themes": [ {
         "concepts": [
-          { "id": "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)" },
-          { "id": "Sentinel-2 MSI" }
+          { "id": "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)", url: "https://gcmd.earthdata.nasa.gov/kms/concept/2297a00a-80f5-466e-b28e-b9ca42562d3f?format=json" },
+          { "id": "Sentinel-2 MSI",  "url": "https://gcmd.earthdata.nasa.gov/kms/concept/fc57a9a0-a287-4bcf-a517-20811b55596b?format=json" }
         ],
         "scheme": "https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
       }],
@@ -227,7 +235,7 @@ allowing to understand what the link is about.
   "linkTemplates": [],
   "links": [
     {
-      "rel": "openeo-process",
+      "rel": "application",
       "type": "application/json",
       "title": "openEO Process Definition",
       "href": "https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/max_ndvi_composite/openeo_udp/examples/max_ndvi_composite/max_ndvi_composite.json"
@@ -239,10 +247,16 @@ allowing to understand what the link is about.
       "href": "https://openeofed.dataspace.copernicus.eu"
     },
     {
-      "rel": "example",
+      "rel": "example-output",
       "type": "application/json",
       "title": "Example output",
       "href": "https://radiantearth.github.io/stac-browser/#/external/s3.waw3-1.cloudferro.com/swift/v1/APEx-examples/max_ndvi_denmark/collection.json"
+    },
+    {
+      "rel": "webapp",
+      "type": "text/html",
+      "title": "OpenEO Web Editor",
+      "href": "https://editor.openeo.org/?wizard=UDP&wizard~process=max_ndvi_composite&wizard~processUrl=https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/main/algorithm_catalog/vito/max_ndvi_composite/openeo_udp/max_ndvi_composite.json&server=https://openeofed.dataspace.copernicus.eu"
     }
   ]
 }
