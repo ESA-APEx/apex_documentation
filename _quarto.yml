@@ -34,7 +34,7 @@ website:
       - href: instantiation/index.md
         text: Project Tools
         contents:
-          - href: instantiation/usecases.md
+          - href: instantiation/usecases.qmd
             text: Use Cases
           - href: instantiation/geospatial_explorer.md
           - href: instantiation/project_portal.md
@@ -69,6 +69,8 @@ website:
           text: Ingesting STAC metadata in APEx Product Catalogue
         - href: guides/catalog_openeo.ipynb
           text: Linking APEx STAC catalogue with an openEO service
+        - href: guides/file_formats.qmd
+          text: File format recommendations
 
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines

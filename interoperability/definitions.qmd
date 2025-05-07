@@ -12,15 +12,15 @@ visually demonstrates the interconnections between these concepts.
 flowchart TD
     EO_PROJECT("EO Project")
     ALGORITHM("Application Algorithm Definition")
-    ALGORITHM_GUIDELINES("Algorithm Provider Guidelines")
-    OPENEO_OGC("openEO API or OGC Processes API")
+    ALGORITHM_GUIDELINES("Algorithm Provider</br> Guidelines")
+    OPENEO_OGC("openEO API or <br/>OGC Processes API")
     LAST_MILE("Last Mile Application")
     HOSTING_PLATFORM("Algorithm Hosting Platform")
     OPERATOR("Platform Operator")
-    PLATFORM_GUIDELINES("Algorithm Hosting Platform Guidelines")
-    CATALOGUE("APEx Algorithm Services Catalogue")
+    PLATFORM_GUIDELINES("Algorithm Hosting<br/> Platform Guidelines")
+    CATALOGUE("APEx Algorithm Services<br/> Catalogue")
     APEX("APEx Consortium")
-    
+
 
     EO_PROJECT --> | owns | ALGORITHM
     ALGORITHM --> | adheres to | ALGORITHM_GUIDELINES
@@ -137,7 +137,8 @@ outside of the APEx consortium, their role is integral to the success of APEx, f
 and user satisfaction.
 
 ### Last Mile Applications
-A 'last mile' application, as seen from the EO perspective, bridges the final gap between the user at the end of the 
+
+A 'last mile' application, as seen from the EO perspective, bridges the final gap between the user at the end of the
 value chain, and the web service APIs that offer EO-derived information. This could, for instance, be the integration
 of parcel statistics into the field management software of a farmer. In the ESA context, Green Transition Information
 Factories can be considered examples of last mile applications.

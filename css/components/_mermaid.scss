@@ -6,11 +6,21 @@ $mermaid-edge-color: var(--lightgreen);
 $mermaid-label-bg-color: var(--white);
 
 
+.edgeLabel {
+  &:not(:has(p)) {
+    display: none !important;
+  }
+}
+
 .labelBkg {
-  background-color: rgb(255 255 255 / 90%) !important;
-  padding: 0.1rem 0.25rem;
+  background-color: #d1d1d1 !important;
+  padding: 0.25rem 0.5rem;
   border-radius: 5px;
   font-size: small;
+
+  p {
+    background-color: transparent !important;
+  }
 }
 
 

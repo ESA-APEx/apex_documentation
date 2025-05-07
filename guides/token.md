@@ -68,3 +68,33 @@ import liboidcagent as agent
 
 token, issuer, expires_at = agent.get_token_response("apex_project_a")
 ```
+
+
+## Machine to machine login via client credentials
+
+While the interactive login is the most secure option, sometimes you require a long running script script or service to 
+interact with an instantiation service like the catalog. In this case, you can use the client credentials flow, which is
+basically a username/password login for machines. 
+
+It is recommended to create such client credentials for each service separately, with minimal privileges. This allows you
+to retain granular access control, and to revoke access to a specific service without affecting others.
+
+To obtain the client credentials, you currently need to contact the APEx support team.
+
+The Python script below demonstrates how to obtain a token using the client credentials flow, which comes down to a very
+simply http request that can also be performed easily via curl or other tools.
+
+```python
+import requests, os
+scopes = ["openid", "roles" ]
+token_response = requests.post(
+    "https://auth.apex.esa.int/realms/apex/protocol/openid-connect/token",
+    data={
+        "grant_type": "client_credentials",
+        "client_id": os.environ["APEX_CLIENT_ID"],
+        "client_secret": os.environ["APEX_CLIENT_SECRET"],
+        "scope": " ".join(scopes),
+    }
+).json()
+access_token = token_response["access_token"]
+```
