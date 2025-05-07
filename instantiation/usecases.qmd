@@ -172,6 +172,8 @@ providing powerful tools and environments for data processing and statistical an
   VS Code Server.
 * [**User Workspace**](user_workspace.md)\
   Secure and scalable environments for conducting extensive data analysis.
+* [**Project Portal**](project_portal.md)\
+  Integration of visualisations into project portals to showcase data insights.
 * [**Product Catalogue**](catalog.qmd)\
   A STAC catalogue providing easy access to EO datasets and streamlining the data ingestion process.
 * [**Geospatial Explorer**](geospatial_explorer.md)\
@@ -220,6 +222,8 @@ effectively.
 Providing secure environments for executing data processing tasks on existing cloud-based processing platforms.
 * [**Interactive Development Environment (IDE)**](ide.md)\
 Supporting data processing scripts and workflows, including pre-configured tools for EO tasks.
+* [**Project Portal**](project_portal.md)\
+  Integration of visualisations into project portals to showcase data insights.
 * [**Product Catalogue**](catalog.qmd)\
 Streamlined data ingestion and access to a wide range of EO datasets.
 * **[Geospatial Explorer](geospatial_explorer.md) and Web Apps**\
