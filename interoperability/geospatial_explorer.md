@@ -99,6 +99,8 @@ Datasets that have classifications (such as land use) should have key:value enti
 }
 ```
 
+![worldcover_bar_chart_example](./images/worldcover_bar_chart_example.png){width=75%}
+
 Datasets that do not have classifications (such as a raster showing soil organic carbon) should contain a selection of the following entries:
  - mean
  - min
@@ -114,6 +116,7 @@ These values will be rendered as a table.
 }
 ```
 
+![worldsoils_table_example](./images/worldsoils_table_example.png){width=75%}
 
 ## Configuration Schema
 
@@ -211,12 +214,11 @@ An array of objects that configures the data to be displayed in the layer. If th
 Each object currently supports the following properties:
 
 * `url`: A required URL string that points to the dataset's publicly available resource.
-* `format`: A required string that identifies what kind of dataset is requested. This can be one of the following: '
-  wms', 'wmts', 'cog', 'xyz', 'wfs' or 'geojson'.
+* `format`: A required string that identifies what kind of dataset is requested. This can be one of the following: `wms`, `wmts`, `cog`, `xyz`, `wfs` or `geojson`.
 * `type`: An optional string that can be used to further define the type of layer the source represents. e.g data, statistical, swipe
-* `layers`: Only required for sources of type: 'wms' and 'wmts'. A string that describes the layer to be requested from
+* `layers`: Only required for sources of format: `wms` and `wmts`. A string that describes the layer to be requested from
   the external service.
-* `typeName`: Only required for sources of type: 'wfs'. A string that describes the type to be requested from the
+* `typeName`: Only required for sources of format: `wfs`. A string that describes the type to be requested from the
   external service.
 * `zIndex`: Optional integer that determines rendering order within the map. It can be used to override the default
   rendering of Open Layers.
@@ -228,9 +230,9 @@ Each object currently supports the following properties:
   the map.
 * `baseSources`: A required array of strings for sources with a `swipe` type. Each string should match the name property of another source. Describes the layers to be render on the "left" side of a comparison layer.
 * `clippedSource`: A required string for sources with a `swipe` type. The string should match the name property of another source. Describes the layer to be render on the "right" side of a comparison layer.
-* `images`: Only required for sources of type: 'cog'. An array of objects that contain a URL property pointing to a COG
+* `images`: Only required for sources of format: `cog`. An array of objects that contain a URL property pointing to a COG
   resource. Replaces the 'url' property for this source type. Allows loading multiple GeoTiffs into one layer.
-* `normalise`: Only required for sources of type: 'cog'. Boolean that configures the map to normalise the raster pixel
+* `normalise`: Only required for sources of format: `cog`. Boolean that configures the map to normalise the raster pixel
   values to between 0 and 1. False by default.
 * `isBaseLayer`: Optional boolean that determines if the layer should be treated as a base layer. Base layers are always active and cannot be toggled.
 * `level`: A required integer for sources of type `statistical`. Ideally starting at 0, this integer describes the hierachy of statistical sources. Higher integers should represent more complex and granular vector datasets. Used to provide the statistics feature UI and mantain performance for large vector datasets.
