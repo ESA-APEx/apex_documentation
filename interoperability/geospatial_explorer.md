@@ -6,17 +6,17 @@ This section outlines the requirements for the interoperability of the APEx Geos
 requirements must be met to ensure the correct configuration and operation of a dashboard and its instantiation.
 
 A technical challenge of the Geospatial Explorer service being provided by APEx is that it is to be instantiated on
-demand, with functional requirements potentially varying amongst each service. A proposed solution to this challenge is
-the use of a well-defined configuration schema, provided in the form of JSON, that outlines the interactive features and
+demand, with functional requirements potentially varying amongst each service.The geospatial explorer makes ue of a well-defined configuration schema, provided in the form of JSON, that outlines the interactive features and
 data sources to be used.
 
-This approach will allow APEx to define and update the schema required in the interoperability guidelines, which will
-then enable requesters of the service to configure the Geospatial Explorer on an individual project level with minimal
+This approach allows APEx to define and update the schema required in the interoperability guidelines, which will
+then enables requesters of the service to configure the Geospatial Explorer on an individual project level with minimal
 external intervention.
 
-The schema will be versioned as it will change throughout the APEx project as the functional capabilities of the
-Geospatial Explorer mature. This does allow for improvements and extra features to be easily added to the application,
+The schema is versioned as it will change throughout the APEx project as the functional capabilities of the
+Geospatial Explorer matures. This does allow for improvements and extra features to be easily added to the application,
 and best practices shall be followed to avoid any breaking changes between versions.
+
 
 ## Requirements
 
@@ -49,6 +49,8 @@ and best practices shall be followed to avoid any breaking changes between versi
 |                 | - An inline configuration using either the 'Swatch' or 'Gradient' outlined in the schema.                                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                                                                                 |
 |                 | - A URL to a browser supported image resource (PNG, JPEG, SVG).                                                                                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                 |
 |                 | - A WMS [@wms] getLegendGraphic request (If supported by a WMS source).                                                                                                                                                                                                            |                                                                                                                                                                                                                                                                                                                                                                 |
++-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| EXPLORER-REQ-08 | Statistical datasets should be configured by providing public URLs to either: GeoJson or Flatgeobuf.                                                                                                                                                                               | The statistics feature is complex due to the architecture of the Geospatial Explorer. One or more files containing vector features that describe an area and the relevant statistics for the area can be added to the configuration of an explorer instance. These features require a specific structure of properties that can be found in the documentation.  |
 +-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 : Interoperability requirements for the Geospatial Explorer application {#tbl-geoexplorer}{tbl-colwidths="[25,75]"}
 
@@ -123,19 +125,36 @@ This currently supports the following properties:
   the layer.
 * `legend`: An optional object that can be configured to show static or dynamic legend elements within the layer card
   when active.
-* `attribution`: An optional object to render some text or a link for use with attribution of layer datasets.
 
 ##### Interface Group - `interfaceGroup`
 
 An optional string that is used to identify which interface group this layer belongs to.
 
+#### Metadata - `meta`
+
+An objectg that contains information describing the data source. This is generally used for information that would be used in multiple places across the application such as: units used to describe data values, the minimum and maximum value for use in UI/Visualisation calculations, attribution etc.
+
+This currently supports the following properties:
+
+* `attribution`: An optional object to render some text or a link for use with attribution of layer datasets.
+* `min`: An interger for the lower limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
+* `max`: An interger for the upper limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
+* `units`: An optional string that desribes the units of any values derived from the data. Used in legends and statistics panels.
+* `description`: An optional string that describes the dataset.
+* `startColor`: A string describing a valid hex or RGB/A colour value. This is used to render colour ramps and legends.
+* `categories`: An array of objects that contains a `lablel` (string) property and a `color` (string) property. Describes classifications within datasets such as land usage. Used to create swatch legends and statistics visualisation.
+
+
 #### Data - `data`
 
-An object that configures the data to be displayed in the layer. This currently supports the following properties:
+An array of objects that configures the data to be displayed in the layer. If the length is more than one a layer group will be created and all sources will be treated as one layer.
+
+Each object currently supports the following properties:
 
 * `url`: A required URL string that points to the dataset's publicly available resource.
-* `type`: A required string that identifies what kind of dataset is requested. This can be one of the following: '
+* `format`: A required string that identifies what kind of dataset is requested. This can be one of the following: '
   wms', 'wmts', 'cog', 'xyz', 'wfs' or 'geojson'.
+* `type`: An optional string that can be used to further define the type of layer the source represents. e.g data, statistical, swipe
 * `layers`: Only required for sources of type: 'wms' and 'wmts'. A string that describes the layer to be requested from
   the external service.
 * `typeName`: Only required for sources of type: 'wfs'. A string that describes the type to be requested from the
@@ -148,326 +167,16 @@ An object that configures the data to be displayed in the layer. This currently 
   is supported (and doesn't match the map's configured projection), it will attempt to reproject the data.
 * `style`: Open Layers style object that is passed through to the library to modify the rendering of the layer within
   the map.
-* `normalise`: Only required for sources of type: 'cog'. Boolean that configures the map to normalise the raster pixel
-  values to between 0 and 1. False by default.
+* `baseSources`: A required array of strings for sources with a `swipe` type. Each string should match the name property of another source. Describes the layers to be render on the "left" side of a comparison layer.
+* `clippedSource`: A required string for sources with a `swipe` type. The string should match the name property of another source. Describes the layer to be render on the "right" side of a comparison layer.
 * `images`: Only required for sources of type: 'cog'. An array of objects that contain a URL property pointing to a COG
   resource. Replaces the 'url' property for this source type. Allows loading multiple GeoTiffs into one layer.
+* `normalise`: Only required for sources of type: 'cog'. Boolean that configures the map to normalise the raster pixel
+  values to between 0 and 1. False by default.
+* `isBaseLayer`: Optional boolean that determines if the layer should be treated as a base layer. Base layers are always active and cannot be toggled.
+* `level`: A required integer for sources of type `statistical`. Ideally starting at 0, this integer describes the hierachy of statistical sources. Higher integers should represent more complex and granular vector datasets. Used to provide the statistics feature UI and mantain performance for large vector datasets.
 
-## Example Schema
+## Example Configurations
 
-The following is an example of a working JSON file that may be used to configure the application.
+Numerous example configurations can be found in the [APEx Geospatial Explorer Configurations](https://github.com/ESA-APEx/apex_geospatial_explorer_configs) repository on github.
 
-::: {.callout-warning}
-The API is an early draft that will be subject to significant ongoing changes. The following is for illustrative
-purposes only.
-:::
-
-```
-{
-    "layout": {
-        "navigation": {
-            "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
-            "title": "APEx Geospatial Explorer"
-        }
-    },
-    "interfaceGroups": [
-        "Vectors",
-        "Landcover",
-        "Basemaps",
-        "STAC"
-    ],
-    "exclusivitySets": [
-        "Landcover"
-    ],
-    "sources": [
-        {
-            "name": "Open Street Map",
-            "isActive": true,
-            "layout": {
-                "interfaceGroup": "Basemaps"
-            },
-            "data": {
-                "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                "type": "xyz",
-                "zIndex": 0
-            }
-        },
-        {
-            "name": "WMS Layer",
-            "isActive": false,
-            "layout": {
-                "layerCard": {
-                    "toggleable": true,
-                    "controls": [
-                        "zoomToCenter"
-                    ],
-                    "legend": {
-                        "type": "swatch",
-                        "visible": true,
-                        "data": [
-                            {
-                                "color": "rgb(0, 100, 0)",
-                                "label": "Tree cover"
-                            },
-                            {
-                                "color": "rgb(255, 187, 34)",
-                                "label": "Shrubland"
-                            },
-                            {
-                                "color": "rgb(255, 255, 76)",
-                                "label": "Grassland"
-                            },
-                            {
-                                "color": "rgb(240, 150, 255)",
-                                "label": "Cropland"
-                            },
-                            {
-                                "color": "rgb(255, 0, 0)",
-                                "label": "Built up"
-                            },
-                            {
-                                "color": "rgb(180, 180, 180)",
-                                "label": "Bare"
-                            },
-                            {
-                                "color": "rgb(240, 240, 240)",
-                                "label": "Snow and ice"
-                            },
-                            {
-                                "color": "rgb(0, 100, 200)",
-                                "label": "Permanent water bodies"
-                            },
-                            {
-                                "color": "rgb(0, 150, 160)",
-                                "label": "Herbaceous wetland"
-                            },
-                            {
-                                "color": "rgb(0, 207, 117)",
-                                "label": "Mangroves"
-                            },
-                            {
-                                "color": "rgb(250, 230, 160)",
-                                "label": "Moss and lichen"
-                            }
-                        ]
-                    }
-                },
-                "interfaceGroup": "Landcover"
-            },
-            "data": {
-                "url": "https://services.terrascope.be/wms/v2",
-                "layers": "WORLDCOVER_2021_MAP",
-                "exclusivitySet": "Landcover",
-                "zIndex": 2,
-                "type": "wms"
-            }
-        },
-        {
-            "name": "WMTS Layer",
-            "isActive": false,
-            "layout": {
-                "layerCard": {
-                    "toggleable": true,
-                    "controls": [
-                        "zoomToCenter"
-                    ],
-                    "legend": {
-                        "type": "swatch",
-                        "visible": true,
-                        "data": [
-                            {
-                                "color": "rgb(0, 100, 0)",
-                                "label": "Tree cover"
-                            },
-                            {
-                                "color": "rgb(255, 187, 34)",
-                                "label": "Shrubland"
-                            },
-                            {
-                                "color": "rgb(255, 255, 76)",
-                                "label": "Grassland"
-                            },
-                            {
-                                "color": "rgb(240, 150, 255)",
-                                "label": "Cropland"
-                            },
-                            {
-                                "color": "rgb(255, 0, 0)",
-                                "label": "Built up"
-                            },
-                            {
-                                "color": "rgb(180, 180, 180)",
-                                "label": "Bare"
-                            },
-                            {
-                                "color": "rgb(240, 240, 240)",
-                                "label": "Snow and ice"
-                            },
-                            {
-                                "color": "rgb(0, 100, 200)",
-                                "label": "Permanent water bodies"
-                            },
-                            {
-                                "color": "rgb(0, 150, 160)",
-                                "label": "Herbaceous wetland"
-                            },
-                            {
-                                "color": "rgb(0, 207, 117)",
-                                "label": "Mangroves"
-                            },
-                            {
-                                "color": "rgb(250, 230, 160)",
-                                "label": "Moss and lichen"
-                            }
-                        ]
-                    }
-                },
-                "interfaceGroup": "Landcover"
-            },
-            "data": {
-                "url": "https://services.terrascope.be/wmts/v2",
-                "layers": "WORLDCOVER_2021_MAP",
-                "exclusivitySet": "Landcover",
-                "zIndex": 2,
-                "type": "wmts"
-            }
-        },
-        {
-            "name": "GeoJSON Layer",
-            "isActive": false,
-            "layout": {
-                "layerCard": {
-                    "toggleable": true
-                },
-                "interfaceGroup": "Vectors"
-            },
-            "data": {
-                "url": "https://dataworks.calderdale.gov.uk/download/24qmx/p18/Public%20Rights%20of%20Way%20-%20Jan%202022%20-%20JSON.json",
-                "zIndex": 10,
-                "type": "geojson"
-            }
-        },
-        {
-            "name": "WFS Layer",
-            "isActive": false,
-            "layout": {
-                "layerCard": {
-                    "toggleable": true,
-                    "controls": [
-                        "zoomToCenter"
-                    ]
-                },
-                "interfaceGroup": "Vectors"
-            },
-            "data": {
-                "url": "http://ogc.bgs.ac.uk/digmap625k_gsml_cgi_gs/wfs",
-                "zIndex": 10,
-                "type": "wfs",
-                "typeName": "gsmlp:GeologicUnitView"
-            }
-        },
-        {
-            "name": "GTIF - Above Ground Biomass",
-            "isActive": false,
-            "layout": {
-                "layerCard": {
-                    "toggleable": true,
-                    "attribution": {
-                        "text": "Forest Carbon Monitoring",
-                        "url": "https://www.forestcarbonplatform.org/"
-                    },
-                    "legend": {
-                        "visible": true,
-                        "type": "gradient",
-                        "data": {
-                            "startColor": "rgb(255, 255, 255)",
-                            "endColor": "rgb(0, 100, 0)"
-                        }
-                    }
-                }
-            },
-            "data": {
-                "zIndex": 3,
-                "type": "cog",
-                "normalize": false,
-                "images": [
-                    {
-                        "url": "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/FCM/v2/JR/FCM_AGB-2021_Austria_20m_EPSG3857-COG.tif"
-                    }
-                ],
-                "style": {
-                    "color": [
-                        "interpolate",
-                        [
-                            "linear"
-                        ],
-                        [
-                            "band",
-                            1
-                        ],
-                        0,
-                        "rgba(0, 0, 0, 0)",
-                        1,
-                        "rgb(255, 255, 255)",
-                        100,
-                        "rgb(0, 100, 0)"
-                    ]
-                }
-            }
-        },
-        {
-            "name": "STAC Item",
-            "isActive": false,
-            "layout": {
-                "layerCard": {
-                    "toggleable": true
-                },
-                "interfaceGroup": "STAC"
-            },
-            "data": {
-                "url": "https://s3.us-west-2.amazonaws.com/sentinel-cogs/sentinel-s2-l2a-cogs/10/T/ES/2022/7/S2A_10TES_20220726_0_L2A/S2A_10TES_20220726_0_L2A.json",
-                "zIndex": 5,
-                "type": "stac"
-            }
-        },
-        {
-            "name": "World Soil",
-            "isActive": false,
-            "layout": {
-                "layerCard": {
-                    "toggleable": true
-                }
-            },
-            "data": {
-                "zIndex": 3,
-                "projection": "EPSG:3035",
-                "type": "cog",
-                "normalize": false,
-                "images": [
-                    {
-                        "url": "http://localhost:5173/europe_aggr-orgc_00-020_mean_100_201803-202010.tif"
-                    }
-                ],
-                "style": {
-                    "color": [
-                        "interpolate",
-                        [
-                            "linear"
-                        ],
-                        [
-                            "band",
-                            1
-                        ],
-                        0,
-                        "rgba(0, 0, 0, 0)",
-                        22,
-                        "rgb(10,10,40)",
-                        5344,
-                        "rgb(173,216,230)"
-                    ]
-                }
-            }
-        }
-    ]
-}
-```
