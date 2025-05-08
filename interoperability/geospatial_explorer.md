@@ -56,6 +56,65 @@ and best practices shall be followed to avoid any breaking changes between versi
 
 (*) The XYZ approach refers to a de facto API standard for URL structuring (Z = zoom level, X and Y = grid references). While there is no dedicated specification for XYZ, it is widely used (e.g., [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Raster_tile_providers)).
 
+## Format Specification & Guidelines
+
+### Cloud Optimized GeoTiff (COG)
+
+When generating Cloud Optimised GeoTIFFs, it is recommended to use the GoogleMapsCompatible tiling scheme—typically 256x256 pixel tiles aligned to a global grid—and to store the image in the Web Mercator projection (EPSG:3857). The BitsPerSample field must accurately reflect the data format. Overviews are essential for performance, and should be generated using downsampling by factors of two until the image dimensions are the size of a tile or smaller. These overviews should also be tiled and placed after the main image data to conform with the COG specification. An example command line invocation using GDAL would be:
+```
+gdal_translate <src> <dest> -of COG -co TILING_SCHEME=GoogleMapsCompatible
+```
+
+### Statistics (Vector Layers)
+
+The statistics feature expects vector layers that are provided in a format that can be parsed to a feature collection following the [GeoJSON specification](https://datatracker.ietf.org/doc/html/rfc7946). Currently tested and supported formats are GeoJSON and Flatgeobuf.
+Flatgeobuf should be used where the statistical data is a large size as this allows for streaming of the relevant features without having to download the full dataset, increasing performance.
+
+Statistics should be contained within the properties entry of each feature. Each feature must contain the following properties:
+
+  * `id` - A short unique id string.
+  * `name` - A description label for the feature to be shown to users.
+  * `level` - An integer that describes the features geographical hierarchy. This should be contigious with parent and child features.
+  * `children` - A string based comma seperated list containing the `id` of all child features.
+
+Datasets that have classifications (such as land use) should have key:value entires consiting of 'name':'value' and an entry with a key of 'classifications' with a value consisting of a string based comma seperated list containing all the keys for the classifications and a 'total' key with the sum of all other values. This will allow for correctly rendering bar charts and pie charts.
+
+```
+{
+  Bare / sparse vegetation: 3349.349614217657,
+  Built-up: 18474.280639104116
+  Cropland: 155067.6934300016
+  Grassland: 140178.79417018566
+  Herbaceous wetland: 1612.828666906516
+  Mangroves: 479.46053523623897
+  Moss and lichen: 499.40601429089236
+  Permanent water bodies: 8969.837211370474
+  Shrubland: 7342.96093361589
+  Snow and ice: 495.7695064816955
+  Tree cover: 301783.0035618253
+  Unknown: 1.7258467103820294
+  total: 638255.1101299465
+  classifications: "Tree cover,Shrubland,Grassland,Cropland,Built-up,Bare / sparse vegetation,Snow and ice,
+  Permanent water bodies,Herbaceous wetland,Mangroves,Moss and lichen,Unknown"
+}
+```
+
+Datasets that do not have classifications (such as a raster showing soil organic carbon) should contain a selection of the following entries:
+ - mean
+ - min
+ - max
+
+These values will be rendered as a table.
+
+```
+{
+  mean: 437.94353402030356
+  min: 60
+  max: 4410
+}
+```
+
+
 ## Configuration Schema
 
 The service configuration will be based on a schema that provides administrators with the expected structure and
