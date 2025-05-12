@@ -108,7 +108,7 @@ service providers to easily host their applications on a compatible hosting plat
 An OGC Application Package is a good choice when you have an existing piece of software that you want to make
 available as a service and do not aim to make substantial changes. In effect, it is a packaged version of your software,
 using (Docker) containers, which is a well-known technology for most IT professionals. A large amount of existing EO
-applications are known to already use containers. The container is invoked by a workflow written in the ‘common workflow
+applications is known to already use containers. The container is invoked by a workflow written in the ‘common workflow
 language’ (CWL) [@cwl], which is a thin wrapper around your software.
 
 If concepts like containers are already familiar to the project, and they prefer to have full control and responsibility

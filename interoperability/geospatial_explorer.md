@@ -61,7 +61,7 @@ and best practices shall be followed to avoid any breaking changes between versi
 
 ### Cloud Optimized GeoTiff (COG)
 
-When generating Cloud Optimised GeoTIFFs, it is recommended to use the GoogleMapsCompatible tiling scheme—typically 256x256 pixel tiles aligned to a global grid—and to store the image in the Web Mercator projection (EPSG:3857). The BitsPerSample field must accurately reflect the data format. Overviews are essential for performance and should be generated using downsampling by factors of two until the image dimensions are the size of a tile or smaller. These overviews should also be tiled and placed after the main image data to conform with the COG specification. An example command line invocation using GDAL would be:
+When generating Cloud Optimised GeoTiffs, it is recommended to use the GoogleMapsCompatible tiling scheme—typically 256x256 pixel tiles aligned to a global grid—and to store the image in the Web Mercator projection (EPSG:3857). The BitsPerSample field must accurately reflect the data format. Overviews are essential for performance and should be generated using downsampling by factors of two until the image dimensions are the size of a tile or smaller. These overviews should also be tiled and placed after the main image data to conform with the COG specification. An example command line invocation using GDAL would be:
 ```
 gdal_translate <src> <dest> -of COG -co TILING_SCHEME=GoogleMapsCompatible
 ```
