@@ -68,8 +68,8 @@ gdal_translate <src> <dest> -of COG -co TILING_SCHEME=GoogleMapsCompatible
 
 ### Statistics (Vector Layers)
 
-The statistics feature expects vector layers that are provided in a format that can be parsed to a feature collection following the [GeoJSON specification](https://datatracker.ietf.org/doc/html/rfc7946). Currently tested and supported formats are GeoJSON and Flatgeobuf.
-Flatgeobuf should be used where the statistical data is a large size as this allows for streaming of the relevant features without having to download the full dataset, increasing performance.
+The statistics feature expects vector layers that are provided in a format that can be parsed to a feature collection following the [GeoJSON specification](https://datatracker.ietf.org/doc/html/rfc7946). Currently tested and supported formats are GeoJSON[@geojson] and FlatGeobuf[@flatgeobuf].
+FlatGeobuf[@flatgeobuf] should be used where the statistical data is a large size as this allows for streaming of the relevant features without having to download the full dataset, increasing performance.
 
 Statistics should be contained within the properties entry of each feature. Each feature must contain the following properties:
 
@@ -240,4 +240,4 @@ Each object currently supports the following properties:
 
 ## Example Configurations
 
-Numerous example configurations can be found in the [APEx Geospatial Explorer Configurations](https://github.com/ESA-APEx/apex_geospatial_explorer_configs) repository on github.
+Numerous example configurations can be found in the [APEx Geospatial Explorer Configurations](https://github.com/ESA-APEx/apex_geospatial_explorer_configs) repository on GitHub.
