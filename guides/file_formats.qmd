@@ -36,6 +36,12 @@ creating a Cloud Optimized GeoTIFF with three bands is an option.
 For associating time information, create one GeoTIFF per timestamp, and one STAC item per timestamp. The GeoTIFF format has
 not built-in support for conveying time information, but STAC metadata is supporting this very well.
 
+### Visualization in APEx Geospatial Explorer
+
+To optimize visualization in the APEx Geospatial Explorer, additional guidelines have been established. Adhering to these
+guidelines will ensure that the data is effectively optimized for visualization on a map. Please refer to
+[this page](../interoperability/geospatial_explorer.md#cloud-optimized-geotiff-cog) for more information.
+
 ## (Geo-)Zarr
 
 Zarr is a format that is gaining traction in the geospatial community, although it is not yet as widely supported as
