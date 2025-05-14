@@ -16,6 +16,18 @@ support for features such as cursor inspection, queries, distance measurements a
 integrated charts and graphs. The UI will also provide access to metadata records associated with the data that is
 rendered in the Explorer.
 
+## Examples
+
+@tbl-explorer-examples showcases example projects that use the APEx Geospatial Explorer:
+
+| Project                         | URL                                                                                            |
+| :------------------------------ | :--------------------------------------------------------------------------------------------- |
+| APEx (Demo)                     | [https://explorer.demo.apex.esa.int/](https://explorer.demo.apex.esa.int/)                     |
+| SEF - Food Systems              | [https://explorer.sef-food.apex.esa.int/](https://explorer.sef-food.apex.esa.int/)             |
+| SEF - Ecosystems & Biodiversity | [https://explorer.sef-ecosystems.apex.esa.int/](https://explorer.sef-ecosystems.apex.esa.int/) |
+
+: APEx Geospatial Explorer - Project Examples {#tbl-explorer-examples}{tbl-colwidths="[20,80]"}
+
 :::{.callout-tip}
 
 ## Stay Tuned

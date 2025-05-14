@@ -71,6 +71,19 @@ Users can develop and test data processing pipelines that automate the ingestion
 processing, and analysis of large EO datasets. An example use case could be to create a workflow setting up a pipeline
 to preprocess satellite images and extract relevant features for further analysis.
 
+## Examples
+
+@tbl-ide-examples showcases example projects that utilize the APEx IDE. It is important to note that each IDE requires a
+valid APEx account and permissions from the project to access the environment.
+
+| Project                         | URL                                                                                        |
+| :------------------------------ | :----------------------------------------------------------------------------------------- |
+| APEx (Demo)                     | [https://apphub.demo.apex.esa.int/](https://apphub.demo.apex.esa.int/)                     |
+| SEF - Food Systems              | [https://apphub.sef-food.apex.esa.int/](https://apphub.sef-food.apex.esa.int/)             |
+| SEF - Ecosystems & Biodiversity | [https://apphub.sef-ecosystems.apex.esa.int/](https://apphub.sef-ecosystems.apex.esa.int/) |
+
+: APEx IDE - Project Examples {#tbl-ide-examples}{tbl-colwidths="[20,80]"}
+
 :::{.callout-tip}
 
 ## Stay Tuned

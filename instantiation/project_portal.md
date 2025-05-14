@@ -60,6 +60,18 @@ For the project portal service, APEx uses the [Drupal](https://www.drupal.org/) 
 platform for creating and managing web content. In addition to its extensive content management features, it also allows
 for detailed customization.
 
+## Examples
+
+@tbl-portal-examples showcases example projects that use the APEx Project Portal:
+
+| Project                         | URL                                                      |
+| :------------------------------ | :------------------------------------------------------- |
+| APEx                            | [https://apex.esa.int/](https://apex.esa.int/)           |
+| APEx (Demo)                     | [https://demo.apex.esa.int/](https://demo.apex.esa.int/) |
+| World Ecosystem Extent Dynamics | [https://weed.apex.esa.int/](https://weed.apex.esa.int/) |
+
+: APEx Project Portal - Project Examples {#tbl-portal-examples}{tbl-colwidths="[30,70]"}
+
 :::{.callout-tip}
 
 ## Stay Tuned

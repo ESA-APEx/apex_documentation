@@ -81,14 +81,13 @@ innovative documentation practices.
 
 ## Examples
 
-The resources below showcase a couple of examples that use the Quarto framework for hosting their project's documentation
-portal:
+@tbl-documentation-examples showcases example projects that use the APEx Documentation Portal:
 
 | Project | URL                                                                                              | GitHub Repository                                                                                |
 | :------ | :----------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------- |
 | APEx    | [https://esa-apex.github.io/apex_documentation/](https://esa-apex.github.io/apex_documentation/) | [https://github.com/ESA-APEx/apex_documentation](https://github.com/ESA-APEx/apex_documentation) |
 
-: APEx Documentation Portal - Examples {#tbl-documentation-examples}{tbl-colwidths="[20,40, 40]"}
+: APEx Documentation Portal - Project Examples {#tbl-documentation-examples}{tbl-colwidths="[20,40, 40]"}
 
 :::{.callout-tip}
 
