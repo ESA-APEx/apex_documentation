@@ -59,6 +59,11 @@ to promote constructive conversations and community engagement. Users will find 
 interactive discussions and easy participation. Moreover, Discourse supports a wide range of multimedia content, enabling
 users to share images, videos, and links to enrich their contributions.
 
+The Discourse Community has a lot of useful resources to get learn more:
+
+* [Getting started](https://blog.discourse.org/tag/getting-started/)
+* [Documentation](https://meta.discourse.org/c/documentation/10)
+
 :::{.callout-tip}
 
 ## Stay Tuned
