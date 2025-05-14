@@ -43,6 +43,27 @@ A user forum can support several project scenarios, including:
 * **Awareness and Outreach**\
   Forums can be used to disseminate information about project updates, events, and relevant news.
 
+### What does APEx offer
+
+The APEx User Forum Service provides a dynamic and engaging platform for users to connect, discuss, and collaborate on
+various topics related to EO projects and services. Built on the robust [Discourse](https://www.discourse.org/) software,
+the forum enhances communication and fosters a sense of community among users, researchers, and project stakeholders.
+
+Whether you're looking to pose a question, share insights, or connect with peers, the APEx User Forum is a valuable resource
+for collaboration and knowledge sharing within the EO community.
+
+### What software is used under the hood
+
+The APEx User Forum is powered by the open-source [Discourse](https://www.discourse.org/) software. Discourse is designed
+to promote constructive conversations and community engagement. Users will find that the platform's features encourage
+interactive discussions and easy participation. Moreover, Discourse supports a wide range of multimedia content, enabling
+users to share images, videos, and links to enrich their contributions.
+
+The Discourse Community has a lot of useful resources to get learn more:
+
+* [Getting started](https://blog.discourse.org/tag/getting-started/)
+* [Documentation](https://meta.discourse.org/c/documentation/10)
+
 :::{.callout-tip}
 
 ## Stay Tuned
