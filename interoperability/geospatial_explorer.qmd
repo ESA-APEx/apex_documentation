@@ -17,7 +17,6 @@ The schema is versioned as it will change throughout the APEx project as the fun
 Geospatial Explorer matures. This does allow for improvements and extra features to be easily added to the application,
 and best practices shall be followed to avoid any breaking changes between versions.
 
-
 ## Requirements
 
 @tbl-geoexplorer outlines the requirements for configuring an instance of the Geospatial Explorer application.
@@ -62,6 +61,7 @@ and best practices shall be followed to avoid any breaking changes between versi
 ### Cloud Optimized GeoTiff (COG)
 
 When generating Cloud Optimised GeoTiffs, it is recommended to use the GoogleMapsCompatible tiling scheme—typically 256x256 pixel tiles aligned to a global grid—and to store the image in the Web Mercator projection (EPSG:3857). The BitsPerSample field must accurately reflect the data format. Overviews are essential for performance and should be generated using downsampling by factors of two until the image dimensions are the size of a tile or smaller. These overviews should also be tiled and placed after the main image data to conform with the COG specification. An example command line invocation using GDAL would be:
+
 ```
 gdal_translate <src> <dest> -of COG -co TILING_SCHEME=GoogleMapsCompatible
 ```
@@ -73,10 +73,10 @@ FlatGeobuf[@flatgeobuf] should be used where the statistical data is a large siz
 
 Statistics should be contained within the properties entry of each feature. Each feature must contain the following properties:
 
-  * `id` - A short unique id string.
-  * `name` - A description label for the feature to be shown to users.
-  * `level` - An integer that describes the features geographical hierarchy. This should be contigious with parent and child features.
-  * `children` - A string based comma seperated list containing the `id` of all child features.
+* `id` - A short unique id string.
+* `name` - A description label for the feature to be shown to users.
+* `level` - An integer that describes the features geographical hierarchy. This should be contigious with parent and child features.
+* `children` - A string based comma seperated list containing the `id` of all child features.
 
 Datasets that have classifications (such as land use) should have key:value entires consiting of 'name':'value' and an entry with a key of 'classifications' with a value consisting of a string based comma seperated list containing all the keys for the classifications and a 'total' key with the sum of all other values. This will allow for correctly rendering bar charts and pie charts.
 
@@ -103,9 +103,10 @@ Datasets that have classifications (such as land use) should have key:value enti
 ![worldcover_bar_chart_example](./images/worldcover_bar_chart_example.png){width=75%}
 
 Datasets that do not have classifications (such as a raster showing soil organic carbon) should contain a selection of the following entries:
- - mean
- - min
- - max
+
+* mean
+* min
+* max
 
 These values will be rendered as a table.
 
@@ -207,7 +208,6 @@ This currently supports the following properties:
 * `startColor`: A string describing a valid hex or RGB/A colour value. This is used to render colour ramps and legends.
 * `categories`: An array of objects that contains a `lablel` (string) property and a `color` (string) property. Describes classifications within datasets such as land usage. Used to create swatch legends and statistics visualisation.
 
-
 #### Data - `data`
 
 An array of objects that configures the data to be displayed in the layer. If the length is more than one a layer group will be created and all sources will be treated as one layer.
@@ -241,3 +241,48 @@ Each object currently supports the following properties:
 ## Example Configurations
 
 Numerous example configurations can be found in the [APEx Geospatial Explorer Configurations](https://github.com/ESA-APEx/apex_geospatial_explorer_configs) repository on GitHub.
+
+```{python}
+#| echo: false
+from IPython.display import display, HTML
+import requests
+
+examples_api_url = "https://api.github.com/repos/ESA-APEx/apex_geospatial_explorer_configs/contents/examples"
+example_base_url = "https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/"
+example_gh_base_url = (
+    "https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/"
+)
+response = requests.get(examples_api_url)
+examples = response.json()
+cards = []
+for example in examples:
+    result_url = example_base_url + example["name"] + "/result.png"
+    example_url = example_gh_base_url + example["name"]
+
+    config_url = example_base_url + example["name"] + "/config.json"
+    config_response = requests.get(config_url)
+    config = config_response.json()
+    title = config["layout"]["navigation"]["title"]
+
+    card = f"""<a href='{example_url}'><div class='card' style='width: 300px'">
+  <p class='card-img-top'>
+    <img src='{result_url}' class='thumbnail-image card-img' height='150'/>
+  </p>
+  <div class='card-body pot-contents'>
+  <h5 class='card-title listing-title'>{title}</h5>
+  </div>
+
+  </div>"""
+    cards.append(card)
+
+# Join the cards and return the result
+
+card_container = f"""
+<div style='display: flex; flex-wrap: wrap; gap: 1rem;'>
+  {''.join(cards)}
+</div></a>
+"""
+
+display(HTML(card_container))
+
+```
