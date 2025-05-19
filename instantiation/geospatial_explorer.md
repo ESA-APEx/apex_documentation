@@ -4,10 +4,10 @@ title: Geospatial Explorer
 
 ## Overview
 
-The Geospatial Explorer will provide an interactive web front end that can be used for the display and visualisation of
+The Geospatial Explorer provides an interactive web front end that can be used for the display and visualisation of
 geospatial and tabular data ingested from web services following common interoperable protocols (e.g. OGC Standards,
-STAC, etc.). The Explorer will be data-driven, allowing administrators to define the configuration of the explorer in
-JSON (i.e. the data layers and functional operations possible for each layer). This configuration will determine how the
+STAC, etc.). The Explorer is data-driven, allowing administrators to define its configuration in
+JSON (i.e. the data layers and functional operations possible for each layer). This configuration determines how the
 user interface is rendered at run time and the resulting data and functionality that is exposed to the end user.
 
 Typical functions will include the ability to visualise EO data, derived products and associated vector layers (e.g.
@@ -27,6 +27,10 @@ rendered in the Explorer.
 | SEF - Ecosystems & Biodiversity | [https://explorer.sef-ecosystems.apex.esa.int/](https://explorer.sef-ecosystems.apex.esa.int/) |
 
 : APEx Geospatial Explorer - Project Examples {#tbl-explorer-examples}{tbl-colwidths="[20,80]"}
+
+## User Guide
+
+For a general overview of features, take a look at the [Geospatial Explorer User Guide](../guides/geospatial_explorer_guide.md)
 
 :::{.callout-tip}
 
