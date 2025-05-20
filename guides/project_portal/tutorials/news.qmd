@@ -1,0 +1,39 @@
+---
+title: "Add news items and an overview of the latest or all news"
+lightbox: true
+---
+
+The project portal allows you to add news items and an overview of all news items. The overview can be implemented via a
+separate web page or you can also add a **news** paragraph on any web page to list the latest news items for example.
+
+## Add a news item
+
+To create a news item (page), you use the **content** dropdown menu in the navigation toolbar (menu) and select **Article**
+to start building your news page.
+
+## Add latest news on the home page
+
+You can easily add the latest news items on the home page, or any other web page you prefer, via the **view** paragraph.
+This paragraph allows you to indicate which items need to be shown in a preview paragraph. In the paragraph settings you
+have two options. To show the most recent items, you need to use:
+
+- the option to show the 3 most recent articles
+- the option to show the 4 most recent articles
+
+## Add a news overview web page
+
+To add a separate web page to list a more extended or complete overview of all news items, you add a basic page and add
+the **view** paragraph and select **article overview**.
+
+## Screenshots
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));grid-gap: 1em;"}
+![News - 3 most recent articles](../images/news_summary.png){group="gallery-news"}
+
+![News - Overview](../images/news_overview.png){group="gallery-news"}
+
+![View Paragraph](../images/news_view.png){group="gallery-news"}
+
+![View Settings](../images/news_settings.png){group="gallery-news"}
+
+:::

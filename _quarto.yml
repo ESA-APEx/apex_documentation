@@ -15,6 +15,7 @@ website:
   navbar:
     pinned: true
   page-navigation: true
+  bread-crumbs: true
 
   title: "APEx - Documentation Portal"
 
@@ -71,6 +72,7 @@ website:
             text: Linking APEx STAC catalogue with an openEO service
           - href: guides/file_formats.qmd
             text: File format recommendations
+          - href: guides/project_portal/index.qmd
 
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
@@ -98,4 +100,3 @@ format:
     link-external-newwindow: false
     bibliography: interoperability/references/references.yaml
     csl: interoperability/references/diabetologia.csl
-bread-crumbs: true
