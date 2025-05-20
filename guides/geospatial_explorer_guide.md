@@ -2,13 +2,15 @@
 title: Using the Geospatial Explorer
 ---
 
-The **APEx Geospatial Explorer** is a web map application with a configurable user interface that can be used
-to showcase the results of ESA projects as interactive maps, tables and charts.  This user guide provides some
-general user guidance for a number of supported features.
+The [**APEx Geospatial Explorer**](../instantiation/geospatial_explorer.md) is a web map application with a configurable
+user interface that can be used to showcase the results of ESA projects as interactive maps, tables and charts.  This user
+guide provides some general user guidance for a number of supported features.
 
-**NOTE:** Users should be aware that the configuration of any specific Geospatial Explorer page will determine
+:::{.callout-note}
+Users should be aware that the configuration of any specific Geospatial Explorer page will determine
 what is available on a case by case basis.  Examples of instantiated versions of the Geospatial Explorer are
 listed [here](../instantiation/geospatial_explorer.md#examples) on the project overview page.
+:::
 
 ## Navigating around the map
 
@@ -24,7 +26,7 @@ There are a number of options for navigating around the map:
 * Hold "shift" and draw a rectangle on the map to zoom to a specific area
 of interest
 * Click and drag on the map to pan *Hold "alt", "shift" then click and drag on the map to rotate*
-Click on the arrow in the top right to reset the map to north up
+* Click on the arrow in the top right to reset the map to north up
 :::
 
 A **scale bar** of your map view is visible in the bottom left of the map, and the **latitude** and **longitude**

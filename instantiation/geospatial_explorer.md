@@ -32,6 +32,16 @@ rendered in the Explorer.
 
 For a general overview of features, take a look at the [Geospatial Explorer User Guide](../guides/geospatial_explorer_guide.md)
 
+## Recommendations
+
+To learn more about the specific recommendations for the usage and the configuration of the Geosplace Explorer, please
+refer to the our [APEx Geospatial Explorer Recommendations](../interoperability/geospatial_explorer.md) page.
+
+## Example Configurations
+
+Numerous example configurations can be found in the
+[APEx Geospatial Explorer Configurations](https://github.com/ESA-APEx/apex_geospatial_explorer_configs) repository on GitHub.
+
 :::{.callout-tip}
 
 ## Stay Tuned
