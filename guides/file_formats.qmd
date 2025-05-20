@@ -40,7 +40,7 @@ not built-in support for conveying time information, but STAC metadata is suppor
 
 To optimize visualization in the APEx Geospatial Explorer, additional guidelines have been established. Adhering to these
 guidelines will ensure that the data is effectively optimized for visualization on a map. Please refer to
-[this page](../interoperability/geospatial_explorer.md#cloud-optimized-geotiff-cog) for more information.
+[this page](../interoperability/geospatial_explorer.qmd#cloud-optimized-geotiff-cog) for more information.
 
 ## (Geo-)Zarr
 
