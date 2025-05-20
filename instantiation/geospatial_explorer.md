@@ -35,7 +35,7 @@ For a general overview of features, take a look at the [Geospatial Explorer User
 ## Recommendations
 
 To learn more about the specific recommendations for the usage and the configuration of the Geosplace Explorer, please
-refer to the our [APEx Geospatial Explorer Recommendations](../interoperability/geospatial_explorer.md) page.
+refer to the our [APEx Geospatial Explorer Recommendations](../interoperability/geospatial_explorer.qmd) page.
 
 ## Example Configurations
 
