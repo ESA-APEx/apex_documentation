@@ -81,7 +81,7 @@ website:
           - href: propagation/service_development.qmd
           - href: interoperability/algohosting.md
           - href: interoperability/algohostingenv.md
-          - href: interoperability/geospatial_explorer.md
+          - href: interoperability/geospatial_explorer.qmd
           - href: interoperability/businessmodel.md
 
 format:
