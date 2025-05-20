@@ -264,15 +264,18 @@ for example in examples:
     config = config_response.json()
     title = config["layout"]["navigation"]["title"]
 
-    card = f"""<a href='{example_url}'><div class='card' style='width: 300px'">
-  <p class='card-img-top'>
-    <img src='{result_url}' class='thumbnail-image card-img' height='150'/>
-  </p>
-  <div class='card-body pot-contents'>
-  <h5 class='card-title listing-title'>{title}</h5>
-  </div>
-
-  </div>"""
+    card = f"""
+    <a href='{example_url}'>
+      <div class='card' style='width: 300px'">
+        <p class='card-img-top'>
+          <img src='{result_url}' class='thumbnail-image card-img' height='150'/>
+        </p>
+        <div class='card-body pot-contents'>
+          <h5 class='card-title listing-title'>{title}</h5>
+        </div>
+      </div>
+    </a>
+      """
     cards.append(card)
 
 # Join the cards and return the result
