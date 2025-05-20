@@ -1,11 +1,10 @@
 ---
 title: Project Portal - User Documentation
 listing:
-  id: portal-tutorials
-  contents:
-    - "./tutorials/*.qmd"
-  sort: "title asc"
-  type: grid
+  contents: "tutorials"
+  type: "grid"
+  sort: "date"
+  filter-ui: true
 ---
 
 Welcome to the user guide for the APEx Project Portal, a powerful tool designed to support your project communication.
