@@ -1,5 +1,6 @@
 ---
-title: "1. Accessing the Project Portal and the Drupal content dashboard"
+title: "Accessing the Project Portal and the Drupal content overview"
+lightbox: true
 ---
 
 :::{.grid}
@@ -29,11 +30,12 @@ can manage:
 
 :::
 ::: {.g-col-6}
-![Project Portal login screen](./images/login_1.png)
 
-![APEx login screen](./images/login_2.jpg)
+![Project Portal login screen](../images/login_1.png){group="gallery-login"}
 
-![Drupal content dashboard](./images/login_3.png)
+![APEx login screen](../images/login_2.jpg){group="gallery-login"}
+
+![Drupal content overview](../images/login_3.png){group="gallery-login"}
 
 :::
-:::{.grid-item}
+:::

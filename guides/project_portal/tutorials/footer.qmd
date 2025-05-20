@@ -1,0 +1,48 @@
+---
+title: "Edit the footer"
+lightbox: true
+---
+
+The footer is a basic element of your web portal and will be available for you to edit. The footer will already contain
+the required elements such as project acronym, full name and link to the contact page. As an administrator or editor, you
+will need to add any other links such as:
+
+* Legal web pages (privacy policy, cookie policy)
+* Links to other web pages
+* Social media links
+
+The CTA button to navigate to the contact page will be provided automatically when your web portal is being set up.
+
+## Add or edit navigation and legal links
+
+To edit these links in the footer you need to select **structure > menus** in the navigation toolbar (menu).
+
+You can add or edit the following links:
+
+* **Footer first**: links that will be shown in the left column in the footer
+* **Footer second**: links that will be shown in the right column in the footer
+* **Legal**: links to legal web pages which will be shown at the bottom of the web page
+* **Contact**
+
+## Add or edit social media links
+
+To add or edit links to social media accounts, you need to navigate to **website settings** in the navigation toolbar
+(menu) and select **follow us links.** You can add links for Facebook, X, LinkedIn and/or YouTube.
+
+After adding or changing links click **save configuration** to save and publish the changes.
+
+## Screenshots
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));grid-gap: 1em;"}
+
+![Footer - Example](../images/footer_example.png){group="gallery-footer"}
+
+![Footer - Menu](../images/footer_menu.png){group="gallery-footer"}
+
+![Footer - Add link](../images/footer_add_link.png){group="gallery-footer"}
+
+![Footer - Footer first](../images/footer_menu_first.png){group="gallery-footer"}
+
+![Footer - Socials](../images/footer_socials.png){group="gallery-footer"}
+
+:::

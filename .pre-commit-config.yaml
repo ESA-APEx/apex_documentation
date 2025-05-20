@@ -6,6 +6,7 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-added-large-files
+        args: ["--maxkb=1024"]
       - id: check-json
       - id: check-yaml
       - id: check-toml
@@ -17,7 +18,7 @@ repos:
       - id: markdown-link-check
         types: [file]
         files: \.(md|qmd)$
-        args: [ "-q", "-c markdown-link-checker-config.json" ]
+        args: ["-q", "-c markdown-link-checker-config.json"]
   - repo: local
     hooks:
       - id: check-front-matter
@@ -30,6 +31,6 @@ repos:
     rev: v0.43.0
     hooks:
       - id: markdownlint
-        types: [ file ]
+        types: [file]
         files: \.(md|qmd)$
-        args: [ "--fix" ]
+        args: ["--fix"]
