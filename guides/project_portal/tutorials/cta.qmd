@@ -1,0 +1,29 @@
+---
+title: "Add a Call-To-Action (CTA)"
+lightbox: true
+---
+
+You can use the **Call to action** paragraph to highlight content, visuals, links and downloads.
+
+You can display this **Call to action** paragraph over the full width of your web page or you can also use the columns
+paragraph to split this view with other content.
+
+To add a **Call to action** on a web page, you navigate the web page on which you would like to add a **Call to action**
+paragraph, click **edit** to manage the web page backend, click **add paragraph** and select the **Call to action**
+paragraph in the pop-up window. You can now add title, text, visual (optional), URL and link text. Click **save** to save
+your latest updates.
+
+When you add a visual, this visual will be displayed as a background image of the **Call to action** paragraph. When you
+do not upload a visual, your CTA will switch colors when visitors hover over the paragraph (content).
+
+## Screenshots
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));grid-gap: 1em;"}
+
+![CTA - Example Columns](../images/cta_example_1.png){group="gallery-cta"}
+
+![CTA - Example Full Width](../images/cta_example_2.png){group="gallery-cta"}
+
+![CTA Paragraph](../images/cta_paragraph.png){group="gallery-cta"}
+
+:::

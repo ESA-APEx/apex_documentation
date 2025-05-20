@@ -1,0 +1,44 @@
+---
+title: "Add an event and an overview of the latest or all events"
+lightbox: true
+---
+
+:::{.grid}
+::: {.g-col-6}
+
+You can easily add an event by adding a **basic page**.
+
+When you create a basic web page and edit the **Date** settings in the page settings bar on the right, your web page is
+listed as an event.
+
+You can further edit the web page based on the content and visuals you need to provide.
+
+## Add upcoming events
+
+If you want to add a short list of the first upcoming events, you can use the **view** paragraph and check the
+**upcoming events** checkbox.
+
+## Add an event overview
+
+If you wish to add a full events overview, you can create a separate (basic) web page and add an overview via the
+**view** paragraph.
+
+You can display the events in tiles and/or in a calendar view. For both options, you have to use the **view** paragraph.
+You click a**dd paragraph** on the web page where you want to display the overview.
+
+In the setting of the paragraph you select:
+
+* Upcoming events: to display an overview in tiles
+* Events calendar: to display a calendar view which will include all events you create
+
+:::
+::: {.g-col-6}
+
+![Events - Example](../images/event_example.png){group="gallery-events"}
+
+![View Paragraph](../images/event_view.png){group="gallery-events"}
+
+![View Settings](../images/event_settings.png){group="gallery-events"}
+
+:::
+:::{.grid-item}
