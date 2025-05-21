@@ -1,5 +1,6 @@
 ---
 title: "Add news items and an overview of the latest or all news"
+image: ../images/cover_news.png
 lightbox: true
 ---
 

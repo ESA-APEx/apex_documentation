@@ -1,10 +1,11 @@
 ---
 title: "Edit the menu navigation"
+image: ../images/cover_menu.png
 lightbox: true
 ---
 
 :::{.grid}
-::: {.g-col-6}
+::: {.g-col-8}
 
 To edit the menu navigation of your web portal, you need to navigate to **structure > menus > main navigation** via the
 administration toolbar (menu).
@@ -33,12 +34,23 @@ Via the main navigation overview, which you can access when you navigate to **st
 administration toolbar, you can easily disable or enable main navigation (sub)menu items. Select the **Enabled** check to
 show the menu item in the main navigation or deselect the **Enabled** checkbox to hide the menu item in the main navigation.
 
+## Edit the name of your project portal
+
+Upon instantiation of your project web portal, the name of your project will be set to display in the top left corner in
+the header section, left from the main menu navigation, and in the footer. The acronym and/or full name will use the primary
+site colors.
+
+To edit this text, you navigate to **website settings** in the navigation toolbar (menu) and select **site settings**.
+You will be able to edit the site name and slogan. Click **save configuration** to save your changes.
+
 :::
-::: {.g-col-6}
+::: {.g-col-4}
 
 ![Menu - Add Link](../images/menu_add_link.png){group="gallery-menu"}
 
 ![Menu - Edit](../images/menu_edit.png){group="gallery-menu"}
+
+![Menu - Website Settings](../images/menu_website_settings.png){group="gallery-menu"}
 
 :::
 :::{.grid-item}

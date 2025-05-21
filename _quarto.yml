@@ -75,6 +75,8 @@ website:
           - href: guides/geospatial_explorer_guide.md
             text: Using the Geospatial Explorer
           - href: guides/project_portal/index.qmd
+            contents:
+              - auto: guides/project_portal/tutorials/*.qmd
 
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines

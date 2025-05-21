@@ -1,5 +1,6 @@
 ---
-title: "Add content and visuals via paragraphs"
+title: "Edit web pages via paragraphs"
+image: ../images/cover_paragraphs.png
 lightbox: true
 ---
 
@@ -34,7 +35,8 @@ Select the paragraph you need and click **Add**. You can now start editing the p
 
 Discover more on how to edit the paragraphs in the dedicated tutorial web pages.
 
-- [Add text and/or visuals](text_visuals.qmd)
-- [Add news items and an overview of the latest or all news](news.qmd)
-- [Add an event and an overview of the latest or all events](event.qmd)
-- [Add a web form](webform.qmd)
+- [Add text and/or visuals](3a_text_visuals.qmd)
+- [Add a Call-To-Action (CTA)](3b_cta.qmd)
+- [Add news items and an overview of the latest or all news](3c_news.qmd)
+- [Add an event and an overview of the latest or all events](3d_event.qmd)
+- [Add a web form](3e_webform.qmd)

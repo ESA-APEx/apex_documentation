@@ -1,5 +1,6 @@
 ---
-title: "Add text and/or visuals"
+title: "Add content and/or visuals"
+image: ../images/cover_add_content.png
 lightbox: true
 ---
 

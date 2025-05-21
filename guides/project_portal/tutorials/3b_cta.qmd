@@ -1,5 +1,6 @@
 ---
 title: "Add a Call-To-Action (CTA)"
+image: ../images/cover_cta.png
 lightbox: true
 ---
 
