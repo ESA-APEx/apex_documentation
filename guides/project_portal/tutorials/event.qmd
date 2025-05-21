@@ -1,10 +1,11 @@
 ---
 title: "Add an event and an overview of the latest or all events"
+image: ../images/cover_events.png
 lightbox: true
 ---
 
 :::{.grid}
-::: {.g-col-6}
+::: {.g-col-8}
 
 You can easily add an event by adding a **basic page**.
 
@@ -32,7 +33,7 @@ In the setting of the paragraph you select:
 * Events calendar: to display a calendar view which will include all events you create
 
 :::
-::: {.g-col-6}
+::: {.g-col-4}
 
 ![Events - Example](../images/event_example.png){group="gallery-events"}
 

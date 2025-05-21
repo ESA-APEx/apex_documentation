@@ -1,5 +1,6 @@
 ---
 title: "Add content and visuals via paragraphs"
+image: ../images/cover_paragraphs.png
 lightbox: true
 ---
 

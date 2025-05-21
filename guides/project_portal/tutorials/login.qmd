@@ -1,10 +1,11 @@
 ---
 title: "Accessing the Project Portal and the Drupal content overview"
+image: ../images/cover_login.png
 lightbox: true
 ---
 
 :::{.grid}
-::: {.g-col-6}
+::: {.g-col-8}
 As soon as your web portal has been set up, you will receive an email from the APEx team containing the URL that
 allows you to access the website and manage its content.
 
@@ -29,7 +30,7 @@ can manage:
 * Footer (including legal pages and socials)
 
 :::
-::: {.g-col-6}
+::: {.g-col-4}
 
 ![Project Portal login screen](../images/login_1.png){group="gallery-login"}
 
