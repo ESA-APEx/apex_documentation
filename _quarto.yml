@@ -73,6 +73,8 @@ website:
           - href: guides/file_formats.qmd
             text: File format recommendations
           - href: guides/project_portal/index.qmd
+            contents:
+              - auto: guides/project_portal/tutorials/*.qmd
 
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
