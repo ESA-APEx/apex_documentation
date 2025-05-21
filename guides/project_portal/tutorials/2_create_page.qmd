@@ -47,7 +47,7 @@ to add. You will see a preview of the paragraph design or check the
 [showcase page](https://demo.apex.esa.int/en/tools/showcase-page) to see which paragraphs are available and most suitable
 for your content.
 
-More information about the paragraphs is available in the tutorial [Add content and visuals via paragraphs](./paragraphs.qmd)
+More information about the paragraphs is available in the tutorial [Add content and visuals via paragraphs](./3_paragraphs.qmd)
 
 :::
 ::: {.g-col-4}

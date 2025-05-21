@@ -1,5 +1,5 @@
 ---
-title: "Accessing the Project Portal and the Drupal content overview"
+title: "Login to the Project Portal and the Drupal content overview"
 image: ../images/cover_login.png
 lightbox: true
 ---
