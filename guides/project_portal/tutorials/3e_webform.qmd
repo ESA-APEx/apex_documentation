@@ -1,5 +1,6 @@
 ---
 title: "Add a web form"
+image: ../images/cover_webform.png
 lightbox: true
 ---
 

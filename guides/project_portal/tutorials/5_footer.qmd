@@ -1,5 +1,6 @@
 ---
 title: "Edit the footer"
+image: ../images/cover_footer.png
 lightbox: true
 ---
 
