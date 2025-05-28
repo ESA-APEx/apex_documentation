@@ -1,0 +1,39 @@
+---
+title: "Add publications or downloads (files)"
+image: ../images/cover_publication.png
+lightbox: true
+---
+You have the option to share links, publications and documents via the **Download / Publications** Paragraph.
+
+To add a document or link, you navigate to the web page on which you would like to add download and click **edit** to
+manage the web page backend. Click the **add paragraph** button and select the **Download / Publications** paragraph in
+the pop-up window.
+
+After selecting the **Download / Publications** paragraph, you can add documents and/or links via the button
+**add download item**. You can upload a file and/or add a URL.
+
+You can add multiple documents and/or links in the same paragraph.
+
+### Upload a file for download
+
+Upload or selected the file you wish to add for download. Add a title in the **Title** field to give your download an
+appropriate name. You also have the option to add a publication date.
+
+### Add a link
+
+Add the URL to your online document in the field **URL**. Add a title in the **Link text** field to give the download link
+an appropriate name.
+
+## Screenshots
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));grid-gap: 1em;"}
+
+![Publication - Example](../images/publication_preview.png){group="gallery-publication"}
+
+![Publication - Paragraph](../images/publication_paragraph.png){group="gallery-publication"}
+
+![Publication - File Upload](../images/publication_file.png){group="gallery-publication"}
+
+![Publication - Add Link](../images/publication_link.png){group="gallery-publication"}
+
+:::
