@@ -72,6 +72,11 @@ for detailed customization.
 
 : APEx Project Portal - Project Examples {#tbl-portal-examples}{tbl-colwidths="[30,70]"}
 
+## User Documentation
+
+For a step-by-step guide on how to use and manage your project portal, refer to the official
+[Project Portal User Guide](../guides/project_portal/)
+
 :::{.callout-tip}
 
 ## Stay Tuned
