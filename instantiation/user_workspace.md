@@ -4,7 +4,7 @@ title: User Workspace
 
 ## Overview
 
-The User Workspaces within the APEx Project Tools provide secure, personalised environments for individual users to
+The User Workspaces within the APEx Project Environments provide secure, personalised environments for individual users to
 perform a wide range of tasks, including development, data processing, visualisation, and analysis. These single-user
 environments are managed by JupyterHub and dynamically provisioned using Kubernetes, ensuring scalability, isolation,
 and ease of use. Key features and capabilities of the User Workspaces include:

@@ -32,7 +32,7 @@ website:
             text: Using openEO service
           - href: propagation/platforms.md
       - href: instantiation/index.md
-        text: Project Tools
+        text: Project Environments
         contents:
           - href: instantiation/usecases.qmd
             text: Use Cases
