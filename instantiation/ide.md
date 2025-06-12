@@ -4,8 +4,8 @@ title: Interactive Development Environment
 
 ## Overview
 
-The Interactive Development Environment (IDE) within the APEx Project Tools primarily leverages the power of the [Code
-Server solution (VS Code in the Cloud)](#code-server), as well as the [JupyterLab](#jupyterlab) solution, both made
+The Interactive Development Environment (IDE) within the APEx Project Environments primarily leverages the power of the
+[Code Server solution (VS Code in the Cloud)](#code-server), as well as the [JupyterLab](#jupyterlab) solution, both made
 available through the [User Workspace](user_workspace.md).
 
 These IDE solutions allow developers to maintain a familiar environment and rich feature set while benefiting from the
