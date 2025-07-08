@@ -44,7 +44,7 @@ website:
           - href: instantiation/documentation.qmd
           - href: instantiation/forum.md
       - href: propagation/index.qmd
-        text: Algorithm Services
+        text: Algorithm Support
         contents:
           - href: propagation/ondemandservices.qmd
           - href: propagation/usecases.md
