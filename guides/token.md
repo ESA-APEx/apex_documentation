@@ -38,14 +38,15 @@ Now add a configuration for your project. This requires that you request a clien
 
 You will need to provide the following project specific information:
 
-* *apex_project_a* is simply the name of the configuration in OIDC agent, which you'll use whenever you need a token.
-* the client id, which in this example is: *project-a-catalogue-dev-api*
+* *apex_[project]* (e.g *apex_project_a*) is simply the name of the configuration in OIDC agent, which you'll use whenever
+you need a token.
+* the client id, which in this example is: *[project]-catalogue-prod* (e.g. *project-a-catalogue-prod*)
 
 Adjust these inputs in the following command, and run it to generate a new configuration. This step only needs to
 happen once per device where you want to set up the agent.
 
 ```bash
-oidc-gen --pub apex_project_a --flow=device --client-id=project-a-catalogue-dev-api --iss=https://auth.apex.esa.int/realms/apex --scope=openid --redirect-url=""
+oidc-gen --pub apex_[project] --flow=device --client-id=[project]-catalogue-prod --iss=https://auth.apex.esa.int/realms/apex --scope=openid --redirect-url=""
 ```
 
 ### 3a. Generate a token from command line
@@ -53,7 +54,7 @@ oidc-gen --pub apex_project_a --flow=device --client-id=project-a-catalogue-dev-
 From now on, whenever an OIDC bearer token is needed, you can run the following command:
 
 ```bash
-oidc-token apex_project_a
+oidc-token apex_[project]
 ```
 
 ### 3b. Generate a token from a Python script
@@ -66,15 +67,14 @@ of 'refresh tokens'.
 
 import liboidcagent as agent
 
-token, issuer, expires_at = agent.get_token_response("apex_project_a")
+token, issuer, expires_at = agent.get_token_response("apex_[project]")
 ```
-
 
 ## Machine to machine login via client credentials
 
-While the interactive login is the most secure option, sometimes you require a long running script script or service to 
+While the interactive login is the most secure option, sometimes you require a long running script script or service to
 interact with an instantiation service like the catalog. In this case, you can use the client credentials flow, which is
-basically a username/password login for machines. 
+basically a username/password login for machines.
 
 It is recommended to create such client credentials for each service separately, with minimal privileges. This allows you
 to retain granular access control, and to revoke access to a specific service without affecting others.
