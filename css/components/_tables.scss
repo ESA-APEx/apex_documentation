@@ -25,3 +25,17 @@ th {
   background-color: var(--greylight) !important;
   color: var(--darkblue) !important;
 }
+
+
+table.requirements {
+  td, th {
+    padding: .5rem;
+    vertical-align: top;
+  }
+  td:first-child{
+    min-width: 150px;
+  }
+  td:nth-child(2){
+    width: 40%;
+  }
+}
