@@ -2,7 +2,7 @@
 title: File format recommendations
 ---
 
-Within the APEx interoperability and compliance guidelines, [PROV-REQ-01](../interoperability/algohosting.md) specifies
+Within the APEx interoperability and compliance guidelines, [DATA-REQ-01](../interoperability/datahosting.md) specifies
 the file formats that projects should use when publishing static data.
 The information on this page complement that requirement with more detailed recommendations on the use of these formats.
 Projects are encouraged to consult with the APEx team if they have a use case that does not fit within these guidelines.
@@ -23,7 +23,7 @@ of GDAL to ensure that they are compliant:
 gdal_translate world.tif world_webmerc_cog.tif -of COG
 ```
 
-### Organizing spatiotemporal multi-band datasets
+### Organising spatiotemporal multi-band datasets
 
 Many datasets have multiple bands (or 'variables'), or have a date associated with them.
 The general recommendation is to store a single band per GeoTIFF file and to create STAC items with one asset per band.

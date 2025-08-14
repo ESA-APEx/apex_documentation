@@ -14,6 +14,8 @@ You can find more detailed guidelines on the following pages:
 
 * [Algorithm Provider Guidelines](./algohosting.md)\
   Discover how to make your algorithm APEx compliant and enable its use within APEx services and the larger EO community.
+* [Data Provider Guidelines](./datahosting.md)\
+  Learn how to prepare your data and ensure it can be stored for long term usage and its integration within the APEx services.
 * [Algorithm Hosting Environments](./algohostingenv.md)\
   Explore the guidelines for integrating your algorithm hosting environment into APEx services.
 * [Geospatial Explorer](./geospatial_explorer.qmd)\

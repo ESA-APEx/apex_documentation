@@ -68,3 +68,6 @@ references:
   - id: stac_extension
     title: STAC projection extension
     url: https://github.com/stac-extensions/projection
+  - id: proj4js
+    title: PROJ4JS
+    url: http://proj4js.org/

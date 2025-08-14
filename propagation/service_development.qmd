@@ -7,7 +7,7 @@ APEx currently offers two main options for projects to develop their on-demand s
 * OpenEO-based services [@openeo], implemented in line
   with [openEO’s User Defined Processes](#openeo-user-defined-processes) (UDP) [@udp]
 * OGC API - Processes-based services [@apiprocess], implemented in line with the
-  [OGC Application Package Best Practice][#ogc-application-package-and-ogc-api-processes](@ap)
+  [OGC Application Package Best Practice](#ogc-application-package-and-ogc-api-processes)(@ap)
 
 These APEx-compliant technologies allow algorithms to be hosted on an APEx-compliant algorithm hosting platform and make
 them available for execution through web services. These technologies promote seamless reuse and integration of existing
