@@ -296,7 +296,7 @@
         "\n",
         "Numerous example configurations can be found in the [APEx Geospatial Explorer Configurations](https://github.com/ESA-APEx/apex_geospatial_explorer_configs) repository on GitHub."
       ],
-      "id": "f1637820"
+      "id": "5018d1b4"
     },
     {
       "cell_type": "code",
@@ -347,7 +347,7 @@
         "\n",
         "display(HTML(card_container))"
       ],
-      "id": "011d6c97",
+      "id": "a62c4019",
       "execution_count": null,
       "outputs": []
     }

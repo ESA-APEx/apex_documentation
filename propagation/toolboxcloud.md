@@ -3,24 +3,24 @@ title: Toolbox Cloudification
 ---
 
 The toolbox cloudification activities within APEx make individual data processing procedures from existing toolboxes
-available as cloud-based algorithms compliant with APEx. This makes it possible to freely combine functionalities from
-multiple toolboxes as well as other APEx-compliant algorithms. The service focuses solely on the data-processing
-capabilities of toolboxes and does not include visualisation features. Instead of the local processing scheme of a
-traditional toolbox, key operations can be performed in the cloud. Furthermore, functions from various toolboxes can be
-combined in a single workflow by using one of the APEx-compliant technologies.
+available as cloud-based algorithms compliant with APEx. The service focuses solely on the data-processing capabilities
+of toolboxes and does not include visualisation features. Instead of the local processing scheme of a traditional toolbox,
+key operations can be performed in the cloud. Furthermore, functions from various toolboxes can be combined in a single
+workflow by using one of the APEx-compliant technologies.
 
 Projects may select functionalities from a toolbox that they would like to have access to as APEx-compliant algorithms.
 The proposed functionalities and their toolbox will then be reviewed by ESA and APEx experts. Effort estimation and an
 offer will be made following the review. On acceptance of the offer, the requested functionalities will be provided as
 an Application Package according to the OGC best practice or as an openEO User Defined Process (UDP).
 
-To ensure interoperability between procedures from different toolboxes, it is necessary to share data using standard
-data formats when writing intermediary files to disk. Users should consider if the flexibility of this approach
-outweighs the performance drawbacks and request deployment as a single, integrated package instead if performance is
-critical.
+Toolboxes come with their own data model each. But they read inputs and write outputs to files. To achieve interoperability
+between procedures from different toolboxes, it is necessary to share data using standard data formats when writing files.
+This is not simple in many cases as there are expectations like metadata and storage file systems supported by toolboxes.
+If intermediates are written and stored, staged and read repeatedly, this is an overhead for a processing chain. Users
+should consider if the flexibility of this approach outweighs the performance drawbacks and request deployment as a single,
+integrated package instead if performance is critical.
 
-Functionalities made available through toolbox cloudification are ready to be hosted as APEx-compliant on-demand
-services.
+Functionalities made available through toolbox cloudification are ready to be hosted as APEx-compliant on-demand services.
 
 ## Support Overview
 

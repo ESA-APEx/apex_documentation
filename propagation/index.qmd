@@ -5,10 +5,11 @@ title: From Earth Observation Applications to Services
 One of the primary goals of APEx is to facilitate the transition of Earth Observation (EO) R&D results into reusable,
 scalable, cloud-based on-demand services. Currently, ESA EOP R&D projects generate a variety of results, including, for
 example, EO-derived value-added products (raster or vector files, typically level-3 and level-4), workflows and
-algorithms, or conventional (open-source) desktop software solutions. The APEx Algorithm Services focus on
+algorithms, or conventional (open-source) desktop software solutions. The APEx Algorithm Support focusses on
 transforming and optimising (i.e., propagating) resulting algorithms, applications, workflows and toolboxes and ensuring
-their compliance with FAIR data principles. The preservation of these project outcomes is managed through the ESA
-Project Results Repository (PRR), supported by other APEx services, such as the APEx Data Catalogue.
+their compliance with FAIR data principles. The preservation of these project outcomes is managed through the 
+[ESA Project Results Repository (PRR)](https://eoresults.esa.int/), supported by other APEx services, such as the
+[APEx Data Catalogue](https://browser.apex.esa.int/?.language=en).
 
 The vision for the ESA APEx initiative is to adopt FAIR data principles and ensure that project results remain Findable
 and Accessible and that they become Interoperable and Reusable. For value-added products, this mainly involves ingestion
@@ -25,12 +26,12 @@ However, developing on-demand services can be challenging for many projects and 
 workflow/algorithm and its initial implementation. APEx intends to facilitate the transition to cloud-based services by
 providing guidelines, best practices, and tools that support EO R&D projects in overcoming these challenges.
 
-The algorithm services support provided by APEx involves various subcomponents, and their relevance depends on a
-case-by-case basis. The APEx Algorithm Services comprise:
+The algorithm support provided by APEx involves various subcomponents, and their relevance depends on a
+case-by-case basis. The APEx Algorithm Support comprises:
 
 * [Refactoring](./porting.md) source code to an openEO process graph
 * [Packaging](./porting.md) of source code to an OGC Application Package
-* [Integration](./onboarding.md) of a service into the APEx Algorithm Services Catalogue
+* [Integration](./onboarding.md) of a service into the [APEx Algorithm Services Catalogue](./onboarding.md#apex-algorithm-services-catalogue)
 * [Cloudification](./toolboxcloud.md) of desktop toolboxes through a tailored approach
 * Technical performance [optimisation](./enhancement.md), both on the source code or service level
 * [Deployment and hosting](./onboarding.md) of a service in an existing EO platform
@@ -39,9 +40,9 @@ case-by-case basis. The APEx Algorithm Services comprise:
 
 This support can also be visualised in a chart, illustrated in @fig-pathway. This chart
 outlines the different pathways for projects to transform and optimise their algorithms into on-demand services using
-the APEx Algorithm Services.
+the APEx Algorithm Support.
 
-The main goal of the Algorithm Services is to guide projects in defining their pathway and providing support
+The main goal of the Algorithm Support is to guide projects in defining their pathway and providing support
 throughout the various steps. This is accomplished through an initial analysis of the project's needs, resulting in a
 tailored pathway that assists in the transformation from source code to on-demand EO services.
 

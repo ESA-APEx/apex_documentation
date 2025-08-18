@@ -113,8 +113,8 @@ language’ (CWL) [@cwl], which is a thin wrapper around your software.
 
 If concepts like containers are already familiar to the project, and they prefer to have full control and responsibility
 over their software, including all details concerning how they read raw EO products, then this might be the right
-choice. Of course, the APEx Algorithm Services exist to help you with the integration of your service into the APEx
-ecosystem.
+choice. Of course, the [APEx Algorithm Support](../propagation/index.qmd) exists to help you with the integration of your
+service into the APEx ecosystem.
 
 To offer your application as an on-demand service, the project will need to define clear constraints on possible input
 parameters and make sure that their software is well-tested to be able to handle variations in input parameters. When
