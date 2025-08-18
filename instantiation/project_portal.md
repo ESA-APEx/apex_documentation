@@ -9,9 +9,11 @@ request. The portal, structured on a predefined base template, will offer the fl
 overall user experience. Beyond the initial theming options, the service incorporates a Drupal Content Management
 System (CMS), empowering project members to perform advanced customisations and efficiently manage portal content.
 
+![APEx Project Portal](images/portal.png)
+
 The instantiated project portal will have the option to work in synergy with other services offered within APEx. This
-collaborative approach enables projects to extend their portal by instantiating other APEx services, such as a [STAC
-catalogue](catalog.qmd), a [Geospatial Explorer](geospatial_explorer.md), a [User Forum](forum.md), and more, and
+collaborative approach enables projects to extend their portal by instantiating other APEx services, such as a
+[STACcatalogue](catalog.qmd), a [Geospatial Explorer](geospatial_explorer.md), a [User Forum](forum.md), and more, and
 linking them to the main project portal, resulting in a dedicated, streamlined project ecosystem.
 
 ## Showcase Scenarios

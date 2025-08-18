@@ -13,6 +13,8 @@ writing with scientific plotting and code snippets. It also allows for introduci
 documentation. Projects that do not feel comfortable with an approach based on Markdown for editing and Git for
 versioning are still free to use those traditional formats.
 
+![APEx Documentation Portal](images/documentation.png)
+
 Quarto generates fully customisable online documentation portals tailored for scientific publications, featuring
 interactive visualisations. It supports various scientific elements, including formulas, diagrams, and code.
 Additionally, Quarto can produce PDF or Word documents, making it ideal for scenarios where user documentation needs to

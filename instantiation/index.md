@@ -56,3 +56,24 @@ utilised, fostering greater collaboration and innovation within the EO community
 user-friendly environments, the APEx Project Environments help maximise the impact of EO research and applications.
 
 Learn how the APEx Project Environments facilitate collaborative working environments for various [use cases](./usecases.qmd).
+
+## Creating a collaborative project environment
+
+As shown in the [use cases](./usecases.qmd), APEx offers a flexible suite of tools that can be instantiated independently
+or integrated to form a cohesive, collaborative project environment. Projects are encouraged to tailor the setup to their
+specific needs, combining the various APEx tools in ways that enhance collaboration, accessibility, and visibility.
+
+Projects can interconnect their instantiated services in several ways:
+
+* **Integrated Navigation**: If a project already has a public-facing website or uses the APEx
+[Project Portal](./project_portal.md), links to the instantiated tools, such as the
+[Geospatial Explorer](./geospatial_explorer.md), [Product Catalogue](./catalog.qmd) or [JupyterLab](./ide.md), can be
+embedded directly into the site's navigation structure. This provides a unified access point for project stakeholders
+and visitors to the project website.
+
+* **Public and Private Tool Segmentation**: Projects can choose to expose only selected tools to the public while
+restricting others to registered team members. For instance, the [Geospatial Explorer](./geospatial_explorer.md) might be
+made publicly available for data discovery, while the collaborative [JupyterLab](./ide.md) remains limited to project members.
+
+By thoughtfully providing access to the APEx instantiated services, projects can create a rich, interactive, and secure
+environment that supports ongoing collaboration, knowledge sharing, and engagement with both internal and external audiences.
