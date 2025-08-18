@@ -75,10 +75,10 @@ Statistics should be contained within the properties entry of each feature. Each
 
 * `id` - A short unique id string.
 * `name` - A description label for the feature to be shown to users.
-* `level` - An integer that describes the features geographical hierarchy. This should be contigious with parent and child features.
-* `children` - A string based comma seperated list containing the `id` of all child features.
+* `level` - An integer that describes the features geographical hierarchy. This should be contiguous with parent and child features.
+* `children` - A string based comma separated list containing the `id` of all child features.
 
-Datasets that have classifications (such as land use) should have key:value entires consiting of 'name':'value' and an entry with a key of 'classifications' with a value consisting of a string based comma seperated list containing all the keys for the classifications and a 'total' key with the sum of all other values. This will allow for correctly rendering bar charts and pie charts.
+Datasets that have classifications (such as land use) should have key:value entires consisting of 'name':'value' and an entry with a key of 'classifications' with a value consisting of a string based comma separated list containing all the keys for the classifications and a 'total' key with the sum of all other values. This will allow for correctly rendering bar charts and pie charts.
 
 ```
 {
@@ -175,7 +175,7 @@ the application loads.
 
 #### Time Frame - `timeframe`
 
-A string that is required to render and conrol time series layers. It should have a value of either `Days`, `Months`, `Years`. This will determine the behaviour of the UI for layer groups
+A string that is required to render and control time series layers. It should have a value of either `Days`, `Months`, `Years`. This will determine the behaviour of the UI for layer groups
 with time series data configured.
 
 - Days: This will allow the selection of every available date within the configure data sources.
@@ -222,9 +222,9 @@ An object that contains information describing the data source. This is generall
 This currently supports the following properties:
 
 * `attribution`: An optional object to render some text or a link for use with attribution of layer datasets.
-* `min`: An interger for the lower limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
-* `max`: An interger for the upper limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
-* `units`: An optional string that desribes the units of any values derived from the data. Used in legends and statistics panels.
+* `min`: An integer for the lower limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
+* `max`: An integer for the upper limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
+* `units`: An optional string that describes the units of any values derived from the data. Used in legends and statistics panels.
 * `description`: An optional string that describes the dataset.
 * `startColor`: A string describing a valid hex or RGB/A colour value. This is used to render colour ramps and legends.
 * `categories`: An array of objects that contains a `label` (string) property, a `color` (string) property and a `value` (integer) property. Describes classifications within datasets such as land usage. Used to create swatch legends and statistics visualisation.
@@ -251,9 +251,9 @@ Each object currently supports the following properties:
   the map.
 * `normalise`: Only required for sources of format: `cog`. Boolean that configures the map to normalise the raster pixel
   values to between 0 and 1. False by default.
-* `level`: A required integer for sources of type `statistical`. Ideally starting at 0, this integer describes the hierachy of statistical sources. Higher integers should represent more complex and granular vector datasets. Used to provide the statistics feature UI and mantain performance for large vector datasets.
+* `level`: A required integer for sources of type `statistical`. Ideally starting at 0, this integer describes the hierarchy of statistical sources. Higher integers should represent more complex and granular vector datasets. Used to provide the statistics feature UI and maintain performance for large vector datasets.
 * `position`: A string of either `left` or `right` that is only required for swipe layer groups. This determines which side of the swipe control the date will be visualised on.
-* `timestamps`: An optional array of Unix timestamps or ISO8601 date strings. This allows the configuration of time series visualisation within the layergroup. If multiple timestamps exist within the layergroup and the timeframe property is set a datepicker/stepper control will be rendered to cycle which layer is visible.
+* `timestamps`: An optional array of Unix timestamps or ISO8601 date strings. This allows the configuration of time series visualisation within the layer group. If multiple timestamps exist within the layer group and the timeframe property is set a datepicker/stepper control will be rendered to cycle which layer is visible.
 
 ## Example Configurations
 
