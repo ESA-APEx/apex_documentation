@@ -236,7 +236,7 @@ An array of objects that configures the data to be displayed in the layer. If th
 Each object currently supports the following properties:
 
 * `url`: A required URL string that points to the dataset's publicly available resource.
-* `format`: A required string that identifies what kind of dataset is requested. This can be one of the following: `wms`, `wmts`, `cog`, `xyz`, `wfs` or `geojson`.
+* `format`: A required string that identifies what kind of dataset is requested. This can be one of the following: `wms`, `wmts`, `cog`, `xyz`, `wfs`, `flatgeobuf`, `stac` or `geojson`.
 * `layers`: Only required for sources of format: `wms` and `wmts`. A string that describes the layer to be requested from
   the external service.
 * `typeName`: Only required for sources of format: `wfs`. A string that describes the type to be requested from the
