@@ -115,19 +115,19 @@ The level of support available depends on your project's status:
 * **Completed ESA EOP projects**\
   Please reach out to us to explore how APEx can help propagate and maintain your project's results.
 * **Non-ESA projects**\
-  APEx Algorithm Services will be available through the ESA Network of Resources (NoR) starting in 2026.
+  APEx Algorithm Support will be available through the ESA Network of Resources (NoR) starting in 2026.
 
 The goal of APEx is to simplify the complex task of building efficient, operational, cloud-based on-demand services.
 ESA recognizes that achieving this often requires specific skills that may not be present in the project consortium or
 that could significantly impact the project budget. To assist your project in these activities, APEx can provide the
-following Algorithm Services:
+following Algorithm Support:
 
 * **[Algorithm Porting](porting.md)**\
   Discover how APEx can assist your project in implementing your algorithm using APEx-compliant technologies, such
   as openEO User Defined Processes (UDP) or OGC Application Packages.
 * **[Algorithm Onboarding](onboarding.md)**\
   Explore how APEx can assist in deploying your algorithms within an APEx-compatible hosting platform and sharing
-  them across the EO community through the APEx Algorithm Services Catalogue.
+  them across the EO community through the [APEx Algorithm Services Catalogue](./onboarding.md#apex-algorithm-services-catalogue).
 * **[Algorithm Upscaling](upscaling.md)**\
   Learn how APEx facilitates and simplifies the execution of algorithms at scale.
 * **[Algorithm Enhancement](enhancement.md)**\

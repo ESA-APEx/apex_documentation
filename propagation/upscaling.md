@@ -2,18 +2,19 @@
 title: Algorithm Upscaling
 ---
 
-APEx can facilitate the execution of your openEO UDP or OGC application package-based algorithm over larger geographic
-areas. To support these operations, APEx requires that the algorithm is already optimised for cost-effective
-scalability, deployed as a service, and registered in the
-APEx [Algorithm Services Catalogue](onboarding.md#apex-algorithm-services-catalogue). If needed, APEx can provide
-additional support to ensure these prerequisites are met.
+The APEx Algorithm Upscaling approach implies designing a solution for services having a scaling factor that may differ
+from one algorithm to the other (spatial, temporal, track-based, etc…).
 
-To execute large-scale data processing activities, APEx provides a range of services (from guidance to liaison with
-Platform operators, or even the provision of tools, in some cases self-service tools) that project teams or end-users
-can utilise to run an algorithm at scale, using the processing capabilities of the platforms that are compatible with
-the APEx [guidelines](../interoperability/algohostingenv.md). This set of APEx services is designed to simplify the
-complexities and challenges associated with geographical and temporal upscaling, such as tiling, input/output
-management, and job orchestration, ensuring an efficient processing experience.
+As a start, APEx will aim at facilitating the execution of an openEO UDP or OGC application package-based algorithm over
+larger geographic areas. To support these operations, APEx requires that the algorithm is already optimised for cost-effective
+scalability, deployed as a service, and registered in the [APEx Algorithm Services Catalogue](./onboarding.md#apex-algorithm-services-catalogue).
+If needed, APEx can provide additional support to ensure these prerequisites are met.
+
+To execute large-scale data processing activities, APEx provides a range of services (from guidance to liaison with Platform
+operators, or even the provision of tools, in some cases self-service tools) that project teams or end-users can utilise
+to run an algorithm at scale, using the processing capabilities of the platforms that are compatible with the [APEx guidelines](../interoperability/algohostingenv.md).
+This set of APEx services is designed to simplify the complexities and challenges associated with geographical and temporal
+upscaling, such as tiling, input/output management, and job orchestration, ensuring an efficient processing experience.
 
 :::{.callout-warning}
 
@@ -31,47 +32,48 @@ Current roadmap items:
 
 ## Job Orchestration Client Tools
 
-To address the complexities inherent in job orchestration, APEx adopts a stepped approach to ensure
-that user requirements are fully addressed while ensuring the technical compatibility of APEx-compliant technologies and
-platforms. The goal is to abstract the underlying complexities, providing users with a simplified and efficient way of
-executing upscaling tasks.
+For developer users to address the complexities inherent in job orchestration, the APEx consortium will adopt a stepped
+approach to ensure that user requirements are fully addressed while ensuring the technical compatibility of APEx-compliant
+technologies and platforms. The goal is to abstract the underlying complexities, providing users with a simplified and
+efficient way of executing upscaling tasks.
 
-APEx will start with establishing a formal procedure to gather in a structured way the upscaling requirements from ESA
-projects. These requirements will serve as inputs for the consortium to prepare the environment for the upscaling
-activities. This includes configuring a tailored environment and the pre-configuration of the job orchestration tools
-that enable a simplified execution of upscaling tasks.
+APEx will start with establishing a formal procedure, supported by the APEx portal, to gather in a structured way the
+upscaling requirements from ESA projects. These requirements will serve as inputs for the consortium to prepare the environment
+for the upscaling activities. This includes configuring a tailored environment and the pre-configuration of the job orchestration
+tools that enable a simplified execution of upscaling tasks.
 
-In the subsequent phase, APEx will explore potential enhancements to the user experience by further automating the
-process.
+In the subsequent phase, the consortium will rely on the previously implemented procedure to explore potential enhancements
+to the user experience by further automating the process.
 
-For the **openEO-powered platforms**, users of the APEx upscaling service currently have access to the following client
-tools, that will be pre-configured for them by the APEx Upscaling team, based on the provided ESA project requirements:
+For the openEO-powered platforms, users of the APEx upscaling service currently have access to the following client tools,
+that will be pre-configured for them by the APEx Upscaling team, based on the provided ESA project requirements:
 
 * An openEO batch job manager (Python library), which supports the creation of large-scale processing tasks for openEO
-  developers by dividing them into separate batch jobs that can be automatically monitored. The openEO batch job manager
-  is built on top of the openEO API and can therefore be used independently from the underlying platform.
+developers by dividing them into separate batch jobs that can be automatically monitored. The openEO batch job manager
+is built on top of the openEO API and can therefore be used independently from the underlying platform.
 
-During the following phase of APEx, the range of openEO client tools and their usability will be further enhanced to
-better support comprehensive upscaling activities.
+During the following phase of APEx, the range of openEO client tools and their usability will be further enhanced to better
+support comprehensive upscaling activities.
 
-For the **Application Package compatible platforms**, users of the APEx upscaling service currently have access to the
-following client tools that will be pre-configured for them by the APEx Upscaling team, based on the provided ESA
-project requirements:
+For the Application Package compatible platforms, users of the APEx upscaling service currently have access to the following
+client tools that will be pre-configured for them by the APEx Upscaling team, based on the provided ESA project requirements:
 
 * An Application Package / OGC API Process systematic processing manager (Python library), which supports the creation
-  of large-scale processing tasks for Application Package users having technical skills to run such tool. The systematic
-  processing job manager is built on top of the OGC API Process standard interface and can, therefore, be used to
-  communicate with the underlying compatible platform.
+of large-scale processing tasks for Application Package users having technical skills to run such tool. The systematic
+processing job manager is built on top of the OGC API Process standard interface and can, therefore, be used to communicate
+with the underlying compatible platform.
 
-During the following phase of APEx, the range of Application Package tools and their usability will be further
-integrated when providing comprehensive support to upscaling activities.
+During the following phase of APEx, the range of Application Package tools and their usability will be further integrated
+when providing comprehensive support to upscaling activities.
 
-Overall, the envisioned goal is to support medium-sized upscaling activities through a tool or service requiring no
-coding. We define 'medium-sized' as an activity that does not require specific coordination with the platform in terms
-of required resources (more details are available [here](#requirements-for-the-selection-of-platforms)) and can be
-finished in less than 3 days of processing. This distinction in size of activity is important in the sense that
-automatic tooling cannot (yet) reliably handle all activities that are normally performed by human operators, and thus
-constitutes a risk. For medium-sized activities, with relatively low processing costs, this risk is smaller.
+Overall, the envisioned goal is to support medium-sized upscaling activities through a tool or service requiring no coding.
+We define 'medium-sized' as an activity that does not require specific coordination with the platform in terms of required
+resources (more details are available in [here](#requirements-for-the-selection-of-platforms)) and can be finished in less
+than 3 days of processing.
+
+This distinction in size of activity is important in the sense that automatic tooling cannot (yet) reliably handle all
+activities that are normally performed by human operators, and thus constitutes a risk. For medium-sized activities, with
+relatively low processing costs, this risk is smaller.
 
 ## Data Management Client Tools
 

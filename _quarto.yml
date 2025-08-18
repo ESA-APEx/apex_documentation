@@ -36,6 +36,8 @@ website:
         contents:
           - href: instantiation/usecases.qmd
             text: Use Cases
+          - href: instantiation/customisation.md
+          - href: instantiation/accessibility.md
           - href: instantiation/geospatial_explorer.md
           - href: instantiation/project_portal.md
           - href: instantiation/user_workspace.md
@@ -82,6 +84,7 @@ website:
           - href: interoperability/definitions.qmd
           - href: propagation/service_development.qmd
           - href: interoperability/algohosting.md
+          - href: interoperability/datahosting.md
           - href: interoperability/algohostingenv.md
           - href: interoperability/geospatial_explorer.qmd
           - href: interoperability/businessmodel.md

@@ -7,7 +7,7 @@ APEx currently offers two main options for projects to develop their on-demand s
 * OpenEO-based services [@openeo], implemented in line
   with [openEO’s User Defined Processes](#openeo-user-defined-processes) (UDP) [@udp]
 * OGC API - Processes-based services [@apiprocess], implemented in line with the
-  [OGC Application Package Best Practice][#ogc-application-package-and-ogc-api-processes](@ap)
+  [OGC Application Package Best Practice](#ogc-application-package-and-ogc-api-processes)(@ap)
 
 These APEx-compliant technologies allow algorithms to be hosted on an APEx-compliant algorithm hosting platform and make
 them available for execution through web services. These technologies promote seamless reuse and integration of existing
@@ -113,8 +113,8 @@ language’ (CWL) [@cwl], which is a thin wrapper around your software.
 
 If concepts like containers are already familiar to the project, and they prefer to have full control and responsibility
 over their software, including all details concerning how they read raw EO products, then this might be the right
-choice. Of course, the APEx Algorithm Services exist to help you with the integration of your service into the APEx
-ecosystem.
+choice. Of course, the [APEx Algorithm Support](../propagation/index.qmd) exists to help you with the integration of your
+service into the APEx ecosystem.
 
 To offer your application as an on-demand service, the project will need to define clear constraints on possible input
 parameters and make sure that their software is well-tested to be able to handle variations in input parameters. When

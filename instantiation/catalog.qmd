@@ -8,6 +8,8 @@ The Product Catalogue enables projects to create their own SpatioTemporal Asset 
 comprehensive metadata collection for efficient organisation and discovery of geospatial data assets. This information
 is presented in a user-friendly JSON format.
 
+![APEx Product Catalogue](images/stac_browser_1.jpg)
+
 Instantiating a project-specific catalogue gives projects the freedom to use it for a range of purposes, from
 experimental to operational use cases. Assets that are considered project deliverables will normally be added to the
 centralised project results repository.
