@@ -123,10 +123,10 @@ Statistics should be contained within the properties entry of each feature. Each
 
 * `id` - A short unique id string.
 * `name` - A description label for the feature to be shown to users.
-* `level` - An integer that describes the features geographical hierarchy. This should be contigious with parent and child features.
-* `children` - A string based comma seperated list containing the `id` of all child features.
+* `level` - An integer that describes the features geographical hierarchy. This should be contiguous with parent and child features.
+* `children` - A string based comma separated list containing the `id` of all child features.
 
-Datasets that have classifications (such as land use) should have key:value entires consiting of 'name':'value' and an entry with a key of 'classifications' with a value consisting of a string based comma seperated list containing all the keys for the classifications and a 'total' key with the sum of all other values. This will allow for correctly rendering bar charts and pie charts.
+Datasets that have classifications (such as land use) should have key:value entires consisting of 'name':'value' and an entry with a key of 'classifications' with a value consisting of a string based comma separated list containing all the keys for the classifications and a 'total' key with the sum of all other values. This will allow for correctly rendering bar charts and pie charts.
 
 ```
 {
@@ -221,6 +221,23 @@ A string that is used to identify layers in both the user interface and OpenLaye
 A boolean. Determines if a layer is currently shown on the map. Setting this to true will show the layer on the map when
 the application loads.
 
+#### Time Frame - `timeframe`
+
+A string that is required to render and control time series layers. It should have a value of either `Days`, `Months`, `Years`. This will determine the behaviour of the UI for layer groups
+with time series data configured.
+
+- Days: This will allow the selection of every available date within the configure data sources.
+- Months: This will only allow a user to select a the year and the month for the configured sources.
+- Years: This will allow only a single year to be selected for the dataset.
+
+For the best user experience it's essential to set this correctly for the series of datasets in use.
+
+#### Base Layer - `isBaseLayer` 
+Optional boolean that determines if the layer should be treated as a base layer. Base layer groups are always active and cannot be toggled.
+
+#### Swipe Layer - `isSwipeLayer`
+Optional boolean that determines if the layer should be treated as a swipe layers. Swipe layer groups are configured much like any other layer group however the individual sources need to be configured with an additional position property with a value of either `left` or `right`.
+
 #### Layout - `layout`
 
 An object to determine which interface elements are rendered for the layer. Supports two properties:
@@ -233,10 +250,14 @@ card can show a toggle for the layer, a selection of buttons or controls for the
 This currently supports the following properties:
 
 * `toggleable`: A boolean that determines if a toggle switch to enable/disable the layer should be rendered.
-* `controls`: An optional array of strings that configure which buttons to render in the layer card for interaction with
-  the layer.
+* `controls`: An optional object that configures which buttons to render in the layer card for interaction with
+  the layer. This object can contain:
+    - `zoomToCenter`: A boolean that renders a button that will zoom the map to the extent of the layer.
+    - `opacitySlider`: A boolean that renders a button to open or close the opacity slider control for the layer.
+    - `download`: A URL string that will render a link to the given URL. Used for signposting users to the source data or website.
 * `legend`: An optional object that can be configured to show static or dynamic legend elements within the layer card
-  when active.
+  when active. Contains a `type` property that has a string value of: `swatch`, `image`, `gradient`. Also requires a `url` property with a string value
+  if the type is `image`.
 
 ##### Interface Group - `interfaceGroup`
 
@@ -244,17 +265,17 @@ An optional string that is used to identify which interface group this layer bel
 
 #### Metadata - `meta`
 
-An objectg that contains information describing the data source. This is generally used for information that would be used in multiple places across the application such as: units used to describe data values, the minimum and maximum value for use in UI/Visualisation calculations, attribution etc.
+An object that contains information describing the data source. This is generally used for information that would be used in multiple places across the application such as: units used to describe data values, the minimum and maximum value for use in UI/Visualisation calculations, attribution etc.
 
 This currently supports the following properties:
 
 * `attribution`: An optional object to render some text or a link for use with attribution of layer datasets.
-* `min`: An interger for the lower limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
-* `max`: An interger for the upper limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
-* `units`: An optional string that desribes the units of any values derived from the data. Used in legends and statistics panels.
+* `min`: An integer for the lower limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
+* `max`: An integer for the upper limit to use for data values when calculating UI elements such as legends, statistics, colour ramps.
+* `units`: An optional string that describes the units of any values derived from the data. Used in legends and statistics panels.
 * `description`: An optional string that describes the dataset.
 * `startColor`: A string describing a valid hex or RGB/A colour value. This is used to render colour ramps and legends.
-* `categories`: An array of objects that contains a `lablel` (string) property and a `color` (string) property. Describes classifications within datasets such as land usage. Used to create swatch legends and statistics visualisation.
+* `categories`: An array of objects that contains a `label` (string) property, a `color` (string) property and a `value` (integer) property. Describes classifications within datasets such as land usage. Used to create swatch legends and statistics visualisation.
 
 #### Data - `data`
 
@@ -263,8 +284,7 @@ An array of objects that configures the data to be displayed in the layer. If th
 Each object currently supports the following properties:
 
 * `url`: A required URL string that points to the dataset's publicly available resource.
-* `format`: A required string that identifies what kind of dataset is requested. This can be one of the following: `wms`, `wmts`, `cog`, `xyz`, `wfs` or `geojson`.
-* `type`: An optional string that can be used to further define the type of layer the source represents. e.g data, statistical, swipe
+* `format`: A required string that identifies what kind of dataset is requested. This can be one of the following: `wms`, `wmts`, `cog`, `xyz`, `wfs`, `flatgeobuf`, `stac` or `geojson`.
 * `layers`: Only required for sources of format: `wms` and `wmts`. A string that describes the layer to be requested from
   the external service.
 * `typeName`: Only required for sources of format: `wfs`. A string that describes the type to be requested from the
@@ -277,14 +297,11 @@ Each object currently supports the following properties:
   is supported (and doesn't match the map's configured projection), it will attempt to reproject the data.
 * `style`: Open Layers style object that is passed through to the library to modify the rendering of the layer within
   the map.
-* `baseSources`: A required array of strings for sources with a `swipe` type. Each string should match the name property of another source. Describes the layers to be render on the "left" side of a comparison layer.
-* `clippedSource`: A required string for sources with a `swipe` type. The string should match the name property of another source. Describes the layer to be render on the "right" side of a comparison layer.
-* `images`: Only required for sources of format: `cog`. An array of objects that contain a URL property pointing to a COG
-  resource. Replaces the 'url' property for this source type. Allows loading multiple GeoTiffs into one layer.
 * `normalise`: Only required for sources of format: `cog`. Boolean that configures the map to normalise the raster pixel
   values to between 0 and 1. False by default.
-* `isBaseLayer`: Optional boolean that determines if the layer should be treated as a base layer. Base layers are always active and cannot be toggled.
-* `level`: A required integer for sources of type `statistical`. Ideally starting at 0, this integer describes the hierachy of statistical sources. Higher integers should represent more complex and granular vector datasets. Used to provide the statistics feature UI and mantain performance for large vector datasets.
+* `level`: A required integer for sources of type `statistical`. Ideally starting at 0, this integer describes the hierarchy of statistical sources. Higher integers should represent more complex and granular vector datasets. Used to provide the statistics feature UI and maintain performance for large vector datasets.
+* `position`: A string of either `left` or `right` that is only required for swipe layer groups. This determines which side of the swipe control the date will be visualised on.
+* `timestamps`: An optional array of Unix timestamps or ISO8601 date strings. This allows the configuration of time series visualisation within the layer group. If multiple timestamps exist within the layer group and the timeframe property is set a datepicker/stepper control will be rendered to cycle which layer is visible.
 
 ## Example Configurations
 
