@@ -16,6 +16,19 @@ users to maximise the uptake of the onboarded algorithms.
 
 ## Support Overview
 
+The APEx Algorithm Onboarding service provides support in several key areas. The support can be tailored to the needs
+of the project and can include one or more of the following components:
+
+* **[Algorithm Hosting Platform Onboarding](#hosting-platform-onboarding-support)**\
+  Assistance in selecting and onboarding the algorithm to an [APEx-compliant hosting platform](./platforms.md), ensuring
+  that the algorithm is available for execution as an on-demand service.
+* **[APEx Algorithm Services Catalogue Integration](#apex-algorithm-services-catalogue)**\
+  Guidance on how to integrate the hosted algorithm into the [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/),
+  making it discoverable and accessible to the EO community.
+* **[Automated Testing and Benchmarking](#automated-testing-and-benchmarking)**\
+  Provision of automated testing and benchmarking services to ensure the algorithm remains functional and accessible over
+  time.
+
 ### Hosting Platform Onboarding Support
 
 APEx can help to identify the different hosting environments that the project can choose from based on criteria such as
@@ -26,8 +39,27 @@ further integration into the APEx [Algorithm Services Catalogue](#apex-algorithm
 
 :::{.callout-tip}
 A full list of the known APEx-compliant algorithm hosting platforms is
-available [here](ondemandservices.qmd#which-option-to-choose).
+available [here](./platforms.md).
 :::
+
+### APEx Algorithm Services Catalogue
+
+Through comprehensive guidelines and documentation, projects can seamlessly integrate their hosted services in the
+APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/). This process facilitates easy browsing
+and access to available algorithms, fostering collaboration and innovation within the EO community.
+
+![APEx Algorithm Services Catalogue](images/catalogue.png)
+
+The APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) allows visitors to discover and
+select algorithms for subsequent execution on the corresponding APEx-compliant hosting environment.
+
+::: {.callout-note title="Disclaimer"}
+APEx relies on the APEx-compliant algorithm hosting environments for algorithm execution and the provisioning of the
+corresponding cloud resources. Users wishing to execute an algorithm will need a valid account on the relevant hosting
+platform or make a request through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/).
+:::
+
+Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Services Catalogue.
 
 ### Automated Testing and Benchmarking
 
@@ -55,25 +87,6 @@ the service provider indicates that the problem will not be resolved or is simpl
 
 To run the defined tests, APEx also needs permission from the hosting platform and an account with sufficient credits.
 Collaboration of the platform may be required to fulfil this requirement.
-
-### APEx Algorithm Services Catalogue
-
-Through comprehensive guidelines and documentation, projects can seamlessly integrate their hosted services in the
-APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/). This process facilitates easy browsing
-and access to available algorithms, fostering collaboration and innovation within the EO community.
-
-![APEx Algorithm Services Catalogue](images/catalogue.png)
-
-The APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) allows visitors to discover and
-select algorithms for subsequent execution on the corresponding APEx-compliant hosting environment.
-
-::: {.callout-note title="Disclaimer"}
-APEx relies on the APEx-compliant algorithm hosting environments for algorithm execution and the provisioning of the
-corresponding cloud resources. Users wishing to execute an algorithm will need a valid account on the relevant hosting
-platform or make a request through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/).
-:::
-
-Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Services Catalogue.
 
 ## Considerations and Project Responsibilities
 
