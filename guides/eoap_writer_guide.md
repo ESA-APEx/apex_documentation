@@ -9,7 +9,7 @@ algorithms as a service.
 
 EOAP gives some concrete steps and guidelines to ensure that your EO data processing software is embedded in a way that
 can benefit
-from [APEx-compliant algorithm hosting platforms](../propagation/ondemandservices.qmd#what-are-the-platforms-to-choose-from).
+from [APEx-compliant algorithm hosting platforms](../propagation/platforms.md).
 A number of these Platforms are implementing EOAP guidelines, which include the provision of:
 
 * An interpreter for the Common Workflow Language (CWL)

@@ -1,0 +1,61 @@
+---
+title: "Add a web form"
+image: ../images/cover_webform.png
+lightbox: true
+---
+
+You can add a web form via the web portal form settings or by adding an embed code (if you use another application to build
+web forms e.g. MailChimp).
+
+## Create and add a web form in the web portal
+
+### Create a web form
+
+To create a new web form, you need to navigate to **structure > webforms > forms** via the administration toolbar. Here
+you access all available web forms, edit web forms and add new web forms.
+
+To create a new web form, you need to click the **add webform** button which is available in the top left corner. Give your
+web form an appropriate name and click the **save** button. Now you can start building your web form by clicking the **build**
+button on the left side of your web form name. You can add submission fields to your web form by clicking the **add element**
+button. In the pop-up window you can search an element that is suitable for the field that you wish to add. For example,
+to add fields to add first and last name, you can add the element **Name** and edit the element to indicate that visitors
+need to enter their first and last name.
+
+### Add the web form on your web page
+
+Once your web form is set up, you can easily add it in a web page by using the **Webform** paragraph. You can add this
+paragraph as a separate paragraph (use the full width of your web page) and you can use it in the **columns** paragraph
+(divide the web page with web form and text for example side-by-side).
+
+When you have selected the paragraph **Webform** you can easily add the web form by typing the name of the form in the
+field **Webform**. The paragraph will display the web form as you have built it. If you want to add or edit fields in your
+web forms, you have to navigate to **structure > webforms > forms** via the administration toolbar and edit the form via
+the **build** button.
+
+## Use an embed code to add a web form
+
+You can also add web forms that are built in other applications such as HubSpot, MailChimp, etc.
+
+Copy the embed code of the web form via the external application. To embed this code and display the web form on the project
+portal web page, you need to use the **Embed** paragraph. Paste code in the **Embed code** field and click **save** to
+publish the web form.
+
+## Screenshots
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));grid-gap: 1em;"}
+
+![Web Form - Menu](../images/webform_menu.png){group="gallery-webform"}
+
+![Web Form - Overview](../images/webform_overview.png){group="gallery-webform"}
+
+![Web Form - Build](../images/webform_build.png){group="gallery-webform"}
+
+![Web Form - Build Elements](../images/webform_elements.png){group="gallery-webform"}
+
+![Web Form - Paragraph](../images/webform_paragraph.png){group="gallery-webform"}
+
+![Web Form - Embed Paragraph](../images/webform_embed_paragraph.png){group="gallery-webform"}
+
+![Web Form - Embed Code](../images/webform_embed_code.png){group="gallery-webform"}
+
+:::

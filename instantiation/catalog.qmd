@@ -8,6 +8,8 @@ The Product Catalogue enables projects to create their own SpatioTemporal Asset 
 comprehensive metadata collection for efficient organisation and discovery of geospatial data assets. This information
 is presented in a user-friendly JSON format.
 
+![APEx Product Catalogue](images/stac_browser_1.jpg)
+
 Instantiating a project-specific catalogue gives projects the freedom to use it for a range of purposes, from
 experimental to operational use cases. Assets that are considered project deliverables will normally be added to the
 centralised project results repository.
@@ -114,13 +116,25 @@ A more advanced but increasingly common use case is to use a catalogue to track 
 patches in a STAC catalog. Here we again have a pattern where various components like the EO processing system, model
 training scripts and reference data management system all work together around a central metadata store.
 
-## Examples
+## Guides
 
 The following guides showcase how you can interact with the catalogue API:
 
 * [Creating APEx single sign-on token](../guides/token.md)
 * [Ingesting STAC metadata](../guides/stac_catalog_ingest.ipynb)
 * [Linking an APEx STAC Catalogue with an openEO service](../guides/catalog_openeo.ipynb)
+
+## Examples
+
+@tbl-catalogue-examples showcases example projects that use the APEx Product Catalogue:
+
+| Project                                | URL                                                                                  |
+| :------------------------------------- | :----------------------------------------------------------------------------------- |
+| APEx                                   | [https://browser.apex.esa.int](https://browser.apex.esa.int/?.language=en)           |
+| APEx (Demo)                            | [https://browser.demo.apex.esa.int](https://browser.demo.apex.esa.int/?.language=en) |
+| World Ecosystem Extent Dynamics (WEED) | [https://browser.weed.apex.esa.int](https://browser.weed.apex.esa.int/?.language=en) |
+
+: APEx Product Catalogue - Project Examples {#tbl-catalogue-examples}{tbl-colwidths="[30,70]"}
 
 :::{.callout-tip}
 

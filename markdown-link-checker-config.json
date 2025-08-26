@@ -10,6 +10,9 @@
       "pattern": "^https://www.drupal.org/"
     },
     {
+      "pattern": "^https://new.drupal.org/"
+    },
+    {
       "pattern": "^https://eoepca.org"
     },
     {

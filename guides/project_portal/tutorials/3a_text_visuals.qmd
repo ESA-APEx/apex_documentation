@@ -1,0 +1,61 @@
+---
+title: "Add content and/or visuals"
+image: ../images/cover_add_content.png
+lightbox: true
+---
+
+To add text and visuals, you can use the following paragraphs:
+
+### Text
+
+*To add a basic title and text paragraph.*
+
+Click **add paragraph** and select the **Text** paragraph. Edit the title and body text.
+
+### Text with visual
+
+*To add a text and visual next to each other.*
+
+Click **add paragraph** and select the **Visual with Text** paragraph.
+
+- Click **select media** to add your visual.
+- Add title and body text in the appropriate fields available.
+- Add URL and link text if you want to add a link button (optional)
+
+Standard setting will display the image left of the text. You can change this setting by selecting **Flip layout horizontally**
+
+Selecting **Justify content vertically** will align your visual vertically with the text.
+
+### Columns
+
+*To add 2 columns of text, or text and a visual next to each other.*
+
+Click **add paragraph** and select the **Columns** paragraph.
+
+You can now edit the column left and column right by adding one of following content types:
+
+- Text
+- Visual/image
+- Embed code
+- Call to action
+- View (to display events or news in a column view)
+- Web form
+
+Add the option suitable for your content and edit the paragraph.
+
+## Screenshots
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));grid-gap: 1em;"}
+
+![Example - Text and visual](../images/text_overview.png){group="gallery-text"}
+
+![Example - Text](../images/text_intro.png){group="gallery-text"}
+
+![Example - Text with Visual](../images/text_visual_text.png){group="gallery-text"}
+
+![Example - Columns](../images/text_columns.png){group="gallery-text"}
+
+![Columns - Add Text](../images/text_column_add_text.png){group="gallery-text"}
+
+![Columns - Edit](../images/text_column_edit.png){group="gallery-text"}
+:::

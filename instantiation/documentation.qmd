@@ -13,6 +13,8 @@ writing with scientific plotting and code snippets. It also allows for introduci
 documentation. Projects that do not feel comfortable with an approach based on Markdown for editing and Git for
 versioning are still free to use those traditional formats.
 
+![APEx Documentation Portal](images/documentation.png)
+
 Quarto generates fully customisable online documentation portals tailored for scientific publications, featuring
 interactive visualisations. It supports various scientific elements, including formulas, diagrams, and code.
 Additionally, Quarto can produce PDF or Word documents, making it ideal for scenarios where user documentation needs to
@@ -51,16 +53,43 @@ A documentation portal can support several project scenarios, including:
 
 ## What does APEx offer
 
-APEx provides a simple template to start your documentation. As you make changes, automation tools publish the
-documentation to a location that seamlessly integrates it in your project portal. This works best in combination with
-the 'project portal' service, ensuring maximal integration.
+The APEx Documentation Portal Service provides users with a streamlined template to initiate their documentation process.
+As changes are made, advanced automation tools ensure that the documentation is published seamlessly to a location that
+integrates effortlessly within your project portal. This service is most effective when used in conjunction with the
+[APEx Project Portal](./project_portal.md), maximizing the level of integration.
+
+This documentation template includes the following features:
+
+* **Initial setup of the Quarto framework**\
+  We establish the Quarto framework within your GitHub repository, enabling a modern, flexible documentation structure.
+* **Quality assurance tools**\
+  The template incorporates quality assurance tooling to uphold the content standards of your documentation.
+* **Automated build and hosting**\
+  GitHub Actions are set up to automatically build and host your documentation website directly on GitHub, ensuring that
+  updates are reflected promptly and efficiently.
+* **Initial branding**\
+  Initial branding of the documentation portal will be setup based on your project-specific guidelines.
+* **(Optional) custom URL setup**\
+  If desired, we can assist in setting up a custom URL for your documentation site, enhancing accessibility and branding.
 
 ## What software is used under the hood
 
-The open source [Quarto](https://quarto.org/) software is used, and you will need to learn the basics of that system. In
-our own experience, people familiar with Markdown will have no issues with making basic edits. More advanced features
-are well-documented, and often turn out to be easier to use than the equivalent in office tools. Many features are
-simply not at all supported by such tools.
+The APEx Documentation Portal utilizes the open-source [Quarto](https://quarto.org/) software. To leverage this service,
+users should familiarize themselves with the basics of the Quarto system. Based on our experience, individuals who are
+comfortable with Markdown will find it straightforward to make basic edits. Furthermore, Quarto offers many advanced
+features that are well-documented and often simpler to use than their counterparts in traditional office tools. Notably,
+some features available in Quarto are not supported by standard office applications, making it a valuable resource for
+innovative documentation practices.
+
+## Examples
+
+@tbl-documentation-examples showcases example projects that use the APEx Documentation Portal:
+
+| Project | URL                                                                                              | GitHub Repository                                                                                |
+| :------ | :----------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------- |
+| APEx    | [https://esa-apex.github.io/apex_documentation/](https://esa-apex.github.io/apex_documentation/) | [https://github.com/ESA-APEx/apex_documentation](https://github.com/ESA-APEx/apex_documentation) |
+
+: APEx Documentation Portal - Project Examples {#tbl-documentation-examples}{tbl-colwidths="[20,40, 40]"}
 
 :::{.callout-tip}
 

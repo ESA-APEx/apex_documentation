@@ -7,13 +7,27 @@ algorithms remain accessible to the EO community beyond the project’s completi
 and promote the use of algorithms developed during ESA projects, ensuring their longevity and continued utilisation, but
 also ensures alignment with the FAIR and open science data principles. This is achieved through the implementation of
 APEx [Interoperability and Compliance Guidelines](../interoperability/index.md) and by registering the onboarded
-services in the APEx Algorithm Services Catalogue for broader visibility and accessibility.
+services in the [APEx Algorithm Services Catalogue](#apex-algorithm-services-catalogue) for broader visibility and
+accessibility.
 
 For the engagement with stakeholders of the algorithm, APEx collaborates closely with initiatives such as
 the [Stakeholder Engagement Facility (SEF)](https://esa-sef.eu/). Such initiatives provide outreach and training towards
 users to maximise the uptake of the onboarded algorithms.
 
 ## Support Overview
+
+The APEx Algorithm Onboarding service provides support in several key areas. The support can be tailored to the needs
+of the project and can include one or more of the following components:
+
+* **[Algorithm Hosting Platform Onboarding](#hosting-platform-onboarding-support)**\
+  Assistance in selecting and onboarding the algorithm to an [APEx-compliant hosting platform](./platforms.md), ensuring
+  that the algorithm is available for execution as an on-demand service.
+* **[APEx Algorithm Services Catalogue Integration](#apex-algorithm-services-catalogue)**\
+  Guidance on how to integrate the hosted algorithm into the [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/),
+  making it discoverable and accessible to the EO community.
+* **[Automated Testing and Benchmarking](#automated-testing-and-benchmarking)**\
+  Provision of automated testing and benchmarking services to ensure the algorithm remains functional and accessible over
+  time.
 
 ### Hosting Platform Onboarding Support
 
@@ -25,8 +39,27 @@ further integration into the APEx [Algorithm Services Catalogue](#apex-algorithm
 
 :::{.callout-tip}
 A full list of the known APEx-compliant algorithm hosting platforms is
-available [here](index.qmd#what-are-the-platforms-to-choose-from).
+available [here](./platforms.md).
 :::
+
+### APEx Algorithm Services Catalogue
+
+Through comprehensive guidelines and documentation, projects can seamlessly integrate their hosted services in the
+APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/). This process facilitates easy browsing
+and access to available algorithms, fostering collaboration and innovation within the EO community.
+
+![APEx Algorithm Services Catalogue](images/catalogue.png)
+
+The APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) allows visitors to discover and
+select algorithms for subsequent execution on the corresponding APEx-compliant hosting environment.
+
+::: {.callout-note title="Disclaimer"}
+APEx relies on the APEx-compliant algorithm hosting environments for algorithm execution and the provisioning of the
+corresponding cloud resources. Users wishing to execute an algorithm will need a valid account on the relevant hosting
+platform or make a request through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/).
+:::
+
+Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Services Catalogue.
 
 ### Automated Testing and Benchmarking
 
@@ -55,23 +88,6 @@ the service provider indicates that the problem will not be resolved or is simpl
 To run the defined tests, APEx also needs permission from the hosting platform and an account with sufficient credits.
 Collaboration of the platform may be required to fulfil this requirement.
 
-### APEx Algorithm Services Catalogue
-
-Through comprehensive guidelines and documentation, projects can seamlessly integrate their hosted services in the
-APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/). This process facilitates easy browsing
-and access to available algorithms, fostering collaboration and innovation within the EO community.
-
-The APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) allows visitors to discover and
-select algorithms for subsequent execution on the corresponding APEx-compliant hosting environment.
-
-::: {.callout-note title="Disclaimer"}
-APEx relies on the APEx-compliant algorithm hosting environments for algorithm execution and the provisioning of the
-corresponding cloud resources. Users wishing to execute an algorithm will need a valid account on the relevant hosting
-platform or make a request through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/).
-:::
-
-Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Services Catalogue.
-
 ## Considerations and Project Responsibilities
 
 ### Algorithm Maintenance
@@ -91,10 +107,9 @@ ESA’s [Network of Resources (NoR)](https://portfolio.nor-discover.org/). When 
 service, onboarded to the ESA NoR, APEx can facilitate access to cloud processing resources on the corresponding
 platform as a central gateway and catalogue of federated services.
 
-In the long term, APEx plans to offer a graphical interface that simplifies the execution of onboarded services.
-However, it’s important to note that even with this user-friendly interface, users will still need to authenticate with
-the respective algorithm hosting platform and ensure they have access to the necessary processing resources on that
-platform.
+In the long term, APEx plans to integrate the execution of services through its [APEx Geospatial Explorer](https://explorer.apex.esa.int/),
+simplifying the execution of onboarded services. However, it’s important to note that even with this user-friendly interface,
+users will still need to have access to the necessary processing resources on that platform.
 
 ### Large-scale Data Processing
 

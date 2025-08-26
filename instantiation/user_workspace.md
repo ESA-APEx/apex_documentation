@@ -4,25 +4,42 @@ title: User Workspace
 
 ## Overview
 
-The User Workspaces within the APEx Project Tools provide secure, personalised environments for individual users to
-perform a wide range of tasks, including development, data processing, visualisation, and analysis. These single-user
-environments are managed by JupyterHub and dynamically provisioned using Kubernetes, ensuring scalability, isolation,
-and ease of use. Key features and capabilities of the User Workspaces include:
+The User Workspace service within the APEx Project Environments provides secure, personalised environments for individual
+users to perform a wide range of tasks, including development, data processing, visualisation, and analysis. These single-user
+environments are managed by JupyterHub and dynamically provisioned using Kubernetes, ensuring scalability, isolation, and
+ease of use.
 
-* **Secure, Isolated Environments**\
-  Each user is provided with a dedicated namespace within the Kubernetes cluster, ensuring resource isolation and secure
-  data management.
+It is designed to provide the following key benefits to users when accessing their instance:
 
-* **Customisable Workspaces**\
-  Workspaces can be tailored to user needs with specific configurations and tools, including pre-configured environments
-  for tasks like data analysis and machine learning.
+* **Flexibility and customisation**\
+Configure a workspace with tools and settings tailored to specific needs.
+* **Optimised for EO tasks**\
+Access specialised tools and libraries for Earth observation.
+* **Integrated ecosystem**\
+Utilise other APEx services through your workspace.
+* **Collaborative work**\
+Share workspaces within team to facilitate collaboration and data sharing. Enhance community engagement and knowledge
+sharing by publishing results.
 
-* **Seamless Integration with APEx Tools and Services**\
-  Integration with other APEx tools, such as the [Interactive Development Environment (IDE)](ide.md)
-  and [Product Catalogue](catalog.qmd), for enhanced functionality and data accessibility.
+Key features and capabilities of the User Workspace include:
 
-* **Robust Data Management**\
-  Secure storage and retrieval of data and integration with external data sources
+* **Cloud services orchestration:**\
+High availability and performance of multi-user-facing services, via automated deployment and scaling of containerised
+applications, as well as built-in load balancing and service discovery mechanisms.
+* **Secure, Isolated Environments:**\
+Each user is provided with a dedicated namespace within the Kubernetes cluster, ensuring resource isolation and secure
+data management.
+* **Customisable Workspaces:**\
+Workspaces can be tailored to user needs with specific configurations and tools, including pre-configured environments
+for tasks like data analysis and machine learning.
+* **Seamless APEx integration:**\
+Workspaces benefit from a generic, configurable framework, ensuring the delivery of a broad range of APEx applications
+and services, empowering efficient user workflows.
+* **EO-focused tools access:**\
+Readiness for resource-intensive software libraries like SNAP and GDAL, which are specifically designed for Earth
+observation tasks.
+* **Robust data management:**\Secure, persistent storage and retrieval of data using PersistentVolumeClaims (PVCs), along
+with data management tools, connectivity to external data sources, and data sharing mechanisms.
 
 ## Showcase Scenarios
 
@@ -34,8 +51,8 @@ scenarios include:
   user might leverage the IDE integrated with JupyterHub to write and debug Python scripts for processing satellite
   imagery.
 
-* **Data Analysis and Visualisation**
-  \Analysts can perform exploratory data analysis and create visualisations using tools like JupyterLab or QGIS. For
+* **Data Analysis and Visualisation**\
+  Analysts can perform exploratory data analysis and create visualisations using tools like JupyterLab or QGIS. For
   example, an analyst might use Jupyter notebooks to analyse climate data and visualise trends over time.
 
 * **Educational and Training Purposes**\

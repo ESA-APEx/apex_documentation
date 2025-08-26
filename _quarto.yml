@@ -3,7 +3,6 @@ project:
   preview:
     port: 4200
 
-
 website:
   favicon: assets/img/logos/apex_icon_blue.svg
   repo-url: "https://github.com/ESA-APEx/apex_documentation"
@@ -16,6 +15,7 @@ website:
   navbar:
     pinned: true
   page-navigation: true
+  bread-crumbs: true
 
   title: "APEx - Documentation Portal"
 
@@ -25,16 +25,19 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
-#      - href: eo_service_usage.qmd
+      #      - href: eo_service_usage.qmd
       - text: On-demand EO services
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
+          - href: propagation/platforms.md
       - href: instantiation/index.md
-        text: Project Tools
+        text: Project Environments
         contents:
-          - href: instantiation/usecases.md
+          - href: instantiation/usecases.qmd
             text: Use Cases
+          - href: instantiation/customisation.md
+          - href: instantiation/accessibility.md
           - href: instantiation/geospatial_explorer.md
           - href: instantiation/project_portal.md
           - href: instantiation/user_workspace.md
@@ -43,7 +46,7 @@ website:
           - href: instantiation/documentation.qmd
           - href: instantiation/forum.md
       - href: propagation/index.qmd
-        text: Algorithm Services
+        text: Algorithm Support
         contents:
           - href: propagation/ondemandservices.qmd
           - href: propagation/usecases.md
@@ -56,18 +59,24 @@ website:
           - href: propagation/intercomparison.md
       - text: Guides
         contents:
-        - href: guides/token.md
-          text: Creating APEx single sign-on token
-        - href: guides/udp_writer_guide.qmd
-          text: Creating openEO based services
-        - href: guides/eoap_writer_guide.md
-          text: Creating EOAP based services
-        - href: guides/upscaling_openeo.ipynb
-          text: Upscaling openEO based services
-        - href: guides/stac_catalog_ingest.ipynb
-          text: Ingest STAC metadata
-        - href: guides/catalog_openeo.ipynb
-          text: Linking APEx STAC catalogue with an openEO service
+          - href: guides/account.md
+          - href: guides/token.md
+            text: Creating APEx single sign-on token
+          - href: guides/udp_writer_guide.qmd
+            text: Creating openEO based services
+          - href: guides/eoap_writer_guide.md
+            text: Creating EOAP based services
+          - href: guides/upscaling_openeo.ipynb
+            text: Upscaling openEO based services
+          - href: guides/stac_catalog_ingest.ipynb
+            text: Ingesting STAC metadata in APEx Product Catalogue
+          - href: guides/catalog_openeo.ipynb
+            text: Linking APEx STAC catalogue with an openEO service
+          - href: guides/file_formats.qmd
+            text: File format recommendations
+          - href: guides/project_portal/index.qmd
+            contents:
+              - auto: guides/project_portal/tutorials/*.qmd
 
       - href: interoperability/index.md
         text: Interoperability and Compliance Guidelines
@@ -75,8 +84,9 @@ website:
           - href: interoperability/definitions.qmd
           - href: propagation/service_development.qmd
           - href: interoperability/algohosting.md
+          - href: interoperability/datahosting.md
           - href: interoperability/algohostingenv.md
-          - href: interoperability/geospatial_explorer.md
+          - href: interoperability/geospatial_explorer.qmd
           - href: interoperability/businessmodel.md
 
 format:
@@ -95,4 +105,3 @@ format:
     link-external-newwindow: false
     bibliography: interoperability/references/references.yaml
     csl: interoperability/references/diabetologia.csl
-bread-crumbs: true

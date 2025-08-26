@@ -1,0 +1,48 @@
+---
+title: "Customizing the look and feel"
+image: ../images/cover_customize.png
+lightbox: true
+---
+
+Changing the look and feel of your web portal is an important step in making your site reflect your project's identity and
+branding. The APEx platform provides several ways to tailor the appearance of your website, ranging from simple color
+adjustments to advanced custom styling. This flexibility allows you to create a unique and professional presence for your
+project while maintaining usability and accessibility.
+
+### Customizing Color Settings
+
+The default APEx template includes built-in options for adjusting the main colors used throughout your site. To access
+these settings, navigate to **website settings** in the navigation bar and locate the **color settings** section.
+Here, you can modify the primary and secondary colors to better align with your project's branding guidelines.
+
+Changing these color settings will automatically update elements such as headers, buttons, and links across your website,
+ensuring a consistent and cohesive appearance. This method is user-friendly and does not require any coding knowledge,
+making it suitable for most administrators and editors.
+
+### Adding Custom CSS
+
+For more advanced customization, Drupal allows you to add custom CSS descriptors to further refine the website's appearance.
+By entering your own CSS, you can override the default styles provided by the template and implement unique design elements
+or layouts.
+
+To add custom CSS, click **CSS** in the navigation bar and look for the option to include custom styles.
+
+::: {.callout-important}
+Please note that using custom CSS requires a solid understanding of web design and CSS syntax and requires additional
+approval from the project administrator and APEx team. Additionally, be aware that extensive customizations may affect
+compatibility with future template updates, and APEx cannot guarantee that custom styles will remain functional after
+such changes.
+:::
+
+Custom CSS is a powerful tool for those who need maximum flexibility, but it should be used with caution and only when
+the built-in settings are insufficient for your needs.
+
+## Screenshots
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));grid-gap: 1em;"}
+
+![Customize - Colors](../images/customize_colors.png){group="gallery-customize"}
+
+![Customize - Result](../images/customize_result.png){group="gallery-customize"}
+
+:::

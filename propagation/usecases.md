@@ -2,7 +2,7 @@
 title: Use Cases for APEx EO Service Support
 ---
 
-The APEx Algorithm Services aim for FAIR compliance of algorithms/applications and are designed to enhance the
+The APEx Algorithm Support aims for FAIR compliance of algorithms/applications and are designed to enhance the
 efficiency, interoperability, and scalability of EO workflows and algorithms. Below are several use cases that
 demonstrate how APEx can support EO projects.
 
@@ -54,7 +54,7 @@ A project is experiencing performance issues with an algorithm. Both of the foll
 * The project created a new machine learning model in Python that performs inference based on EO data. However, the
   training and/or inference steps take too long, hindering scalability for processing larger areas of interest.
 * The project uses an established EO algorithm that lacks performance or consumes too much RAM in the application case
-  and that would greatly benefit from transitioning into a cloud-service or GPU-based implementation
+  and that would greatly benefit from transitioning into a cloud-service or GPU-based implementation.
 
 ### Solution
 
@@ -162,11 +162,16 @@ additional [APEx Algorithm Porting](porting.md) support is available.
 
 ### Examples
 
-* The project has developed a workflow as an openEO processing graph or OGC API Process to generate a new air quality
+* The project has developed a workflow implemented as an openEO processing graph or EOAP to generate a new air quality
   index. So far, the testing and validation of this workflow have been carried out over a limited geographical area, and
   the project now aims to generate the index at the country/regional level.
-* The project has discovered an algorithm in the APEx Algorithm Services Catalogue for generating a new air quality
-  index and aims to execute this algorithm on all historical data for the entire continent of Europe.
+* The project has discovered the [APEx Algorithm Porting](./porting.md), the [APEx Algorithm Onboarding](./onboarding.md)
+  onto an APEx-compliant hosting platform and the [APEx Algorithm Upscaling](./upscaling.md) services and has requested
+  the related resources to perform these activities, for their algorithm to be exposed behind a referenced API (e.g.
+  openEO UDP endpoint or OGC API - Processes endpoint) and used to run Upscaling tasks.
+* The project has discovered an algorithm in the [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int)
+  for generating a new air quality index and aims to execute this algorithm on all historical data for the entire continent
+  of Europe.
 
 ### Solution
 

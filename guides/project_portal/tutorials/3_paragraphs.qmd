@@ -1,0 +1,44 @@
+---
+title: "Edit web pages via paragraphs"
+image: ../images/cover_paragraphs.png
+lightbox: true
+---
+
+![Overview paragraphs](../images/create_page_3.png)
+
+## Check which paragraphs are available and which one you want to use
+
+To add content and visuals on a web page, you must add paragraphs. The web portal template provides different options to
+share your type of content.
+
+Via this [showcase page](https://demo.apex.esa.int/en/tools/showcase-page), you can see all different paragraph options.
+When adding a new paragraph, you will also see a preview of the design.
+
+You can select paragraphs to add:
+
+- Text
+- Call to action
+- Visual with text
+- Embed (code)
+- Partners (logos)
+- Columns: to split content and/or visuals in two columns
+- Download / publications
+- Events
+- Web forms
+
+## Add a paragraph
+
+Click **Add Paragraph** in the web page you wish to edit. You will see a preview of all available paragraphs. Select the
+paragraph suitable for the content you would like to add.
+
+Select the paragraph you need and click **Add**. You can now start editing the paragraph.
+
+Discover more on how to edit the paragraphs in the dedicated tutorial web pages.
+
+- [Add text and/or visuals](3a_text_visuals.qmd)
+- [Add a Call-To-Action (CTA)](3b_cta.qmd)
+- [Add news items and an overview of the latest or all news](3c_news.qmd)
+- [Add an event and an overview of the latest or all events](3d_event.qmd)
+- [Add a web form](3e_webform.qmd)
+- [Add a logo (partners) banner](3f_logo_banner.qmd)
+- [Add publications or downloads (files)](3g_publication.qmd)

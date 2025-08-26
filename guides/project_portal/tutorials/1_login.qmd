@@ -1,0 +1,42 @@
+---
+title: "Login to the Project Portal and the Drupal content overview"
+image: ../images/cover_login.png
+lightbox: true
+---
+
+:::{.grid}
+::: {.g-col-8}
+As soon as your web portal has been set up, you will receive an email from the APEx team containing the URL that
+allows you to access the website and manage its content.
+
+To manage the content of the website, you’ll need to log in first. This can be done by navigating to your project’s
+portal login at `https://<project>.apex.esa.int/user`, which will present you with a login screen.
+
+Click the **Log in with APEx** button to log in using your APEx account. You can choose one of your preferred
+authentication methods, such as **EOIAM** or **EGI Checkin**.
+
+Once logged in, you will be able to edit and manage your web portal via the
+[Drupal CMS](https://new.drupal.org/docs/drupal-cms). Through the navigation toolbar at the top of your screen, you
+can manage:
+
+* Web portal settings (color, footer, legal and social)
+* Menu/navigation
+* Web pages
+* Content
+* Visuals
+* Web forms
+* Taxonomy
+* CTAs
+* Footer (including legal pages and socials)
+
+:::
+::: {.g-col-4}
+
+![Project Portal login screen](../images/login_1.png){group="gallery-login"}
+
+![APEx login screen](../images/login_2.jpg){group="gallery-login"}
+
+![Drupal content overview](../images/login_3.png){group="gallery-login"}
+
+:::
+:::

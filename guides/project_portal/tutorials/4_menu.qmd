@@ -1,0 +1,56 @@
+---
+title: "Edit the menu navigation"
+image: ../images/cover_menu.png
+lightbox: true
+---
+
+:::{.grid}
+::: {.g-col-8}
+
+To edit the menu navigation of your web portal, you need to navigate to **structure > menus > main navigation** via the
+administration toolbar (menu).
+
+After clicking on **main navigation** you can see all  menu items available in your web portal main navigation. You can
+add new menu items and edit already available menu items.
+
+## Add a new main navigation menu item
+
+To add a new menu item to your web portal navigation, click the **add link** button. You can add the menu name and URL
+in the appropriate fields and click **save** to add your menu item.
+
+## Move the position of a menu item in the main navigation
+
+You can easily move the position of menu items by moving them up or down (drag & drop).
+
+## Create a submenu item in the main navigation
+
+To create a submenu item, you first need to add a menu item as explained above. Once the menu item is available in the list,
+you need to drag the menu item just below its main menu item and move it to the right. I will become an inset of the main
+menu item.
+
+## Enable or disable a main navigation menu item
+
+Via the main navigation overview, which you can access when you navigate to **structure > menus > main navigation** via the
+administration toolbar, you can easily disable or enable main navigation (sub)menu items. Select the **Enabled** check to
+show the menu item in the main navigation or deselect the **Enabled** checkbox to hide the menu item in the main navigation.
+
+## Edit the name of your project portal
+
+Upon instantiation of your project web portal, the name of your project will be set to display in the top left corner in
+the header section, left from the main menu navigation, and in the footer. The acronym and/or full name will use the primary
+site colors.
+
+To edit this text, you navigate to **website settings** in the navigation toolbar (menu) and select **site settings**.
+You will be able to edit the site name and slogan. Click **save configuration** to save your changes.
+
+:::
+::: {.g-col-4}
+
+![Menu - Add Link](../images/menu_add_link.png){group="gallery-menu"}
+
+![Menu - Edit](../images/menu_edit.png){group="gallery-menu"}
+
+![Menu - Website Settings](../images/menu_website_settings.png){group="gallery-menu"}
+
+:::
+:::{.grid-item}

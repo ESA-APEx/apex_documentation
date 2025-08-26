@@ -1,64 +1,73 @@
 references:
-- id: udp
-  title: "OpenEO User Defined Processes"
-  url: https://open-eo.github.io/openeo-python-client/udp.html
-- id: ap
-  title: "OGC Best Practice for Earth Observation Application Package"
-  url: https://docs.ogc.org/bp/20-089r1.html
-- id: cwl
-  title: "Commonwl.org: Common Workflow Language Specifications"
-  url: https://w3id.org/cwl/
-- id: apiprocess
-  title: "OGC API — Processes — Part 1: Core Standard, 2021"
-  url: https://docs.ogc.org/is/18-062r2/18-062r2.html
-- id: openeo
-  title: "openEO"
-  url: https://openeo.org/
-- id: cog
-  title: "OGC Cloud Optimized GeoTIFF"
-  url: https://docs.ogc.org/is/21-026/21-026.html
-- id: netcdf
-  title: "OGC CF-netCDF"
-  url: https://www.ogc.org/standard/netcdf/
-- id: geozarr
-  title: "Geozarr Specification"
-  url: https://github.com/zarr-developers/geozarr-spec
-- id: geojson
-  title: "GeoJSON"
-  url: https://datatracker.ietf.org/doc/html/rfc7946
-- id: geoparquet
-  title: "GeoParquet 1.1.0"
-  url: https://geoparquet.org/releases/v1.1.0/
-- id: stac
-  title: "STAC Specification"
-  url: https://github.com/radiantearth/stac-spec/
-- id: openeo_api
-  title: "OpenEO API 1.2.0"
-  url: https://openeo.org/documentation/1.0/developers/api/reference.html
-- id: openeo_api_profiles
-  title: "OpenEO API Profiles"
-  url: https://openeo.org/documentation/1.0/developers/profiles/api.html
-- id: openeo_processes_profiles
-  title: "OpenEO Processes Profiles"
-  url: https://openeo.org/documentation/1.0/developers/profiles/processes.html
-- id: openeo_batch_profiles
-  title: "OpenEO L1B Minimal Batch Jobs"
-  url: https://openeo.org/documentation/1.0/developers/profiles/api.html#l1b-minimal-batch-jobs
-- id: openeo_remote_udp
-  title: OpenEO Remote UDP extension
-  url: https://github.com/Open-EO/openeo-api/tree/draft/extensions/remote-process-definition
-- id: wms
-  title: "WMS 1.3.0"
-  url: https://portal.ogc.org/files/?artifact_id=14416
-- id: wmts
-  title: WMTS 1.0.0
-  url: https://portal.ogc.org/files/?artifact_id=35326
-- id: wfs
-  title: WFS 2.0
-  url: https://docs.ogc.org/is/09-025r2/09-025r2.html
-- id: ogc_features
-  title: OGC API Features 1.0
-  url: https://www.ogc.org/publications/standard/ogcapi-features/
-- id: stac_extension
-  title: STAC projection extension
-  url: https://github.com/stac-extensions/projection
+  - id: udp
+    title: "OpenEO User Defined Processes"
+    url: https://open-eo.github.io/openeo-python-client/udp.html
+  - id: ap
+    title: "OGC Best Practice for Earth Observation Application Package"
+    url: https://docs.ogc.org/bp/20-089r1.html
+  - id: cwl
+    title: "Commonwl.org: Common Workflow Language Specifications"
+    url: https://w3id.org/cwl/
+  - id: apiprocess
+    title: "OGC API — Processes — Part 1: Core Standard, 2021"
+    url: https://docs.ogc.org/is/18-062r2/18-062r2.html
+  - id: openeo
+    title: "openEO"
+    url: https://openeo.org/
+  - id: cog
+    title: "OGC Cloud Optimized GeoTIFF"
+    url: https://docs.ogc.org/is/21-026/21-026.html
+  - id: netcdf
+    title: "OGC CF-netCDF"
+    url: https://www.ogc.org/standard/netcdf/
+  - id: geozarr
+    title: "Geozarr Specification"
+    url: https://github.com/zarr-developers/geozarr-spec
+  - id: flatgeobuf
+    title: "FlatGeobuf"
+    url: https://flatgeobuf.org/
+  - id: geojson
+    title: "GeoJSON"
+    url: https://datatracker.ietf.org/doc/html/rfc7946
+  - id: geoparquet
+    title: "GeoParquet 1.1.0"
+    url: https://geoparquet.org/releases/v1.1.0/
+  - id: stac
+    title: "STAC Specification"
+    url: https://github.com/radiantearth/stac-spec/
+  - id: openeo_api
+    title: "OpenEO API 1.2.0"
+    url: https://openeo.org/documentation/1.0/developers/api/reference.html
+  - id: openeo_api_profiles
+    title: "OpenEO API Profiles"
+    url: https://openeo.org/documentation/1.0/developers/profiles/api.html
+  - id: openeo_processes_profiles
+    title: "OpenEO Processes Profiles"
+    url: https://openeo.org/documentation/1.0/developers/profiles/processes.html
+  - id: openeo_batch_profiles
+    title: "OpenEO L1B Minimal Batch Jobs"
+    url: https://openeo.org/documentation/1.0/developers/profiles/api.html#l1b-minimal-batch-jobs
+  - id: openeo_remote_udp
+    title: OpenEO Remote UDP extension
+    url: https://github.com/Open-EO/openeo-api/tree/draft/extensions/remote-process-definition
+  - id: openeo_processing_parameters
+    title: OpenEO Processing Parameters extension
+    url: https://github.com/Open-EO/openeo-api/tree/draft/extensions/processing-parameters
+  - id: wms
+    title: "WMS 1.3.0"
+    url: https://portal.ogc.org/files/?artifact_id=14416
+  - id: wmts
+    title: WMTS 1.0.0
+    url: https://portal.ogc.org/files/?artifact_id=35326
+  - id: wfs
+    title: WFS 2.0
+    url: https://docs.ogc.org/is/09-025r2/09-025r2.html
+  - id: ogc_features
+    title: OGC API Features 1.0
+    url: https://www.ogc.org/publications/standard/ogcapi-features/
+  - id: stac_extension
+    title: STAC projection extension
+    url: https://github.com/stac-extensions/projection
+  - id: proj4js
+    title: PROJ4JS
+    url: http://proj4js.org/

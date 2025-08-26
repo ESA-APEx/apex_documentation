@@ -5,3 +5,13 @@ _build
 .venv*
 venv*
 .envrc
+**/libs/*
+**__pycache__
+**/.DS_Store
+**/.ipynb_checkpoints
+**/figure-docx
+**.docx
+.vscode
+package-lock.json
+package.json
+node_modules

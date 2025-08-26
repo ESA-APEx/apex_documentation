@@ -1,0 +1,66 @@
+---
+title: File format recommendations
+---
+
+Within the APEx interoperability and compliance guidelines, [DATA-REQ-01](../interoperability/datahosting.md) specifies
+the file formats that projects should use when publishing static data.
+The information on this page complement that requirement with more detailed recommendations on the use of these formats.
+Projects are encouraged to consult with the APEx team if they have a use case that does not fit within these guidelines.
+
+## Cloud Optimised GeoTIFF
+
+Cloud Optimised GeoTIFF (COG) is the most widely supported format for geospatial raster data, and also one of the most
+efficient in terms of access costs. It is recommended as the default option to consider when publishing static data products.
+When combined with STAC metadata, COG can produce self-describing, FAIR-compliant datasets that are easily consumable by
+various services.
+
+### Generating Cloud Optimised GeoTIFF
+
+If you are not familiar with COG or GeoTIFF generation, it is recommended to format your GeoTIFF files using a recent version
+of GDAL to ensure that they are compliant:
+
+```bash
+gdal_translate world.tif world_webmerc_cog.tif -of COG
+```
+
+### Organising spatiotemporal multi-band datasets
+
+Many datasets have multiple bands (or 'variables'), or have a date associated with them.
+The general recommendation is to store a single band per GeoTIFF file and to create STAC items with one asset per band.
+This layout is commonly used by many other datasets and avoids the complexities of multi-band GeoTIFF files, which can be
+challenging to use.
+
+An exception to this are the 'RGB' style products, where three bands are used to represent a single image. In this case,
+creating a Cloud Optimised GeoTIFF with three bands is an option.
+
+For associating time information, create one GeoTIFF per timestamp, and one STAC item per timestamp. The GeoTIFF format has
+not built-in support for conveying time information, but STAC metadata is supporting this very well.
+
+### Visualisation in APEx Geospatial Explorer
+
+To optimise visualisation in the APEx Geospatial Explorer, additional guidelines have been established. Adhering to these
+guidelines will ensure that the data is effectively optimised for visualisation on a map. Please refer to
+[this page](../interoperability/geospatial_explorer.qmd#cloud-optimized-geotiff-cog) for more information.
+
+## (Geo-)Zarr
+
+Zarr is a format that is gaining traction in the geospatial community, although it is not yet as widely supported as
+Cloud Optimised GeoTIFF.
+Its main advantage lies in its ability to store complex multi-dimensional datasets that go beyond a simple 4D
+(x, y, time, bands) structure. Just like COG, Zarr allows for efficient cloud access.
+
+At the time of writing, there are, however these important caveats:
+
+- GeoZarr aims to define how to store geospatial data in Zarr format, but this standard is not fully developed and lacks
+  widespread tooling support.
+- Overview pyramids for fast online rendering are not yet supported.
+- By design, Zarr allows for many degrees of freedom, which requires the data producer to have a good understanding of
+  the associated trade-offs.
+- By design, Zarr stores data as separate files in a directory structure, optimising cloud access but making direct
+  downloads less convenient.
+
+## NetCDF
+
+NetCDF is a self-describing format with some properties similar to Zarr, but less optimised for cloud access. It can be useful
+for exchanging data cubes as single files through traditional methods. However, it is less recommended for convenient
+sharing of large datasets, for which either COG or Zarr provide better options.
