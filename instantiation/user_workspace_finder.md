@@ -1,10 +1,10 @@
 ---
-title: User Workspace
+title: User Workspace Finder
 ---
 
 ## Overview
 
-The User Workspace service within the APEx Project Environments provides secure, personalised environments for individual
+The User Workspace Finder service within the APEx Project Environments provides secure, personalised environments for individual
 users to perform a wide range of tasks, including development, data processing, visualisation, and analysis. These single-user
 environments are managed by JupyterHub and dynamically provisioned using Kubernetes, ensuring scalability, isolation, and
 ease of use.
@@ -43,22 +43,17 @@ with data management tools, connectivity to external data sources, and data shar
 
 ## Showcase Scenarios
 
-The User Workspaces support a variety of use cases, making them versatile tools for the EO community. Some typical
-scenarios include:
+The User Workspaces Finder support a variety of use cases, making them versatile tools for the EO community. 
+Some typical scenarios include:
 
 * **Development and Testing**\
-  Researchers and developers can use the User Workspaces to develop and test new algorithms and models. For instance, a
-  user might leverage the IDE integrated with JupyterHub to write and debug Python scripts for processing satellite
-  imagery.
+  Researchers and developers can use the User Workspace Finder to share EOAP files under work within a team.
 
 * **Data Analysis and Visualisation**\
-  Analysts can perform exploratory data analysis and create visualisations using tools like JupyterLab or QGIS. For
-  example, an analyst might use Jupyter notebooks to analyse climate data and visualise trends over time.
+  Analysts can manage and perform data sharing of their Jupyter notebook files, climate datasets and data analysis result files.
 
 * **Educational and Training Purposes**\
-  The User Workspaces can be used to create interactive tutorials and practical assignments that guide users through
-  various aspects of APEx, from setting up workspaces and accessing data in the Product Catalogue to using the IDE for
-  development tasks.
+  Users can curate and share tutorials, for example related to various aspects of APEx, from setting up workspaces and accessing data in the Product Catalogue to using the IDE for development tasks.
 
 :::{.callout-tip}
 
