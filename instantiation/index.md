@@ -42,11 +42,11 @@ The specific components of the APEx Project Environments include:
   Creating a project website based on Drupal, working in synergy with other APEx services.
 // * [**User Workspace Finder**](user_workspace_finder.md)\
 //  Offering a secure and personalised work environment with data management and data sharing mechanisms.
-* [**Code Server workspace**](app_code_server.md)\
+* [**Code Server IDE**](app_code_server.md)\
   Leveraging IDE capabilities tailored specifically for EO tasks, based on the open-source software Code Server (VS Code in the browser).
-* [**JupyterLab workspace**](app_jupyterlab.md)\
+* [**JupyterLab IDE**](app_jupyterlab.md)\
   Leveraging IDE capabilities tailored specifically for EO tasks, based on open-source software JupyterLab.
-* [**QGIS workspace**](app_qgis.md)\
+* [**QGIS on a Remote Desktop**](app_qgis.md)\
   Leveraging Geographic Information System functions, based on the open-source software QGIS.
 * [**Products Catalogue**](catalog.qmd)\
   Featuring SpatioTemporal Asset Catalog (STAC) catalogues and streamlined data ingestion processes.
