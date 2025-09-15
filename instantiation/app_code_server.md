@@ -2,14 +2,14 @@
 title: Code Server Interactive Development Environment - Tailored User Workspace
 ---
 
-## Overview
+## Code Server overview
 
 The Code Server Interactive Development Environment (IDE) capacity within the APEx Project Environments primarily leverages the power
-of the [Code Server software (Visual Studio Code in the Cloud)](#code-server).
+of the [Code Server software (Visual Studio Code in the Cloud)](#code-server-software-architecture).
 
-![Current APEx Code Server IDE service](images/code_server.png)
+![Current APEx Code Server IDE](images/code_server.png)
 
-This APEx tailored User Workspace allows users to maintain a familiar environment and rich feature set while benefiting
+This tailored user workspace allows the APEx users to maintain a familiar environment and rich feature set, while benefiting
 from the power and resources of server-side computing. This is particularly advantageous for those working on resource-intensive
 tasks or needing access to a consistent development environment from various locations and devices.
 
@@ -19,17 +19,17 @@ them to harness the computational power of remote servers.
 Tailored specifically for EO tasks, this environment furnishes developers with an array of tools and libraries fine-tuned
 for programming languages and productivity plugins or extensions.
 
-## Code Server workspace
+## Code Server software architecture
 
 The APEx Code Server solution is an Integrated Development Environment delivered as a cloud-based user workspace, tailored
 to support the activities of Earth observation (EO) projects.  
 
-The Code Server IDE within the APEx Instantiation Services is built on the [User Workspace](./user_workspace.md) architecture,
-leveraging Kubernetes and JupyterHub for orchestration and management.
+The Code Server IDE within the APEx Instantiation Services is built on a "User Workspace" system architecture,
+leveraging Kubernetes and JupyterHub for orchestration and management, and accessing a file system secured and private to the authenticated user.
 
-![The Code Server IDE in the current APEx workspaces offering ](images/applicationhub.png)
+![The Code Server IDE in the current APEx workspaces offering ](images/applicationhub_codeserver.png)
 
-Each Code Server workspace comes equipped with the Visual Studio Code Server, an extension of Microsoft's popular VS Code
+Each Code Server user workspace comes equipped with the Visual Studio Code Server, an extension of Microsoft's popular VS Code
 editor, as well as with a private data products catalogue. These features empower developer users to edit and build EO
 data processing algorithms and workflows, accelerating project outcomes within a dedicated, tool-rich environment.
 
@@ -52,9 +52,9 @@ their local machine's hardware capabilities, enabling them to leverage the compu
 Code Server serves as the core development environment, providing a powerful and flexible platform for coding and debugging,
 allowing developers to harness server-side computational power while maintaining a familiar interface.
 
-### Key Features
+### Code Server key features
 
-The APEx Code Server workspace includes several features that make it suitable for both individual researchers and teams
+The APEx Code Server IDE includes several features that make it suitable for both individual researchers and teams
 working on EO research and applications.
 
 * **Customisable workspace**\
@@ -72,9 +72,9 @@ complemented by a vast repository of extensions for virtually any language or fi
 Leverage integrated Git support, allowing team members to work on the same project by tracking changes and merging updates,
 helping to keep the code organised while avoiding conflicting code changes.
 
-## Showcase Scenarios
+## Code Server showcase scenarios
 
-The Code Server Interactive Development Environment supports a variety of use cases, making it an essential tool for developers,
+The APEx Code Server IDE supports a variety of use cases, making it an essential tool for developers,
 researchers, and data scientists within the EO community. Some typical scenarios include:
 
 * **Algorithm Development and Testing**\
@@ -110,9 +110,9 @@ Users can develop and test data processing pipelines that automate the ingestion
 processing, and analysis of large EO datasets. An example use case could be to create a workflow setting up a pipeline
 to preprocess satellite images and extract relevant features for further analysis.
 
-### Support for EO Application Package Development
+### Note on the support for EO Application Package (EOAP) development
 
-The Code Server IDE solution provides the tooling for application developers to implement the Best Practice for Earth Observation
+The APEx Code Server IDE provides the tooling for application developers to implement the Best Practice for Earth Observation
 Application Package [@ap] as defined by the Open Geospatial Consortium (OGC 20-089) and the EO Exploitation Platform
 Common Architecture (EOEPCA) spearheaded by the European Space Agency (ESA). This best practice supports
 developers in adapting and packaging their existing algorithms to be reproducible, deployed, and executable on different

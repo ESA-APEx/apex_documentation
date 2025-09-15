@@ -5,7 +5,7 @@ title: QGIS - Tailored User Workspace
 ## Overview
 
 The Geographic Information System capacity within the APEx Project Environments primarily leverages the power
-of the [QGIS software](#qgis) as a Remote Desktop software.
+of the [QGIS software](#qgis-software-architecture) as a Remote Desktop software.
 
 ![Current APEx QGIS Service](images/qgis.png)
 
@@ -17,12 +17,12 @@ The server-based nature ensures that users are not constrained by their local ma
 them to harness the computational power of remote servers.
 
 
-## QGIS workspace
+## QGIS software architecture
 
 The APEx QGIS workspace is a fully-fledged Geographic Information System delivered as a cloud-based user workspace, tailored
 to support the activities of Earth observation (EO) projects.  
 
-![QGIS on a Remote Desktop in the current APEx workspaces offering ](images/applicationhub.png)
+![QGIS on a Remote Desktop in the current APEx workspaces offering ](images/applicationhub_qgis.png)
 
 Each QGIS workspace comes equipped with the free and open source software project hosted on QGIS.org association, as well
 as with a private data products catalogue. These features empower developer users to edit and build EO-based mapping products 

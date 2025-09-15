@@ -2,12 +2,10 @@
 title: User Workspace Finder
 ---
 
-## Overview
+## User Workspace Finder Overview
 
 The User Workspace Finder service within the APEx Project Environments provides secure, personalised environments for individual
-users to perform a wide range of tasks, including development, data processing, visualisation, and analysis. These single-user
-environments are managed by JupyterHub and dynamically provisioned using Kubernetes, ensuring scalability, isolation, and
-ease of use.
+users to perform a range of data management and data sharing tasks. 
 
 It is designed to provide the following key benefits to users when accessing their instance:
 
@@ -41,16 +39,16 @@ observation tasks.
 * **Robust data management:**\Secure, persistent storage and retrieval of data using PersistentVolumeClaims (PVCs), along
 with data management tools, connectivity to external data sources, and data sharing mechanisms.
 
-## Showcase Scenarios
+## User Workspace Finder showcase scenarios
 
 The User Workspaces Finder support a variety of use cases, making them versatile tools for the EO community. 
 Some typical scenarios include:
 
 * **Development and Testing**\
-  Researchers and developers can use the User Workspace Finder to share EOAP files under work within a team.
+  Researchers and developers can use the User Workspace Finder to organise and share EOAP files under work within a team.
 
 * **Data Analysis and Visualisation**\
-  Analysts can manage and perform data sharing of their Jupyter notebook files, climate datasets and data analysis result files.
+  Analysts can manage and perform data sharing of their Jupyter Notebook files, climate datasets and data analysis result files.
 
 * **Educational and Training Purposes**\
   Users can curate and share tutorials, for example related to various aspects of APEx, from setting up workspaces and accessing data in the Product Catalogue to using the IDE for development tasks.

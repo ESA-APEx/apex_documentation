@@ -20,9 +20,10 @@ the JupyterLab workspace, the QGIS user workspace, and in certain cases, dashboa
 are all managed by a dedicated ApplicationHub server. This ApplicationHub orchestrates the launch and management of such software deployments, 
 ensuring secured (isolated from other users) and customisable environments for individual users, while allowing targetted file sharing operations among users.
 
-A key feature of the APEx Project Environments is the ability to provide managed, configurable environments. These environments
-can be tailored to the specific needs of different projects and users for their tasks (EO application development, hosting, 
-execution, exploratory analysis). This flexibility and configurability allow the project members to focus on their primary research objectives
+A key feature of the APEx Project Environments is the ability to provide managed, configurable environments. 
+These environments can be tailored to the specific needs of different projects and users, supporting various tasks, 
+including exploratory analysis, development, hosting, and execution of EO applications.
+This flexibility and configurability allow the project members to focus on their primary research objectives
 without being bogged down by the technical complexities of setting up and maintaining advanced, Cloud-native workspaces.
 
 Another critical component of the APEx Instantiation Services is the seamless integration with
@@ -39,13 +40,13 @@ The specific components of the APEx Project Environments include:
   web services based on a configuration defined by a dashboard administrator.
 * **[Project Web Portal](project_portal.md)**\
   Creating a project website based on Drupal, working in synergy with other APEx services.
-* [**User Workspace Finder**](user_workspace_finder.md)\
-  Offering a secure and personalised work environment with data management and data sharing mechanisms.
-* [**Code Server workspace**](code_server.md)\
+// * [**User Workspace Finder**](user_workspace_finder.md)\
+//  Offering a secure and personalised work environment with data management and data sharing mechanisms.
+* [**Code Server workspace**](app_code_server.md)\
   Leveraging IDE capabilities tailored specifically for EO tasks, based on the open-source software Code Server (VS Code in the browser).
-* [**JupyterLab workspace**](jupyterlab.md)\
+* [**JupyterLab workspace**](app_jupyterlab.md)\
   Leveraging IDE capabilities tailored specifically for EO tasks, based on open-source software JupyterLab.
-* [**QGIS workspace**](qgis.md)\
+* [**QGIS workspace**](app_qgis.md)\
   Leveraging Geographic Information System functions, based on the open-source software QGIS.
 * [**Products Catalogue**](catalog.qmd)\
   Featuring SpatioTemporal Asset Catalog (STAC) catalogues and streamlined data ingestion processes.
@@ -70,13 +71,13 @@ Projects can interconnect their instantiated services in several ways:
 
 * **Integrated Navigation**: If a project already has a public-facing website or uses the APEx
 [Project Web Portal](./project_portal.md), links to the instantiated tools, such as the
-[Geospatial Explorer](./geospatial_explorer.md), [Products Catalogue](./catalog.qmd) or [JupyterLab](./jupyterlab.md), can be
+[Geospatial Explorer](./geospatial_explorer.md), [Products Catalogue](./catalog.qmd) or [JupyterLab](./app_jupyterlab.md), can be
 embedded directly into the site's navigation structure. This provides a unified access point for project stakeholders
 and visitors to the project website.
 
 * **Public and Private Tool Segmentation**: Projects can choose to expose only selected tools to the public while
 restricting others to registered team members. For instance, the [Geospatial Explorer](./geospatial_explorer.md) might be
-made publicly available for data discovery, while the collaborative [JupyterLab](./jupyterlab.md) remains limited to project members.
+made publicly available for data discovery, while the collaborative [JupyterLab](./app_jupyterlab.md) remains limited to project members.
 
 By thoughtfully providing access to the APEx instantiated services, projects can create a rich, interactive, and secure
 environment that supports ongoing collaboration, knowledge sharing, and engagement with both internal and external audiences.

@@ -2,12 +2,12 @@
 title: JupyterLab Interactive Development Environment - Tailored User Workspace
 ---
 
-## Overview
+## JupyterLab overview
 
 The JupyterLab Interactive Development Environment (IDE) capacity within the APEx Project Environments primarily leverages the power
-of the [JupyterLab](#jupyterlab) software.
+of the [JupyterLab](#jupyterlab-software-architecture) software.
 
-![Current APEx JupyterLab IDE Service](images/jupyterlab.png)
+![Current APEx JupyterLab IDE](images/jupyterlab.png)
 
 This APEx tailored User Workspace allows users to maintain a familiar environment and rich feature set while benefiting
 from the power and resources of server-side computing. This is particularly advantageous for those working on resource-intensive
@@ -19,23 +19,23 @@ them to harness the computational power of remote servers.
 Tailored specifically for EO tasks, this environment furnishes developers with an array of tools and libraries fine-tuned
 for programming languages and productivity plugins or extensions.
 
-## JupyterLab workspace
+## JupyterLab software architecture
 
 The JupyterLab setup encapsulates a web-based interactive development environment for Jupyter notebooks, code, and data.
 It is the user interface for Project Jupyter, offering a flexible user interface and more features than the classic notebook
 UI. It is a web application providing a development environment in which processing algorithms and services can be developed,
 tested, and debugged. 
 
-![The JupyterLab IDE in the current APEx workspaces offering ](images/applicationhub.png)
+![The JupyterLab IDE in the current APEx workspaces offering ](images/applicationhub_jupyterlab.png)
 
 JupyterLab supports execution environments (called "kernels") in several dozen languages, including
 Julia, R, Haskell, Ruby, and Python (via the IPython kernel). It seamlessly adapts to containerised environments, enabling
 developers to create, test, and deploy applications within isolated, replicable, and consistent environments, ensuring
 consistent behaviour across development, staging, and production phases.
 
-### Key Features
+### JupyterLab key features
 
-The APEx JupyterLab workspace includes several features that make it suitable for both individual researchers and teams
+The APEx JupyterLab IDE includes several features that make it suitable for both individual researchers and teams
 working on EO research and applications.
 
 * **Customisable workspaces**\
@@ -51,9 +51,9 @@ various levels of support.
 Leverage integrated Git support, allowing team members to work on the same project by tracking changes and merging updates,
 helping to keep the code organized while avoiding conflicting code changes.
 
-## Showcase Scenarios
+## JupyterLab showcase scenarios
 
-The JupyterLab Interactive Development Environment supports a variety of use cases, making it an essential tool for developers,
+The APEx JupyterLab IDE supports a variety of use cases, making it an essential tool for developers,
 researchers, and data scientists within the EO community. Some typical scenarios include:
 
 * **Algorithm Development and Testing**\
@@ -64,7 +64,7 @@ multi-temporal satellite images. To support the productivity of developers, both
 ::: {.callout-note}
 There is no GitHub Copilot extension available yet for JupyterLab. 
 
-See the Code Server IDE page for more details on CoPilot extensions.
+See the [Code Server IDE](./app_code_server.md) page for more details on CoPilot extensions.
 
 :::
 
