@@ -2,13 +2,13 @@
 title: openEO based services
 ---
 
-APEx services that follow the [openEO](https://openeo.org/) standard are implemented as openEO processes.
+Context: use of APEx services that expose the [openEO](https://openeo.org/) interface standard, when implemented as openEO processes.
 
 
-Services can be executed through the tools that are provided by the different processing platforms.
-For OpenEO based services, there is an online user interface, web editor, Client Libraries (JavaScript, Python, R) and API.
+In general, services can be executed through the tools that are provided by the APEx supported platforms ("processing platforms" hereafter).
+For OpenEO based services, this is supported by an online user interface, web editor, Client Libraries (JavaScript, Python, R) and API.
 
-There are several ways to discover how a service can be executed. When publishing a service on the APEx, a service provider can choose to provide the following information in the service details:
+There are several ways to discover how a service can be executed. When publishing a service on the APEx Algorithm Services Catalogue, a service provider can choose to provide the following information in the service details:
 
 * An executable link which redirects the user to the user interface of the processing platform. If this is the case, an **Access app** button will appear when opening an EOplaza service.
 * Sample code in the service description on how to execute a service.
