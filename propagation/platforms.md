@@ -13,8 +13,8 @@ their preferred platform.
 ## openEO User Defined Processes
 
 An openEO UDP can be developed in any openEO-based environment using existing [openEO tools](https://openeo.org/documentation/1.0/).
-APEx can support development activities by providing projects access to its [User Workspace](../instantiation/user_workspace.md)
-and [IDE](../instantiation/ide.md) services. For testing the UDP, we recommend utilising an APEx-compliant hosting platform.
+APEx can support development activities by providing projects with access to its [Code Server and JupyterLab IDE solutions](../instantiation/index.md). 
+For testing the UDP, we recommend utilising an APEx-compliant hosting platform.
 This ensures platform compatibility and facilitates the deployment of your UDP as an on-demand service. Currently, APEx
 as identified the following platforms as compliant with the APEx guidelines:
 
@@ -26,8 +26,9 @@ as identified the following platforms as compliant with the APEx guidelines:
 To develop and test an OGC Application Package, you can use one of the following environments, which include the necessary
 tools and basic infrastructure to support the development process:
 
-* [ELLIP](https://ellip.terradue.com/)
-* APEx [User Workspace](../instantiation/user_workspace.md) and [IDE](../instantiation/ide.md) services
+* [ELLIP Studio](https://ellip.terradue.com/)
+* [APEx Code Server IDE](../instantiation/app_code_server.md) 
+* [APEx JupyterLab IDE](../instantiation/app_jupyterlab.md)
 
 To offer your algorithm as an OGC API Process, APEx has identified the following platforms as compliant with the APEx guidelines:
 

@@ -21,8 +21,8 @@ integrate secure OIDC token generation into your scripts. The tool
 provides [installation instructions](https://github.com/indigo-dc/oidc-agent?tab=readme-ov-file#installation)
 for various operating systems.
 
-The following instructions show how to generate a token on a Linux operating system, which is provided by the [APEx User
-Workspace](../instantiation/user_workspace.md).
+The following instructions show how to generate a token on a Linux operating system, which is provided to you by either 
+the [APEx JupyterLab IDE](../instantiation/app_jupyterlab.md) or the [APEx Code Server IDE](../instantiation/app_code_server.md).
 
 ### 1. Start `oidc-agent-service`
 

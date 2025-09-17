@@ -70,7 +70,7 @@ for detailed customization.
 | :------------------------------ | :------------------------------------------------------- |
 | APEx                            | [https://apex.esa.int/](https://apex.esa.int/)           |
 | APEx (Demo)                     | [https://demo.apex.esa.int/](https://demo.apex.esa.int/) |
-| World Ecosystem Extent Dynamics | [https://weed.apex.esa.int/](https://weed.apex.esa.int/) |
+| World Ecosystem Extent Dynamics | [https://esa-worldecosystems.org/](https://esa-worldecosystems.org/) |
 
 : APEx Project Portal - Project Examples {#tbl-portal-examples}{tbl-colwidths="[30,70]"}
 
