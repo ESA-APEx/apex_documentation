@@ -1,6 +1,8 @@
 ---
-title: JupyterLab Interactive Development Environment - Tailored User Workspace
+title: JupyterLab IDE 
 ---
+
+JupyterLab Interactive Development Environment - Tailored User Workspace
 
 ## JupyterLab overview
 

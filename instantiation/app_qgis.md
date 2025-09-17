@@ -1,11 +1,13 @@
 ---
-title: QGIS - Tailored User Workspace
+title: QGIS as a Remote Desktop
 ---
+
+QGIS as a Remote Desktop - Tailored User Workspace
 
 ## Overview
 
 The Geographic Information System capacity within the APEx Project Environments primarily leverages the power
-of the [QGIS software](#qgis-software-architecture) as a Remote Desktop software.
+of the [QGIS Software](#qgis-software-architecture), being delivered to the APEx users as a Remote Desktop software.
 
 ![Current APEx QGIS Service](images/qgis.png)
 
