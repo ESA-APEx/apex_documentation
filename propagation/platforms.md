@@ -21,16 +21,18 @@ as identified the following platforms as compliant with the APEx guidelines:
 * [openEO platform](https://openeo.cloud)
 * [CDSE openEO federation](https://documentation.dataspace.copernicus.eu/APIs/openEO/federation/openeo_federation.html)
 
-## OGC Processes/Application Package
+## OGC Earth Observation Application Package (EOAP) processes
 
-To develop and test an OGC Application Package, you can use one of the following environments, which include the necessary
-tools and basic infrastructure to support the development process:
+To develop and test an OGC Earth Observation Application Package, you can use one of the following environments, 
+which include the necessary tools and basic infrastructure to support the development process:
 
 * [ELLIP Studio](https://ellip.terradue.com/)
 * [APEx Code Server IDE](../instantiation/app_code_server.md) 
 * [APEx JupyterLab IDE](../instantiation/app_jupyterlab.md)
 
-To offer your algorithm as an OGC API Process, APEx has identified the following platforms as compliant with the APEx guidelines:
+### OGC API - Processes
+
+To offer your algorithm as an on-demand processing service, exposed via an "OGC API - Processes" standard interface, the following platforms are compliant with the APEx guidelines:
 
 * [Geohazards TEP](https://geohazards-tep.eu/)
 
