@@ -1,6 +1,8 @@
 ---
-title: Code Server Interactive Development Environment - Tailored User Workspace
+title: Code Server IDE
 ---
+
+Code Server Interactive Development Environment - Tailored User Workspace
 
 ## Code Server overview
 
