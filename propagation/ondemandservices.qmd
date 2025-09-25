@@ -1,17 +1,20 @@
-  ---
+---
 title: On-Demand EO Services
 ---
 
 ## What is an on-demand service?
 
-On-demand services are scalable, cloud-based algorithms delivered as-a-Service, that users can trigger with their user-specific parametrisation.
+On-demand services are scalable, cloud-based algorithms delivered as-a-Service, that users can trigger with their
+user-specific parametrisation.
 
 Therefore, currently APEx-compliant on-demand services should either adopt an openEO User Defined Process (UDP) or an
-EOAP Process implementation. This ensures that the algorithm can be hosted on one of the APEx-compliant algorithm hosting platforms and executed 
-as an OGC API Process or through the openEO API.  There are additional 
+EOAP Process implementation. This ensures that the algorithm can be hosted on one of the APEx-compliant algorithm hosting
+platforms and executed
+as an OGC API Process or through the openEO API.  There are additional
 [APEx compliance and interoperability guidelines](../interoperability/algohosting.md) which help ensuring FAIR compliance.
 
-Also, the resulting on-demand services should be compliant to the FAIR data principles (Findable, Accessible, Interoperable and Reusable).
+Also, the resulting on-demand services should be compliant to the FAIR data principles (Findable, Accessible, Interoperable
+and Reusable).
 
 ## How to build an on-demand service?
 
@@ -52,6 +55,7 @@ For further guidance on creating and using UDPs, you can explore the following r
 * [Official openEO specification](https://api.openeo.org/#tag/User-Defined-Processes)
 
 #### Development and Testing Environments
+
 While an openEO UDP can be developed on any supported environment using the
 existing [openEO tools](https://openeo.org/documentation/1.0/), we recommend testing the UDP on an APEx-compliant
 hosting platform. This ensures platform compatibility and facilitates the deployment of your UDP as an on-demand
@@ -62,14 +66,20 @@ to [this page](./platforms.md).
 
 ### Building an EOAP Process based service
 
-Another option is to package your software using Docker containers. This approach, based on the OGC Best Practice for Earth Observation Application Packaging (EOAP), is very generic and is particularly relevant if you have an existing piece of complex software that you want to make available as a service.
+Another option is to package your software using Docker containers. This approach, based on the OGC Best Practice for Earth
+Observation Application Packaging (EOAP), is very generic and is particularly relevant if you have an existing piece of
+complex software that you want to make available as a service.
 
-This APEx-compliant, cloud service implementation option, consists in containerizing your software (using Docker technologies) along with CWL wrappers (Common Workflow Language)[@cwl], together forming a reusable, scalable Earth Observation Application Package (EOAP) [@ap]. APEx can provide the guidance and support you need to efficiently translate your algorithm into an EOAP implementation.
+This APEx-compliant, cloud service implementation option, consists in containerizing your software (using Docker technologies)
+along with CWL wrappers [Common Workflow Language](@cwl), together forming a reusable, scalable Earth Observation Application
+Package (EOAP) [@ap]. APEx can provide the guidance and support you need to efficiently translate your algorithm into an
+EOAP implementation.
 
 After your EOAP is created, it can be registered in
 the [APEx Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-services-catalogue) and associated
 with one or more backends or platforms capable of running it. As APEx continues to evolve, additional tools will become
-available that aid this process, including functionality to check if your service remains in operational state, when it has been deployed onto an APEx-compliant algorithm hosting platform.
+available that aid this process, including functionality to check if your service remains in operational state, when it
+has been deployed onto an APEx-compliant algorithm hosting platform.
 
 [This tutorial](https://terradue.github.io/ogc-eo-application-package-hands-on/) explains more about this option.
 
@@ -79,9 +89,10 @@ To develop and test an OGC Application Package, you can use one of the following
 necessary tools and basic infrastructure to support the development process:
 
 * [ELLIP](https://ellip.terradue.com)
-* APEx Instantiation Services
-  * [Workspace](../instantiation/user_workspace.md) and [IDE](../instantiation/ide.md)
-  
+* APEx Project Environments
+  * [Code Server IDE](../instantiation/app_code_server.md)
+  * [JupyterLab IDE](../instantiation/app_jupyterlab.md)
+
 For a comprehensive overview of currently APEx-compliant hosting platforms, please refer
 to [this page](./platforms.md).
 
