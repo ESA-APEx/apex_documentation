@@ -32,7 +32,7 @@ The product catalogue serves several beneficial scenarios for projects:
   and processing platforms such as openEO and OGC Application Packages. This ensures seamless integration of datasets
   from various providers, supporting comprehensive analysis and decision-making. This interoperability extends to other
   APEx tools such as the [Geospatial Explorer](geospatial_explorer.md),
-  [Interactive Development Environments](ide.md), [User Workspaces](user_workspace.md)….
+  [Code Server IDE](app_code_server.md), [JupyterLab IDE](app_jupyterlab.md), ….
 
 * **Efficient Search and Discovery**\
   Users can efficiently search and discover datasets based on specific criteria such as time, location, and data type.
