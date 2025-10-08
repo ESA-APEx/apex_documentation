@@ -75,6 +75,8 @@ website:
             text: Linking APEx STAC catalogue with an openEO service
           - href: guides/file_formats.qmd
             text: File format recommendations
+          - href: guides/geospatial_explorer_config_guide.md
+            text: Configuring the Geospatial Explorer
           - href: guides/geospatial_explorer_guide.md
             text: Using the Geospatial Explorer
           - href: guides/project_portal/index.qmd
