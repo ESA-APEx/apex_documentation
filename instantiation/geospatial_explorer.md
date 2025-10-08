@@ -6,8 +6,8 @@ title: Geospatial Explorer
 
 The Geospatial Explorer provides an interactive web front end that can be used for the display and visualisation of
 geospatial and tabular data ingested from web services following common interoperable protocols (e.g. OGC Standards,
-STAC, etc.). The service will be data-driven, allowing administrators to define the configuration of the explorer in
-JSON (i.e. the data layers and functional operations possible for each layer). This configuration will determine how the
+STAC, etc.). The Explorer is data-driven, allowing administrators to define its configuration in
+JSON (i.e. the data layers and functional operations possible for each layer). This configuration determines how the
 user interface is rendered at run time and the resulting data and functionality that is exposed to the end user.
 
 ![APEx Geospatial Explorer](images/ge.png)
@@ -29,6 +29,20 @@ rendered in the Explorer.
 | SEF - Ecosystems & Biodiversity | [https://explorer.sef-ecosystems.apex.esa.int/](https://explorer.sef-ecosystems.apex.esa.int/) |
 
 : APEx Geospatial Explorer - Project Examples {#tbl-explorer-examples}{tbl-colwidths="[20,80]"}
+
+## User Guide
+
+For a general overview of features, take a look at the [Geospatial Explorer User Guide](../guides/geospatial_explorer_guide.md)
+
+## Recommendations
+
+To learn more about the specific recommendations for the usage and the configuration of the Geosplace Explorer, please
+refer to the our [APEx Geospatial Explorer Recommendations](../interoperability/geospatial_explorer.qmd) page.
+
+## Example Configurations
+
+Numerous example configurations can be found in the
+[APEx Geospatial Explorer Configurations](https://github.com/ESA-APEx/apex_geospatial_explorer_configs) repository on GitHub.
 
 :::{.callout-tip}
 
