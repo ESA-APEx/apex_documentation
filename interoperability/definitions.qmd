@@ -70,7 +70,7 @@ APIs. This transitions algorithms from being rather arbitrary pieces of software
 in terms of execution environment, usage, inputs, …, into on-demand services that can readily be invoked by
 stakeholders. This transformation primarily involves converting a given algorithm into an APEx-compliant algorithm
 definition and making it available as a service on an algorithm hosting platform. The transition process into a hosted
-on-demand algorithm service is supported by the [APEx Algorithm Services](../propagation/index.qmd).
+on-demand algorithm service is supported by the [APEx Algorithm Support](../propagation/index.qmd).
 
 An important boundary condition for hosted algorithms is that they can be executed at a predictable cost for a given set
 of inputs. This predictability allows a service user to accurately estimate and determine the cost associated with the
@@ -103,9 +103,10 @@ aspects, ensuring that EO projects retain a sufficient degree of freedom in sele
 An EO project refers to the consortium that is responsible for building the EO algorithm and is also referred to as
 Algorithm PI (principal investigator). In certain ESA EOP procurement and ITTs, there is now a requirement included to
 comply with APEx [Interoperability and Compliance Guidelines](../interoperability/index.md). When compliance is
-required, the consortium can utilise various services offered by APEx. Specifically, the APEx Algorithm Services aim to
-support the enhancement of algorithms on a technical and software level and facilitate the transition to hosted
-algorithms that can be included in the [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/).
+required, the consortium can utilise various services offered by APEx. Specifically, the 
+[APEx Algorithm Support](../propagation/index.qmd) aims tosupport the enhancement of algorithms on a technical and
+software level and facilitate the transition to hosted algorithms that can be included in the
+[APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/).
 
 ESA EO projects that do not have an explicit compliance requirement are also eligible to receive support. The APEx
 support can boost project impact, so projects are encouraged to inquire with their ESA technical officer about the
@@ -117,8 +118,8 @@ quality of the algorithms and workflows.
 ### APEx Consortium
 
 The APEx team, composed of industry experts, operates the various services provided by APEx. To maximise the reuse of
-existing resources, the team leverages service offerings within [ESA’s Network of Resources (NoR)]
-(<https://nor-discover.org/>), drawing on the extensive ecosystem provided by the EO industry.
+existing resources, the team leverages service offerings within
+[ESA’s Network of Resources (NoR)](https://nor-discover.org/), drawing on the extensive ecosystem provided by the EO industry.
 
 Although members of the APEx consortium are involved in various EO services registered in NoR, APEx itself is not a new
 EO platform. Instead, it focuses on enabling interoperability among existing platforms. As a result, APEx remains open
@@ -148,7 +149,7 @@ these tools will retrieve EO algorithm results via  web service APIs based on op
 further processed as needed, depending on the application. Note that these applications are not necessarily EO-centric
 or even geospatial, but could be using an EO algorithm as a small part or in the background.
 
-The [APEx Algorithm Services Catalog](https://algorithm-catalogue.apex.esa.int/) acts as a discovery tool for last mile
+The [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) acts as a discovery tool for last mile
 application builders. It shows various technical parameters, the cost and potential limitations for specific use cases.
 This speeds up the discovery and selection process. Application builders will be required to create an account on the
 hosting platforms and ensure the necessary funds are available, if they want to test or use the API.

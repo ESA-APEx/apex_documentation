@@ -10,6 +10,8 @@ STAC, etc.). The Explorer is data-driven, allowing administrators to define its 
 JSON (i.e. the data layers and functional operations possible for each layer). This configuration determines how the
 user interface is rendered at run time and the resulting data and functionality that is exposed to the end user.
 
+![APEx Geospatial Explorer](images/ge.png)
+
 Typical functions will include the ability to visualise EO data, derived products and associated vector layers (e.g.
 administrative boundaries), with control over layer ordering, transparency, product comparisons (split screen) and
 support for features such as cursor inspection, queries, distance measurements and visualisation of tabular data via

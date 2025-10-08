@@ -39,7 +39,8 @@ The algorithm enhancement activities offer the following features:
 * Optimisation considering the capabilities of target processing platforms and use of existing services.
 * Exploitation of algorithms available on APEx where appropriate, e.g., replacing custom functions with equivalent
   pre-optimized functions.
-* Delivery of an enhanced implementation that is ready to be registered in the APEx Algorithm Services Catalogue.
+* Delivery of an enhanced implementation that is ready to be registered in the
+[APEx Algorithm Services Catalogue](./onboarding.md#apex-algorithm-services-catalogue).
 
 ### How to get started?
 
@@ -67,7 +68,7 @@ changes will have to be made to the code base.
 ### Intellectual Property Rights
 
 The intellectual property rights to their algorithm implementation remain with the algorithm authors. If the algorithm
-is an implementation of published research, the APEx team reserves itself the non-exclusive right to run and further
-develop the enhanced implementation. The algorithm provider has the right and is encouraged to use the enhanced code as
-a basis for further algorithm development. For proprietary algorithms, the rights to publish the source code and run the
-algorithm remain with the original property rights holder..
+is published research, the APEx team that re-implements the algorithm or enhances its implementation aims at the non-exclusive
+right to run and further develop the enhanced implementation. The algorithm provider has the right and is encouraged to
+use the enhanced code as a basis for further algorithm development. For proprietary algorithms, the rights to publish
+the source code and run the algorithm remain with the original property rights holder.

@@ -40,3 +40,5 @@ Discover more on how to edit the paragraphs in the dedicated tutorial web pages.
 - [Add news items and an overview of the latest or all news](3c_news.qmd)
 - [Add an event and an overview of the latest or all events](3d_event.qmd)
 - [Add a web form](3e_webform.qmd)
+- [Add a logo (partners) banner](3f_logo_banner.qmd)
+- [Add publications or downloads (files)](3g_publication.qmd)

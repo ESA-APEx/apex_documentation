@@ -1,20 +1,38 @@
 ---
-title: APEx-Compliant Platforms
+title: Supported Platforms
 ---
 
-To offer your algorithm as an on-demand service, it must be available for execution on an APEx-compliant algorithm
-hosting platform. Currently, APEx supports the integration of services on platforms that adhere to the
-APEx [compliance guidelines](../interoperability/algohostingenv.md). It is important to note that this list of supported
-platforms is expected to grow as APEx evolves.
+This section provides an overview of APEx-compliant algorithm hosting environments based on the
+[APEx interoperability and compliance guidelines](../interoperability/algohostingenv.md). The list includes platforms
+available for each APEx-compliant technology, along with recommendations for environments that support the development
+process of APEx-compliant services.
 
-## Supported Platforms
+Throughout the project, APEx aims to expand this list of compliant platforms, offering users the flexibility to choose
+their preferred platform.
 
-### openEO UDP
+## openEO User Defined Processes
+
+An openEO UDP can be developed in any openEO-based environment using existing [openEO tools](https://openeo.org/documentation/1.0/).
+APEx can support development activities by providing projects with access to its [Code Server and JupyterLab IDE solutions](../instantiation/index.md). 
+For testing the UDP, we recommend utilising an APEx-compliant hosting platform.
+This ensures platform compatibility and facilitates the deployment of your UDP as an on-demand service. Currently, APEx
+as identified the following platforms as compliant with the APEx guidelines:
 
 * [openEO platform](https://openeo.cloud)
 * [CDSE openEO federation](https://documentation.dataspace.copernicus.eu/APIs/openEO/federation/openeo_federation.html)
 
-### OGC Processes/Application Package
+## OGC Earth Observation Application Package (EOAP) processes
+
+To develop and test an OGC Earth Observation Application Package, you can use one of the following environments, 
+which include the necessary tools and basic infrastructure to support the development process:
+
+* [ELLIP Studio](https://ellip.terradue.com/)
+* [APEx Code Server IDE](../instantiation/app_code_server.md) 
+* [APEx JupyterLab IDE](../instantiation/app_jupyterlab.md)
+
+### OGC API - Processes
+
+To offer your algorithm as an on-demand processing service, exposed via an "OGC API - Processes" standard interface, the following platforms are compliant with the APEx guidelines:
 
 * [Geohazards TEP](https://geohazards-tep.eu/)
 

@@ -13,24 +13,6 @@ The intercomparison activities are currently under development and will continue
 as it relies on APEx instantiation services and propagation services to provide the necessary tools and user interfaces
 for conducting intercomparison exercises.
 
-## Examples
-
-### Intercomparison of Sentinel-1 backscatter computation
-
-The APEx framework allows to simplify intercomparison by offering different implementations of the same algorithm
-through the same interface. One such example is Sentinel-1 backscatter computation, for which there are three openEO
-implementations, all accessible via the `sar_backscatter` openEO process on different openEO backends:
-
-| Backend    | Implementation                             |
-|------------|--------------------------------------------|
-| EODC       | Sentinel-1 toolbox 'SNAP' implementation   |
-| CDSE       | Orfeo implementation                       |
-| Terrascope | A custom implementation on the Sentinelhub |
-
-While all three implementations implement `sar_backscatter`, they may vary in the range of parameters they accept.
-Therefore, the range of supported parameters becomes an important point of comparison, alongside the cost specified in
-platform credits and the correctness of the results.
-
 ## Call for service providers
 
 APEx is looking for a first category of algorithms to be intercompared. If you have an algorithm, consider onboarding it

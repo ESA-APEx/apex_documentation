@@ -9,9 +9,11 @@ request. The portal, structured on a predefined base template, will offer the fl
 overall user experience. Beyond the initial theming options, the service incorporates a Drupal Content Management
 System (CMS), empowering project members to perform advanced customisations and efficiently manage portal content.
 
+![APEx Project Portal](images/portal.png)
+
 The instantiated project portal will have the option to work in synergy with other services offered within APEx. This
-collaborative approach enables projects to extend their portal by instantiating other APEx services, such as a [STAC
-catalogue](catalog.qmd), a [Geospatial Explorer](geospatial_explorer.md), a [User Forum](forum.md), and more, and
+collaborative approach enables projects to extend their portal by instantiating other APEx services, such as a
+[STACcatalogue](catalog.qmd), a [Geospatial Explorer](geospatial_explorer.md), a [User Forum](forum.md), and more, and
 linking them to the main project portal, resulting in a dedicated, streamlined project ecosystem.
 
 ## Showcase Scenarios
@@ -68,9 +70,14 @@ for detailed customization.
 | :------------------------------ | :------------------------------------------------------- |
 | APEx                            | [https://apex.esa.int/](https://apex.esa.int/)           |
 | APEx (Demo)                     | [https://demo.apex.esa.int/](https://demo.apex.esa.int/) |
-| World Ecosystem Extent Dynamics | [https://weed.apex.esa.int/](https://weed.apex.esa.int/) |
+| World Ecosystem Extent Dynamics | [https://esa-worldecosystems.org/](https://esa-worldecosystems.org/) |
 
 : APEx Project Portal - Project Examples {#tbl-portal-examples}{tbl-colwidths="[30,70]"}
+
+## User Documentation
+
+For a step-by-step guide on how to use and manage your project portal, refer to the official
+[Project Portal User Guide](../guides/project_portal/)
 
 :::{.callout-tip}
 

@@ -1,0 +1,29 @@
+---
+title: "Add a logo (partners) banner"
+image: ../images/cover_logo_banner.png
+lightbox: true
+---
+
+You can add logos to e.g. show the project consortium partners via the **Partners** Paragraph.
+
+To add a **Partners** paragraph, you navigate to the web page on which you would like to add a logo banner and click **edit**
+to manage the web page backend. Click **add paragraph** and select the **Partners** paragraph in the pop-up window.
+
+After selecting the **Partners** paragraph, you can add logos by clicking the button **Add Partner Item**, upload an
+appropriate logo file and URL (optional). To add more logos, you continue via the Add **Partner Item** button.
+
+You can add a title to this paragraph via the field **Title** or leave it out to just show the logos without title.
+
+## Screenshots
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));grid-gap: 1em;"}
+
+![Logo Banner - Example](../images/partner_preview.png){group="gallery-logo-banner"}
+
+![Logo Banner - Paragraph](../images/partner_paragraph.png){group="gallery-logo-banner"}
+
+![Logo Banner - Form](../images/partner_form.png){group="gallery-logo-banner"}
+
+![Logo Banner - From with entries](../images/partner_form_w_entries.png){group="gallery-logo-banner"}
+
+:::

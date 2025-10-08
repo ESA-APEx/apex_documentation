@@ -10,6 +10,8 @@ stakeholders, and users to interact seamlessly, fostering a sense of community a
 only aids in addressing user concerns and questions but also encourages the sharing of knowledge and best practices
 among members.
 
+![APEx User Forum](images/forum.png)
+
 The underlying technology for the forum service is [Discourse](https://www.discourse.org/), a widely used open-source
 forum software renowned for its robustness and flexibility. Discourse has been successfully implemented in various ESA
 projects, demonstrating its reliability and effectiveness. One of the standout features of Discourse is its

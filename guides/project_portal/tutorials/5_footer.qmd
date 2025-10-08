@@ -44,6 +44,6 @@ After adding or changing links click **save configuration** to save and publish 
 
 ![Footer - Footer first](../images/footer_menu_first.png){group="gallery-footer"}
 
-![Footer - Socials](../images/footer_socials.png){group="gallery-footer"}
+![Footer - Socials](../images/footer_socials_config.png){group="gallery-footer"}
 
 :::

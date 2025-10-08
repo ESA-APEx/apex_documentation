@@ -8,6 +8,8 @@ The Product Catalogue enables projects to create their own SpatioTemporal Asset 
 comprehensive metadata collection for efficient organisation and discovery of geospatial data assets. This information
 is presented in a user-friendly JSON format.
 
+![APEx Product Catalogue](images/stac_browser_1.jpg)
+
 Instantiating a project-specific catalogue gives projects the freedom to use it for a range of purposes, from
 experimental to operational use cases. Assets that are considered project deliverables will normally be added to the
 centralised project results repository.
@@ -30,7 +32,7 @@ The product catalogue serves several beneficial scenarios for projects:
   and processing platforms such as openEO and OGC Application Packages. This ensures seamless integration of datasets
   from various providers, supporting comprehensive analysis and decision-making. This interoperability extends to other
   APEx tools such as the [Geospatial Explorer](geospatial_explorer.md),
-  [Interactive Development Environments](ide.md), [User Workspaces](user_workspace.md)….
+  [Code Server IDE](app_code_server.md), [JupyterLab IDE](app_jupyterlab.md), ….
 
 * **Efficient Search and Discovery**\
   Users can efficiently search and discover datasets based on specific criteria such as time, location, and data type.

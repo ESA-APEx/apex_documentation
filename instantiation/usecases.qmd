@@ -1,32 +1,32 @@
 ---
-title: Use cases for APEx Project Tools
+title: Use cases for APEx Project Environments
 ---
 
-The APEx Project Tools are designed to support a wide range of activities within the EO community, from project
+The APEx Project Environments are designed to support a wide range of activities within the EO community, from project
 promotion and user support to data visualisation, data analytics, and data processing. By providing managed,
 configurable environments, these services facilitate the effective sharing, maintenance, and utilisation of project
 results, ensuring they remain readily accessible and usable for extended periods.
 
-This section provides an initial outline of the primary use cases for APEx Project Tools, demonstrating how they address
+This section provides an initial outline of the primary use cases for APEx Project Environments, demonstrating how they address
 the specific needs and challenges faced by users and project managers in the EO domain. Each use case highlights the
 relevant components of the APEx tools, detailing how they work together to provide robust solutions for various tasks.
 
 From promoting EO projects through interactive portals to supporting users with personalised workspaces and
-comprehensive documentation, the APEx Project Tools are designed to enhance productivity and foster collaboration. Data
-visualisation tools enable users to interpret and communicate insights effectively, while advanced data analytics
+comprehensive documentation, the APEx Project Environments are designed to enhance productivity and foster collaboration.
+Data visualisation tools enable users to interpret and communicate insights effectively, while advanced data analytics
 environments provide the computational power and tools necessary for complex analyses. Data processing workflows are
 streamlined through secure, scalable environments, ensuring that users can handle large volumes of EO data efficiently.
 
-It is important to highlight that the APEx Project Tools can be combined in different ways to create a flexible
+It is important to highlight that the APEx Project Environments can be combined in different ways to create a flexible
 collaborative project environment. This gives projects the flexibility to adapt the tools based on their needs. For
 example, they can choose to make the project portal as their main entry point for both project members and their
 community, linking to the different APEx tools from within the main website. Alternatively, projects can decide to only
 keep the project portal for public communication and dissemination, while having the user workspaces only visible for
-the project members. In essence, the APEx Project Tools provide an a la carte approach for setting up and configuring
+the project members. In essence, the APEx Project Environments provide an a la carte approach for setting up and configuring
 your project environment based on your needs.
 
-To explore the possiblities, the following use cases provide detailed scenarios of how the APEx Project Tools can be
-leveraged to meet the diverse needs of the EO community, maximising the impact of EO research and applications.
+To explore the possiblities, the following use cases provide detailed scenarios of how the APEx Project Environments can
+be leveraged to meet the diverse needs of the EO community, maximising the impact of EO research and applications.
 
 ## Use Case 1 - Project Promotion
 
@@ -50,7 +50,7 @@ including stakeholders, policymakers, and the general public.
 
 ```{mermaid}
 %%| label: fig-tools-usecase2
-%%| fig-cap: "APEx Project Tools - Project Promotion"
+%%| fig-cap: "APEx Project Environments - Project Promotion"
 flowchart TD ""
     subgraph Public Environment
       A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
@@ -89,14 +89,15 @@ help, share knowledge, and collaborate on EO applications.
   solutions.
 * [**Documentation Portal**](documentation.qmd)\
   Comprehensive documentation and tutorial materials to assist users in navigating and utilising the services.
-* [**User Workspace**](user_workspace.md)\
+* **User Workspace**\
   Secure and personalised environments allow users to store, share, and manage their data and work.
-* [**Interactive Development Environment (IDE)**](ide.md)\
-  Leveraging VS Code Server, these environments are tailored for EO tasks and provide development tools.
+* **Interactive Development Environment (IDE)**\
+  Leveraging [Code Server](./app_code_server.md) or [JupyterLab](./app_jupyterlab.md) IDEs, these environments are tailored
+  for EO tasks and provide development tools.
 
 ```{mermaid}
 %%| label: fig-tools-usecase2
-%%| fig-cap: "APEx Project Tools - User Support"
+%%| fig-cap: "APEx Project Environments - User Support"
 flowchart TD ""
     subgraph Project Environment
       UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
@@ -110,8 +111,7 @@ flowchart TD ""
     click A href "./project_portal.html" _blank
     click C href "./documentation.html" _blank
     click D href "./forum.html" _blank
-    click UW href "./user_workspace.html" _blank
-    click IDE href "./ide.html" _blank
+    click IDE href "./app_jupyterlab.html" _blank
 ```
 
 ### Expected Benefits
@@ -139,7 +139,7 @@ project-specific visualisations, helping users to interpret and communicate data
 
 ```{mermaid}
 %%| label: fig-tools-usecase3
-%%| fig-cap: "APEx Project Tools - Data Visualization"
+%%| fig-cap: "APEx Project Environments - Data Visualization"
 flowchart TD ""
     subgraph Public Environment
       A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
@@ -167,10 +167,10 @@ providing powerful tools and environments for data processing and statistical an
 
 ### Key Components
 
-* [**Interactive Development Environment (IDE)**](ide.md)\
+* **Interactive Development Environment (IDE)**\
   Equipped with tools for data analysis, statistical computation, and machine learning, leveraging the capabilities of
-  VS Code Server.
-* [**User Workspace**](user_workspace.md)\
+  [Code Server](./app_code_server.md) or [JupyterLab](./app_jupyterlab.md).
+* **User Workspace**\
   Secure and scalable environments for conducting extensive data analysis.
 * [**Project Portal**](project_portal.md)\
   Integration of visualisations into project portals to showcase data insights.
@@ -181,7 +181,7 @@ providing powerful tools and environments for data processing and statistical an
 
 ```{mermaid}
 %%| label: fig-tools-usecase4
-%%| fig-cap: "APEx Project Tools - Data Analytics"
+%%| fig-cap: "APEx Project Environments - Data Analytics"
 flowchart TD ""
     subgraph Project Environment
       UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
@@ -198,8 +198,7 @@ flowchart TD ""
     click A href "./project_portal.html" _blank
     click B href "./geospatial_explorer.html" _blank
     click C href "./catalog.html" _blank
-    click UW href "./user_workspace.html" _blank
-    click IDE href "./ide.html" _blank
+    click IDE href "./app_jupyterlab.html" _blank
 ```
 
 ### Expected Benefits
@@ -218,10 +217,11 @@ effectively.
 
 ### Key Components
 
-* [**User Workspace**](user_workspace.md)\
+* **User Workspace**\
 Providing secure environments for executing data processing tasks on existing cloud-based processing platforms.
-* [**Interactive Development Environment (IDE)**](ide.md)\
-Supporting data processing scripts and workflows, including pre-configured tools for EO tasks.
+* **Interactive Development Environment (IDE)**\
+Leveraging the capabilities of [Code Server](./app_code_server.md) or [JupyterLab](./app_jupyterlab.md) IDS to support
+data processing scripts and workflows, including pre-configured tools for EO tasks.
 * [**Project Portal**](project_portal.md)\
   Integration of visualisations into project portals to showcase data insights.
 * [**Product Catalogue**](catalog.qmd)\
@@ -231,7 +231,7 @@ Interactively visualise results.
 
 ```{mermaid}
 %%| label: fig-tools-usecase5
-%%| fig-cap: "APEx Project Tools - Data Processing"
+%%| fig-cap: "APEx Project Environments - Data Processing"
 flowchart TD ""
     subgraph Project Environment
       UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
@@ -248,8 +248,7 @@ flowchart TD ""
     click A href "./project_portal.html" _blank
     click B href "./geospatial_explorer.html" _blank
     click C href "./catalog.html" _blank
-    click UW href "./user_workspace.html" _blank
-    click IDE href "./ide.html" _blank
+    click IDE href "./app_jupyterlab.html" _blank
 ```
 
 ### Expected Benefits
