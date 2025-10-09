@@ -58,7 +58,7 @@ website:
           - href: propagation/enhancement.md
           - href: propagation/toolboxcloud.md
           - href: propagation/intercomparison.md
-      - text: Guides
+      - text: Developer Guides
         contents:
           - href: guides/account.md
           - href: guides/token.md
@@ -75,10 +75,11 @@ website:
             text: Linking APEx STAC catalogue with an openEO service
           - href: guides/file_formats.qmd
             text: File format recommendations
-          - href: guides/geospatial_explorer_config_guide.md
-            text: Configuring the Geospatial Explorer
-          - href: guides/geospatial_explorer_guide.md
-            text: Using the Geospatial Explorer
+      - text: User Guides
+        contents:
+          - href: guides/geospatial_explorer/index.qmd
+            contents:
+              - auto: guides/geospatial_explorer/tutorials/*.qmd
           - href: guides/project_portal/index.qmd
             contents:
               - auto: guides/project_portal/tutorials/*.qmd

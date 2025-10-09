@@ -1,0 +1,19 @@
+---
+title: Geospatial Explorer
+listing:
+  contents: "tutorials"
+  type: "grid"
+  sort: 'filename'
+  filter-ui: true
+  image-placeholder: "../../instantiation/images/ge.png"
+---
+
+Welcome to the user guide for the [APEx Geospatial Explorer](../../instantiation/geospatial_explorer.md).
+
+In this user guide, you will find essential information and resources tailored to help you use and manage the APEx
+Geospatial Explorer.
+For a more general overview, we encourage you to explore the  documentation available for the
+[APEx Geospatial Explorer](../../instantiation/geospatial_explorer.md) and its [use cases](../../instantiation/usecases.qmd),
+where you will discover how you can effectively use it within your project.
+
+## Tutorials
