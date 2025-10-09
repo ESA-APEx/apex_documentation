@@ -32,7 +32,7 @@ rendered in the Explorer.
 
 ## User Guide
 
-For a general overview of features, take a look at the [Geospatial Explorer User Guide](../guides/geospatial_explorer_guide.md)
+For a general overview of features, take a look at the [Geospatial Explorer User Guide](../guides/geospatial_explorer/tutorials/geospatial_explorer_guide.qmd)
 
 ## Recommendations
 
