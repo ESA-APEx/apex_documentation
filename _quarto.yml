@@ -21,18 +21,17 @@ website:
 
   sidebar:
     style: "floating"
-    collapse-level: 2
     contents:
       - href: index.qmd
         text: Welcome
       #      - href: eo_service_usage.qmd
-      - text: On-demand EO services
+      - section: On-demand EO services
         contents:
           - href: eo_service_usage/openeo_usage.md
             text: Using openEO service
           - href: propagation/platforms.md
       - href: instantiation/index.md
-        text: Project Environments
+        section: Project Environments
         contents:
           - href: instantiation/usecases.qmd
             text: Use Cases
@@ -47,7 +46,7 @@ website:
           - href: instantiation/documentation.qmd
           - href: instantiation/forum.md
       - href: propagation/index.qmd
-        text: Algorithm Support
+        section: Algorithm Support
         contents:
           - href: propagation/ondemandservices.qmd
           - href: propagation/usecases.md
@@ -58,24 +57,32 @@ website:
           - href: propagation/enhancement.md
           - href: propagation/toolboxcloud.md
           - href: propagation/intercomparison.md
-      - text: Developer Guides
+      - section: Developer Guides
         contents:
-          - href: guides/account.md
-          - href: guides/token.md
-            text: Creating APEx single sign-on token
-          - href: guides/udp_writer_guide.qmd
-            text: Creating openEO based services
-          - href: guides/eoap_writer_guide.md
-            text: Creating EOAP based services
-          - href: guides/upscaling_openeo.ipynb
-            text: Upscaling openEO based services
-          - href: guides/stac_catalog_ingest.ipynb
-            text: Ingesting STAC metadata in APEx Product Catalogue
-          - href: guides/catalog_openeo.ipynb
-            text: Linking APEx STAC catalogue with an openEO service
+          - section: Authentication
+            contents:
+              - href: guides/account.md
+              - href: guides/token.md
+                text: Creating APEx single sign-on token
+          - section: openEO
+            contents:
+              - href: guides/udp_writer_guide.qmd
+                text: Creating openEO based services
+              - href: guides/upscaling_openeo.ipynb
+                text: Upscaling openEO based services
+          - section: EOAP
+            contents:
+              - href: guides/eoap_writer_guide.md
+                text: Creating EOAP based services
+          - section: APEx Product Catalogue
+            contents:
+              - href: guides/stac_catalog_ingest.ipynb
+                text: Ingesting STAC metadata in APEx Product Catalogue
+              - href: guides/catalog_openeo.ipynb
+                text: Linking APEx Product Catalogue with an openEO service
           - href: guides/file_formats.qmd
             text: File format recommendations
-      - text: User Guides
+      - section: User Guides
         contents:
           - href: guides/geospatial_explorer/index.qmd
             contents:
@@ -85,7 +92,7 @@ website:
               - auto: guides/project_portal/tutorials/*.qmd
 
       - href: interoperability/index.md
-        text: Interoperability and Compliance Guidelines
+        section: Interoperability and Compliance Guidelines
         contents:
           - href: interoperability/definitions.qmd
           - href: propagation/service_development.qmd
