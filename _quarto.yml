@@ -80,6 +80,10 @@ website:
                 text: Ingesting STAC metadata in APEx Product Catalogue
               - href: guides/catalog_openeo.ipynb
                 text: Linking APEx Product Catalogue with an openEO service
+          - section: APEx Algorithm Services Catalogue
+            contents:
+              - href: guides/algorithm_services_catalogue.qmd
+              - href: guides/algorithm_services_catalogue_benchmarks.qmd
           - href: guides/file_formats.qmd
             text: File format recommendations
       - section: User Guides
