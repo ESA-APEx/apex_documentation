@@ -1,11 +1,11 @@
 ---
 title: Configuring the APEx Geospatial Explorer
 ---
-The [APEx Geospatial Explorer](../instantiation/geospatial_explorer.md) is a versatile web application designed to visualize
-and interact with geospatial data. It leverages the OpenLayers library to provide a rich set of features for exploring spatial
-datasets. The application is highly configurable, allowing users to tailor its functionality and appearance to meet specific
-project requirements. This document outlines the configuration options for the APEx Geospatial Explorer, detailing the structure
-and properties of the configuration schema.
+The [APEx Geospatial Explorer](../../../instantiation/geospatial_explorer.md) is a versatile web application designed to
+visualize and interact with geospatial data. It leverages the OpenLayers library to provide a rich set of features for exploring
+spatial datasets. The application is highly configurable, allowing users to tailor its functionality and appearance to meet
+specific project requirements. This document outlines the configuration options for the APEx Geospatial Explorer, detailing
+the structure and properties of the configuration schema.
 
 ## Configuration Schema
 

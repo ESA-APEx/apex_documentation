@@ -1,5 +1,5 @@
 ---
-title: Project Portal - User Documentation
+title: Project Portal
 listing:
   contents: "tutorials"
   type: "grid"
@@ -7,7 +7,8 @@ listing:
   filter-ui: true
 ---
 
-Welcome to the user guide for the APEx Project Portal, a powerful tool designed to support your project communication.
+Welcome to the user guide for the [APEx Project Portal](../../instantiation/project_portal.md), a powerful tool designed
+to support your project communication.
 
 In this user guide, you will find essential information and resources tailored to help you navigate the portal efficiently.
 For a more general overview, we encourage you to explore the  documentation available for the
