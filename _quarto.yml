@@ -57,43 +57,49 @@ website:
           - href: propagation/enhancement.md
           - href: propagation/toolboxcloud.md
           - href: propagation/intercomparison.md
-      - section: Developer Guides
+      - section: Guides
         contents:
-          - section: Authentication
+          - section: Developer Guides
             contents:
-              - href: guides/account.md
-              - href: guides/token.md
-                text: Creating APEx single sign-on token
-          - section: openEO
+              - section: Authentication
+                contents:
+                  - href: guides/account.md
+                  - href: guides/token.md
+                    text: Creating APEx single sign-on token
+              - section: openEO
+                contents:
+                  - href: guides/udp_writer_guide.qmd
+                    text: Creating openEO based services
+                  - href: guides/upscaling_openeo.ipynb
+                    text: Upscaling openEO based services
+              - section: EOAP
+                contents:
+                  - href: guides/eoap_writer_guide.md
+                    text: Creating EOAP based services
+              - section: APEx Product Catalogue
+                contents:
+                  - href: guides/stac_catalog_ingest.ipynb
+                    text: Ingesting STAC metadata in APEx Product Catalogue
+                  - href: guides/catalog_openeo.ipynb
+                    text: Linking APEx Product Catalogue with an openEO service
+              - section: APEx Algorithm Services Catalogue
+                contents:
+                  - href: guides/algorithm_services_catalogue.qmd
+                  - href: guides/algorithm_services_catalogue_benchmarks.qmd
+              - href: guides/file_formats.qmd
+                text: File format recommendations
+          - section: Admin Guides
             contents:
-              - href: guides/udp_writer_guide.qmd
-                text: Creating openEO based services
-              - href: guides/upscaling_openeo.ipynb
-                text: Upscaling openEO based services
-          - section: EOAP
+              - href: guides/geospatial_explorer/index.qmd
+                contents:
+                  - auto: guides/geospatial_explorer/tutorials/*.qmd
+              - href: guides/project_portal/index.qmd
+                contents:
+                  - auto: guides/project_portal/tutorials/*.qmd
+
+          - section: Consumer Guides
             contents:
-              - href: guides/eoap_writer_guide.md
-                text: Creating EOAP based services
-          - section: APEx Product Catalogue
-            contents:
-              - href: guides/stac_catalog_ingest.ipynb
-                text: Ingesting STAC metadata in APEx Product Catalogue
-              - href: guides/catalog_openeo.ipynb
-                text: Linking APEx Product Catalogue with an openEO service
-          - section: APEx Algorithm Services Catalogue
-            contents:
-              - href: guides/algorithm_services_catalogue.qmd
-              - href: guides/algorithm_services_catalogue_benchmarks.qmd
-          - href: guides/file_formats.qmd
-            text: File format recommendations
-      - section: User Guides
-        contents:
-          - href: guides/geospatial_explorer/index.qmd
-            contents:
-              - auto: guides/geospatial_explorer/tutorials/*.qmd
-          - href: guides/project_portal/index.qmd
-            contents:
-              - auto: guides/project_portal/tutorials/*.qmd
+              - href: guides/geospatial_explorer/geospatial_explorer_guide.qmd
 
       - href: interoperability/index.md
         section: Interoperability and Compliance Guidelines
