@@ -18,4 +18,5 @@ to manage and access. Additionally, as these URLs are publicly accessible, proje
 into their existing websites by linking to them directly.
 
 In addition to the default URLs provided during component instantiation, APEx also supports the use of custom domains owned
-by the requesting project. Configuring custom domains requires additional setup, which is handled upon request.
+by the requesting project. Configuring custom domains requires additional setup, which is handled upon request. More information
+can be found in the [Custom domains for your project environment](../guides/custom_domain.md) guide.
