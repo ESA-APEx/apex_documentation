@@ -1,5 +1,5 @@
 ---
-title: "Login to the Project Portal and the Drupal content overview"
+title: "Login to the Project Web Portal and the Drupal content overview"
 image: ../images/cover_login.png
 lightbox: true
 ---
@@ -32,7 +32,7 @@ can manage:
 :::
 ::: {.g-col-4}
 
-![Project Portal login screen](../images/login_1.png){group="gallery-login"}
+![Project Web Portal login screen](../images/login_1.png){group="gallery-login"}
 
 ![APEx login screen](../images/login_2.jpg){group="gallery-login"}
 

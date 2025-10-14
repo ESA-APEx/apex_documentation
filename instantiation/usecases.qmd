@@ -19,9 +19,9 @@ streamlined through secure, scalable environments, ensuring that users can handl
 
 It is important to highlight that the APEx Project Environments can be combined in different ways to create a flexible
 collaborative project environment. This gives projects the flexibility to adapt the tools based on their needs. For
-example, they can choose to make the project portal as their main entry point for both project members and their
+example, they can choose to make the project web portal as their main entry point for both project members and their
 community, linking to the different APEx tools from within the main website. Alternatively, projects can decide to only
-keep the project portal for public communication and dissemination, while having the user workspaces only visible for
+keep the project web portal for public communication and dissemination, while having the user workspaces only visible for
 the project members. In essence, the APEx Project Environments provide an a la carte approach for setting up and configuring
 your project environment based on your needs.
 
@@ -38,7 +38,7 @@ including stakeholders, policymakers, and the general public.
 
 ### Key Components
 
-* [**Project Portal**](project_portal.md)\
+* [**Project Web Portal**](project_portal.md)\
   Provides dynamic instantiation using Drupal, allowing project managers to create and maintain a visually appealing and
   informative site.
 * [**Geospatial Explorer**](geospatial_explorer.md)\
@@ -53,7 +53,8 @@ including stakeholders, policymakers, and the general public.
 %%| fig-cap: "APEx Project Environments - Project Promotion"
 flowchart TD ""
     subgraph Public Environment
-      A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
+      direction TB
+      A(Project Web Portal) -->|Links to| B(Geospatial<br/>Explorer)
       A -->|Links to| C(Documentation<br/> Portal)
       A -->|Links to| D(User<br/> Forum)
     end
@@ -81,7 +82,7 @@ help, share knowledge, and collaborate on EO applications.
 
 ### Key Components
 
-* [**Project Portal**](project_portal.md)\
+* [**Project Web Portal**](project_portal.md)\
   Provides dynamic instantiation using Drupal, allowing project managers to create and maintain a visually appealing and
   informative site.
 * [**User Forum**](forum.md)\
@@ -100,10 +101,12 @@ help, share knowledge, and collaborate on EO applications.
 %%| fig-cap: "APEx Project Environments - User Support"
 flowchart TD ""
     subgraph Project Environment
+      direction TB
       UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
     end
     subgraph Public Environment
-      A(Project Portal) -->|Links to| C(Documentation<br/> Portal)
+      direction TB
+      A(Project Web Portal) -->|Links to| C(Documentation<br/> Portal)
       A -->|Links to| D(User<br/> Forum)
     end
 
@@ -132,8 +135,8 @@ project-specific visualisations, helping users to interpret and communicate data
 * [**Geospatial Explorer**](geospatial_explorer.md)\
   Functional enhancements to provide interactive and real-time data visualisations, supporting both raster and tabular
   data visualisations.
-* [**Project Portal**](project_portal.md)\
-  Integration of visualisations into project portals to showcase data insights.
+* [**Project Web Portal**](project_portal.md)\
+  Integration of visualisations into project web portals to showcase data insights.
 * [**Documentation Portal**](documentation.qmd)\
   Interactive visualisations within documentation to explain data findings and methodologies.
 
@@ -142,7 +145,8 @@ project-specific visualisations, helping users to interpret and communicate data
 %%| fig-cap: "APEx Project Environments - Data Visualization"
 flowchart TD ""
     subgraph Public Environment
-      A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
+      direction TB
+      A(Project Web Portal) -->|Links to| B(Geospatial<br/>Explorer)
       A -->|Links to| C(Documentation<br/> Portal)
     end
 
@@ -172,8 +176,8 @@ providing powerful tools and environments for data processing and statistical an
   [Code Server](./app_code_server.md) or [JupyterLab](./app_jupyterlab.md).
 * **User Workspace**\
   Secure and scalable environments for conducting extensive data analysis.
-* [**Project Portal**](project_portal.md)\
-  Integration of visualisations into project portals to showcase data insights.
+* [**Project Web Portal**](project_portal.md)\
+  Integration of visualisations into project web portals to showcase data insights.
 * [**Product Catalogue**](catalog.qmd)\
   A STAC catalogue providing easy access to EO datasets and streamlining the data ingestion process.
 * [**Geospatial Explorer**](geospatial_explorer.md)\
@@ -184,10 +188,12 @@ providing powerful tools and environments for data processing and statistical an
 %%| fig-cap: "APEx Project Environments - Data Analytics"
 flowchart TD ""
     subgraph Project Environment
+      direction TB
       UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
     end
     subgraph Public Environment
-      A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
+      direction TB
+      A(Project Web Portal) -->|Links to| B(Geospatial<br/>Explorer)
       B -->|Visualizes| C(Product<br/>Catalogue)
       A -->|Links to| C
     end
@@ -220,10 +226,10 @@ effectively.
 * **User Workspace**\
 Providing secure environments for executing data processing tasks on existing cloud-based processing platforms.
 * **Interactive Development Environment (IDE)**\
-Leveraging the capabilities of [Code Server](./app_code_server.md) or [JupyterLab](./app_jupyterlab.md) IDS to support
+Leveraging the capabilities of [Code Server](./app_code_server.md) or [JupyterLab](./app_jupyterlab.md) IDEs to support
 data processing scripts and workflows, including pre-configured tools for EO tasks.
-* [**Project Portal**](project_portal.md)\
-  Integration of visualisations into project portals to showcase data insights.
+* [**Project Web Portal**](project_portal.md)\
+  Integration of visualisations into project web portals to showcase data insights.
 * [**Product Catalogue**](catalog.qmd)\
 Streamlined data ingestion and access to a wide range of EO datasets.
 * **[Geospatial Explorer](geospatial_explorer.md) and Web Apps**\
@@ -234,10 +240,12 @@ Interactively visualise results.
 %%| fig-cap: "APEx Project Environments - Data Processing"
 flowchart TD ""
     subgraph Project Environment
+      direction TB
       UW(User Workspace) --> |Activate| IDE(Interactive Development<br/> Environment)
     end
     subgraph Public Environment
-      A(Project Portal) -->|Links to| B(Geospatial<br/>Explorer)
+      direction TB
+      A(Project Web Portal) -->|Links to| B(Geospatial<br/>Explorer)
       B -->|Visualizes| C(Product<br/>Catalogue)
       A -->|Links to| C
     end

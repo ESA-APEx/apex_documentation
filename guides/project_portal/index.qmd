@@ -1,5 +1,5 @@
 ---
-title: Project Portal
+title: Project Web Portal
 listing:
   contents: "tutorials"
   type: "grid"
@@ -7,17 +7,17 @@ listing:
   filter-ui: true
 ---
 
-Welcome to the user guide for the [APEx Project Portal](../../instantiation/project_portal.md), a powerful tool designed
+Welcome to the user guide for the [APEx Project Web Portal](../../instantiation/project_portal.md), a powerful tool designed
 to support your project communication.
 
 In this user guide, you will find essential information and resources tailored to help you navigate the portal efficiently.
 For a more general overview, we encourage you to explore the  documentation available for the
-[APEx Project Portal](../../instantiation/project_portal.md) and its [use cases](../../instantiation/usecases.qmd), where
+[APEx Project Web Portal](../../instantiation/project_portal.md) and its [use cases](../../instantiation/usecases.qmd), where
 you will discover how you can effectively use it within your project.
 
 This user manual is designed for web managers and editors responsible for setting up, editing, and maintaining their project
 website. It provides you with a list of tutorials that focus on the most common tasks you may encounter while using the APEx
-Project Portal. Whether you are a newcomer or an experienced user, these tutorials will empower you to utilize the tool to
+Project Web Portal. Whether you are a newcomer or an experienced user, these tutorials will empower you to utilize the tool to
 its fullest potential.
 
 Furthermore, as the portal is built on the [Drupal](https://new.drupal.org/home) framework, we recommend checking the
