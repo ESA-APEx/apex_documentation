@@ -2,8 +2,6 @@
 title: QGIS as a Remote Desktop
 ---
 
-QGIS as a Remote Desktop - Tailored User Workspace
-
 ## Overview
 
 The Geographic Information System capacity within the APEx Project Environments primarily leverages the power
@@ -18,8 +16,7 @@ tasks or needing access to a consistent development environment from various loc
 The server-based nature ensures that users are not constrained by their local machine's hardware capabilities, allowing
 them to harness the computational power of remote servers.
 
-
-## QGIS software architecture
+## Software Architecture
 
 The APEx QGIS workspace is a fully-fledged Geographic Information System delivered as a cloud-based user workspace, tailored
 to support the activities of Earth observation (EO) projects.  
@@ -27,7 +24,7 @@ to support the activities of Earth observation (EO) projects.
 ![QGIS on a Remote Desktop in the current APEx workspaces offering ](images/applicationhub_qgis.png)
 
 Each QGIS workspace comes equipped with the free and open source software project hosted on QGIS.org association, as well
-as with a private data products catalogue. These features empower developer users to edit and build EO-based mapping products 
+as with a private data products catalogue. These features empower developer users to edit and build EO-based mapping products
 and geospatial workflows, accelerating project outcomes within a dedicated, tool-rich environment.
 
 ### Key Features
@@ -52,7 +49,6 @@ Store, manage, and share QGIS projects with the ability to connect to external d
 * **Collaborative Projects**\
 Teams can work collaboratively on GIS projects, sharing data and resources in real-time. A group
 of data scientists might collaboratively develop crop yields scenario maps based on various data inputs.
-
 
 ## Examples
 
