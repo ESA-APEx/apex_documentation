@@ -2,14 +2,14 @@
 title: Using the Geospatial Explorer
 ---
 
-The [**APEx Geospatial Explorer**](../../../instantiation/geospatial_explorer.md) is a web map application with a configurable
+The [**APEx Geospatial Explorer**](../../instantiation/geospatial_explorer.md) is a web map application with a configurable
 user interface that can be used to showcase the results of ESA projects as interactive maps, tables and charts.  This user
 guide provides some general user guidance for a number of supported features.
 
 :::{.callout-note}
 Users should be aware that the configuration of any specific Geospatial Explorer page will determine
 what is available on a case by case basis.  Examples of instantiated versions of the Geospatial Explorer are
-listed [here](../../../instantiation/geospatial_explorer.md#examples) on the project overview page.
+listed [here](../../instantiation/geospatial_explorer.md#examples) on the project overview page.
 :::
 
 ## Navigating around the map
@@ -37,19 +37,19 @@ of your current cursor location at the bottom right.
 The left hand panel of the Geospatial Explorer is used to add data to the map.  Typically data is organised into
 **layer groups**.
 
-![Layer groups](../images/groups.jpg)
+![Layer groups](./images/groups.jpg)
 
 Clicking on a specific layer group expands the layers within that group and displays a brief description of what
 that layer comprises.
 
-![Expanded layer groups](../images/expanded.jpg)
+![Expanded layer groups](./images/expanded.jpg)
 
 To add the data on to the map, use the toggle button. Once a layer is toggled on the layer panel will expand to
 show you more information about the layer - for example, a legend to help you interpret the map.  If it has been
 configured you may also see an attribution link, which may link you out to a project page or metadata record about
 the layer.  The example below has been linked to the **World Cover** website.
 
-![Layer displayed with legend and attribution statement](../images/toggled-on.jpg)
+![Layer displayed with legend and attribution statement](./images/toggled-on.jpg)
 
 In some cases, according to how the explorer has been configured **switching one layer on may switch others off**.
 These *mutually exclusive* groups are often set up when it only makes sense to show one layer at a time, because
@@ -61,7 +61,7 @@ In some circumstances a layer may have been configured to include an **opacity**
 that allows you to change the level of opacity to make the layer partially transparent, allowing you to view other
 map layers (such as background mapping) beneath the layer.
 
-![Opacity slider](../images/opacity.jpg)
+![Opacity slider](./images/opacity.jpg)
 
 ## Layer "info" box
 
@@ -70,7 +70,7 @@ Demo](https://explorer.sef-food.apex.esa.int/)) clicking on the map drops a mark
 the *latitude, longitude* and *data value* at the marker location, allowing you to display the precise value of
 the data at that point.
 
-![Layer info box](../images/infobox.jpg)
+![Layer info box](./images/infobox.jpg)
 
 ## Split screen view
 
@@ -80,7 +80,7 @@ a future release it will be possible for you to choose your own pair of layers t
 When you are in a split screen mode, the slider at the bottom of the map allows you to "swipe" from left to right
 to compare the two layers with one another.
 
-![Split screen view](../images/splitscreen.jpg)
+![Split screen view](./images/splitscreen.jpg)
 
 ## Statistics
 
@@ -89,7 +89,7 @@ Statistical data can also be displayed in the Geospatial Explorer as tables, cha
 regional or local boundaries) or natural (e.g. river basins).  The statistics that are available will depend on
 what the administrator of the Geospatial Explorer has defined for you.
 
-![Statistics](../images/statistics.jpg)
+![Statistics](./images/statistics.jpg)
 
 To access these, simply *click on a polygon* to display the statistics panel and then select from the table,
 bar or pie chart options.
