@@ -8,7 +8,7 @@ The Product Catalogue enables projects to create their own SpatioTemporal Asset 
 comprehensive metadata collection for efficient organisation and discovery of geospatial data assets. This information
 is presented in a user-friendly JSON format.
 
-![APEx Product Catalogue](images/stac_browser_1.jpg)
+![APEx Product Catalogue](images/stac_browser_1.png)
 
 Instantiating a project-specific catalogue gives projects the freedom to use it for a range of purposes, from
 experimental to operational use cases. Assets that are considered project deliverables will normally be added to the
@@ -48,15 +48,15 @@ The product catalogue serves several beneficial scenarios for projects:
 
 ### STAC Catalogue API
 
-You will get a dedicated STAC catalog, hosted and managed by APEx. This gives you full control over the metadata,
+You will get a dedicated STAC catalogue, hosted and managed by APEx. This gives you full control over the metadata,
 without having to worry about IT aspects such as security, backup or monitoring the service. The catalogue supports
 creating both private and public collections.
 
 #### Key Considerations
 
-* **Data storage**: The STAC catalogue does _not_ include data storage. It is recommended to request object storage access
+* **Data storage**: The STAC catalogue does include limited data storage. It is recommended to request object storage access
   from one of the cloud providers in the Network of Resources (NoR).
-* M**etadata Creation**: The process of creating metadata is not automated. You will need to provide the metadata in
+* **Metadata Creation**: The process of creating metadata is not automated. You will need to provide the metadata in
   JSON
   format, giving you complete flexibility in choosing the STAC extensions that best suit your requirements.
 
@@ -72,12 +72,12 @@ is not provided.
 ### STAC Browser
 
 In addition to the STAC Catalogue API, APEx provides a dedicated STAC Browser to support the visual exploration of your
-catalog's content. This browser is seamlessly integrated with the instantiated API and is automatically configured upon
+catalogue's content. This browser is seamlessly integrated with the instantiated API and is automatically configured upon
 initialization to display the results published in your STAC API.
 
-![STAC Browser - Collections](images/stac_browser_1.jpg)
+![STAC Browser - Collections](images/stac_browser_1.png)
 
-![STAC Browser - Collection Details](images/stac_browser_2.jpg)
+![STAC Browser - Collection Details](images/stac_browser_2.png)
 
 #### Underlying Technology
 

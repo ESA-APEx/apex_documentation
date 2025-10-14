@@ -3,25 +3,27 @@ title: Dynamic software components for your project
 ---
 
 The APEx Project Environments are designed to provide managed, configurable environments that support the collaboration,
-development, exploration, and visualisation of Earth Observation (EO) application project results. 
-These tools are crucial for facilitating the effective sharing, maintenance, and utilisation of project outcomes within 
+development, exploration, and visualisation of Earth Observation (EO) application project results.
+These tools are crucial for facilitating the effective sharing, maintenance, and utilisation of project outcomes within
 the Earth Observation community, ensuring that they remain readily accessible and usable for extended time periods.
 
-APEx aims to cater to the diverse and multifaceted needs of the EO community by delivering Project Environments as Software as a Service (SaaS)
-products. It manages the delivery of either single-user or shared environments, managed within a unified cloud infrastructure,
-thus facilitating a wide range of user tasks, including development, hosting, execution, and exploratory analysis of EO applications.
+APEx aims to cater to the diverse and multifaceted needs of the EO community by delivering Project Environments as Software
+as a Service (SaaS) products. It manages the delivery of either single-user or shared environments, managed within a
+unified cloud infrastructure, thus facilitating a wide range of user tasks, including development, hosting, execution,
+and exploratory analysis of EO applications.
 
-At the core of the APEx Project Environments is the ability for APEx to manage and deliver these environments effectively. 
-Project-wide community-oriented tools, such as the Project Web Portal, Products Catalogue, Documentation Hub, and User Forum, 
-are managed directly by Kubernetes and typically instantiated once per project. 
-Conversely, single-user-specific workspaces allow the instantiation of Apps by a single user at any time, while sharing data across these Apps. 
-These tools, including the User Workspace Finder, the Code Server Interactive Development Environment (IDE), 
-the JupyterLab workspace, the QGIS user workspace, and in certain cases, dashboards and web applications, 
-are all managed by a dedicated ApplicationHub server. This ApplicationHub orchestrates the launch and management of such software deployments, 
-ensuring secured (isolated from other users) and customisable environments for individual users, while allowing targetted file sharing operations among users.
+At the core of the APEx Project Environments is the ability for APEx to manage and deliver these environments effectively.
+Project-wide community-oriented tools, such as the Project Web Portal, Product Catalogue, Documentation Portal, and User
+Forum, are managed directly by Kubernetes and typically instantiated once per project.
+Conversely, single-user-specific workspaces allow the instantiation of Apps by a single user at any time, while sharing
+data across these Apps. These tools, including the User Workspace Finder, the Code Server Interactive Development
+Environment (IDE),the JupyterLab workspace, the QGIS user workspace, and in certain cases, dashboards and web applications,
+are all managed by a dedicated ApplicationHub server. This ApplicationHub orchestrates the launch and management of such
+software deployments,ensuring secured (isolated from other users) and customisable environments for individual users, while
+allowing targeted file sharing operations among users.
 
-A key feature of the APEx Project Environments is the ability to provide managed, configurable environments. 
-These environments can be tailored to the specific needs of different projects and users, supporting various tasks, 
+A key feature of the APEx Project Environments is the ability to provide managed, configurable environments.
+These environments can be tailored to the specific needs of different projects and users, supporting various tasks,
 including exploratory analysis, development, hosting, and execution of EO applications.
 This flexibility and configurability allow the project members to focus on their primary research objectives
 without being bogged down by the technical complexities of setting up and maintaining advanced, Cloud-native workspaces.
@@ -40,15 +42,15 @@ The specific components of the APEx Project Environments include:
   web services based on a configuration defined by a dashboard administrator.
 * **[Project Web Portal](project_portal.md)**\
   Creating a project website based on Drupal, working in synergy with other APEx services.
-// * [**User Workspace Finder**](user_workspace_finder.md)\
-//  Offering a secure and personalised work environment with data management and data sharing mechanisms.
+<!-- // * [**User Workspace Finder**](user_workspace_finder.md)\
+//  Offering a secure and personalised work environment with data management and data sharing mechanisms. -->
 * [**Code Server IDE**](app_code_server.md)\
   Leveraging IDE capabilities tailored specifically for EO tasks, based on the open-source software Code Server (VS Code in the browser).
 * [**JupyterLab IDE**](app_jupyterlab.md)\
   Leveraging IDE capabilities tailored specifically for EO tasks, based on open-source software JupyterLab.
 * [**QGIS on a Remote Desktop**](app_qgis.md)\
   Leveraging Geographic Information System functions, based on the open-source software QGIS.
-* [**Products Catalogue**](catalog.qmd)\
+* [**Product Catalogue**](catalog.qmd)\
   Featuring SpatioTemporal Asset Catalog (STAC) catalogues and streamlined data ingestion processes.
 * [**Documentation Portal**](documentation.qmd)\
   Supporting customisation and interactive visualisation using the Quarto framework.
@@ -71,7 +73,7 @@ Projects can interconnect their instantiated services in several ways:
 
 * **Integrated Navigation**: If a project already has a public-facing website or uses the APEx
 [Project Web Portal](./project_portal.md), links to the instantiated tools, such as the
-[Geospatial Explorer](./geospatial_explorer.md), [Products Catalogue](./catalog.qmd) or [JupyterLab](./app_jupyterlab.md), can be
+[Geospatial Explorer](./geospatial_explorer.md), [Product Catalogue](./catalog.qmd) or [JupyterLab](./app_jupyterlab.md), can be
 embedded directly into the site's navigation structure. This provides a unified access point for project stakeholders
 and visitors to the project website.
 

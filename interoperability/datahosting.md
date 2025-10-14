@@ -51,3 +51,8 @@ fostering wider adoption and enabling advanced use cases in downstream applicati
 
 Table: Interoperability requirements for data providers
 :::
+
+:::{.callout-tip title="File Format Recommendations"}
+For more details regarding the recommended file formats and their usage within APEx, please refer to the
+[APEx File Format Recommendations](../guides/file_formats.qmd).
+:::

@@ -2,9 +2,7 @@
 title: Code Server IDE
 ---
 
-Code Server Interactive Development Environment - Tailored User Workspace
-
-## Code Server overview
+## Overview
 
 The Code Server Interactive Development Environment (IDE) capacity within the APEx Project Environments primarily leverages the power
 of the [Code Server software (Visual Studio Code in the Cloud)](#code-server-software-architecture).
@@ -21,7 +19,7 @@ them to harness the computational power of remote servers.
 Tailored specifically for EO tasks, this environment furnishes developers with an array of tools and libraries fine-tuned
 for programming languages and productivity plugins or extensions.
 
-## Code Server software architecture
+## Software Architecture
 
 The APEx Code Server solution is an Integrated Development Environment delivered as a cloud-based user workspace, tailored
 to support the activities of Earth observation (EO) projects.  
@@ -54,7 +52,7 @@ their local machine's hardware capabilities, enabling them to leverage the compu
 Code Server serves as the core development environment, providing a powerful and flexible platform for coding and debugging,
 allowing developers to harness server-side computational power while maintaining a familiar interface.
 
-### Code Server key features
+### Key Features
 
 The APEx Code Server IDE includes several features that make it suitable for both individual researchers and teams
 working on EO research and applications.
@@ -74,7 +72,7 @@ complemented by a vast repository of extensions for virtually any language or fi
 Leverage integrated Git support, allowing team members to work on the same project by tracking changes and merging updates,
 helping to keep the code organised while avoiding conflicting code changes.
 
-## Code Server showcase scenarios
+## Showcase Scenarios
 
 The APEx Code Server IDE supports a variety of use cases, making it an essential tool for developers,
 researchers, and data scientists within the EO community. Some typical scenarios include:
@@ -82,7 +80,7 @@ researchers, and data scientists within the EO community. Some typical scenarios
 * **Algorithm Development and Testing**\
 Researchers and developers can write, test, and debug new algorithms for processing
 satellite imagery or other EO data. For instance, a user might develop a script to detect deforestation using
-multi-temporal satellite images. To support the productivity of developers, the Code Server solution uses 
+multi-temporal satellite images. To support the productivity of developers, the Code Server solution uses
 a mechanism of extensions. Code Server extensions are available from the Open VSX Registry.
 
 ::: {.callout-note}
@@ -98,7 +96,7 @@ leave the Code Server user interface
 * [Edit](https://continue.dev/docs/edit/how-to-use-it) is a convenient way to modify code without leaving your current file
 * [Actions](https://continue.dev/docs/actions/how-to-use-it) are shortcuts for common use cases.
 
-This extension asks for API keys to use the models. 
+This extension asks for API keys to use the models.
 This has been successfully tested and could be an option for the APEx use cases.
 :::
 
