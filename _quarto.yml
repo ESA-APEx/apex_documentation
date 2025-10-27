@@ -90,6 +90,7 @@ website:
                 text: File format recommendations
           - section: Admin Guides
             contents:
+              - href: guides/account.md
               - href: guides/custom_domain.md
                 text: Custom domains for your project environment
               - href: guides/geospatial_explorer/index.qmd
