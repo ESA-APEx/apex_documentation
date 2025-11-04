@@ -17,3 +17,5 @@ package.json
 node_modules
 
 **/*.quarto_ipynb
+
+docs/doc-repo.json
