@@ -55,8 +55,8 @@ A documentation portal can support several project scenarios, including:
 
 The APEx Documentation Portal Service provides users with a streamlined template to initiate their documentation process.
 As changes are made, advanced automation tools ensure that the documentation is published seamlessly to a location that
-integrates effortlessly within your project portal. This service is most effective when used in conjunction with the
-[APEx Project Portal](./project_portal.md), maximizing the level of integration.
+integrates effortlessly within your project web portal. This service is most effective when used in conjunction with the
+[APEx Project Web Portal](./project_portal.md), maximizing the level of integration.
 
 This documentation template includes the following features:
 

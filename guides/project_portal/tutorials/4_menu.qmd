@@ -34,7 +34,7 @@ Via the main navigation overview, which you can access when you navigate to **st
 administration toolbar, you can easily disable or enable main navigation (sub)menu items. Select the **Enabled** check to
 show the menu item in the main navigation or deselect the **Enabled** checkbox to hide the menu item in the main navigation.
 
-## Edit the name of your project portal
+## Edit the name of your Project Web Portal
 
 Upon instantiation of your project web portal, the name of your project will be set to display in the top left corner in
 the header section, left from the main menu navigation, and in the footer. The acronym and/or full name will use the primary

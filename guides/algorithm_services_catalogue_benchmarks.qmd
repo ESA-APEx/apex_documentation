@@ -1,0 +1,20 @@
+---
+title: Creating benchmarks for your service
+jupyter: python3
+execute:
+  echo: false
+---
+
+```{python}
+#| output: asis
+import requests
+url = "https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/main/docs/benchmarking.md"
+r = requests.get(url)
+r.raise_for_status()
+
+# Convert images to use absolute URLs
+base_url = "https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/main/docs/"
+content = r.text.replace("](images/", f"]({base_url}images/")
+
+print(content)
+```

@@ -4,7 +4,7 @@ image: ../images/cover_news.png
 lightbox: true
 ---
 
-The project portal allows you to add news items and an overview of all news items. The overview can be implemented via a
+The Project Web Portal allows you to add news items and an overview of all news items. The overview can be implemented via a
 separate web page or you can also add a **news** paragraph on any web page to list the latest news items for example.
 
 ## Add a news item

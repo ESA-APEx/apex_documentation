@@ -26,7 +26,7 @@ flowchart TD
     ALGORITHM --> | adheres to | ALGORITHM_GUIDELINES
     ALGORITHM --> | hosted on | OPENEO_OGC
     OPENEO_OGC --> | deployed on | HOSTING_PLATFORM
-    OPERATOR --> | operated by | HOSTING_PLATFORM
+    OPERATOR --> | operates | HOSTING_PLATFORM
     HOSTING_PLATFORM --> | adheres to | PLATFORM_GUIDELINES
     ALGORITHM --> | registered in | CATALOGUE
     APEX ---> | curates | CATALOGUE
@@ -103,7 +103,7 @@ aspects, ensuring that EO projects retain a sufficient degree of freedom in sele
 An EO project refers to the consortium that is responsible for building the EO algorithm and is also referred to as
 Algorithm PI (principal investigator). In certain ESA EOP procurement and ITTs, there is now a requirement included to
 comply with APEx [Interoperability and Compliance Guidelines](../interoperability/index.md). When compliance is
-required, the consortium can utilise various services offered by APEx. Specifically, the 
+required, the consortium can utilise various services offered by APEx. Specifically, the
 [APEx Algorithm Support](../propagation/index.qmd) aims tosupport the enhancement of algorithms on a technical and
 software level and facilitate the transition to hosted algorithms that can be included in the
 [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/).

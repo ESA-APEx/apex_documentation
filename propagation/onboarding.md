@@ -119,4 +119,19 @@ for [algorithm upscaling](upscaling.md).
 
 ## Onboard Your Algorithm on the [APEx Algorithm Services Catalogue](#apex-algorithm-services-catalogue)
 
-Stay tuned for more detailed instructions on how to onboard your algorithm into our catalogue.
+Onboarding your algorithm to the APEx Algorithm Services Catalogue is a straightforward process. Follow these
+steps to get started:
+
+1. **Host Your Algorithm**: Ensure your algorithm is hosted on an [APEx-compliant platform](./platforms.md). If you need
+assistance in selecting a suitable platform, refer to the
+[Hosting Platform Onboarding Support](#hosting-platform-onboarding-support) section.
+2. **Prepare Your Algorithm Record**: Create a detailed record of your algorithm service, including its functionalities,
+input/output specifications, and any relevant metadata. This record should adhere to the guidelines provided in the
+[APEx Algorithm Services Catalogue](https://esa-apex.github.io/apex_algorithms/catalogue.html).
+3. **Submit a Pull Request**: To officially onboard your algorithm service, submit a pull request (PR) to the
+[APEx Algorithms GitHub Repository](https://github.com/ESA-APEx/apex_algorithms).
+4. **Review and Approval**: The APEx team will review your submission. If everything is in order, your algorithm service
+will be approved and added to the catalogue.
+5. **Catalogue Integration**: Once approved, your algorithm service will be listed in the
+[APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/), making it accessible to
+the EO community.
