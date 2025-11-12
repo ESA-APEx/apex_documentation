@@ -124,33 +124,56 @@ The following example showcases how to use the OpenEO API to execute a synchrono
 
 ```curl
 POST /openeo/1.2/result HTTP/1.1
-Host: openeocloud.vito.be
+Host: openeofed.dataspace.copernicus.eu
 Content-Type: application/json
-Authorization: Bearer basic//basic.cHJvag==
-Content-Length: 4587
+Authorization: Bearer <YOUR_TOKEN>
 {
     "process": {
         "id": "biopar1",
         "process_graph": {
             "biopar1": {
                 "process_id": "biopar",
-                "namespace": "vito",
+                "namespace": "https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/refs/heads/main/algorithm_catalog/vito/biopar/openeo_udp/biopar.json",
                 "arguments": {
-                    "bbox": {
-                        "west": 5.15183687210083,
-                        "east": 5.153381824493408,
-                        "south": 51.18192559252128,
-                        "north": 51.18469636040683,
-                        "crs": "EPSG:4326"
-                    },
-                    "time_range": [
-                        "2020-05-06",
-                        "2020-05-30"
-                    ]
+                    "biopar_type": "LAI",
+                    "temporal_extent": [
+                        "2020-06-27",
+                        "2020-07-27"
+                    ],
+                    "spatial_extent": {
+                        "coordinates": [
+                            [
+                                [
+                                    5.179324150085449,
+                                    51.2498689148547
+                                ],
+                                [
+                                    5.178744792938232,
+                                    51.24672597710759
+                                ],
+                                [
+                                    5.185289382934569,
+                                    51.24504696935156
+                                ],
+                                [
+                                    5.18676996231079,
+                                    51.245342479161295
+                                ],
+                                [
+                                    5.187370777130127,
+                                    51.24918393390799
+                                ],
+                                [
+                                    5.179324150085449,
+                                    51.2498689148547
+                                ]
+                            ]
+                        ],
+                        "type": "Polygon"
+                    }
                 },
                 "result": true
             }
-        }
     }
 }
 ```
