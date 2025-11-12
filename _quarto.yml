@@ -2,8 +2,10 @@ project:
   type: website
   preview:
     port: 4200
-  resources: 
-    - docs/** 
+  resources:
+    - docs/**
+  pre-render:
+    - scripts/build_doc_repo.py
 
 website:
   favicon: assets/img/logos/apex_icon_blue.svg
