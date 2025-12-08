@@ -16,6 +16,9 @@
       "pattern": "^https://eoepca.org"
     },
     {
+      "pattern": "https://data.esa.int/esado"
+    },
+    {
       "pattern": "^@"
     }
   ],

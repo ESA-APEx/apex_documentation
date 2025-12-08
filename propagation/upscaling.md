@@ -7,7 +7,7 @@ from one algorithm to the other (spatial, temporal, track-based, etc…).
 
 As a start, APEx will aim at facilitating the execution of an openEO UDP or OGC application package-based algorithm over
 larger geographic areas. To support these operations, APEx requires that the algorithm is already optimised for cost-effective
-scalability, deployed as a service, and registered in the [APEx Algorithm Services Catalogue](./onboarding.md#apex-algorithm-services-catalogue).
+scalability, deployed as a service, and registered in the [APEx Algorithm Catalogue](./onboarding.md#apex-algorithm-catalogue).
 If needed, APEx can provide additional support to ensure these prerequisites are met.
 
 To execute large-scale data processing activities, APEx provides a range of services (from guidance to liaison with Platform
@@ -100,7 +100,7 @@ To make use of the upscaling tools, the following aspects should be considered b
 
 * The upscaling activities and tools are designed with APEx [guidelines](../interoperability/index.md) in mind,
   primarily supporting algorithms that have been onboarded to the
-  APEx [Algorithm Services Catalogue](onboarding.md#apex-algorithm-services-catalogue). While users are able to utilise
+  APEx [Algorithm Catalogue](onboarding.md#apex-algorithm-catalogue). While users are able to utilise
   these tools for other algorithms, their proper functionality cannot be guaranteed if the algorithms do not adhere to
   APEx [guidelines](../interoperability/algohosting.md). If the algorithm has not yet been registered, APEx
   offers [support](onboarding.md) to assist projects in integrating their algorithms into the catalogue.

@@ -40,7 +40,7 @@ The algorithm enhancement activities offer the following features:
 * Exploitation of algorithms available on APEx where appropriate, e.g., replacing custom functions with equivalent
   pre-optimized functions.
 * Delivery of an enhanced implementation that is ready to be registered in the
-[APEx Algorithm Services Catalogue](./onboarding.md#apex-algorithm-services-catalogue).
+[APEx Algorithm Catalogue](./onboarding.md#apex-algorithm-catalogue).
 
 ### How to get started?
 

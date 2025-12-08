@@ -23,7 +23,7 @@ Note that all the guidance material provided hereafter has APEx in mind, but can
 Observation applications. All APEx recommendations are made to support the FAIR principles, ensuring that your service
 can be easily shared within a broader community. These guidelines also facilitate the integration
 of your service into
-the [APEx Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-services-catalogue).
+the [APEx Algorithm Catalogue](../propagation/onboarding.md#apex-algorithm-catalogue).
 
 For best practice illustrations and examples, on how to package Earth Observation applications, the **EOAP Guide** is
 published here:\

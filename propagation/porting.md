@@ -56,7 +56,7 @@ practices ensure that EO applications are reproducible and portable across diver
 
 Once your algorithm has been successfully ported into APEx-compliant technology, the next step is to make it accessible
 to a broader audience. This involves onboarding it onto an APEx-compliant hosting platform, offering it as an on-demand
-service, and publishing it in the [APEx Algorithm Services Catalogue](./onboarding.md#apex-algorithm-services-catalogue).
+service, and publishing it in the [APEx Algorithm Catalogue](./onboarding.md#apex-algorithm-catalogue).
 
 By being part of the APEx ecosystem, your algorithm can be reused and scaled by other users and projects, significantly
 increasing its visibility and impact. This approach helps to maximize the value of your work, fostering collaboration and

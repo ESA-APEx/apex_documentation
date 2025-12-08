@@ -42,7 +42,7 @@ graph. [This notebook](https://documentation.dataspace.copernicus.eu/notebook-sa
 exactly how to do that.
 
 After your UDP is created, it can be registered in
-the [APEx Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-services-catalogue) and associated
+the [APEx Algorith Catalogue](../propagation/onboarding.md#apex-algorithm-catalogue) and associated
 with one or more backends or platforms capable of running it. As APEx continues to evolve, additional tools will become
 available that aid this process, including functionality to check if your service is still functional.
 
@@ -76,7 +76,7 @@ Package (EOAP) [@ap]. APEx can provide the guidance and support you need to effi
 EOAP implementation.
 
 After your EOAP is created, it can be registered in
-the [APEx Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-services-catalogue) and associated
+the [APEx Algorithm Catalogue](../propagation/onboarding.md#apex-algorithm-catalogue) and associated
 with one or more backends or platforms capable of running it. As APEx continues to evolve, additional tools will become
 available that aid this process, including functionality to check if your service remains in operational state, when it
 has been deployed onto an APEx-compliant algorithm hosting platform.
@@ -138,7 +138,7 @@ following Algorithm Support:
   as openEO User Defined Processes (UDP) or OGC Application Packages.
 * **[Algorithm Onboarding](onboarding.md)**\
   Explore how APEx can assist in deploying your algorithms within an APEx-compatible hosting platform and sharing
-  them across the EO community through the [APEx Algorithm Services Catalogue](./onboarding.md#apex-algorithm-services-catalogue).
+  them across the EO community through the [APEx Algorithm Catalogue](./onboarding.md#apex-algorithm-catalogue).
 * **[Algorithm Upscaling](upscaling.md)**\
   Learn how APEx facilitates and simplifies the execution of algorithms at scale.
 * **[Algorithm Enhancement](enhancement.md)**\

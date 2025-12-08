@@ -7,7 +7,7 @@ algorithms remain accessible to the EO community beyond the project’s completi
 and promote the use of algorithms developed during ESA projects, ensuring their longevity and continued utilisation, but
 also ensures alignment with the FAIR and open science data principles. This is achieved through the implementation of
 APEx [Interoperability and Compliance Guidelines](../interoperability/index.md) and by registering the onboarded
-services in the [APEx Algorithm Services Catalogue](#apex-algorithm-services-catalogue) for broader visibility and
+services in the [APEx Algorithm Catalogue](#apex-algorithm-catalogue) for broader visibility and
 accessibility.
 
 For the engagement with stakeholders of the algorithm, APEx collaborates closely with initiatives such as
@@ -22,8 +22,8 @@ of the project and can include one or more of the following components:
 * **[Algorithm Hosting Platform Onboarding](#hosting-platform-onboarding-support)**\
   Assistance in selecting and onboarding the algorithm to an [APEx-compliant hosting platform](./platforms.md), ensuring
   that the algorithm is available for execution as an on-demand service.
-* **[APEx Algorithm Services Catalogue Integration](#apex-algorithm-services-catalogue)**\
-  Guidance on how to integrate the hosted algorithm into the [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/),
+* **[APEx Algorithm Catalogue Integration](#apex-algorithm-catalogue)**\
+  Guidance on how to integrate the hosted algorithm into the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/),
   making it discoverable and accessible to the EO community.
 * **[Automated Testing and Benchmarking](#automated-testing-and-benchmarking)**\
   Provision of automated testing and benchmarking services to ensure the algorithm remains functional and accessible over
@@ -35,22 +35,22 @@ APEx can help to identify the different hosting environments that the project ca
 the chosen APEx-compliant standard (openEO or OGC API Processes) or the availability of specific datasets and processing
 capabilities that are required by the algorithm. If applicable, APEx can also assist in the hosting environment
 onboarding process, ensuring that your algorithm is available for execution on the selected platform and ready for
-further integration into the APEx [Algorithm Services Catalogue](#apex-algorithm-services-catalogue).
+further integration into the APEx [Algorithm Catalogue](#apex-algorithm-catalogue).
 
 :::{.callout-tip}
 A full list of the known APEx-compliant algorithm hosting platforms is
-available [here](./platforms.md).
+available on [Platforms](./platforms.md) page.
 :::
 
-### APEx Algorithm Services Catalogue
+### APEx Algorithm Catalogue
 
 Through comprehensive guidelines and documentation, projects can seamlessly integrate their hosted services in the
-APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/). This process facilitates easy browsing
+APEx [Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/). This process facilitates easy browsing
 and access to available algorithms, fostering collaboration and innovation within the EO community.
 
-![APEx Algorithm Services Catalogue](images/catalogue.png)
+![APEx Algorithm Catalogue](images/catalogue.png)
 
-The APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) allows visitors to discover and
+The APEx [Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) allows visitors to discover and
 select algorithms for subsequent execution on the corresponding APEx-compliant hosting environment.
 
 ::: {.callout-note title="Disclaimer"}
@@ -59,7 +59,7 @@ corresponding cloud resources. Users wishing to execute an algorithm will need a
 platform or make a request through [ESA's Network of Resources (NoR)](https://portfolio.nor-discover.org/).
 :::
 
-Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Services Catalogue.
+Stay tuned for more detailed instructions on how to execute an algorithm through the APEx Algorithm Catalogue.
 
 ### Automated Testing and Benchmarking
 
@@ -113,25 +113,25 @@ users will still need to have access to the necessary processing resources on th
 
 ### Large-scale Data Processing
 
-Once the algorithm has been integrated into the APEx [Algorithm Services Catalogue](#apex-algorithm-services-catalogue),
+Once the algorithm has been integrated into the APEx [Algorithm Catalogue](#apex-algorithm-catalogue),
 users can leverage it for large-scale data processing. For such activities, APEx offers additional support
 for [algorithm upscaling](upscaling.md).
 
-## Onboard Your Algorithm on the [APEx Algorithm Services Catalogue](#apex-algorithm-services-catalogue)
+## Onboard Your Algorithm on the [APEx Algorithm Catalogue](#apex-algorithm-catalogue)
 
-Onboarding your algorithm to the APEx Algorithm Services Catalogue is a straightforward process. Follow these
+Onboarding your algorithm to the APEx Algorithm Catalogue is a straightforward process. Follow these
 steps to get started:
 
 1. **Host Your Algorithm**: Ensure your algorithm is hosted on an [APEx-compliant platform](./platforms.md). If you need
 assistance in selecting a suitable platform, refer to the
 [Hosting Platform Onboarding Support](#hosting-platform-onboarding-support) section.
 2. **Prepare Your Algorithm Record**: Create a detailed record of your algorithm service, including its functionalities,
-input/output specifications, and any relevant metadata. This record should adhere to the guidelines provided in the
-[APEx Algorithm Services Catalogue](https://esa-apex.github.io/apex_algorithms/catalogue.html).
+input/output specifications, and any relevant metadata. This record should adhere to the guidelines provided in our
+[guide](../guides/algorithm_services_catalogue.qmd)
 3. **Submit a Pull Request**: To officially onboard your algorithm service, submit a pull request (PR) to the
 [APEx Algorithms GitHub Repository](https://github.com/ESA-APEx/apex_algorithms).
 4. **Review and Approval**: The APEx team will review your submission. If everything is in order, your algorithm service
 will be approved and added to the catalogue.
 5. **Catalogue Integration**: Once approved, your algorithm service will be listed in the
-[APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/), making it accessible to
+[APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/), making it accessible to
 the EO community.

@@ -7,7 +7,7 @@ scalable, cloud-based on-demand services. Currently, ESA EOP R&D projects genera
 example, EO-derived value-added products (raster or vector files, typically level-3 and level-4), workflows and
 algorithms, or conventional (open-source) desktop software solutions. The APEx Algorithm Support focusses on
 transforming and optimising (i.e., propagating) resulting algorithms, applications, workflows and toolboxes and ensuring
-their compliance with FAIR data principles. The preservation of these project outcomes is managed through the 
+their compliance with FAIR data principles. The preservation of these project outcomes is managed through the
 [ESA Project Results Repository (PRR)](https://eoresults.esa.int/), supported by other APEx services, such as the
 [APEx Data Catalogue](https://browser.apex.esa.int/?.language=en).
 
@@ -31,7 +31,7 @@ case-by-case basis. The APEx Algorithm Support comprises:
 
 * [Refactoring](./porting.md) source code to an openEO process graph
 * [Packaging](./porting.md) of source code to an OGC Application Package
-* [Integration](./onboarding.md) of a service into the [APEx Algorithm Services Catalogue](./onboarding.md#apex-algorithm-services-catalogue)
+* [Integration](./onboarding.md) of a service into the [APEx Algorithm Catalogue](./onboarding.md#apex-algorithm-catalogue)
 * [Cloudification](./toolboxcloud.md) of desktop toolboxes through a tailored approach
 * Technical performance [optimisation](./enhancement.md), both on the source code or service level
 * [Deployment and hosting](./onboarding.md) of a service in an existing EO platform

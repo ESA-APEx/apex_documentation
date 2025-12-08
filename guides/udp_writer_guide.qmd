@@ -43,7 +43,7 @@ graph. They can:
 Keep in mind that APEx offers [Algorithm Porting](../propagation/porting.md)
 and [Algorithm Onboarding](../propagation/onboarding.md) support to help you with transforming your algorithm into an
 openEO UDP, onboarding it onto an [APEx-compliant hosting platform](../propagation/platforms.md), registering it in the
-[APEx Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-services-catalogue) and its onboarding onto
+[APEx Algorithm Catalogue](../propagation/onboarding.md#apex-algorithm-catalogue) and its onboarding onto
 the [ESA Network of Resources](https://portfolio.nor-discover.org/).
 :::
 
@@ -53,7 +53,7 @@ User defined processes (UDPs) are one out of two standardised options that APEx 
 service. This guide gives some concrete steps and guidelines to ensure that your UDP works well for your users. These
 guidelines are written with APEx in mind, but can also serve as a general guide for openEO UDPs. Where needed,
 recommendations and choices are made to increase uniformity across
-the[APEx Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-services-catalogue).
+the[APEx Algorithm Catalogue](../propagation/onboarding.md#apex-algorithm-catalogue).
 
 For more background on UDP's, or a basic tutorial on creating them, the open source Python client provides
 [a good starting point](https://open-eo.github.io/openeo-python-client/udp.html).
@@ -110,7 +110,7 @@ a limited set of parameters, and write a single UDP for each piece.
 
 This section provides some recommendations on how to name parameters in your UDP. While these are not mandatory, we
 recommend to consider them to avoid that users of the
-APEx [Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) would be confused by variations in
+APEx [Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) would be confused by variations in
 process parameter names.
 
 Please [let us know](https://github.com/ESA-APEx/apex_documentation/issues) if you encounter a parameter that could use

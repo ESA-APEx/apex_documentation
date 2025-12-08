@@ -2,28 +2,34 @@
 title: openEO based services
 ---
 
-Context: use of APEx services that expose the [openEO](https://openeo.org/) interface standard, when implemented as openEO processes.
+Context: use of APEx services that expose the [openEO](https://openeo.org/) interface standard, when implemented as openEO
+processes.
 
+In general, services can be executed through the tools that are provided by the APEx supported platforms ("processing platforms"
+hereafter).
+For OpenEO based services, this is supported by an online user interface, web editor, Client Libraries (JavaScript, Python,
+R) and API.
 
-In general, services can be executed through the tools that are provided by the APEx supported platforms ("processing platforms" hereafter).
-For OpenEO based services, this is supported by an online user interface, web editor, Client Libraries (JavaScript, Python, R) and API.
+There are several ways to discover how a service can be executed. When publishing a service on the
+[APEx Algorithm Catalogue](../guides/algorithm_services_catalogue.qmd), a service provider can choose to provide the
+following information in the service details:
 
-There are several ways to discover how a service can be executed. When publishing a service on the APEx Algorithm Services Catalogue, a service provider can choose to provide the following information in the service details:
-
-* An executable link which redirects the user to the user interface of the processing platform. If this is the case, an **Access app** button will appear when opening an EOplaza service.
+* An executable link which redirects the user to the user interface of the processing platform. If this is the case, an
+**Access app** button will appear when opening an EOplaza service.
 * Sample code in the service description on how to execute a service.
 
 ## openEO backends
 
 An APEx openEO service is always associated with one or more openEO backends that have been validated to produce the correct
 results. So using one of these backends is the recommended approach. Thanks to openEO interoperability and standardization,
-it may certainly be possible that other backends can run the same service, but do make sure to validate the results in that case.
+it may certainly be possible that other backends can run the same service, but do make sure to validate the results in
+that case.
 
 To ensure a smooth experience, backends need to be compliant with [APEx guidelines](../interoperability/algohostingenv.md).
 The currently known list of compliant backends is:
 
-- [CDSE openEO federation](https://openeofed.dataspace.copernicus.eu)
-- [openEO platform](https://openeo.cloud)
+* [CDSE openEO federation](https://openeofed.dataspace.copernicus.eu)
+* [openEO platform](https://openeo.cloud)
 
 Both are federations, which means that they in fact are backed by multiple openEO instances. This increases the convenience
 for the APEx user, avoiding to interact with a high number of backends.
@@ -31,7 +37,8 @@ for the APEx user, avoiding to interact with a high number of backends.
 ## Online user interface
 
 OpenEO provides an online user interface where users can execute services directly in a web browser.
-Through the graphical user interface, users can execute, link, and configure different services. More information on the usage of the online applications is presented in the table below.
+Through the graphical user interface, users can execute, link, and configure different services. More information on the
+usage of the online applications is presented in the table below.
 
 | OpenEO                                                                     |
 |----------------------------------------------------------------------------|
@@ -40,15 +47,18 @@ Through the graphical user interface, users can execute, link, and configure dif
 | [Documentation](https://openeo.org/documentation/1.0/#introduction)        |
 
 ::: {.callout-tip}
+
 ## Pro-tip: discovering API requests
 
 This interface provides a great way to find out how to interact with an openEO backend at the level of the HTTP API.
-Just use the 'developer tools' of your favourite browser and inspect HTTP requests to the backend to find out the various options.
+Just use the 'developer tools' of your favourite browser and inspect HTTP requests to the backend to find out the various
+options.
 :::
 
 ## Client libraries
 
-OpenEO provides client libraries to support the creation and execution of JavaScript, Python and R services. The full client libraries documentation is available on the official OpenEO support pages:
+OpenEO provides client libraries to support the creation and execution of JavaScript, Python and R services. The full
+client libraries documentation is available on the official OpenEO support pages:
 
 * [JavaScript](https://openeo.org/documentation/1.0/javascript/)
 * [Python](https://openeo.org/documentation/1.0/python/)
@@ -104,7 +114,8 @@ taskmap_job = taskmap.save_result(format='GTiff').send_job()
 taskmap_job.start_and_wait().get_results()
 ```
 
-To execute a service from the APEx through one of the OpenEO client libraries, it is important to use the *datacube_from_process* function.
+To execute a service from the APEx through one of the OpenEO client libraries, it is important to use the
+*datacube_from_process* function.
 This accepts the ID and namespace of the service.
 Both are made available in the service description on the EOplaza.
 The full documentation on using the function is available on the official [OpenEO documentation](https://open-eo.github.io/openeo-python-client/datacube_construction.html#datacube-from-process).
@@ -114,11 +125,12 @@ Examples are available in the [OpenEO GitHub repository](https://github.com/Open
 
 ## API
 
-OpenEO provides a fully documented API for a more advanced way to integrate features in any existing application or workflow. The API can also be used to execute EOPlaza services. The documentation is available at:
+OpenEO provides a fully documented API for a more advanced way to integrate features in any existing application or workflow.
+The API can also be used to execute EOPlaza services. The documentation is available at:
 
 | OpenEO |
 |---|
-| https://openeo.org/documentation/1.0/developers/api/reference.html |
+| <https://openeo.org/documentation/1.0/developers/api/reference.html> |
 
 The following example showcases how to use the OpenEO API to execute a synchronous request for the BioPAR service:
 
