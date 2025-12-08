@@ -94,16 +94,16 @@ APEx-compliant technology and assist the project in its implementation.
 
 ## Want to share your algorithm with the APEx community?
 
-Please refer to [Use Case 4](#use-case-4-make-an-algorithm-available-in-the-apex-algorithm-services-catalogue) to learn
+Please refer to [Use Case 4](#use-case-4-make-an-algorithm-available-in-the-apex-algorithm-catalogue) to learn
 how APEx can support you in sharing your algorithm with the community.
 :::
 
 ### Outcome
 
 The algorithm, workflow or application is successfully transformed and is now available on a cloud platform and in
-the [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) as an openEO UDP or OGC API Process.
+the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) as an openEO UDP or OGC API Process.
 
-## Use Case 4: Make an algorithm available in the APEx Algorithm Services Catalogue
+## Use Case 4: Make an algorithm available in the APEx Algorithm Catalogue
 
 ### Scenario
 
@@ -130,17 +130,17 @@ to discover how APEx can provide support.
 ### Solution
 
 APEx will provide the necessary tools and comprehensive [support](onboarding.md) for integrating an algorithm into
-the [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int), ensuring its availability for reuse
+the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int), ensuring its availability for reuse
 within the EO community. The support also includes:
 
 * Assistance in selecting and onboarding an APEx-compliant algorithm hosting platform to guarantee that an algorithm is
   available for execution as an on-demand service.
 * Provision of guidelines and tools for automated testing and benchmarking of the service.
-* Publishing guidelines and documentation for registering an algorithm in the APEx Algorithm Services Catalogue.
+* Publishing guidelines and documentation for registering an algorithm in the APEx Algorithm Catalogue.
 
 ### Outcome
 
-The algorithm is available in the [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int),
+The algorithm is available in the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int),
 enhancing its visibility and usability within the EO community as an APEx-compliant service
 
 ## Use Case 5: Generating large-scale value-added products or maps based on on-demand EO services
@@ -169,7 +169,7 @@ additional [APEx Algorithm Porting](porting.md) support is available.
   onto an APEx-compliant hosting platform and the [APEx Algorithm Upscaling](./upscaling.md) services and has requested
   the related resources to perform these activities, for their algorithm to be exposed behind a referenced API (e.g.
   openEO UDP endpoint or OGC API - Processes endpoint) and used to run Upscaling tasks.
-* The project has discovered an algorithm in the [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int)
+* The project has discovered an algorithm in the [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int)
   for generating a new air quality index and aims to execute this algorithm on all historical data for the entire continent
   of Europe.
 

@@ -55,9 +55,9 @@ information on its parameters, expected output, scientific method, and an overvi
 within the algorithm. Examples of algorithm definitions include openEO’s User Defined Processes (UDP) [@udp] and OGC
 Application Package [@ap], using the Common Workflow Language (CWL) [@cwl].
 
-### Algorithm Services Catalogue
+### Algorithm Catalogue
 
-The [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) is a central register of algorithm
+The [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) is a central register of algorithm
 definitions and the corresponding algorithm service instances that can be executed on APEx-compliant algorithm hosting
 platforms. Curated by APEx, the catalogue relies on automated checks to ensure that advertised algorithms service
 instances are available and functional. Whenever a malfunction is detected, this is reported to ESA and the EO project
@@ -106,7 +106,7 @@ comply with APEx [Interoperability and Compliance Guidelines](../interoperabilit
 required, the consortium can utilise various services offered by APEx. Specifically, the
 [APEx Algorithm Support](../propagation/index.qmd) aims tosupport the enhancement of algorithms on a technical and
 software level and facilitate the transition to hosted algorithms that can be included in the
-[APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/).
+[APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/).
 
 ESA EO projects that do not have an explicit compliance requirement are also eligible to receive support. The APEx
 support can boost project impact, so projects are encouraged to inquire with their ESA technical officer about the
@@ -149,7 +149,7 @@ these tools will retrieve EO algorithm results via  web service APIs based on op
 further processed as needed, depending on the application. Note that these applications are not necessarily EO-centric
 or even geospatial, but could be using an EO algorithm as a small part or in the background.
 
-The [APEx Algorithm Services Catalogue](https://algorithm-catalogue.apex.esa.int/) acts as a discovery tool for last mile
+The [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) acts as a discovery tool for last mile
 application builders. It shows various technical parameters, the cost and potential limitations for specific use cases.
 This speeds up the discovery and selection process. Application builders will be required to create an account on the
 hosting platforms and ensure the necessary funds are available, if they want to test or use the API.
