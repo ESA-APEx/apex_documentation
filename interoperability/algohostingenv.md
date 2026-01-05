@@ -53,10 +53,14 @@ their compatibility with the APEx standards.
               <li>At least processes profiles L1-minimal [@openeo_processes_profiles]</li>
             </ul>
           </li>
-          <li>OGC API Processes [@apiprocess], supporting the deployment of applications defined by the OGC Best Practice for Earth Observation Application Package [@ap]</li>
+          <li>OGC API Processes [@apiprocess]</li>
         </ul>
       </td>
-      <td>The support for the proposed technologies ensures that APEx-compliant algorithms can be hosted on the algorithm hosting platform and made available as on-demand services.</td>
+      <td>
+      <p>The support for the proposed technologies ensures that APEx-compliant algorithms can be hosted on the algorithm hosting platform and made available as on-demand services.</p>
+      <p>For the OGC API Processes option, APEx recommends following the deployment of applications defined by the OGC Best Practice for Earth Observation Application Package [@ap]. However, it is important to note that APEx only mandates the exposure of an OGC API Processes endpoint. This approach allows for flexibility in choosing the most suitable technology, provided that the platform adheres to the OGC API Processes requirement.
+      </p>
+      </td>
     </tr>
     <tr>
       <td>HOST-REQ-04</td>
