@@ -44,7 +44,7 @@ fostering wider adoption and enabling advanced use cases in downstream applicati
     <tr>
       <td>DATA-REQ-03</td>
       <td>EO project results should be accompanied with metadata in a STAC [@stac] format, including applicable STAC extensions.</td>
-      <td>The specific STAC profiles will align with the recommendations provided by the <a href="https://eoresults.esa.int/reg-api/docs#/Implemented%20tranaction%20operations%3A/collection_items_post_request_collections__collectionId__items_post">ESA Project Results Repository (PRR)</a>. More details regarding which profiles to apply will be added as the project progresses.</td>
+      <td>The specific STAC profiles will align with the recommendations will align with the recommendations provided in the [Metadata Recommendations](#metadata-recommendations) section.</td>
     </tr>
   </tbody>
 </table>
@@ -56,3 +56,42 @@ Table: Interoperability requirements for data providers
 For more details regarding the recommended file formats and their usage within APEx, please refer to the
 [APEx File Format Recommendations](../guides/file_formats.qmd).
 :::
+
+
+## Metadata Recommendations
+
+### Format Specific Recommendations
+
+When sharing geospatial datasets in cloud-optimised formats, such as Cloud Optimised GeoTIFF (COG), NetCDF, and Zarr, it
+is essential to embed as much relevant metadata as possible directly within the files. Although these formats are designed
+for efficient cloud access, their interoperability potential is enhanced when the files carry rich, standardised metadata
+aligned with their respective specifications. Doing so not only improves data reuse by third-party tools but also enables
+more reliable automatic inference of STAC metadata during cataloguing or dataset publication.
+
+APEx recommends that the following details be incorporated into the file metadata:
+
+- The projection system used to present the data within the file
+- he Nodata value applied
+- The unit of measurement for values represented in the dataset
+- A definition of the colour map or legend utilised for the dataset visualisation in case of categorical data.
+- Band or variable names and descriptions
+
+For more details and examples on adding this additional metadata to your results, please consult the specific tools
+(e.g. gdal, rasterio, …) for generating the results.
+
+### STAC Metadata Recommendations
+
+The STAC specification provides a comprehensive and interoperable framework for describing geospatial datasets. Within
+APEx, STAC serves as the foundation to enhance the discoverability, interoperability, and integration of data across a
+range of platforms, data catalogues, including the ESA Project Results Repository, and tools such as the APEx Geospatial
+Explorer.
+
+To enhance interoperability, data providers are advised to consistently use a recommended set of STAC-related extensions
+and best practices. These recommendations come from community input and collaboration with other initiatives, like
+EarthCODE and EOEPCA, to ensure consistency across projects and promote the adoption of best practices.
+
+@tbl-metadata offers a summary of the suggested metadata. For further details, please refer to the resources listed below.
+
+- [STAC Best Practices](https://github.com/radiantearth/stac-best-practices/blob/main/README.md)
+- [EOEPCA+ Datacube Access Best Practices](https://github.com/EOEPCA/datacube-access/blob/main/best_practices/stac_best_practices.md)
+- [ESA PRR Collection Specifications](https://eoresults.esa.int/prr_collection_specifications.html)
