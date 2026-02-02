@@ -49,6 +49,14 @@ complexity.
       <td>
         This ensures that the algorithm can be hosted on one of the APEx-compliant algorithm hosting platforms.
         The APEx documentation will provide clear guidance and samples demonstrating these two options.
+        More information is available at the following pages in the APEx documentation:
+        <ul>
+          <li><a href="../propagation/service_development.qmd">APEx Algorithm Service Development Options</a></li>
+          <li><a href="../propagation/ondemandservices.qmd#how-to-build-an-on-demand-service">Building an On-Demand Service</a></li>
+          <li><a href="../propagation/platforms.md">Supported Platforms</a></li>
+          <li><a href="../guides/udp_writer_guide.qmd">Creating an openEO-based Service</a></li>
+          <li><a href="../guides/eoap_writer_guide.md">Creating an EOAP-based Service</a></li>
+        </ul>
       </td>
     </tr>
     <tr>
@@ -92,7 +100,7 @@ complexity.
   </tbody>
 </table>
 
-Table: Interoperability requirements for algorithm providers
+Table: Interoperability requirements (mandatory) for algorithm providers
 :::
 
 
@@ -181,9 +189,8 @@ Table: Interoperability requirements for algorithm providers
   </tbody>
 </table>
 
-Table: Interoperability recommendations for algorithm providers
+Table: Interoperability recommendations (optional) for algorithm providers
 :::
-
 
 ## Best Practices
 
