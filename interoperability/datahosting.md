@@ -97,7 +97,7 @@ EarthCODE and EOEPCA, to ensure consistency across projects and promote the adop
 - [ESA PRR Collection Specifications](https://eoresults.esa.int/prr_collection_specifications.html)
 
 :::{#tbl-metadata}
-<table class="requirements">
+<table class="requirements-extended">
   <thead>
     <tr>
       <th>ID</th>

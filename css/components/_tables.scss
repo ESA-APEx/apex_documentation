@@ -39,3 +39,16 @@ table.requirements {
     width: 40%;
   }
 }
+
+table.requirements-extended {
+  td, th {
+    padding: .5rem;
+    vertical-align: top;
+  }
+  td:first-child{
+    min-width: 150px;
+  }
+  td:nth-child(4), td:nth-child(5){
+    width: 35%;
+  }
+}
