@@ -19,6 +19,9 @@
       "pattern": "https://data.esa.int/esado"
     },
     {
+      "pattern": "https://openeo.org/documentation/1.0/developers/api/reference.html"
+    },
+    {
       "pattern": "^@"
     }
   ],
