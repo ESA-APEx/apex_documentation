@@ -65,26 +65,21 @@ their compatibility with the APEx standards.
     </tr>
     <tr>
       <td>HOST-REQ-05</td>
-      <td>The algorithm hosting platform shall provide an SLA that guarantees support beyond the project lifetime.</td>
-      <td>This ensures the long-term sustainability and reliability of the algorithm hosting platform, providing assurance to users that they can rely on continued support even after the project's completion.</td>
-    </tr>
-    <tr>
-      <td>HOST-REQ-06</td>
       <td>The operator of the algorithm hosting platform shall announce major changes to the SLA, including decommissioning of the platform, to APEx and the NoR, preferably with a lead time of 1 year.</td>
       <td>Such communication is important to ensure that stakeholders, including APEx and the NoR, are given adequate notice of major changes that could impact the availability or functionality of the algorithm hosting platform. This approach allows for proper planning, adjustment, and mitigation of potential disruptions, ensuring continuity of services for users.</td>
     </tr>
     <tr>
-      <td>HOST-REQ-07</td>
+      <td>HOST-REQ-06</td>
       <td>The algorithm hosting platform shall support standardized methods for machine-to-machine authentication.</td>
       <td>For instance, the OIDC client credentials workflow allows APEx to securely authenticate.</td>
     </tr>
     <tr>
-      <td>HOST-REQ-08</td>
+      <td>HOST-REQ-07</td>
       <td>The operator of the algorithm hosting platform shall support the APEx consortium in obtaining a single account either freely, or via <a href="https://portfolio.nor-discover.org/">ESA Network of Resources</a>, that allows to test all published services.</td>
       <td>For convenient service testing and minimal administrative overhead, a single account and NoR request should give access to multiple services.</td>
     </tr>
     <tr>
-      <td>HOST-REQ-09</td>
+      <td>HOST-REQ-08</td>
       <td>The algorithm hosting platform shall expose process metadata publicly without requiring authentication, unless the nature of the algorithm requires its description to be hidden.</td>
       <td>APEx tools request service metadata for informative purposes, also from browser-based applications that do not have platform tokens available.</td>
     </tr>
