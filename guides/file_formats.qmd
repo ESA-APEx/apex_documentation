@@ -107,3 +107,49 @@ For example, properties in the file metadata that is defined as follows:
 
 would use the fields NUTS_ID, NUTS_NAME, … in the data to determine the navigation and display of statistics in the
 Geospatial Explorer.  For further guidance, please contact the APEx team through the [APEx User Forum](http://forum.apex.esa.int/).
+
+Datasets that have classifications (such as land use) should have key:value entires consisting of 'name':'value' and an
+entry with a key of 'classifications' with a value consisting of a string based comma separated list containing all the
+keys for the classifications and a 'total' key with the sum of all other values. This will allow for correctly rendering
+bar charts and pie charts.
+
+```{json}
+{
+  Bare / sparse vegetation: 3349.349614217657,
+  Built-up: 18474.280639104116
+  Cropland: 155067.6934300016
+  Grassland: 140178.79417018566
+  Herbaceous wetland: 1612.828666906516
+  Mangroves: 479.46053523623897
+  Moss and lichen: 499.40601429089236
+  Permanent water bodies: 8969.837211370474
+  Shrubland: 7342.96093361589
+  Snow and ice: 495.7695064816955
+  Tree cover: 301783.0035618253
+  Unknown: 1.7258467103820294
+  total: 638255.1101299465
+  classifications: "Tree cover,Shrubland,Grassland,Cropland,Built-up,Bare / sparse vegetation,Snow and ice,
+  Permanent water bodies,Herbaceous wetland,Mangroves,Moss and lichen,Unknown"
+}
+```
+
+![worldcover_bar_chart_example](./images/worldcover_bar_chart_example.png){width=75%}
+
+Datasets that do not have classifications (such as a raster showing soil organic carbon) should contain a selection of
+the following entries:
+
+- mean
+- min
+- max
+
+These values will be rendered as a table.
+
+```{json}
+{
+  mean: 437.94353402030356
+  min: 60
+  max: 4410
+}
+```
+
+![worldsoils_table_example](./images/worldsoils_table_example.png){width=75%}

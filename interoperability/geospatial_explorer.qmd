@@ -34,7 +34,7 @@ and best practices shall be followed to avoid any breaking changes between versi
   <tbody>
     <tr>
       <td>EXPLORER-REQ-01</td>
-      <td>Configuration of the Geospatial Explorer shall adhere to the provided JSON schema.</td>
+      <td>Configuration of the Geospatial Explorer shall adhere to the provided JSON schema, as described in the [Configuration Schema](#configuration-schema) section.</td>
       <td>The application is configured through a hosted JSON object which is fetched when the client-side application loads.
       For the application to correctly render, a valid configuration JSON that follows the outlined schema must be provided
       pre-instantiation. During early development the schema will be subject to change and provided with limited validation.</td>
@@ -45,6 +45,7 @@ and best practices shall be followed to avoid any breaking changes between versi
         Raster sources defined within the config shall be provided as either:
         <ul>
           <li>A well formed URL to a hosted Cloud Optimised GeoTiff (COG) [@cog].</li>
+          <li>A well formed URL pointing to STAC item containing a publicly hosted Cloud Optimised Geotiff as an asset.</li>
           <li> WMS [@wms] or WMTS [@wmts] endpoint following the relevant OGC specifications.</li>
           <li>A template URL following the XYZ(*) format serving PNG or JPEG tiles.</li>
         </ul>
@@ -96,12 +97,13 @@ and best practices shall be followed to avoid any breaking changes between versi
     <tr>
       <td>EXPLORER-REQ-08</td>
       <td>
-        Legends should be configured by providing:
+        <p>Legends support is provided in the Geospatial Explorer via the following mechanisms:</p>
         <ul>
-          <li>An inline configuration using either the 'Swatch' or 'Gradient' outlined in the schema.</li>
-          <li>A URL to a browser supported image resource (PNG, JPEG, SVG).</li>
-          <li>A WMS [@wms] getLegendGraphic request (If supported by a WMS source).</li>
+          <li>Dynamically using “swatch” or “gradient” options in the Geospatial Explorer config, which displays a legend using category, gradient or colormap settings;</li>
+          <li>By calling a WMS [@wms] getLegendGraphic request (if supported by a WMS source)</li>
+          <li>By specifying in config the URL to a browser supported image resource (PNG, JPEG, SVG).</li>
         </ul>
+        <p>Legend settings can be configured using the configuration builder tool.</p>
       </td>
       <td>This guideline ensures that the legend is fully compatible with the visualisation library used in the Geospatial
       Explorer.</td>
@@ -109,10 +111,24 @@ and best practices shall be followed to avoid any breaking changes between versi
     <tr>
       <td>EXPLORER-REQ-09</td>
       <td>Statistical datasets   should be configured by providing public URLs to either: GeoJSON [@geojson] or
-      FlatGeobuf [@flatgeobuf]</td>
-      <td>The statistics feature is complex due to the architecture and requirements of the Geospatial Explorer. One or
-      more files containing vector features that describe an area and the relevant statistics for the area can be added
-      to the configuration of an explorer instance.</td>
+      FlatGeobuf [@flatgeobuf]. Details on the structure of these datasets are outlined in the [File Formats](../guides/file_formats.qmd#statistical-datasets-flatgeobuf-geojson) section.</td>
+      <td>The statistics feature is complex due to the architecture and requirements of the Geospatial Explorer. Statistical datasets contain one or more files that include vector features that describe an area and the relevant statistics for the area can be added to the configuration of an explorer instance. </td>
+    </tr>
+    <tr>
+      <td>EXPLORER-REQ-10</td>
+      <td>
+        <p>To facilitate the integration of STAC datasets within the Geospatial Explorer, it is advisable to follow the recommendations presented in our [metadata recommendations](./datahosting.md#metadata-recommendations). For optimal results within the Geospatial Explorer, the use of the following STAC extensions is recommended:</p>
+        <ul>
+          <li>[classification extension](https://github.com/stac-extensions/classification)</li>
+          <li>[render extension](https://github.com/stac-extensions/render)</li>
+        </ul>
+      </td>
+      <td>The usage of the suggested extensions will allow the Geospatial Explorer to automatically configure the visualization properties of the selected dataset without the need for additional manual configuration.</td>
+    </tr>
+    <tr>
+      <td>EXPLORER-REQ-11</td>
+      <td>“Secondary” constraint layers (e.g. elevation; land cover) can be used to filter the data in a “primary” layer (e.g. solar energy potential).  Both the primary and secondary layers need to be Cloud Optimised GeoTIFFs. All primary and secondary layers must use the same grid (i.e. CRS, origin and resolution) as each other.</td>
+      <td></td>
     </tr>
   </tbody>
 </table>
@@ -124,76 +140,26 @@ While there is no dedicated specification for XYZ, it is widely used (e.g., [Ope
 
 ## Format Specification & Guidelines
 
-### Cloud Optimized GeoTiff (COG)
+To support the smooth integration of datasets in the Geospatial Explorer, it is essential that all datasets adhere to the
+general [file format recommendations](../guides/file_formats.qmd). Following these guidelines ensures compatibility and
+ease of integration within an APEx Geospatial Explorer.
 
-When generating Cloud Optimised GeoTiffs, it is recommended to use the *GoogleMapsCompatible* tiling scheme—typically
-256x256 pixel tiles aligned to a global grid—and to store the image in the Web Mercator projection (EPSG:3857). The
-*BitsPerSample* field must accurately reflect the data format. Overviews are essential for performance and should be
-generated using downsampling by factors of two until the image dimensions are the size of a tile or smaller. These
-overviews should also be tiled and placed after the main image data to conform with the COG specification. An example
-command line invocation using GDAL would be:
+When referencing data through a STAC catalogue, it is further advised to comply with the STAC [metadata recommendations](./datahosting.md#metadata-recommendations).
+Adhering to these metadata standards will improve dataset discoverability, interoperability, and enable seamless integration
+with the Geospatial Explorer.
 
-```{bash}
-gdal_translate <src> <dest> -of COG -co TILING_SCHEME=GoogleMapsCompatible
-```
 
-### Statistics (Vector Layers)
+## Configuration Schema
 
-The statistics feature expects vector layers that are provided in a format that can be parsed to a feature collection
-following the [GeoJSON specification](https://datatracker.ietf.org/doc/html/rfc7946). Currently tested and supported
-formats are GeoJSON[@geojson] and FlatGeobuf[@flatgeobuf].
-FlatGeobuf[@flatgeobuf] should be used where the statistical data is a large size as this allows for streaming of the
-relevant features without having to download the full dataset, increasing performance.
+The service configuration will be based on a schema that provides administrators with the expected structure and contents
+of the configuration. Taking this approach enables:
 
-Statistics should be contained within the properties entry of each feature. Each feature must contain the following properties:
+* Automated and dynamic instantiation of the service with differing functionality.
+* Configuration validation.
+* Definition of a “contract” for easier documentation of features and their configuration.
 
-* `id` - A short unique id string.
-* `name` - A description label for the feature to be shown to users.
-* `level` - An integer that describes the features geographical hierarchy. This should be contiguous with parent and child
-features.
-* `children` - A string based comma separated list containing the `id` of all child features.
-
-Datasets that have classifications (such as land use) should have key:value entires consisting of 'name':'value' and an
-entry with a key of 'classifications' with a value consisting of a string based comma separated list containing all the
-keys for the classifications and a 'total' key with the sum of all other values. This will allow for correctly rendering
-bar charts and pie charts.
-
-```
-{
-  Bare / sparse vegetation: 3349.349614217657,
-  Built-up: 18474.280639104116
-  Cropland: 155067.6934300016
-  Grassland: 140178.79417018566
-  Herbaceous wetland: 1612.828666906516
-  Mangroves: 479.46053523623897
-  Moss and lichen: 499.40601429089236
-  Permanent water bodies: 8969.837211370474
-  Shrubland: 7342.96093361589
-  Snow and ice: 495.7695064816955
-  Tree cover: 301783.0035618253
-  Unknown: 1.7258467103820294
-  total: 638255.1101299465
-  classifications: "Tree cover,Shrubland,Grassland,Cropland,Built-up,Bare / sparse vegetation,Snow and ice,
-  Permanent water bodies,Herbaceous wetland,Mangroves,Moss and lichen,Unknown"
-}
-```
-
-![worldcover_bar_chart_example](./images/worldcover_bar_chart_example.png){width=75%}
-
-Datasets that do not have classifications (such as a raster showing soil organic carbon) should contain a selection of the following entries:
-
-* mean
-* min
-* max
-
-These values will be rendered as a table.
-
-```{json}
-{
-  mean: 437.94353402030356
-  min: 60
-  max: 4410
-}
-```
-
-![worldsoils_table_example](./images/worldsoils_table_example.png){width=75%}
+For more detailed information on this configuration schema, refer to the APEx documentation portal:
+[APEx Configuration Schema Documentation](../guides/geospatial_explorer/tutorials/geospatial_explorer_config_guide.qmd).
+Numerous example configurations can be found in the
+[APEx Geospatial Explorer Configurations](https://github.com/ESA-APEx/apex_geospatial_explorer_configs) repository on
+GitHub.
