@@ -48,7 +48,9 @@ Through comprehensive guidelines and documentation, projects can seamlessly inte
 APEx [Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/). This process facilitates easy browsing
 and access to available algorithms, fostering collaboration and innovation within the EO community.
 
-![APEx Algorithm Catalogue](images/catalogue.png)
+![APEx Algorithm Catalogue - Overview](images/catalogue.png)
+
+![APEx Algorithm Catalogue - Details ](images/catalogue_details.png)
 
 The APEx [Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) allows visitors to discover and
 select algorithms for subsequent execution on the corresponding APEx-compliant hosting environment.
@@ -127,11 +129,14 @@ assistance in selecting a suitable platform, refer to the
 [Hosting Platform Onboarding Support](#hosting-platform-onboarding-support) section.
 2. **Prepare Your Algorithm Record**: Create a detailed record of your algorithm service, including its functionalities,
 input/output specifications, and any relevant metadata. This record should adhere to the guidelines provided in our
-[guide](../guides/algorithm_services_catalogue.qmd)
-3. **Submit a Pull Request**: To officially onboard your algorithm service, submit a pull request (PR) to the
+[guide](../guides/algorithm_services_catalogue.qmd).
+3. **Establish Benchmark Scenarios**: APEx facilitates automated testing of your service.
+Comprehensive guidance on developing benchmark scenarios can be found in our dedicated
+[guide](../guides/algorithm_services_catalogue_benchmarks.qmd).
+4. **Submit a Pull Request**: To officially onboard your algorithm service, submit a pull request (PR) to the
 [APEx Algorithms GitHub Repository](https://github.com/ESA-APEx/apex_algorithms).
-4. **Review and Approval**: The APEx team will review your submission. If everything is in order, your algorithm service
+5. **Review and Approval**: The APEx team will review your submission. If everything is in order, your algorithm service
 will be approved and added to the catalogue.
-5. **Catalogue Integration**: Once approved, your algorithm service will be listed in the
+6. **Catalogue Integration**: Once approved, your algorithm service will be listed in the
 [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/), making it accessible to
 the EO community.
