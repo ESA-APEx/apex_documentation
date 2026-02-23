@@ -115,11 +115,16 @@ the EO community without requiring dedicated hosting resources.
 
 @tbl-portal-examples showcases example projects that use the APEx Project Web Portal:
 
-| Project                         | URL                                                      |
-| :------------------------------ | :------------------------------------------------------- |
-| APEx                            | [https://apex.esa.int/](https://apex.esa.int/)           |
-| APEx (Demo)                     | [https://demo.apex.esa.int/](https://demo.apex.esa.int/) |
-| World Ecosystem Extent Dynamics | [https://esa-worldecosystems.org/](https://esa-worldecosystems.org/) |
+| Project                         | URL                                                                                  |
+| :------------------------------ | :----------------------------------------------------------------------------------- |
+| APEx                            | [https://apex.esa.int/](https://apex.esa.int/)                                       |
+| APEx (Demo)                     | [https://demo.apex.esa.int/](https://demo.apex.esa.int/)                             |
+| World Ecosystem Extent Dynamics | [https://esa-worldecosystems.org/](https://esa-worldecosystems.org/)                 |
+| EO4SEM                          | [https://eo4sem.apex.esa.int/en](https://eo4sem.apex.esa.int/en)                     |
+| EOBPs – Solar Energy            | [https://eobp-energy.apex.esa.int/en](https://eobp-energy.apex.esa.int/en)           |
+| EOBPs – Health                  | [https://eobp-health.apex.esa.int/en/home](https://eobp-health.apex.esa.int/en/home) |
+| EOBPs- Road and Rail            | [https://eobp-transport.apex.esa.int/en](https://eobp-transport.apex.esa.int/en)     |
+| RAVE                            | [https://rave.apex.esa.int/en](https://rave.apex.esa.int/en)                         |
 
 : APEx Project Web Portal - Project Examples {#tbl-portal-examples}{tbl-colwidths="[30,70]"}
 

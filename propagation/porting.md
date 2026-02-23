@@ -47,7 +47,7 @@ existing workflow to ensuring it can be executed within an APEx-compatible EO pl
 ### Packaging Your Algorithm as an OGC Application Package
 
 Alternatively, for existing pieces of complex software that need to be made available as a service, APEx offers support
-for packaging it as an OGC Application Package. Leveraging time-limited expert consultations, this process adheres to
+for packaging it as an Application Package. Leveraging time-limited expert consultations, this process adheres to
 the Best Practices for Earth Observation Application Packaging, as defined by the Open Geospatial Consortium (OGC) and
 the EO Exploitation Platform Common Architecture (EOEPCA), championed by the European Space Agency (ESA). These
 practices ensure that EO applications are reproducible and portable across diverse execution environments.

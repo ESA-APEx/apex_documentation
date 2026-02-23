@@ -37,7 +37,7 @@ approach to ensure that user requirements are fully addressed while ensuring the
 technologies and platforms. The goal is to abstract the underlying complexities, providing users with a simplified and
 efficient way of executing upscaling tasks.
 
-APEx will start with establishing a formal procedure, supported by the APEx portal, to gather in a structured way the
+APEx will start by establishing a formal procedure, supported by the APEx portal, to gather in a structured way the
 upscaling requirements from ESA projects. These requirements will serve as inputs for the consortium to prepare the environment
 for the upscaling activities. This includes configuring a tailored environment and the pre-configuration of the job orchestration
 tools that enable a simplified execution of upscaling tasks.
@@ -46,11 +46,11 @@ In the subsequent phase, the consortium will rely on the previously implemented 
 to the user experience by further automating the process.
 
 For the openEO-powered platforms, users of the APEx upscaling service currently have access to the following client tools,
-that will be pre-configured for them by the APEx Upscaling team, based on the provided ESA project requirements:
+which will be pre-configured for them by the APEx Upscaling team, based on the provided ESA project requirements:
 
 * An openEO batch job manager (Python library), which supports the creation of large-scale processing tasks for openEO
 developers by dividing them into separate batch jobs that can be automatically monitored. The openEO batch job manager
-is built on top of the openEO API and can therefore be used independently from the underlying platform.
+is built on top of the openEO API and can therefore be used independently of the underlying platform.
 
 During the following phase of APEx, the range of openEO client tools and their usability will be further enhanced to better
 support comprehensive upscaling activities.
@@ -59,7 +59,7 @@ For the Application Package compatible platforms, users of the APEx upscaling se
 client tools that will be pre-configured for them by the APEx Upscaling team, based on the provided ESA project requirements:
 
 * An Application Package / OGC API Process systematic processing manager (Python library), which supports the creation
-of large-scale processing tasks for Application Package users having technical skills to run such tool. The systematic
+of large-scale processing tasks for Application Package users who have the technical skills to run such a tool. The systematic
 processing job manager is built on top of the OGC API Process standard interface and can, therefore, be used to communicate
 with the underlying compatible platform.
 
