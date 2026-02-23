@@ -27,6 +27,11 @@ rendered in the Explorer.
 | APEx (Demo)                     | [https://explorer.demo.apex.esa.int/](https://explorer.demo.apex.esa.int/)                     |
 | SEF - Food Systems              | [https://explorer.sef-food.apex.esa.int/](https://explorer.sef-food.apex.esa.int/)             |
 | SEF - Ecosystems & Biodiversity | [https://explorer.sef-ecosystems.apex.esa.int/](https://explorer.sef-ecosystems.apex.esa.int/) |
+| SEF - Urban                     | [https://explorer.sef-urban.apex.esa.int/](https://explorer.sef-urban.apex.esa.int/)           |
+| EOBPs – Road and Railway        | [https://explorer.eobp-transport.apex.esa.int/](https://explorer.eobp-transport.apex.esa.int/) |
+| EOBPs – Solar Energy            | [https://explorer.eobp-energy.apex.esa.int/](https://explorer.eobp-energy.apex.esa.int/)       |
+| EOBPs – Health                  | [https://explorer.eobp-health.apex.esa.int/](https://explorer.eobp-health.apex.esa.int/)       |
+| EO4SEM                          | [https://explorer.eo4sem.apex.esa.int/](https://explorer.eo4sem.apex.esa.int/)                 |
 
 : APEx Geospatial Explorer - Project Examples {#tbl-explorer-examples}{tbl-colwidths="[20,80]"}
 

@@ -133,6 +133,7 @@ The following guides showcase how you can interact with the catalogue API:
 | APEx                                   | [https://browser.apex.esa.int](https://browser.apex.esa.int/?.language=en)           |
 | APEx (Demo)                            | [https://browser.demo.apex.esa.int](https://browser.demo.apex.esa.int/?.language=en) |
 | World Ecosystem Extent Dynamics (WEED) | [https://browser.weed.apex.esa.int](https://browser.weed.apex.esa.int/?.language=en) |
+| EO4SEM                                 | [https://browser.eo4sem.apex.esa.int](https://browser.eo4sem.apex.esa.int)           |
 
 : APEx Product Catalogue - Project Examples {#tbl-catalogue-examples}{tbl-colwidths="[30,70]"}
 
