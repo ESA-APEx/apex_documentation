@@ -4,8 +4,8 @@ title: Code Server IDE
 
 ## Overview
 
-The Code Server Interactive Development Environment (IDE) capacity within the APEx Project Environments primarily leverages the power
-of the [Code Server software (Visual Studio Code in the Cloud)](#code-server-software-architecture).
+The Code Server Interactive Development Environment (IDE) capacity within the APEx Project Environments primarily leverages
+the power of the Code Server software (Visual Studio Code in the Cloud).
 
 ![Current APEx Code Server IDE](images/code_server.png)
 
@@ -22,16 +22,17 @@ for programming languages and productivity plugins or extensions.
 ## Software Architecture
 
 The APEx Code Server solution is an Integrated Development Environment delivered as a cloud-based user workspace, tailored
-to support the activities of Earth observation (EO) projects.  
+to support the activities of Earth observation (EO) projects.
 
 The Code Server IDE within the APEx Instantiation Services is built on a "User Workspace" system architecture,
-leveraging Kubernetes and JupyterHub for orchestration and management, and accessing a file system secured and private to the authenticated user.
+leveraging Kubernetes and JupyterHub for orchestration and management, and accessing a file system secured and private
+to the authenticated user.
 
 ![The Code Server IDE in the current APEx workspaces offering ](images/applicationhub_codeserver.png)
 
-Each Code Server user workspace comes equipped with the Visual Studio Code Server, an extension of Microsoft's popular VS Code
-editor, as well as with a private data products catalogue. These features empower developer users to edit and build EO
-data processing algorithms and workflows, accelerating project outcomes within a dedicated, tool-rich environment.
+Each Code Server user workspace comes equipped with the Visual Studio Code Server, an extension of Microsoft's popular
+VS Code editor, as well as with a private data products catalogue. These features empower developer users to edit and
+build EO data processing algorithms and workflows, accelerating project outcomes within a dedicated, tool-rich environment.
 
 The Code Server setup encapsulates all the capabilities of Microsoft's popular VS Code editor and extends them to be run
 and accessed on a remote server. Beyond the core functionality of its desktop counterpart, the Code Server IDE offers
@@ -90,11 +91,12 @@ assistant: <https://open-vsx.org/extension/Continue/continue>
 
 It allows to connect any models and any context to build custom autocomplete and chat experiences inside Code Server:
 
-* [Chat](https://continue.dev/docs/chat/how-to-use-it) makes it easy to ask for help from an LLM without needing to
-leave the Code Server user interface
-* [Autocomplete](https://continue.dev/docs/autocomplete/how-to-use-it) provides inline code suggestions as you type
-* [Edit](https://continue.dev/docs/edit/how-to-use-it) is a convenient way to modify code without leaving your current file
-* [Actions](https://continue.dev/docs/actions/how-to-use-it) are shortcuts for common use cases.
+* [Chat](https://docs.continue.dev/ide-extensions/chat/quick-start) makes it easy to ask for help from an LLM without
+needing to leave the Code Server user interface
+* [Autocomplete](https://docs.continue.dev/ide-extensions/autocomplete/quick-start) provides inline code suggestions as
+you type
+* [Edit](https://docs.continue.dev/ide-extensions/edit/quick-start) is a convenient way to modify code without leaving
+your current file
 
 This extension asks for API keys to use the models.
 This has been successfully tested and could be an option for the APEx use cases.
@@ -125,18 +127,18 @@ libraries like SNAP, GDAL, and Orfeo Toolbox. Developers build container images 
 command-line tools, along with necessary runtime environments, and publish these images on container registries for easy
 access and deployment.
 
-The Code Server IDE supports the use of the Common Workflow Language (CWL), allowing developers to delineate and disseminate application
-workflows in a recognised format. CWL documents comprehensively describe the data processing application, including parameters,
-software items, executables, dependencies, and metadata. This standardisation enhances collaboration, clarity, and operational
-consistency, ensuring that applications are reproducible and portable across various execution scenarios, including local
-computers, cloud resources, high-performance computing (HPC) environments, Kubernetes clusters, and services deployed through
-an OGC API - Processes interface.
+The Code Server IDE supports the use of the Common Workflow Language (CWL), allowing developers to delineate and disseminate
+application workflows in a recognised format. CWL documents comprehensively describe the data processing application, including
+parameters, software items, executables, dependencies, and metadata. This standardisation enhances collaboration, clarity,
+and operational consistency, ensuring that applications are reproducible and portable across various execution scenarios,
+including local computers, cloud resources, high-performance computing (HPC) environments, Kubernetes clusters, and services
+deployed through an OGC API - Processes interface.
 
-Version control and continuous integration are integral components of the Code Server IDE technical architecture. This enables access
-to VCS (e.g. GitLab, GitHub) for efficient code repository management, version control, collaboration, and monitoring of
-code changes. Automated continuous integration (CI) tools manage the build, test, and deployment tasks in response to code
-modifications, ensuring that applications are always in a deployable state. This automation minimises manual testing overhead
-and accelerates the rollout of new features or updates.
+Version control and continuous integration are integral components of the Code Server IDE technical architecture. This
+enables access to VCS (e.g. GitLab, GitHub) for efficient code repository management, version control, collaboration, and
+monitoring of code changes. Automated continuous integration (CI) tools manage the build, test, and deployment tasks in
+response to code modifications, ensuring that applications are always in a deployable state. This automation minimises
+manual testing overhead and accelerates the rollout of new features or updates.
 
 ## Examples
 
