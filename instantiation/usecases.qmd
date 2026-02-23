@@ -7,9 +7,9 @@ promotion and user support to data visualisation, data analytics, and data proce
 configurable environments, these services facilitate the effective sharing, maintenance, and utilisation of project
 results, ensuring they remain readily accessible and usable for extended periods.
 
-This section provides an initial outline of the primary use cases for APEx Project Environments, demonstrating how they address
-the specific needs and challenges faced by users and project managers in the EO domain. Each use case highlights the
-relevant components of the APEx tools, detailing how they work together to provide robust solutions for various tasks.
+This section provides an initial outline of the primary use cases for APEx Project Environments, demonstrating how they
+address the specific needs and challenges faced by users and project managers in the EO domain. Each use case highlights
+the relevant components of the APEx tools, detailing how they work together to provide robust solutions for various tasks.
 
 From promoting EO projects through interactive portals to supporting users with personalised workspaces and
 comprehensive documentation, the APEx Project Environments are designed to enhance productivity and foster collaboration.
