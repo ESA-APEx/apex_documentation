@@ -62,6 +62,55 @@ For the project web portal service, APEx uses the [Drupal](https://www.drupal.or
 platform for creating and managing web content. In addition to its extensive content management features, it also allows
 for detailed customization.
 
+## Long‑Term Availability and Preservation of Project Portals
+
+In addition to supporting active ESA EO projects, APEx provides a pathway for long‑term availability of project portals
+beyond the official project duration. As the APEx Project Environments are being onboarded into the ESA Network of Resources
+(NoR), projects will be able to rely on NoR to sustain their portals over time.
+
+### Sustained Hosting Through NoR
+
+The NoR funding can be used to ensure project portals can remain online. When projects request portal hosting through NoR,
+they benefit from:
+
+* Operational continuity of the portal after the project ends
+* Continued cloud hosting, maintenance, and security updates delivered by APEx service partners
+* Continued access for stakeholders, enabling outreach, communication, and follow‑up activities
+
+Projects are therefore encouraged to include portal hosting and maintenance costs in their planning, so the portal can
+remain in the NoR‑supported operations after the project’s conclusion.
+
+### Preservation and Retirement Strategy
+
+APEx provides a practical long‑term strategy to ensure that project portals remain accessible while keeping
+operational costs manageable:
+
+* As long as NoR funding or project budget is available, portals remain fully operational.
+* When funding is exhausted, portals may be taken offline but, if requested, preserved as a retirement snapshot. This ensures\
+they can be restored later if needed, without losing the portal’s content or structure.
+
+### Independent Preservation of Project Results
+
+While project portals provide a unified and user‑friendly interface for presenting project outcomes, it is important to
+note that the long‑term preservation of project results does not depend on the portal.
+
+All key project outputs, including:
+
+* deliverables
+* datasets and derived products
+* workflows and pipelines
+* algorithms and application packages
+
+are preserved in dedicated ESA‑managed systems, such as:
+
+* the [ESA Project Results Repository (PRR)](https://browser.apex.esa.int/external/eoresults.esa.int/stac?.language=en)
+for data and products
+* document and deliverable archives managed by ESA
+* the [Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-catalogue) for workflows and algorithms
+
+This means that even if a project portal is retired or offline, the authoritative project outputs remain accessible to
+the EO community without requiring dedicated hosting resources.
+
 ## Examples
 
 @tbl-portal-examples showcases example projects that use the APEx Project Web Portal:
@@ -83,10 +132,3 @@ for detailed customization.
 
 For a step-by-step guide on how to use and manage your project web portal, refer to the official
 [Project Web Portal User Guide](../guides/project_portal/)
-
-:::{.callout-tip}
-
-## Stay Tuned
-
-Additional information will be shared on this page as the project progresses.
-:::
