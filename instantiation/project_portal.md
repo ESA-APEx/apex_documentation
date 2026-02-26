@@ -106,7 +106,7 @@ are preserved in dedicated ESA‑managed systems, such as:
 * the [ESA Project Results Repository (PRR)](https://browser.apex.esa.int/external/eoresults.esa.int/stac?.language=en)
 for data and products
 * document and deliverable archives managed by ESA
-* the [Algorithm Services Catalogue](../propagation/onboarding.md#apex-algorithm-catalogue) for workflows and algorithms
+* the [Algorithm Catalogue](../propagation/onboarding.md#apex-algorithm-catalogue) for workflows and algorithms
 
 This means that even if a project portal is retired or offline, the authoritative project outputs remain accessible to
 the EO community without requiring dedicated hosting resources.
