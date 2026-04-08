@@ -52,6 +52,13 @@ the Best Practices for Earth Observation Application Packaging, as defined by th
 the EO Exploitation Platform Common Architecture (EOEPCA), championed by the European Space Agency (ESA). These
 practices ensure that EO applications are reproducible and portable across diverse execution environments.
 
+### Support for Porting an OGC Application Package into openEO UDPs
+
+There is tooling available that can parse the CWL of a OGC Application Package to generate the openEO UDP.
+The code for this can be found here: [cwl_to_udp_utils.py](https://github.com/ESA-APEx/apex_algorithms/blob/main/src/esa_apex_toolbox/cwl_to_udp_utils.py)
+The tool only converts a limited set of input argument properties and forms of CWLs at the moment. Where needed, it can
+be extended to accomodate for new CWL workflows.
+
 ## Pathway to Onboarding
 
 Once your algorithm has been successfully ported into APEx-compliant technology, the next step is to make it accessible
