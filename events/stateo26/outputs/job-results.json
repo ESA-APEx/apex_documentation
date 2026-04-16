@@ -1,0 +1,190 @@
+{
+  "assets": {
+    "timeseries.csv": {
+      "file:size": 524,
+      "href": "https://s3.waw3-1.openeo.v1.dataspace.copernicus.eu/openeo-data-prod-waw4-1/batch_jobs/j-2604161326524a72a26f7e726a0153f9/timeseries.csv?X-Proxy-Head-As-Get=true&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=67aa2f2cae214d639251888ead215564%2F20260416%2Fwaw4-1%2Fs3%2Faws4_request&X-Amz-Date=20260416T150020Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Security-Token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlX2FybiI6ImFybjpvcGVuZW93czppYW06Ojpyb2xlL29wZW5lby1kYXRhLXByb2Qtd2F3NC0xLXdvcmtzcGFjZSIsImluaXRpYWxfaXNzdWVyIjoib3BlbmVvLnByb2Qud2F3My0xLm9wZW5lby1pbnQudjEuZGF0YXNwYWNlLmNvcGVybmljdXMuZXUiLCJodHRwczovL2F3cy5hbWF6b24uY29tL3RhZ3MiOnsicHJpbmNpcGFsX3RhZ3MiOnsiam9iX2lkIjpbImotMjYwNDE2MTMyNjUyNGE3MmEyNmY3ZTcyNmEwMTUzZjkiXSwidXNlcl9pZCI6WyI2MzkxODUxZi05MDQyLTQxMDgtOGIyYS0zZGQyZThhOWRkMGIiXX0sInRyYW5zaXRpdmVfdGFnX2tleXMiOlsidXNlcl9pZCIsImpvYl9pZCJdfSwiaXNzIjoic3RzLndhdzMtMS5vcGVuZW8udjEuZGF0YXNwYWNlLmNvcGVybmljdXMuZXUiLCJzdWIiOiJvcGVuZW8tZHJpdmVyIiwiZXhwIjoxNzc2Mzk0ODIwLCJuYmYiOjE3NzYzNTE2MjAsImlhdCI6MTc3NjM1MTYyMCwianRpIjoiYjFjNjYzMzktNWUyYy00NjBkLWFkNjUtZTQ1NDMyNGMzNDZhIiwiYWNjZXNzX2tleV9pZCI6IjY3YWEyZjJjYWUyMTRkNjM5MjUxODg4ZWFkMjE1NTY0In0.uoHYfuPliY-tqZNgvpuJiYyx9yuBwKyfQQabcRrechsy1SVHRKjIJ1GiyDY8nx8WKMBfCuch6ECmVYcUiSLmu8y47Pmvj3EAnLzFX36WefmeoAm5IAtaay9VP9ze4bf3ODDSjG7OzXR1WXJ6MpSOsDDm3j8gqDxcIvAKpfIZcbiqBSVF9fVAusCIPZ3jzazm5v7ZvNyP1QWRmGC4KY0YiT9Bvbx9uKzRfLhTgPlmTw950Or58RoHqZFu3p8cV_07XnUbhZHV_gq2EmnxPU1p7WcgjukjeaNnpLPmkeyt9p1d1NVZmv7O8kOIT7HxaOV0pIHrM42_lwf0uqQF3AxOzQ&X-Amz-Signature=6275dbcaefd534db67573765e0ed67537b3a8f13af829d2c29941ca0a81ec665",
+      "roles": [
+        "data"
+      ],
+      "title": "timeseries.csv",
+      "type": "text/csv"
+    },
+    "timeseries.json": {
+      "file:size": 359,
+      "href": "https://s3.waw3-1.openeo.v1.dataspace.copernicus.eu/openeo-data-prod-waw4-1/batch_jobs/j-2604161326524a72a26f7e726a0153f9/timeseries.json?X-Proxy-Head-As-Get=true&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=551d554cb6fd43168c0dbe9f9a003d43%2F20260416%2Fwaw4-1%2Fs3%2Faws4_request&X-Amz-Date=20260416T150020Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Security-Token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlX2FybiI6ImFybjpvcGVuZW93czppYW06Ojpyb2xlL29wZW5lby1kYXRhLXByb2Qtd2F3NC0xLXdvcmtzcGFjZSIsImluaXRpYWxfaXNzdWVyIjoib3BlbmVvLnByb2Qud2F3My0xLm9wZW5lby1pbnQudjEuZGF0YXNwYWNlLmNvcGVybmljdXMuZXUiLCJodHRwczovL2F3cy5hbWF6b24uY29tL3RhZ3MiOnsicHJpbmNpcGFsX3RhZ3MiOnsiam9iX2lkIjpbImotMjYwNDE2MTMyNjUyNGE3MmEyNmY3ZTcyNmEwMTUzZjkiXSwidXNlcl9pZCI6WyI2MzkxODUxZi05MDQyLTQxMDgtOGIyYS0zZGQyZThhOWRkMGIiXX0sInRyYW5zaXRpdmVfdGFnX2tleXMiOlsidXNlcl9pZCIsImpvYl9pZCJdfSwiaXNzIjoic3RzLndhdzMtMS5vcGVuZW8udjEuZGF0YXNwYWNlLmNvcGVybmljdXMuZXUiLCJzdWIiOiJvcGVuZW8tZHJpdmVyIiwiZXhwIjoxNzc2Mzk0ODIwLCJuYmYiOjE3NzYzNTE2MjAsImlhdCI6MTc3NjM1MTYyMCwianRpIjoiOWEyYTc4OGEtZjQ1Yi00YTU4LTk4ZGQtNGNjNTM5NGY5NTMzIiwiYWNjZXNzX2tleV9pZCI6IjU1MWQ1NTRjYjZmZDQzMTY4YzBkYmU5ZjlhMDAzZDQzIn0.GqawuiuMyf4JSNYPlr4Kf6Hxh5qOnBSgOJDI-MMHQvardrfH8FHByYgzhugnJj_APbpYd6zGjEEhaYPsPva8sUcvjs2dsZmUbwkCGvNSZsd2_lXbLlgTxyHDVeJppbZ8xGcImLv0yPodfVpPqJXQDv-43cBcL5c4ADT_PNYn5m_PS6C8YMOLoG0rTWbXx3BoA4GLc1y3EXluevu7YhjB6ZcLGGSLy0WVLexiQZwUtmge287nWpkg3cNha_lLKowBTWFK9xPnDB5WKuK80qr9BQVk2N3NCOXd0927xb92uEVh07TNxeCOI2HRvhGcqG7TfbHlsyKQUBfwtcrV4QaU8Q&X-Amz-Signature=c0e93d884d4e293c094d1f0dd2bddc0c6fe45e28608643fdd8d9248c51cbbb32",
+      "raster:bands": [
+        {
+          "statistics": {
+            "maximum": 0.6525226954401618,
+            "mean": 0.4534763419802287,
+            "minimum": 0.2544299885202955,
+            "stddev": 0.2814940526039463,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.0133527001089381,
+            "mean": 0.007006759497261856,
+            "minimum": 0.0006608188855856121,
+            "stddev": 0.008974515279046759,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.1262955854126679,
+            "mean": 0.07859829751897925,
+            "minimum": 0.0309010096252906,
+            "stddev": 0.06745415142766852,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.0357794262592727,
+            "mean": 0.021443270366265397,
+            "minimum": 0.0071071144732581,
+            "stddev": 0.02027438609618589,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.6909486945515556,
+            "mean": 0.4312397672062649,
+            "minimum": 0.1715308398609742,
+            "stddev": 0.3672838873210789,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.0022591469696523,
+            "mean": 0.0013847999204748506,
+            "minimum": 0.0005104528712974011,
+            "stddev": 0.0012365134551676445,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "stddev": 0.0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.0136932269743619,
+            "mean": 0.006850763510524831,
+            "minimum": 8.300046687762619e-06,
+            "stddev": 0.009676704630600769,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "stddev": 0.0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "stddev": 0.0,
+            "valid_percent": 100.0
+          }
+        },
+        {
+          "statistics": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "stddev": 0.0,
+            "valid_percent": 100.0
+          }
+        }
+      ],
+      "roles": [
+        "data"
+      ],
+      "title": "timeseries.json",
+      "type": "application/json"
+    }
+  },
+  "description": "APEx workshop EO-based statistics demo output",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "id": "cdse-j-2604161326524a72a26f7e726a0153f9",
+  "license": "proprietary",
+  "links": [
+    {
+      "href": "v200_N39E012",
+      "rel": "derived_from",
+      "title": "Derived from v200_N39E012",
+      "type": "application/json"
+    },
+    {
+      "href": "https://openeo.dataspace.copernicus.eu/openeo/1.1/jobs/j-2604161326524a72a26f7e726a0153f9/results/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/a4b139ea4394361488eb03115639a37a?expires=1776956420",
+      "rel": "canonical",
+      "type": "application/json"
+    },
+    {
+      "href": "http://ceos.org/ard/files/PFS/SR/v5.0/CARD4L_Product_Family_Specification_Surface_Reflectance-v5.0.pdf",
+      "rel": "card4l-document",
+      "type": "application/pdf"
+    },
+    {
+      "href": "https://openeo.dataspace.copernicus.eu/openeo/1.1/jobs/j-2604161326524a72a26f7e726a0153f9/results/items/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/7b50cce7b333e89e4a05260741687555/timeseries.csv?expires=1776956420",
+      "rel": "item",
+      "type": "application/geo+json"
+    },
+    {
+      "href": "https://openeofed.dataspace.copernicus.eu/openeo/1.2/jobs/cdse-j-2604161326524a72a26f7e726a0153f9/results",
+      "rel": "self",
+      "type": "application/json"
+    },
+    {
+      "href": "https://openeofed.dataspace.copernicus.eu/openeo/1.2/jobs/cdse-j-2604161326524a72a26f7e726a0153f9/results/items/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/e4a4c57a8bf430ef371fb28c0e8cf3a9/timeseries.csv?expires=1776956420",
+      "rel": "item",
+      "type": "application/geo+json"
+    }
+  ],
+  "openeo:status": "finished",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.2.0/schema.json"
+  ],
+  "stac_version": "1.0.0",
+  "summaries": {},
+  "title": "StatEO26 - APEx Workshop EO Statistics Demo Output",
+  "type": "Collection"
+}
