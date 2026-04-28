@@ -2,18 +2,18 @@
   "type": "Feature",
   "properties": {
     "name": "Rome",
-    "date": "2021-01-01T00:00:00.000Z",
-    "treecover": "0.2544299885202955",
-    "shrubland": "6.608188855856121E-4",
-    "grassland": "0.030901009625290674",
-    "cropland": "0.007107114473258176",
-    "builtup": "0.6909486945515556",
-    "bare/sparse vegetation": "0.002259146969652371",
-    "snow and ice": "0.0",
-    "water": "0.013693226974361993",
-    "herbaceous wetland": "0.0",
-    "mangroves": "0.0",
-    "moss and lichen": "0.0"
+    "Tree cover": "0.2544299885202955",
+    "Shrubland": "6.608188855856121E-4",
+    "Grassland": "0.030901009625290674",
+    "Cropland": "0.007107114473258176",
+    "Built-up": "0.6909486945515556",
+    "Bare": "0.002259146969652371",
+    "Snow and ice": "0.0",
+    "Permanent water bodies": "0.013693226974361993",
+    "Herbaceous wetland": "0.0",
+    "Mangroves": "0.0",
+    "Moss and lichen": "0.0",
+    "date": "2021-01-01T00:00:00.000Z"
   },
   "geometry": {
     "coordinates": [
