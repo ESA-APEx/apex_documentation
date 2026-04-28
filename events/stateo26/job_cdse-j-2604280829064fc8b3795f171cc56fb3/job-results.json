@@ -1,0 +1,103 @@
+{
+  "assets": {
+    "openEO_2021-01-01Z.tif": {
+      "href": "https://s3.waw3-1.openeo.v1.dataspace.copernicus.eu/openeo-data-prod-waw4-1/batch_jobs/j-2604280829064fc8b3795f171cc56fb3/openEO_2021-01-01Z.tif?X-Proxy-Head-As-Get=true&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ece1fe4fb0ca45478a3d3cbdb4214afb%2F20260428%2Fwaw4-1%2Fs3%2Faws4_request&X-Amz-Date=20260428T083222Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Security-Token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlX2FybiI6ImFybjpvcGVuZW93czppYW06Ojpyb2xlL29wZW5lby1kYXRhLXByb2Qtd2F3NC0xLXdvcmtzcGFjZSIsImluaXRpYWxfaXNzdWVyIjoib3BlbmVvLnByb2Qud2F3My0xLm9wZW5lby1pbnQudjEuZGF0YXNwYWNlLmNvcGVybmljdXMuZXUiLCJodHRwczovL2F3cy5hbWF6b24uY29tL3RhZ3MiOnsicHJpbmNpcGFsX3RhZ3MiOnsiam9iX2lkIjpbImotMjYwNDI4MDgyOTA2NGZjOGIzNzk1ZjE3MWNjNTZmYjMiXSwidXNlcl9pZCI6WyI2MzkxODUxZi05MDQyLTQxMDgtOGIyYS0zZGQyZThhOWRkMGIiXX0sInRyYW5zaXRpdmVfdGFnX2tleXMiOlsidXNlcl9pZCIsImpvYl9pZCJdfSwiaXNzIjoic3RzLndhdzMtMS5vcGVuZW8udjEuZGF0YXNwYWNlLmNvcGVybmljdXMuZXUiLCJzdWIiOiJvcGVuZW8tZHJpdmVyIiwiZXhwIjoxNzc3NDA4MzQyLCJuYmYiOjE3NzczNjUxNDIsImlhdCI6MTc3NzM2NTE0MiwianRpIjoiYWE0MDJmNjEtMTM5OC00YjJiLWIyZGYtMjUxNjNiYWUyZWI0IiwiYWNjZXNzX2tleV9pZCI6ImVjZTFmZTRmYjBjYTQ1NDc4YTNkM2NiZGI0MjE0YWZiIn0.pcWRZIofh-fR2MFDU0bj6xVBbtzLM4gfdp_G8c4-YNSraYGAxvwjAaEMJVq6DQRSLy4_QxUNHrIUAQkbRzcKNvpG_gZ3A-tCe1-dyV0UN88lE0tfHfq0T11cSmf5qHLFfLDU4MyuB6Xd69nQDy49NKlbnZ_f2f5B3CzsPn-V4K_ke5ZDpeu0YG9oHi2SYk4_5Kap9JogbYTy-pth6a_6PO8qltOPppGcCbU9RptoVtJc-oKqBUFmGQxWExi3D6kPf01M83YXEuoQdXrMBJ5HqIE9i1QMePyWAUqKE-L5f_q1DYGqmiLjWqx_A2HplJPP3JPG66GY8cTcVTrXQzdhsQ&X-Amz-Signature=57f8a7d8c159b6a4c0af7614c150f9092ef7b0edfd9182dfd86ffb5ae206a66b",
+      "proj:bbox": [
+        12.6421667,
+        41.7819167,
+        12.7194167,
+        41.8253333
+      ],
+      "proj:code": "EPSG:4326",
+      "proj:epsg": 4326,
+      "proj:shape": [
+        521,
+        927
+      ],
+      "raster:bands": [
+        {
+          "name": "MAP",
+          "statistics": {
+            "maximum": 80.0,
+            "mean": 20.620158738393,
+            "minimum": 10.0,
+            "stddev": 15.717295007895,
+            "valid_percent": 99.78
+          }
+        }
+      ],
+      "roles": [
+        "data"
+      ],
+      "title": "openEO_2021-01-01Z.tif",
+      "type": "image/tiff; application=geotiff"
+    }
+  },
+  "description": "APEx workshop EO-based COG demo output",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "id": "cdse-j-2604280829064fc8b3795f171cc56fb3",
+  "license": "proprietary",
+  "links": [
+    {
+      "href": "v200_N39E012",
+      "rel": "derived_from",
+      "title": "Derived from v200_N39E012",
+      "type": "application/json"
+    },
+    {
+      "href": "https://openeo.dataspace.copernicus.eu/openeo/1.1/jobs/j-2604280829064fc8b3795f171cc56fb3/results/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/5ee3981f3886665d85494034f9df0bb2?expires=1777969942",
+      "rel": "canonical",
+      "type": "application/json"
+    },
+    {
+      "href": "http://ceos.org/ard/files/PFS/SR/v5.0/CARD4L_Product_Family_Specification_Surface_Reflectance-v5.0.pdf",
+      "rel": "card4l-document",
+      "type": "application/pdf"
+    },
+    {
+      "href": "https://openeo.dataspace.copernicus.eu/openeo/1.1/jobs/j-2604280829064fc8b3795f171cc56fb3/results/items/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/b557cadb723599677df2c2d17a2e93c0/openEO_2021-01-01Z.tif?expires=1777969942",
+      "rel": "item",
+      "type": "application/geo+json"
+    },
+    {
+      "href": "https://openeofed.dataspace.copernicus.eu/openeo/1.2/jobs/cdse-j-2604280829064fc8b3795f171cc56fb3/results",
+      "rel": "self",
+      "type": "application/json"
+    },
+    {
+      "href": "https://openeofed.dataspace.copernicus.eu/openeo/1.2/jobs/cdse-j-2604280829064fc8b3795f171cc56fb3/results/items/NjM5MTg1MWYtOTA0Mi00MTA4LThiMmEtM2RkMmU4YTlkZDBi/00bfa33bf6d848c3a25b2f6df6446159/openEO_2021-01-01Z.tif?expires=1777969942",
+      "rel": "item",
+      "type": "application/geo+json"
+    }
+  ],
+  "openeo:status": "finished",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.2.0/schema.json"
+  ],
+  "stac_version": "1.0.0",
+  "summaries": {},
+  "title": "StatEO26 - Frascati - APEx Workshop EO COG Demo Output",
+  "type": "Collection"
+}

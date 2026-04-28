@@ -3,7 +3,9 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Frascati"
+      },
       "geometry": {
         "coordinates": [
           [
@@ -34,7 +36,9 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Rome"
+      },
       "geometry": {
         "coordinates": [
           [
