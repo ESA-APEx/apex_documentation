@@ -25,7 +25,7 @@ rendered in the Explorer.
 | Project                         | URL                                                                                            |
 | :------------------------------ | :--------------------------------------------------------------------------------------------- |
 | APEx (Demo)                     | [https://explorer.demo.apex.esa.int/](https://explorer.demo.apex.esa.int/)                     |
-| SEF - Food Systems              | [https://explorer.sef-food.apex.esa.int/](https://explorer.sef-food.apex.esa.int/)             |
+| SEF - Food Systems              | [https://explorer.sef-food.apex.esa.int/](https://explorer.sef-foodsystems.apex.esa.int/)             |
 | SEF - Ecosystems & Biodiversity | [https://explorer.sef-ecosystems.apex.esa.int/](https://explorer.sef-ecosystems.apex.esa.int/) |
 | SEF - Urban                     | [https://explorer.sef-urban.apex.esa.int/](https://explorer.sef-urban.apex.esa.int/)           |
 | EOBPs – Road and Railway        | [https://explorer.eobp-transport.apex.esa.int/](https://explorer.eobp-transport.apex.esa.int/) |

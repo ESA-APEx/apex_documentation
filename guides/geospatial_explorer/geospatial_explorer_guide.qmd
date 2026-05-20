@@ -66,7 +66,7 @@ map layers (such as background mapping) beneath the layer.
 ## Layer "info" box
 
 For some layers (such as the **European Top Soil Layers** in the [SEF Food
-Demo](https://explorer.sef-food.apex.esa.int/)) clicking on the map drops a marker and displays an "info" box of
+Demo](https://explorer.sef-foodsystems.apex.esa.int/)) clicking on the map drops a marker and displays an "info" box of
 the *latitude, longitude* and *data value* at the marker location, allowing you to display the precise value of
 the data at that point.
 
