@@ -40,6 +40,20 @@ Copy the embed code of the web form via the external application. To embed this 
 portal web page, you need to use the **Embed** paragraph. Paste code in the **Embed code** field and click **save** to
 publish the web form.
 
+## Add an email handler to your web form
+
+You can add an email handler to the contact form by following the steps below.
+
+1. Go to the Webforms overview page by navigating to **Structure > Webforms.**
+2. Locate the contact form and select the **Build** option.
+3. On the form configuration page, open the **Settings** tab.
+4. Navigate to the **Emails / Handlers** sub-tab.
+5. Click the **Add Email**button.
+6. In the **Send to** section:
+   1. Set To email to Custom to Email Address.
+   2. Enter the email address where the webform submissions should be sent.
+7. Click Save to apply your changes.
+
 ## Screenshots
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));grid-gap: 1em;"}
@@ -57,5 +71,9 @@ publish the web form.
 ![Web Form - Embed Paragraph](../images/webform_embed_paragraph.png){group="gallery-webform"}
 
 ![Web Form - Embed Code](../images/webform_embed_code.png){group="gallery-webform"}
+
+![Web Form - Email Settings](../images/webform_email_1.png){group="gallery-webform"}
+
+![Web Form - Email Details](../images/webform_email_2.png){group="gallery-webform"}
 
 :::
