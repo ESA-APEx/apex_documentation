@@ -1,6 +1,6 @@
 ---
 title: "Manage Partners Block"
-image: ../images/cover_manage_partners_block.png
+image: ../images/cover_manage_partners_block.jpg
 lightbox: true
 ---
 In the current template of the APEx Project Web Portal, a dedicated “Our Partners” section is included on each webpage.

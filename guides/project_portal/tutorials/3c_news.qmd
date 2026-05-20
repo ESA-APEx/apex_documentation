@@ -4,27 +4,40 @@ image: ../images/cover_news.png
 lightbox: true
 ---
 
-The Project Web Portal allows you to add news items and an overview of all news items. The overview can be implemented via a
-separate web page or you can also add a **news** paragraph on any web page to list the latest news items for example.
+The Project Web Portal allows you to create news items and display them in overview lists.
+You can publish a full overview on a dedicated page, or add a **News** paragraph to any page to show the latest items.
 
 ## Add a news item
 
-To create a news item (page), you use the **content** dropdown menu in the navigation toolbar (menu) and select **Article**
-to start building your news page.
+To create a news item, open the **Content** menu in the navigation toolbar and select **Article**.
+You can then start building your news page.
 
-## Add latest news on the home page
+## Add the latest news on the home page
 
-You can easily add the latest news items on the home page, or any other web page you prefer, via the **view** paragraph.
-This paragraph allows you to indicate which items need to be shown in a preview paragraph. In the paragraph settings you
-have two options. To show the most recent items, you need to use:
+You can add the latest news items to the home page, or to any other page, by using the **View** paragraph.
+In the paragraph settings, you can choose how many recent items are shown. To display the latest articles, use one of the
+following options:
 
-- the option to show the 3 most recent articles
-- the option to show the 4 most recent articles
+- Show the 3 most recent articles
+- Show the 4 most recent articles
+
+## Add a news overview based on themes or tags
+
+Besides showing the latest news on the home page, you can also add a filtered news overview.
+This overview can be filtered by a specific theme or tag, or it can display all items with a filter for tags and themes.
+For this to work, your content must be tagged correctly. More detailed instructions are available
+[here](./8_tags_themes.qmd#adding-a-tag-or-theme-to-a-page).
+
+To do this, add a **View** paragraph to your page. On the overview page, the following options are relevant:
+
+- **Overview with tags**: Defines filtering based on the settings in the **Tags** tab.
+- **Article overview with filters**: Displays all articles and news items and adds a filter so users can filter by tag
+and theme.
 
 ## Add a news overview web page
 
-To add a separate web page to list a more extended or complete overview of all news items, you add a basic page and add
-the **view** paragraph and select **article overview**.
+To add a separate page with a more complete overview of all news items, create a basic page, add the **View** paragraph,
+and select **Article overview** or **Article overview with filters**.
 
 ## Screenshots
 
@@ -36,5 +49,11 @@ the **view** paragraph and select **article overview**.
 ![View Paragraph](../images/news_view.png){group="gallery-news"}
 
 ![View Settings](../images/news_settings.png){group="gallery-news"}
+
+![View Settings - Tags](../images/news_tags.png){group="gallery-news"}
+
+![Example - Article overview with filters](../images/news_filtering_example.png){group="gallery-news"}
+
+![Example - Overview with articles](../images/news_filtered_example.png){group="gallery-news"}
 
 :::
