@@ -1,11 +1,11 @@
 ---
-title: JupyterLab IDE 
+title: JupyterLab IDE
 ---
 
 ## Overview
 
-The JupyterLab Interactive Development Environment (IDE) capacity within the APEx Project Environments primarily leverages the power
-of the [JupyterLab](#jupyterlab-software-architecture) software.
+The JupyterLab Interactive Development Environment (IDE) capacity within the APEx Project Environments primarily leverages
+the power of the [JupyterLab](https://jupyterlab.readthedocs.io/en/latest/) software.
 
 ![Current APEx JupyterLab IDE](images/jupyterlab.png)
 
@@ -59,7 +59,8 @@ researchers, and data scientists within the EO community. Some typical scenarios
 * **Algorithm Development and Testing**\
 Researchers and developers can write, test, and debug new algorithms for processing
 satellite imagery or other EO data. For instance, a user might develop a script to detect deforestation using
-multi-temporal satellite images. To support the productivity of developers, both the JupyterLab solution use a mechanism of extensions.
+multi-temporal satellite images. To support the productivity of developers, both the JupyterLab solution use a mechanism
+of extensions.
 
 ::: {.callout-note}
 There is no GitHub Copilot extension available yet for JupyterLab.
@@ -91,8 +92,6 @@ It is important to note that a valid APEx account and permissions from the proje
 | Project                         | URL                                                                                        |
 | :------------------------------ | :----------------------------------------------------------------------------------------- |
 | APEx (Demo)                     | [https://apphub.demo.apex.esa.int/](https://apphub.demo.apex.esa.int/)                     |
-| SEF - Food Systems              | [https://apphub.sef-food.apex.esa.int/](https://apphub.sef-food.apex.esa.int/)             |
-| SEF - Ecosystems & Biodiversity | [https://apphub.sef-ecosystems.apex.esa.int/](https://apphub.sef-ecosystems.apex.esa.int/) |
 
 : APEx JuyterLab IDE - Project Examples {#tbl-ide-examples}{tbl-colwidths="[20,80]"}
 

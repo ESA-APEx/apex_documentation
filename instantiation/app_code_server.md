@@ -149,8 +149,6 @@ It is important to note that a valid APEx account and permissions from the proje
 | Project                         | URL                                                                                        |
 | :------------------------------ | :----------------------------------------------------------------------------------------- |
 | APEx (Demo)                     | [https://apphub.demo.apex.esa.int/](https://apphub.demo.apex.esa.int/)                     |
-| SEF - Food Systems              | [https://apphub.sef-food.apex.esa.int/](https://apphub.sef-food.apex.esa.int/)             |
-| SEF - Ecosystems & Biodiversity | [https://apphub.sef-ecosystems.apex.esa.int/](https://apphub.sef-ecosystems.apex.esa.int/) |
 
 : APEx Code Server IDE - Project Examples {#tbl-ide-examples}{tbl-colwidths="[20,80]"}
 
