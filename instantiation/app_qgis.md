@@ -5,7 +5,7 @@ title: QGIS as a Remote Desktop
 ## Overview
 
 The Geographic Information System capacity within the APEx Project Environments primarily leverages the power
-of the [QGIS Software](#qgis-software-architecture), being delivered to the APEx users as a Remote Desktop software.
+of the [QGIS Software](https://qgis.org/nl/), being delivered to the APEx users as a Remote Desktop software.
 
 ![Current APEx QGIS Service](images/qgis.png)
 
@@ -19,7 +19,7 @@ them to harness the computational power of remote servers.
 ## Software Architecture
 
 The APEx QGIS workspace is a fully-fledged Geographic Information System delivered as a cloud-based user workspace, tailored
-to support the activities of Earth observation (EO) projects.  
+to support the activities of Earth observation (EO) projects.
 
 ![QGIS on a Remote Desktop in the current APEx workspaces offering ](images/applicationhub_qgis.png)
 
@@ -57,8 +57,6 @@ Several examples are under development and will be added on this page.
 | Project                         | URL                                                                                        |
 | :------------------------------ | :----------------------------------------------------------------------------------------- |
 | APEx (Demo)                     | [https://apphub.demo.apex.esa.int/](https://apphub.demo.apex.esa.int/)                     |
-| SEF - Food Systems              | [https://apphub.sef-food.apex.esa.int/](https://apphub.sef-food.apex.esa.int/)             |
-| SEF - Ecosystems & Biodiversity | [https://apphub.sef-ecosystems.apex.esa.int/](https://apphub.sef-ecosystems.apex.esa.int/) |
 
 : APEx QGIS - Project Examples {#tbl-qgis-examples}{tbl-colwidths="[20,80]"}
 
