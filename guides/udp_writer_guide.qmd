@@ -438,3 +438,20 @@ When an algorithm is updated, or the underlying data changes for some reason, a 
 on the reference data comparison. Updating the reference data is practically the same as defining it initially:look up
 the URLs of the actual results in the benchmark report, validate these new results, and update the benchmark scenario
 with the new reference data URLs.
+
+
+### Licensing your process
+
+The default mechanism of registering algorithms in APEx involves sharing the full process graph publicly. This can be 
+considered an 'open source' approach, and also assumes that a license is present. The "license" field in the algorithm record
+is foreseen to indicate use of an open source or properietary license.
+
+### Sharing UDP's without open sourcing process graphs
+
+It may not be desirable to share the full process graph publicly, in case you want to hide the algorithm or specific 
+parameters. This is fully supported by APEx, as the exact requirements for ESA project may vary depending on the ITT requirements.
+
+To support this, you do need this feature to be supported by your openEO backend provider, as there is no 'standardized'
+option available via the openEO API. Typically, the backend will allow you to register your process graph as a 'custom'
+process, without exposing it externally. Once that is available, you can follow the regular step to create a public UDP
+that describes process metadata, but simply relies on the 'custom' process rather than a standardized process graph.
