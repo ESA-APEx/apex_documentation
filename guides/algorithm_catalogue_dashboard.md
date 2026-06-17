@@ -104,7 +104,7 @@ and `/api/admin/`.
 | :----------- | :----- |
 | **Unauthenticated users** | Redirected to the Keycloak login page; no Dashboard access |
 | **Authenticated users (general)** | No Dashboard access; redirected to the 403 page |
-| **Administrators** (assigned the `administrator` role in Keycloak, or whose institutional e-mail domain is listed in the server-side ACL) | Full Dashboard access including all admin API endpoints |
+| **Administrators** (users assigned the `administrator` role in Keycloak, **or** whose institutional e-mail domain is listed in the `acl-mapping.json` server-side allow-list maintained by the APEx team) | Full Dashboard access including all admin API endpoints |
 
 ::: {.callout-note title="Contributor vs. read-only"}
 The Dashboard currently has a single elevated access level ("administrator").  There is no separate
@@ -157,10 +157,15 @@ Follow these steps to request Dashboard access:
    | :---- | :---------- |
    | Full name | Your full name |
    | GitHub username | Your GitHub handle (e.g. `@myusername`) |
-   | Institutional e-mail | Your work or project e-mail address |
    | Affiliation | Organisation or project you are acting on behalf of |
    | Intended use | Brief description of why you need Dashboard access (1–3 sentences) |
    | Desired access level | Currently only `administrator` is available |
+
+   ::: {.callout-note}
+   GitHub issues are public. Do **not** include your institutional e-mail address or other sensitive
+   personal data in the issue body. The APEx team will follow up privately to collect any additional
+   details needed to complete the access provisioning.
+   :::
 
 3. **Await approval** — a member of the APEx team will review your request.  Once approved, your
    institutional e-mail domain (or Keycloak role) will be added to the access control list.
