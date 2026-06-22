@@ -86,6 +86,8 @@ website:
                 contents:
                   - href: guides/algorithm_services_catalogue.qmd
                   - href: guides/algorithm_services_catalogue_benchmarks.qmd
+                  - href: guides/algorithm_catalogue_dashboard.md
+                    text: APEx Algorithm Dashboard
               - href: guides/file_formats.qmd
                 text: File format recommendations
           - section: Admin Guides
