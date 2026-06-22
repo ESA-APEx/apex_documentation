@@ -7,6 +7,12 @@ the file formats that projects should use when publishing static data.
 The information on this page complement that requirement with more detailed recommendations on the use of these formats.
 Projects are encouraged to consult with the APEx team if they have a use case that does not fit within these guidelines.
 
+The key underlying principle is to use cloud native formats, with adoption rate as a secondary criterium to ensure that 
+produced data can reach a broad audience beyond the earth observation community. 
+
+The sections below provide extra guidance, but for a comprehensive comparison, we refer to the [cloud native geospatial guide](https://guide.cloudnativegeo.org/)
+which details various raster formats.
+
 ## Cloud Optimised GeoTIFF
 
 Cloud Optimised GeoTIFF (COG) is the most widely supported format for geospatial raster data, and also one of the most
@@ -47,20 +53,19 @@ reflect the data format. Overviews are essential for performance and should be g
 two until the image dimensions are the size of a tile or smaller. These overviews should also be tiled and placed after
 the main image data to conform with the COG specification.
 
-## (Geo-)Zarr
+## GeoZarr
 
-Zarr is a format that is gaining traction in the geospatial community, although it is not yet as widely supported as
-Cloud Optimised GeoTIFF.
+[GeoZarr](https://geozarr.org/) is a format that is gaining traction in the geospatial community, although it is not yet as widely supported as
+Cloud Optimised GeoTIFF. 
 Its main advantage lies in its ability to store complex multi-dimensional datasets that go beyond a simple 4D
 (x, y, time, bands) structure. Just like COG, Zarr allows for efficient cloud access.
 
 At the time of writing, there are, however these important caveats:
 
-- GeoZarr aims to define how to store geospatial data in Zarr format, but this standard is not fully developed and lacks
-  widespread tooling support.
-- Overview pyramids for fast online rendering are not yet supported.
+- GeoZarr aims to define how to store geospatial raster data in Zarr format, this specification is now going through the standardization process.
 - By design, Zarr allows for many degrees of freedom, which requires the data producer to have a good understanding of
-  the associated trade-offs.
+  the associated trade-offs. It is not guaranteed that tooling will automatically generate the most appropriate layout and
+  chunk size for your use case.
 - By design, Zarr stores data as separate files in a directory structure, optimising cloud access but making direct
   downloads less convenient.
 
