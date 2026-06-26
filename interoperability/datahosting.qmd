@@ -63,7 +63,8 @@ to consult with the APEx team if their use case does not fit within these guidel
 
 The key underlying principle is to use cloud native formats, with adoption rate as a secondary criterion to ensure that
 the produced data can reach a broad audience beyond the earth observation community. Although the sections below provide
-extra guidance, we refer to the cloud native geospatial guide for a comprehensive comparison.
+extra guidance, we refer to the [cloud native geospatial guide](https://guide.cloudnativegeo.org/) for a comprehensive
+comparison.
 
 | Scenario | Formats | Builds on |
 | :--- | :--- | :--- |
