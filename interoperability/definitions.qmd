@@ -49,18 +49,18 @@ For the sake of simplicity in the context of APEx, we refer to these simply as (
 
 ### Application Algorithm Definition
 
-The application algorithm definition refers to a representation of the algorithm modules and interfaces that can be exposed
-by an API and/or processing platform. Typically, it includes a general description of the algorithm along with detailed
-information on its parameters, expected output, scientific method, and an overview of the different steps executed
-within the algorithm. Examples of algorithm definitions include openEO’s User Defined Processes (UDP) [@udp] and OGC
-Application Package [@ap], using the Common Workflow Language (CWL) [@cwl].
+The application algorithm definition refers to a representation of the algorithm modules and interfaces that can be
+exposed by an API and/or processing platform. Typically, it includes a general description of the algorithm along with
+detailed information on its parameters, expected output, scientific method, and an overview of the different steps
+executed within the algorithm. Examples of algorithm definitions include openEO’s User Defined Processes (UDP) [@udp]
+and OGC Application Package [@ap], using the Common Workflow Language (CWL) [@cwl].
 
 To increase uptake and interoperability, APEx aims to enable the execution of application algorithm definitions via
-standardised web service APIs. This transitions algorithms from being rather arbitrary pieces of software with potentially
-complex requirements, in terms of execution environment, usage, inputs, …, into on-demand services that can readily be
-invoked by stakeholders. This transformation primarily involves making the application algorithm definition available as
-a service on an algorithm hosting platform. The transition process into a hosted on-demand algorithm service is supported
-by the APEx Algorithm Support.
+standardised web service APIs. This transitions algorithms from being rather arbitrary pieces of software with
+potentially complex requirements, in terms of execution environment, usage, inputs, …, into on-demand services that can
+readily be invoked by stakeholders. This transformation primarily involves making the application algorithm definition
+available as a service on an algorithm hosting platform. The transition process into a hosted on-demand algorithm
+service is supported by the [APEx Algorithm Support](../propagation/index.qmd).
 
 An important boundary condition for hosted algorithms is that they can be executed at a predictable cost for a given set
 of inputs. This predictability allows a service user to accurately estimate and determine the cost associated with the
@@ -68,11 +68,11 @@ execution of the final deployed service instance.
 
 ### Algorithm Catalogue
 
-The [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) is a central register of algorithm
-definitions and the corresponding algorithm service instances that can be executed on APEx-compliant algorithm hosting
-platforms. Curated by APEx, the catalogue relies on automated checks to ensure that advertised algorithms service
-instances are available and functional. Whenever a malfunction is detected, this is reported to ESA and the EO project
-consortium, allowing them to determine a proper course of action.
+The [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) is a central register of algorithm definitions
+and the corresponding algorithm service instances that can be executed on APEx-compliant algorithm hosting platforms.
+Curated by APEx, the catalogue relies on automated checks to ensure that advertised algorithms service instances are
+available and functional. Whenever a malfunction is detected, this is reported to ESA and the EO project consortium,
+allowing them to determine a proper course of action.
 
 ### Algorithm Hosting Platform
 
@@ -81,8 +81,8 @@ definition. In APEx, an algorithm hosting platform specifically refers to platfo
 OGC Application Package Algorithm description standards. These platforms also enable algorithms to be executed by the
 openEO API or through OGC API Processes. For APEx, these platforms are considered existing providers available through
 [ESA’s Network of Resources (NoR)](https://nor-discover.org/). Examples of such algorithm hosting platforms are the
-[Copernicus Data Space Ecosystem](https://dataspace.copernicus.eu/analyse/openeo) for openEO
-or [Ellip](https://ellip.terradue.com/) for OGC Application Packages.
+[Copernicus Data Space Ecosystem](https://dataspace.copernicus.eu/analyse/openeo) for openEO or
+[Ellip](https://ellip.terradue.com/) for OGC Application Packages.
 
 It is important to note that APEx itself is not an algorithm hosting platform; rather, it promotes the reuse of existing
 platforms. A key property of algorithm hosting platforms is their long-term sustainability beyond the lifetime of a
@@ -97,8 +97,8 @@ aspects, ensuring that EO projects retain a sufficient degree of freedom in sele
 ### Last Mile Applications
 
 A ‘last mile’ application, as seen from the EO perspective, bridges the final gap between the user at the end of the
-value chain, and the web service APIs that offer EO-derived information. This could, for instance, be the integration
-of parcel statistics into the field management software of a farmer. In the ESA context, Green Transition Information
+value chain, and the web service APIs that offer EO-derived information. This could, for instance, be the integration of
+parcel statistics into the field management software of a farmer. In the ESA context, Green Transition Information
 Factories can be considered examples of last mile applications.
 
 Typically, each user group and domain will have its own set of purpose-built tools. The IT integrator or vendor building
@@ -106,25 +106,25 @@ these tools will retrieve EO algorithm results via web service APIs based on ope
 further processed as needed, depending on the application. Note that these applications are not necessarily EO-centric
 or even geospatial but could be using an EO algorithm as a small part or in the background.
 
-The APEx Algorithm Catalogue acts as a discovery tool for last mile application builders. It shows various
-technical parameters, the cost and potential limitations for specific use cases. This speeds up the discovery and selection
-process. Application builders will be required to create an account on the hosting platforms and ensure the necessary
-funds are available, if they want to test or use the API.
+The [APEx Algorithm Catalogue](https://algorithm-catalogue.apex.esa.int/) acts as a discovery tool for last mile
+application builders. It shows various technical parameters, the cost and potential limitations for specific use cases.
+This speeds up the discovery and selection process. Application builders will be required to create an account on the
+hosting platforms and ensure the necessary funds are available, if they want to test or use the API.
 
 APEx currently offers two main options for projects to develop their on-demand services:
 
-* OpenEO-based services [@openeo], implemented in line with openEO’s User Defined Processes (UDP) [@udp]
-* OGC API - Processes-based services [@apiprocess], implemented in line with the OGC Application Package Best
-Practice [@ap]
+- OpenEO-based services [@openeo], implemented in line with openEO’s User Defined Processes (UDP) [@udp]
+- OGC API - Processes-based services [@apiprocess], implemented in line with the OGC Application Package Best Practice
+  [@ap]
 
 These APEx-compliant technologies allow algorithms to be hosted on an APEx-compliant algorithm hosting platform and make
 them available for execution through web services. These technologies promote seamless reuse and integration of existing
-EO algorithms. Additionally, by leveraging web services and cloud-based approaches, these technologies simplify the execution
-of EO algorithms, shielding users from underlying complexities, such as data access, data processing optimisation, and other
-technical challenges.
+EO algorithms. Additionally, by leveraging web services and cloud-based approaches, these technologies simplify the
+execution of EO algorithms, shielding users from underlying complexities, such as data access, data processing
+optimisation, and other technical challenges.
 
-APEx remains committed to future innovation and is open to integrating additional specifications, provided they align with
-FAIR principles and facilitate algorithm execution through web services.
+APEx remains committed to future innovation and is open to integrating additional specifications, provided they align
+with FAIR principles and facilitate algorithm execution through web services.
 
 ## Actors
 
@@ -149,7 +149,8 @@ quality of the algorithms and workflows.
 
 The APEx team, composed of industry experts, operates the various services provided by APEx. To maximise the reuse of
 existing resources, the team leverages service offerings within
-[ESA’s Network of Resources (NoR)](https://nor-discover.org/), drawing on the extensive ecosystem provided by the EO industry.
+[ESA’s Network of Resources (NoR)](https://nor-discover.org/), drawing on the extensive ecosystem provided by the EO
+industry.
 
 Although members of the APEx consortium are involved in various EO services registered in NoR, APEx itself is not a new
 EO platform. Instead, it focuses on enabling interoperability among existing platforms. As a result, APEx remains open
@@ -170,12 +171,12 @@ and user satisfaction.
 ### Last Mile Applications
 
 A 'last mile' application, as seen from the EO perspective, bridges the final gap between the user at the end of the
-value chain, and the web service APIs that offer EO-derived information. This could, for instance, be the integration
-of parcel statistics into the field management software of a farmer. In the ESA context, Green Transition Information
+value chain, and the web service APIs that offer EO-derived information. This could, for instance, be the integration of
+parcel statistics into the field management software of a farmer. In the ESA context, Green Transition Information
 Factories can be considered examples of last mile applications.
 
 Typically, each user group and domain will have its own set of purpose-built tools. The IT integrator or vendor building
-these tools will retrieve EO algorithm results via  web service APIs based on open standards. These results can then be
+these tools will retrieve EO algorithm results via web service APIs based on open standards. These results can then be
 further processed as needed, depending on the application. Note that these applications are not necessarily EO-centric
 or even geospatial, but could be using an EO algorithm as a small part or in the background.
 
