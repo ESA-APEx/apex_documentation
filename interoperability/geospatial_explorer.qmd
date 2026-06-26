@@ -144,7 +144,7 @@ and best practices shall be followed to avoid any breaking changes between versi
     <tr>
       <td>EXPLORER-REQ-11</td>
       <td>
-        <p>To facilitate the integration of STAC datasets within the Geospatial Explorer, it is advisable to follow the recommendations presented in our [metadata recommendations](./datahosting.md#metadata-recommendations). For optimal results within the Geospatial Explorer, the use of the following STAC extensions is recommended:</p>
+        <p>To facilitate the integration of STAC datasets within the Geospatial Explorer, it is advisable to follow the recommendations presented in our [metadata recommendations](./datahosting.qmd#stac-metadata-2). For optimal results within the Geospatial Explorer, the use of the following STAC extensions is recommended:</p>
         <ul>
           <li>[classification extension](https://github.com/stac-extensions/classification)</li>
           <li>[render extension](https://github.com/stac-extensions/render)</li>
