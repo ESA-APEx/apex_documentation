@@ -68,8 +68,10 @@ and best practices shall be followed to avoid any breaking changes between versi
     </tr>
     <tr>
       <td>EXPLORER-REQ-04</td>
-      <td>All external sources shall be publicly available.</td>
-      <td>Currently the application does not support fetching sources from hosts that require authentication.</td>
+      <td>All external sources shall be publicly available or accessible via an APEx user token.</td>
+      <td>The Geospatial Explorer will need to fetch any configured data directly from a source server. It is expected
+      that these resources can be accessed directly through a HTTP request that is either open access (No authentication
+      requirements) or can be authenticated using an APEx user bearer token via the HTTP Authentication header.</td>
     </tr>
     <tr>
       <td>EXPLORER-REQ-05</td>
@@ -88,34 +90,59 @@ and best practices shall be followed to avoid any breaking changes between versi
     </tr>
     <tr>
       <td>EXPLORER-REQ-07</td>
-      <td>All datasets shall be projected to CRS EPSG:3857 (Web Mercator); EPSG:4326 (WGS84) or EPSG:3035 (ETRS89-extended
-      / LAEA Europe)</td>
-      <td>Other projections may work but will not be explicitly supported in the initial versions of the application.
-      Support for these projections will be considered and reviewed on a case-by-case basis and will be subject to support
-      by the PROJ4JS library [@proj4js].</td>
+      <td>For optimal visualisation performance, datasets should be projected into the same CRS as the display CRS used
+      for the Geospatial Explorer. </td>
+      <td>
+        <p>Where the CRS is not the same as the display CRS in the Geospatial Explorer, data will be reprojected “on the
+        fly”, with a performance impact for display that will depend on the complexity of the projection transformation
+        between dataset and Geospatial Explorer display CRS’s.</p>
+        <p>All Geospatial Explorer instances will support the following projections which can be used as the display CRS
+        and / or any of the data CRS’s</p>
+        <ul>
+          <li>WGS 84 / Spherical Mercator (EPSG:3857) - "Web Mercator"</li>
+          <li>WGS 84 / Geographic (EPSG:4326)</li>
+          <li>WGS 84 / UTM zones (EPSG:32601 to EPSG:32660 for northern zones, EPSG:32701 to EPSG:32760 for southern zones)</li>
+          <li>ETRS89-extended / LAEA Europe (EPSG:3035)</li>
+          <li>WGS 84 / NSIDC Sea Ice Polar Stereographic North (EPSG:3413)</li>
+          <li>WGS 84 / Antarctic Polar Stereographic (EPSG:3031)</li>
+        </ul>
+        <p>In addition it is possible to support any projection supported by the PROJ4JS library [@proj4js] by
+        configuring an appropriately formatted projection string in the Geospatial Explorer JSON configuration file,
+        which can be done via the Configuration Builder (CB) tool. </p>
+        <p>**Note**: APEx recommends datasets should be provided in a single, standardised projection system that covers
+        the full spatial extent of the data. Fragmented projections (e.g. UTM across multiple zones) should be avoided
+        as they introduce complexity, reduce performance, and limit key Geospatial Explorer functionalities.</p>
+      </td>
     </tr>
     <tr>
       <td>EXPLORER-REQ-08</td>
+      <td>Where WM(T)S is used, its sources should declare their projection through the GetCapabilities request.</td>
+      <td>This ensures that the Geospatial Explorer renders the data in the corresponding projection and prevents
+      unnecessary on-the-fly reprojections.</td>
+    </tr>
+    <tr>
+      <td>EXPLORER-REQ-09</td>
       <td>
         <p>Legends support is provided in the Geospatial Explorer via the following mechanisms:</p>
         <ul>
-          <li>Dynamically using “swatch” or “gradient” options in the Geospatial Explorer config, which displays a legend using category, gradient or colormap settings;</li>
+          <li>Dynamically using “swatch” or “gradient” options in the Geospatial Explorer config, which displays a
+          legend using category, gradient or colormap settings;</li>
           <li>By calling a WMS [@wms] getLegendGraphic request (if supported by a WMS source)</li>
           <li>By specifying in config the URL to a browser supported image resource (PNG, JPEG, SVG).</li>
         </ul>
-        <p>Legend settings can be configured using the configuration builder tool.</p>
+        <p>Legend settings can be configured using the Configuration Builder tool.</p>
       </td>
       <td>This guideline ensures that the legend is fully compatible with the visualisation library used in the Geospatial
       Explorer.</td>
     </tr>
     <tr>
-      <td>EXPLORER-REQ-09</td>
+      <td>EXPLORER-REQ-10</td>
       <td>Statistical datasets   should be configured by providing public URLs to either: GeoJSON [@geojson] or
-      FlatGeobuf [@flatgeobuf]. Details on the structure of these datasets are outlined in the [File Formats](../guides/file_formats.qmd#statistical-datasets-flatgeobuf-geojson) section.</td>
+      FlatGeobuf [@flatgeobuf]. Details on the structure of these datasets are outlined in the [Data Provider Guidelines](../interop) section.</td>
       <td>The statistics feature is complex due to the architecture and requirements of the Geospatial Explorer. Statistical datasets contain one or more files that include vector features that describe an area and the relevant statistics for the area can be added to the configuration of an explorer instance. </td>
     </tr>
     <tr>
-      <td>EXPLORER-REQ-10</td>
+      <td>EXPLORER-REQ-11</td>
       <td>
         <p>To facilitate the integration of STAC datasets within the Geospatial Explorer, it is advisable to follow the recommendations presented in our [metadata recommendations](./datahosting.md#metadata-recommendations). For optimal results within the Geospatial Explorer, the use of the following STAC extensions is recommended:</p>
         <ul>
@@ -126,7 +153,7 @@ and best practices shall be followed to avoid any breaking changes between versi
       <td>The usage of the suggested extensions will allow the Geospatial Explorer to automatically configure the visualization properties of the selected dataset without the need for additional manual configuration.</td>
     </tr>
     <tr>
-      <td>EXPLORER-REQ-11</td>
+      <td>EXPLORER-REQ-12</td>
       <td>“Secondary” constraint layers (e.g. elevation; land cover) can be used to filter the data in a “primary” layer (e.g. solar energy potential).  Both the primary and secondary layers need to be Cloud Optimised GeoTIFFs. All primary and secondary layers must use the same grid (i.e. CRS, origin and resolution) as each other.</td>
       <td></td>
     </tr>
@@ -140,14 +167,10 @@ While there is no dedicated specification for XYZ, it is widely used (e.g., [Ope
 
 ## Format Specification & Guidelines
 
-To support the smooth integration of datasets in the Geospatial Explorer, it is essential that all datasets adhere to the
-general [file format recommendations](../guides/file_formats.qmd). Following these guidelines ensures compatibility and
-ease of integration within an APEx Geospatial Explorer.
-
-When referencing data through a STAC catalogue, it is further advised to comply with the STAC [metadata recommendations](./datahosting.md#metadata-recommendations).
-Adhering to these metadata standards will improve dataset discoverability, interoperability, and enable seamless integration
-with the Geospatial Explorer.
-
+For further guidance on visualising data in the APEx Geospatial Explorer, it is highly recommended to follow the
+[recommendations](../interoperability/datahosting.qmd#scenario-3-visualisation-in-apex-geospatial-explorer). This
+scenario outlines the best practices for ensuring datasets are optimally configured and compatible with the Explorer’s
+visualisation features.
 
 ## Configuration Schema
 

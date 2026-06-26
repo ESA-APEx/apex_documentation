@@ -88,8 +88,6 @@ website:
                   - href: guides/algorithm_services_catalogue_benchmarks.qmd
                   - href: guides/algorithm_catalogue_dashboard.md
                     text: APEx Algorithm Dashboard
-              - href: guides/file_formats.qmd
-                text: File format recommendations
           - section: Admin Guides
             contents:
               - href: guides/account.md
@@ -112,7 +110,7 @@ website:
           - href: interoperability/definitions.qmd
           - href: propagation/service_development.qmd
           - href: interoperability/algohosting.md
-          - href: interoperability/datahosting.md
+          - href: interoperability/datahosting.qmd
           - href: interoperability/algohostingenv.md
           - href: interoperability/geospatial_explorer.qmd
           - href: interoperability/businessmodel.md

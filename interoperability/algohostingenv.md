@@ -17,6 +17,8 @@ The aim of these requirements is:
   technologies and architectures that suit their needs.
 * To allow APEx to perform automated checks on the developed services, guaranteeing that they work and produce the
   expected result at the expected cost.
+* Support the integration of the onboarded services into APEx ecosystem, such as service execution through the
+  [APEx Geospatial Explorer](../instantiation/geospatial_explorer.md).
 
 @tbl-algohostingenv provides an overview of the requirements for operators of algorithm hosting platforms to ensure
 their compatibility with the APEx standards.
@@ -86,6 +88,27 @@ their compatibility with the APEx standards.
       <td>HOST-REQ-08</td>
       <td>The algorithm hosting platform shall expose process metadata publicly without requiring authentication, unless the nature of the algorithm requires its description to be hidden.</td>
       <td>APEx tools request service metadata for informative purposes, also from browser-based applications that do not have platform tokens available.</td>
+    </tr>
+    <tr>
+      <td>HOST-REQ-09</td>
+      <td>The algorithm hosting platform shall support the OAuth 2.0 Token Exchange RFC.</td>
+      <td>
+        <p>The Token Exchange RFC is essential for executing APEx-compliant services on the platform using APEx tooling,
+        such as the [APEx Geospatial Explorer](../instantiation/geospatial_explorer.md).</p>
+        <p>The RFC is automatically accessible when the platform adheres to EOEPCA’s best practices and utilises Keycloak
+        as its primary user management system.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>HOST-REQ-10</td>
+      <td>The algorithm hosting platform shall provide the APEx project with a client ID and secret to support the
+      execution of published services.</td>
+      <td>
+        <p>This client is utilised to execute APEx-compliant services on the platform using APEx tooling, such as the
+        [APEx Geospatial Explorer](../instantiation/geospatial_explorer.md).</p>
+        <p>This client is employed to execute the Token Exchange RFC (HOST-REQ-09) to facilitate the exchange of an
+        APEx-based user token with a user token that is recognized and validated by the platform.</p>
+      </td>
     </tr>
   </tbody>
 </table>

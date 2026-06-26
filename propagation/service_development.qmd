@@ -4,10 +4,10 @@ title: Algorithm Service Development Options
 
 APEx currently offers two main options for projects to develop their on-demand services:
 
-* OpenEO-based services [@openeo], implemented in line
-  with [openEO’s User Defined Processes](#openeo-user-defined-processes) (UDP) [@udp]
-* OGC API - Processes-based services [@apiprocess], implemented in line with the
-  [OGC Application Package Best Practice](#ogc-application-package-and-ogc-api-processes)(@ap)
+- OpenEO-based services [@openeo], implemented in line with
+  [openEO’s User Defined Processes](#openeo-user-defined-processes) (UDP) [@udp]
+- OGC API - Processes-based services [@apiprocess], implemented in line with the
+  [OGC Application Package Best Practice](#ogc-application-package-and-ogc-api-processes) (EOAP) [@ap]
 
 These APEx-compliant technologies allow algorithms to be hosted on an APEx-compliant algorithm hosting platform and make
 them available for execution through web services. These technologies promote seamless reuse and integration of existing
@@ -25,7 +25,7 @@ application.
 
 When an EO application can be expressed in terms of the standardised openEO processes (combined in a process graph), it
 can also be parametrised so that it effectively becomes a service that can be executed by an openEO backend. This is
-what we call a User Defined Process (UDP) [@udp].
+what we call a [User Defined Process (UDP)](https://api.openeo.org/#tag/User-Defined-Processes) [@udp].
 
 ### When to use openEO User Defined Processes?
 
@@ -96,25 +96,25 @@ in Africa.
 ## OGC Application Package and OGC API Processes
 
 The OGC API Processes specification [@apiprocess] allows you to expose any type of (processing) web service. As a
-service
-designer, you get full freedom and responsibility in the definition of your service. This large degree of freedom also
-implies that the definition of your service will affect its interoperability with other services and tools.
+service designer, you get full freedom and responsibility in the definition of your service. This large degree of
+freedom also implies that the definition of your service will affect its interoperability with other services and tools.
 
-APEx recommends that these services are built based on the OGC Application Package best practice [@ap]. This allows
-service providers to easily host their applications on a compatible hosting platform, taking away key IT challenges.
+APEx recommends that these services are built based on the
+[OGC Application Package best practice](https://docs.ogc.org/bp/20-089r1.html) [@ap]. This allows service providers to
+easily host their applications on a compatible hosting platform, taking away key IT challenges.
 
 ### When to use OGC Application Packages?
 
-An OGC Application Package is a good choice when you have an existing piece of software that you want to make
-available as a service and do not aim to make substantial changes. In effect, it is a packaged version of your software,
-using (Docker) containers, which is a well-known technology for most IT professionals. A large amount of existing EO
+An OGC Application Package is a good choice when you have an existing piece of software that you want to make available
+as a service and do not aim to make substantial changes. In effect, it is a packaged version of your software, using
+(Docker) containers, which is a well-known technology for most IT professionals. A large amount of existing EO
 applications is known to already use containers. The container is invoked by a workflow written in the ‘common workflow
 language’ (CWL) [@cwl], which is a thin wrapper around your software.
 
 If concepts like containers are already familiar to the project, and they prefer to have full control and responsibility
 over their software, including all details concerning how they read raw EO products, then this might be the right
-choice. Of course, the [APEx Algorithm Support](../propagation/index.qmd) exists to help you with the integration of your
-service into the APEx ecosystem.
+choice. Of course, the [APEx Algorithm Support](../propagation/index.qmd) exists to help you with the integration of
+your service into the APEx ecosystem.
 
 To offer your application as an on-demand service, the project will need to define clear constraints on possible input
 parameters and make sure that their software is well-tested to be able to handle variations in input parameters. When
