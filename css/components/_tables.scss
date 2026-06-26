@@ -26,6 +26,14 @@ th {
   color: var(--darkblue) !important;
 }
 
+table.table-normal {
+  td, th {
+    padding: .5rem;
+    vertical-align: top;
+    text-align: left;
+  }
+
+}
 
 table.requirements {
   td, th {

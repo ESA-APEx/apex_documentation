@@ -1,5 +1,9 @@
 ---
 title: Data Provider Guidelines
+toc: true
+toc-depth: 3
+toc-expand: 3
+toc-location: right
 ---
 
 ## Requirements
@@ -547,7 +551,7 @@ performance characteristics before processing full operational pipelines.
 
 :::{#tbl-cog-settings}
 
-<table>
+<table class="table-normal">
   <thead>
     <tr>
       <td></td>
