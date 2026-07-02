@@ -70,8 +70,8 @@ website:
                 contents:
                   - href: guides/udp_writer_guide.qmd
                     text: Creating openEO based services
-                  - href: guides/upscaling_openeo.ipynb
-                    text: Upscaling openEO based services
+                  - href: guides/VisualisingMultipleOpeneoJobs.ipynb
+                    text: Upscaling openEO-based services using the openEO Batch Job Manager
               - section: EOAP
                 contents:
                   - href: guides/eoap_writer_guide.md
