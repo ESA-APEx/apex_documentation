@@ -3,16 +3,18 @@ on:
   push:
     branches: [main]
   pull_request:
+    types: [opened, synchronize, reopened, closed]
     branches: [main]
   workflow_dispatch:
-concurrency: publish
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-documentation:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      contents: write
+    if: github.event.action != 'closed'
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -32,24 +34,19 @@ jobs:
         run: pip install jupyter && pip install -r requirements.txt
       - name: Render documentation pages
         run: quarto render --output-dir _build
-      - name: Setup GitHub pages
-        uses: actions/configure-pages@v5
-      - name: Upload build artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_build"
-      - name: Upload build folder
+      - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: build-folder
           path: "_build"
+          retention-days: 1
 
   documentation-quality-checks:
     runs-on: ubuntu-latest
     needs: build-documentation
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Check broken links
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
@@ -58,15 +55,59 @@ jobs:
 
   deploy-documentation-ghpages:
     runs-on: ubuntu-latest
-    needs: documentation-quality-checks
+    needs: [build-documentation, documentation-quality-checks]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      contents: write
     steps:
-      - name: Deploy to GitHub pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-folder
+          path: _build
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _build
+          # Preserve PR preview directories so they are not wiped on each deploy
+          clean-exclude: pr-preview
+
+  deploy-pr-preview:
+    runs-on: ubuntu-latest
+    needs: build-documentation
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-folder
+          path: _build
+      - name: Deploy PR preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: _build
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: deploy
+
+  cleanup-pr-preview:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Remove PR preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: .
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: remove
