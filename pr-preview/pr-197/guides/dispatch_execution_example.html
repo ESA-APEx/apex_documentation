@@ -1137,14 +1137,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>It is important to highlight that you will need to have access to the <a href="https://documentation.dataspace.copernicus.eu/Registration.html%22">Copernicus Data Space Ecosytem</a> in order to execute this notebook.</p>
-<div id="d99f5fbc" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>process_url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/refs/heads/main/algorithm_catalog/eurac/eurac_pv_farm_detection/openeo_udp/eurac_pv_farm_detection.json"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>backend <span class="op">=</span> <span class="st">"https://openeofed.dataspace.copernicus.eu"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="setting-up-the-parameters" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-the-parameters">Setting up the parameters</h2>
 <p>Before diving into the code to call the APEx Dispatch API, we start by defining the parameters that we will be using for executing the PV Farm Detection service.</p>
+<div id="d99f5fbc" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>process_url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/refs/heads/main/algorithm_catalog/eurac/eurac_pv_farm_detection/openeo_udp/eurac_pv_farm_detection.json"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>backend <span class="op">=</span> <span class="st">"https://openeofed.dataspace.copernicus.eu"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div id="c83aa9d5" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>spatial_extent <span class="op">=</span> {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"west"</span>: <span class="fl">16.342</span>,</span>
@@ -1217,7 +1217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="launching-the-service-execution-task">Launching the service execution task</h2>
 <p>Next we trigger the service execution task on the dispatcher. We provide the details of the processing job that needs to be executed. The result is the information on the created service execution task.</p>
 <p>You will be requested to login to APEx, please use the <strong>CDSE</strong> option to login using your CDSE account.</p>
-<div id="c5ca3fdd-7559-4fc7-8318-61b5dc59475f" class="cell" data-execution_count="6">
+<div id="c5ca3fdd-7559-4fc7-8318-61b5dc59475f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>execution_task <span class="op">=</span> requests.post(</span>
@@ -1240,178 +1240,188 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>execution_task_id <span class="op">=</span> execution_task.json()[<span class="st">'id'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Open this URL in your browser: https://auth.apex.esa.int/realms/apex/protocol/openid-connect/auth?response_type=code&amp;client_id=apex-dispatcher-api-prod&amp;redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fcallback&amp;state=xN8mk1EvBbR0lviZnJuu7K7WmLkNUP</code></pre>
+</div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Paste the redirect URL here:  http://localhost:8000/callback?state=xN8mk1EvBbR0lviZnJuu7K7WmLkNUP&amp;session_state=41FFx4Vs05fRIpn1PAnD_7mK&amp;iss=https%3A%2F%2Fauth.apex.esa.int%2Frealms%2Fapex&amp;code=c9e2a779-efab-3510-8b02-2e05030818b9.41FFx4Vs05fRIpn1PAnD_7mK.3aa033f5-470c-405e-b6f0-b5bbf9e380fd</code></pre>
+</div>
+</div>
+</section>
+<section id="setting-up-map-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-map-visualization">Setting up map visualization</h2>
+<p>The following code is needed to support the visualization of the execution status and final results on a map.</p>
+<div id="6afbb9eb" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium.raster_layers</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rasterio.warp <span class="im">import</span> transform_bounds</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyproj <span class="im">import</span> Transformer</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> base64</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> clear_output, display</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="0c5b3471-3848-45f8-937b-c4814ca8d455" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_cog_layer(cog_url, name<span class="op">=</span><span class="va">None</span>, m<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Add a Cloud-Optimized GeoTIFF layer to the folium map."""</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> rasterio.<span class="bu">open</span>(cog_url) <span class="im">as</span> src:</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        band <span class="op">=</span> src.read(<span class="dv">1</span>).astype(np.float32)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        bounds <span class="op">=</span> transform_bounds(src.crs, <span class="st">"EPSG:4326"</span>, <span class="op">*</span>src.bounds)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Normalize 0–255</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        band <span class="op">=</span> <span class="dv">255</span> <span class="op">*</span> (band <span class="op">-</span> band.<span class="bu">min</span>()) <span class="op">/</span> (band.<span class="bu">max</span>() <span class="op">-</span> band.<span class="bu">min</span>())</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        band <span class="op">=</span> band.astype(np.uint8)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to PNG data URI</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    buf <span class="op">=</span> io.BytesIO()</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    Image.fromarray(band).save(buf, <span class="bu">format</span><span class="op">=</span><span class="st">"PNG"</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    data_url <span class="op">=</span> <span class="st">"data:image/png;base64,"</span> <span class="op">+</span> base64.b64encode(buf.getvalue()).decode(<span class="st">"utf-8"</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># bounds format: (west, south, east, north)</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    bbox <span class="op">=</span> [[bounds[<span class="dv">1</span>], bounds[<span class="dv">0</span>]], [bounds[<span class="dv">3</span>], bounds[<span class="dv">2</span>]]]</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    overlay <span class="op">=</span> folium.raster_layers.ImageOverlay(</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        image<span class="op">=</span>data_url,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>        bounds<span class="op">=</span>bbox,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span>name <span class="kw">or</span> <span class="st">"COG"</span>,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>        opacity<span class="op">=</span><span class="fl">0.8</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m:</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>        overlay.add_to(m)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> overlay</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_geojson_layer(url, name<span class="op">=</span><span class="va">None</span>, m<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Add a GeoJSON layer to the folium map."""</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> requests.get(url).json()</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"crs"</span> <span class="kw">in</span> data <span class="kw">and</span> <span class="st">"properties"</span> <span class="kw">in</span> data[<span class="st">"crs"</span>]:</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>        transformer <span class="op">=</span> Transformer.from_crs(</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>            data[<span class="st">"crs"</span>][<span class="st">"properties"</span>][<span class="st">"name"</span>], </span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>            <span class="st">"EPSG:4326"</span>, </span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>            always_xy<span class="op">=</span><span class="va">True</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> feature <span class="kw">in</span> data[<span class="st">"features"</span>]:</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>            geom <span class="op">=</span> feature[<span class="st">"geometry"</span>]</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> geom[<span class="st">"type"</span>] <span class="op">==</span> <span class="st">"Polygon"</span>:</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>                new_coords <span class="op">=</span> []</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> ring <span class="kw">in</span> geom[<span class="st">"coordinates"</span>]:</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>                    new_ring <span class="op">=</span> [<span class="bu">list</span>(transformer.transform(x, y)) <span class="cf">for</span> x, y <span class="kw">in</span> ring]</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>                    new_coords.append(new_ring)</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>                geom[<span class="st">"coordinates"</span>] <span class="op">=</span> new_coords</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>    geo_layer <span class="op">=</span> folium.GeoJson(data<span class="op">=</span>data, name<span class="op">=</span>name <span class="kw">or</span> <span class="st">"GeoJSON"</span>)</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m:</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>        geo_layer.add_to(m)</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> geo_layer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ac428293-7cd4-49a8-9bfa-4e0dc8f4d2cc" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute center and create map function</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>west <span class="op">=</span> spatial_extent[<span class="st">"west"</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>south <span class="op">=</span> spatial_extent[<span class="st">"south"</span>]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>east <span class="op">=</span> spatial_extent[<span class="st">"east"</span>]</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>north <span class="op">=</span> spatial_extent[<span class="st">"north"</span>]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>center_lat <span class="op">=</span> (south <span class="op">+</span> north) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>center_lon <span class="op">=</span> (west <span class="op">+</span> east) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Color map for job statuses</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>color_map <span class="op">=</span> {</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"created"</span>: <span class="st">"blue"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"queued"</span>: <span class="st">"orange"</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"running"</span>: <span class="st">"yellow"</span>,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"finished"</span>: <span class="st">"lime"</span>,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"canceled"</span>: <span class="st">"gray"</span>,</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"failed"</span>: <span class="st">"red"</span>,</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="va">None</span>: <span class="st">"grey"</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_job_status(job_data):</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Create a fresh folium map with current job status."""</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    status <span class="op">=</span> job_data.get(<span class="st">"status"</span>, <span class="st">"unknown"</span>)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> color_map.get(status, <span class="st">"black"</span>)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a new map for each update</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    status_map <span class="op">=</span> folium.Map(</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        location<span class="op">=</span>[center_lat, center_lon],</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>        zoom_start<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>        tiles<span class="op">=</span><span class="st">"CartoDB positron"</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create bounds from spatial extent</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> [</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>        [spatial_extent[<span class="st">"south"</span>], spatial_extent[<span class="st">"west"</span>]],</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>        [spatial_extent[<span class="st">"north"</span>], spatial_extent[<span class="st">"east"</span>]]</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add rectangle for job area</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>    folium.Rectangle(</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>        bounds<span class="op">=</span>bounds,</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>color,</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>        fill<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>        fillColor<span class="op">=</span>color,</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>        fillOpacity<span class="op">=</span><span class="dv">0</span> <span class="cf">if</span> status <span class="op">==</span> <span class="st">"finished"</span> <span class="cf">else</span> <span class="fl">0.3</span>,</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>        weight<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>        popup<span class="op">=</span><span class="ss">f"Job </span><span class="sc">{</span>execution_task_id<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>    ).add_to(status_map)</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fit bounds to extent</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>    status_map.fit_bounds(bounds)</span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> status_map</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Display initial map</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> plot_job_status({<span class="st">"status"</span>: <span class="st">"created"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="retrieve-status-of-the-service-execution-task" class="level2">
 <h2 class="anchored" data-anchor-id="retrieve-status-of-the-service-execution-task">Retrieve status of the service execution task</h2>
 <p>We can now write a continuous monitoring process that fetches the status of the service execution task and showcase the results on the map.</p>
-<div id="6afbb9eb" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium.raster_layers</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rasterio.warp <span class="im">import</span> transform_bounds</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyproj <span class="im">import</span> Transformer</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> base64</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> clear_output, display</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="0c5b3471-3848-45f8-937b-c4814ca8d455" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_cog_layer(cog_url, name<span class="op">=</span><span class="va">None</span>, m<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Add a Cloud-Optimized GeoTIFF layer to the folium map."""</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> rasterio.<span class="bu">open</span>(cog_url) <span class="im">as</span> src:</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        band <span class="op">=</span> src.read(<span class="dv">1</span>).astype(np.float32)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        bounds <span class="op">=</span> transform_bounds(src.crs, <span class="st">"EPSG:4326"</span>, <span class="op">*</span>src.bounds)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Normalize 0–255</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        band <span class="op">=</span> <span class="dv">255</span> <span class="op">*</span> (band <span class="op">-</span> band.<span class="bu">min</span>()) <span class="op">/</span> (band.<span class="bu">max</span>() <span class="op">-</span> band.<span class="bu">min</span>())</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        band <span class="op">=</span> band.astype(np.uint8)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to PNG data URI</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    buf <span class="op">=</span> io.BytesIO()</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    Image.fromarray(band).save(buf, <span class="bu">format</span><span class="op">=</span><span class="st">"PNG"</span>)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    data_url <span class="op">=</span> <span class="st">"data:image/png;base64,"</span> <span class="op">+</span> base64.b64encode(buf.getvalue()).decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># bounds format: (west, south, east, north)</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    bbox <span class="op">=</span> [[bounds[<span class="dv">1</span>], bounds[<span class="dv">0</span>]], [bounds[<span class="dv">3</span>], bounds[<span class="dv">2</span>]]]</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    overlay <span class="op">=</span> folium.raster_layers.ImageOverlay(</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        image<span class="op">=</span>data_url,</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        bounds<span class="op">=</span>bbox,</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span>name <span class="kw">or</span> <span class="st">"COG"</span>,</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        opacity<span class="op">=</span><span class="fl">0.8</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m:</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        overlay.add_to(m)</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> overlay</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_geojson_layer(url, name<span class="op">=</span><span class="va">None</span>, m<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Add a GeoJSON layer to the folium map."""</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> requests.get(url).json()</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"crs"</span> <span class="kw">in</span> data <span class="kw">and</span> <span class="st">"properties"</span> <span class="kw">in</span> data[<span class="st">"crs"</span>]:</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>        transformer <span class="op">=</span> Transformer.from_crs(</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>            data[<span class="st">"crs"</span>][<span class="st">"properties"</span>][<span class="st">"name"</span>], </span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>            <span class="st">"EPSG:4326"</span>, </span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>            always_xy<span class="op">=</span><span class="va">True</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> feature <span class="kw">in</span> data[<span class="st">"features"</span>]:</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>            geom <span class="op">=</span> feature[<span class="st">"geometry"</span>]</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> geom[<span class="st">"type"</span>] <span class="op">==</span> <span class="st">"Polygon"</span>:</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>                new_coords <span class="op">=</span> []</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> ring <span class="kw">in</span> geom[<span class="st">"coordinates"</span>]:</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>                    new_ring <span class="op">=</span> [<span class="bu">list</span>(transformer.transform(x, y)) <span class="cf">for</span> x, y <span class="kw">in</span> ring]</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>                    new_coords.append(new_ring)</span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>                geom[<span class="st">"coordinates"</span>] <span class="op">=</span> new_coords</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>    geo_layer <span class="op">=</span> folium.GeoJson(data<span class="op">=</span>data, name<span class="op">=</span>name <span class="kw">or</span> <span class="st">"GeoJSON"</span>)</span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m:</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>        geo_layer.add_to(m)</span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> geo_layer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="ac428293-7cd4-49a8-9bfa-4e0dc8f4d2cc" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute center and create map function</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>west <span class="op">=</span> spatial_extent[<span class="st">"west"</span>]</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>south <span class="op">=</span> spatial_extent[<span class="st">"south"</span>]</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>east <span class="op">=</span> spatial_extent[<span class="st">"east"</span>]</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>north <span class="op">=</span> spatial_extent[<span class="st">"north"</span>]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>center_lat <span class="op">=</span> (south <span class="op">+</span> north) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>center_lon <span class="op">=</span> (west <span class="op">+</span> east) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Color map for job statuses</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>color_map <span class="op">=</span> {</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"created"</span>: <span class="st">"blue"</span>,</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"queued"</span>: <span class="st">"orange"</span>,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"running"</span>: <span class="st">"yellow"</span>,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"finished"</span>: <span class="st">"lime"</span>,</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"canceled"</span>: <span class="st">"gray"</span>,</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"failed"</span>: <span class="st">"red"</span>,</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="va">None</span>: <span class="st">"grey"</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_job_status(job_data):</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Create a fresh folium map with current job status."""</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    status <span class="op">=</span> job_data.get(<span class="st">"status"</span>, <span class="st">"unknown"</span>)</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> color_map.get(status, <span class="st">"black"</span>)</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a new map for each update</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    status_map <span class="op">=</span> folium.Map(</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>        location<span class="op">=</span>[center_lat, center_lon],</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>        zoom_start<span class="op">=</span><span class="dv">10</span>,</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>        tiles<span class="op">=</span><span class="st">"CartoDB positron"</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create bounds from spatial extent</span></span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> [</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>        [spatial_extent[<span class="st">"south"</span>], spatial_extent[<span class="st">"west"</span>]],</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>        [spatial_extent[<span class="st">"north"</span>], spatial_extent[<span class="st">"east"</span>]]</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add rectangle for job area</span></span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>    folium.Rectangle(</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>        bounds<span class="op">=</span>bounds,</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>color,</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>        fill<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>        fillColor<span class="op">=</span>color,</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>        fillOpacity<span class="op">=</span><span class="fl">0.3</span>,</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>        weight<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>        popup<span class="op">=</span><span class="ss">f"Job </span><span class="sc">{</span>execution_task_id<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>    ).add_to(status_map)</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fit bounds to extent</span></span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    status_map.fit_bounds(bounds)</span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> status_map</span>
-<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Display initial map</span></span>
-<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> plot_job_status({<span class="st">"status"</span>: <span class="st">"created"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="e154c357" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> show_results(job_id):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retrieve and display job results on the map."""</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> requests.get(</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"http://dispatch-api.apex.esa.int/unit_jobs/</span><span class="sc">{</span>job_id<span class="sc">}</span><span class="ss">/results"</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        headers<span class="op">=</span>{<span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>get_access_token()<span class="sc">}</span><span class="ss">"</span>}</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> result.json()</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Recreate map with results overlay</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    results_map <span class="op">=</span> plot_job_status({<span class="st">"status"</span>: <span class="st">"finished"</span>})</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> output_format.lower() <span class="op">==</span> <span class="st">"geojson"</span>:</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        result_url <span class="op">=</span> response[<span class="st">"assets"</span>][<span class="st">"vectorcube.geojson"</span>][<span class="st">"href"</span>]</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        add_geojson_layer(result_url, name<span class="op">=</span><span class="ss">f"Job </span><span class="sc">{</span>job_id<span class="sc">}</span><span class="ss"> Results"</span>, m<span class="op">=</span>results_map)</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        cog_url <span class="op">=</span> response[<span class="st">"assets"</span>][<span class="st">"openEO.tif"</span>][<span class="st">"href"</span>]</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        add_cog_layer(cog_url, name<span class="op">=</span><span class="ss">f"Job </span><span class="sc">{</span>job_id<span class="sc">}</span><span class="ss"> Results"</span>, m<span class="op">=</span>results_map)</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    clear_output(wait<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    display(results_map)</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> response</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> listen_for_updates():</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Monitor job status and update map accordingly."""</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    finished <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> finished:</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(</span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"http://dispatch-api.apex.esa.int/unit_jobs/</span><span class="sc">{</span>execution_task_id<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>            headers<span class="op">=</span>{<span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>get_access_token()<span class="sc">}</span><span class="ss">"</span>}</span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>        job <span class="op">=</span> response.json()</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot updated status</span></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>        status_map <span class="op">=</span> plot_job_status(job)</span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>        clear_output(wait<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>        display(status_map)</span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> job[<span class="st">"status"</span>] <span class="op">==</span> <span class="st">"finished"</span>:</span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">await</span> show_results(job[<span class="st">"id"</span>])</span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>        finished <span class="op">=</span> job[<span class="st">'status'</span>] <span class="kw">in</span> [<span class="st">"finished"</span>, <span class="st">"canceled"</span>, <span class="st">"failed"</span>]</span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> finished:</span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>            time.sleep(<span class="dv">3</span>)</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the monitoring process</span></span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="cf">await</span> listen_for_updates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e154c357" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> show_results(job_id):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retrieve and display job results on the map."""</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> requests.get(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"http://dispatch-api.apex.esa.int/unit_jobs/</span><span class="sc">{</span>job_id<span class="sc">}</span><span class="ss">/results"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        headers<span class="op">=</span>{<span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>get_access_token()<span class="sc">}</span><span class="ss">"</span>}</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> result.json()</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Recreate map with results overlay</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    results_map <span class="op">=</span> plot_job_status({<span class="st">"status"</span>: <span class="st">"finished"</span>})</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> output_format.lower() <span class="op">==</span> <span class="st">"geojson"</span>:</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        result_url <span class="op">=</span> response[<span class="st">"assets"</span>][<span class="st">"vectorcube.geojson"</span>][<span class="st">"href"</span>]</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        add_geojson_layer(result_url, name<span class="op">=</span><span class="ss">f"Job </span><span class="sc">{</span>job_id<span class="sc">}</span><span class="ss"> Results"</span>, m<span class="op">=</span>results_map)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        cog_url <span class="op">=</span> response[<span class="st">"assets"</span>][<span class="st">"openEO.tif"</span>][<span class="st">"href"</span>]</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        add_cog_layer(cog_url, name<span class="op">=</span><span class="ss">f"Job </span><span class="sc">{</span>job_id<span class="sc">}</span><span class="ss"> Results"</span>, m<span class="op">=</span>results_map)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    clear_output(wait<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    display(results_map)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> response</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> listen_for_updates():</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Monitor job status and update map accordingly."""</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    finished <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> finished:</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"http://dispatch-api.apex.esa.int/unit_jobs/</span><span class="sc">{</span>execution_task_id<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>            headers<span class="op">=</span>{<span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>get_access_token()<span class="sc">}</span><span class="ss">"</span>}</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        job <span class="op">=</span> response.json()</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot updated status</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>        status_map <span class="op">=</span> plot_job_status(job)</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>        clear_output(wait<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>        display(status_map)</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> job[<span class="st">"status"</span>] <span class="op">==</span> <span class="st">"finished"</span>:</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">await</span> show_results(job[<span class="st">"id"</span>])</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>        finished <span class="op">=</span> job[<span class="st">'status'</span>] <span class="kw">in</span> [<span class="st">"finished"</span>, <span class="st">"canceled"</span>, <span class="st">"failed"</span>]</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> finished:</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>            time.sleep(<span class="dv">3</span>)</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the monitoring process</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="cf">await</span> listen_for_updates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
 <html>
@@ -1432,7 +1442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
             <style>
-                #map_d92bdafeb33dff3a52323983948b5d71 {
+                #map_fe2a1dc23370b24887ef77badb3d25f9 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -1484,14 +1494,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body>
     
     
-            <div class=&quot;folium-map&quot; id=&quot;map_d92bdafeb33dff3a52323983948b5d71&quot; ></div>
+            <div class=&quot;folium-map&quot; id=&quot;map_fe2a1dc23370b24887ef77badb3d25f9&quot; ></div>
         
 </body>
 <script>
     
     
-            var map_d92bdafeb33dff3a52323983948b5d71 = L.map(
-                &quot;map_d92bdafeb33dff3a52323983948b5d71&quot;,
+            var map_fe2a1dc23370b24887ef77badb3d25f9 = L.map(
+                &quot;map_fe2a1dc23370b24887ef77badb3d25f9&quot;,
                 {
                     center: [47.985, 16.378],
                     crs: L.CRS.EPSG3857,
@@ -1508,7 +1518,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
         
     
-            var tile_layer_71d7881ae7fbcfe39c587e2762b417c4 = L.tileLayer(
+            var tile_layer_ee2191886a9bb40769e04b822ad52d8c = L.tileLayer(
                 &quot;https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png&quot;,
                 {
   &quot;minZoom&quot;: 0,
@@ -1525,39 +1535,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             );
         
     
-            tile_layer_71d7881ae7fbcfe39c587e2762b417c4.addTo(map_d92bdafeb33dff3a52323983948b5d71);
+            tile_layer_ee2191886a9bb40769e04b822ad52d8c.addTo(map_fe2a1dc23370b24887ef77badb3d25f9);
         
     
-            var rectangle_876e0010595082930ba6d7ba43c017a2 = L.rectangle(
+            var rectangle_0091e95eee83704b7c6eeeeb282e8c04 = L.rectangle(
                 [[47.962, 16.342], [48.008, 16.414]],
-                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;lime&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;lime&quot;, &quot;fillOpacity&quot;: 0.3, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 2}
-            ).addTo(map_d92bdafeb33dff3a52323983948b5d71);
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;lime&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;lime&quot;, &quot;fillOpacity&quot;: 0, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 2}
+            ).addTo(map_fe2a1dc23370b24887ef77badb3d25f9);
         
     
-        var popup_793989790246dcd850b50faecb5ea272 = L.popup({
+        var popup_b53d959f27f617e7ecb9b18b34650bf0 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_d24b30e1c01337449719f411949b49cd = $(`<div id=&quot;html_d24b30e1c01337449719f411949b49cd&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Job 108: finished</div>`)[0];
-                popup_793989790246dcd850b50faecb5ea272.setContent(html_d24b30e1c01337449719f411949b49cd);
+                var html_d03ecf8879c6a4afc60a349286bf1988 = $(`<div id=&quot;html_d03ecf8879c6a4afc60a349286bf1988&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Job 122: finished</div>`)[0];
+                popup_b53d959f27f617e7ecb9b18b34650bf0.setContent(html_d03ecf8879c6a4afc60a349286bf1988);
             
         
 
-        rectangle_876e0010595082930ba6d7ba43c017a2.bindPopup(popup_793989790246dcd850b50faecb5ea272)
+        rectangle_0091e95eee83704b7c6eeeeb282e8c04.bindPopup(popup_b53d959f27f617e7ecb9b18b34650bf0)
         ;
 
         
     
     
-            map_d92bdafeb33dff3a52323983948b5d71.fitBounds(
+            map_fe2a1dc23370b24887ef77badb3d25f9.fitBounds(
                 [[47.962, 16.342], [48.008, 16.414]],
                 {}
             );
         
     
-            var image_overlay_f69f321a4603daee882a12011742713a = L.imageOverlay(
+            var image_overlay_b7b4706c2dd11428bc813bf42749f7a1 = L.imageOverlay(
                 &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiMAAAIKCAAAAADU4hCTAAAFqElEQVR4nO3d6XLiSBCFUeTw+7+yJjDthUXcbiGPUlnn/JktpgPkj6wSIHk6wbL5dDq9PfnvcKYREo2QaIREIyQaIdEIiUZINEKiERKNkGiERCMkGiHRCIlGSDRCohESjZBohEQjJBoh0QiJRkg0QqIREo2QaIREIyQaIdEIiUZINEKiERKNkGiERCMkGiHRCIlGSDRCohESjZBohEQjJBoheT/9mvl0mn7vT6fBHDn/5hM6sNawayOWmhb8GHnG70rjb9iPkGiERCMkGiHRCIlGSDRCohESjZBohEQjJBoh0QiJRkg0QqIREo2QaIREIyQaIdEIiUbY73rf85UZrt7p4NfmiMt927DWkGiExDXhJHaVPOOacP6G/QiJRkg0QqIREo2QaIREIyQaIdEIiUZINEKiERKNkGiERCMkGiHRCIlGSDRCohESjZBohEQjJBoh0QiJRkg0QqIREo2QaIT97pm3Bffdq8Ac4dhz5Gx2s6WdHWKOuI/nrqaDlFH4cbbmfmgce625XmBm681u6jZCFWUbMTfKKNvILZvW3RylEYnsp+x7aJPlpor34rPDtmR/74U/ybv0Mflgb2cVGzmbp/u/Yx8F96yWl2LeCidigNRQrxGqea86RnxtpAxzhGSqvmGt9gAHM9dba64T0UcJxRq5Zk9SQq39iLdGKirViERKKr3W2JCUUGqOUFKlRiw1NRVqRCJFFWqEot4LjxFvodVgjnCcOXLLFKnCHOEwjTirKatMI5RVZD/ipKYwc4SjNuKspo4ijUyaqKvSz8aVNfVUux9apV4pd15z4X4SJVWaI9RkvnOk/Qg1aYREIyQaIdEIAAAAAAAAAAAAAHtyDdY9vxKl8PW+Jbgx2y1zZKkRR+aTaydIvFqWlxrH5sIcWd6N2Jlc2LP+IIqHzJEniWjmg0a+KGKBRkjs3dMUmU6jM0dINHJhM7LMJM2JTKexmSMkGjmz0jwz+hz9YKV5yhwxRRJz5HuKTA9GyhSPYH8+0/tmV/KYtUYZiUZIhm/k+RiZ4gEcwOAHISw0gx+dP4afI0QaecIY+TD8YVhebYY/NJ/MEZLhG/EbyqPhG1lkqfnkSCycATswX8yRxyTyTSPnIBTxjEYeEs0PGvkxSb7KkMhPGvnB1wQe0siD0WGMXHE4vrnL1WPmyB0vmxsauY1DIrc08oM8AAAAAAAAAAAAAAAAAAAAAAAANuX2TtXNu/+Q3A+NxBw5wj1jp10fgzlCohESjdQ27f0AAAAAAAAAADg8nz2P+M226Z/+D98fIdEIiUYGNO39AAAAAKCWnqfK+9+PoZO3rh9JXC64ZwMdX25z4+e2h4ZzxATZWL9GJLK1qXUi7Z7dLt5aTxEzZQvNGrmNQiQb6NXIfRIieV2nFfu6h+nPv+j0DPfRa47ckMcm3tr3YbV5VZ9G5qUYRPKi91Nfn3HMFp2X9Jkjz7YiRskrujZyQyQvGKQRkbygayPnHezk3HcTfRoJQVhtVuv0UrvL4POt1q9/Yuw58iiCq/dMTJKVer245pGe7P+m0xwRwe/o1YhJ8RuaNfI0EkvNOt0auQ9BGa9q18hdE05nXtWvkcXBYaCs1Pm7AXdcBrxKx0amB8uLIbJew7VmMQg7k3VaNnIXiU+AX9GzEUvLlpo28iiSf79ROq0bUcN22jbivbTN9G3k0SSx1KzRuJHrIpz4rta5kftT4J0ex8F1P2yfJzNuIbBe6zky2Ovht4xx3OaBnuv2BpojEllpoEZYaZxGjJG1hmlEIqsN0wgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACHMu39AOqaHZ2Ltz9/hSUaAQDgVNx/aX91H0XMfoMAAAAASUVORK5CYII=&quot;,
                 [[47.961062319794614, 16.340796495839953], [48.00889350864665, 16.41533280194792]],
                 {
@@ -1566,7 +1576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             );
         
     
-            image_overlay_f69f321a4603daee882a12011742713a.addTo(map_d92bdafeb33dff3a52323983948b5d71);
+            image_overlay_b7b4706c2dd11428bc813bf42749f7a1.addTo(map_fe2a1dc23370b24887ef77badb3d25f9);
         
 </script>
 </html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
