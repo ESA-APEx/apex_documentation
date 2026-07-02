@@ -1414,7 +1414,7 @@
     "href": "propagation/upscaling.html#related-background-material",
     "title": "Algorithm Upscaling",
     "section": "Related background material",
-    "text": "Related background material\n\nLarge scale processing, by openEO platform and CDSE openEO\nJob management in openEO, a Jupyter notebook``",
+    "text": "Related background material\n\nLarge scale processing, by CDSE openEO",
     "crumbs": [
       "Algorithm Support",
       "Algorithm Upscaling"
