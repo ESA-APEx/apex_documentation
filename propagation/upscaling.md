@@ -249,7 +249,5 @@ the guidelines too restrictive.
 
 ## Related background material
 
-* Large scale processing, by [openEO platform](https://docs.openeo.cloud/usecases/large-scale-processing/)
-  and [CDSE openEO](https://documentation.dataspace.copernicus.eu/APIs/openEO/large_scale_processing.html)
-* Job management in openEO,
-  a [Jupyter notebook](https://github.com/Open-EO/openeo-community-examples/blob/main/python/ManagingMultipleLargeScaleJobs/ManagingMultipleLargeScaleJobs.ipynb)``
+* Large scale processing, by
+[CDSE openEO](https://documentation.dataspace.copernicus.eu/APIs/openEO/large_scale_processing.html)
