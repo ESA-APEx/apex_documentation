@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Geographical Service Upscaling using the APEx Dispatch API – APEx - Documentation Portal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../guides/stac_catalog_ingest.html" rel="next">
+<link href="../guides/dispatch_execution_example.html" rel="prev">
+<link href="../assets/img/logos/apex_icon_blue.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5b02d0b16d1dd912e5f5c4857db19321.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1d2851e96e8217ecd76c7bfc6292f46c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        'use strict';
+
+        // MegaMenu Class
+        class MegaMenu {
+            constructor() {
+                const megaMenu = document.querySelector('.js-mega-menu');
+                if (!megaMenu) return;
+
+                const megaMenuTopics = document.querySelectorAll('.js-mega-menu-topic');
+                const megaMenuContents = document.querySelectorAll('.js-mega-menu-content');
+
+                megaMenuTopics.forEach(topic => {
+                    topic.addEventListener('click', this.handleClickTopic.bind(this));
+                    topic.addEventListener('mouseover', this.handleHoverTopic.bind(this));
+                    topic.addEventListener('mouseout', this.handleMouseOutTopic.bind(this));
+                });
+
+                this.megaMenuContents = megaMenuContents;
+            }
+
+            handleClickTopic(e) {
+                e.preventDefault();
+                this.switchContent(e.currentTarget);
+            }
+
+            handleHoverTopic(e) {
+                this.switchContent(e.currentTarget);
+            }
+
+            handleMouseOutTopic(e) {
+                // Optional: Add logic for mouse out events if needed
+            }
+
+            switchContent(topic) {
+                const topicIndex = topic.getAttribute('data-index');
+                this.megaMenuContents.forEach(content => {
+                    content.setAttribute('aria-hidden', content.getAttribute('data-index') !== topicIndex);
+                });
+            }
+        }
+
+        // Hamburger Menu Class
+        class HamburgerMenu {
+            constructor() {
+                const hamburgers = document.querySelectorAll('.js-hamburger');
+                const menu = document.querySelector('.js-hamburger-menu');
+                const body = document.body;
+
+                if (menu) {
+                    hamburgers.forEach(hamburger => {
+                        hamburger.addEventListener('click', (e) => this.handleClickHamburger(e, menu, body));
+                    });
+                } else {
+
+                }
+            }
+
+            handleClickHamburger(e, menu, body) {
+                e.preventDefault();
+                menu.classList.toggle('open');
+                body.classList.toggle('has-hamburger-open');
+            }
+        }
+
+        new MegaMenu();
+        new HamburgerMenu();
+    });
+
+
+</script>
+</head><body class="nav-sidebar floating nav-fixed"><div class="blur-container">
+<div class="blur"></div>
+</div>
+<div class="container">
+    <div class="c-header__top">
+        <div class="c-header__navigate">
+            <div class="c-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <a class="c-header__esa-text" href="#">
+                <img src="../assets/img/logos/text-esa.svg" alt="The European Space Agency">
+            </a>
+        </div>
+
+        <div>
+            <div class="c-header__esa">
+                <div class="region region-nav-branding">
+                    <div id="block-vitotheme-branding" class="block block-system block-system-branding-block">
+                        <div class="navbar-brand d-flex align-items-center">
+
+                            <a href="../" title="Home" rel="home" class="site-logo d-block">
+                                <img src="../assets/img/logos/logo-esa.svg" alt="Home" fetchpriority="high">
+                            </a>
+
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container"><div class="c-header__bottom">
+      <a href="https://apex.esa.int/" class="c-header__logo">
+        APEx
+        <span>Application Propagation Environments</span>
+      </a>
+
+      <div class="c-header__nav">
+          <div class="region region-nav-main">
+    <nav role="navigation" aria-labelledby="block-vitotheme-main-navigation-menu" id="block-vitotheme-main-navigation" class="block block-menu navigation menu--main">
+
+  <h5 class="visually-hidden" id="block-vitotheme-main-navigation-menu">Main navigation</h5>
+
+
+
+<!-- Desktop Menu -->
+<div class="navbar-nav navbar-nav-hover align-items-lg-center nav navbar-main d-none d-lg-block">
+  <span class="mobile-menu-trigger" data-bs-toggle="modal" data-bs-target="#mobileMenuModal">
+    <span class="icon-menu"></span>
+  </span>
+  <span class="overlay-gradient-white"></span>
+                      <ul data-block="nav_main" class="menu menu-bar d-flex nav-level-0">
+
+
+    <li>
+              <a href="https://apex.esa.int/algorithm-support" class="menu-link menu-bar-link" data-drupal-link-system-path="node/32">Algorithm Support</a>
+
+
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="https://apex.esa.int/project-environments" class="menu-link menu-bar-link" data-drupal-link-system-path="node/4">Project Environments</a>
+
+                <div class="c-sub-menu js-mega-menu">
+  <div class="c-sub-menu__right">
+          <div class="c-sub-menu__content js-mega-menu-content" aria-hidden="false" data-index="1">
+                              <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2025-05/noun-web-coding-7356387-00AE9D.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/qgis" class="stretched-link">
+                  QGIS
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2025-05/noun-web-coding-7223058-00619E.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/codeserver" class="stretched-link">
+                  CodeServer
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-coding-7221629-F47920.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/jupyterlab" class="stretched-link">
+                  JupyterLab
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-internet-7110830-FBAB18.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/web-portal" class="stretched-link">
+                  Web Portal
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-11/noun-planet-5054191-00AE9D_WEB.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/geospatial-explorer" class="stretched-link">
+                  Geospatial Explorer
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-manual-book-4118546-00619E.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/documentation-hub" class="stretched-link">
+                  Documentation Hub
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-internet-forum-6263703-FBAB18.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/user-forum" class="stretched-link">
+                  User Forum
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/Catalogue%20_%20noun-course-catalogue-5992577-008E7A.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/product-catalogue" class="stretched-link">
+                  Product Catalogue
+                </a>
+              </h6>
+            </div>
+                        </div>
+      </div>
+</div>
+
+
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="" class="menu-link menu-bar-link">Resources</a>
+
+
+                        <div class="c-sub-menu c-sub-menu--basic">
+            <ul>
+                              <li><a href="https://algorithm-catalogue.apex.esa.int/" target="_self" class="sub-menu-link">Algorithm Catalogue</a></li>
+                              <li><a href="https://browser.apex.esa.int/external/eoresults.esa.int/stac" target="_self" class="sub-menu-link">Data Catalogue</a></li>
+                              <li><a href="https://explorer.apex.esa.int/" class="sub-menu-link">Geospatial Explorer</a></li>
+                              <li><a href="https://demo.apex.esa.int/" class="sub-menu-link">Demo Project Environment</a></li>
+                          </ul>
+          </div>
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="" class="menu-link menu-bar-link">Community</a>
+
+
+                        <div class="c-sub-menu c-sub-menu--basic">
+            <ul>
+                              <li><a href="https://esa-apex.github.io/apex_documentation/" class="sub-menu-link">Documentation</a></li>
+                              <li><a href="https://forum.apex.esa.int/" class="sub-menu-link">User Forum</a></li>
+                              <li><a href="https://apex.esa.int/frequently-asked-questions" class="sub-menu-link" data-drupal-link-system-path="node/9">FAQ</a></li>
+                          </ul>
+          </div>
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="https://apex.esa.int/about-apex" class="menu-link menu-bar-link" data-drupal-link-system-path="node/5">About APEx</a>
+
+
+                        <div class="c-sub-menu c-sub-menu--basic">
+            <ul>
+                              <li><a href="https://apex.esa.int/about-apex" class="sub-menu-link" data-drupal-link-system-path="node/5">Mission Statement</a></li>
+                              <li><a href="https://apex.esa.int/news" class="sub-menu-link" data-drupal-link-system-path="node/33">News</a></li>
+                          </ul>
+          </div>
+
+    </li>
+
+              </ul>
+
+
+
+  </div>
+
+
+  </nav>
+
+  </div>
+
+      </div>
+
+      <div class="c-header__contact">
+        <a href="https://apex.esa.int/contact" class="btn btn-primary btn--arrow">Contact us</a>
+      </div>
+
+      <div class="c-hamburger__wrapper">
+                <div class="c-hamburger js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+    </div></div>
+<aside class="c-sidebar js-hamburger-menu">
+    <div class="container">
+        <div class="c-sidebar__inner">
+             <div class="region region-search">
+    <nav role="navigation" aria-labelledby="block-vitotheme-mainnavigation-2-menu" id="block-vitotheme-mainnavigation-2" class="block block-menu navigation menu--main">
+            
+  <h5 class="visually-hidden" id="block-vitotheme-mainnavigation-2-menu">Main navigation</h5>
+  
+
+        
+              <ul data-block="search" class="c-sidebar__menu">
+                    <li>
+        <a href="https://apex.esa.int/algorithm-support" data-drupal-link-system-path="node/32">Algorithm Support</a>
+              </li>
+                <li>
+        <a href="https://apex.esa.int/project-environments" data-drupal-link-system-path="node/4">Project Environments</a>
+              </li>
+                <li>
+        <a href="">Resources</a>
+              </li>
+                <li>
+        <a href="">Community</a>
+              </li>
+                <li>
+        <a href="https://apex.esa.int/about-apex" data-drupal-link-system-path="node/5">About APEx</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+    </div>
+</aside>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">APEx - Documentation Portal</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Guides</li><li class="breadcrumb-item">Developer Guides</li><li class="breadcrumb-item"><a href="../guides/dispatch_execution_example.html">APEx Dispatch API</a></li><li class="breadcrumb-item"><a href="../guides/dispatch_upscaling_example.html">Upscaling using the APEx Dispatch API</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">On-demand EO services</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../eo_service_usage/openeo_usage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using openEO service</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/platforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supported Platforms</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../instantiation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Environments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/usecases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Cases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/customisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Customisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessing your environment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/geospatial_explorer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geospatial Explorer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/project_portal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Web Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/app_code_server.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code Server IDE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/app_jupyterlab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JupyterLab IDE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/app_qgis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QGIS as a Remote Desktop</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/catalog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Product Catalogue</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Documentation Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instantiation/forum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">User Forum</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../propagation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Support</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/ondemandservices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">On-Demand EO Services</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/usecases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Cases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/porting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Porting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/onboarding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Onboarding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/upscaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Upscaling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/enhancement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Enhancement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/toolboxcloud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Toolbox Cloudification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/intercomparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Intercomparison</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Developer Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Authentication</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/account.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating an APEx account</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/token.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating APEx single sign-on token</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">openEO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/udp_writer_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating openEO based services</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/VisualisingMultipleOpeneoJobs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Upscaling openEO-based services using the openEO Batch Job Manager</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">EOAP</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/eoap_writer_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating EOAP based services</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">APEx Dispatch API</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/dispatch_execution_example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Service execution using the APEx Dispatch API</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/dispatch_upscaling_example.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Upscaling using the APEx Dispatch API</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">APEx Product Catalogue</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/stac_catalog_ingest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ingesting STAC metadata in APEx Product Catalogue</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/catalog_openeo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linking APEx Product Catalogue with an openEO service</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">APEx Algorithm Catalogue</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/algorithm_services_catalogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Registering your service</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/algorithm_services_catalogue_benchmarks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating benchmarks for your service</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/algorithm_catalogue_dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">APEx Algorithm Dashboard</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Admin Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/account.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating an APEx account</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/custom_domain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Custom domains for your project environment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../guides/geospatial_explorer/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geospatial Explorer</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/geospatial_explorer/tutorials/geospatial_explorer_config_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Configuring the APEx Geospatial Explorer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../guides/project_portal/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Web Portal</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/1_login.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Login to the Project Web Portal and the Drupal content overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/2_create_page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manage web pages or add a new page</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/3_paragraphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Edit web pages via paragraphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/3a_text_visuals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add content and/or visuals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/3b_cta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add a Call-To-Action (CTA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/3c_news.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add news items and an overview of the latest or all news</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/3d_event.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add an event and an overview of the latest or all events</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/3e_webform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add a web form</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/3f_logo_banner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add a logo (partners) banner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/3g_publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add publications or downloads (files)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/4_menu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Edit the menu navigation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/5_footer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Edit the footer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/6_customize_website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Customizing the look and feel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/7_manage_partners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manage Partners Block</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/8_tags_themes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manage Tags and Themes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/project_portal/tutorials/9_customize_site_name_slogan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Customizing Site Name and Slogan</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Consumer Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guides/geospatial_explorer/geospatial_explorer_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using the Geospatial Explorer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../interoperability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interoperability and Compliance Guidelines</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definitions &amp; Actors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../propagation/service_development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Service Development Options</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/algohosting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Developer and Provider Guidelines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/datahosting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Provider Guidelines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/algohostingenv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Hosting Platforms Guidelines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/geospatial_explorer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geospatial Explorer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../interoperability/businessmodel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Federated Business Model</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Guides</li><li class="breadcrumb-item">Developer Guides</li><li class="breadcrumb-item"><a href="../guides/dispatch_execution_example.html">APEx Dispatch API</a></li><li class="breadcrumb-item"><a href="../guides/dispatch_upscaling_example.html">Upscaling using the APEx Dispatch API</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Geographical Service Upscaling using the APEx Dispatch API</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This notebooks showcases a demo of the APEx Upscaling Service by demonstrating the capabilities of the <a href="../propagation/upscaling.html#apex-dispatch-api">APEx Dispatch API</a>. In this notebook we will perform a small upscaling exercise for one of the services in the <a href="https://algorithm-catalogue.apex.esa.int/">APEx Algoritm Catalogue</a>, specfically the <a href="https://algorithm-catalogue.apex.esa.int/apps/eurac_pv_farm_detection">PV Farm Detection</a>. We will split up an area of interest in a 20x20km grid and execute this through this upscaling task through the APEx Dispatch API.</p>
+<p>The information that we need is the link to the openEO process and openEO Backend, which you can find in the Execution Information tab on the catalogue.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dispatch_upscaling_example_files/figure-html/c56e06c4-70ab-4d1b-a4ee-3e9baa95d6aa-1-154f044a-df3b-402e-8bfe-4ca84d31af0c.png" class="img-fluid figure-img"></p>
+<figcaption>APEx Algorithm Catalogue - PV Farm Detection Execution Details</figcaption>
+</figure>
+</div>
+<section id="supported-services" class="level2">
+<h2 class="anchored" data-anchor-id="supported-services">Supported Services</h2>
+<p>Please access our <a href="../propagation/upscaling.html#supported-platforms-and-services">documentation</a> to learn which of the platforms and services are supported by the APEx Dispatch API.</p>
+</section>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>It is important to highlight that you will need to have access to the <a href="https://documentation.dataspace.copernicus.eu/Registration.html%22">Copernicus Data Space Ecosytem</a> in order to execute this notebook.</p>
+<div id="f159bf03-1d70-4fb0-a7ce-566aad54e8d4" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>process_url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/ESA-APEx/apex_algorithms/refs/heads/main/algorithm_catalog/eurac/eurac_pv_farm_detection/openeo_udp/eurac_pv_farm_detection.json"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>backend <span class="op">=</span> <span class="st">"https://openeofed.dataspace.copernicus.eu"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="704babe4-c26f-4218-bd3d-7896da6f4728" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium.raster_layers</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rasterio.warp <span class="im">import</span> transform_bounds</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyproj <span class="im">import</span> Transformer</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> base64</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> clear_output, display</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> authlib.integrations.requests_client <span class="im">import</span> OAuth2Session</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urlparse, parse_qs</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="setting-up-the-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-the-parameters">Setting up the parameters</h2>
+<p>Before diving into the code to call the APEx Dispatch API, we start by defining the parameters that we will be using for executing the PV Farm Detection service.</p>
+<div id="c83aa9d5" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>spatial_extent <span class="op">=</span>{</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">"coordinates"</span>: [</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>          [</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            [</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              <span class="fl">16.14820803974601</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>              <span class="fl">48.3081456959695</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            ],</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            [</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>              <span class="fl">16.14820803974601</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>              <span class="fl">48.0326396134746</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            ],</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            [</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>              <span class="fl">16.70922281740272</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>              <span class="fl">48.0326396134746</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            ],</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            [</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>              <span class="fl">16.70922281740272</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>              <span class="fl">48.3081456959695</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>            ],</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>            [</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>              <span class="fl">16.14820803974601</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>              <span class="fl">48.3081456959695</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>            ]</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>          ]</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"type"</span>: <span class="st">"Polygon"</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>temporal_extent <span class="op">=</span> [<span class="st">"2023-05-01"</span>, <span class="st">"2023-09-30"</span>]</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>output_format <span class="op">=</span> <span class="st">"gtiff"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="authentication-with-the-api" class="level2">
+<h2 class="anchored" data-anchor-id="authentication-with-the-api">Authentication with the API</h2>
+<p>To access the different endpoints of the Dispatcher API it is important to first authenticate yourself with the APEx environment.</p>
+<p><strong>NOTE</strong> Please ensure that your CDSE account is linked to APEx account, as described <a href="../propagation/upscaling.html#platform-account-linking">here</a>.</p>
+<div id="47c7fe82-b611-404c-9cb8-204497dbec57" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>KEYCLOAK_HOST <span class="op">=</span> <span class="st">"auth.apex.esa.int"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>CLIENT_ID <span class="op">=</span> <span class="st">"apex-dispatcher-api-prod"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="b5ee27f5-9e69-4557-ba83-ec7cb74aa874" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Endpoints</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>authorization_endpoint <span class="op">=</span> <span class="ss">f"https://</span><span class="sc">{</span>KEYCLOAK_HOST<span class="sc">}</span><span class="ss">/realms/apex/protocol/openid-connect/auth"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>token_endpoint <span class="op">=</span> <span class="ss">f"https://</span><span class="sc">{</span>KEYCLOAK_HOST<span class="sc">}</span><span class="ss">/realms/apex/protocol/openid-connect/token"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Global token store</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>_token_data <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_access_token():</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns a valid access token. Refreshes it automatically if expired.</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> _token_data</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If we have a token and it hasn't expired yet, return it</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> _token_data <span class="kw">and</span> _token_data.get(<span class="st">"expires_at"</span>, <span class="dv">0</span>) <span class="op">&gt;</span> time.time() <span class="op">+</span> <span class="dv">10</span>:</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> _token_data[<span class="st">"access_token"</span>]</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If token exists but is expired and has a refresh_token, refresh it</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> _token_data <span class="kw">and</span> <span class="st">"refresh_token"</span> <span class="kw">in</span> _token_data:</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        session <span class="op">=</span> OAuth2Session(CLIENT_ID, token<span class="op">=</span>_token_data)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        _token_data <span class="op">=</span> session.refresh_token(token_endpoint)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> _token_data[<span class="st">"access_token"</span>]</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Otherwise, start a new OAuth2 flow</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    session <span class="op">=</span> OAuth2Session(</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        client_id<span class="op">=</span>CLIENT_ID,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        redirect_uri<span class="op">=</span><span class="st">"http://localhost:8000/callback"</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    uri, state <span class="op">=</span> session.create_authorization_url(authorization_endpoint)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Open this URL in your browser:"</span>, uri)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    redirect_url <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Paste the redirect URL here: "</span>)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    parsed <span class="op">=</span> urlparse(redirect_url)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    code <span class="op">=</span> parse_qs(parsed.query).get(<span class="st">"code"</span>)[<span class="dv">0</span>]</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    _token_data <span class="op">=</span> session.fetch_token(</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>        token_endpoint,</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        code<span class="op">=</span>code,</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>        client_secret<span class="op">=</span><span class="va">None</span>,  <span class="co"># only if your client is confidential</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>        include_client_id<span class="op">=</span><span class="va">True</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> _token_data[<span class="st">"access_token"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="retrieval-of-the-tiles" class="level2">
+<h2 class="anchored" data-anchor-id="retrieval-of-the-tiles">Retrieval of the tiles</h2>
+<p>The first step in our upscaling exercise is to determine the different tiles to be processed based on the given <code>area_of_interest</code>. In this example we ask the dispatcher to split up the area in a <code>20x20km</code> grid. This results in a list of tiles that are visualised on the map.</p>
+<div id="e0618338" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get tiles</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tiles <span class="op">=</span> requests.post(<span class="st">"https://dispatch-api.apex.esa.int/tiles"</span>, json<span class="op">=</span>{</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"grid"</span>: <span class="st">"20x20km"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"aoi"</span>: spatial_extent</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>}).json()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Processing </span><span class="sc">{</span><span class="bu">len</span>(tiles[<span class="st">'geometries'</span>])<span class="sc">}</span><span class="ss"> tiles for area of interest"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Processing 12 tiles for area of interest</code></pre>
+</div>
+</div>
+<div id="6de8d686" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate center and zoom from spatial extent bounds</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> spatial_extent[<span class="st">"coordinates"</span>][<span class="dv">0</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lons <span class="op">=</span> [c[<span class="dv">0</span>] <span class="cf">for</span> c <span class="kw">in</span> coords]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>lats <span class="op">=</span> [c[<span class="dv">1</span>] <span class="cf">for</span> c <span class="kw">in</span> coords]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>center_lat <span class="op">=</span> (<span class="bu">min</span>(lats) <span class="op">+</span> <span class="bu">max</span>(lats)) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>center_lon <span class="op">=</span> (<span class="bu">min</span>(lons) <span class="op">+</span> <span class="bu">max</span>(lons)) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>zoom <span class="op">=</span> <span class="dv">9</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a folium map centered at the area of interest</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>m_tiles <span class="op">=</span> folium.Map(</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    location<span class="op">=</span>[center_lat, center_lon],</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    zoom_start<span class="op">=</span>zoom,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    tiles<span class="op">=</span><span class="st">"CartoDB positron"</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add tiles as GeoJSON</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>folium.GeoJson(</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tiles,</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    style_function<span class="op">=</span><span class="kw">lambda</span> x: {</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"color"</span>: <span class="st">"#1f77b4"</span>,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"weight"</span>: <span class="dv">1</span>,</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"fillOpacity"</span>: <span class="fl">0.1</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>).add_to(m_tiles)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit bounds to tiles</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> spatial_extent[<span class="st">"coordinates"</span>][<span class="dv">0</span>]</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>lons <span class="op">=</span> [c[<span class="dv">0</span>] <span class="cf">for</span> c <span class="kw">in</span> coords]</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>lats <span class="op">=</span> [c[<span class="dv">1</span>] <span class="cf">for</span> c <span class="kw">in</span> coords]</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>bounds <span class="op">=</span> [[<span class="bu">min</span>(lats), <span class="bu">min</span>(lons)], [<span class="bu">max</span>(lats), <span class="bu">max</span>(lons)]]</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>m_tiles.fit_bounds(bounds)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the map</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>m_tiles</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; />
+    <script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;></script>
+    <script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;></script>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;></script>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/>
+    
+            <meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
+            <style>
+                #map_42cd3c5d182e1263bdb855d8f3870429 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class=&quot;folium-map&quot; id=&quot;map_42cd3c5d182e1263bdb855d8f3870429&quot; ></div>
+        
+</body>
+<script>
+    
+    
+            var map_42cd3c5d182e1263bdb855d8f3870429 = L.map(
+                &quot;map_42cd3c5d182e1263bdb855d8f3870429&quot;,
+                {
+                    center: [48.17039265472205, 16.428715428574364],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 9,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8400b70d39a5cbafced804d6d1a5c51f = L.tileLayer(
+                &quot;https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 20,
+  &quot;maxNativeZoom&quot;: 20,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\&quot;https://carto.com/attributions\&quot;\u003eCARTO\u003c/a\u003e&quot;,
+  &quot;subdomains&quot;: &quot;abcd&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_8400b70d39a5cbafced804d6d1a5c51f.addTo(map_42cd3c5d182e1263bdb855d8f3870429);
+        
+    
+        function geo_json_09c7ef4a7ad33ff4378731271351324d_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {&quot;color&quot;: &quot;#1f77b4&quot;, &quot;fillOpacity&quot;: 0.1, &quot;weight&quot;: 1};
+            }
+        }
+
+        function geo_json_09c7ef4a7ad33ff4378731271351324d_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_09c7ef4a7ad33ff4378731271351324d = L.geoJson(null, {
+                onEachFeature: geo_json_09c7ef4a7ad33ff4378731271351324d_onEachFeature,
+            
+                style: geo_json_09c7ef4a7ad33ff4378731271351324d_styler,
+            ...{
+}
+        });
+
+        function geo_json_09c7ef4a7ad33ff4378731271351324d_add (data) {
+            geo_json_09c7ef4a7ad33ff4378731271351324d
+                .addData(data);
+        }
+            geo_json_09c7ef4a7ad33ff4378731271351324d_add({&quot;features&quot;: [{&quot;geometry&quot;: {&quot;geometries&quot;: [{&quot;coordinates&quot;: [[[16.14820803974601, 48.15264155094015], [16.32787109656991, 48.15264155094015], [16.32787109656991, 48.03263961347459], [16.14820803974601, 48.03263961347459], [16.14820803974601, 48.15264155094015]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.14820803974601, 48.27236350696201], [16.32787109656991, 48.27236350696201], [16.32787109656991, 48.15264155094015], [16.14820803974601, 48.15264155094015], [16.14820803974601, 48.27236350696201]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.14820803974601, 48.3081456959695], [16.32787109656991, 48.3081456959695], [16.32787109656991, 48.27236350696201], [16.14820803974601, 48.27236350696201], [16.14820803974601, 48.3081456959695]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.32787109656991, 48.03263961347459], [16.32787109656991, 48.15264155094015], [16.507534153393816, 48.15264155094015], [16.507534153393816, 48.03263961347459], [16.32787109656991, 48.03263961347459]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.32787109656991, 48.15264155094015], [16.32787109656991, 48.27236350696201], [16.507534153393816, 48.27236350696201], [16.507534153393816, 48.15264155094015], [16.32787109656991, 48.15264155094015]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.507534153393816, 48.3081456959695], [16.507534153393816, 48.27236350696201], [16.32787109656991, 48.27236350696201], [16.32787109656991, 48.3081456959695], [16.507534153393816, 48.3081456959695]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.507534153393816, 48.03263961347459], [16.507534153393816, 48.15264155094015], [16.68719721021772, 48.15264155094015], [16.68719721021772, 48.03263961347459], [16.507534153393816, 48.03263961347459]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.507534153393816, 48.15264155094015], [16.507534153393816, 48.27236350696201], [16.68719721021772, 48.27236350696201], [16.68719721021772, 48.15264155094015], [16.507534153393816, 48.15264155094015]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.68719721021772, 48.3081456959695], [16.68719721021772, 48.27236350696201], [16.507534153393816, 48.27236350696201], [16.507534153393816, 48.3081456959695], [16.68719721021772, 48.3081456959695]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.68719721021772, 48.03263961347459], [16.68719721021772, 48.15264155094015], [16.709222817402715, 48.15264155094015], [16.709222817402715, 48.03263961347459], [16.68719721021772, 48.03263961347459]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.709222817402715, 48.15264155094015], [16.68719721021772, 48.15264155094015], [16.68719721021772, 48.27236350696201], [16.709222817402715, 48.27236350696201], [16.709222817402715, 48.15264155094015]]], &quot;type&quot;: &quot;Polygon&quot;}, {&quot;coordinates&quot;: [[[16.709222817402715, 48.3081456959695], [16.709222817402715, 48.27236350696201], [16.68719721021772, 48.27236350696201], [16.68719721021772, 48.3081456959695], [16.709222817402715, 48.3081456959695]]], &quot;type&quot;: &quot;Polygon&quot;}], &quot;type&quot;: &quot;GeometryCollection&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
+
+        
+    
+            geo_json_09c7ef4a7ad33ff4378731271351324d.addTo(map_42cd3c5d182e1263bdb855d8f3870429);
+        
+    
+            map_42cd3c5d182e1263bdb855d8f3870429.fitBounds(
+                [[48.0326396134746, 16.14820803974601], [48.3081456959695, 16.70922281740272]],
+                {}
+            );
+        
+</script>
+</html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
+</div>
+</div>
+</section>
+<section id="launching-the-upscaling-task" class="level2">
+<h2 class="anchored" data-anchor-id="launching-the-upscaling-task">Launching the upscaling task</h2>
+<p>Next we trigger the upscaling task on the dispatcher. We provide the details of the processing jobs that need to be executed together with a <code>dimension</code>. This is an important parameter as this lets the dispatcher know how to scale up. In this case we are asking the dispatcher to scale up using the <code>spatial_extent</code>, creating a separate job for each geometry in the <code>values</code> section. The dispatcher will take care of all the rest. The result is the information on the created upscaling task.</p>
+<div id="c5ca3fdd-7559-4fc7-8318-61b5dc59475f" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>upscaling_task <span class="op">=</span> requests.post(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"https://dispatch-api.apex.esa.int/upscale_tasks"</span>, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    headers<span class="op">=</span>{</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>get_access_token()<span class="sc">}</span><span class="ss">"</span>        </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    json<span class="op">=</span>{</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"title"</span>: <span class="st">"Upscalinge - PV Detection"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"label"</span>: <span class="st">"openeo"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"service"</span>: {</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">"endpoint"</span>: backend,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>           <span class="st">"application"</span>: process_url</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"format"</span>: output_format,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"parameters"</span>: {</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>            <span class="st">"temporal_extent"</span>: temporal_extent</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"dimension"</span>: {</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>            <span class="st">"name"</span>: <span class="st">"spatial_extent"</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>            <span class="st">"values"</span>: tiles[<span class="st">"geometries"</span>]</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>).json()</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>upscaling_task_id <span class="op">=</span> upscaling_task[<span class="st">'id'</span>]</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>upscaling_task</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>{'id': 1,
+ 'title': 'Upscalinge - PV Detection',
+ 'label': 'openeo',
+ 'status': 'created'}</code></pre>
+</div>
+</div>
+</section>
+<section id="retrieve-status-of-the-upscaling-task" class="level2">
+<h2 class="anchored" data-anchor-id="retrieve-status-of-the-upscaling-task">Retrieve status of the upscaling task</h2>
+<p>We can now write a continuous monitoring process that fetches the status of the upscaling task and showcase the results on the map.</p>
+<div id="02e5c413-d110-4110-be59-c86e5226edc5" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_cog_layer(cog_url, name<span class="op">=</span><span class="va">None</span>, m<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Add a Cloud-Optimized GeoTIFF layer to the folium map."""</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> rasterio.<span class="bu">open</span>(cog_url) <span class="im">as</span> src:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        band <span class="op">=</span> src.read(<span class="dv">1</span>).astype(np.float32)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        bounds <span class="op">=</span> transform_bounds(src.crs, <span class="st">"EPSG:4326"</span>, <span class="op">*</span>src.bounds)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Normalize 0–255</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        band <span class="op">=</span> <span class="dv">255</span> <span class="op">*</span> (band <span class="op">-</span> band.<span class="bu">min</span>()) <span class="op">/</span> (band.<span class="bu">max</span>() <span class="op">-</span> band.<span class="bu">min</span>())</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        band <span class="op">=</span> band.astype(np.uint8)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to PNG data URI</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    buf <span class="op">=</span> io.BytesIO()</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    Image.fromarray(band).save(buf, <span class="bu">format</span><span class="op">=</span><span class="st">"PNG"</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    data_url <span class="op">=</span> <span class="st">"data:image/png;base64,"</span> <span class="op">+</span> base64.b64encode(buf.getvalue()).decode(<span class="st">"utf-8"</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># bounds format: (west, south, east, north)</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    bbox <span class="op">=</span> [[bounds[<span class="dv">1</span>], bounds[<span class="dv">0</span>]], [bounds[<span class="dv">3</span>], bounds[<span class="dv">2</span>]]]</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    overlay <span class="op">=</span> folium.raster_layers.ImageOverlay(</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        image<span class="op">=</span>data_url,</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>        bounds<span class="op">=</span>bbox,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span>name <span class="kw">or</span> <span class="st">"COG"</span>,</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>        opacity<span class="op">=</span><span class="fl">0.8</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m:</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>        overlay.add_to(m)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> overlay</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_geojson_layer(url, name<span class="op">=</span><span class="va">None</span>, m<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Add a GeoJSON layer to the folium map."""</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> requests.get(url).json()</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"crs"</span> <span class="kw">in</span> data <span class="kw">and</span> <span class="st">"properties"</span> <span class="kw">in</span> data[<span class="st">"crs"</span>]:</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        transformer <span class="op">=</span> Transformer.from_crs(</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>            data[<span class="st">"crs"</span>][<span class="st">"properties"</span>][<span class="st">"name"</span>], </span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>            <span class="st">"EPSG:4326"</span>, </span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>            always_xy<span class="op">=</span><span class="va">True</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> feature <span class="kw">in</span> data[<span class="st">"features"</span>]:</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>            geom <span class="op">=</span> feature[<span class="st">"geometry"</span>]</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> geom[<span class="st">"type"</span>] <span class="op">==</span> <span class="st">"Polygon"</span>:</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>                new_coords <span class="op">=</span> []</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> ring <span class="kw">in</span> geom[<span class="st">"coordinates"</span>]:</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>                    new_ring <span class="op">=</span> [<span class="bu">list</span>(transformer.transform(x, y)) <span class="cf">for</span> x, y <span class="kw">in</span> ring]</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>                    new_coords.append(new_ring)</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>                geom[<span class="st">"coordinates"</span>] <span class="op">=</span> new_coords</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>    geo_layer <span class="op">=</span> folium.GeoJson(data<span class="op">=</span>data, name<span class="op">=</span>name <span class="kw">or</span> <span class="st">"GeoJSON"</span>)</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m:</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>        geo_layer.add_to(m)</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> geo_layer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ac428293-7cd4-49a8-9bfa-4e0dc8f4d2cc" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Color map for job statuses</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>color_map <span class="op">=</span> {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"created"</span>: <span class="st">"blue"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"queued"</span>: <span class="st">"orange"</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"running"</span>: <span class="st">"yellow"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"finished"</span>: <span class="st">"lime"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"canceled"</span>: <span class="st">"gray"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"failed"</span>: <span class="st">"red"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">None</span>: <span class="st">"grey"</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_upscaling_status(jobs_data):</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Create a fresh folium map with current job statuses for all tiles."""</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a new map for each update</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    status_map <span class="op">=</span> folium.Map(</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        location<span class="op">=</span>[center_lat, center_lon],</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        zoom_start<span class="op">=</span>zoom,</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        tiles<span class="op">=</span><span class="st">"CartoDB positron"</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add each job as a colored GeoJSON feature</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    features <span class="op">=</span> []</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> job <span class="kw">in</span> jobs_data:</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> job.get(<span class="st">"status"</span>, <span class="st">"unknown"</span>)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>        color <span class="op">=</span> color_map.get(status, <span class="st">"black"</span>)</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>        job_id <span class="op">=</span> job[<span class="st">"id"</span>]</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> job[<span class="st">"status"</span>] <span class="op">==</span> <span class="st">"finished"</span> <span class="kw">and</span> job_id <span class="kw">not</span> <span class="kw">in</span> processed_jobs:</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>            processed_jobs.add(job_id)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>            show_results(job_id, status_map)</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>        features.append({</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>            <span class="st">"type"</span>: <span class="st">"Feature"</span>,</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>            <span class="st">"geometry"</span>: job[<span class="st">"parameters"</span>][<span class="st">"spatial_extent"</span>],</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>            <span class="st">"properties"</span>: {</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>                <span class="st">"status"</span>: status,</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>                <span class="st">"id"</span>: job[<span class="st">"id"</span>]</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create FeatureCollection and add to map</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>    feature_collection <span class="op">=</span> {</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">"type"</span>: <span class="st">"FeatureCollection"</span>,</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">"features"</span>: features</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>    folium.GeoJson(</span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>        data<span class="op">=</span>feature_collection,</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>        style_function<span class="op">=</span><span class="kw">lambda</span> feature: {</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>            <span class="st">"color"</span>: color_map.get(feature[<span class="st">"properties"</span>].get(<span class="st">"status"</span>), <span class="st">"black"</span>),</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>            <span class="st">"fillColor"</span>: color_map.get(feature[<span class="st">"properties"</span>].get(<span class="st">"status"</span>), <span class="st">"black"</span>),</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>            <span class="st">"fillOpacity"</span>: <span class="fl">0.3</span> <span class="cf">if</span> feature[<span class="st">"properties"</span>].get(<span class="st">"status"</span>) <span class="op">!=</span> <span class="st">"finished"</span> <span class="cf">else</span> <span class="fl">0.0</span>,</span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>            <span class="st">"weight"</span>: <span class="dv">2</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>        tooltip<span class="op">=</span>folium.GeoJsonTooltip(fields<span class="op">=</span>[<span class="st">"status"</span>, <span class="st">"id"</span>], aliases<span class="op">=</span>[<span class="st">"Status"</span>, <span class="st">"Job ID"</span>])</span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>    ).add_to(status_map)</span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fit bounds</span></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>    coords <span class="op">=</span> spatial_extent[<span class="st">"coordinates"</span>][<span class="dv">0</span>]</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>    lons <span class="op">=</span> [c[<span class="dv">0</span>] <span class="cf">for</span> c <span class="kw">in</span> coords]</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>    lats <span class="op">=</span> [c[<span class="dv">1</span>] <span class="cf">for</span> c <span class="kw">in</span> coords]</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> [[<span class="bu">min</span>(lats), <span class="bu">min</span>(lons)], [<span class="bu">max</span>(lats), <span class="bu">max</span>(lons)]]</span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>    status_map.fit_bounds(bounds)</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> status_map</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep track of processed jobs</span></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>processed_jobs <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_results(job_id, status_map):</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retrieve and display job results on the map."""</span></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> requests.get(</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"https://dispatch-api.apex.esa.int/unit_jobs/</span><span class="sc">{</span>job_id<span class="sc">}</span><span class="ss">/results"</span>,</span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a>        headers<span class="op">=</span>{<span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>get_access_token()<span class="sc">}</span><span class="ss">"</span>}</span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> result.json()</span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> output_format.lower() <span class="op">==</span> <span class="st">"geojson"</span>:</span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>        result_url <span class="op">=</span> response[<span class="st">"assets"</span>][<span class="st">"vectorcube.geojson"</span>][<span class="st">"href"</span>]</span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a>        add_geojson_layer(result_url, name<span class="op">=</span><span class="ss">f"Job </span><span class="sc">{</span>job_id<span class="sc">}</span><span class="ss"> Results"</span>, m<span class="op">=</span>status_map)</span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>        cog_url <span class="op">=</span> response[<span class="st">"assets"</span>][<span class="st">"openEO.tif"</span>][<span class="st">"href"</span>]</span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a>        add_cog_layer(cog_url, name<span class="op">=</span><span class="ss">f"Job </span><span class="sc">{</span>job_id<span class="sc">}</span><span class="ss"> Results"</span>, m<span class="op">=</span>status_map)</span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> listen_for_updates():</span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Monitor upscaling task status via polling."""</span></span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>    finished <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> finished:</span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(</span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"https://dispatch-api.apex.esa.int/upscale_tasks/</span><span class="sc">{</span>upscaling_task_id<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a>            headers<span class="op">=</span>{<span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>get_access_token()<span class="sc">}</span><span class="ss">"</span>}</span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a>        task_data <span class="op">=</span> response.json()</span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot updated status for all jobs</span></span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>        status_map <span class="op">=</span> plot_upscaling_status(task_data.get(<span class="st">"jobs"</span>, []))</span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a>        clear_output(wait<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>        display(status_map)</span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Check if entire task is complete</span></span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a>        finished <span class="op">=</span> task_data.get(<span class="st">"status"</span>) <span class="kw">in</span> [<span class="st">"finished"</span>, <span class="st">"canceled"</span>, <span class="st">"failed"</span>]</span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> finished:</span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a>            time.sleep(<span class="dv">3</span>)</span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the monitoring process</span></span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a><span class="cf">await</span> listen_for_updates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; />
+    <script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;></script>
+    <script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;></script>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;></script>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/>
+    
+            <meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
+            <style>
+                #map_5705b232ec2c395080c9e9da1a974b63 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+            
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class=&quot;folium-map&quot; id=&quot;map_5705b232ec2c395080c9e9da1a974b63&quot; ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5705b232ec2c395080c9e9da1a974b63 = L.map(
+                &quot;map_5705b232ec2c395080c9e9da1a974b63&quot;,
+                {
+                    center: [48.17039265472205, 16.428715428574364],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 9,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c43e97d8940af4e17dec6e65e0ec5570 = L.tileLayer(
+                &quot;https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 20,
+  &quot;maxNativeZoom&quot;: 20,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\&quot;https://carto.com/attributions\&quot;\u003eCARTO\u003c/a\u003e&quot;,
+  &quot;subdomains&quot;: &quot;abcd&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_c43e97d8940af4e17dec6e65e0ec5570.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_eb24f0afa2947d0e367e57d893d244eb = L.imageOverlay(
+                &quot;data:image/png;base64,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&quot;,
+                [[48.03065221056252, 16.145437199562057], [48.15459103854718, 16.330967018635683]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_eb24f0afa2947d0e367e57d893d244eb.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_3f9682bd2efc40189fe5b664b94af1eb = L.imageOverlay(
+                &quot;data:image/png;base64,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&quot;,
+                [[48.15067620017046, 16.145417076100628], [48.2743419207307, 16.3309748170967]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_3f9682bd2efc40189fe5b664b94af1eb.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_5af5aa1e78dc15dcb1987d55be2d6390 = L.imageOverlay(
+                &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABTwAAAGkCAAAAAA5grV2AAACZUlEQVR4nO3UwQ3AIAwEQaD/nkkNOSEZJzN/W/faMQAAAAAAAAAAAAAAAAAAAAAAAAD4qRne7fwUoL9VPQCgI/EEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4JR57BPftKsHwJ1W9QCAjsQTICCeAAHxBAiIJ0BAPAHGew8ZnQISmiR4RwAAAABJRU5ErkJggg==&quot;,
+                [[48.270427908044674, 16.147282213019622], [48.310149772942054, 16.328804569433395]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_5af5aa1e78dc15dcb1987d55be2d6390.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_6c38cafebc7731a76d36fe394ddf82e7 = L.imageOverlay(
+                &quot;data:image/png;base64,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&quot;,
+                [[48.03041325408665, 16.324655159526042], [48.154905181278586, 16.51114120616298]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_6c38cafebc7731a76d36fe394ddf82e7.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_d1451fd5494d6c9105677479ee1e03a1 = L.imageOverlay(
+                &quot;data:image/png;base64,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&quot;,
+                [[48.150348096496, 16.32464708896813], [48.274656803543564, 16.51116553985836]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_d1451fd5494d6c9105677479ee1e03a1.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_e0df1c26768d8997509b089cf196b9f1 = L.imageOverlay(
+                &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABT0AAAGnCAAAAABQ1KzmAAADTklEQVR4nO3cy1KDMACGUcL0/V85XeiqF6R/gwnhnI0bUSbabxICLAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwhHLITwU4Wu0csLXnLwc4LfUEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+FF+vwJ8oKrH6h8GIKCeAAkr9y0WJ8A75p4ACfUEAAAAAADAHUtAS/VCUbHnDpBQT6CZeqWxVE+AhHoCJNQTaKkYTgAAAAAAAAAAAAAAAAAAAABgEN6HsuNdrwYJeOINdQAJ9QRIqCdAQj03ueIJvKGeAAn13GbyCbymngAJ9QRIWJnuuV++tPkuYCLmnq0fTAKuQT0BEur5h2I9DryingAJ9dzDFU3gkXoCJG7RUTxwcRQux9wTAAAAAAAAm8U9VMMOE7DnDpBQzy6qp5fg7NTz/7m1HmagngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAYSu8TgP6qjwKfW4NjAFBPgIR6AiTUEwAAAAAAAAAAAAAAAAAg5Q110Fj1uboGz7kDJNQTIKGeAAAAMDJ77nAQe++Tc90TIKGeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8J3y5fFwqGp8GdXa+wQATunW+wSYe95occO0zD0BEuoJkLCwmlCd6O9q14hhmXsCJNQTIDHNCo85WbkzLHNPgCVwB2MIFW97UfvuAAAAAElFTkSuQmCC&quot;,
+                [[48.270100637010785, 16.32693055767912], [48.31037354491919, 16.50871441523342]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_e0df1c26768d8997509b089cf196b9f1.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_fb13aaff680a2bd25b15aa0f10ddb6a6 = L.imageOverlay(
+                &quot;data:image/png;base64,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&quot;,
+                [[48.03007488745887, 16.504006031971247], [48.155206527137985, 16.691182357910964]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_fb13aaff680a2bd25b15aa0f10ddb6a6.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_7dd87e6ad28c5657cb4973bba4fbb7e0 = L.imageOverlay(
+                &quot;data:image/png;base64,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&quot;,
+                [[48.15010054208951, 16.504015008624823], [48.274869032885164, 16.691220014484873]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_7dd87e6ad28c5657cb4973bba4fbb7e0.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_221440634c0a22b3e89b86e16fddff48 = L.imageOverlay(
+                &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABT4AAAGqCAAAAAAHfQQ7AAAC90lEQVR4nO3bQQrCMBBA0aT0/leOCIKrCo5OCjPvLdwUtG3IZ6o4BgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG82dHwYNLNuqi+PuE4B61rr7DNjB9An/9U6n3VWcBYa0gNpetVlfSCuo7VWb7z4hwVTOBiwybJhEbbSKTJ8AIfIJECKfACHyCRAin5DPL0clnXefANTm/5t1mT4hneGzJtMnJDJ7Vmb6hGyGz6LkEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPabo5vV8aKB/zsS3hOggXM0tZ4vxlAgbLbOZ+PrB37V/eH9VVGAb3XPJ0BQ23x6agd+0zafYwooAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMC1+eEYjOUewIXj6gAAn8gnQIh8AoTIJ0CIfAKEyCdAiHwChMgnwIh4AKmqDkV7Kt5IAAAAAElFTkSuQmCC&quot;,
+                [[48.26985399916612, 16.506447674734343], [48.31067773100397, 16.688493315018896]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_221440634c0a22b3e89b86e16fddff48.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_56948d3d37569b137dbd911d6274bddc = L.imageOverlay(
+                &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAAU6CAAAAACVc/Y+AAABFElEQVR4nO3BMQEAAADCoPVPbQlPoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAuBvtbAAFAPi9VAAAAAElFTkSuQmCC&quot;,
+                [[48.03226786256692, 16.683226620593615], [48.15298028914775, 16.713231896058097]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_56948d3d37569b137dbd911d6274bddc.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_e259655295b140b2e3ad82818eb7263e = L.imageOverlay(
+                &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAAU3CAAAAAAp7eXgAAAB70lEQVR4nO3WQW6lMBAE0HIr97+yR8r8iFUUMUoGV/TeArwA1EVj7AQAAAAAAAAAAAAAAD61crb9dYmTepN6k3qT4+3+CCmPsPojAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcIz1bU/a3/mwOyb1JvXm6QKAI9eFPLIwTOpN6k3qTepN6k3qzdMFAADwI3baTX+G6e/DpN6k3366AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPgvVort9/on9d7SaV9fUGuEd38zNH9Ie1dHWNewNUJ+QYT1dAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAX1hJ9seg06TevJrwOjaa4tpfpj5Brrmwf8F03uk0qTe51Ya9d3kXdg40qTepN+vaHJVuk9a+TsURVqq93br6yLyTenP3vZ63NKxbV7/mfo4yqTf/cM9ujrByoHX7jiN/rAAAAAAAAAAAAAAAQM71B99dIGECA47nAAAAAElFTkSuQmCC&quot;,
+                [[48.15229284809273, 16.683250096271397], [48.27273368963567, 16.713324009970606]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_e259655295b140b2e3ad82818eb7263e.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            var image_overlay_4b2609a624e5d7abf2023bae31ca53bb = L.imageOverlay(
+                &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK0AAAGTCAAAAAB/w832AAAAo0lEQVR4nO3VMQ7DMAwDQEno/7/sTMleFY2j4G7yQoADbUcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA82Q/un6Ld1RMUjFJtgZw9wJOn+hZWxpXTFJfJ/Kaw/OXsGKn7Jbdcs8qJqlmLge0XechJ70JGWN+h/xHDwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4lwO04wcjtfLq8gAAAABJRU5ErkJggg==&quot;,
+                [[48.27195771456433, 16.685963419945242], [48.308542928846485, 16.710478004432325]],
+                {
+  &quot;opacity&quot;: 0.8,
+}
+            );
+        
+    
+            image_overlay_4b2609a624e5d7abf2023bae31ca53bb.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+        function geo_json_781db01135703bd7affe604c9d5a01a9_styler(feature) {
+            switch(feature.properties.id) {
+                default:
+                    return {&quot;color&quot;: &quot;lime&quot;, &quot;fillColor&quot;: &quot;lime&quot;, &quot;fillOpacity&quot;: 0.0, &quot;weight&quot;: 2};
+            }
+        }
+
+        function geo_json_781db01135703bd7affe604c9d5a01a9_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_781db01135703bd7affe604c9d5a01a9 = L.geoJson(null, {
+                onEachFeature: geo_json_781db01135703bd7affe604c9d5a01a9_onEachFeature,
+            
+                style: geo_json_781db01135703bd7affe604c9d5a01a9_styler,
+            ...{
+}
+        });
+
+        function geo_json_781db01135703bd7affe604c9d5a01a9_add (data) {
+            geo_json_781db01135703bd7affe604c9d5a01a9
+                .addData(data);
+        }
+            geo_json_781db01135703bd7affe604c9d5a01a9_add({&quot;features&quot;: [{&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.14820803974601, 48.15264155094015], [16.32787109656991, 48.15264155094015], [16.32787109656991, 48.03263961347459], [16.14820803974601, 48.03263961347459], [16.14820803974601, 48.15264155094015]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 109, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.14820803974601, 48.27236350696201], [16.32787109656991, 48.27236350696201], [16.32787109656991, 48.15264155094015], [16.14820803974601, 48.15264155094015], [16.14820803974601, 48.27236350696201]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 110, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.14820803974601, 48.3081456959695], [16.32787109656991, 48.3081456959695], [16.32787109656991, 48.27236350696201], [16.14820803974601, 48.27236350696201], [16.14820803974601, 48.3081456959695]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 111, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.32787109656991, 48.03263961347459], [16.32787109656991, 48.15264155094015], [16.507534153393816, 48.15264155094015], [16.507534153393816, 48.03263961347459], [16.32787109656991, 48.03263961347459]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 112, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.32787109656991, 48.15264155094015], [16.32787109656991, 48.27236350696201], [16.507534153393816, 48.27236350696201], [16.507534153393816, 48.15264155094015], [16.32787109656991, 48.15264155094015]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 113, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.507534153393816, 48.3081456959695], [16.507534153393816, 48.27236350696201], [16.32787109656991, 48.27236350696201], [16.32787109656991, 48.3081456959695], [16.507534153393816, 48.3081456959695]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 114, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.507534153393816, 48.03263961347459], [16.507534153393816, 48.15264155094015], [16.68719721021772, 48.15264155094015], [16.68719721021772, 48.03263961347459], [16.507534153393816, 48.03263961347459]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 115, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.507534153393816, 48.15264155094015], [16.507534153393816, 48.27236350696201], [16.68719721021772, 48.27236350696201], [16.68719721021772, 48.15264155094015], [16.507534153393816, 48.15264155094015]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 116, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.68719721021772, 48.3081456959695], [16.68719721021772, 48.27236350696201], [16.507534153393816, 48.27236350696201], [16.507534153393816, 48.3081456959695], [16.68719721021772, 48.3081456959695]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 117, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.68719721021772, 48.03263961347459], [16.68719721021772, 48.15264155094015], [16.709222817402715, 48.15264155094015], [16.709222817402715, 48.03263961347459], [16.68719721021772, 48.03263961347459]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 118, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.709222817402715, 48.15264155094015], [16.68719721021772, 48.15264155094015], [16.68719721021772, 48.27236350696201], [16.709222817402715, 48.27236350696201], [16.709222817402715, 48.15264155094015]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 119, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;geometry&quot;: {&quot;coordinates&quot;: [[[16.709222817402715, 48.3081456959695], [16.709222817402715, 48.27236350696201], [16.68719721021772, 48.27236350696201], [16.68719721021772, 48.3081456959695], [16.709222817402715, 48.3081456959695]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;properties&quot;: {&quot;id&quot;: 120, &quot;status&quot;: &quot;finished&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
+
+        
+    
+    geo_json_781db01135703bd7affe604c9d5a01a9.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = [&quot;status&quot;, &quot;id&quot;];
+    let aliases = [&quot;Status&quot;, &quot;Job ID&quot;];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  &quot;sticky&quot;: true,
+  &quot;className&quot;: &quot;foliumtooltip&quot;,
+});
+                     
+    
+            geo_json_781db01135703bd7affe604c9d5a01a9.addTo(map_5705b232ec2c395080c9e9da1a974b63);
+        
+    
+            map_5705b232ec2c395080c9e9da1a974b63.fitBounds(
+                [[48.0326396134746, 16.14820803974601], [48.3081456959695, 16.70922281740272]],
+                {}
+            );
+        
+</script>
+</html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="../guides/dispatch_execution_example.html" class="pagination-link" aria-label="Service execution using the APEx Dispatch API">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Service execution using the APEx Dispatch API</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../guides/stac_catalog_ingest.html" class="pagination-link" aria-label="Ingesting STAC metadata in APEx Product Catalogue">
+        <span class="nav-page-text">Ingesting STAC metadata in APEx Product Catalogue</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

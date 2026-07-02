@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Configuring the APEx Geospatial Explorer – APEx - Documentation Portal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../guides/project_portal/index.html" rel="next">
+<link href="../../../guides/geospatial_explorer/index.html" rel="prev">
+<link href="../../../assets/img/logos/apex_icon_blue.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5b02d0b16d1dd912e5f5c4857db19321.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-1d2851e96e8217ecd76c7bfc6292f46c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        'use strict';
+
+        // MegaMenu Class
+        class MegaMenu {
+            constructor() {
+                const megaMenu = document.querySelector('.js-mega-menu');
+                if (!megaMenu) return;
+
+                const megaMenuTopics = document.querySelectorAll('.js-mega-menu-topic');
+                const megaMenuContents = document.querySelectorAll('.js-mega-menu-content');
+
+                megaMenuTopics.forEach(topic => {
+                    topic.addEventListener('click', this.handleClickTopic.bind(this));
+                    topic.addEventListener('mouseover', this.handleHoverTopic.bind(this));
+                    topic.addEventListener('mouseout', this.handleMouseOutTopic.bind(this));
+                });
+
+                this.megaMenuContents = megaMenuContents;
+            }
+
+            handleClickTopic(e) {
+                e.preventDefault();
+                this.switchContent(e.currentTarget);
+            }
+
+            handleHoverTopic(e) {
+                this.switchContent(e.currentTarget);
+            }
+
+            handleMouseOutTopic(e) {
+                // Optional: Add logic for mouse out events if needed
+            }
+
+            switchContent(topic) {
+                const topicIndex = topic.getAttribute('data-index');
+                this.megaMenuContents.forEach(content => {
+                    content.setAttribute('aria-hidden', content.getAttribute('data-index') !== topicIndex);
+                });
+            }
+        }
+
+        // Hamburger Menu Class
+        class HamburgerMenu {
+            constructor() {
+                const hamburgers = document.querySelectorAll('.js-hamburger');
+                const menu = document.querySelector('.js-hamburger-menu');
+                const body = document.body;
+
+                if (menu) {
+                    hamburgers.forEach(hamburger => {
+                        hamburger.addEventListener('click', (e) => this.handleClickHamburger(e, menu, body));
+                    });
+                } else {
+
+                }
+            }
+
+            handleClickHamburger(e, menu, body) {
+                e.preventDefault();
+                menu.classList.toggle('open');
+                body.classList.toggle('has-hamburger-open');
+            }
+        }
+
+        new MegaMenu();
+        new HamburgerMenu();
+    });
+
+
+</script>
+</head><body class="nav-sidebar floating nav-fixed"><div class="blur-container">
+<div class="blur"></div>
+</div>
+<div class="container">
+    <div class="c-header__top">
+        <div class="c-header__navigate">
+            <div class="c-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <a class="c-header__esa-text" href="#">
+                <img src="../../../assets/img/logos/text-esa.svg" alt="The European Space Agency">
+            </a>
+        </div>
+
+        <div>
+            <div class="c-header__esa">
+                <div class="region region-nav-branding">
+                    <div id="block-vitotheme-branding" class="block block-system block-system-branding-block">
+                        <div class="navbar-brand d-flex align-items-center">
+
+                            <a href="../../../" title="Home" rel="home" class="site-logo d-block">
+                                <img src="../../../assets/img/logos/logo-esa.svg" alt="Home" fetchpriority="high">
+                            </a>
+
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container"><div class="c-header__bottom">
+      <a href="https://apex.esa.int/" class="c-header__logo">
+        APEx
+        <span>Application Propagation Environments</span>
+      </a>
+
+      <div class="c-header__nav">
+          <div class="region region-nav-main">
+    <nav role="navigation" aria-labelledby="block-vitotheme-main-navigation-menu" id="block-vitotheme-main-navigation" class="block block-menu navigation menu--main">
+
+  <h5 class="visually-hidden" id="block-vitotheme-main-navigation-menu">Main navigation</h5>
+
+
+
+<!-- Desktop Menu -->
+<div class="navbar-nav navbar-nav-hover align-items-lg-center nav navbar-main d-none d-lg-block">
+  <span class="mobile-menu-trigger" data-bs-toggle="modal" data-bs-target="#mobileMenuModal">
+    <span class="icon-menu"></span>
+  </span>
+  <span class="overlay-gradient-white"></span>
+                      <ul data-block="nav_main" class="menu menu-bar d-flex nav-level-0">
+
+
+    <li>
+              <a href="https://apex.esa.int/algorithm-support" class="menu-link menu-bar-link" data-drupal-link-system-path="node/32">Algorithm Support</a>
+
+
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="https://apex.esa.int/project-environments" class="menu-link menu-bar-link" data-drupal-link-system-path="node/4">Project Environments</a>
+
+                <div class="c-sub-menu js-mega-menu">
+  <div class="c-sub-menu__right">
+          <div class="c-sub-menu__content js-mega-menu-content" aria-hidden="false" data-index="1">
+                              <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2025-05/noun-web-coding-7356387-00AE9D.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/qgis" class="stretched-link">
+                  QGIS
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2025-05/noun-web-coding-7223058-00619E.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/codeserver" class="stretched-link">
+                  CodeServer
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-coding-7221629-F47920.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/jupyterlab" class="stretched-link">
+                  JupyterLab
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-internet-7110830-FBAB18.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/web-portal" class="stretched-link">
+                  Web Portal
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-11/noun-planet-5054191-00AE9D_WEB.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/geospatial-explorer" class="stretched-link">
+                  Geospatial Explorer
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-manual-book-4118546-00619E.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/documentation-hub" class="stretched-link">
+                  Documentation Hub
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/noun-internet-forum-6263703-FBAB18.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/user-forum" class="stretched-link">
+                  User Forum
+                </a>
+              </h6>
+            </div>
+                      <div class="c-sub-menu__item">
+
+
+
+                <img alt="" src="https://apex.esa.int/sites/default/files/2024-10/Catalogue%20_%20noun-course-catalogue-5992577-008E7A.svg">
+
+
+
+
+
+
+              <h6>
+                <a href="https://apex.esa.int/services/product-catalogue" class="stretched-link">
+                  Product Catalogue
+                </a>
+              </h6>
+            </div>
+                        </div>
+      </div>
+</div>
+
+
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="" class="menu-link menu-bar-link">Resources</a>
+
+
+                        <div class="c-sub-menu c-sub-menu--basic">
+            <ul>
+                              <li><a href="https://algorithm-catalogue.apex.esa.int/" target="_self" class="sub-menu-link">Algorithm Catalogue</a></li>
+                              <li><a href="https://browser.apex.esa.int/external/eoresults.esa.int/stac" target="_self" class="sub-menu-link">Data Catalogue</a></li>
+                              <li><a href="https://explorer.apex.esa.int/" class="sub-menu-link">Geospatial Explorer</a></li>
+                              <li><a href="https://demo.apex.esa.int/" class="sub-menu-link">Demo Project Environment</a></li>
+                          </ul>
+          </div>
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="" class="menu-link menu-bar-link">Community</a>
+
+
+                        <div class="c-sub-menu c-sub-menu--basic">
+            <ul>
+                              <li><a href="https://esa-apex.github.io/apex_documentation/" class="sub-menu-link">Documentation</a></li>
+                              <li><a href="https://forum.apex.esa.int/" class="sub-menu-link">User Forum</a></li>
+                              <li><a href="https://apex.esa.int/frequently-asked-questions" class="sub-menu-link" data-drupal-link-system-path="node/9">FAQ</a></li>
+                          </ul>
+          </div>
+
+    </li>
+
+
+
+    <li class="has-children">
+              <a href="https://apex.esa.int/about-apex" class="menu-link menu-bar-link" data-drupal-link-system-path="node/5">About APEx</a>
+
+
+                        <div class="c-sub-menu c-sub-menu--basic">
+            <ul>
+                              <li><a href="https://apex.esa.int/about-apex" class="sub-menu-link" data-drupal-link-system-path="node/5">Mission Statement</a></li>
+                              <li><a href="https://apex.esa.int/news" class="sub-menu-link" data-drupal-link-system-path="node/33">News</a></li>
+                          </ul>
+          </div>
+
+    </li>
+
+              </ul>
+
+
+
+  </div>
+
+
+  </nav>
+
+  </div>
+
+      </div>
+
+      <div class="c-header__contact">
+        <a href="https://apex.esa.int/contact" class="btn btn-primary btn--arrow">Contact us</a>
+      </div>
+
+      <div class="c-hamburger__wrapper">
+                <div class="c-hamburger js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+    </div></div>
+<aside class="c-sidebar js-hamburger-menu">
+    <div class="container">
+        <div class="c-sidebar__inner">
+             <div class="region region-search">
+    <nav role="navigation" aria-labelledby="block-vitotheme-mainnavigation-2-menu" id="block-vitotheme-mainnavigation-2" class="block block-menu navigation menu--main">
+            
+  <h5 class="visually-hidden" id="block-vitotheme-mainnavigation-2-menu">Main navigation</h5>
+  
+
+        
+              <ul data-block="search" class="c-sidebar__menu">
+                    <li>
+        <a href="https://apex.esa.int/algorithm-support" data-drupal-link-system-path="node/32">Algorithm Support</a>
+              </li>
+                <li>
+        <a href="https://apex.esa.int/project-environments" data-drupal-link-system-path="node/4">Project Environments</a>
+              </li>
+                <li>
+        <a href="">Resources</a>
+              </li>
+                <li>
+        <a href="">Community</a>
+              </li>
+                <li>
+        <a href="https://apex.esa.int/about-apex" data-drupal-link-system-path="node/5">About APEx</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+    </div>
+</aside>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">APEx - Documentation Portal</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Guides</li><li class="breadcrumb-item"><a href="../../../guides/account.html">Admin Guides</a></li><li class="breadcrumb-item"><a href="../../../guides/geospatial_explorer/index.html">Geospatial Explorer</a></li><li class="breadcrumb-item"><a href="../../../guides/geospatial_explorer/tutorials/geospatial_explorer_config_guide.html">Configuring the APEx Geospatial Explorer</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">On-demand EO services</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../eo_service_usage/openeo_usage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using openEO service</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/platforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supported Platforms</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../instantiation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Environments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/usecases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Cases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/customisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Customisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessing your environment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/geospatial_explorer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geospatial Explorer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/project_portal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Web Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/app_code_server.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code Server IDE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/app_jupyterlab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JupyterLab IDE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/app_qgis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QGIS as a Remote Desktop</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/catalog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Product Catalogue</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Documentation Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../instantiation/forum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">User Forum</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../propagation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Support</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/ondemandservices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">On-Demand EO Services</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/usecases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Cases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/porting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Porting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/onboarding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Onboarding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/upscaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Upscaling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/enhancement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Enhancement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/toolboxcloud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Toolbox Cloudification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/intercomparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Intercomparison</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Developer Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Authentication</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/account.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating an APEx account</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/token.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating APEx single sign-on token</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">openEO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/udp_writer_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating openEO based services</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/VisualisingMultipleOpeneoJobs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Upscaling openEO-based services using the openEO Batch Job Manager</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">EOAP</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/eoap_writer_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating EOAP based services</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">APEx Dispatch API</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/dispatch_execution_example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Service execution using the APEx Dispatch API</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/dispatch_upscaling_example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Upscaling using the APEx Dispatch API</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">APEx Product Catalogue</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/stac_catalog_ingest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ingesting STAC metadata in APEx Product Catalogue</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/catalog_openeo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linking APEx Product Catalogue with an openEO service</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">APEx Algorithm Catalogue</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/algorithm_services_catalogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Registering your service</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/algorithm_services_catalogue_benchmarks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating benchmarks for your service</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/algorithm_catalogue_dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">APEx Algorithm Dashboard</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true">
+ <span class="menu-text">Admin Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/account.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating an APEx account</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/custom_domain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Custom domains for your project environment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../guides/geospatial_explorer/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geospatial Explorer</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/geospatial_explorer/tutorials/geospatial_explorer_config_guide.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Configuring the APEx Geospatial Explorer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../guides/project_portal/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Web Portal</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/1_login.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Login to the Project Web Portal and the Drupal content overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/2_create_page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manage web pages or add a new page</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/3_paragraphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Edit web pages via paragraphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/3a_text_visuals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add content and/or visuals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/3b_cta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add a Call-To-Action (CTA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/3c_news.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add news items and an overview of the latest or all news</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/3d_event.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add an event and an overview of the latest or all events</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/3e_webform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add a web form</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/3f_logo_banner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add a logo (partners) banner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/3g_publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add publications or downloads (files)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/4_menu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Edit the menu navigation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/5_footer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Edit the footer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/6_customize_website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Customizing the look and feel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/7_manage_partners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manage Partners Block</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/8_tags_themes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manage Tags and Themes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/project_portal/tutorials/9_customize_site_name_slogan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Customizing Site Name and Slogan</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Consumer Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../guides/geospatial_explorer/geospatial_explorer_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using the Geospatial Explorer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../interoperability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interoperability and Compliance Guidelines</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../interoperability/definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definitions &amp; Actors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../propagation/service_development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Service Development Options</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../interoperability/algohosting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Developer and Provider Guidelines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../interoperability/datahosting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Provider Guidelines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../interoperability/algohostingenv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithm Hosting Platforms Guidelines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../interoperability/geospatial_explorer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geospatial Explorer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../interoperability/businessmodel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Federated Business Model</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Guides</li><li class="breadcrumb-item"><a href="../../../guides/account.html">Admin Guides</a></li><li class="breadcrumb-item"><a href="../../../guides/geospatial_explorer/index.html">Geospatial Explorer</a></li><li class="breadcrumb-item"><a href="../../../guides/geospatial_explorer/tutorials/geospatial_explorer_config_guide.html">Configuring the APEx Geospatial Explorer</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Configuring the APEx Geospatial Explorer</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The <a href="../../../instantiation/geospatial_explorer.html">APEx Geospatial Explorer</a> is a versatile web application designed to visualize and interact with geospatial data. It leverages the OpenLayers library to provide a rich set of features for exploring spatial datasets. The application is highly configurable, allowing users to tailor its functionality and appearance to meet specific project requirements. This document outlines the configuration options for the APEx Geospatial Explorer, detailing the structure and properties of the configuration schema.</p>
+<section id="configuration-schema" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-schema">Configuration Schema</h2>
+<p>The service configuration will be based on a schema that provides administrators with the expected structure and contents of the configuration. Taking this approach enables:</p>
+<ul>
+<li>Automated and dynamic instantiation of the service with differing functionality.</li>
+<li>Configuration validation.</li>
+<li>Definition of a “contract” for easier documentation of features and their configuration.</li>
+</ul>
+<p>The sections below briefly outline the structure of the configuration schema and provide a preliminary description of each field/property within. The schema currently consists of four top-level fields and all properties are written in camel case.</p>
+<section id="layout---layout" class="level3">
+<h3 class="anchored" data-anchor-id="layout---layout">Layout - <code>layout</code></h3>
+<p>An object with properties that modify the elements that the application will render. These properties and elements relate specifically to non-geospatial layout components, like navigation and footer.</p>
+<p>Currently supported properties:</p>
+<section id="navigation---navigation" class="level4">
+<h4 class="anchored" data-anchor-id="navigation---navigation">Navigation - <code>navigation</code></h4>
+<p>An object which supports two properties:</p>
+<ul>
+<li><code>logo</code>: A URL string that points to a logo image asset.</li>
+<li><code>title</code>: A string to be used as a title for the application.</li>
+</ul>
+</section>
+</section>
+<section id="interface-groups---interfacegroups" class="level3">
+<h3 class="anchored" data-anchor-id="interface-groups---interfacegroups">Interface Groups - <code>interfaceGroups</code></h3>
+<p>An optional array of strings to be used as names/keys. This is currently used to configure the grouping of layer UI elements, such as the layer cards. This will be expanded in later versions.</p>
+</section>
+<section id="exclusivity-sets---exclusivitysets" class="level3">
+<h3 class="anchored" data-anchor-id="exclusivity-sets---exclusivitysets">Exclusivity Sets - <code>exclusivitySets</code></h3>
+<p>An optional array of strings to be used as names/keys. This is currently not in use but is a placeholder for future work.</p>
+</section>
+<section id="sources---sources" class="level3">
+<h3 class="anchored" data-anchor-id="sources---sources">Sources - <code>sources</code></h3>
+<p>An array of objects. Each object outlines a particular data source to be configured for display within the application, with properties detailing both the geospatial and user interface configuration.</p>
+<p>Currently supported properties within a source object are:</p>
+<section id="name---name" class="level4">
+<h4 class="anchored" data-anchor-id="name---name">Name - <code>name</code></h4>
+<p>A string that is used to identify layers in both the user interface and OpenLayers state</p>
+</section>
+<section id="is-active---isactive" class="level4">
+<h4 class="anchored" data-anchor-id="is-active---isactive">Is Active - <code>isActive</code></h4>
+<p>A boolean. Determines if a layer is currently shown on the map. Setting this to true will show the layer on the map when the application loads.</p>
+</section>
+<section id="time-frame---timeframe" class="level4">
+<h4 class="anchored" data-anchor-id="time-frame---timeframe">Time Frame - <code>timeframe</code></h4>
+<p>A string that is required to render and control time series layers. It should have a value of either <code>Days</code>, <code>Months</code>, <code>Years</code>. This will determine the behavior of the UI for layer groups with time series data configured.</p>
+<ul>
+<li>Days: This will allow the selection of every available date within the configure data sources.</li>
+<li>Months: This will only allow a user to select a the year and the month for the configured sources.</li>
+<li>Years: This will allow only a single year to be selected for the dataset.</li>
+</ul>
+<p>For the best user experience it’s essential to set this correctly for the series of datasets in use.</p>
+</section>
+<section id="base-layer---isbaselayer" class="level4">
+<h4 class="anchored" data-anchor-id="base-layer---isbaselayer">Base Layer - <code>isBaseLayer</code></h4>
+<p>Optional boolean that determines if the layer should be treated as a base layer. Base layer groups are always active and cannot be toggled.</p>
+</section>
+<section id="swipe-layer---isswipelayer" class="level4">
+<h4 class="anchored" data-anchor-id="swipe-layer---isswipelayer">Swipe Layer - <code>isSwipeLayer</code></h4>
+<p>Optional boolean that determines if the layer should be treated as a swipe layers. Swipe layer groups are configured much like any other layer group however the individual sources need to be configured with an additional position property with a value of either <code>left</code> or <code>right</code>.</p>
+</section>
+<section id="layout---layout-1" class="level4">
+<h4 class="anchored" data-anchor-id="layout---layout-1">Layout - <code>layout</code></h4>
+<p>An object to determine which interface elements are rendered for the layer. Supports two properties:</p>
+<section id="layer-card---layercard" class="level5">
+<h5 class="anchored" data-anchor-id="layer-card---layercard">Layer Card - <code>layerCard</code></h5>
+<p>An object that will determine if a layer card should be rendered for this layer and what other interface elements should be rendered within the card. This is currently the main way to interact with a layer within the application. The layer card can show a toggle for the layer, a selection of buttons or controls for the layer, legends and attribution text. This currently supports the following properties:</p>
+<ul>
+<li><code>toggleable</code>: A boolean that determines if a toggle switch to enable/disable the layer should be rendered.</li>
+<li><code>controls</code>: An optional object that configures which buttons to render in the layer card for interaction with the layer. This object can contain:
+<ul>
+<li><code>zoomToCenter</code>: A boolean that renders a button that will zoom the map to the extent of the layer.</li>
+<li><code>opacitySlider</code>: A boolean that renders a button to open or close the opacity slider control for the layer.</li>
+<li><code>download</code>: A URL string that will render a link to the given URL. Used for signposting users to the source data or website.</li>
+</ul></li>
+<li><code>legend</code>: An optional object that can be configured to show static or dynamic legend elements within the layer card when active. Contains a <code>type</code> property that has a string value of: <code>swatch</code>, <code>image</code>, <code>gradient</code>. Also requires a <code>url</code> property with a string value if the type is <code>image</code>.</li>
+</ul>
+</section>
+<section id="interface-group---interfacegroup" class="level5">
+<h5 class="anchored" data-anchor-id="interface-group---interfacegroup">Interface Group - <code>interfaceGroup</code></h5>
+<p>An optional string that is used to identify which interface group this layer belongs to.</p>
+</section>
+</section>
+<section id="metadata---meta" class="level4">
+<h4 class="anchored" data-anchor-id="metadata---meta">Metadata - <code>meta</code></h4>
+<p>An object that contains information describing the data source. This is generally used for information that would be used in multiple places across the application such as: units used to describe data values, the minimum and maximum value for use in UI/Visualisation calculations, attribution etc.</p>
+<p>This currently supports the following properties:</p>
+<ul>
+<li><code>attribution</code>: An optional object to render some text or a link for use with attribution of layer datasets.</li>
+<li><code>min</code>: An integer for the lower limit to use for data values when calculating UI elements such as legends, statistics,<br>
+colour ramps.</li>
+<li><code>max</code>: An integer for the upper limit to use for data values when calculating UI elements such as legends, statistics,<br>
+colour ramps.</li>
+<li><code>units</code>: An optional string that describes the units of any values derived from the data. Used in legends and statistics<br>
+panels.</li>
+<li><code>description</code>: An optional string that describes the dataset.</li>
+<li><code>startColor</code>: A string describing a valid hex or RGB/A colour value. This is used to render colour ramps and legends.</li>
+<li><code>categories</code>: An array of objects that contains a <code>label</code> (string) property, a <code>color</code> (string) property and a <code>value</code><br>
+(integer) property. Describes classifications within datasets such as land usage. Used to create swatch legends and statistics visualisation.</li>
+</ul>
+</section>
+<section id="data---data" class="level4">
+<h4 class="anchored" data-anchor-id="data---data">Data - <code>data</code></h4>
+<p>An array of objects that configures the data to be displayed in the layer. If the length is more than one a layer group will be created and all sources will be treated as one layer.</p>
+<p>Each object currently supports the following properties:</p>
+<ul>
+<li><code>url</code>: A required URL string that points to the dataset’s publicly available resource.</li>
+<li><code>format</code>: A required string that identifies what kind of dataset is requested. This can be one of the following: <code>wms</code>, <code>wmts</code>, <code>cog</code>, <code>xyz</code>, <code>wfs</code>, <code>flatgeobuf</code>, <code>stac</code> or <code>geojson</code>.</li>
+<li><code>layers</code>: Only required for sources of format: <code>wms</code> and <code>wmts</code>. A string that describes the layer to be requested from the external service.</li>
+<li><code>typeName</code>: Only required for sources of format: <code>wfs</code>. A string that describes the type to be requested from the external service.</li>
+<li><code>zIndex</code>: Optional integer that determines rendering order within the map. It can be used to override the default rendering of Open Layers.</li>
+<li><code>exclusivitySet</code>: Optional string used to identify a group of other layers that should be disabled when this layer is enabled. They must share the same string.</li>
+<li><code>projection</code>: Optional EPSG code string that describes the projection of the dataset to Open Layers. If the projection is supported (and doesn’t match the map’s configured projection), it will attempt to reproject the data.</li>
+<li><code>style</code>: Open Layers style object that is passed through to the library to modify the rendering of the layer within the map.</li>
+<li><code>normalise</code>: Only required for sources of format: <code>cog</code>. Boolean that configures the map to normalise the raster pixel values to between 0 and 1. False by default.</li>
+<li><code>level</code>: A required integer for sources of type <code>statistical</code>. Ideally starting at 0, this integer describes the hierarchy of statistical sources. Higher integers should represent more complex and granular vector datasets. Used to provide the statistics feature UI and maintain performance for large vector datasets.</li>
+<li><code>position</code>: A string of either <code>left</code> or <code>right</code> that is only required for swipe layer groups. This determines which side of the swipe control the date will be visualised on.</li>
+<li><code>timestamps</code>: An optional array of Unix timestamps or ISO8601 date strings. This allows the configuration of time series visualisation within the layer group. If multiple timestamps exist within the layer group and the timeframe property is set a datepicker/stepper control will be rendered to cycle which layer is visible.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="example-configurations" class="level2">
+<h2 class="anchored" data-anchor-id="example-configurations">Example Configurations</h2>
+<p>Numerous example configurations can be found in the <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs">APEx Geospatial Explorer Configurations</a> repository on GitHub.</p>
+<div id="9c7698ed" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+  
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/cog">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/cog/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - COG Layer Configuration</h5>
+        </div>
+      </div>
+    </a>
+      
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/comparison">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/comparison/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - Comparison Configuration</h5>
+        </div>
+      </div>
+    </a>
+      
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/controls">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/controls/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - Layer Controls</h5>
+        </div>
+      </div>
+    </a>
+      
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/geojson">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/geojson/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - GeoJSON Layer Configuration</h5>
+        </div>
+      </div>
+    </a>
+      
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/legends">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/legends/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - Legend Configuration</h5>
+        </div>
+      </div>
+    </a>
+      
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/statistics">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/statistics/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - Time Series Layer Configuration</h5>
+        </div>
+      </div>
+    </a>
+      
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/time-series">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/time-series/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - Time Series Layer Configuration</h5>
+        </div>
+      </div>
+    </a>
+      
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/wms">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/wms/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - WMS Layer Configuration</h5>
+        </div>
+      </div>
+    </a>
+      
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/wmts">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/wmts/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - WMTS Layer Configuration</h5>
+        </div>
+      </div>
+    </a>
+      
+    <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs/tree/main/examples/xyz">
+      <div class="card" style="width: 300px" "="">
+        <p class="card-img-top">
+          <img src="https://raw.githubusercontent.com/ESA-APEx/apex_geospatial_explorer_configs/main/examples/xyz/result.png" class="thumbnail-image card-img" height="150">
+        </p>
+        <div class="card-body pot-contents">
+          <h5 class="card-title listing-title anchored">Example - XYZ Layer Configuration</h5>
+        </div>
+      </div>
+    </a>
+      
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../guides/geospatial_explorer/index.html" class="pagination-link" aria-label="Geospatial Explorer">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Geospatial Explorer</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../guides/project_portal/index.html" class="pagination-link" aria-label="Project Web Portal">
+        <span class="nav-page-text">Project Web Portal</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
