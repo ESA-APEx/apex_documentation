@@ -76,6 +76,12 @@ website:
                 contents:
                   - href: guides/eoap_writer_guide.md
                     text: Creating EOAP based services
+              - section: APEx Dispatch API
+                contents:
+                  - href: guides/dispatch_execution_example.ipynb
+                    text: Service execution using the APEx Dispatch API
+                  - href: guides/dispatch_upscaling_example.ipynb
+                    text: Upscaling using the APEx Dispatch API
               - section: APEx Product Catalogue
                 contents:
                   - href: guides/stac_catalog_ingest.ipynb
