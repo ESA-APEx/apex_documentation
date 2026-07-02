@@ -2,8 +2,11 @@
 title: Algorithm Upscaling
 ---
 
-The APEx Algorithm Upscaling approach implies designing a solution for services having a scaling factor that may differ
-from one algorithm to the other (spatial, temporal, track-based, etc…).
+The APEx Algorithm Upscaling approach involves designing a solution for services with varying scaling factors, such as
+spatial, temporal, or track-based. This concept elevates the execution of services hosted in the
+[APEx Algorithm Catalogue](./onboarding.md#apex-algorithm-catalogue) by providing tools to upscale service calls that
+process limited data to optimise processing for large data sets. These tools automatically create and manage multiple
+service calls to enhance performance and reduce costs.
 
 As a start, APEx will aim at facilitating the execution of an openEO UDP or OGC application package-based algorithm over
 larger geographic areas. To support these operations, APEx requires that the algorithm is already optimised for cost-effective
@@ -15,20 +18,6 @@ operators, or even the provision of tools, in some cases self-service tools) tha
 to run an algorithm at scale, using the processing capabilities of the platforms that are compatible with the [APEx guidelines](../interoperability/algohostingenv.md).
 This set of APEx services is designed to simplify the complexities and challenges associated with geographical and temporal
 upscaling, such as tiling, input/output management, and job orchestration, ensuring an efficient processing experience.
-
-:::{.callout-warning}
-
-## Work in progress
-
-A preview version showcasing the currently available toolset is available [here](../guides/upscaling_openeo.ipynb).
-
-Current roadmap items:
-
-1. Upscaling of processes exposed via OGC API Processes.
-2. Automated splitting of larger areas according to predefined grids.
-3. Exposing upscaling capabilities via web based UI's.
-
-:::
 
 ## Job Orchestration Client Tools
 
@@ -45,12 +34,13 @@ tools that enable a simplified execution of upscaling tasks.
 In the subsequent phase, the consortium will rely on the previously implemented procedure to explore potential enhancements
 to the user experience by further automating the process.
 
-For the openEO-powered platforms, users of the APEx upscaling service currently have access to the following client tools,
-which will be pre-configured for them by the APEx Upscaling team, based on the provided ESA project requirements:
+For the openEO-powered platforms, users currently have access to the following client tools, which can be pre-configured
+for them by the APEx Upscaling team, based on the provided ESA project requirements:
 
-* An openEO batch job manager (Python library), which supports the creation of large-scale processing tasks for openEO
+* An **openEO batch job manager** (Python library), which supports the creation of large-scale processing tasks for openEO
 developers by dividing them into separate batch jobs that can be automatically monitored. The openEO batch job manager
-is built on top of the openEO API and can therefore be used independently of the underlying platform.
+is built on top of the openEO API and can therefore be used independently of the underlying platform. APEx provides a
+pratical guide to get you started with the [openEO batch job manager](../guides/VisualisingMultipleOpeneoJobs.ipynb).
 
 During the following phase of APEx, the range of openEO client tools and their usability will be further enhanced to better
 support comprehensive upscaling activities.
@@ -58,7 +48,7 @@ support comprehensive upscaling activities.
 For the Application Package compatible platforms, users of the APEx upscaling service currently have access to the following
 client tools that will be pre-configured for them by the APEx Upscaling team, based on the provided ESA project requirements:
 
-* An Application Package / OGC API Process systematic processing manager (Python library), which supports the creation
+* An Application Package / OGC API Process **systematic processing manager** (Python library), which supports the creation
 of large-scale processing tasks for Application Package users who have the technical skills to run such a tool. The systematic
 processing job manager is built on top of the OGC API Process standard interface and can, therefore, be used to communicate
 with the underlying compatible platform.
@@ -75,17 +65,111 @@ This distinction in size of activity is important in the sense that automatic to
 activities that are normally performed by human operators, and thus constitutes a risk. For medium-sized activities, with
 relatively low processing costs, this risk is smaller.
 
-## Data Management Client Tools
+## APEx Dispatch API
 
-APEx is promoting the use of state-of-the-art technologies for data processing and data visualisation, based on S3 Cloud
-storage as COG files encoding and with data assets registered on a STAC-compliant catalogue. Based on this, a system
-shall provide the level of abstraction (tiling, CRS and projections, tiles and intermediate files) for the upscaling
-scenarios part of the APEX upscaling activities. APEx is taking care of selecting Platforms which are supporting this
-state-of-the-art.
+APEx promotes the adoption of modern cloud-native approaches for Earth Observation processing and visualisation. These
+approaches rely on object storage technologies such as S3, cloud-optimised data formats including Cloud Optimized GeoTIFF
+(COG), and catalogue-driven discovery through STAC-compliant metadata services. To fully exploit these capabilities, APEx
+works with platforms that support these technologies and standards, enabling scalable and interoperable EO service
+execution.
 
-In terms of tooling, APEx can provide access to a
-dedicated [Geospatial Explorer](../instantiation/geospatial_explorer.md) instance, meant to leverage this technology and
-that will be available to the ESA projects coming to APEx.
+Within this ecosystem, a processing service must provide the abstraction layer required to execute algorithms at scale
+without exposing users to platform-specific implementation details such as tiling strategies, coordinate reference systems,
+intermediate data management, or execution orchestration. To address this need, APEx has developed an initial architecture
+for the execution and upscaling of both openEO User Defined Processes (UDPs) and OGC Application Package-based algorithms.
+The first implementation focuses on geospatial scaling by automatically partitioning large Areas of Interest (AOIs) into
+smaller processing units, while allowing the underlying system to discover and select the most appropriate EO datasets
+based on spatial and temporal relevance.
+
+This work resulted in the first version of the **APEx Dispatch API**, a platform-agnostic orchestration layer that enables
+users and applications to submit processing requests through a single interface, while the API transparently translates
+and routes these requests to the appropriate execution platform using standards such as openEO and OGC API Processes.
+In addition to managing execution, the Dispatch API maintains job metadata and execution references, providing a
+consistent mechanism for job monitoring, result retrieval, and future upscaling workflows.
+
+### Why Use the APEx Dispatch API?
+
+The APEx Dispatch API simplifies the execution and upscaling of existing EO services by providing:
+
+* A single API interface for executing services across multiple processing platforms.
+* Standards-based interoperability through technologies such as openEO API and OGC API – Processes.
+* Abstraction from platform-specific complexities, reducing development and integration effort.
+* Support for future upscaling scenarios, enabling large-scale processing campaigns across extensive geographic regions.
+* A consistent user experience, independent of the underlying execution environment.
+
+### Accessing the APEx Dispatch API
+
+The APEx Dispatch API is available as part of the APEx ecosystem and can be accessed through its dedicated
+[API endpoint](https://dispatch-api.apex.esa.int/docs).
+
+This documentation serves as the primary reference for developers, platform integrators, and advanced users wishing to
+integrate APEx-enabled services into their own applications and workflows.
+
+### Authentication and Authorisation
+
+The APEx Dispatch API acts on behalf of the user when submitting processing jobs to external execution platforms.
+Consequently, both authentication and authorisation are required before a service can be executed.
+
+#### APEx Authentication
+
+The usage of the APEx Dispatch API is supported through the APEx user management system. This means that users will need
+to the APEx ecosystem using their APEx account.
+
+::: {.callout-note title="Creating your APEx account"}
+Please refer to our dedicated [guide](../guides/account.md) to learn how you can create your APEx account.
+:::
+
+#### Platform Account Linking
+
+Because services are executed on external platforms, users must also link their platform accounts through the
+[APEx User Account Dashboard](https://auth.apex.esa.int/realms/apex/account/account-security/linked-accounts). The
+account-linking process establishes the necessary trust relationship between APEx and the execution platform, enabling
+the APEx Dispatch API to submit jobs on behalf of the authenticated user.
+
+To link your platform account, simply click the *Link account* button next to the supported platform provider.
+
+::: {.callout-note title="Requesting Platform Access"}
+Users who do not yet have access to a required execution platform can request access through the
+[ESA Network of Resources (NoR)](https://portfolio.nor-discover.org/).
+Once access has been granted and the corresponding platform account has been linked to the user's APEx account, services
+hosted on that platform can be executed directly through the APEx Dispatch API.
+:::
+
+### Supported Platforms and Services
+
+The APEx Dispatch API currently supports the execution of services on the following platforms:
+
+* Copernicus Data Space Ecosystem (CDSE) openEO
+
+The team is currently working on the integration of the following platforms:
+
+* GEP
+
+### Example Usage
+
+To facilitate onboarding and adoption, APEx provides notebook-based examples demonstrating how the Dispatch API can be
+used within real-world workflows:
+
+* [Executing APEx services through the APEx Dispatch API](../guides/dispatch_execution_example.ipynb)
+* [Geographical upscaling of APEx services through the APEx Dispatch API](../guides/dispatch_upscaling_example.ipynb)
+
+### Integration with the APEx Geospatial Explorer
+
+The APEx team is currently integrating the Dispatch API with the
+[APEx Geospatial Explorer](../instantiation/geospatial_explorer.md), providing a graphical interface for discovering and
+executing APEx-enabled services. Through this integration, users can select an algorithm, configure its parameters,
+submit processing jobs, and monitor their execution directly from the Geospatial Explorer. The user interface is generated
+dynamically based on the service definitions exposed by the Dispatch API.
+
+The current integration focuses on single service execution. Support for upscaling scenarios is planned as part of the
+future roadmap of the Geospatial Explorer, enabling users to launch and manage large-scale processing campaigns through
+the same graphical interface.
+
+### Future Evolution and Collaboration with EOEPCA
+
+The APEx Dispatch API represents an important building block in the evolution towards interoperable EO service ecosystems.
+Future developments are being carried out in close collaboration with the EOEPCA+ initiative to ensure alignment with
+emerging standards, architecture patterns, and user experience best practices.
 
 ## Support Overview
 
@@ -165,7 +249,5 @@ the guidelines too restrictive.
 
 ## Related background material
 
-* Large scale processing, by [openEO platform](https://docs.openeo.cloud/usecases/large-scale-processing/)
-  and [CDSE openEO](https://documentation.dataspace.copernicus.eu/APIs/openEO/large_scale_processing.html)
-* Job management in openEO,
-  a [Jupyter notebook](https://github.com/Open-EO/openeo-community-examples/blob/main/python/ManagingMultipleLargeScaleJobs/ManagingMultipleLargeScaleJobs.ipynb)``
+* Large scale processing, by
+[CDSE openEO](https://documentation.dataspace.copernicus.eu/APIs/openEO/large_scale_processing.html)

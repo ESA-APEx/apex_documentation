@@ -70,12 +70,18 @@ website:
                 contents:
                   - href: guides/udp_writer_guide.qmd
                     text: Creating openEO based services
-                  - href: guides/upscaling_openeo.ipynb
-                    text: Upscaling openEO based services
+                  - href: guides/VisualisingMultipleOpeneoJobs.ipynb
+                    text: Upscaling openEO-based services using the openEO Batch Job Manager
               - section: EOAP
                 contents:
                   - href: guides/eoap_writer_guide.md
                     text: Creating EOAP based services
+              - section: APEx Dispatch API
+                contents:
+                  - href: guides/dispatch_execution_example.ipynb
+                    text: Service execution using the APEx Dispatch API
+                  - href: guides/dispatch_upscaling_example.ipynb
+                    text: Upscaling using the APEx Dispatch API
               - section: APEx Product Catalogue
                 contents:
                   - href: guides/stac_catalog_ingest.ipynb
