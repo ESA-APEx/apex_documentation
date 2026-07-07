@@ -70,6 +70,10 @@ the produced data can reach a broad audience beyond the earth observation commun
 extra guidance, we refer to the [cloud native geospatial guide](https://guide.cloudnativegeo.org/) for a comprehensive
 comparison.
 
+Next to the use of cloud native formats, accompanying metadata is crucial for describing the content of the data. This
+ensures that datasets can be easily integrated into various tools and processed by cloud platforms. In the case of
+metadata, APEx recommends using STAC, as described in our [STAC section](#stac).
+
 | Scenario | Formats | Builds on |
 | :--- | :--- | :--- |
 | 1 – Cloud-based Processing | COG, GeoZarr, NetCDF\ GeoParquet, FlatGeobuf, GeoJSON | (baseline) |
@@ -78,7 +82,7 @@ comparison.
 
 :File Format Scenarios
 
-### STAC Metadata Recommendations
+### STAC
 
 The STAC specification provides a comprehensive and interoperable framework for describing geospatial datasets. Within
 APEx, STAC serves as the foundation to enhance the discoverability, interoperability, and integration of data across a
@@ -169,11 +173,12 @@ where columnar access patterns are beneficial.
 
 #### STAC Metadata
 
-When sharing geospatial datasets in cloud-optimised formats, such as Cloud Optimised GeoTIFF (COG), NetCDF, Zarr and
-FlatGeobuf, it is essential to embed as much relevant metadata as possible directly within the files. Although these
-formats are designed for efficient cloud access, their interoperability potential is enhanced when the files carry rich,
-standardised metadata aligned with their respective specifications. Doing so not only improves data reuse by third-party
-tools but also enables more reliable automatic inference of STAC metadata during cataloguing or dataset publication.
+When sharing geospatial datasets in cloud-optimised formats such as Cloud Optimised GeoTIFF (COG), NetCDF, Zarr, and
+FlatGeobuf, it’s essential to embed as much relevant metadata as possible directly within the files. While these formats
+are designed for efficient cloud access, their interoperability is further enhanced when accompanied by a separate,
+standardised STAC metadata file that aligns with their respective specifications. This not only improves data reuse by
+third-party tools but also facilitates more reliable automatic inference of STAC metadata during cataloguing or dataset
+publication.
 
 @tbl-processing-stac offers an overview of the general STAC recommendations for cloud-based processing. For more
 details and examples on adding this additional metadata to your results, please consult the specific tools (e.g.
