@@ -1073,64 +1073,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Typical functions will include the ability to visualise EO data, derived products and associated vector layers (e.g. administrative boundaries), with control over layer ordering, transparency, product comparisons (split screen) and support for features such as cursor inspection, queries, distance measurements and visualisation of tabular data via integrated charts and graphs. The UI will also provide access to metadata records associated with the data that is rendered in the Explorer.</p>
 </section>
-<section id="examples" class="level2">
-<h2 class="anchored" data-anchor-id="examples">Examples</h2>
-<p><a href="#tbl-explorer-examples" class="quarto-xref">Table&nbsp;1</a> showcases example projects that use the APEx Geospatial Explorer:</p>
-<div id="tbl-explorer-examples" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[20,80]">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-explorer-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: APEx Geospatial Explorer - Project Examples
-</figcaption>
-<div aria-describedby="tbl-explorer-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 80%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Project</th>
-<th style="text-align: left;">URL</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">APEx (Demo)</td>
-<td style="text-align: left;"><a href="https://explorer.demo.apex.esa.int/">https://explorer.demo.apex.esa.int/</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">SEF - Food Systems</td>
-<td style="text-align: left;"><a href="https://explorer.sef-foodsystems.apex.esa.int/">https://explorer.sef-food.apex.esa.int/</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">SEF - Ecosystems &amp; Biodiversity</td>
-<td style="text-align: left;"><a href="https://explorer.sef-ecosystems.apex.esa.int/">https://explorer.sef-ecosystems.apex.esa.int/</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">SEF - Urban</td>
-<td style="text-align: left;"><a href="https://explorer.sef-urban.apex.esa.int/">https://explorer.sef-urban.apex.esa.int/</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">EOBPs – Road and Railway</td>
-<td style="text-align: left;"><a href="https://explorer.eobp-transport.apex.esa.int/">https://explorer.eobp-transport.apex.esa.int/</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">EOBPs – Solar Energy</td>
-<td style="text-align: left;"><a href="https://explorer.eobp-energy.apex.esa.int/">https://explorer.eobp-energy.apex.esa.int/</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">EOBPs – Health</td>
-<td style="text-align: left;"><a href="https://explorer.eobp-health.apex.esa.int/">https://explorer.eobp-health.apex.esa.int/</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">EO4SEM</td>
-<td style="text-align: left;"><a href="https://explorer.eo4sem.apex.esa.int/">https://explorer.eo4sem.apex.esa.int/</a></td>
-</tr>
-</tbody>
-</table>
-</div>
+<section id="geospatial-explorer-configuration-builder" class="level2">
+<h2 class="anchored" data-anchor-id="geospatial-explorer-configuration-builder">Geospatial Explorer Configuration Builder</h2>
+<p>Maintenance of the Geospatial Explorer JSON configuration files can be undertaken using the GE Configuration Builder, a web based application that allows in browser JSON editing via bespoke User Interface, thereby negating the need for configuration “authors” to learn how to produce valid JSON, or understand the specifics of the GE schema.</p>
+<p>The GE Configuration Builder development is done in parallel to the GE, with Configuration Builder feature kept in line with the schema of the latest GE release, and potentially multiple Configuration Builder enhancements being undertaken between GE releases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ge_config_builder.png" class="img-fluid figure-img"></p>
+<figcaption>APEx Geospatial Explorer Configuation Builder</figcaption>
 </figure>
 </div>
+<p>Features of the configuration builder include:</p>
+<ul>
+<li>Compose an APEx Geospatial Explorer configuration from data sources and services (WMTS, WMS, WFS, COG, XYZ, GeoJSON, FlatGeoBuf, CSV) using layers organised into interface groups</li>
+<li>Define the background maps that are available</li>
+<li>Style raster layers with categories and colormaps, build RGB composites and style vector layers with rule-based filters and stops.</li>
+<li>Define statistics and constraint layers</li>
+<li>Author charts from CSV, COG pixel values, or vector feature properties.</li>
+<li>Configure specific functional controls for each layer - e.g opacity slider, download links</li>
+<li>Browse remote catalogues with the STAC and S3 browsers.</li>
+<li>Inspect the metadata of data sources to understand their content</li>
+<li>Validate every URL in your config with the Run Healthcheck tool and see data-access plus performance scores at a glance.</li>
+<li>Define specific branding and navigation defaults (e.g.&nbsp;projection; start location and scale)</li>
+<li>Preview the resulting APEx Geospatial Explorer inline using GE Preview before exporting JSON.</li>
+</ul>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p>Explore the different Geospatial Explorer examples through our <a href="https://apex.esa.int/resources/solutions-gallery?field_services=Geospatial+Explorer">Solutions Gallery</a>.</p>
 </section>
 <section id="user-guide" class="level2">
 <h2 class="anchored" data-anchor-id="user-guide">User Guide</h2>
@@ -1143,19 +1113,6 @@ Table&nbsp;1: APEx Geospatial Explorer - Project Examples
 <section id="example-configurations" class="level2">
 <h2 class="anchored" data-anchor-id="example-configurations">Example Configurations</h2>
 <p>Numerous example configurations can be found in the <a href="https://github.com/ESA-APEx/apex_geospatial_explorer_configs">APEx Geospatial Explorer Configurations</a> repository on GitHub.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Stay Tuned
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Additional information will be shared on this page as the project progresses.</p>
-</div>
-</div>
 
 
 </section>

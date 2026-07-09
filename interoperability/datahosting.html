@@ -1100,7 +1100,7 @@ div.csl-indent {
   <li><a href="#requirements" id="toc-requirements" class="nav-link active" data-scroll-target="#requirements">Requirements</a></li>
   <li><a href="#file-format-and-metadata-recommendations" id="toc-file-format-and-metadata-recommendations" class="nav-link" data-scroll-target="#file-format-and-metadata-recommendations">File Format and Metadata Recommendations</a>
   <ul class="collapse">
-  <li><a href="#stac-metadata-recommendations" id="toc-stac-metadata-recommendations" class="nav-link" data-scroll-target="#stac-metadata-recommendations">STAC Metadata Recommendations</a></li>
+  <li><a href="#stac" id="toc-stac" class="nav-link" data-scroll-target="#stac">STAC</a></li>
   <li><a href="#scenario-1-cloud-based-processing" id="toc-scenario-1-cloud-based-processing" class="nav-link" data-scroll-target="#scenario-1-cloud-based-processing">Scenario 1: Cloud-based Processing</a></li>
   <li><a href="#scenario-2-visualisation" id="toc-scenario-2-visualisation" class="nav-link" data-scroll-target="#scenario-2-visualisation">Scenario 2: Visualisation</a></li>
   <li><a href="#scenario-3-visualisation-in-apex-geospatial-explorer" id="toc-scenario-3-visualisation-in-apex-geospatial-explorer" class="nav-link" data-scroll-target="#scenario-3-visualisation-in-apex-geospatial-explorer">Scenario 3: Visualisation in APEx Geospatial Explorer</a></li>
@@ -1200,6 +1200,7 @@ The specific STAC profiles will align with the recommendations will align with t
 <h2 class="anchored" data-anchor-id="file-format-and-metadata-recommendations">File Format and Metadata Recommendations</h2>
 <p>This section provides recommendations for file formats and accompanying STAC metadata for EO project results delivered to APEx. The recommendations are organised around three additive use case scenarios. Every data provider should start with Scenario 1. If data also needs to be visualised, Scenario 2 applies on top. Scenario 3 provides additional recommendations in case the goal is to visualise the data within the APEx Geospatial Explorer. Projects are encouraged to consult with the APEx team if their use case does not fit within these guidelines.</p>
 <p>The key underlying principle is to use cloud native formats, with adoption rate as a secondary criterion to ensure that the produced data can reach a broad audience beyond the earth observation community. Although the sections below provide extra guidance, we refer to the <a href="https://guide.cloudnativegeo.org/">cloud native geospatial guide</a> for a comprehensive comparison.</p>
+<p>Next to the use of cloud native formats, accompanying metadata is crucial for describing the content of the data. This ensures that datasets can be easily integrated into various tools and processed by cloud platforms. In the case of metadata, APEx recommends using STAC, as described in our <a href="#stac">STAC section</a>.</p>
 <table class="caption-top table">
 <caption>File Format Scenarios</caption>
 <colgroup>
@@ -1232,8 +1233,8 @@ The specific STAC profiles will align with the recommendations will align with t
 </tr>
 </tbody>
 </table>
-<section id="stac-metadata-recommendations" class="level3">
-<h3 class="anchored" data-anchor-id="stac-metadata-recommendations">STAC Metadata Recommendations</h3>
+<section id="stac" class="level3">
+<h3 class="anchored" data-anchor-id="stac">STAC</h3>
 <p>The STAC specification provides a comprehensive and interoperable framework for describing geospatial datasets. Within APEx, STAC serves as the foundation to enhance the discoverability, interoperability, and integration of data across a range of platforms, data catalogues, including the ESA Project Results Repository, and tools such as the APEx Geospatial Explorer.</p>
 <p>To enhance interoperability, data providers are advised to consistently use a recommended set of STAC-related extensions and best practices. These recommendations come from community input and collaboration with other initiatives, like <a href="https://earthcode.esa.int/">EarthCODE</a> and <a href="https://eoepca.org/eoepcaplus/">EOEPCA</a>, to ensure consistency across projects and promote the adoption of best practices.</p>
 <p>The following chapters offer a summary of the suggested metadata for the different scenarios. For further details, please refer to the resources listed below.</p>
@@ -1285,7 +1286,7 @@ The specific STAC profiles will align with the recommendations will align with t
 </section>
 <section id="stac-metadata" class="level4">
 <h4 class="anchored" data-anchor-id="stac-metadata">STAC Metadata</h4>
-<p>When sharing geospatial datasets in cloud-optimised formats, such as Cloud Optimised GeoTIFF (COG), NetCDF, Zarr and FlatGeobuf, it is essential to embed as much relevant metadata as possible directly within the files. Although these formats are designed for efficient cloud access, their interoperability potential is enhanced when the files carry rich, standardised metadata aligned with their respective specifications. Doing so not only improves data reuse by third-party tools but also enables more reliable automatic inference of STAC metadata during cataloguing or dataset publication.</p>
+<p>When sharing geospatial datasets in cloud-optimised formats such as Cloud Optimised GeoTIFF (COG), NetCDF, Zarr, and FlatGeobuf, it’s essential to embed as much relevant metadata as possible directly within the files. While these formats are designed for efficient cloud access, their interoperability is further enhanced when accompanied by a separate, standardised STAC metadata file that aligns with their respective specifications. This not only improves data reuse by third-party tools but also facilitates more reliable automatic inference of STAC metadata during cataloguing or dataset publication.</p>
 <p><a href="#tbl-processing-stac" class="quarto-xref">Table&nbsp;2</a> offers an overview of the general STAC recommendations for cloud-based processing. For more details and examples on adding this additional metadata to your results, please consult the specific tools (e.g. <a href="https://gdal.org/en/stable/drivers/raster/cog.html">gdal</a>, <a href="https://rasterio.readthedocs.io/en/stable/">rasterio</a>, …) for generating the results.</p>
 <div id="tbl-processing-stac" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">

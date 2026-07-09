@@ -1146,7 +1146,13 @@ Disclaimer
 <section id="algorithm-execution" class="level3">
 <h3 class="anchored" data-anchor-id="algorithm-execution">Algorithm Execution</h3>
 <p>Algorithm execution is carried out on one of the respective APEx-compliant algorithm hosting platforms. By default, APEx does not provide direct access to processing resources on these platforms. The user is in charge of ensuring platform access modalities, while some platforms, such as CDSE, may offer free credit tiers. Moreover, projects can request subscriptions to hosting platforms or credits for DPaaS-based algorithm execution through ESA’s <a href="https://portfolio.nor-discover.org/">Network of Resources (NoR)</a>. When resources are requested for a specific service, onboarded to the ESA NoR, APEx can facilitate access to cloud processing resources on the corresponding platform as a central gateway and catalogue of federated services.</p>
-<p>In the long term, APEx plans to integrate the execution of services through its <a href="https://explorer.apex.esa.int/">APEx Geospatial Explorer</a>, simplifying the execution of onboarded services. However, it’s important to note that even with this user-friendly interface, users will still need to have access to the necessary processing resources on that platform.</p>
+<p>The <a href="https://explorer.apex.esa.int/">APEx Geospatial Explorer</a> now also offers the ability to execute a variety of onboarded services directly. This functionality can be set up within the Geospatial Explorer instance itself, providing users with a streamlined and configurable execution environmentHowever, it’s important to note that even with this user-friendly interface, users will still need to have access to the necessary processing resources on that platform.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/ge_execution.png" class="img-fluid figure-img"></p>
+<figcaption>APEx Geospatial Explorer - Algorithm Execution</figcaption>
+</figure>
+</div>
 </section>
 <section id="large-scale-data-processing" class="level3">
 <h3 class="anchored" data-anchor-id="large-scale-data-processing">Large-scale Data Processing</h3>
@@ -1155,7 +1161,7 @@ Disclaimer
 </section>
 <section id="onboard-your-algorithm-on-the-apex-algorithm-catalogue" class="level2">
 <h2 class="anchored" data-anchor-id="onboard-your-algorithm-on-the-apex-algorithm-catalogue">Onboard Your Algorithm on the <a href="#apex-algorithm-catalogue">APEx Algorithm Catalogue</a></h2>
-<p>Onboarding your algorithm to the APEx Algorithm Catalogue is a straightforward process. Follow these steps to get started:</p>
+<p>Onboarding your algorithm to the APEx Algorithm Catalogue is a well-defined process. Follow these steps to get started:</p>
 <ol type="1">
 <li><strong>Host Your Algorithm</strong>: Ensure your algorithm is hosted on an <a href="../propagation/platforms.html">APEx-compliant platform</a>. If you need assistance in selecting a suitable platform, refer to the <a href="#hosting-platform-onboarding-support">Hosting Platform Onboarding Support</a> section.</li>
 <li><strong>Prepare Your Algorithm Record</strong>: Create a detailed record of your algorithm service, including its functionalities, input/output specifications, and any relevant metadata. This record should adhere to the guidelines provided in our <a href="../guides/algorithm_services_catalogue.html">guide</a>.</li>
