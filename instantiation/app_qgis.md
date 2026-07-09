@@ -54,9 +54,12 @@ of data scientists might collaboratively develop crop yields scenario maps based
 
 Several examples are under development and will be added on this page.
 
-| Project                         | URL                                                                                        |
-| :------------------------------ | :----------------------------------------------------------------------------------------- |
-| APEx (Demo)                     | [https://apphub.demo.apex.esa.int/](https://apphub.demo.apex.esa.int/)                     |
+| Project               | URL                                                                                |
+| :-------------------- | :--------------------------------------------------------------------------------- |
+| APEx (Demo)           | [https://apphub.demo.apex.esa.int/](https://apphub.demo.apex.esa.int/)             |
+| EO4CM                 | [https://apphub.eo4cm.apex.esa.int/](https://apphub.eo4cm.apex.esa.int/)           |
+| EO4SEM                | [https://apphub.eo4sem.apex.esa.int/](https://apphub.eo4sem.apex.esa.int/)         |
+| Information Factories | [https://apphub.info-factories.apex.esa.int/](https://apphub.eo4sem.apex.esa.int/) |
 
 : APEx QGIS - Project Examples {#tbl-qgis-examples}{tbl-colwidths="[20,80]"}
 

@@ -146,9 +146,12 @@ manual testing overhead and accelerates the rollout of new features or updates.
 
 It is important to note that a valid APEx account and permissions from the project are required to access an environment.
 
-| Project                         | URL                                                                                        |
-| :------------------------------ | :----------------------------------------------------------------------------------------- |
-| APEx (Demo)                     | [https://apphub.demo.apex.esa.int/](https://apphub.demo.apex.esa.int/)                     |
+| Project               | URL                                                                                |
+| :-------------------- | :--------------------------------------------------------------------------------- |
+| APEx (Demo)           | [https://apphub.demo.apex.esa.int/](https://apphub.demo.apex.esa.int/)             |
+| EO4CM                 | [https://apphub.eo4cm.apex.esa.int/](https://apphub.eo4cm.apex.esa.int/)           |
+| EO4SEM                | [https://apphub.eo4sem.apex.esa.int/](https://apphub.eo4sem.apex.esa.int/)         |
+| Information Factories | [https://apphub.info-factories.apex.esa.int/](https://apphub.eo4sem.apex.esa.int/) |
 
 : APEx Code Server IDE - Project Examples {#tbl-ide-examples}{tbl-colwidths="[20,80]"}
 
