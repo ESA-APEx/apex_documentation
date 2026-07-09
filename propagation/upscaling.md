@@ -2,8 +2,11 @@
 title: Algorithm Upscaling
 ---
 
-The APEx Algorithm Upscaling approach implies designing a solution for services having a scaling factor that may differ
-from one algorithm to the other (spatial, temporal, track-based, etc…).
+The APEx Algorithm Upscaling approach involves designing a solution for services with varying scaling factors, such as
+spatial, temporal, or track-based. This concept elevates the execution of services hosted in the
+[APEx Algorithm Catalogue](./onboarding.md#apex-algorithm-catalogue) by providing tools to upscale service calls that
+process limited data to optimise processing for large data sets. These tools automatically create and manage multiple
+service calls to enhance performance and reduce costs.
 
 As a start, APEx will aim at facilitating the execution of an openEO UDP or OGC application package-based algorithm over
 larger geographic areas. To support these operations, APEx requires that the algorithm is already optimised for cost-effective
