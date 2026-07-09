@@ -109,9 +109,12 @@ ESA’s [Network of Resources (NoR)](https://portfolio.nor-discover.org/). When 
 service, onboarded to the ESA NoR, APEx can facilitate access to cloud processing resources on the corresponding
 platform as a central gateway and catalogue of federated services.
 
-In the long term, APEx plans to integrate the execution of services through its [APEx Geospatial Explorer](https://explorer.apex.esa.int/),
-simplifying the execution of onboarded services. However, it’s important to note that even with this user-friendly interface,
-users will still need to have access to the necessary processing resources on that platform.
+The [APEx Geospatial Explorer](https://explorer.apex.esa.int/) now also offers the ability to execute a variety of
+onboarded services directly. This functionality can be set up within the Geospatial Explorer instance itself, providing
+users with a streamlined and configurable execution environmentHowever, it’s important to note that even with this
+user-friendly interface, users will still need to have access to the necessary processing resources on that platform.
+
+![APEx Geospatial Explorer - Algorithm Execution](./images/ge_execution.png)
 
 ### Large-scale Data Processing
 
@@ -121,7 +124,7 @@ for [algorithm upscaling](upscaling.md).
 
 ## Onboard Your Algorithm on the [APEx Algorithm Catalogue](#apex-algorithm-catalogue)
 
-Onboarding your algorithm to the APEx Algorithm Catalogue is a straightforward process. Follow these
+Onboarding your algorithm to the APEx Algorithm Catalogue is a well-defined process. Follow these
 steps to get started:
 
 1. **Host Your Algorithm**: Ensure your algorithm is hosted on an [APEx-compliant platform](./platforms.md). If you need

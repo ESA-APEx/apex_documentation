@@ -18,22 +18,38 @@ support for features such as cursor inspection, queries, distance measurements a
 integrated charts and graphs. The UI will also provide access to metadata records associated with the data that is
 rendered in the Explorer.
 
+## Geospatial Explorer Configuration Builder
+
+Maintenance of the Geospatial Explorer JSON configuration files can be undertaken using the GE Configuration Builder,
+a web based application that allows in browser JSON editing via bespoke User Interface, thereby negating the need for
+configuration “authors” to learn how to produce valid JSON, or understand the specifics of the GE schema.
+
+The GE Configuration Builder development is done in parallel to the GE, with Configuration Builder feature kept in line
+with the schema of the latest GE release, and potentially multiple Configuration Builder enhancements being undertaken
+between GE releases.
+
+![APEx Geospatial Explorer Configuation Builder](images/ge_config_builder.png)
+
+Features of the configuration builder include:
+
+* Compose an APEx Geospatial Explorer configuration from data sources and services (WMTS, WMS, WFS, COG, XYZ, GeoJSON,
+FlatGeoBuf, CSV) using layers organised into interface groups
+* Define the background maps that are available
+* Style raster layers with categories and colormaps, build RGB composites and style vector layers with rule-based filters
+and stops.
+* Define statistics and constraint layers
+* Author charts from CSV, COG pixel values, or vector feature properties.
+* Configure specific functional controls for each layer - e.g opacity slider, download links
+* Browse remote catalogues with the STAC and S3 browsers.
+* Inspect the metadata of data sources to understand their content
+* Validate every URL in your config with the Run Healthcheck tool and see data-access plus performance scores at a glance.
+* Define specific branding and navigation defaults (e.g. projection; start location and scale)
+* Preview the resulting APEx Geospatial Explorer inline using GE Preview before exporting JSON.
+
 ## Examples
 
-@tbl-explorer-examples showcases example projects that use the APEx Geospatial Explorer:
-
-| Project                         | URL                                                                                            |
-| :------------------------------ | :--------------------------------------------------------------------------------------------- |
-| APEx (Demo)                     | [https://explorer.demo.apex.esa.int/](https://explorer.demo.apex.esa.int/)                     |
-| SEF - Food Systems              | [https://explorer.sef-food.apex.esa.int/](https://explorer.sef-foodsystems.apex.esa.int/)             |
-| SEF - Ecosystems & Biodiversity | [https://explorer.sef-ecosystems.apex.esa.int/](https://explorer.sef-ecosystems.apex.esa.int/) |
-| SEF - Urban                     | [https://explorer.sef-urban.apex.esa.int/](https://explorer.sef-urban.apex.esa.int/)           |
-| EOBPs – Road and Railway        | [https://explorer.eobp-transport.apex.esa.int/](https://explorer.eobp-transport.apex.esa.int/) |
-| EOBPs – Solar Energy            | [https://explorer.eobp-energy.apex.esa.int/](https://explorer.eobp-energy.apex.esa.int/)       |
-| EOBPs – Health                  | [https://explorer.eobp-health.apex.esa.int/](https://explorer.eobp-health.apex.esa.int/)       |
-| EO4SEM                          | [https://explorer.eo4sem.apex.esa.int/](https://explorer.eo4sem.apex.esa.int/)                 |
-
-: APEx Geospatial Explorer - Project Examples {#tbl-explorer-examples}{tbl-colwidths="[20,80]"}
+Explore the different Geospatial Explorer examples through our
+[Solutions Gallery](https://apex.esa.int/resources/solutions-gallery?field_services=Geospatial+Explorer).
 
 ## User Guide
 
@@ -48,10 +64,3 @@ refer to the our [APEx Geospatial Explorer Recommendations](../interoperability/
 
 Numerous example configurations can be found in the
 [APEx Geospatial Explorer Configurations](https://github.com/ESA-APEx/apex_geospatial_explorer_configs) repository on GitHub.
-
-:::{.callout-tip}
-
-## Stay Tuned
-
-Additional information will be shared on this page as the project progresses.
-:::
