@@ -8,6 +8,11 @@
                 const megaMenu = document.querySelector('.js-mega-menu');
                 if (!megaMenu) return;
 
+                if (megaMenu.dataset.initialized === 'true') {
+                    return;
+                }
+                megaMenu.dataset.initialized = 'true';
+
                 const megaMenuTopics = document.querySelectorAll('.js-mega-menu-topic');
                 const megaMenuContents = document.querySelectorAll('.js-mega-menu-content');
 
@@ -50,6 +55,10 @@
 
                 if (menu) {
                     hamburgers.forEach(hamburger => {
+                        if (hamburger.dataset.initialized === 'true') {
+                            return;
+                        }
+                        hamburger.dataset.initialized = 'true';
                         hamburger.addEventListener('click', (e) => this.handleClickHamburger(e, menu, body));
                     });
                 } else {
@@ -66,6 +75,11 @@
 
         new MegaMenu();
         new HamburgerMenu();
+
+        document.addEventListener('apex:navigation:loaded', () => {
+            new MegaMenu();
+            new HamburgerMenu();
+        });
     });
 
 
