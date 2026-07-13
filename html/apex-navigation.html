@@ -1,4 +1,4 @@
-<div class="container"><div class="c-header__bottom">
+<div class="container" id="apex-header-navigation"><div class="c-header__bottom">
       <a href="https://apex.esa.int/" class="c-header__logo">
         APEx
         <span>Application Propagation Environments</span>
@@ -254,3 +254,139 @@
             </div>
 
     </div></div>
+
+  <script type="application/javascript">
+    (function () {
+      'use strict';
+
+      const navigationRoot = document.getElementById('apex-header-navigation');
+      if (!navigationRoot) {
+        return;
+      }
+
+      const NAV_SOURCES = [
+        {
+          label: 'apex-primary',
+          url: 'https://apex.esa.int/'
+        },
+        { // This is a CORS proxy to fetch the navigation from apex.esa.int for local testing.
+          label: 'apex-corsproxy',
+          url: 'https://corsproxy.io/?https://apex.esa.int/'
+        }
+      ];
+
+      function absolutizeApexUrl(value) {
+        if (!value || value.startsWith('#') || value.startsWith('javascript:')) {
+          return value;
+        }
+
+        if (value.startsWith('//')) {
+          return 'https:' + value;
+        }
+
+        if (value.startsWith('/')) {
+          return 'https://apex.esa.int' + value;
+        }
+
+        return value;
+      }
+
+      function normalizeApexLinks(rootElement) {
+        const attributeSelectors = [
+          ['a[href]', 'href'],
+          ['img[src]', 'src'],
+          ['source[src]', 'src'],
+          ['source[srcset]', 'srcset'],
+          ['img[srcset]', 'srcset'],
+          ['link[href]', 'href']
+        ];
+
+        attributeSelectors.forEach(([selector, attribute]) => {
+          rootElement.querySelectorAll(selector).forEach((element) => {
+            const value = element.getAttribute(attribute);
+            if (!value) {
+              return;
+            }
+
+            if (attribute === 'srcset') {
+              const normalizedSrcset = value
+                .split(',')
+                .map((candidate) => {
+                  const trimmedCandidate = candidate.trim();
+                  if (!trimmedCandidate) {
+                    return trimmedCandidate;
+                  }
+
+                  const parts = trimmedCandidate.split(/\s+/);
+                  parts[0] = absolutizeApexUrl(parts[0]);
+                  return parts.join(' ');
+                })
+                .join(', ');
+              element.setAttribute(attribute, normalizedSrcset);
+              return;
+            }
+
+            element.setAttribute(attribute, absolutizeApexUrl(value));
+          });
+        });
+      }
+
+      function extractNavigationMarkup(pageHtml) {
+        const parser = new DOMParser();
+        const pageDoc = parser.parseFromString(pageHtml, 'text/html');
+        const navigation = pageDoc.querySelector('.c-header__bottom');
+        return navigation ? navigation.outerHTML : null;
+      }
+
+      async function fetchSourceMarkup(source) {
+        const response = await fetch(source.url, {
+          method: 'GET',
+          credentials: 'omit',
+          mode: 'cors'
+        });
+
+        if (!response.ok) {
+          throw new Error('Navigation request failed with status ' + response.status);
+        }
+
+        const pageHtml = await response.text();
+        return extractNavigationMarkup(pageHtml);
+      }
+
+      async function loadRemoteNavigation() {
+        for (const source of NAV_SOURCES) {
+          try {
+            const markup = await fetchSourceMarkup(source);
+            if (!markup) {
+              continue;
+            }
+
+            navigationRoot.innerHTML = markup;
+            normalizeApexLinks(navigationRoot);
+            navigationRoot.setAttribute('data-navigation-source', source.label);
+            document.dispatchEvent(new CustomEvent('apex:navigation:loaded', {
+              detail: {
+                source: source.label
+              }
+            }));
+            return;
+          } catch (error) {
+            // Keep fallback navigation if remote source is unavailable.
+          }
+        }
+
+        navigationRoot.setAttribute('data-navigation-source', 'fallback');
+        document.dispatchEvent(new CustomEvent('apex:navigation:loaded', {
+          detail: {
+            source: 'fallback'
+          }
+        }));
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadRemoteNavigation, { once: true });
+      } else {
+        loadRemoteNavigation();
+      }
+    })();
+  </script>
