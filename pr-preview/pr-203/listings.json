@@ -1,0 +1,29 @@
+[
+  {
+    "listing": "/guides/project_portal/index.html",
+    "items": [
+      "/guides/project_portal/tutorials/1_login.html",
+      "/guides/project_portal/tutorials/2_create_page.html",
+      "/guides/project_portal/tutorials/3_paragraphs.html",
+      "/guides/project_portal/tutorials/3a_text_visuals.html",
+      "/guides/project_portal/tutorials/3b_cta.html",
+      "/guides/project_portal/tutorials/3c_news.html",
+      "/guides/project_portal/tutorials/3d_event.html",
+      "/guides/project_portal/tutorials/3e_webform.html",
+      "/guides/project_portal/tutorials/3f_logo_banner.html",
+      "/guides/project_portal/tutorials/3g_publication.html",
+      "/guides/project_portal/tutorials/4_menu.html",
+      "/guides/project_portal/tutorials/5_footer.html",
+      "/guides/project_portal/tutorials/6_customize_website.html",
+      "/guides/project_portal/tutorials/7_manage_partners.html",
+      "/guides/project_portal/tutorials/8_tags_themes.html",
+      "/guides/project_portal/tutorials/9_customize_site_name_slogan.html"
+    ]
+  },
+  {
+    "listing": "/guides/geospatial_explorer/index.html",
+    "items": [
+      "/guides/geospatial_explorer/tutorials/geospatial_explorer_config_guide.html"
+    ]
+  }
+]
