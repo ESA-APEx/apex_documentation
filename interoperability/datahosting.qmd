@@ -48,7 +48,7 @@ fostering wider adoption and enabling advanced use cases in downstream applicati
     </tr>
     <tr>
       <td>DATA-REQ-03</td>
-      <td>EO project results should be accompanied with metadata in a STAC [@stac] format, including applicable STAC extensions.</td>
+      <td>EO project results shall be accompanied with metadata in a STAC [@stac] format, including applicable STAC extensions.</td>
       <td>The specific STAC profiles will align with the recommendations will align with the recommendations provided in the [Metadata Recommendations](#metadata-recommendations) section.</td>
     </tr>
   </tbody>
