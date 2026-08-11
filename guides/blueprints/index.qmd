@@ -1,0 +1,11 @@
+---
+title: EO Project Blueprints
+---
+
+The goal of APEx is to support ESA EO projects in general, and to assist in making their results more interoperable and reusable
+after the end of the project. This section provides blueprints for specific types of projects, outlining how to best leverage the
+platforms and standards recommended by APEx.
+
+The material is offered as guidance and inspiration, and is not intended to be prescriptive.
+
+ 

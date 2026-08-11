@@ -59,6 +59,11 @@ website:
           - href: propagation/intercomparison.md
       - section: Guides
         contents:
+          - section: Project blueprints
+            href: guides/blueprints/index.qmd
+            contents:
+                - href: guides/blueprints/openeo_ml_project.qmd
+                  text: openEO ML Project Blueprint
           - section: Developer Guides
             contents:
               - section: Authentication

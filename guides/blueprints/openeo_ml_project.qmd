@@ -1,0 +1,41 @@
+---
+title: Machine Learning based EO mapping projects with openEO
+---
+
+# Relevant project categories
+
+This blueprint documents an example architecture for projects that:
+
+- Use machine learning models that involve a training phase and an inference phase.
+- Optionally allow the user to retrain the model with user provided training data.
+- Produce EO data products such as land cover maps, crop type maps, or other thematic maps.
+- Can or aim to use an openEO processing backend that includes the input datasets that are relevant for the project.
+
+# Example projects based on this blueprint
+
+ESA [WorldCereal](https://esa-worldcereal.org) and [World Ecosystem Extent Dynamics](https://esa-worldecosystems.org) used a similar architecture as part of their project setup.
+
+# Overview of the architecture
+
+In this type of project, we typically identify these common processes:
+
+- **Collection of reference data**: Gathering of in-situ measurements, expert annotations, or other reference data needed for training and validating the machine learning model.
+- **Extraction of (preprocessed) training data**: Based on locations of reference data, extract corresponding preprocessed EO data.
+- **Model training**: Using the extracted training data & reference data to train a machine learning model.
+- **Model validation**: Evaluating the quality of the trained model using a validation dataset.
+- **Map production**: Generating the map, either for a user defined extent, or at large scale (continental/global).
+
+![openEO ML architecture](./ml_training_bleuprint.svg)
+
+
+## Reference data collection
+
+While APEx does not provide specific services for reference data collection, we do provide recommendations for storing the
+collected data:
+
+- Use STAC collections to organise and describe the collected reference data.
+- Use cloud native file formats (e.g. GeoParquet) to store tabular reference data.
+- Define a suitable structure to organize data files, that avoids both too many files and too large files.
+
+## Extraction of training data
+
