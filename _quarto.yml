@@ -91,6 +91,8 @@ website:
           - section: Admin Guides
             contents:
               - href: guides/account.md
+              - href: guides/grafana_monitoring.md
+                text: Grafana monitoring dashboards
               - href: guides/custom_domain.md
                 text: Custom domains for your project environment
               - href: guides/geospatial_explorer/index.qmd

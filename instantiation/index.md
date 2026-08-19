@@ -59,6 +59,8 @@ The specific components of the APEx Project Environments include:
   Supporting customisation and interactive visualisation using the Quarto framework.
 * [**User Forum**](forum.md)\
   Providing a community-building platform based on the open-source software Discourse.
+* [**Grafana Monitoring Dashboards**](../guides/grafana_monitoring.md)\
+  Providing operational visibility into project ingress endpoints and runtime component health.
 
 The APEx Project Environments will be essential for ensuring that the results of EO projects are effectively shared and
 utilised, fostering greater collaboration and innovation within the EO community. By providing robust, scalable, and
