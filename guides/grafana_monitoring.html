@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Toolbox Cloudification – APEx - Documentation Portal</title>
+<title>Grafana Monitoring Dashboards – APEx - Documentation Portal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../propagation/intercomparison.html" rel="next">
-<link href="../propagation/enhancement.html" rel="prev">
+<link href="../guides/custom_domain.html" rel="next">
+<link href="../guides/algorithm_catalogue_dashboard.html" rel="prev">
 <link href="../assets/img/logos/apex_icon_blue.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -645,7 +645,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../propagation/index.html">Algorithm Support</a></li><li class="breadcrumb-item"><a href="../propagation/toolboxcloud.html">Toolbox Cloudification</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Guides</li><li class="breadcrumb-item"><a href="../guides/account.html">Admin Guides</a></li><li class="breadcrumb-item"><a href="../guides/grafana_monitoring.html">Grafana monitoring dashboards</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -818,7 +818,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../propagation/toolboxcloud.html" class="sidebar-item-text sidebar-link active">
+  <a href="../propagation/toolboxcloud.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Toolbox Cloudification</span></a>
   </div>
 </li>
@@ -967,13 +967,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
  <span class="menu-text">Admin Guides</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guides/account.html" class="sidebar-item-text sidebar-link">
@@ -982,7 +982,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guides/grafana_monitoring.html" class="sidebar-item-text sidebar-link">
+  <a href="../guides/grafana_monitoring.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Grafana monitoring dashboards</span></a>
   </div>
 </li>
@@ -1199,9 +1199,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../propagation/index.html">Algorithm Support</a></li><li class="breadcrumb-item"><a href="../propagation/toolboxcloud.html">Toolbox Cloudification</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Guides</li><li class="breadcrumb-item"><a href="../guides/account.html">Admin Guides</a></li><li class="breadcrumb-item"><a href="../guides/grafana_monitoring.html">Grafana monitoring dashboards</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Toolbox Cloudification</h1>
+<h1 class="title">Grafana Monitoring Dashboards</h1>
 </div>
 
 
@@ -1218,25 +1218,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The toolbox cloudification activities within APEx make individual data processing procedures from existing toolboxes available as cloud-based algorithms compliant with APEx. The service focuses solely on the data-processing capabilities of toolboxes and does not include visualisation features. Instead of the local processing scheme of a traditional toolbox, key operations can be performed in the cloud. Furthermore, functions from various toolboxes can be combined in a single workflow by using one of the APEx-compliant technologies.</p>
-<p>Projects may select functionalities from a toolbox that they would like to have access to as APEx-compliant algorithms. The proposed functionalities and their toolbox will then be reviewed by ESA and APEx experts. Effort estimation and an offer will be made following the review. On acceptance of the offer, the requested functionalities will be provided as an Application Package according to the OGC best practice or as an openEO User Defined Process (UDP).</p>
-<p>Toolboxes come with their own data model each. But they read inputs and write outputs to files. To achieve interoperability between procedures from different toolboxes, it is necessary to share data using standard data formats when writing files. This is not simple in many cases as there are expectations like metadata and storage file systems supported by toolboxes. If intermediates are written and stored, staged and read repeatedly, this is an overhead for a processing chain. Users should consider if the flexibility of this approach outweighs the performance drawbacks and request deployment as a single, integrated package instead if performance is critical.</p>
-<p>Functionalities made available through toolbox cloudification are ready to be hosted as APEx-compliant on-demand services.</p>
-<section id="support-overview" class="level2">
-<h2 class="anchored" data-anchor-id="support-overview">Support Overview</h2>
-<section id="features" class="level3">
-<h3 class="anchored" data-anchor-id="features">Features</h3>
-<p>The toolbox cloudification activities offer an analysis of the implementation of the toolbox and the requested processing capabilities. On the basis of this analysis, an implementation strategy is proposed and executed to provide the requested functionality outside the context of the toolbox as a fully cloud-integrated APEx-compliant service.</p>
-<p>Projects may benefit from toolbox cloudification by bringing key functions from traditional EO toolboxes into the cloud, where they can be integrated into large-scale processing workflows. If a toolbox is migrated to APEx, it shall be kept up to date. This requires maintenance. The procedure to support the evolution of toolboxes is yet to be defined.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>APEx provides Grafana dashboards for project-level operational monitoring. The Grafana instance for each project follows this URL pattern:</p>
+<ul>
+<li><code>https://grafana.&lt;project&gt;.apex.esa.int/</code></li>
+</ul>
+<p>Example:</p>
+<ul>
+<li><a href="https://grafana.demo.apex.esa.int/">https://grafana.demo.apex.esa.int/</a></li>
+</ul>
+<p>This guide explains how to access the dashboards and what information is available.</p>
 </section>
-<section id="how-to-get-started" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-get-started">How to get started?</h3>
-<p>To initiate a toolbox cloudification activity, a proposal specifies a candidate toolbox and selects key functionality for cloudification. This proposal is then submitted to the APEx team. It should contain a short justification explaining the need for the selected functionality. ESA reviews the proposal and submits selected proposals to the APEx team for analysis and price offer.</p>
-<p>In a first phase, the APEx team makes an initial analysis of the candidate toolbox and an assessment of the associated proposal. On this basis, the team provides an assessment report to ESA. The report includes a final recommendation of the key functionality to be cloudified, a description of the specific cloudification approach, and an effort and cost estimation. ESA decides whether to accept the offer.</p>
-<p>On acceptance, a team of suitably qualified APEx experts undertakes the cloudification process itself, recasting or reimplementing the required functionality in cloud-hosted toolbox modules. In order for the cloudified modules to be hosted through APEx, they will be implemented on one of the APEx-compliant technologies, such as one or more openEO UDPs and/or Application Packages. The more suitable variant depends largely on the original implementation of the toolbox functionality. The newly created modules can be deployed on an APEx-compliant hosting platform and thus become available for direct use and integration into larger cloud-hosted processing workflows.</p>
+<section id="access-and-authentication" class="level2">
+<h2 class="anchored" data-anchor-id="access-and-authentication">Access and Authentication</h2>
+<p>To access Grafana:</p>
+<ol type="1">
+<li>Open your project URL, for example <code>https://grafana.demo.apex.esa.int/</code>.</li>
+<li>Select <strong>Sign in with APEx SSO</strong> on the Grafana login page.</li>
+<li>Complete authentication using your APEx account.</li>
+</ol>
+<p>If you do not yet have an APEx account, follow the <a href="../guides/account.html">Creating an APEx account guide</a>.</p>
+<p>Note that having an APEx account is required but not sufficient on its own. Your account must also be explicitly authorised for the target project environment.</p>
+<p>If authentication succeeds but you do not see your project dashboards, request environment access through APEx support.</p>
+</section>
+<section id="available-dashboards" class="level2">
+<h2 class="anchored" data-anchor-id="available-dashboards">Available Dashboards</h2>
+<p>Two dashboards are available for day-to-day operational monitoring:</p>
+<ul>
+<li><strong>Ingress list</strong></li>
+<li><strong>Project monitoring</strong></li>
+</ul>
+<section id="ingress-list-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="ingress-list-dashboard">Ingress list dashboard</h3>
+<p>The Ingress list dashboard provides a quick inventory of exposed endpoints for your namespace/project.</p>
+<p>Main capabilities:</p>
+<ul>
+<li>Lists ingress host names currently configured for the selected project.</li>
+<li>Shows which application each host name routes to.</li>
+<li>Supports filtering by datasource, namespace, ingress name, and project name.</li>
+<li>Supports standard Grafana time-window filtering for recent changes.</li>
+</ul>
+<p>Use this dashboard when you need to:</p>
+<ul>
+<li>confirm the public host name of a deployed service,</li>
+<li>verify whether a specific endpoint exists,</li>
+<li>cross-check which component is behind a given ingress host.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/grafana_ingress_list.png" class="img-fluid figure-img"></p>
+<figcaption>Grafana Ingress list dashboard</figcaption>
+</figure>
+</div>
+</section>
+<section id="project-monitoring-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="project-monitoring-dashboard">Project monitoring dashboard</h3>
+<p>The Project monitoring dashboard provides workload health and usage indicators for core deployed components in the project namespace.</p>
+<p>Main capabilities:</p>
+<ul>
+<li>CPU usage trends per component.</li>
+<li>Memory usage trends per component.</li>
+<li>Container readiness overview.</li>
+<li>Restart counters to detect instability.</li>
+<li>Per-project filtering to focus on one environment.</li>
+</ul>
+<p>Use this dashboard when you need to:</p>
+<ul>
+<li>check whether services are healthy and ready,</li>
+<li>identify resource pressure (CPU or memory growth),</li>
+<li>investigate recurring restarts,</li>
+<li>validate platform state during incident triage.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/grafana_project_monitoring.png" class="img-fluid figure-img"></p>
+<figcaption>Grafana Project monitoring dashboard</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="tips" class="level2">
+<h2 class="anchored" data-anchor-id="tips">Tips</h2>
+<ul>
+<li>Start with <strong>Ingress list</strong> to validate endpoint routing.</li>
+<li>Continue with <strong>Project monitoring</strong> to inspect runtime health.</li>
+<li>Keep the dashboard time range aligned with the time of an observed issue.</li>
+</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1662,13 +1732,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../propagation/enhancement.html" class="pagination-link" aria-label="Algorithm Enhancement">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Algorithm Enhancement</span>
+      <a href="../guides/algorithm_catalogue_dashboard.html" class="pagination-link" aria-label="APEx Algorithm Dashboard">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">APEx Algorithm Dashboard</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../propagation/intercomparison.html" class="pagination-link" aria-label="Algorithm Intercomparison">
-        <span class="nav-page-text">Algorithm Intercomparison</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../guides/custom_domain.html" class="pagination-link" aria-label="Custom domains for your project environment">
+        <span class="nav-page-text">Custom domains for your project environment</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
