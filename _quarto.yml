@@ -72,6 +72,8 @@ website:
                     text: Creating openEO based services
                   - href: guides/upscaling_openeo.ipynb
                     text: Upscaling openEO based services
+                  - href: guides/ml_reference_data_extraction.md
+                    text: Extracting ML reference data
               - section: EOAP
                 contents:
                   - href: guides/eoap_writer_guide.md
