@@ -53,7 +53,8 @@ Explore the different Geospatial Explorer examples through our
 
 ## User Guide
 
-For a general overview of features, take a look at the [Geospatial Explorer User Guide](../guides/geospatial_explorer/geospatial_explorer_guide.qmd)
+For a general overview of features, take a look at the [Geospatial Explorer User Guide](../guides/geospatial_explorer/geospatial_explorer_guide.qmd).
+To learn how to manage and configure your own Geospatial Explorer, refer to this [administration guide](https://esa-apex.github.io/apex_documentation/guides/geospatial_explorer/).
 
 ## Recommendations
 
