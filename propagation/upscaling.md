@@ -171,4 +171,4 @@ the guidelines too restrictive.
 * Large scale processing, by [openEO platform](https://docs.openeo.cloud/usecases/large-scale-processing/)
   and [CDSE openEO](https://documentation.dataspace.copernicus.eu/APIs/openEO/large_scale_processing.html)
 * Job management in openEO,
-  a [Jupyter notebook](https://github.com/Open-EO/openeo-community-examples/blob/main/python/ManagingMultipleLargeScaleJobs/ManagingMultipleLargeScaleJobs.ipynb)``
+  a [Jupyter notebook](https://github.com/Open-EO/openeo-community-examples/blob/main/python/70_platform-and-large-scale/managing-large-scale-jobs/managing-large-scale-jobs.ipynb)``
