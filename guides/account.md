@@ -25,6 +25,15 @@ Please follow the instructions below to create your account.
 You have now successfully created an APEx account and are ready to use the APEx services. Whenever you are prompted to
 login to APEx, you can use the same identity provider you used to create your account.
 
+::: {.callout-note}
+
+## Additional account for project admins
+
+If you are expected to be a project admin, you also need to create an account on the APEx development environment.
+Navigate to the [APEx Development Account Dashboard](https://auth.dev.apex.esa.int/realms/apex/account) and follow the
+account creation steps above.
+:::
+
 ## Login with your institution's account Using EGI Check-in
 
 EGI Check-in is an identity provider that allows you to use your institutional or social accounts to login to APEx. Because
