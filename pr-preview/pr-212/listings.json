@@ -1,11 +1,5 @@
 [
   {
-    "listing": "/guides/geospatial_explorer/index.html",
-    "items": [
-      "/guides/geospatial_explorer/tutorials/geospatial_explorer_config_guide.html"
-    ]
-  },
-  {
     "listing": "/guides/project_portal/index.html",
     "items": [
       "/guides/project_portal/tutorials/1_login.html",
@@ -25,6 +19,12 @@
       "/guides/project_portal/tutorials/7_manage_partners.html",
       "/guides/project_portal/tutorials/8_tags_themes.html",
       "/guides/project_portal/tutorials/9_customize_site_name_slogan.html"
+    ]
+  },
+  {
+    "listing": "/guides/geospatial_explorer/index.html",
+    "items": [
+      "/guides/geospatial_explorer/tutorials/geospatial_explorer_config_guide.html"
     ]
   }
 ]
