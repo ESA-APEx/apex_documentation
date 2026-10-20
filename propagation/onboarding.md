@@ -11,7 +11,7 @@ services in the [APEx Algorithm Catalogue](#apex-algorithm-catalogue) for broade
 accessibility.
 
 For the engagement with stakeholders of the algorithm, APEx collaborates closely with initiatives such as
-the [Stakeholder Engagement Facility (SEF)](https://esa-sef.eu/). Such initiatives provide outreach and training towards
+the [Stakeholder Engagement Facility (SEF)](https://sef.apex.esa.int). Such initiatives provide outreach and training towards
 users to maximise the uptake of the onboarded algorithms.
 
 ## Support Overview
