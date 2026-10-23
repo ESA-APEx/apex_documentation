@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -1311,6 +1345,35 @@ Note
 <section id="service-visibility" class="level2">
 <h2 class="anchored" data-anchor-id="service-visibility">Service Visibility</h2>
 <p>In those cases where the service is not intended to be publicly available, the <code>properties.visibility</code> property in the record can be set to <code>private</code>. This ensures that the service will not be listed in the <a href="https://algorithm-catalogue.apex.esa.int/">APEx Algorithm Catalogue</a>. The default value for this property is <code>public</code>, meaning that if it is not specified, the service will be visible in the catalogue.</p>
+</section>
+<section id="certification-metadata-and-categories" class="level2">
+<h2 class="anchored" data-anchor-id="certification-metadata-and-categories">Certification Metadata and Categories</h2>
+<p>Catalogue category badges are derived from optional structured metadata in the service record.</p>
+<ul>
+<li>If <code>properties.certification</code> is omitted, the service is treated as <strong>Community Contributed</strong> (default).</li>
+<li>If present, <code>properties.certification</code> must contain:
+<ul>
+<li><code>category</code>: <code>validated</code> or <code>r_and_d</code></li>
+<li><code>funding</code>: <code>esa</code> or <code>other</code></li>
+</ul></li>
+</ul>
+<p>Example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="er">"certification":</span> <span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"category"</span><span class="fu">:</span> <span class="st">"validated"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"funding"</span><span class="fu">:</span> <span class="st">"esa"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Badge mapping:</p>
+<ol type="1">
+<li><code>category=validated</code> → <strong>Validated</strong></li>
+<li><code>category=r_and_d</code> → <strong>R&amp;D</strong></li>
+<li>no <code>certification</code> field → <strong>Community Contributed</strong></li>
+</ol>
+<p>Suggested onboarding flow:</p>
+<ol type="1">
+<li>Algorithm PI submits the record with default metadata (no <code>certification</code>) unless a reviewed category assignment is available.</li>
+<li>APEx/TO review confirms whether <code>validated</code> or <code>r_and_d</code> applies.</li>
+<li>Record is updated with the agreed <code>category</code> and <code>funding</code> values.</li>
+</ol>
 </section>
 <section id="services-overview" class="level2">
 <h2 class="anchored" data-anchor-id="services-overview">Services Overview</h2>

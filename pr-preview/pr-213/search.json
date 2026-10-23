@@ -569,6 +569,19 @@
     ]
   },
   {
+    "objectID": "guides/algorithm_services_catalogue.html#certification-metadata-and-categories",
+    "href": "guides/algorithm_services_catalogue.html#certification-metadata-and-categories",
+    "title": "APEx Algorithm Catalogue",
+    "section": "Certification Metadata and Categories",
+    "text": "Certification Metadata and Categories\nCatalogue category badges are derived from optional structured metadata in the service record.\n\nIf properties.certification is omitted, the service is treated as Community Contributed (default).\nIf present, properties.certification must contain:\n\ncategory: validated or r_and_d\nfunding: esa or other\n\n\nExample:\n\"certification\": {\n  \"category\": \"validated\",\n  \"funding\": \"esa\"\n}\nBadge mapping:\n\ncategory=validated → Validated\ncategory=r_and_d → R&D\nno certification field → Community Contributed\n\nSuggested onboarding flow:\n\nAlgorithm PI submits the record with default metadata (no certification) unless a reviewed category assignment is available.\nAPEx/TO review confirms whether validated or r_and_d applies.\nRecord is updated with the agreed category and funding values.",
+    "crumbs": [
+      "Guides",
+      "Developer Guides",
+      "APEx Algorithm Catalogue",
+      "Registering your service"
+    ]
+  },
+  {
     "objectID": "guides/algorithm_services_catalogue.html#services-overview",
     "href": "guides/algorithm_services_catalogue.html#services-overview",
     "title": "APEx Algorithm Catalogue",
@@ -1021,7 +1034,7 @@
     "href": "eo_service_usage/openeo_usage.html#openeo-backends",
     "title": "openEO based services",
     "section": "openEO backends",
-    "text": "openEO backends\nAn APEx openEO service is always associated with one or more openEO backends that have been validated to produce the correct results. So using one of these backends is the recommended approach. Thanks to openEO interoperability and standardization, it may certainly be possible that other backends can run the same service, but do make sure to validate the results in that case.\nTo ensure a smooth experience, backends need to be compliant with APEx guidelines. The currently known list of compliant backends is:\n\nCDSE openEO federation\nopenEO platform\n\nBoth are federations, which means that they in fact are backed by multiple openEO instances. This increases the convenience for the APEx user, avoiding to interact with a high number of backends.",
+    "text": "openEO backends\nAn APEx openEO service is always associated with one or more openEO backends that have been validated to produce the correct results. So using one of these backends is the recommended approach. Thanks to openEO interoperability and standardization, it may certainly be possible that other backends can run the same service, but do make sure to validate the results in that case.\nTo ensure a smooth experience, backends need to be compliant with APEx guidelines. The currently known list of compliant backends is:\n\nCDSE openEO federation\n\nBoth are federations, which means that they in fact are backed by multiple openEO instances. This increases the convenience for the APEx user, avoiding to interact with a high number of backends.",
     "crumbs": [
       "On-demand EO services",
       "Using openEO service"
@@ -1032,7 +1045,7 @@
     "href": "eo_service_usage/openeo_usage.html#online-user-interface",
     "title": "openEO based services",
     "section": "Online user interface",
-    "text": "Online user interface\nOpenEO provides an online user interface where users can execute services directly in a web browser. Through the graphical user interface, users can execute, link, and configure different services. More information on the usage of the online applications is presented in the table below.\n\n\n\nOpenEO\n\n\n\n\nAccess CDSE openEO federation\n\n\nAccess openEO platform\n\n\nDocumentation\n\n\n\n\n\n\n\n\n\nPro-tip: discovering API requests\n\n\n\nThis interface provides a great way to find out how to interact with an openEO backend at the level of the HTTP API. Just use the ‘developer tools’ of your favourite browser and inspect HTTP requests to the backend to find out the various options.",
+    "text": "Online user interface\nOpenEO provides an online user interface where users can execute services directly in a web browser. Through the graphical user interface, users can execute, link, and configure different services. More information on the usage of the online applications is presented in the table below.\n\n\n\nOpenEO\n\n\n\n\nAccess CDSE openEO federation\n\n\nDocumentation\n\n\n\n\n\n\n\n\n\nPro-tip: discovering API requests\n\n\n\nThis interface provides a great way to find out how to interact with an openEO backend at the level of the HTTP API. Just use the ‘developer tools’ of your favourite browser and inspect HTTP requests to the backend to find out the various options.",
     "crumbs": [
       "On-demand EO services",
       "Using openEO service"
@@ -2016,7 +2029,7 @@
     "href": "propagation/platforms.html#openeo-api",
     "title": "Supported Platforms",
     "section": "openEO API",
-    "text": "openEO API\nAlgorithms can be offered as services through the openEO API. This API standard enables the execution of processing workflows on various back-end platforms. The following platforms are currently identified as APEx-compliant for hosting openEO-based algorithms:\n\nopenEO platform\nCDSE openEO federation\n\n\nopenEO User Defined Processes\nAn openEO UDP can be developed in any openEO-based environment using existing openEO tools. APEx can support development activities by providing projects with access to its Code Server and JupyterLab IDE solutions. For testing the UDP, we recommend utilising an APEx-compliant hosting platform, as provided in the list above. This ensures platform compatibility and facilitates the deployment of your UDP as an on-demand service.",
+    "text": "openEO API\nAlgorithms can be offered as services through the openEO API. This API standard enables the execution of processing workflows on various back-end platforms. The following platforms are currently identified as APEx-compliant for hosting openEO-based algorithms:\n\nCDSE openEO federation\n\n\nopenEO User Defined Processes\nAn openEO UDP can be developed in any openEO-based environment using existing openEO tools. APEx can support development activities by providing projects with access to its Code Server and JupyterLab IDE solutions. For testing the UDP, we recommend utilising an APEx-compliant hosting platform, as provided in the list above. This ensures platform compatibility and facilitates the deployment of your UDP as an on-demand service.",
     "crumbs": [
       "On-demand EO services",
       "Supported Platforms"
