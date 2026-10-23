@@ -91,6 +91,7 @@ website:
           - section: Admin Guides
             contents:
               - href: guides/account.md
+              - href: guides/project_members.md
               - href: guides/grafana_monitoring.md
                 text: Grafana monitoring dashboards
               - href: guides/custom_domain.md

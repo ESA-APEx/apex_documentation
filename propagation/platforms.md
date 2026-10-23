@@ -16,7 +16,6 @@ Algorithms can be offered as services through the openEO API. This API standard 
 workflows on various back-end platforms. The following platforms are currently identified as APEx-compliant for hosting
 openEO-based algorithms:
 
-* [openEO platform](https://openeo.cloud)
 * [CDSE openEO federation](https://documentation.dataspace.copernicus.eu/APIs/openEO/federation/openeo_federation.html)
 
 ### openEO User Defined Processes

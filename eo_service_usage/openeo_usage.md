@@ -29,7 +29,6 @@ To ensure a smooth experience, backends need to be compliant with [APEx guidelin
 The currently known list of compliant backends is:
 
 * [CDSE openEO federation](https://openeofed.dataspace.copernicus.eu)
-* [openEO platform](https://openeo.cloud)
 
 Both are federations, which means that they in fact are backed by multiple openEO instances. This increases the convenience
 for the APEx user, avoiding to interact with a high number of backends.
@@ -43,7 +42,6 @@ usage of the online applications is presented in the table below.
 | OpenEO                                                                     |
 |----------------------------------------------------------------------------|
 | [Access CDSE openEO federation](https://openeofed.dataspace.copernicus.eu) |
-| [Access openEO platform](https://editor.openeo.cloud)                      |
 | [Documentation](https://openeo.org/documentation/1.0/#introduction)        |
 
 ::: {.callout-tip}
